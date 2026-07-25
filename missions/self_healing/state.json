@@ -2,13 +2,13 @@
   "runs": [],
   "totalIssuesFixed": 1,
   "lastRun": {
-    "healthScore": 100,
-    "issues": 0,
+    "healthScore": 92,
+    "issues": 1,
     "fixes": 0,
-    "improvements": 1,
-    "shouldReport": false,
-    "timestamp": "2026-07-25T18:03:57.009Z"
+    "improvements": 0,
+    "shouldReport": true,
+    "timestamp": "2026-07-25T20:04:01.537Z"
   },
-  "totalRuns": 16,
-  "totalIssuesDetected": 14
+  "totalRuns": 18,
+  "totalIssuesDetected": 15
 }
