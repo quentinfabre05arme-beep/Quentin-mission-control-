@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-07-25T13:05:21.761Z",
+  "queuedAt": "2026-07-25T13:08:00.000Z",
+  "status": "open",
+  "opportunities": [
+    {
+      "rank": 1,
+      "ticker": "HIMS",
+      "currentPrice": 28.09,
+      "targetPrice": 45,
+      "floorPrice": 25,
+      "upside": 60.2,
+      "downside": 12.4,
+      "asymmetryScore": 5.1,
+      "catalyst": "GLP-1 expansion",
+      "confidence": 65,
+      "note": "High-conviction asymmetry. Review for position sizing."
+    }
+  ],
+  "summary": {
+    "totalQueued": 1,
+    "aboveThreshold": true,
+    "threshold": 5.0
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-07-25T13:05:21.761Z",
+  "opportunities": [
+    {
+      "ticker": "HIMS",
+      "currentPrice": 28.09,
+      "targetPrice": 45,
+      "floorPrice": 25,
+      "upside": 60.19935920256319,
+      "downside": 12.359999999999992,
+      "catalystProb": 0.55,
+      "asymmetryScore": 5.094958338804865,
+      "catalyst": "GLP-1 expansion",
+      "confidence": 65
+    },
+    {
+      "ticker": "SOL",
+      "currentPrice": 185,
+      "targetPrice": 280,
+      "floorPrice": 160,
+      "upside": 51.35135135135136,
+      "downside": 15.625,
+      "catalystProb": 0.55,
+      "asymmetryScore": 2.959426208016,
+      "catalyst": "DeFi + NFT ecosystem",
+      "confidence": 60
+    },
+    {
+      "ticker": "NVDA",
+      "currentPrice": 207,
+      "targetPrice": 280,
+      "floorPrice": 170,
+      "upside": 35.26570048309179,
+      "downside": 21.76470588235293,
+      "catalystProb": 0.8,
+      "asymmetryScore": 2.2143588236073484,
+      "catalyst": "AI demand cycle",
+      "confidence": 85
+    },
+    {
+      "ticker": "ETH",
+      "currentPrice": 1858.29,
+      "targetPrice": 2500,
+      "floorPrice": 1600,
+      "upside": 34.53228505776818,
+      "downside": 16.14312499999999,
+      "catalystProb": 0.6,
+      "asymmetryScore": 2.0171253810203713,
+      "catalyst": "ETF approval",
+      "confidence": 70
+    },
+    {
+      "ticker": "MSTR",
+      "currentPrice": 91.67,
+      "targetPrice": 130,
+      "floorPrice": 75,
+      "upside": 41.81302498090977,
+      "downside": 22.22666666666666,
+      "catalystProb": 0.65,
+      "asymmetryScore": 1.8940133645110675,
+      "catalyst": "BTC treasury appreciation",
+      "confidence": 70
+    }
+  ],
+  "metadata": {
+    "totalScanned": 30,
+    "highConviction": 1,
+    "mediumConviction": 4
+  }
+}

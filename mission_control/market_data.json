@@ -1,71 +1,72 @@
 {
-  "timestamp": "2026-07-25T12:16:49.972Z",
+  "timestamp": "2026-07-25T16:01:01.830Z",
   "assets": {
     "BTC": {
-      "price": 64063.99,
-      "change_24h": -0.11849082,
-      "change_amount": -76,
-      "open": 64140,
-      "high": 64205.67,
-      "low": 63810,
-      "volume": null,
+      "price": 64182,
+      "change_24h": 0.06549736,
       "source": "twelvedata",
-      "signal": "NEUTRAL",
-      "fetch_time_ms": 407,
-      "stale": false
+      "signal": "NEUTRAL"
     },
     "ETH": {
-      "price": 1858.29,
-      "change_24h": -0.16922383,
-      "change_amount": -3.15,
-      "open": 1861.44,
-      "high": 1864.69,
-      "low": 1851.22,
-      "volume": null,
+      "price": 1867.88,
+      "change_24h": 0.34596871,
       "source": "twelvedata",
-      "signal": "NEUTRAL",
-      "fetch_time_ms": 354,
-      "stale": false
+      "signal": "NEUTRAL"
+    },
+    "NVDA": {
+      "price": 206.84,
+      "change_24h": -0.91971557,
+      "source": "twelvedata",
+      "signal": "NEUTRAL"
+    },
+    "TSLA": {
+      "price": 313.029999,
+      "change_24h": -2.083269,
+      "source": "twelvedata",
+      "signal": "BEARISH"
     },
     "MSTR": {
       "price": 91.67,
       "change_24h": -2.093345,
-      "change_amount": -1.96,
-      "open": 93.37,
-      "high": 93.68,
-      "low": 89.76,
-      "volume": 13044000,
       "source": "twelvedata",
-      "signal": "MODERATE_BEARISH",
-      "fetch_time_ms": 370,
-      "stale": false
+      "signal": "BEARISH"
+    },
+    "AAPL": {
+      "price": 333.019989,
+      "change_24h": 3.53167,
+      "source": "twelvedata",
+      "signal": "BULLISH"
     },
     "HIMS": {
       "price": 28.09,
       "change_24h": -14.20281,
-      "change_amount": -4.65,
-      "open": 33.445,
-      "high": 34.57,
-      "low": 27.925,
-      "volume": 28406800,
       "source": "twelvedata",
-      "signal": "STRONG_BEARISH",
-      "fetch_time_ms": 355,
-      "stale": false
+      "signal": "BEARISH"
+    },
+    "COIN": {
+      "price": 158.32001,
+      "change_24h": -1.76222,
+      "source": "twelvedata",
+      "signal": "NEUTRAL"
     }
   },
   "_meta": {
     "fromCache": false,
-    "fetch_time_ms": 421,
+    "failures": [
+      "SPY: All sources failed for SPY: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 9 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+      "QQQ: All sources failed for QQQ: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 10 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+      "GLD: All sources failed for GLD: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 11 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+      "TLT: All sources failed for TLT: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 12 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON"
+    ],
     "sources": [
       "twelvedata",
       "twelvedata",
       "twelvedata",
+      "twelvedata",
+      "twelvedata",
+      "twelvedata",
+      "twelvedata",
       "twelvedata"
-    ],
-    "assets_count": 4,
-    "stale_count": 0,
-    "saved_at": "2026-07-25T12:16:49.973Z",
-    "version": "2.0"
+    ]
   }
 }

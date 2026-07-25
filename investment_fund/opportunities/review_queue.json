@@ -1,19 +1,25 @@
 {
-    "next_action":  "awaiting_review",
-    "timestamp":  "2026-07-24T07:29:40Z",
-    "review_count":  1,
-    "top_opportunities":  [
-                              {
-                                  "source":  "asymmetry_scanner",
-                                  "rank":  1,
-                                  "price":  319.69,
-                                  "upside":  "40.8%",
-                                  "ticker":  "TSLA",
-                                  "target":  450,
-                                  "score":  5.98,
-                                  "catalyst_date":  "August 2026",
-                                  "status":  "QUEUED_FOR_REVIEW",
-                                  "catalyst":  "Robotaxi unveil"
-                              }
-                          ]
+  "timestamp": "2026-07-25T12:50:00Z",
+  "queued": [
+    {
+      "rank": 1,
+      "ticker": "HIMS",
+      "price": 28.09,
+      "target": 45.00,
+      "upside": "60.2%",
+      "downside": "12.4%",
+      "score": 5.09,
+      "catalyst": "GLP-1 expansion",
+      "confidence": 65,
+      "status": "pending_review"
+    }
+  ],
+  "filtered_out": [
+    {
+      "ticker": "SOL",
+      "score": 2.96,
+      "reason": "Below 5.0 threshold"
+    }
+  ],
+  "scan_file": "scan_2026-07-25T12-50-10-504Z.json"
 }

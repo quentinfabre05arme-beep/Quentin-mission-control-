@@ -1,0 +1,82 @@
+{
+  "timestamp": "2026-07-25T15:20:18.384Z",
+  "opportunities": [
+    {
+      "ticker": "TSLA",
+      "currentPrice": 313.029999,
+      "targetPrice": 450,
+      "floorPrice": 300,
+      "upside": 43.75618996184454,
+      "downside": 4.343332999999983,
+      "catalystProb": 0.5,
+      "asymmetryScore": 9.339765276848638,
+      "catalyst": "Robotaxi unveil",
+      "confidence": 60
+    },
+    {
+      "ticker": "HIMS",
+      "currentPrice": 28.09,
+      "targetPrice": 45,
+      "floorPrice": 25,
+      "upside": 60.19935920256319,
+      "downside": 12.359999999999992,
+      "catalystProb": 0.55,
+      "asymmetryScore": 5.094958338804865,
+      "catalyst": "GLP-1 expansion",
+      "confidence": 65
+    },
+    {
+      "ticker": "SOL",
+      "currentPrice": 185,
+      "targetPrice": 280,
+      "floorPrice": 160,
+      "upside": 51.35135135135136,
+      "downside": 15.625,
+      "catalystProb": 0.55,
+      "asymmetryScore": 2.959426208016,
+      "catalyst": "DeFi + NFT ecosystem",
+      "confidence": 60
+    },
+    {
+      "ticker": "NVDA",
+      "currentPrice": 206.84,
+      "targetPrice": 280,
+      "floorPrice": 170,
+      "upside": 35.37033455811256,
+      "downside": 21.67058823529413,
+      "catalystProb": 0.8,
+      "asymmetryScore": 2.235462450454856,
+      "catalyst": "AI demand cycle",
+      "confidence": 85
+    },
+    {
+      "ticker": "MSTR",
+      "currentPrice": 91.67,
+      "targetPrice": 130,
+      "floorPrice": 75,
+      "upside": 41.81302498090977,
+      "downside": 22.22666666666666,
+      "catalystProb": 0.65,
+      "asymmetryScore": 1.8940133645110675,
+      "catalyst": "BTC treasury appreciation",
+      "confidence": 70
+    },
+    {
+      "ticker": "ETH",
+      "currentPrice": 1868.26,
+      "targetPrice": 2500,
+      "floorPrice": 1600,
+      "upside": 33.81435132155053,
+      "downside": 16.766250000000007,
+      "catalystProb": 0.6,
+      "asymmetryScore": 1.868480345713179,
+      "catalyst": "ETF approval",
+      "confidence": 70
+    }
+  ],
+  "metadata": {
+    "totalScanned": 30,
+    "highConviction": 2,
+    "mediumConviction": 4
+  }
+}
