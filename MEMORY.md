@@ -103,6 +103,54 @@ All jobs previously failing with kimi-k2.5:cloud (not in allowlist) updated to k
 
 ---
 
+## 💰 POD Business — CRITICAL PRICING ISSUE DISCOVERED (July 25, 2026 23:16)
+
+**Status:** 🔴 **CRITICAL — Revenue Blocked Day 4**
+
+### The Problem
+- Printify API works ✅ (20 products published)
+- Etsy shop partially visible ⚠️ (5/20 products)
+- **PRICES ARE LOSS-MAKING:** $4.91 (~€4.50) across ALL products
+- **Every sale = €6.50 LOSS** (cost ~€11 + fees > €4.50 price)
+- Must fix BEFORE any sales happen
+
+### Discovery Timeline
+- Jul 21: API blocked (401) — thought to be token issue
+- Jul 24: Token fixed, 35 products published
+- Jul 25 14:16: Discovered Etsy not linked, products at $4.91
+- Jul 25 20:16: 5 products visible on Etsy, still $4.91
+- Jul 25 23:16: **CRITICAL: Pricing = loss-making identified**
+
+### What's Blocked
+1. 🔴 **Pricing fix:** $4.91 → €22.99-29.99 (+410-510%, exceeds 20% autonomous limit)
+2. 🔴 **Etsy sync:** 20 products on Printify, only 5 on Etsy
+3. 🟡 **AI niche launch:** 4 designs ready (first-mover window closing)
+4. 🟡 **Discipline niche launch:** 2 designs ready
+
+### Revenue Math
+- Current: €0/day (blocked)
+- If sale at $4.91: -€6.50/unit (WORSE than zero sales)
+- Post-fix: €43-68/day (20 products)
+- With AI: €68-94/day
+- Full scale: €150-200/day
+
+### Opportunity Cost
+- 4 days blocked: ~€48 cumulative
+- Daily burn: ~€12/day while blocked
+
+### Actions Required (Manual)
+1. Fix pricing in Printify dashboard ($4.91 → €22.99-29.99)
+2. Reconnect Etsy store in Printify dashboard
+3. Delete 15 duplicate "DESIGN" products
+4. Then autonomous: launch AI + Discipline niches
+
+### Files
+- `pod_business/research/daily_2026-07-25_2316.md` — Full analysis
+- `pod_business/research/pricing_recommendations_2026-07-25_2316.json` — Pricing data
+- `pod_business/etsy_sync_status.json` — Updated status
+
+---
+
 ## 🚀 Active Projects
 
 1. **Multi-Model Architecture** — ✅ Complete

@@ -435,6 +435,40 @@
         "shouldReport": true,
         "timestamp": "2026-07-25T20:04:01.537Z"
       }
+    },
+    {
+      "timestamp": 1785013445645,
+      "isoTime": "2026-07-25T21:04:05.645Z",
+      "cycle": 19,
+      "issues": [
+        {
+          "severity": "medium",
+          "system": "Dashboard",
+          "issue": "Dashboard stale (5.0h since update)",
+          "detail": "Timestamp sync may be failing"
+        },
+        {
+          "severity": "medium",
+          "system": "Market Data",
+          "issue": "Price data stale (2.9h old)",
+          "detail": "Market data service may be down"
+        }
+      ],
+      "fixes": [
+        {
+          "success": true,
+          "action": "Refreshed market data via market_data_service.js"
+        }
+      ],
+      "improvements": [],
+      "assessment": {
+        "healthScore": 89,
+        "issues": 2,
+        "fixes": 1,
+        "improvements": 0,
+        "shouldReport": false,
+        "timestamp": "2026-07-25T21:04:05.644Z"
+      }
     }
   ]
 }
