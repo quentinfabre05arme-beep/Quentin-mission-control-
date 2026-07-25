@@ -1,11 +1,93 @@
 {
-    "ticker":  "TSLA",
-    "shares":  3,
-    "entryPrice":  340.00,
-    "stopLoss":  295,
-    "takeProfit":  450.00,
-    "entryDate":  "2026-07-20T10:00:00Z",
-    "unrealizedPnl":  -60.93,
-    "unrealizedPnlPct":  -5.97,
-    "currentPrice":  319.69
+  "portfolio_id": "alpha-paper-001",
+  "created_at": "2026-07-25T07:38:21.386Z",
+  "initial_capital": 10000,
+  "current_value": 9996.317540003,
+  "cash": 6313.857543003,
+  "positions": [
+    {
+      "ticker": "HIMS",
+      "shares": 53,
+      "entryPrice": 28.09,
+      "currentPrice": 28.09,
+      "stopLoss": 20.37,
+      "takeProfit": 52.79,
+      "entryDate": "2026-07-25T07:38:21.396Z",
+      "unrealizedPnl": 0,
+      "unrealizedPnlPct": 0
+    },
+    {
+      "ticker": "SOL",
+      "shares": 17,
+      "entryPrice": 73.8,
+      "currentPrice": 73.8,
+      "stopLoss": 55.35,
+      "takeProfit": 126.93,
+      "entryDate": "2026-07-25T07:38:21.407Z",
+      "unrealizedPnl": 0,
+      "unrealizedPnlPct": 0
+    },
+    {
+      "ticker": "TSLA",
+      "shares": 3,
+      "entryPrice": 313.029999,
+      "currentPrice": 313.029999,
+      "stopLoss": 234.77,
+      "takeProfit": 536.72,
+      "entryDate": "2026-07-25T07:38:21.409Z",
+      "unrealizedPnl": 0,
+      "unrealizedPnlPct": 0
+    }
+  ],
+  "trades": [
+    {
+      "id": "T1784965101396",
+      "timestamp": "2026-07-25T07:38:21.396Z",
+      "ticker": "HIMS",
+      "action": "BUY",
+      "shares": 53,
+      "price": 28.09,
+      "total": 1488.77,
+      "commission": 1.48877,
+      "reason": "HIMS - oversold setup (14.2% move)",
+      "stopLoss": 20.37,
+      "takeProfit": 52.79
+    },
+    {
+      "id": "T1784965101407",
+      "timestamp": "2026-07-25T07:38:21.407Z",
+      "ticker": "SOL",
+      "action": "BUY",
+      "shares": 17,
+      "price": 73.8,
+      "total": 1254.6,
+      "commission": 1.2546,
+      "reason": "SOL - oversold setup (2.8% move)",
+      "stopLoss": 55.35,
+      "takeProfit": 126.93
+    },
+    {
+      "id": "T1784965101409",
+      "timestamp": "2026-07-25T07:38:21.409Z",
+      "ticker": "TSLA",
+      "action": "BUY",
+      "shares": 3,
+      "price": 313.029999,
+      "total": 939.0899969999999,
+      "commission": 0.939089997,
+      "reason": "TSLA - oversold setup (2.1% move)",
+      "stopLoss": 234.77,
+      "takeProfit": 536.72
+    }
+  ],
+  "performance": {
+    "total_return": -0.036824599970008975,
+    "total_trades": 3,
+    "winning_trades": 0,
+    "losing_trades": 0,
+    "win_rate": 0,
+    "avg_winner": 0,
+    "avg_loser": 0,
+    "max_drawdown": 0.036824599970004784
+  }
 }

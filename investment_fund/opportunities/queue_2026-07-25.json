@@ -1,0 +1,29 @@
+{
+  "queuedAt": "2026-07-25T07:37:23.872Z",
+  "opportunities": [
+    {
+      "ticker": "TSLA",
+      "currentPrice": 313.029999,
+      "targetPrice": 450,
+      "floorPrice": 300,
+      "upside": 43.75618996184454,
+      "downside": 4.343332999999983,
+      "catalystProb": 0.5,
+      "asymmetryScore": 9.339765276848638,
+      "catalyst": "Robotaxi unveil",
+      "confidence": 60
+    },
+    {
+      "ticker": "HIMS",
+      "currentPrice": 28.09,
+      "targetPrice": 45,
+      "floorPrice": 25,
+      "upside": 60.19935920256319,
+      "downside": 12.359999999999992,
+      "catalystProb": 0.55,
+      "asymmetryScore": 5.094958338804865,
+      "catalyst": "GLP-1 expansion",
+      "confidence": 65
+    }
+  ]
+}

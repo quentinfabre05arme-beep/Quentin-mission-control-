@@ -343,3 +343,42 @@
 - **Take Profit:** $220.01
 
 ---
+## Trade T1784965101396 — 2026-07-25T07:38:21.396Z
+
+- **Ticker:** HIMS
+- **Action:** BUY
+- **Shares:** 53
+- **Price:** $28.09
+- **Total:** $1488.77
+- **Commission:** $1.49
+- **Reason:** HIMS - oversold setup (14.2% move)
+- **Stop Loss:** $20.37
+- **Take Profit:** $52.79
+
+---
+## Trade T1784965101407 — 2026-07-25T07:38:21.407Z
+
+- **Ticker:** SOL
+- **Action:** BUY
+- **Shares:** 17
+- **Price:** $73.80
+- **Total:** $1254.60
+- **Commission:** $1.25
+- **Reason:** SOL - oversold setup (2.8% move)
+- **Stop Loss:** $55.35
+- **Take Profit:** $126.93
+
+---
+## Trade T1784965101409 — 2026-07-25T07:38:21.409Z
+
+- **Ticker:** TSLA
+- **Action:** BUY
+- **Shares:** 3
+- **Price:** $313.03
+- **Total:** $939.09
+- **Commission:** $0.94
+- **Reason:** TSLA - oversold setup (2.1% move)
+- **Stop Loss:** $234.77
+- **Take Profit:** $536.72
+
+---

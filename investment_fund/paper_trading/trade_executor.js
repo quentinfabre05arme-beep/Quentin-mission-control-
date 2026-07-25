@@ -170,7 +170,7 @@ function executePaperTrade(opportunity) {
   const portfolio = loadPortfolio();
   
   // Check position limit
-  if (portfolio.positions.length >= CONFIG.MAX_POSITIONS) {
+  if ((portfolio.positions || []).length >= CONFIG.MAX_POSITIONS) {
     console.log(`⚠️ Max positions (${CONFIG.MAX_POSITIONS}) reached`);
     return null;
   }
@@ -329,7 +329,7 @@ async function autoTrade(topN = 3, force = false, allowExisting = false) {
   });
   
   const portfolio = loadPortfolio();
-  const heldTickers = new Set(portfolio.positions.map(p => p.ticker));
+  const heldTickers = new Set((portfolio.positions || []).map(p => p.ticker || p.symbol));
   
   let topOpps = opportunities
     .filter(o => o.asymmetryScore >= CONFIG.MIN_ASYMMETRY_SCORE);
