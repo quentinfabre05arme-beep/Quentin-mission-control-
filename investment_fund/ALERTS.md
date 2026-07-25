@@ -47,6 +47,16 @@
 
 ## 🟡 WATCH LIST
 
+### HIMS Stop Approaching (UPDATED 2026-07-26 00:10)
+- **Asset:** HIMS
+- **Current:** ~$28.09 (Friday close)
+- **Previous Stop:** $29.50
+- **Suggested Stop:** $26.00 (-7.4% from current)
+- **Risk:** FDA overhang continues through weekend
+- **Action:** Position size check required Monday. Trim if >5% allocation.
+
+---
+
 ### ETH DCA Zone
 - **Entry Zone:** <$1,850 (ideal $1,800-$1,820)
 - **Current:** $1,864 (+0.77%)
