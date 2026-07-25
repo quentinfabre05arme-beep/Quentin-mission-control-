@@ -2,7 +2,7 @@
   "portfolio_id": "alpha-paper-001",
   "created_at": "2026-07-25T07:38:21.386Z",
   "initial_capital": 10000,
-  "current_value": 9992.76674347726,
+  "current_value": 10013.05397569726,
   "cash": 2519.270220737259,
   "positions": [
     {
@@ -14,18 +14,18 @@
       "takeProfit": 52.79,
       "entryDate": "2026-07-25T07:38:21.396Z",
       "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0
+      "unrealizedPnlPct": "0.00"
     },
     {
       "ticker": "SOL",
       "shares": 17,
       "entryPrice": 73.8,
-      "currentPrice": 73.82,
+      "currentPrice": 73.85,
       "stopLoss": 55.35,
       "takeProfit": 126.93,
       "entryDate": "2026-07-25T07:38:21.407Z",
-      "unrealizedPnl": 0.33999999999993236,
-      "unrealizedPnlPct": 0.027100271002700183
+      "unrealizedPnl": 0.8499999999999517,
+      "unrealizedPnlPct": "0.07"
     },
     {
       "ticker": "TSLA",
@@ -36,18 +36,18 @@
       "takeProfit": 536.72,
       "entryDate": "2026-07-25T07:38:21.409Z",
       "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0
+      "unrealizedPnlPct": "0.00"
     },
     {
       "ticker": "MSTR",
       "shares": 10,
       "entryPrice": 91.67,
-      "currentPrice": 91.67,
+      "currentPrice": 93.63,
       "stopLoss": 71.04,
       "takeProfit": 150.63,
       "entryDate": "2026-07-25T08:37:17.508Z",
-      "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0
+      "unrealizedPnl": 19.599999999999937,
+      "unrealizedPnlPct": "2.14"
     },
     {
       "ticker": "COIN",
@@ -58,7 +58,7 @@
       "takeProfit": 254.99,
       "entryDate": "2026-07-25T08:37:17.515Z",
       "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0
+      "unrealizedPnlPct": "0.00"
     },
     {
       "ticker": "PLTR",
@@ -69,7 +69,7 @@
       "takeProfit": 190.79,
       "entryDate": "2026-07-25T08:37:17.517Z",
       "unrealizedPnl": -0.0999999999999801,
-      "unrealizedPnlPct": -0.01626809825930886
+      "unrealizedPnlPct": "-0.02"
     },
     {
       "ticker": "SNOW",
@@ -80,7 +80,7 @@
       "takeProfit": 376.47,
       "entryDate": "2026-07-25T12:15:38.079Z",
       "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0
+      "unrealizedPnlPct": "0.00"
     },
     {
       "ticker": "AMD",
@@ -91,18 +91,18 @@
       "takeProfit": 220.01,
       "entryDate": "2026-07-25T12:15:38.082Z",
       "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0
+      "unrealizedPnlPct": "0.00"
     },
     {
       "ticker": "ETH",
       "shares": 0.239503,
       "entryPrice": 1856.58,
-      "currentPrice": 1856.58,
+      "currentPrice": 1857.32,
       "stopLoss": 1531.68,
       "takeProfit": 2515.22,
       "entryDate": "2026-07-25T12:15:38.085Z",
-      "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0
+      "unrealizedPnl": 0.17723222000000216,
+      "unrealizedPnlPct": "0.04"
     }
   ],
   "trades": [

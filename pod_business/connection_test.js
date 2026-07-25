@@ -4,13 +4,13 @@ const path = require('path');
 
 // Fix: load .env from script's own directory
 const SCRIPT_DIR = __dirname;
-const ENV_PATH = path.join(SCRIPT_DIR, '.env.local');
+const ENV_PATH = path.join(SCRIPT_DIR, '.env');
 
 console.log('📍 Script directory:', SCRIPT_DIR);
 console.log('🔑 Looking for .env at:', ENV_PATH);
 
 if (!fs.existsSync(ENV_PATH)) {
-  console.error('❌ .env.local not found');
+  console.error('❌ .env not found');
   process.exit(1);
 }
 
@@ -26,7 +26,7 @@ for (const line of envLines) {
 const SHOP_ID = 28241288;
 
 if (!TOKEN) {
-  console.error('❌ Token not found in .env.local');
+  console.error('❌ Token not found in .env');
   process.exit(1);
 }
 

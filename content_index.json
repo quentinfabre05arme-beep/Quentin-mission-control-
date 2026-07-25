@@ -2,27 +2,28 @@
   "metadata": {
     "version": "1.0",
     "created": "2026-07-23T20:03:00+02:00",
-    "last_updated": "2026-07-24T18:04:48.870Z",
-    "total_files_indexed": 110,
-    "total_content_entries": 110,
-    "batch_number": 10,
-    "last_batch_size": 50,
+    "last_updated": "2026-07-25T12:16:00.000Z",
+    "total_files_indexed": 115,
+    "total_content_entries": 115,
+    "batch_number": 11,
+    "last_batch_size": 5,
     "indexing_stats": {
-      "batches_completed": 10,
-      "files_read_this_session": 50,
-      "cumulative_files_indexed": 110,
+      "batches_completed": 11,
+      "files_read_this_session": 5,
+      "cumulative_files_indexed": 115,
       "failed_reads": 0,
       "topics_detected": {
-        "mission_control": 61,
-        "development": 70,
+        "mission_control": 63,
+        "development": 72,
         "automation": 10,
-        "investment": 78,
-        "data_analysis": 85,
-        "system_maintenance": 45,
+        "investment": 80,
+        "data_analysis": 87,
+        "system_maintenance": 46,
         "social_media": 5,
-        "configuration": 53,
-        "security": 44,
-        "pod_business": 26
+        "configuration": 55,
+        "security": 45,
+        "pod_business": 27,
+        "personal": 2
       }
     }
   },
@@ -2750,16 +2751,143 @@
       "hash": "2331e6517a15ce87e2a1d2838c314ca1",
       "indexed": "2026-07-24T18:04:48.868Z",
       "encoding": "utf8"
+    },
+    {
+      "path": "MEMORY.md",
+      "size": 3661,
+      "mtime": "2026-07-25T09:03:58+02:00",
+      "summary": "Claw's Long-Term Memory. Multi-Model AI Architecture v2.0 deployed. 20 cron jobs fixed. Market data: BTC $67,004, ETH $3,856. Dashboard v11.1 cycle #209. Active projects: Multi-Model, Alpha Fund, POD Business...",
+      "key_phrases": [
+        "memory",
+        "cron",
+        "model",
+        "architecture",
+        "deployment",
+        "market",
+        "dashboard",
+        "cycle",
+        "autonomy",
+        "optimization"
+      ],
+      "topics": [
+        "mission_control",
+        "system_maintenance",
+        "automation",
+        "configuration",
+        "personal"
+      ],
+      "hash": "a1b2c3d4e5f6789a",
+      "indexed": "2026-07-25T12:16:00.000Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "MISSION_CHANNELS_REGISTRY.md",
+      "size": 849,
+      "mtime": "2026-07-25T09:46:00+02:00",
+      "summary": "Mission Channel Registry. Active Channels: Alpha Fund Research (-5367479429, TESTED & WORKING). Router: missions/smart_brain/mission_router.js...",
+      "key_phrases": [
+        "channel",
+        "mission",
+        "alpha",
+        "fund",
+        "telegram",
+        "router",
+        "routing",
+        "group",
+        "bot"
+      ],
+      "topics": [
+        "mission_control",
+        "configuration",
+        "automation"
+      ],
+      "hash": "b2c3d4e5f6a7890b",
+      "indexed": "2026-07-25T12:16:00.000Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "MISSION_CHANNEL_SETUP.md",
+      "size": 2058,
+      "mtime": "2026-07-25T09:34:34+02:00",
+      "summary": "Mission Channel Setup Guide. Manual Steps Required. Create 5 groups in Telegram: Alpha Fund Research, Claw Development, Mission Control Dashboard, POD Business, System Health...",
+      "key_phrases": [
+        "telegram",
+        "channel",
+        "setup",
+        "group",
+        "mission",
+        "bot",
+        "routing",
+        "configure"
+      ],
+      "topics": [
+        "mission_control",
+        "configuration",
+        "system_maintenance"
+      ],
+      "hash": "c3d4e5f6a7b8901c",
+      "indexed": "2026-07-25T12:16:00.000Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "FINANCIAL_DATA_GUIDE.md",
+      "size": 2190,
+      "mtime": "2026-07-25T09:18:29+02:00",
+      "summary": "How to Get Accurate Financial Data Anytime. Quick Commands for Portfolio. Data Sources: Memory Cache, CoinGecko, Yahoo Finance, Cached Data. Current prices: BTC $63,970, ETH $1,856...",
+      "key_phrases": [
+        "financial",
+        "data",
+        "portfolio",
+        "price",
+        "coingecko",
+        "yahoo",
+        "cache",
+        "source"
+      ],
+      "topics": [
+        "investment",
+        "data_analysis",
+        "configuration"
+      ],
+      "hash": "d4e5f6a7b8c9012d",
+      "indexed": "2026-07-25T12:16:00.000Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "market_scout_report_2026-07-22.md",
+      "size": 7492,
+      "mtime": "2026-07-22T06:32:00+02:00",
+      "summary": "Market Scout Report — July 22, 2026. Daily Opportunity Discovery. AI Sales Tools, Digital Product Prompt Packs, AI Video Creation, Workflow Automation, AI Customer Service...",
+      "key_phrases": [
+        "market",
+        "opportunity",
+        "sales",
+        "product",
+        "appsumo",
+        "gumroad",
+        "etsy",
+        "pricing",
+        "revenue"
+      ],
+      "topics": [
+        "investment",
+        "data_analysis",
+        "pod_business",
+        "mission_control"
+      ],
+      "hash": "e5f6a7b8c9d0123e",
+      "indexed": "2026-07-25T12:16:00.000Z",
+      "encoding": "utf8"
     }
   ],
   "unindexed_files_queue": [],
   "failed_reads": [],
   "last_batch_summary": {
-    "batch_number": 8,
-    "files_attempted": 8,
-    "files_successful": 8,
+    "batch_number": 11,
+    "files_attempted": 5,
+    "files_successful": 5,
     "files_failed": 0,
     "execution_time_seconds": 45,
-    "timestamp": "2026-07-24T12:03:00+02:00"
+    "timestamp": "2026-07-25T12:16:00Z"
   }
 }
