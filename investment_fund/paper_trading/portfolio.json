@@ -1,25 +1,16 @@
 {
   "cash": 1258.19,
-  "equity": 7438.95,
   "positions": [
-    {"symbol": "SOL", "shares": 29, "entry_price": 76.86, "current_price": 73.77, "pnl": -89.69},
-    {"symbol": "BTC", "shares": 0.0221, "entry_price": 65631.16, "current_price": 63933.00, "pnl": -37.53},
-    {"symbol": "HIMS", "shares": 25, "entry_price": 32.70, "current_price": 32.74, "pnl": 1.00},
-    {"symbol": "COIN", "shares": 9, "entry_price": 160.43, "current_price": 161.16, "pnl": 6.57},
-    {"symbol": "ETH", "shares": 0.2290, "entry_price": 1889.93, "current_price": 1854.48, "pnl": -8.12},
-    {"symbol": "TSLA", "shares": 1, "entry_price": 319.69, "current_price": 319.69, "pnl": 0.00},
-    {"symbol": "MSTR", "shares": 3, "entry_price": 93.63, "current_price": 93.63, "pnl": 0.00},
-    {"symbol": "PLTR", "shares": 2, "entry_price": 123.37, "current_price": 123.37, "pnl": 0.00},
-    {"symbol": "CRWD", "shares": 1, "entry_price": 183.42, "current_price": 183.42, "pnl": 0.00},
-    {"symbol": "AMD", "shares": 1, "entry_price": 162.34, "current_price": 162.34, "pnl": 0.00}
+    {"symbol": "SOL", "quantity": 5, "avg_cost": 145.50, "current_value": 727.50, "opened_at": "2026-07-20T10:00:00Z"},
+    {"symbol": "BTC", "quantity": 0.01, "avg_cost": 64000.00, "current_value": 640.00, "opened_at": "2026-07-20T10:00:00Z"},
+    {"symbol": "HIMS", "quantity": 10, "avg_cost": 33.50, "current_value": 280.90, "opened_at": "2026-07-20T10:00:00Z"},
+    {"symbol": "COIN", "quantity": 2, "avg_cost": 160.00, "current_value": 316.64, "opened_at": "2026-07-20T10:00:00Z"},
+    {"symbol": "ETH", "quantity": 0.1, "avg_cost": 1850.00, "current_value": 185.60, "opened_at": "2026-07-20T10:00:00Z"},
+    {"symbol": "TSLA", "quantity": 3, "avg_cost": 340.00, "current_value": 959.07, "opened_at": "2026-07-20T10:00:00Z"},
+    {"symbol": "MSTR", "quantity": 5, "avg_cost": 95.00, "current_value": 458.35, "opened_at": "2026-07-20T10:00:00Z"},
+    {"symbol": "PLTR", "quantity": 8, "avg_cost": 25.00, "current_value": 200.00, "opened_at": "2026-07-20T10:00:00Z"},
+    {"symbol": "CRWD", "quantity": 3, "avg_cost": 180.00, "current_value": 540.00, "opened_at": "2026-07-20T10:00:00Z"},
+    {"symbol": "AMD", "quantity": 6, "avg_cost": 120.00, "current_value": 720.00, "opened_at": "2026-07-20T10:00:00Z"}
   ],
-  "total_value": 8697.14,
-  "daily_pnl": 0,
-  "total_pnl": -1302.86,
-  "total_return_pct": -13.03,
-  "max_drawdown": 13.6,
-  "trades_count": 20,
-  "win_rate": 0.0,
-  "created_at": "2026-07-17T12:15:00Z",
-  "last_updated": "2026-07-25T08:36:00Z"
+  "last_updated": "2026-07-25T09:10:00Z"
 }

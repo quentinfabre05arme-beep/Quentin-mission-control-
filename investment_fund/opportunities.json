@@ -1,0 +1,46 @@
+﻿{
+    "opportunities":  [
+                          {
+                              "catalyst":  "AI demand cycle",
+                              "downside":  21.7,
+                              "current_price":  206.96,
+                              "asymmetry_score":  2.22,
+                              "upside":  35.3,
+                              "confidence":  85,
+                              "ticker":  "NVDA",
+                              "catalyst_prob":  0.8,
+                              "floor_price":  170,
+                              "target_price":  280
+                          },
+                          {
+                              "catalyst":  "ETF approval",
+                              "downside":  16,
+                              "current_price":  1857.72,
+                              "asymmetry_score":  2.04,
+                              "upside":  34.7,
+                              "confidence":  70,
+                              "ticker":  "ETH",
+                              "catalyst_prob":  0.7,
+                              "floor_price":  1500,
+                              "target_price":  2500
+                          },
+                          {
+                              "catalyst":  "GLP-1 expansion",
+                              "downside":  12.4,
+                              "current_price":  28.09,
+                              "asymmetry_score":  5.09,
+                              "upside":  60.2,
+                              "confidence":  65,
+                              "ticker":  "HIMS",
+                              "catalyst_prob":  0.55,
+                              "floor_price":  25,
+                              "target_price":  45
+                          }
+                      ],
+    "scan_date":  "2026-07-25T09:16:07Z",
+    "metadata":  {
+                     "high_conviction":  2,
+                     "medium_conviction":  1,
+                     "total_scanned":  30
+                 }
+}
