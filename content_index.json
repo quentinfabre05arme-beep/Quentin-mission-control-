@@ -2,27 +2,27 @@
   "metadata": {
     "version": "1.0",
     "created": "2026-07-23T20:03:00+02:00",
-    "last_updated": "2026-07-24T14:10:59.941Z",
-    "total_files_indexed": 60,
-    "total_content_entries": 60,
-    "batch_number": 9,
+    "last_updated": "2026-07-24T18:04:48.870Z",
+    "total_files_indexed": 110,
+    "total_content_entries": 110,
+    "batch_number": 10,
     "last_batch_size": 50,
     "indexing_stats": {
-      "batches_completed": 9,
+      "batches_completed": 10,
       "files_read_this_session": 50,
-      "cumulative_files_indexed": 60,
+      "cumulative_files_indexed": 110,
       "failed_reads": 0,
       "topics_detected": {
-        "mission_control": 37,
-        "development": 40,
+        "mission_control": 61,
+        "development": 70,
         "automation": 10,
-        "investment": 48,
-        "data_analysis": 56,
-        "system_maintenance": 19,
+        "investment": 78,
+        "data_analysis": 85,
+        "system_maintenance": 45,
         "social_media": 5,
-        "configuration": 23,
-        "security": 24,
-        "pod_business": 13
+        "configuration": 53,
+        "security": 44,
+        "pod_business": 26
       }
     }
   },
@@ -1565,6 +1565,1190 @@
       ],
       "hash": "e12394d654dd0e480e97ea8165b1aacd",
       "indexed": "2026-07-24T14:10:59.940Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/Home-Life/Misc/post_2pm.md",
+      "size": 1072,
+      "mtime": "2026-07-23T11:10:48",
+      "summary": "--- # X POST 3 — 14:00 CET # TOPIC: Market Structure / Technical / On-Chain --- **HOOK:** Technical analysis + levels **TEXT:** ETH technical levels to watch: Support: • $1,850 — Recent swing low, mus...",
+      "key_phrases": [
+        "technical",
+        "levels",
+        "funding",
+        "chain",
+        "support",
+        "recent",
+        "psychological",
+        "exchange",
+        "neutral"
+      ],
+      "topics": [
+        "investment",
+        "development",
+        "data_analysis",
+        "configuration",
+        "system_maintenance"
+      ],
+      "hash": "9b15a502fb7201a210a3f59d4a666fa1",
+      "indexed": "2026-07-24T18:04:36.701Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/Home-Life/Misc/post_2pm_1.md",
+      "size": 1072,
+      "mtime": "2026-07-23T11:10:48",
+      "summary": "--- # X POST 3 — 14:00 CET # TOPIC: Market Structure / Technical / On-Chain --- **HOOK:** Technical analysis + levels **TEXT:** ETH technical levels to watch: Support: • $1,850 — Recent swing low, mus...",
+      "key_phrases": [
+        "technical",
+        "levels",
+        "funding",
+        "chain",
+        "support",
+        "recent",
+        "psychological",
+        "exchange",
+        "neutral"
+      ],
+      "topics": [
+        "investment",
+        "development",
+        "data_analysis",
+        "configuration",
+        "system_maintenance"
+      ],
+      "hash": "9b15a502fb7201a210a3f59d4a666fa1",
+      "indexed": "2026-07-24T18:04:37.300Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/Home-Life/Misc/post_6pm.md",
+      "size": 1372,
+      "mtime": "2026-07-23T11:10:48",
+      "summary": "--- # X POST 4 — 18:00 CET # TOPIC: Narrative / Thesis / Ethereum Infrastructure --- **HOOK:** Contrarian / thought leadership **TEXT:** Everyone obsesses over ETH price. Few understand what Ethereum...",
+      "key_phrases": [
+        "ethereum",
+        "infrastructure",
+        "thesis",
+        "narrative",
+        "competing",
+        "swift",
+        "global",
+        "financial",
+        "current",
+        "buidl"
+      ],
+      "topics": [
+        "investment",
+        "mission_control",
+        "data_analysis",
+        "configuration",
+        "security"
+      ],
+      "hash": "05a132675b5138588188963b6460dce6",
+      "indexed": "2026-07-24T18:04:37.551Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/Home-Life/Misc/post_6pm_1.md",
+      "size": 1372,
+      "mtime": "2026-07-23T11:10:48",
+      "summary": "--- # X POST 4 — 18:00 CET # TOPIC: Narrative / Thesis / Ethereum Infrastructure --- **HOOK:** Contrarian / thought leadership **TEXT:** Everyone obsesses over ETH price. Few understand what Ethereum...",
+      "key_phrases": [
+        "ethereum",
+        "infrastructure",
+        "thesis",
+        "narrative",
+        "competing",
+        "swift",
+        "global",
+        "financial",
+        "current",
+        "buidl"
+      ],
+      "topics": [
+        "investment",
+        "mission_control",
+        "data_analysis",
+        "configuration",
+        "security"
+      ],
+      "hash": "05a132675b5138588188963b6460dce6",
+      "indexed": "2026-07-24T18:04:37.738Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/Home-Life/Misc/post_730am.md",
+      "size": 937,
+      "mtime": "2026-07-23T11:10:48",
+      "summary": "--- # X POST 1 — 07:30 CET # TOPIC: Institutional Flows / BlackRock / ETF --- **HOOK:** Data-driven institutional flow update **TEXT:** ETH ETFs +$45M net inflow yesterday. BlackRock ETHA now at ~$1.2...",
+      "key_phrases": [
+        "institutional",
+        "blackrock",
+        "flows",
+        "inflows",
+        "price"
+      ],
+      "topics": [
+        "investment",
+        "data_analysis",
+        "system_maintenance"
+      ],
+      "hash": "d7693a37fb2c9b8383480e4fecde742b",
+      "indexed": "2026-07-24T18:04:38.103Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/Home-Life/Misc/post_730am_1.md",
+      "size": 937,
+      "mtime": "2026-07-23T11:10:48",
+      "summary": "--- # X POST 1 — 07:30 CET # TOPIC: Institutional Flows / BlackRock / ETF --- **HOOK:** Data-driven institutional flow update **TEXT:** ETH ETFs +$45M net inflow yesterday. BlackRock ETHA now at ~$1.2...",
+      "key_phrases": [
+        "institutional",
+        "blackrock",
+        "flows",
+        "inflows",
+        "price"
+      ],
+      "topics": [
+        "investment",
+        "data_analysis",
+        "system_maintenance"
+      ],
+      "hash": "d7693a37fb2c9b8383480e4fecde742b",
+      "indexed": "2026-07-24T18:04:38.372Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/Home-Life/Misc/post_now_1136.md",
+      "size": 806,
+      "mtime": "2026-07-23T11:36:11",
+      "summary": "--- # X POST — 11:36 CET (Live) # TOPIC: Staking + Restaking Yields # DATA: Live APIs --- **TEXT:** $1.93K ETH — staking update. The real opportunity: • 27.65% of ETH staked (33.25M) • Base yield: 3.2...",
+      "key_phrases": [
+        "yield",
+        "staking",
+        "restaking",
+        "eigenlayer",
+        "staked",
+        "total"
+      ],
+      "topics": [
+        "investment",
+        "development",
+        "data_analysis",
+        "system_maintenance"
+      ],
+      "hash": "97a863606a46515ab05d00f396776250",
+      "indexed": "2026-07-24T18:04:38.563Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/Home-Life/Misc/post_now_1136_1.md",
+      "size": 806,
+      "mtime": "2026-07-23T11:36:11",
+      "summary": "--- # X POST — 11:36 CET (Live) # TOPIC: Staking + Restaking Yields # DATA: Live APIs --- **TEXT:** $1.93K ETH — staking update. The real opportunity: • 27.65% of ETH staked (33.25M) • Base yield: 3.2...",
+      "key_phrases": [
+        "yield",
+        "staking",
+        "restaking",
+        "eigenlayer",
+        "staked",
+        "total"
+      ],
+      "topics": [
+        "investment",
+        "development",
+        "data_analysis",
+        "system_maintenance"
+      ],
+      "hash": "97a863606a46515ab05d00f396776250",
+      "indexed": "2026-07-24T18:04:38.751Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/Home-Life/Misc/post_template_01.md",
+      "size": 2015,
+      "mtime": "2026-07-23T11:02:12",
+      "summary": "# Substack Post Template: Deep Dive Format ## Title Formula \"[The/Why/How] [Ethereum/Narrative/Development] [Is/Will/Matters]: [Specific Angle]\" Examples: - \"The Ethereum ETF Flow Story Everyone's Mis...",
+      "key_phrases": [
+        "words",
+        "ethereum",
+        "analysis",
+        "section",
+        "follow",
+        "title",
+        "specific",
+        "yield",
+        "context",
+        "thesis"
+      ],
+      "topics": [
+        "investment",
+        "mission_control",
+        "development",
+        "data_analysis",
+        "configuration",
+        "security",
+        "system_maintenance"
+      ],
+      "hash": "ac269e1d55cea230249cd86efaf618b2",
+      "indexed": "2026-07-24T18:04:39.076Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/Home-Life/Misc/post_template_01_1.md",
+      "size": 2015,
+      "mtime": "2026-07-23T11:02:12",
+      "summary": "# Substack Post Template: Deep Dive Format ## Title Formula \"[The/Why/How] [Ethereum/Narrative/Development] [Is/Will/Matters]: [Specific Angle]\" Examples: - \"The Ethereum ETF Flow Story Everyone's Mis...",
+      "key_phrases": [
+        "words",
+        "ethereum",
+        "analysis",
+        "section",
+        "follow",
+        "title",
+        "specific",
+        "yield",
+        "context",
+        "thesis"
+      ],
+      "topics": [
+        "investment",
+        "mission_control",
+        "development",
+        "data_analysis",
+        "configuration",
+        "security",
+        "system_maintenance"
+      ],
+      "hash": "ac269e1d55cea230249cd86efaf618b2",
+      "indexed": "2026-07-24T18:04:39.346Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/Home-Life/Misc/QUICK_START.md",
+      "size": 5572,
+      "mtime": "2026-07-23T11:06:46",
+      "summary": "# Ethereum Authority — Quick Start Guide ## Mission Overview **Goal**: Become world-class specialist on Ethereum ecosystem, institutional adoption, and financial infrastructure. **Output**: Daily X in...",
+      "key_phrases": [
+        "encyclopedia",
+        "ecosystem",
+        "institutional",
+        "substack",
+        "flows",
+        "staking",
+        "thesis",
+        "ethereum",
+        "daily",
+        "research"
+      ],
+      "topics": [
+        "investment",
+        "pod_business",
+        "mission_control",
+        "development",
+        "data_analysis",
+        "configuration",
+        "security",
+        "system_maintenance"
+      ],
+      "hash": "e1b3975819147b98c3646f5a7c5171b9",
+      "indexed": "2026-07-24T18:04:39.694Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/Home-Life/Misc/QUICK_START_1.md",
+      "size": 5572,
+      "mtime": "2026-07-23T11:06:46",
+      "summary": "# Ethereum Authority — Quick Start Guide ## Mission Overview **Goal**: Become world-class specialist on Ethereum ecosystem, institutional adoption, and financial infrastructure. **Output**: Daily X in...",
+      "key_phrases": [
+        "encyclopedia",
+        "ecosystem",
+        "institutional",
+        "substack",
+        "flows",
+        "staking",
+        "thesis",
+        "ethereum",
+        "daily",
+        "research"
+      ],
+      "topics": [
+        "investment",
+        "pod_business",
+        "mission_control",
+        "development",
+        "data_analysis",
+        "configuration",
+        "security",
+        "system_maintenance"
+      ],
+      "hash": "e1b3975819147b98c3646f5a7c5171b9",
+      "indexed": "2026-07-24T18:04:39.984Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/Home-Life/Misc/README.md",
+      "size": 5354,
+      "mtime": "2026-07-23T11:23:34",
+      "summary": "# Free Ethereum API Suite — Phase 1 ## APIs Implemented ### 1. Etherscan API (Free) **File**: `etherscan_service.js` **What it provides:** - ETH total supply - ETH staked (beacon contract) - Gas price...",
+      "key_phrases": [
+        "const",
+        "service",
+        "etherscan",
+        "status",
+        "yield",
+        "coingecko",
+        "snapshot",
+        "limits",
+        "calls",
+        "optional"
+      ],
+      "topics": [
+        "investment",
+        "mission_control",
+        "development",
+        "data_analysis",
+        "configuration",
+        "security",
+        "system_maintenance"
+      ],
+      "hash": "2d8a28c7ec6914f480d492b1a9257100",
+      "indexed": "2026-07-24T18:04:40.185Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/Home-Life/Misc/README_1.md",
+      "size": 5354,
+      "mtime": "2026-07-23T11:23:34",
+      "summary": "# Free Ethereum API Suite — Phase 1 ## APIs Implemented ### 1. Etherscan API (Free) **File**: `etherscan_service.js` **What it provides:** - ETH total supply - ETH staked (beacon contract) - Gas price...",
+      "key_phrases": [
+        "const",
+        "service",
+        "etherscan",
+        "status",
+        "yield",
+        "coingecko",
+        "snapshot",
+        "limits",
+        "calls",
+        "optional"
+      ],
+      "topics": [
+        "investment",
+        "mission_control",
+        "development",
+        "data_analysis",
+        "configuration",
+        "security",
+        "system_maintenance"
+      ],
+      "hash": "2d8a28c7ec6914f480d492b1a9257100",
+      "indexed": "2026-07-24T18:04:40.386Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/Home-Life/Misc/SKILL.md",
+      "size": 3956,
+      "mtime": "2026-07-23T11:01:43",
+      "summary": "# Ethereum Authority Mission ## 🎯 Core Thesis **\"Ethereum is emerging as the dominant institutional-grade digital asset, with ETF flows, treasury adoption, and restaking economics creating a self-rei...",
+      "key_phrases": [
+        "institutional",
+        "market",
+        "flows",
+        "volume",
+        "thesis",
+        "ethereum",
+        "encyclopedia",
+        "structure",
+        "dynamics",
+        "staking"
+      ],
+      "topics": [
+        "investment",
+        "pod_business",
+        "mission_control",
+        "development",
+        "data_analysis",
+        "configuration",
+        "security",
+        "system_maintenance"
+      ],
+      "hash": "9dc1d8b28cc8926268bcc41781704c44",
+      "indexed": "2026-07-24T18:04:40.596Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/Home-Life/Misc/SKILL_1.md",
+      "size": 3956,
+      "mtime": "2026-07-23T11:01:43",
+      "summary": "# Ethereum Authority Mission ## 🎯 Core Thesis **\"Ethereum is emerging as the dominant institutional-grade digital asset, with ETF flows, treasury adoption, and restaking economics creating a self-rei...",
+      "key_phrases": [
+        "institutional",
+        "market",
+        "flows",
+        "volume",
+        "thesis",
+        "ethereum",
+        "encyclopedia",
+        "structure",
+        "dynamics",
+        "staking"
+      ],
+      "topics": [
+        "investment",
+        "pod_business",
+        "mission_control",
+        "development",
+        "data_analysis",
+        "configuration",
+        "security",
+        "system_maintenance"
+      ],
+      "hash": "9dc1d8b28cc8926268bcc41781704c44",
+      "indexed": "2026-07-24T18:04:40.769Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/Home-Life/Misc/TEMPLATE_ROTATION.md",
+      "size": 4066,
+      "mtime": "2026-07-23T11:11:13",
+      "summary": "# X Post Rotation Schedule ## Daily 4-Post Structure ### POST 1 — 07:30 CET: INSTITUTIONAL FLOWS **Focus:** BlackRock, ETF flows, institutional adoption, BUIDL **Topic Rotation:** | Day | Focus | |---...",
+      "key_phrases": [
+        "institutional",
+        "ecosystem",
+        "focus",
+        "market",
+        "thesis",
+        "staking",
+        "rotation",
+        "blackrock",
+        "topic",
+        "monday"
+      ],
+      "topics": [
+        "investment",
+        "pod_business",
+        "mission_control",
+        "development",
+        "data_analysis",
+        "configuration",
+        "security"
+      ],
+      "hash": "1334031b20a9126c7cad568b12b79167",
+      "indexed": "2026-07-24T18:04:41.015Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/Home-Life/Misc/TEMPLATE_ROTATION_1.md",
+      "size": 4066,
+      "mtime": "2026-07-23T11:11:13",
+      "summary": "# X Post Rotation Schedule ## Daily 4-Post Structure ### POST 1 — 07:30 CET: INSTITUTIONAL FLOWS **Focus:** BlackRock, ETF flows, institutional adoption, BUIDL **Topic Rotation:** | Day | Focus | |---...",
+      "key_phrases": [
+        "institutional",
+        "ecosystem",
+        "focus",
+        "market",
+        "thesis",
+        "staking",
+        "rotation",
+        "blackrock",
+        "topic",
+        "monday"
+      ],
+      "topics": [
+        "investment",
+        "pod_business",
+        "mission_control",
+        "development",
+        "data_analysis",
+        "configuration",
+        "security"
+      ],
+      "hash": "1334031b20a9126c7cad568b12b79167",
+      "indexed": "2026-07-24T18:04:41.222Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/Home-Life/Misc/thread_template_01.md",
+      "size": 1381,
+      "mtime": "2026-07-23T11:02:12",
+      "summary": "# X Thread Template: ETH ETF Flows ## Hook Options (Choose one) 1. \"ETH ETFs just saw the largest daily inflow since launch. Here's what it means...\" 2. \"Everyone focused on BTC ETFs is missing the ET...",
+      "key_phrases": [
+        "tweet",
+        "flows",
+        "factor",
+        "thread",
+        "daily",
+        "inflow",
+        "since",
+        "launch",
+        "means",
+        "story"
+      ],
+      "topics": [
+        "investment",
+        "data_analysis",
+        "configuration"
+      ],
+      "hash": "145684998f992330f73f452142603de0",
+      "indexed": "2026-07-24T18:04:41.460Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/Home-Life/Misc/thread_template_01_1.md",
+      "size": 1381,
+      "mtime": "2026-07-23T11:02:12",
+      "summary": "# X Thread Template: ETH ETF Flows ## Hook Options (Choose one) 1. \"ETH ETFs just saw the largest daily inflow since launch. Here's what it means...\" 2. \"Everyone focused on BTC ETFs is missing the ET...",
+      "key_phrases": [
+        "tweet",
+        "flows",
+        "factor",
+        "thread",
+        "daily",
+        "inflow",
+        "since",
+        "launch",
+        "means",
+        "story"
+      ],
+      "topics": [
+        "investment",
+        "data_analysis",
+        "configuration"
+      ],
+      "hash": "145684998f992330f73f452142603de0",
+      "indexed": "2026-07-24T18:04:41.659Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/ORGANIZATION-FINAL-REPORT.txt",
+      "size": 6139,
+      "mtime": "2026-07-11T14:39:40",
+      "summary": "# ✅ ONEDRIVE FULL ORGANIZATION COMPLETE **Date:** 2026-07-11 **Organized by:** Claw --- ## 📊 STATISTICS | Category | Files/Folders | Status | |----------|---------------|--------| | Documents organiz...",
+      "key_phrases": [
+        "library",
+        "files",
+        "documents",
+        "organized",
+        "mission",
+        "control",
+        "dashboard",
+        "development",
+        "complete",
+        "business"
+      ],
+      "topics": [
+        "investment",
+        "pod_business",
+        "mission_control",
+        "development",
+        "data_analysis",
+        "configuration",
+        "security",
+        "system_maintenance"
+      ],
+      "hash": "a32376b171a01f2339ee780a6cc79b17",
+      "indexed": "2026-07-24T18:04:41.957Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/QUICK_STATUS.txt",
+      "size": 1541,
+      "mtime": "2026-07-10T14:39:19",
+      "summary": "QUENTIN'S AUTOMATION STATUS Updated: July 10, 2026 | 14:40 ======================================== X GROWTH (@quentinvest1) ======================================== Status: ✅ RUNNING Next briefing: T...",
+      "key_phrases": [
+        "status",
+        "tomorrow",
+        "action",
+        "youtube",
+        "monitoring",
+        "onedrive",
+        "digest",
+        "progress",
+        "today",
+        "trend"
+      ],
+      "topics": [
+        "mission_control",
+        "system_maintenance"
+      ],
+      "hash": "5ffe10d9212e302c1dbd2ce6ac89cd51",
+      "indexed": "2026-07-24T18:04:42.264Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/README-ORGANISATION.txt",
+      "size": 2627,
+      "mtime": "2026-07-11T14:31:49",
+      "summary": "# 📁 OneDrive Organization — Quentin **Last organized:** 2026-07-11 by Claw --- ## 📂 Folder Structure | Folder | Purpose | What's Inside | |--------|---------|---------------| | **00-INBOX** | 📥 Tem...",
+      "key_phrases": [
+        "library",
+        "files",
+        "mission",
+        "control",
+        "development",
+        "projects",
+        "dashboard",
+        "phone",
+        "onedrive",
+        "ressources"
+      ],
+      "topics": [
+        "investment",
+        "pod_business",
+        "mission_control",
+        "development",
+        "configuration",
+        "system_maintenance"
+      ],
+      "hash": "6e504242cc518fc2ce9cde2cae822b6d",
+      "indexed": "2026-07-24T18:04:42.469Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/application.ini",
+      "size": 660,
+      "mtime": "2026-03-23T09:00:00",
+      "summary": "; This file is not used. If you modify it and want the application to use ; your modifications, move it under the browser/ subdirectory and start with ; the \"-app /path/to/browser/application.ini\" arg...",
+      "key_phrases": [
+        "browser",
+        "application",
+        "version",
+        "https",
+        "torproject"
+      ],
+      "topics": [
+        "development",
+        "configuration",
+        "system_maintenance"
+      ],
+      "hash": "534387a24d6f6e80f6f4c57d96c122e8",
+      "indexed": "2026-07-24T18:04:42.708Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/firefox.VisualElementsManifest.xml",
+      "size": 557,
+      "mtime": "2026-03-23T09:00:00",
+      "summary": "<!-- This Source Code Form is subject to the terms of the Mozilla Public - License, v. 2.0. If a copy of the MPL was not distributed with this file, - You can obtain one at http://mozilla.org/MPL/2.0/...",
+      "key_phrases": [
+        "visualelements",
+        "mozilla",
+        "application",
+        "browser"
+      ],
+      "topics": [
+        "development"
+      ],
+      "hash": "2335babeccba32a1f076f5835dbc025f",
+      "indexed": "2026-07-24T18:04:42.910Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/platform.ini",
+      "size": 178,
+      "mtime": "2026-03-23T09:00:00",
+      "summary": "[Build] BuildID=20260323080000 Milestone=140.9.0 SourceRepository=https://gitlab.torproject.org/tpo/applications/tor-browser SourceStamp=4ce26c3e727f8d0cab3142255549edb2a6635d29",
+      "key_phrases": [],
+      "topics": [],
+      "hash": "8b62f337d5367484efe3e753b07bd8d0",
+      "indexed": "2026-07-24T18:04:43.126Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/tbb_version.json",
+      "size": 73,
+      "mtime": "2026-03-23T09:00:00",
+      "summary": "{\"version\":\"15.0.8\",\"architecture\":\"windows-x86_64\",\"channel\":\"release\"}",
+      "key_phrases": [],
+      "topics": [],
+      "hash": "5b4049627a0ce6a586d6c0afac39430b",
+      "indexed": "2026-07-24T18:04:43.317Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/update-settings.ini",
+      "size": 138,
+      "mtime": "2026-03-23T09:00:00",
+      "summary": "; If you modify this file updates may fail. ; Do not modify this file. [Settings] ACCEPTED_MAR_CHANNEL_IDS=torbrowser-torproject-release",
+      "key_phrases": [
+        "modify"
+      ],
+      "topics": [
+        "configuration",
+        "system_maintenance"
+      ],
+      "hash": "f4398a21462e1725bc37f51b26b91ff8",
+      "indexed": "2026-07-24T18:04:43.546Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/updater.ini",
+      "size": 1210,
+      "mtime": "2026-03-23T09:00:00",
+      "summary": "; This Source Code Form is subject to the terms of the Mozilla Public ; License, v. 2.0. If a copy of the MPL was not distributed with this ; file, You can obtain one at http://mozilla.org/MPL/2.0/. ;...",
+      "key_phrases": [
+        "mozilla",
+        "update",
+        "application",
+        "directory",
+        "executable",
+        "postupdatewin",
+        "browser",
+        "start",
+        "service",
+        "firefox"
+      ],
+      "topics": [
+        "development",
+        "configuration",
+        "security",
+        "system_maintenance"
+      ],
+      "hash": "6483d54fd736cd0ada54211424769b59",
+      "indexed": "2026-07-24T18:04:43.753Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/defaults/pref/channel-prefs.js",
+      "size": 429,
+      "mtime": "2026-03-23T09:00:00",
+      "summary": "/* This Source Code Form is subject to the terms of the Mozilla Public * License, v. 2.0. If a copy of the MPL was not distributed with this * file, You can obtain one at http://mozilla.org/MPL/2.0/....",
+      "key_phrases": [
+        "mozilla"
+      ],
+      "topics": [
+        "development",
+        "system_maintenance"
+      ],
+      "hash": "7d9d37eff1dc4e59a6437026602f1953",
+      "indexed": "2026-07-24T18:04:43.956Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/fonts/000_README.txt",
+      "size": 296,
+      "mtime": "2026-03-23T09:00:00",
+      "summary": "DO NOT MODIFY THE CONTENTS OF THIS DIRECTORY Any adjustment to bundled fonts will result in an altered fingerprint. Font fingerprinting is more than just detecting what fonts you have, it also include...",
+      "key_phrases": [
+        "fonts"
+      ],
+      "topics": [
+        "development"
+      ],
+      "hash": "14014e6904c0a496afaf2a7ba6f63926",
+      "indexed": "2026-07-24T18:04:44.141Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/TorBrowser/Data/Browser/profiles.ini",
+      "size": 103,
+      "mtime": "2026-03-23T09:00:00",
+      "summary": "[General] StartWithLastProfile=1 [Profile0] Name=default IsRelative=1 Path=profile.default Default=1",
+      "key_phrases": [
+        "default"
+      ],
+      "topics": [],
+      "hash": "11dedeb495c4c00ad4ef2ecacbd58918",
+      "indexed": "2026-07-24T18:04:44.374Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/TorBrowser/Data/Browser/profile.default/broadcast-listeners.json",
+      "size": 209,
+      "mtime": "2026-07-08T10:26:44",
+      "summary": "{\"version\":1,\"listeners\":{\"remote-settings/monitor_changes\":{\"version\":\"\\\"0\\\"\",\"sourceInfo\":{\"moduleURI\":\"resource://services-settings/remote-settings.sys.mjs\",\"symbolName\":\"remoteSettingsBroadcastHan...",
+      "key_phrases": [
+        "settings",
+        "version",
+        "remote"
+      ],
+      "topics": [
+        "development",
+        "configuration",
+        "system_maintenance"
+      ],
+      "hash": "63221253f5c30efa214c2cd2adcf51a9",
+      "indexed": "2026-07-24T18:04:44.721Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/TorBrowser/Data/Browser/profile.default/compatibility.ini",
+      "size": 266,
+      "mtime": "2026-04-06T16:54:24",
+      "summary": "[Compatibility] LastVersion=140.9.0_20260323080000/20260323080000 LastTorBrowserVersion=15.0.8 LastOSABI=WINNT_x86_64-gcc3 LastPlatformDir=C:\\Users\\quent\\OneDrive\\Bureau\\Tor Browser\\Browser LastAppDir...",
+      "key_phrases": [
+        "browser",
+        "users",
+        "quent",
+        "onedrive",
+        "bureau"
+      ],
+      "topics": [],
+      "hash": "45d81ac7f397871fc620123cecb6aa89",
+      "indexed": "2026-07-24T18:04:44.895Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/TorBrowser/Data/Browser/profile.default/containers.json",
+      "size": 688,
+      "mtime": "2026-04-06T16:56:42",
+      "summary": "{\"version\":5,\"lastUserContextId\":5,\"identities\":[{\"icon\":\"fingerprint\",\"color\":\"blue\",\"l10nId\":\"user-context-personal\",\"public\":true,\"userContextId\":1},{\"icon\":\"briefcase\",\"color\":\"orange\",\"l10nId\":\"u...",
+      "key_phrases": [
+        "color",
+        "public",
+        "usercontextid",
+        "l10nid",
+        "context",
+        "false",
+        "usercontextidinternal",
+        "accesskey"
+      ],
+      "topics": [],
+      "hash": "b32a837702b91f3d6c3a6a50da2e31f1",
+      "indexed": "2026-07-24T18:04:45.127Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/TorBrowser/Data/Browser/profile.default/extension-preferences.json",
+      "size": 281,
+      "mtime": "2026-04-06T16:54:35",
+      "summary": "{\"{73a6fe31-595d-460b-a920-fcc0f8843232}\":{\"permissions\":[\"internal:privateBrowsingAllowed\"],\"origins\":[],\"data_collection\":[]},\"default-theme@mozilla.org\":{\"permissions\":[\"internal:privateBrowsingAll...",
+      "key_phrases": [
+        "internal",
+        "permissions",
+        "privatebrowsingallowed",
+        "origins",
+        "data_collection"
+      ],
+      "topics": [
+        "mission_control",
+        "data_analysis"
+      ],
+      "hash": "3927953e9d55c768889e07b68de4d6d6",
+      "indexed": "2026-07-24T18:04:45.342Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/TorBrowser/Data/Browser/profile.default/extensions.json",
+      "size": 18325,
+      "mtime": "2026-07-08T10:26:57",
+      "summary": "{\"schemaVersion\":37,\"addons\":[{\"id\":\"default-theme@mozilla.org\",\"syncGUID\":\"{78044f68-7f6c-40d4-a949-87a54a2ccc9c}\",\"version\":\"1.4.1\",\"type\":\"theme\",\"loader\":null,\"updateURL\":null,\"installOrigins\":nul...",
+      "key_phrases": [
+        "noscript",
+        "description",
+        "creator",
+        "developers",
+        "translators",
+        "contributors",
+        "false",
+        "locales",
+        "browser",
+        "mozilla"
+      ],
+      "topics": [
+        "investment",
+        "mission_control",
+        "development",
+        "data_analysis",
+        "configuration",
+        "system_maintenance"
+      ],
+      "hash": "c0490c9851325d8b203bc710b06c7951",
+      "indexed": "2026-07-24T18:04:45.524Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/TorBrowser/Data/Browser/profile.default/handlers.json",
+      "size": 380,
+      "mtime": "2026-04-06T16:56:43",
+      "summary": "{\"defaultHandlersVersion\":{},\"mimeTypes\":{\"application/pdf\":{\"action\":3,\"extensions\":[\"pdf\"]},\"image/webp\":{\"action\":3,\"extensions\":[\"webp\"]},\"image/avif\":{\"action\":3,\"extensions\":[\"avif\"]}},\"schemes\"...",
+      "key_phrases": [
+        "action",
+        "extensions",
+        "image",
+        "mailto"
+      ],
+      "topics": [],
+      "hash": "a0e0f7d600383de873dcb01474154fbb",
+      "indexed": "2026-07-24T18:04:45.774Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/TorBrowser/Data/Browser/profile.default/onion-aliases.json",
+      "size": 5394,
+      "mtime": "2026-07-08T10:26:54",
+      "summary": "{\"lastCheck\":1783499208137,\"channels\":[{\"name\":\"SecureDropTorOnion2021\",\"pathPrefix\":\"https://securedrop.org/https-everywhere-2021/\",\"jwk\":{\"kty\":\"RSA\",\"e\":\"AQAB\",\"n\":\"vsC7BNafkRe8Uh1DUgCkv6RbPQMdJgAK...",
+      "key_phrases": [
+        "onion",
+        "securedrop",
+        "https"
+      ],
+      "topics": [
+        "investment"
+      ],
+      "hash": "bb73187e3a32a5a4ad2a1cce11e0a617",
+      "indexed": "2026-07-24T18:04:45.983Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/TorBrowser/Data/Browser/profile.default/prefs.js",
+      "size": 7342,
+      "mtime": "2026-07-08T12:24:11",
+      "summary": "// Mozilla User Preferences // DO NOT EDIT THIS FILE. // // If you make changes to this file while the application is running, // the changes will be overwritten when the application exits. // // To c...",
+      "key_phrases": [
+        "user_pref",
+        "browser",
+        "extensions",
+        "button",
+        "false",
+        "version",
+        "privacy",
+        "update",
+        "startup",
+        "media"
+      ],
+      "topics": [
+        "investment",
+        "mission_control",
+        "development",
+        "data_analysis",
+        "configuration",
+        "security",
+        "system_maintenance"
+      ],
+      "hash": "49180ccb33859c895fbfd419a30afe63",
+      "indexed": "2026-07-24T18:04:46.268Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/TorBrowser/Data/Browser/profile.default/sessionCheckpoints.json",
+      "size": 241,
+      "mtime": "2026-07-08T12:24:12",
+      "summary": "{\"profile-after-change\":true,\"final-ui-startup\":true,\"sessionstore-windows-restored\":true,\"quit-application-granted\":true,\"quit-application\":true,\"profile-change-net-teardown\":true,\"profile-change-tea...",
+      "key_phrases": [
+        "profile",
+        "change",
+        "application",
+        "teardown"
+      ],
+      "topics": [],
+      "hash": "dd8349e2789db1125b477971c5d445b6",
+      "indexed": "2026-07-24T18:04:46.512Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/TorBrowser/Data/Browser/profile.default/times.json",
+      "size": 50,
+      "mtime": "2026-04-06T16:54:33",
+      "summary": "{\"firstUse\":1775487267913,\"created\":1775487219613}",
+      "key_phrases": [],
+      "topics": [],
+      "hash": "bb4870d6ff5dd3aa4f7405b6f697a2b5",
+      "indexed": "2026-07-24T18:04:46.689Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/TorBrowser/Data/Browser/profile.default/xulstore.json",
+      "size": 170,
+      "mtime": "2026-07-08T12:24:12",
+      "summary": "{\"chrome://browser/content/browser.xhtml\":{\"main-window\":{\"width\":\"1414\",\"height\":\"792\",\"screenX\":\"4\",\"screenY\":\"4\",\"sizemode\":\"maximized\"},\"sidebar-title\":{\"value\":\"\"}}}",
+      "key_phrases": [
+        "browser"
+      ],
+      "topics": [],
+      "hash": "450f86e92b1dd7c152e37e6d51749b5e",
+      "indexed": "2026-07-24T18:04:46.925Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/TorBrowser/Data/Browser/profile.default/datareporting/state.json",
+      "size": 236,
+      "mtime": "2026-04-06T16:56:41",
+      "summary": "{\"version\":2,\"clientID\":\"c0ffeec0-ffee-c0ff-eec0-ffeec0ffeec0\",\"profileGroupID\":\"decafdec-afde-cafd-ecaf-decafdecafde\",\"usageProfileID\":\"beefbeef-beef-beef-beef-beeefbeefbee\",\"usageProfileGroupID\":\"b0...",
+      "key_phrases": [],
+      "topics": [],
+      "hash": "a2c493b4a667af693b89030434c23d45",
+      "indexed": "2026-07-24T18:04:47.158Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/TorBrowser/Docs/ChangeLog.txt",
+      "size": 659143,
+      "mtime": "2026-03-23T09:00:00",
+      "summary": "Tor Browser 15.0.8 - March 24 2026 * All Platforms * Updated NoScript to 13.6.12.1984 * Bug 44663: NoScript behavior on “Safer” security level prevents integrity checks for dynamically loaded javascri...",
+      "key_phrases": [
+        "browser",
+        "build",
+        "update",
+        "android",
+        "windows",
+        "linux",
+        "firefox",
+        "remove",
+        "updated",
+        "platforms"
+      ],
+      "topics": [
+        "investment",
+        "pod_business",
+        "mission_control",
+        "development",
+        "data_analysis",
+        "configuration",
+        "security",
+        "system_maintenance"
+      ],
+      "hash": "3102c95c81c68fe73f94787cf75d1170",
+      "indexed": "2026-07-24T18:04:47.617Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/TorBrowser/Docs/conjure/README.md",
+      "size": 2750,
+      "mtime": "2026-03-23T09:00:00",
+      "summary": "# Conjure [Conjure](https://jhalderm.com/pub/papers/conjure-ccs19.pdf) is an anti-censorship tool in the refraction networking (a.k.a. decoy routing) lineage of circumvention systems. The key innovati...",
+      "key_phrases": [
+        "conjure",
+        "client",
+        "https",
+        "deployed",
+        "bridge",
+        "station",
+        "censorship",
+        "proxies",
+        "users",
+        "connect"
+      ],
+      "topics": [
+        "mission_control",
+        "development",
+        "data_analysis",
+        "configuration"
+      ],
+      "hash": "f7e9211dd0e0089c93a0a84329fed41b",
+      "indexed": "2026-07-24T18:04:47.862Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/TorBrowser/Docs/Licenses/conjure.txt",
+      "size": 127227,
+      "mtime": "2026-03-23T09:00:00",
+      "summary": "filippo.io/bigmod/LICENSE ========================= Copyright (c) 2009 The Go Authors. All rights reserved. Redistribution and use in source and binary forms, with or without modification, are permitt...",
+      "key_phrases": [
+        "copyright",
+        "license",
+        "software",
+        "including",
+        "conditions",
+        "without",
+        "shall",
+        "provided",
+        "notice",
+        "source"
+      ],
+      "topics": [
+        "investment",
+        "pod_business",
+        "mission_control",
+        "development",
+        "data_analysis",
+        "configuration",
+        "security"
+      ],
+      "hash": "0522541e3505d6669334f6eb488d4fde",
+      "indexed": "2026-07-24T18:04:48.199Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/TorBrowser/Docs/Licenses/Firefox.txt",
+      "size": 16726,
+      "mtime": "2026-03-23T09:00:00",
+      "summary": "Mozilla Public License Version 2.0 ================================== 1. Definitions -------------- 1.1. \"Contributor\" means each individual or legal entity that creates, contributes to the creation o...",
+      "key_phrases": [
+        "license",
+        "software",
+        "covered",
+        "contributor",
+        "under",
+        "source",
+        "terms",
+        "means",
+        "version",
+        "rights"
+      ],
+      "topics": [
+        "investment",
+        "pod_business",
+        "mission_control",
+        "development",
+        "configuration",
+        "security",
+        "system_maintenance"
+      ],
+      "hash": "fab3dd6bdab226f1c08630b1dd917e11",
+      "indexed": "2026-07-24T18:04:48.421Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/TorBrowser/Docs/Licenses/libevent.txt",
+      "size": 4528,
+      "mtime": "2026-03-23T09:00:00",
+      "summary": "Libevent is available for use under the following license, commonly known as the 3-clause (or \"modified\") BSD license: ============================== Copyright (c) 2000-2007 Niels Provos <provos@citi....",
+      "key_phrases": [
+        "copyright",
+        "software",
+        "license",
+        "following",
+        "without",
+        "provided",
+        "above",
+        "notice",
+        "including",
+        "author"
+      ],
+      "topics": [
+        "investment",
+        "pod_business",
+        "mission_control",
+        "development",
+        "data_analysis",
+        "configuration",
+        "security"
+      ],
+      "hash": "ff02effc9b331edcdac387d198691bfa",
+      "indexed": "2026-07-24T18:04:48.576Z",
+      "encoding": "utf8"
+    },
+    {
+      "path": "C:/Users/quent/OneDrive/🏠-Home-Life/Bureau/Tor Browser/Browser/TorBrowser/Docs/Licenses/lyrebird.txt",
+      "size": 282585,
+      "mtime": "2026-03-23T09:00:00",
+      "summary": "filippo.io/edwards25519/LICENSE =============================== Copyright (c) 2009 The Go Authors. All rights reserved. Redistribution and use in source and binary forms, with or without modification,...",
+      "key_phrases": [
+        "license",
+        "copyright",
+        "software",
+        "shall",
+        "works",
+        "conditions",
+        "derivative",
+        "including",
+        "notice",
+        "source"
+      ],
+      "topics": [
+        "investment",
+        "pod_business",
+        "mission_control",
+        "development",
+        "data_analysis",
+        "configuration",
+        "security"
+      ],
+      "hash": "2331e6517a15ce87e2a1d2838c314ca1",
+      "indexed": "2026-07-24T18:04:48.868Z",
       "encoding": "utf8"
     }
   ],

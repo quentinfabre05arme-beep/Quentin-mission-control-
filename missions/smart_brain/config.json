@@ -1,0 +1,77 @@
+{
+  "version": "1.0",
+  "name": "Smartest Brain",
+  "description": "Multi-model AI orchestration for maximum intelligence",
+  "models": {
+    "primary": {
+      "name": "kimi-k2.6",
+      "id": "ollama-cloud/kimi-k2.6",
+      "role": "orchestrator",
+      "strengths": ["reasoning", "planning", "complex_analysis", "architecture_design"],
+      "use_for": ["task_decomposition", "quality_validation", "final_decisions"],
+      "priority": 1
+    },
+    "coder": {
+      "name": "qwen3-coder",
+      "id": "ollama-cloud/qwen3-coder:cloud",
+      "role": "implementation",
+      "strengths": ["code_generation", "debugging", "technical_implementation"],
+      "use_for": ["scripting", "development", "code_review"],
+      "priority": 2
+    },
+    "fast": {
+      "name": "qwen3",
+      "id": "ollama-cloud/qwen3:cloud",
+      "role": "quick_response",
+      "strengths": ["speed", "summarization", "general_knowledge"],
+      "use_for": ["quick_queries", "summaries", "chat"],
+      "priority": 3
+    },
+    "cheap": {
+      "name": "mistral-nemo",
+      "id": "ollama-cloud/mistral-nemo:cloud",
+      "role": "monitoring",
+      "strengths": ["efficiency", "low_cost", "reliability"],
+      "use_for": ["health_checks", "monitoring", "routine_tasks"],
+      "priority": 4
+    },
+    "safety": {
+      "name": "llama3.1",
+      "id": "ollama-cloud/llama3.1:cloud",
+      "role": "validation",
+      "strengths": ["safety", "fact_checking", "reliability"],
+      "use_for": ["validation", "safety_checks", "fallback"],
+      "priority": 5
+    }
+  },
+  "routing_rules": {
+    "code_tasks": {
+      "patterns": ["script", "code", "program", "function", "bug", "debug", "implement", "python", "javascript", "java", "error", "write a", "build"],
+      "model": "coder",
+      "confidence_threshold": 0.8
+    },
+    "quick_queries": {
+      "patterns": ["what is", "how to", "explain", "summarize", "quick"],
+      "model": "fast",
+      "max_tokens": 500
+    },
+    "complex_analysis": {
+      "patterns": ["analyze", "research", "evaluate", "compare", "strategy"],
+      "model": "primary",
+      "requires_context": true
+    },
+    "monitoring": {
+      "patterns": ["status", "health", "check", "monitor", "alert"],
+      "model": "cheap",
+      "frequency": "every_5_min"
+    },
+    "validation": {
+      "patterns": ["verify", "validate", "confirm", "fact check"],
+      "model": "safety",
+      "always_run": true
+    }
+  },
+  "fallback_chain": ["primary", "fast", "safety"],
+  "max_retries": 3,
+  "timeout_seconds": 120
+}

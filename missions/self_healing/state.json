@@ -1,14 +1,14 @@
 {
   "runs": [],
-  "totalIssuesFixed": 0,
+  "totalIssuesFixed": 1,
   "lastRun": {
-    "healthScore": 100,
-    "issues": 0,
-    "fixes": 0,
-    "improvements": 1,
-    "shouldReport": false,
-    "timestamp": "2026-07-24T17:05:09.859Z"
+    "healthScore": 78,
+    "issues": 4,
+    "fixes": 1,
+    "improvements": 0,
+    "shouldReport": true,
+    "timestamp": "2026-07-25T06:37:07.174Z"
   },
-  "totalRuns": 1,
-  "totalIssuesDetected": 0
+  "totalRuns": 5,
+  "totalIssuesDetected": 6
 }

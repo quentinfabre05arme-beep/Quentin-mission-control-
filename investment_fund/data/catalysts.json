@@ -1,13 +1,6 @@
 {
-  "timestamp": "2026-07-24T16:40:17.703Z",
+  "timestamp": "2026-07-25T06:37:06.910Z",
   "catalysts": [
-    {
-      "ticker": "TSLA",
-      "date": "2026-07-25",
-      "event": "Q2 Earnings",
-      "impact": "high",
-      "type": "earnings"
-    },
     {
       "ticker": "MSTR",
       "date": "2026-07-28",
@@ -28,6 +21,10 @@
       "event": "SIGGRAPH Conference",
       "impact": "medium",
       "type": "conference"
-    }
-  ]
-}
+    },
+    {
+      "ticker": "COIN",
+      "date": "2026-08-01",
+      "event": "Institutional Platform Launch",
+      "impact": "high",
+      "type": "pro

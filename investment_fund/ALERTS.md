@@ -21,11 +21,11 @@
 
 ---
 
-## 🟡 ACTIVE ALERT — July 24, 2026 12:10 CET
+## 🟡 ACTIVE ALERT — July 24, 2026 20:11 CET (UPDATED)
 
 ### BTC Mean Reversion — SETUP ACTIVE
 - **Asset:** BTC
-- **Current:** $65,031 (+0.94% 24h)
+- **Current:** $64,113 (+0.89% 24h)
 - **Signal:** Fear & Greed 28 (EXTREME FEAR = contrarian buy)
 - **Entry Zone:** $63,000-$64,500 (or current if FOMO)
 
@@ -49,9 +49,9 @@
 
 ### ETH DCA Zone
 - **Entry Zone:** <$1,850 (ideal $1,800-$1,820)
-- **Current:** $1,886
+- **Current:** $1,864 (+0.77%)
 - **Action:** WATCH for pullback entry
-- **Status:** OUTPERFORMING (+2% vs BTC +0.94%)
+- **Status:** OUTPERFORMING BTC
 
 ### HIMS Momentum Confirmation
 - **Entry Zone:** Current $32.74 on breakout confirmation
@@ -67,5 +67,19 @@
 
 ---
 
-*Last Updated: 2026-07-24 12:10 CET*  
-*Next Review: 16:10 CET or on significant market move*
+---
+
+## 🔄 RESEARCH CYCLE LOG
+
+**Cycle #2026-07-24-2011:** Research log written to `investment_fund/research/daily_2026-07-24.md`
+- BTC: $64,113 (+0.89%), Fear & Greed 28 (FEAR) — Mean reversion setup active
+- ETH: $1,864 (+0.77%) — Outperforming BTC
+- MSTR: $93.63 (-6.38%) — Under pressure, wait for <$90
+- HIMS: $32.74 (+3.35%) — Recovered, watching $33 breakout
+
+**No immediate action required.** All setups in monitoring phase.
+
+---
+
+*Last Updated: 2026-07-24 20:11 CET*  
+*Next Review: Next research cycle or on significant market move*
