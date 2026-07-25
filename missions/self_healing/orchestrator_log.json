@@ -90,4 +90,74 @@
         "timestamp": "2026-07-24T19:04:05.478Z"
       }
     },
-    
+    {
+      "timestamp": 1784961427176,
+      "isoTime": "2026-07-25T06:37:07.176Z",
+      "cycle": 5,
+      "issues": [
+        {
+          "severity": "medium",
+          "system": "Mission Control",
+          "issue": "Stale orchestrator data (11.6h ago)",
+          "detail": "Last cycle may have failed"
+        },
+        {
+          "severity": "medium",
+          "system": "Dashboard",
+          "issue": "Dashboard stale (14.6h since update)",
+          "detail": "Timestamp sync may be failing"
+        },
+        {
+          "severity": "medium",
+          "system": "Market Data",
+          "issue": "Price data stale (13.4h old)",
+          "detail": "Market data service may be down"
+        },
+        {
+          "severity": "low",
+          "system": "Git",
+          "issue": "34 uncommitted changes",
+          "detail": "Consider committing to prevent data loss"
+        }
+      ],
+      "fixes": [
+        {
+          "success": true,
+          "action": "Refreshed market data via market_data_service.js"
+        }
+      ],
+      "improvements": [],
+      "assessment": {
+        "healthScore": 78,
+        "issues": 4,
+        "fixes": 1,
+        "improvements": 0,
+        "shouldReport": true,
+        "timestamp": "2026-07-25T06:37:07.174Z"
+      }
+    },
+    {
+      "timestamp": 1784963040698,
+      "isoTime": "2026-07-25T07:04:00.698Z",
+      "cycle": 6,
+      "issues": [
+        {
+          "severity": "low",
+          "system": "Git",
+          "issue": "25 uncommitted changes",
+          "detail": "Consider committing to prevent data loss"
+        }
+      ],
+      "fixes": [],
+      "improvements": [],
+      "assessment": {
+        "healthScore": 97,
+        "issues": 1,
+        "fixes": 0,
+        "improvements": 0,
+        "shouldReport": true,
+        "timestamp": "2026-07-25T07:04:00.696Z"
+      }
+    }
+  ]
+}

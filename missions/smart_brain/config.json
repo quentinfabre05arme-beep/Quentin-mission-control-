@@ -1,77 +1,136 @@
 {
-  "version": "1.0",
-  "name": "Smartest Brain",
-  "description": "Multi-model AI orchestration for maximum intelligence",
-  "models": {
+  "version": "2.0",
+  "name": "Claw Model Architecture",
+  "description": "Multi-model AI orchestration with real model switching",
+  "available_models": {
     "primary": {
       "name": "kimi-k2.6",
       "id": "ollama-cloud/kimi-k2.6",
       "role": "orchestrator",
-      "strengths": ["reasoning", "planning", "complex_analysis", "architecture_design"],
-      "use_for": ["task_decomposition", "quality_validation", "final_decisions"],
-      "priority": 1
+      "strengths": ["reasoning", "planning", "complex_analysis", "architecture_design", "multi_step_tasks"],
+      "use_for": ["task_decomposition", "quality_validation", "final_decisions", "system_design"],
+      "priority": 1,
+      "cost": "high",
+      "speed": "medium"
     },
     "coder": {
       "name": "qwen3-coder",
       "id": "ollama-cloud/qwen3-coder:cloud",
       "role": "implementation",
-      "strengths": ["code_generation", "debugging", "technical_implementation"],
-      "use_for": ["scripting", "development", "code_review"],
-      "priority": 2
+      "strengths": ["code_generation", "debugging", "technical_implementation", "architecture_coding"],
+      "use_for": ["scripting", "development", "code_review", "bug_fixes"],
+      "priority": 2,
+      "cost": "medium",
+      "speed": "fast"
     },
     "fast": {
       "name": "qwen3",
       "id": "ollama-cloud/qwen3:cloud",
       "role": "quick_response",
-      "strengths": ["speed", "summarization", "general_knowledge"],
-      "use_for": ["quick_queries", "summaries", "chat"],
-      "priority": 3
-    },
-    "cheap": {
-      "name": "mistral-nemo",
-      "id": "ollama-cloud/mistral-nemo:cloud",
-      "role": "monitoring",
-      "strengths": ["efficiency", "low_cost", "reliability"],
-      "use_for": ["health_checks", "monitoring", "routine_tasks"],
-      "priority": 4
+      "strengths": ["speed", "summarization", "general_knowledge", "chat"],
+      "use_for": ["quick_queries", "summaries", "chat", "simple_tasks"],
+      "priority": 3,
+      "cost": "low",
+      "speed": "very_fast"
     },
     "safety": {
       "name": "llama3.1",
       "id": "ollama-cloud/llama3.1:cloud",
       "role": "validation",
-      "strengths": ["safety", "fact_checking", "reliability"],
-      "use_for": ["validation", "safety_checks", "fallback"],
-      "priority": 5
+      "strengths": ["safety", "fact_checking", "reliability", "consistency"],
+      "use_for": ["validation", "safety_checks", "fallback", "verification"],
+      "priority": 4,
+      "cost": "low",
+      "speed": "fast"
+    },
+    "analyst": {
+      "name": "deepseek-v4-pro",
+      "id": "ollama-cloud/deepseek-v4-pro",
+      "role": "deep_analysis",
+      "strengths": ["deep_reasoning", "mathematical_analysis", "scientific_thinking", "research"],
+      "use_for": ["complex_research", "data_analysis", "scientific_tasks", "deep_dive"],
+      "priority": 5,
+      "cost": "high",
+      "speed": "slow"
+    },
+    "specialist": {
+      "name": "kimi-k2.7-code",
+      "id": "ollama-cloud/kimi-k2.7-code",
+      "role": "advanced_coding",
+      "strengths": ["advanced_algorithms", "system_design", "performance_optimization", "complex_debugging"],
+      "use_for": ["complex_systems", "algorithm_design", "performance_critical_code"],
+      "priority": 6,
+      "cost": "very_high",
+      "speed": "medium"
     }
   },
   "routing_rules": {
     "code_tasks": {
-      "patterns": ["script", "code", "program", "function", "bug", "debug", "implement", "python", "javascript", "java", "error", "write a", "build"],
+      "patterns": ["script", "code", "program", "function", "bug", "debug", "implement", "python", "javascript", "java", "error", "write a", "build", "develop", "fix", "api", "rest", "backend", "frontend"],
       "model": "coder",
-      "confidence_threshold": 0.8
+      "confidence_threshold": 0.5,
+      "fallback": "primary"
     },
     "quick_queries": {
-      "patterns": ["what is", "how to", "explain", "summarize", "quick"],
+      "patterns": ["what is", "how to", "explain", "summarize", "quick", "brief", "short", "please"],
       "model": "fast",
-      "max_tokens": 500
+      "confidence_threshold": 0.3,
+      "max_tokens": 500,
+      "fallback": "primary"
     },
     "complex_analysis": {
-      "patterns": ["analyze", "research", "evaluate", "compare", "strategy"],
+      "patterns": ["analyze", "research", "evaluate", "compare", "strategy", "deep dive", "comprehensive", "detailed"],
       "model": "primary",
-      "requires_context": true
+      "requires_context": true,
+      "fallback": "analyst"
     },
-    "monitoring": {
-      "patterns": ["status", "health", "check", "monitor", "alert"],
-      "model": "cheap",
-      "frequency": "every_5_min"
+    "scientific": {
+      "patterns": ["calculate", "mathematical", "scientific", "formula", "equation", "statistical", "regression", "ratio", "compute"],
+      "model": "analyst",
+      "confidence_threshold": 0.5,
+      "fallback": "primary"
     },
     "validation": {
-      "patterns": ["verify", "validate", "confirm", "fact check"],
+      "patterns": ["verify", "validate", "confirm", "fact check", "check if", "review"],
       "model": "safety",
-      "always_run": true
+      "confidence_threshold": 0.3,
+      "always_run": true,
+      "fallback": "primary"
+    },
+    "system_design": {
+      "patterns": ["architecture", "design system", "microservices", "scalability", "performance optimize", "refactor", "system design"],
+      "model": "specialist",
+      "confidence_threshold": 0.5,
+      "fallback": "coder"
     }
   },
-  "fallback_chain": ["primary", "fast", "safety"],
+  "execution_modes": {
+    "single": {
+      "description": "Use one model for the entire task",
+      "use_when": "Simple tasks, quick responses"
+    },
+    "sequential": {
+      "description": "Chain models: one does the work, next validates",
+      "use_when": "Critical tasks requiring verification",
+      "chain": ["primary", "safety"]
+    },
+    "parallel": {
+      "description": "Multiple models work simultaneously on different aspects",
+      "use_when": "Complex multi-faceted tasks",
+      "example": "Research task: primary does analysis, coder builds scraper, analyst verifies data"
+    },
+    "adaptive": {
+      "description": "Start with one model, escalate to stronger if needed",
+      "use_when": "Unknown complexity or ambiguous tasks",
+      "escalation_chain": ["fast", "coder", "primary", "analyst"]
+    }
+  },
+  "fallback_chain": ["primary", "safety", "fast"],
   "max_retries": 3,
-  "timeout_seconds": 120
+  "timeout_seconds": 120,
+  "cost_optimization": {
+    "enabled": true,
+    "prefer_cheaper": true,
+    "threshold_for_cheap": 0.7
+  }
 }

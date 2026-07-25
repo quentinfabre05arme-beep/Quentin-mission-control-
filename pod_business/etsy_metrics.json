@@ -1,26 +1,27 @@
 {
-  "timestamp": "2026-07-21T13:53:59.253Z",
-  "shop": "Quentinvestdesign",
-  "metrics": {
-    "products": 5,
-    "views": 0,
-    "favorites": 0,
-    "sales": 0,
-    "revenue": 0,
-    "reviews": 0,
-    "avgRating": 0
-  },
-  "seo_status": {
-    "titles_optimized": true,
-    "tags_enhanced": true,
-    "bundle_strategy_ready": true,
-    "last_optimization": "2026-07-21T13:53:00+02:00"
-  },
-  "api_status": {
-    "printify_connected": false,
-    "last_error": "401 Unauthorized",
-    "blocker_days": 9
-  },
-  "action": "SEO optimized. API blocked - fix Printify authentication to publish products.",
-  "nextCheck": "2026-07-22T13:53:59.253Z"
+    "timestamp":  "2026-07-21T13:53:59.253Z",
+    "shop":  "Quentinvestdesign",
+    "metrics":  {
+                    "products":  5,
+                    "views":  0,
+                    "favorites":  0,
+                    "sales":  0,
+                    "revenue":  0,
+                    "reviews":  0,
+                    "avgRating":  0
+                },
+    "seo_status":  {
+                       "titles_optimized":  true,
+                       "tags_enhanced":  true,
+                       "bundle_strategy_ready":  true,
+                       "last_optimization":  "2026-07-21T13:53:00+02:00"
+                   },
+    "api_status":  {
+                       "printify_connected":  false,
+                       "last_error":  "401 Unauthorized",
+                       "blocker_days":  9
+                   },
+    "action":  "SEO optimized. API blocked - fix Printify authentication to publish products.",
+    "nextCheck":  "2026-07-22T13:53:59.253Z",
+    "last_checked":  "2026-07-25 09:02"
 }

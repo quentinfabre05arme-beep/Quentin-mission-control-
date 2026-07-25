@@ -2,7 +2,7 @@
   "portfolio_id": "alpha-paper-001",
   "created_at": "2026-07-21T00:00:00Z",
   "initial_capital": 10000,
-  "current_value": 8708.175792664497,
+  "current_value": 8697.138950134497,
   "cash": 1258.1890473744959,
   "positions": [
     {
@@ -12,9 +12,9 @@
       "stopLoss": 58.28,
       "takeProfit": 117.29,
       "entryDate": "2026-07-20T23:36:03.345Z",
-      "unrealizedPnl": -83.88999999999938,
-      "unrealizedPnlPct": -3.7635373392791216,
-      "currentPrice": 73.97
+      "unrealizedPnl": -89.68999999999946,
+      "unrealizedPnlPct": -4.023741375133438,
+      "currentPrice": 73.77
     },
     {
       "ticker": "BTC",
@@ -23,9 +23,9 @@
       "stopLoss": 56281.9,
       "takeProfit": 83462.56,
       "entryDate": "2026-07-21T11:36:41.521Z",
-      "unrealizedPnl": -33.59412299999997,
-      "unrealizedPnlPct": -2.3162240874189055,
-      "currentPrice": 64111
+      "unrealizedPnl": -37.52774499999997,
+      "unrealizedPnlPct": -2.587436704792523,
+      "currentPrice": 63933
     },
     {
       "ticker": "HIMS",
@@ -53,12 +53,12 @@
       "ticker": "ETH",
       "shares": 0.229037,
       "entryPrice": 1889.93,
-      "currentPrice": 1860.17,
+      "currentPrice": 1854.48,
       "stopLoss": 1559.19,
       "takeProfit": 2562.49,
       "entryDate": "2026-07-24T08:37:20.019Z",
-      "unrealizedPnl": -6.8161411199999975,
-      "unrealizedPnlPct": -1.5746614953992988
+      "unrealizedPnl": -8.11936165000001,
+      "unrealizedPnlPct": -1.8757308471742395
     },
     {
       "ticker": "TSLA",
@@ -400,7 +400,7 @@
     }
   ],
   "performance": {
-    "total_return": -12.918242073355035,
+    "total_return": -13.028610498655036,
     "total_trades": 20,
     "winning_trades": 0,
     "losing_trades": 3,
