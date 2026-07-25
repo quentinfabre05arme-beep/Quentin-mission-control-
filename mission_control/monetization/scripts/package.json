@@ -1,0 +1,33 @@
+{
+  "name": "openclaw-monetization",
+  "version": "1.0.0",
+  "description": "Autonomous Revenue Generation System for OpenClaw",
+  "main": "scripts/startup.js",
+  "scripts": {
+    "start": "node scripts/startup.js",
+    "dashboard": "node scripts/dashboard.js",
+    "api": "node scripts/api_server.js",
+    "research": "node scripts/research_automation.js",
+    "test": "node scripts/test_system.js"
+  },
+  "keywords": [
+    "openclaw",
+    "ai",
+    "automation",
+    "revenue",
+    "trading",
+    "research"
+  ],
+  "author": "OpenClaw AI",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openclaw/monetization.git"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "totalRevenue": 0,
+  "activeStreams": 2,
+  "tasksCompleted": 0,
+  "errors": 0,
+  "startTime": 1784967127713,
+  "timestamp": "2026-07-25T09:07:07.814Z",
+  "streams": [
+    {
+      "id": "research_reports",
+      "name": "Research Reports",
+      "status": "active",
+      "revenue": 0
+    },
+    {
+      "id": "trading_signals",
+      "name": "Trading Signals",
+      "status": "active",
+      "revenue": 0
+    }
+  ]
+}

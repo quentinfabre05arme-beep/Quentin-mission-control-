@@ -1,0 +1,212 @@
+{
+  "system": {
+    "name": "OpenClaw Revenue Generation System",
+    "version": "1.0.0",
+    "environment": "production",
+    "timezone": "UTC",
+    "maintenance_window": "02:00-04:00 UTC"
+  },
+  "revenue_streams": {
+    "research_reports": {
+      "enabled": true,
+      "priority": 1,
+      "description": "AI-powered market research reports delivered to subscribers",
+      "tiers": ["basic", "pro", "enterprise"],
+      "schedule": {
+        "basic": "0 9 * * 1",
+        "pro": "0 9 * * *",
+        "enterprise": "0 6,12,18 * * *"
+      }
+    },
+    "trading_signals": {
+      "enabled": true,
+      "priority": 2,
+      "description": "Real-time trading signals and portfolio alerts",
+      "tiers": ["pro", "enterprise"],
+      "schedule": "*/15 * * * *"
+    },
+    "api_services": {
+      "enabled": false,
+      "priority": 3,
+      "description": "REST API for market data, analysis, and signals",
+      "tiers": ["pro", "enterprise"],
+      "endpoints": [
+        "/market-data",
+        "/technical-analysis",
+        "/sentiment",
+        "/signals",
+        "/reports"
+      ]
+    },
+    "consulting": {
+      "enabled": false,
+      "priority": 4,
+      "description": "Custom AI automation consulting services",
+      "tiers": ["enterprise"],
+      "schedule": "on-demand"
+    }
+  },
+  "pricing": {
+    "basic": {
+      "id": "basic",
+      "name": "Basic Research",
+      "price": 29,
+      "currency": "USD",
+      "interval": "month",
+      "features": [
+        "Weekly market reports",
+        "Email delivery",
+        "Basic technical analysis",
+        "Community access"
+      ],
+      "limits": {
+        "reports_per_week": 1,
+        "api_calls_per_day": 100,
+        "alerts_enabled": false,
+        "custom_requests": false
+      }
+    },
+    "pro": {
+      "id": "pro",
+      "name": "Pro Intelligence",
+      "price": 99,
+      "currency": "USD",
+      "interval": "month",
+      "features": [
+        "Daily market reports",
+        "Real-time alerts",
+        "Advanced technical analysis",
+        "Sentiment analysis",
+        "API access (1K calls/day)",
+        "Priority support"
+      ],
+      "limits": {
+        "reports_per_day": 1,
+        "api_calls_per_day": 1000,
+        "alerts_enabled": true,
+        "custom_requests": false,
+        "team_members": 1
+      }
+    },
+    "enterprise": {
+      "id": "enterprise",
+      "name": "Enterprise Suite",
+      "price": 499,
+      "currency": "USD",
+      "interval": "month",
+      "features": [
+        "Custom research requests",
+        "Unlimited API access",
+        "White-label reports",
+        "Dedicated account manager",
+        "Team management (10 members)",
+        "SLA guarantee",
+        "On-premise deployment option"
+      ],
+      "limits": {
+        "reports_unlimited": true,
+        "api_calls_unlimited": true,
+        "alerts_enabled": true,
+        "custom_requests": true,
+        "team_members": 10
+      }
+    }
+  },
+  "automation": {
+    "research_interval": 14400000,
+    "health_check_interval": 60000,
+    "billing_interval": 86400000,
+    "report_generation_time": "06:00",
+    "max_retries": 3,
+    "retry_delay": 5000,
+    "circuit_breaker_threshold": 5,
+    "circuit_breaker_timeout": 300000
+  },
+  "monitoring": {
+    "metrics_enabled": true,
+    "alert_thresholds": {
+      "revenue_drop_percent": 20,
+      "error_rate_percent": 1,
+      "api_response_time_ms": 500,
+      "system_memory_percent": 90,
+      "disk_usage_percent": 95
+    },
+    "notification_channels": [
+      "email",
+      "telegram",
+      "webhook"
+    ]
+  },
+  "data_sources": {
+    "twelve_data": {
+      "enabled": true,
+      "priority": 1,
+      "rate_limit": 800,
+      "fallbacks": ["coingecko", "yahoo_finance"]
+    },
+    "coingecko": {
+      "enabled": true,
+      "priority": 2,
+      "rate_limit": 50,
+      "fallbacks": ["yahoo_finance"]
+    },
+    "serper_dev": {
+      "enabled": true,
+      "priority": 1,
+      "rate_limit": 2500,
+      "fallbacks": []
+    },
+    "yahoo_finance": {
+      "enabled": true,
+      "priority": 3,
+      "rate_limit": 2000,
+      "fallbacks": []
+    }
+  },
+  "assets": {
+    "tracked": ["BTC", "ETH", "MSTR", "HIMS"],
+    "update_intervals": {
+      "crypto": 60000,
+      "stocks": 300000
+    }
+  },
+  "api": {
+    "port": 3000,
+    "rate_limit_window": 60000,
+    "rate_limits": {
+      "basic": 100,
+      "pro": 1000,
+      "enterprise": 10000
+    },
+    "cors_enabled": true,
+    "authentication": "bearer_token"
+  },
+  "notifications": {
+    "email": {
+      "enabled": true,
+      "provider": "sendgrid",
+      "from_address": "alerts@openclaw.ai"
+    },
+    "telegram": {
+      "enabled": true,
+      "channel": "@openclaw_alerts"
+    },
+    "webhook": {
+      "enabled": false,
+      "url": null
+    }
+  },
+  "security": {
+    "encryption": "AES-256",
+    "tls_version": "1.3",
+    "api_key_rotation_days": 90,
+    "session_timeout_minutes": 60,
+    "max_login_attempts": 5
+  },
+  "compliance": {
+    "gdpr_enabled": true,
+    "ccpa_enabled": true,
+    "data_retention_days": 2555,
+    "audit_logging": true
+  }
+}

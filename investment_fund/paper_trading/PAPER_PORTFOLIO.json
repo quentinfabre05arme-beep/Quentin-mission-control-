@@ -2,8 +2,8 @@
   "portfolio_id": "alpha-paper-001",
   "created_at": "2026-07-25T07:38:21.386Z",
   "initial_capital": 10000,
-  "current_value": 9996.317540003,
-  "cash": 6313.857543003,
+  "current_value": 9992.76674347726,
+  "cash": 2519.270220737259,
   "positions": [
     {
       "ticker": "HIMS",
@@ -20,12 +20,12 @@
       "ticker": "SOL",
       "shares": 17,
       "entryPrice": 73.8,
-      "currentPrice": 73.8,
+      "currentPrice": 73.82,
       "stopLoss": 55.35,
       "takeProfit": 126.93,
       "entryDate": "2026-07-25T07:38:21.407Z",
-      "unrealizedPnl": 0,
-      "unrealizedPnlPct": 0
+      "unrealizedPnl": 0.33999999999993236,
+      "unrealizedPnlPct": 0.027100271002700183
     },
     {
       "ticker": "TSLA",
@@ -35,6 +35,72 @@
       "stopLoss": 234.77,
       "takeProfit": 536.72,
       "entryDate": "2026-07-25T07:38:21.409Z",
+      "unrealizedPnl": 0,
+      "unrealizedPnlPct": 0
+    },
+    {
+      "ticker": "MSTR",
+      "shares": 10,
+      "entryPrice": 91.67,
+      "currentPrice": 91.67,
+      "stopLoss": 71.04,
+      "takeProfit": 150.63,
+      "entryDate": "2026-07-25T08:37:17.508Z",
+      "unrealizedPnl": 0,
+      "unrealizedPnlPct": 0
+    },
+    {
+      "ticker": "COIN",
+      "shares": 5,
+      "entryPrice": 158.32001,
+      "currentPrice": 158.32001,
+      "stopLoss": 110.82,
+      "takeProfit": 254.99,
+      "entryDate": "2026-07-25T08:37:17.515Z",
+      "unrealizedPnl": 0,
+      "unrealizedPnlPct": 0
+    },
+    {
+      "ticker": "PLTR",
+      "shares": 5,
+      "entryPrice": 122.94,
+      "currentPrice": 122.92,
+      "stopLoss": 89.13,
+      "takeProfit": 190.79,
+      "entryDate": "2026-07-25T08:37:17.517Z",
+      "unrealizedPnl": -0.0999999999999801,
+      "unrealizedPnlPct": -0.01626809825930886
+    },
+    {
+      "ticker": "SNOW",
+      "shares": 2,
+      "entryPrice": 268.059998,
+      "currentPrice": 268.059998,
+      "stopLoss": 214.45,
+      "takeProfit": 376.47,
+      "entryDate": "2026-07-25T12:15:38.079Z",
+      "unrealizedPnl": 0,
+      "unrealizedPnlPct": 0
+    },
+    {
+      "ticker": "AMD",
+      "shares": 3,
+      "entryPrice": 162.34,
+      "currentPrice": 162.34,
+      "stopLoss": 133.93,
+      "takeProfit": 220.01,
+      "entryDate": "2026-07-25T12:15:38.082Z",
+      "unrealizedPnl": 0,
+      "unrealizedPnlPct": 0
+    },
+    {
+      "ticker": "ETH",
+      "shares": 0.239503,
+      "entryPrice": 1856.58,
+      "currentPrice": 1856.58,
+      "stopLoss": 1531.68,
+      "takeProfit": 2515.22,
+      "entryDate": "2026-07-25T12:15:38.085Z",
       "unrealizedPnl": 0,
       "unrealizedPnlPct": 0
     }
@@ -78,16 +144,94 @@
       "reason": "TSLA - oversold setup (2.1% move)",
       "stopLoss": 234.77,
       "takeProfit": 536.72
+    },
+    {
+      "id": "T1784968637505",
+      "timestamp": "2026-07-25T08:37:17.505Z",
+      "ticker": "MSTR",
+      "action": "BUY",
+      "shares": 10,
+      "price": 91.67,
+      "total": 916.7,
+      "commission": 0.9167000000000001,
+      "reason": "MSTR - oversold setup (2.1% move)",
+      "stopLoss": 71.04,
+      "takeProfit": 150.63
+    },
+    {
+      "id": "T1784968637515",
+      "timestamp": "2026-07-25T08:37:17.515Z",
+      "ticker": "COIN",
+      "action": "BUY",
+      "shares": 5,
+      "price": 158.32001,
+      "total": 791.60005,
+      "commission": 0.79160005,
+      "reason": "COIN - oversold setup (1.8% move)",
+      "stopLoss": 110.82,
+      "takeProfit": 254.99
+    },
+    {
+      "id": "T1784968637517",
+      "timestamp": "2026-07-25T08:37:17.517Z",
+      "ticker": "PLTR",
+      "action": "BUY",
+      "shares": 5,
+      "price": 122.94,
+      "total": 614.7,
+      "commission": 0.6147,
+      "reason": "PLTR - oversold setup (0.3% move)",
+      "stopLoss": 89.13,
+      "takeProfit": 190.79
+    },
+    {
+      "id": "T1784981738077",
+      "timestamp": "2026-07-25T12:15:38.077Z",
+      "ticker": "SNOW",
+      "action": "BUY",
+      "shares": 2,
+      "price": 268.059998,
+      "total": 536.119996,
+      "commission": 0.536119996,
+      "reason": "SNOW - momentum setup (1.1% move)",
+      "stopLoss": 214.45,
+      "takeProfit": 376.47
+    },
+    {
+      "id": "T1784981738082",
+      "timestamp": "2026-07-25T12:15:38.082Z",
+      "ticker": "AMD",
+      "action": "BUY",
+      "shares": 3,
+      "price": 162.34,
+      "total": 487.02,
+      "commission": 0.48702,
+      "reason": "AMD - oversold setup (1.5% move)",
+      "stopLoss": 133.93,
+      "takeProfit": 220.01
+    },
+    {
+      "id": "T1784981738085",
+      "timestamp": "2026-07-25T12:15:38.085Z",
+      "ticker": "ETH",
+      "action": "BUY",
+      "shares": 0.239503,
+      "price": 1856.58,
+      "total": 444.65647973999995,
+      "commission": 0.44465647973999994,
+      "reason": "ETH - oversold setup (1.4% move)",
+      "stopLoss": 1531.68,
+      "takeProfit": 2515.22
     }
   ],
   "performance": {
-    "total_return": -0.036824599970008975,
-    "total_trades": 3,
+    "total_return": -0.0723325652274065,
+    "total_trades": 9,
     "winning_trades": 0,
     "losing_trades": 0,
     "win_rate": 0,
     "avg_winner": 0,
     "avg_loser": 0,
-    "max_drawdown": 0.036824599970004784
+    "max_drawdown": 0.07233256522740703
   }
 }

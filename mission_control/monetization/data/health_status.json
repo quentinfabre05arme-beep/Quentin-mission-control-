@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-07-25T09:08:08.355Z",
+  "uptime": 3360642,
+  "streams": {
+    "research_reports": {
+      "status": "active",
+      "lastRun": null,
+      "nextRun": 1784981527717,
+      "revenue": 0,
+      "healthy": true
+    },
+    "trading_signals": {
+      "status": "active",
+      "lastRun": null,
+      "nextRun": 1784967187717,
+      "revenue": 0,
+      "healthy": true
+    }
+  },
+  "system": {
+    "memory": {
+      "rss": 54513664,
+      "heapTotal": 8466432,
+      "heapUsed": 5721120,
+      "external": 2297936,
+      "arrayBuffers": 48667
+    },
+    "cpu": {
+      "user": 15000,
+      "system": 15000
+    }
+  }
+}

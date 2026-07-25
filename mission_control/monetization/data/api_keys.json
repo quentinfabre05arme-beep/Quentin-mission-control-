@@ -1,0 +1,17 @@
+[
+  {
+    "key": "bf93336ce9f7cb27913019887a3d69b3169cb13ac91a62390eb95328e1cce151",
+    "client_id": "demo",
+    "tier": "enterprise",
+    "created_at": "2026-07-25T08:11:50.915Z",
+    "status": "active",
+    "usage": {
+      "total_requests": 0,
+      "requests_today": 0,
+      "last_request": null
+    },
+    "metadata": {
+      "note": "Demo key for testing"
+    }
+  }
+]

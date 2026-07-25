@@ -382,3 +382,81 @@
 - **Take Profit:** $536.72
 
 ---
+## Trade T1784968637505 — 2026-07-25T08:37:17.505Z
+
+- **Ticker:** MSTR
+- **Action:** BUY
+- **Shares:** 10
+- **Price:** $91.67
+- **Total:** $916.70
+- **Commission:** $0.92
+- **Reason:** MSTR - oversold setup (2.1% move)
+- **Stop Loss:** $71.04
+- **Take Profit:** $150.63
+
+---
+## Trade T1784968637515 — 2026-07-25T08:37:17.515Z
+
+- **Ticker:** COIN
+- **Action:** BUY
+- **Shares:** 5
+- **Price:** $158.32
+- **Total:** $791.60
+- **Commission:** $0.79
+- **Reason:** COIN - oversold setup (1.8% move)
+- **Stop Loss:** $110.82
+- **Take Profit:** $254.99
+
+---
+## Trade T1784968637517 — 2026-07-25T08:37:17.517Z
+
+- **Ticker:** PLTR
+- **Action:** BUY
+- **Shares:** 5
+- **Price:** $122.94
+- **Total:** $614.70
+- **Commission:** $0.61
+- **Reason:** PLTR - oversold setup (0.3% move)
+- **Stop Loss:** $89.13
+- **Take Profit:** $190.79
+
+---
+## Trade T1784981738077 — 2026-07-25T12:15:38.077Z
+
+- **Ticker:** SNOW
+- **Action:** BUY
+- **Shares:** 2
+- **Price:** $268.06
+- **Total:** $536.12
+- **Commission:** $0.54
+- **Reason:** SNOW - momentum setup (1.1% move)
+- **Stop Loss:** $214.45
+- **Take Profit:** $376.47
+
+---
+## Trade T1784981738082 — 2026-07-25T12:15:38.082Z
+
+- **Ticker:** AMD
+- **Action:** BUY
+- **Shares:** 3
+- **Price:** $162.34
+- **Total:** $487.02
+- **Commission:** $0.49
+- **Reason:** AMD - oversold setup (1.5% move)
+- **Stop Loss:** $133.93
+- **Take Profit:** $220.01
+
+---
+## Trade T1784981738085 — 2026-07-25T12:15:38.085Z
+
+- **Ticker:** ETH
+- **Action:** BUY
+- **Shares:** 0.239503
+- **Price:** $1856.58
+- **Total:** $444.66
+- **Commission:** $0.44
+- **Reason:** ETH - oversold setup (1.4% move)
+- **Stop Loss:** $1531.68
+- **Take Profit:** $2515.22
+
+---
