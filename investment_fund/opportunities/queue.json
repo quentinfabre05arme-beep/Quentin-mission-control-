@@ -1,5 +1,31 @@
 [
   {
+    "timestamp": "2026-07-25T17:20:14.299Z",
+    "scanFile": "scan_2026-07-25T17-20-14-299Z.json",
+    "queued": [
+      {
+        "ticker": "TSLA",
+        "score": 9.339765276848638,
+        "upside": 43.76,
+        "downside": 4.34,
+        "catalyst": "Robotaxi unveil",
+        "price": 313.03,
+        "target": 450
+      },
+      {
+        "ticker": "HIMS",
+        "score": 5.094958338804865,
+        "upside": 60.20,
+        "downside": 12.36,
+        "catalyst": "GLP-1 expansion",
+        "price": 28.09,
+        "target": 45
+      }
+    ],
+    "threshold": 5,
+    "reason": "Queued top 2 for review"
+  },
+  {
     "timestamp": "2026-07-22T15:35:51Z",
     "scanFile": "scan_2026-07-22T15-35-51-246Z.json",
     "queued": [],
