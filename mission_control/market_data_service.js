@@ -10,7 +10,7 @@ const https = require('https');
 
 // Configuration
 const CONFIG = {
-  TWELVE_DATA_KEY: '07f9ead31a5c426ea238e71895beeaa1',
+  TWELVE_DATA_KEY: process.env.TWELVE_DATA_KEY || require('../lib/secret_resolver').getSecret('twelve-data-api'),
   CACHE_FILE: path.join(__dirname, 'market_data.json'),
   MAX_AGE_MINUTES: 5,
   TIMEOUT_MS: 10000

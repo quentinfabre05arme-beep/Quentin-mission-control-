@@ -1,7 +1,7 @@
 const https = require('https');
 const fs = require('fs');
 
-const key = '07f9ead31a5c426ea238e71895beeaa1';
+const key = process.env.TWELVE_DATA_KEY || require('../lib/secret_resolver').getSecret('twelve-data-api');
 const pairs = [
   { sym: 'BTC/USD', id: 'BTC' },
   { sym: 'ETH/USD', id: 'ETH' },

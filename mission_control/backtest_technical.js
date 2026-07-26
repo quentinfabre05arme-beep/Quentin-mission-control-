@@ -8,7 +8,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
-const API_KEY = '07f9ead31a5c426ea238e71895beeaa1';
+const API_KEY = process.env.TWELVE_DATA_KEY || require('../lib/secret_resolver').getSecret('twelve-data-api');
 
 const ASSETS = {
   'BTC': { symbol: 'BTC/USD', name: 'Bitcoin' },

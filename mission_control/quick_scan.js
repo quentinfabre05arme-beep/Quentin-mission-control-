@@ -4,7 +4,7 @@
 
 const https = require('https');
 
-const TWELVE_DATA_KEY = '07f9ead31a5c426ea238e71895beeaa1';
+const TWELVE_DATA_KEY = process.env.TWELVE_DATA_KEY || require('../lib/secret_resolver').getSecret('twelve-data-api');
 
 // Focus on highest-probability candidates
 const PRIORITY_ASSETS = [

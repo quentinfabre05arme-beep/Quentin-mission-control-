@@ -218,13 +218,13 @@ node mission_control/full_research.js BTC --json
 ## API Keys
 
 ### Serper.dev (Web Search)
-- **Key:** `1a32d04a8215dde72b67e554c94409ce580094f3`
+- **Key:** `{{secret:serper-api}}` (stored in SecretRef)
 - **Free tier:** 2,500 searches/month
 - **URL:** https://serper.dev
 - **Usage:** Web search for research cycles
 
 ### Twelve Data (Technical Analysis)
-- **Key:** `07f9ead31a5c426ea238e71895beeaa1`
+- **Key:** `{{secret:twelve-data-api}}` (stored in SecretRef)
 - **Free tier:** 800 requests/day, 8/minute
 - **Usage:** RSI, MACD, SMA, Bollinger Bands for BTC/ETH/MSTR/HIMS
 - **Status:** ✅ Active (with multi-source fallback)

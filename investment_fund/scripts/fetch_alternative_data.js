@@ -11,7 +11,7 @@ const fs = require('fs');
 const path = require('path');
 
 const CONFIG = {
-  SERPER_KEY: '1a32d04a8215dde72b67e554c94409ce580094f3',
+  SERPER_KEY: process.env.SERPER_KEY || require('../lib/secret_resolver').getSecret('serper-api'),
   DATA_DIR: path.join(__dirname, '..', 'data', 'alternative'),
   MARKET_DATA_FILE: path.join(__dirname, '..', '..', 'mission_control', 'market_data.json'),
   CACHE_MINUTES: 60,

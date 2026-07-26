@@ -7,7 +7,7 @@
 const https = require('https');
 
 // Serper.dev API for news and search
-const SERPER_KEY = '1a32d04a8215dde72b67e554c94409ce580094f3';
+const SERPER_KEY = process.env.SERPER_KEY || require('../lib/secret_resolver').getSecret('serper-api');
 
 // Fetch news via Serper
 async function fetchNews(query) {

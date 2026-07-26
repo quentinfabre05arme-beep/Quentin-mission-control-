@@ -9,7 +9,7 @@ const path = require('path');
 const https = require('https');
 
 const DATA_FILE = path.join(__dirname, 'paper_trading.json');
-const TWELVE_DATA_KEY = '07f9ead31a5c426ea238e71895beeaa1';
+const TWELVE_DATA_KEY = process.env.TWELVE_DATA_KEY || require('../lib/secret_resolver').getSecret('twelve-data-api');
 
 // Load current state
 function loadState() {
