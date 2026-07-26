@@ -1,0 +1,41 @@
+{
+  "computed_at": "2026-07-26T21:30:42.157Z",
+  "subjects": {
+    "subj-ms2bas36": {
+      "name": "JavaScript Async Patterns",
+      "category": "Programming",
+      "status": "active",
+      "priority": 1,
+      "estimated_hours": 10,
+      "completed_hours": 1.25,
+      "sessions_count": 2,
+      "completion_pct": 12.5,
+      "avg_rating": 4.5,
+      "last_study": "2026-07-26"
+    },
+    "subj-ms2batk7": {
+      "name": "Rust Ownership",
+      "category": "Programming",
+      "status": "active",
+      "priority": 2,
+      "estimated_hours": 15,
+      "completed_hours": 1.5,
+      "sessions_count": 1,
+      "completion_pct": 10,
+      "avg_rating": 3,
+      "last_study": "2026-07-26"
+    },
+    "subj-ms2bav4p": {
+      "name": "System Design",
+      "category": "Engineering",
+      "status": "active",
+      "priority": 1,
+      "estimated_hours": 20,
+      "completed_hours": 1,
+      "sessions_count": 1,
+      "completion_pct": 5,
+      "avg_rating": 4,
+      "last_study": "2026-07-26"
+    }
+  }
+}

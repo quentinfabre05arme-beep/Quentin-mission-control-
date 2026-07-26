@@ -1,0 +1,33 @@
+{
+  "records": [
+    {
+      "id": "sale_1785101678413",
+      "product_id": "prod_1785101678405",
+      "units": 50,
+      "revenue": 2495,
+      "channel": "product_hunt",
+      "notes": "Launch day sales",
+      "recorded_at": "2026-07-26T21:34:38.413Z"
+    },
+    {
+      "id": "sale_1785101678414",
+      "product_id": "prod_1785101678405",
+      "units": 120,
+      "revenue": 5988,
+      "channel": "newsletter",
+      "notes": "Week 1 campaign",
+      "recorded_at": "2026-07-26T21:34:38.414Z"
+    },
+    {
+      "id": "sale_1785101678416",
+      "product_id": "prod_1785101678405",
+      "units": 30,
+      "revenue": 1497,
+      "channel": "twitter",
+      "notes": "Promo code users",
+      "recorded_at": "2026-07-26T21:34:38.416Z"
+    }
+  ],
+  "version": "1.0.0",
+  "updated_at": "2026-07-26T21:34:38.416Z"
+}

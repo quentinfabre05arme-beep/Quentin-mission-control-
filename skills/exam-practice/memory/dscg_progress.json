@@ -1,0 +1,59 @@
+{
+  "sessions": [
+    {
+      "date": "2026-07-26T21:34:59.536Z",
+      "domain": "D01",
+      "total": 1,
+      "correct": 1,
+      "score": 100,
+      "details": [
+        {
+          "questionId": "D01-002",
+          "correct": true,
+          "domain": "D01",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26T21:35:05.085Z",
+      "domain": "D02",
+      "total": 1,
+      "correct": 1,
+      "score": 100,
+      "details": [
+        {
+          "questionId": "D02-002",
+          "correct": true,
+          "domain": "D02",
+          "difficulty": "medium"
+        }
+      ]
+    }
+  ],
+  "domainStats": {
+    "D01": {
+      "attempts": 1,
+      "correct": 1,
+      "history": [
+        {
+          "date": "2026-07-26T21:34:59.536Z",
+          "correct": true
+        }
+      ],
+      "weak": false
+    },
+    "D02": {
+      "attempts": 1,
+      "correct": 1,
+      "history": [
+        {
+          "date": "2026-07-26T21:35:05.085Z",
+          "correct": true
+        }
+      ],
+      "weak": false
+    }
+  },
+  "lastSession": "2026-07-26T21:35:05.085Z"
+}

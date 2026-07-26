@@ -1,0 +1,43 @@
+{
+  "generated_at": "2026-07-26T21:34:38.420Z",
+  "summary": {
+    "total_products": 1,
+    "total_ideas": 3,
+    "total_revenue": 9980,
+    "total_units_sold": 200,
+    "avg_revenue_per_transaction": 3326.67
+  },
+  "stage_distribution": {
+    "idea": 0,
+    "research": 0,
+    "design": 0,
+    "prototype": 0,
+    "mvp": 1,
+    "beta": 0,
+    "launched": 0,
+    "sunset": 0
+  },
+  "products": [
+    {
+      "id": "prod_1785101678405",
+      "title": "Crypto Dashboard Pro",
+      "stage": "mvp",
+      "stats": {
+        "product": "Crypto Dashboard Pro",
+        "stage": "mvp",
+        "total_units_sold": 200,
+        "total_revenue": 9980,
+        "sales_count": 3,
+        "stage_velocities_days": {
+          "idea": 0,
+          "research": 0,
+          "design": 0,
+          "prototype": 0,
+          "mvp": 0
+        },
+        "launch_date": "2026-09-15",
+        "age_days": 0
+      }
+    }
+  ]
+}

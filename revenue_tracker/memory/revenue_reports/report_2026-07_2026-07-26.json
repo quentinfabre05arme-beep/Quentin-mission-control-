@@ -1,0 +1,170 @@
+{
+  "period": "2026-07",
+  "generated_at": "2026-07-26T21:34:42.281Z",
+  "summary": {
+    "total_revenue": 14900,
+    "transaction_count": 10,
+    "average_per_transaction": 1490,
+    "categories": 5,
+    "sources": 8
+  },
+  "by_category": {
+    "salary": 10500,
+    "freelance": 2750,
+    "dividend": 450,
+    "crypto": 1050,
+    "other": 150
+  },
+  "by_source": {
+    "TechCorp SAS": 10500,
+    "WebDesign Project": 1200,
+    "AAPL Dividend": 450,
+    "BTC Trading Profit": 800,
+    "API Integration": 600,
+    "ETH Staking Reward": 250,
+    "Cashback Rewards": 150,
+    "Consulting": 950
+  },
+  "transactions": [
+    {
+      "id": "ff9903c8-f31d-427b-b015-18ffbed4a59c",
+      "date": "2026-07-01",
+      "amount": 3500,
+      "currency": "EUR",
+      "category": "salary",
+      "source": "TechCorp SAS",
+      "tags": [
+        "main",
+        "full-time"
+      ],
+      "notes": "",
+      "created_at": "2026-07-26T21:34:39.890Z"
+    },
+    {
+      "id": "619fc242-e1c5-4ef5-bb70-bc189cc201a1",
+      "date": "2026-07-05",
+      "amount": 1200,
+      "currency": "EUR",
+      "category": "freelance",
+      "source": "WebDesign Project",
+      "tags": [
+        "design",
+        "client"
+      ],
+      "notes": "",
+      "created_at": "2026-07-26T21:34:39.989Z"
+    },
+    {
+      "id": "97b1e129-be0a-4562-b834-c1fbad8b6caf",
+      "date": "2026-07-10",
+      "amount": 450,
+      "currency": "EUR",
+      "category": "dividend",
+      "source": "AAPL Dividend",
+      "tags": [
+        "stocks",
+        "quarterly"
+      ],
+      "notes": "",
+      "created_at": "2026-07-26T21:34:40.087Z"
+    },
+    {
+      "id": "15800fc6-ac4a-471b-936d-50cfab3a5fae",
+      "date": "2026-07-12",
+      "amount": 800,
+      "currency": "EUR",
+      "category": "crypto",
+      "source": "BTC Trading Profit",
+      "tags": [
+        "bitcoin",
+        "trading"
+      ],
+      "notes": "",
+      "created_at": "2026-07-26T21:34:40.177Z"
+    },
+    {
+      "id": "29cb2702-f286-4a22-ae5b-ffa87f7e1008",
+      "date": "2026-07-15",
+      "amount": 3500,
+      "currency": "EUR",
+      "category": "salary",
+      "source": "TechCorp SAS",
+      "tags": [
+        "main",
+        "full-time"
+      ],
+      "notes": "",
+      "created_at": "2026-07-26T21:34:40.267Z"
+    },
+    {
+      "id": "4015a84b-d722-45b0-82b6-d9ce57ff75ed",
+      "date": "2026-07-18",
+      "amount": 600,
+      "currency": "EUR",
+      "category": "freelance",
+      "source": "API Integration",
+      "tags": [
+        "dev",
+        "contract"
+      ],
+      "notes": "",
+      "created_at": "2026-07-26T21:34:40.367Z"
+    },
+    {
+      "id": "0b2348dd-2503-4792-ab66-5369ddb58662",
+      "date": "2026-07-20",
+      "amount": 250,
+      "currency": "EUR",
+      "category": "crypto",
+      "source": "ETH Staking Reward",
+      "tags": [
+        "ethereum",
+        "staking"
+      ],
+      "notes": "",
+      "created_at": "2026-07-26T21:34:40.460Z"
+    },
+    {
+      "id": "52c4e75e-7efc-47e5-a771-160adf5ce67a",
+      "date": "2026-07-22",
+      "amount": 150,
+      "currency": "EUR",
+      "category": "other",
+      "source": "Cashback Rewards",
+      "tags": [
+        "bank",
+        "passive"
+      ],
+      "notes": "",
+      "created_at": "2026-07-26T21:34:40.557Z"
+    },
+    {
+      "id": "497da6de-ccf8-419e-950c-48328758ddfd",
+      "date": "2026-07-25",
+      "amount": 3500,
+      "currency": "EUR",
+      "category": "salary",
+      "source": "TechCorp SAS",
+      "tags": [
+        "main",
+        "full-time"
+      ],
+      "notes": "",
+      "created_at": "2026-07-26T21:34:40.654Z"
+    },
+    {
+      "id": "b1bc3ae1-4960-4f45-8441-79e74c9b7846",
+      "date": "2026-07-28",
+      "amount": 950,
+      "currency": "EUR",
+      "category": "freelance",
+      "source": "Consulting",
+      "tags": [
+        "advisory",
+        "client"
+      ],
+      "notes": "",
+      "created_at": "2026-07-26T21:34:40.750Z"
+    }
+  ]
+}

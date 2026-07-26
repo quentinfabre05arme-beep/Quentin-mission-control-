@@ -1,0 +1,370 @@
+{
+  "date": "2026-07-26",
+  "sessions": [
+    {
+      "id": "sess_2026-07-26_1785101692928",
+      "date": "2026-07-26",
+      "domain": "D06",
+      "domain_name": "Droit fiscal",
+      "duration_minutes": 90,
+      "notes": "Révision TVA et déductibilité",
+      "topics": [
+        "TVA",
+        "déductibilité",
+        "immobilisations"
+      ],
+      "timestamp": "2026-07-26T21:34:52.928Z"
+    },
+    {
+      "id": "sess_2026-07-26_1785101709585",
+      "date": "2026-07-26",
+      "domain": "D06",
+      "domain_name": "Droit fiscal",
+      "duration_minutes": 90,
+      "notes": "Révision TVA et déductibilité",
+      "topics": [
+        "TVA",
+        "déductibilité",
+        "immobilisations"
+      ],
+      "timestamp": "2026-07-26T21:35:09.585Z"
+    },
+    {
+      "id": "sess_2026-07-26_1785101712672",
+      "date": "2026-07-26",
+      "domain": "D07",
+      "domain_name": "Comptabilité approfondie",
+      "duration_minutes": 60,
+      "notes": "Bilan consolidé — méthode de mise en équivalence",
+      "topics": [
+        "consolidation",
+        "participations",
+        "goodwill"
+      ],
+      "timestamp": "2026-07-26T21:35:12.673Z"
+    },
+    {
+      "id": "sess_2026-07-26_1785101712748",
+      "date": "2026-07-26",
+      "domain": "D06",
+      "domain_name": "Droit fiscal",
+      "duration_minutes": 45,
+      "notes": "IS — régimes d'imposition et calcul du résultat fiscal",
+      "topics": [
+        "impôt_sociétés",
+        "résultat_fiscal",
+        "report_déficit"
+      ],
+      "timestamp": "2026-07-26T21:35:12.748Z"
+    },
+    {
+      "id": "sess_2026-07-26_1785101712821",
+      "date": "2026-07-26",
+      "domain": "D03",
+      "domain_name": "Finance",
+      "duration_minutes": 75,
+      "notes": "Analyse financière — ratios de rentabilité",
+      "topics": [
+        "ROE",
+        "ROA",
+        "ratio_endettement",
+        "rentabilité"
+      ],
+      "timestamp": "2026-07-26T21:35:12.821Z"
+    },
+    {
+      "id": "sess_2026-07-26_1785101712884",
+      "date": "2026-07-26",
+      "domain": "D08",
+      "domain_name": "Comptabilité et audit",
+      "duration_minutes": 60,
+      "notes": "Normes d'audit ISA 315 — identification des risques",
+      "topics": [
+        "ISA315",
+        "risques",
+        "audit",
+        "compréhension_entité"
+      ],
+      "timestamp": "2026-07-26T21:35:12.884Z"
+    },
+    {
+      "id": "sess_2026-07-26_1785101729575",
+      "date": "2026-07-26",
+      "domain": "D06",
+      "domain_name": "Droit fiscal",
+      "duration_minutes": 90,
+      "notes": "Révision TVA et déductibilité",
+      "topics": [
+        "TVA",
+        "déductibilité",
+        "immobilisations"
+      ],
+      "timestamp": "2026-07-26T21:35:29.575Z"
+    },
+    {
+      "id": "sess_2026-07-26_1785101729654",
+      "date": "2026-07-26",
+      "domain": "D07",
+      "domain_name": "Comptabilité approfondie",
+      "duration_minutes": 60,
+      "notes": "Bilan consolidé — méthode de mise en équivalence",
+      "topics": [
+        "consolidation",
+        "participations",
+        "goodwill"
+      ],
+      "timestamp": "2026-07-26T21:35:29.654Z"
+    },
+    {
+      "id": "sess_2026-07-26_1785101729738",
+      "date": "2026-07-26",
+      "domain": "D06",
+      "domain_name": "Droit fiscal",
+      "duration_minutes": 45,
+      "notes": "IS — régimes d'imposition et calcul du résultat fiscal",
+      "topics": [
+        "impôt_sociétés",
+        "résultat_fiscal",
+        "report_déficit"
+      ],
+      "timestamp": "2026-07-26T21:35:29.738Z"
+    },
+    {
+      "id": "sess_2026-07-26_1785101729801",
+      "date": "2026-07-26",
+      "domain": "D03",
+      "domain_name": "Finance",
+      "duration_minutes": 75,
+      "notes": "Analyse financière — ratios de rentabilité",
+      "topics": [
+        "ROE",
+        "ROA",
+        "ratio_endettement",
+        "rentabilité"
+      ],
+      "timestamp": "2026-07-26T21:35:29.801Z"
+    },
+    {
+      "id": "sess_2026-07-26_1785101729875",
+      "date": "2026-07-26",
+      "domain": "D08",
+      "domain_name": "Comptabilité et audit",
+      "duration_minutes": 60,
+      "notes": "Normes d'audit ISA 315 — identification des risques",
+      "topics": [
+        "ISA315",
+        "risques",
+        "audit",
+        "compréhension_entité"
+      ],
+      "timestamp": "2026-07-26T21:35:29.875Z"
+    },
+    {
+      "id": "sess_2026-07-26_1785101729955",
+      "date": "2026-07-26",
+      "domain": "D04",
+      "domain_name": "Contrôle de gestion",
+      "duration_minutes": 50,
+      "notes": "Tableaux de bord — indicateurs de performance",
+      "topics": [
+        "KPI",
+        "tableau_bord",
+        "tableau_de_bord",
+        "indicateurs"
+      ],
+      "timestamp": "2026-07-26T21:35:29.955Z"
+    },
+    {
+      "id": "sess_2026-07-26_1785101730018",
+      "date": "2026-07-26",
+      "domain": "D01",
+      "domain_name": "Droit des sociétés",
+      "duration_minutes": 40,
+      "notes": "Constitution des sociétés — apports et capital social",
+      "topics": [
+        "SA",
+        "SARL",
+        "constitution",
+        "apports",
+        "libération"
+      ],
+      "timestamp": "2026-07-26T21:35:30.018Z"
+    },
+    {
+      "id": "sess_2026-07-26_1785101730081",
+      "date": "2026-07-26",
+      "domain": "D02",
+      "domain_name": "Droit des affaires",
+      "duration_minutes": 55,
+      "notes": "Contrats commerciaux — vente et clauses contractuelles",
+      "topics": [
+        "vente",
+        "garantie",
+        "clause",
+        "résolution",
+        "prix"
+      ],
+      "timestamp": "2026-07-26T21:35:30.082Z"
+    },
+    {
+      "id": "sess_2026-07-26_1785101751594",
+      "date": "2026-07-26",
+      "domain": "D05",
+      "domain_name": "Management et SI",
+      "duration_minutes": 70,
+      "notes": "Systèmes d'information de gestion — ERP et décisionnel",
+      "topics": [
+        "ERP",
+        "SI",
+        "informatique",
+        " décisionnel",
+        "BIG DATA",
+        "tableau_de_bord"
+      ],
+      "timestamp": "2026-07-26T21:35:51.594Z"
+    },
+    {
+      "id": "sess_2026-07-26_1785101751674",
+      "date": "2026-07-26",
+      "domain": "D07",
+      "domain_name": "Comptabilité approfondie",
+      "duration_minutes": 80,
+      "notes": "Fusion-acquisition — évaluation et comptabilisation",
+      "topics": [
+        "fusion",
+        "acquisition",
+        "évaluation",
+        "contrôle"
+      ],
+      "timestamp": "2026-07-26T21:35:51.674Z"
+    },
+    {
+      "id": "sess_2026-07-26_1785101751744",
+      "date": "2026-07-26",
+      "domain": "D06",
+      "domain_name": "Droit fiscal",
+      "duration_minutes": 60,
+      "notes": "Taxation des plus-values et règles de détermination",
+      "topics": [
+        "plus-values",
+        "PV",
+        "long_terme",
+        "court_terme",
+        "détermination"
+      ],
+      "timestamp": "2026-07-26T21:35:51.744Z"
+    },
+    {
+      "id": "sess_2026-07-26_1785101751808",
+      "date": "2026-07-26",
+      "domain": "D03",
+      "domain_name": "Finance",
+      "duration_minutes": 90,
+      "notes": "Choix d'investissement — VAN et TRI",
+      "topics": [
+        "VAN",
+        "TRI",
+        "actualisation",
+        "investissement",
+        "choix_investissement"
+      ],
+      "timestamp": "2026-07-26T21:35:51.808Z"
+    },
+    {
+      "id": "sess_2026-07-26_1785101751887",
+      "date": "2026-07-26",
+      "domain": "D01",
+      "domain_name": "Droit des sociétés",
+      "duration_minutes": 50,
+      "notes": "Gouvernance d'entreprise — conseil et assemblées",
+      "topics": [
+        "gouvernance",
+        "conseil",
+        "AG",
+        "assemblée générale",
+        "administrateur"
+      ],
+      "timestamp": "2026-07-26T21:35:51.887Z"
+    },
+    {
+      "id": "sess_2026-07-26_1785101751955",
+      "date": "2026-07-26",
+      "domain": "D08",
+      "domain_name": "Comptabilité et audit",
+      "duration_minutes": 70,
+      "notes": "Risque d'audit — procédures d'évaluation et réponse",
+      "topics": [
+        "risque",
+        "procédures",
+        "évaluation",
+        "réponse",
+        "ISA",
+        "audit"
+      ],
+      "timestamp": "2026-07-26T21:35:51.955Z"
+    },
+    {
+      "id": "sess_2026-07-26_1785101752044",
+      "date": "2026-07-26",
+      "domain": "D04",
+      "domain_name": "Contrôle de gestion",
+      "duration_minutes": 65,
+      "notes": "Coûts et marges — méthodes de calcul",
+      "topics": [
+        "coûts",
+        "marges",
+        "analytique",
+        "coût_de_revient",
+        "seuil_rentabilité"
+      ],
+      "timestamp": "2026-07-26T21:35:52.044Z"
+    },
+    {
+      "id": "sess_2026-07-26_1785101752108",
+      "date": "2026-07-26",
+      "domain": "D02",
+      "domain_name": "Droit des affaires",
+      "duration_minutes": 45,
+      "notes": "Propriété intellectuelle — brevets et marques",
+      "topics": [
+        "propriété_intellectuelle",
+        "brevet",
+        "marque",
+        "droit_d'auteur"
+      ],
+      "timestamp": "2026-07-26T21:35:52.108Z"
+    },
+    {
+      "id": "sess_2026-07-26_1785101752187",
+      "date": "2026-07-26",
+      "domain": "D05",
+      "domain_name": "Management et SI",
+      "duration_minutes": 55,
+      "notes": "Management stratégique — diagnostic et planification",
+      "topics": [
+        "stratégie",
+        "diagnostic",
+        "planification",
+        "SWOT",
+        "PESTEL"
+      ],
+      "timestamp": "2026-07-26T21:35:52.187Z"
+    },
+    {
+      "id": "sess_2026-07-26_1785101752253",
+      "date": "2026-07-26",
+      "domain": "D07",
+      "domain_name": "Comptabilité approfondie",
+      "duration_minutes": 40,
+      "notes": "Instruments financiers — normes IFRS 9",
+      "topics": [
+        "IFRS9",
+        "instrument_financier",
+        "évaluation",
+        "juste_valeur",
+        "amorti"
+      ],
+      "timestamp": "2026-07-26T21:35:52.254Z"
+    }
+  ]
+}

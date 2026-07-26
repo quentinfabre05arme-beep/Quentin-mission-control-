@@ -1,40 +1,21 @@
-﻿{
+# Vercel Configuration
+{
   "version": 2,
-  "public": true,
-  "github": {
-    "enabled": true,
-    "silent": true
-  },
-  "rewrites": [
-    { "source": "/hub", "destination": "/hub.html" },
-    { "source": "/trading", "destination": "/trading.html" },
-    { "source": "/markets", "destination": "/markets.html" },
-    { "source": "/portfolio", "destination": "/portfolio_tracker.html" },
-    { "source": "/analytics", "destination": "/analytics.html" },
-    { "source": "/risk", "destination": "/mission_control_risk_management.html" },
-    { "source": "/ai", "destination": "/ai_intelligence_hub.html" },
-    { "source": "/backtest", "destination": "/backtesting_module.html" },
-    { "source": "/mobile", "destination": "/mobile_dashboard.html" },
-    { "source": "/executive", "destination": "/executive_dashboard.html" },
-    { "source": "/settings", "destination": "/settings.html" },
-    { "source": "/news", "destination": "/news_sentiment_tracker.html" },
-    { "source": "/sentiment", "destination": "/social_sentiment_live.html" },
-    { "source": "/competitor", "destination": "/competitor_tracker_app.html" },
-    { "source": "/command", "destination": "/command_center.html" },
-    { "source": "/reporting", "destination": "/advanced_reporting.html" },
-    { "source": "/missions", "destination": "/missions.html" },
-    { "source": "/systems", "destination": "/systems.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
-  ],
-  "headers": [
+  "name": "quentin-mission-control",
+  "builds": [
     {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-store, max-age=0, must-revalidate"
-        }
-      ]
+      "src": "live_dashboard.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/live_dashboard.html"
+    },
+    {
+      "src": "/api/status",
+      "dest": "/api/status.js"
     }
   ]
 }

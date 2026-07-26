@@ -1,0 +1,108 @@
+{
+  "mission": "dscg_study",
+  "created": "2026-07-26",
+  "status": "active",
+  "language": "fr",
+  "exam_date": "2027-05-15",
+  "exam_session": "session_principale_2027",
+  "domains": {
+    "D01": {
+      "name": "Droit des sociétés",
+      "weight": 1,
+      "status": "started",
+      "progress_pct": 3,
+      "hours_studied": 1.5,
+      "last_studied": "2026-07-26",
+      "revision_count": 2,
+      "priority": 3,
+      "next_review": "2026-07-29"
+    },
+    "D02": {
+      "name": "Droit des affaires",
+      "weight": 1,
+      "status": "started",
+      "progress_pct": 3,
+      "hours_studied": 1.6666666666666665,
+      "last_studied": "2026-07-26",
+      "revision_count": 2,
+      "priority": 3,
+      "next_review": "2026-07-29"
+    },
+    "D03": {
+      "name": "Finance",
+      "weight": 1,
+      "status": "started",
+      "progress_pct": 6,
+      "hours_studied": 2.75,
+      "last_studied": "2026-07-26",
+      "revision_count": 2,
+      "priority": 2,
+      "next_review": "2026-07-29"
+    },
+    "D04": {
+      "name": "Contrôle de gestion",
+      "weight": 1,
+      "status": "started",
+      "progress_pct": 4,
+      "hours_studied": 1.9166666666666665,
+      "last_studied": "2026-07-26",
+      "revision_count": 2,
+      "priority": 2,
+      "next_review": "2026-07-29"
+    },
+    "D05": {
+      "name": "Management et SI",
+      "weight": 1,
+      "status": "started",
+      "progress_pct": 4,
+      "hours_studied": 2.0833333333333335,
+      "last_studied": "2026-07-26",
+      "revision_count": 2,
+      "priority": 3,
+      "next_review": "2026-07-29"
+    },
+    "D06": {
+      "name": "Droit fiscal",
+      "weight": 1,
+      "status": "started",
+      "progress_pct": 7,
+      "hours_studied": 3.25,
+      "last_studied": "2026-07-26",
+      "revision_count": 3,
+      "priority": 1,
+      "next_review": "2026-08-02"
+    },
+    "D07": {
+      "name": "Comptabilité approfondie",
+      "weight": 1,
+      "status": "started",
+      "progress_pct": 6,
+      "hours_studied": 2.9999999999999996,
+      "last_studied": "2026-07-26",
+      "revision_count": 3,
+      "priority": 1,
+      "next_review": "2026-08-02"
+    },
+    "D08": {
+      "name": "Comptabilité et audit",
+      "weight": 1,
+      "status": "started",
+      "progress_pct": 4,
+      "hours_studied": 2.166666666666667,
+      "last_studied": "2026-07-26",
+      "revision_count": 2,
+      "priority": 1,
+      "next_review": "2026-07-29"
+    }
+  },
+  "total_hours": 18.333333333333336,
+  "sessions_count": 18,
+  "current_streak": 1,
+  "best_streak": 1,
+  "last_session_date": "2026-07-26",
+  "study_goal_hours_per_week": 12,
+  "study_goal_days_per_week": 4,
+  "start_date": "2026-07-26",
+  "target_completion_date": "2027-03-31",
+  "revision_phase_start": "2027-04-01"
+}

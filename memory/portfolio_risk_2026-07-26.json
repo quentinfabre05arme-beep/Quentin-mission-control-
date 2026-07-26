@@ -1,0 +1,73 @@
+{
+  "portfolioValue": 100000,
+  "totalPositionValue": 50000,
+  "cashPct": 0.5,
+  "totalRiskAmount": 7998,
+  "totalRiskPct": 0.07998,
+  "riskLevel": "CRITICAL",
+  "riskEmoji": "🔴",
+  "largestPosition": {
+    "symbol": "BTC",
+    "pct": 0.2
+  },
+  "top3Concentration": 0.44999999999999996,
+  "concentrationRisk": "MEDIUM",
+  "var95": -0.03,
+  "var99": -0.04,
+  "positionCount": 4,
+  "positionMetrics": [
+    {
+      "symbol": "BTC",
+      "positionValue": 20000,
+      "positionPct": 0.2,
+      "unrealizedPnl": 5000,
+      "unrealizedPnlPct": 0.08333333333333333,
+      "riskAmount": 2000,
+      "riskPct": 0.02,
+      "riskLevel": "LOW",
+      "entryPrice": 60000,
+      "currentPrice": 65000,
+      "stopLoss": 58000
+    },
+    {
+      "symbol": "ETH",
+      "positionValue": 15000,
+      "positionPct": 0.15,
+      "unrealizedPnl": 200,
+      "unrealizedPnlPct": 0.06666666666666667,
+      "riskAmount": 2000,
+      "riskPct": 0.02,
+      "riskLevel": "LOW",
+      "entryPrice": 3000,
+      "currentPrice": 3200,
+      "stopLoss": 2800
+    },
+    {
+      "symbol": "MSTR",
+      "positionValue": 10000,
+      "positionPct": 0.1,
+      "unrealizedPnl": 100,
+      "unrealizedPnlPct": 0.08333333333333333,
+      "riskAmount": 2000,
+      "riskPct": 0.02,
+      "riskLevel": "LOW",
+      "entryPrice": 1200,
+      "currentPrice": 1300,
+      "stopLoss": 1100
+    },
+    {
+      "symbol": "HIMS",
+      "positionValue": 5000,
+      "positionPct": 0.05,
+      "unrealizedPnl": 3,
+      "unrealizedPnlPct": 0.12,
+      "riskAmount": 1998,
+      "riskPct": 0.01998,
+      "riskLevel": "LOW",
+      "entryPrice": 25,
+      "currentPrice": 28,
+      "stopLoss": 22
+    }
+  ],
+  "timestamp": "2026-07-26T21:36:25.935Z"
+}

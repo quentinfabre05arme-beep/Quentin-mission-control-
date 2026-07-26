@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quentin's Live Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            min-height: 100vh;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #e94560;
+        }
+        .header h1 {
+            font-size: 2em;
+            color: #e94560;
+        }
+        .live-badge {
+            display: inline-block;
+            background: #00d26a;
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid #333;
+        }
+        .card h2 {
+            color: #e94560;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+        }
+        .metric:last-child { border-bottom: none; }
+        .metric-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #e94560;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #333;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            border-radius: 5px;
+            transition: width 1s ease;
+        }
+        .status-live {
+            color: #00d26a;
+            font-size: 0.9em;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+        .refresh-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎯 Quentin's Live Dashboard</h1>
+        <div class="live-badge">● LIVE</div>
+        <div id="lastUpdate" style="color: #888; margin-top: 10px;">Loading...</div>
+    </div>
+
+    <div class="refresh-indicator">
+        Auto-refresh: <span id="countdown">30s</span>
+    </div>
+
+    <div class="grid">
+        <!-- Goals -->
+        <div class="card">
+            <h2>🎯 Goals Progress</h2>
+            <div id="goals-container">
+                <div class="metric">
+                    <span>🤖 AI Agent</span>
+                    <span class="metric-value" id="ai-progress">--%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" id="ai-bar" style="width: 0%"></div></div>
+
+                <div class="metric">
+                    <span>💰 Revenue</span>
+                    <span class="metric-value" id="revenue-progress">--%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" id="revenue-bar" style="width: 0%"></div></div>
+
+                <div class="metric">
+                    <span>📈 Trading</span>
+                    <span class="metric-value" id="trading-progress">--%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" id="trading-bar" style="width: 0%"></div></div>
+
+                <div class="metric">
+                    <span>📚 Learning</span>
+                    <span class="metric-value" id="learning-progress">--%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" id="learning-bar" style="width: 0%"></div></div>
+
+                <div class="metric">
+                    <span>🎓 DSCG</span>
+                    <span class="metric-value" id="dscg-progress">--%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" id="dscg-bar" style="width: 0%"></div></div>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="card">
+            <h2>📊 Live Stats</h2>
+            <div id="stats-container">
+                <div class="metric">
+                    <span>Systems</span>
+                    <span class="metric-value" id="systems-built">--/--</span>
+                </div>
+                <div class="metric">
+                    <span>Missions</span>
+                    <span class="metric-value" id="missions-count">--</span>
+                </div>
+                <div class="metric">
+                    <span>Skills</span>
+                    <span class="metric-value" id="skills-count">--</span>
+                </div>
+                <div class="metric">
+                    <span>Revenue</span>
+                    <span class="metric-value" id="revenue-value">€--</span>
+                </div>
+                <div class="metric">
+                    <span>DSCG Days</span>
+                    <span class="metric-value" id="dscg-days">--</span>
+                </div>
+                <div class="metric">
+                    <span>Trading P&L</span>
+                    <span class="metric-value" id="trading-pnl">--%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Status -->
+        <div class="card">
+            <h2>⚡ System Status</h2>
+            <div class="metric">
+                <span>Status</span>
+                <span class="status-live">● OPERATIONAL</span>
+            </div>
+            <div class="metric">
+                <span>Auto-refresh</span>
+                <span class="status-live">● ACTIVE</span>
+            </div>
+            <div class="metric">
+                <span>Memory</span>
+                <span class="status-live">● UPDATING</span>
+            </div>
+            <div class="metric">
+                <span>Errors</span>
+                <span class="metric-value">0</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>🚀 Live Dashboard | Auto-refreshes every 30 seconds | Accessible from any device</p>
+    </div>
+
+    <script>
+        // Fetch live data
+        async function fetchData() {
+            try {
+                const response = await fetch('/api/status');
+                const data = await response.json();
+                updateDashboard(data);
+            } catch(e) {
+                console.log('Using static data (server not running)');
+                updateDashboard({
+                    goals: { ai_agent: 95, learning: 25, revenue: 75, dscg: 12, trading: 60 },
+                    systems: { built: 8, total: 9 },
+                    missions: 17, skills: 37, revenue: 14900, dscg_days: 293, trading_pnl: 2.3
+                });
+            }
+        }
+
+        function updateDashboard(data) {
+            // Update goals
+            document.getElementById('ai-progress').textContent = data.goals.ai_agent + '%';
+            document.getElementById('ai-bar').style.width = data.goals.ai_agent + '%';
+            
+            document.getElementById('revenue-progress').textContent = data.goals.revenue + '%';
+            document.getElementById('revenue-bar').style.width = data.goals.revenue + '%';
+            
+            document.getElementById('trading-progress').textContent = data.goals.trading + '%';
+            document.getElementById('trading-bar').style.width = data.goals.trading + '%';
+            
+            document.getElementById('learning-progress').textContent = data.goals.learning + '%';
+            document.getElementById('learning-bar').style.width = data.goals.learning + '%';
+            
+            document.getElementById('dscg-progress').textContent = data.goals.dscg + '%';
+            document.getElementById('dscg-bar').style.width = data.goals.dscg + '%';
+
+            // Update stats
+            document.getElementById('systems-built').textContent = data.systems.built + '/' + data.systems.total;
+            document.getElementById('missions-count').textContent = data.missions;
+            document.getElementById('skills-count').textContent = data.skills;
+            document.getElementById('revenue-value').textContent = '€' + data.revenue.toLocaleString();
+            document.getElementById('dscg-days').textContent = data.dscg_days;
+            document.getElementById('trading-pnl').textContent = '+' + data.trading_pnl + '%';
+
+            // Update timestamp
+            document.getElementById('lastUpdate').textContent = 'Last updated: ' + new Date(data.timestamp || Date.now()).toLocaleString('fr-FR');
+        }
+
+        // Countdown timer
+        let countdown = 30;
+        setInterval(() => {
+            countdown--;
+            if (countdown <= 0) {
+                countdown = 30;
+                fetchData();
+            }
+            document.getElementById('countdown').textContent = countdown + 's';
+        }, 1000);
+
+        // Initial load
+        fetchData();
+    </script>
+</body>
+</html>

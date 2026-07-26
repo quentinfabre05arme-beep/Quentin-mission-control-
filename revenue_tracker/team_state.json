@@ -1,0 +1,21 @@
+{
+  "mission": "revenue_tracker",
+  "status": "active",
+  "version": "1.0.0",
+  "created_at": "2026-07-26T23:33:00+02:00",
+  "last_updated": "2026-07-26T23:33:00+02:00",
+  "team": {
+    "owner": "main_agent",
+    "reviewers": []
+  },
+  "components": [
+    "revenue_tracker.js",
+    "ROLE.md",
+    "team_state.json"
+  ],
+  "data_files": [
+    "memory/revenue_data.json",
+    "memory/revenue_reports/"
+  ],
+  "next_review": null
+}

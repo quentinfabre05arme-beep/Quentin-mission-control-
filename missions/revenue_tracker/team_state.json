@@ -1,0 +1,28 @@
+{
+  "mission": "revenue_tracker",
+  "role": "revenue-tracking",
+  "status": "active",
+  "streams": [
+    {
+      "id": "init",
+      "name": "Trading Alpha",
+      "type": "trading",
+      "expectedMonthly": 500,
+      "actualMonthly": 0,
+      "status": "active",
+      "created": "2026-07-26T21:31:00.000Z"
+    },
+    {
+      "id": "init2",
+      "name": "Digital Products",
+      "type": "product",
+      "expectedMonthly": 300,
+      "actualMonthly": 0,
+      "status": "active",
+      "created": "2026-07-26T21:31:00.000Z"
+    }
+  ],
+  "totalEarned": 0,
+  "monthlyTarget": 1000,
+  "lastUpdate": "2026-07-26T21:31:00.000Z"
+}

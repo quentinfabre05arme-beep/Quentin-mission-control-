@@ -1,0 +1,44 @@
+{
+  "team_name": "Product Pipeline Mission",
+  "version": "1.0.0",
+  "created_at": "2026-07-26T23:33:00+02:00",
+  "members": [
+    {
+      "name": "Product Manager",
+      "role": "pm",
+      "skills": ["market_research", "product_strategy", "roadmap_planning"],
+      "status": "active"
+    },
+    {
+      "name": "Designer",
+      "role": "design",
+      "skills": ["ui_ux", "prototyping", "user_testing"],
+      "status": "active"
+    },
+    {
+      "name": "Engineer",
+      "role": "engineering",
+      "skills": ["frontend", "backend", "devops"],
+      "status": "active"
+    },
+    {
+      "name": "Marketer",
+      "role": "marketing",
+      "skills": ["content_creation", "social_media", "analytics"],
+      "status": "active"
+    }
+  ],
+  "current_sprint": {
+    "id": 1,
+    "name": "Foundation Sprint",
+    "status": "active",
+    "started_at": "2026-07-26T23:33:00+02:00",
+    "ends_at": "2026-08-09T23:59:59+02:00"
+  },
+  "metrics": {
+    "products_launched": 0,
+    "products_in_pipeline": 0,
+    "total_revenue": 0,
+    "success_rate": 0
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "sessions": [
+    {
+      "id": "sess-ms2bawih",
+      "subject_id": "subj-ms2bas36",
+      "date": "2026-07-26",
+      "duration_minutes": 45,
+      "topic": "Promise.all vs Promise.allSettled",
+      "rating": 5,
+      "notes": "Solid understanding, need practice with edge cases",
+      "created": "2026-07-26T21:30:32.346Z"
+    },
+    {
+      "id": "sess-ms2baxqf",
+      "subject_id": "subj-ms2bas36",
+      "date": "2026-07-26",
+      "duration_minutes": 30,
+      "topic": "Async/await error handling",
+      "rating": 4,
+      "notes": "",
+      "created": "2026-07-26T21:30:33.928Z"
+    },
+    {
+      "id": "sess-ms2baz6h",
+      "subject_id": "subj-ms2bav4p",
+      "date": "2026-07-26",
+      "duration_minutes": 60,
+      "topic": "Load balancing strategies",
+      "rating": 4,
+      "notes": "Read about consistent hashing",
+      "created": "2026-07-26T21:30:35.802Z"
+    },
+    {
+      "id": "sess-ms2bb17a",
+      "subject_id": "subj-ms2batk7",
+      "date": "2026-07-26",
+      "duration_minutes": 90,
+      "topic": "Borrow checker deep dive",
+      "rating": 3,
+      "notes": "Struggled with lifetimes, need revisit",
+      "created": "2026-07-26T21:30:38.423Z"
+    }
+  ],
+  "version": "1.0"
+}

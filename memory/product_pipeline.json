@@ -1,0 +1,89 @@
+{
+  "products": [
+    {
+      "id": "prod_1785101678405",
+      "idea_id": "idea_1785101678399",
+      "title": "Crypto Dashboard Pro",
+      "description": "Advanced portfolio analytics for crypto traders",
+      "category": "fintech",
+      "target_audience": "crypto_traders",
+      "priority": "high",
+      "stage": "mvp",
+      "stages": {
+        "idea": {
+          "status": "completed",
+          "started_at": "2026-07-26T21:34:38.399Z",
+          "completed_at": "2026-07-26T21:34:38.405Z"
+        },
+        "research": {
+          "status": "completed",
+          "started_at": "2026-07-26T21:34:38.405Z",
+          "completed_at": "2026-07-26T21:34:38.407Z"
+        },
+        "design": {
+          "status": "completed",
+          "started_at": "2026-07-26T21:34:38.407Z",
+          "completed_at": "2026-07-26T21:34:38.408Z"
+        },
+        "prototype": {
+          "status": "completed",
+          "started_at": "2026-07-26T21:34:38.408Z",
+          "completed_at": "2026-07-26T21:34:38.409Z"
+        },
+        "mvp": {
+          "status": "active",
+          "started_at": "2026-07-26T21:34:38.409Z",
+          "completed_at": null
+        },
+        "beta": {
+          "status": "pending",
+          "started_at": null,
+          "completed_at": null
+        },
+        "launched": {
+          "status": "pending",
+          "started_at": null,
+          "completed_at": null
+        },
+        "sunset": {
+          "status": "pending",
+          "started_at": null,
+          "completed_at": null
+        }
+      },
+      "assignees": {
+        "pm": "Alice",
+        "design": "Carol",
+        "engineering": "Bob",
+        "marketing": null
+      },
+      "milestones": [
+        {
+          "stage": "design",
+          "note": "Market research complete — niche validated",
+          "at": "2026-07-26T21:34:38.407Z"
+        },
+        {
+          "stage": "prototype",
+          "note": "Wireframes approved",
+          "at": "2026-07-26T21:34:38.408Z"
+        },
+        {
+          "stage": "mvp",
+          "note": "Working prototype with mock data",
+          "at": "2026-07-26T21:34:38.409Z"
+        }
+      ],
+      "launch_date": "2026-09-15",
+      "created_at": "2026-07-26T21:34:38.405Z",
+      "updated_at": "2026-07-26T21:34:38.411Z",
+      "launch_channels": [
+        "product_hunt",
+        "twitter",
+        "newsletter"
+      ]
+    }
+  ],
+  "version": "1.0.0",
+  "updated_at": "2026-07-26T21:34:38.411Z"
+}

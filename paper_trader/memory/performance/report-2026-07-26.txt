@@ -1,0 +1,34 @@
+
+╔══════════════════════════════════════════════════════════╗
+║           PAPER TRADER PERFORMANCE REPORT                ║
+╠══════════════════════════════════════════════════════════╣
+Generated: 2026-07-26T21:30:40.172Z
+
+--- CAPITAL SUMMARY ---
+Starting Balance: $100 000
+Current Balance:  $102 297,75
+Available Cash:   $53 767,55
+Realized P&L:     $2297.75 (2.30%)
+Unrealized P&L:   $0.00
+Total Equity:     $102 297,75
+
+--- TRADE STATISTICS ---
+Total Trades:     3
+Winning:          1
+Losing:           1
+Win Rate:         50.0%
+Avg P&L/Trade:    $1148.88
+
+--- OPEN POSITIONS (1) ---
+MSTR | LONG | Qty: 334 | Entry: $145.30 | Current: $145.30 | Unrealized: $0.00 (0.00%)
+
+--- RECENT CLOSED TRADES ---
+✅ BTC | P&L: $3650.00 (5.38%) | Take profit hit
+❌ ETH | P&L: $-1352.25 (-4.35%) | Stop loss hit
+
+--- MARKET PRICES ---
+BTC: $67 850
+ETH: $3 450,25
+MSTR: $145,3
+HIMS: $12,45
+╚══════════════════════════════════════════════════════════╝

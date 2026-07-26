@@ -1,0 +1,148 @@
+{
+  "symbol": "ETH",
+  "timestamp": "2026-07-26T21:36:24.302Z",
+  "sizing": {
+    "positionSize": 6,
+    "positionValue": 19200,
+    "positionPct": 0.192,
+    "riskAmount": 1200,
+    "riskPct": 0.012,
+    "riskPerUnit": 200,
+    "riskPerUnitPct": 0.0625,
+    "isConstrained": true,
+    "maxPositionApplied": true,
+    "originalPositionSize": 10,
+    "originalPositionPct": 0.32,
+    "units": 6,
+    "entryPrice": 3200,
+    "stopLoss": 3000,
+    "portfolioValue": 100000,
+    "riskPctInput": 0.02,
+    "maxPositionPct": 0.2
+  },
+  "riskReward": {
+    "risk": 200,
+    "reward": 400,
+    "ratio": "2.00",
+    "riskPct": 0.0625,
+    "rewardPct": 0.125,
+    "breakevenWinRate": 0.3333333333333333,
+    "requiredWinRatePct": "33.3",
+    "assessment": "GOOD",
+    "recommendation": "ACCEPT",
+    "meetsMinimum": true,
+    "entryPrice": 3200,
+    "stopLoss": 3000,
+    "targetPrice": 3600
+  },
+  "stopAlternatives": {
+    "atr": null,
+    "fixed": {
+      "stopPrice": 3040,
+      "stopPct": 0.05,
+      "stopDistance": 160,
+      "method": "fixed",
+      "recommendation": "Fixed 5.0% = 160.00",
+      "entryPrice": 3200,
+      "riskPerUnit": 160,
+      "riskPerUnitPct": 0.05
+    }
+  },
+  "portfolioImpact": {
+    "portfolioValue": 100000,
+    "totalPositionValue": 69200,
+    "cashPct": 0.30800000000000005,
+    "totalRiskAmount": 9998,
+    "totalRiskPct": 0.09998,
+    "riskLevel": "CRITICAL",
+    "riskEmoji": "🔴",
+    "largestPosition": {
+      "symbol": "BTC",
+      "pct": 0.2
+    },
+    "top3Concentration": 0.542,
+    "concentrationRisk": "MEDIUM",
+    "var95": -0.03,
+    "var99": -0.04,
+    "positionCount": 5,
+    "positionMetrics": [
+      {
+        "symbol": "BTC",
+        "positionValue": 20000,
+        "positionPct": 0.2,
+        "unrealizedPnl": 5000,
+        "unrealizedPnlPct": 0.08333333333333333,
+        "riskAmount": 2000,
+        "riskPct": 0.02,
+        "riskLevel": "LOW",
+        "entryPrice": 60000,
+        "currentPrice": 65000,
+        "stopLoss": 58000
+      },
+      {
+        "symbol": "ETH",
+        "positionValue": 15000,
+        "positionPct": 0.15,
+        "unrealizedPnl": 200,
+        "unrealizedPnlPct": 0.06666666666666667,
+        "riskAmount": 2000,
+        "riskPct": 0.02,
+        "riskLevel": "LOW",
+        "entryPrice": 3000,
+        "currentPrice": 3200,
+        "stopLoss": 2800
+      },
+      {
+        "symbol": "MSTR",
+        "positionValue": 10000,
+        "positionPct": 0.1,
+        "unrealizedPnl": 100,
+        "unrealizedPnlPct": 0.08333333333333333,
+        "riskAmount": 2000,
+        "riskPct": 0.02,
+        "riskLevel": "LOW",
+        "entryPrice": 1200,
+        "currentPrice": 1300,
+        "stopLoss": 1100
+      },
+      {
+        "symbol": "HIMS",
+        "positionValue": 5000,
+        "positionPct": 0.05,
+        "unrealizedPnl": 3,
+        "unrealizedPnlPct": 0.12,
+        "riskAmount": 1998,
+        "riskPct": 0.01998,
+        "riskLevel": "LOW",
+        "entryPrice": 25,
+        "currentPrice": 28,
+        "stopLoss": 22
+      },
+      {
+        "symbol": "ETH",
+        "positionValue": 19200,
+        "positionPct": 0.192,
+        "unrealizedPnl": 0,
+        "unrealizedPnlPct": 0,
+        "riskAmount": 2000,
+        "riskPct": 0.02,
+        "riskLevel": "LOW",
+        "entryPrice": 3200,
+        "currentPrice": 3200,
+        "stopLoss": 3000
+      }
+    ],
+    "timestamp": "2026-07-26T21:36:24.301Z"
+  },
+  "checks": {
+    "positionSizeOk": true,
+    "riskPerTradeOk": true,
+    "riskRewardOk": true,
+    "portfolioRiskOk": false
+  },
+  "approved": false,
+  "riskLevel": "LOW",
+  "warnings": [
+    "Portfolio risk 10.00% exceeds max 6.00%"
+  ]
+}

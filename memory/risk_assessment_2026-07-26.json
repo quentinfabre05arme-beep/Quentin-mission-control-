@@ -1,0 +1,394 @@
+{
+  "type": "risk_assessment",
+  "timestamp": "2026-07-26",
+  "sizing": {
+    "positionSize": 200,
+    "positionValue": 20000,
+    "positionPct": 0.2,
+    "riskAmount": 1000,
+    "riskPct": 0.01,
+    "riskPerUnit": 5,
+    "riskPerUnitPct": 0.05,
+    "isConstrained": true,
+    "maxPositionApplied": true,
+    "originalPositionSize": 400,
+    "originalPositionPct": 0.4,
+    "units": 200,
+    "entryPrice": 100,
+    "stopLoss": 95,
+    "portfolioValue": 100000,
+    "riskPctInput": 0.02,
+    "maxPositionPct": 0.2
+  },
+  "stopLoss": {
+    "atr": {
+      "stopPrice": 62000,
+      "stopPct": 0.046153846153846156,
+      "stopDistance": 3000,
+      "method": "atr",
+      "recommendation": "ATR(1500.00) × 2 = 3000.00",
+      "entryPrice": 65000,
+      "riskPerUnit": 3000,
+      "riskPerUnitPct": 0.046153846153846156
+    },
+    "fixed": {
+      "stopPrice": 61750,
+      "stopPct": 0.05,
+      "stopDistance": 3250,
+      "method": "fixed",
+      "recommendation": "Fixed 5.0% = 3250.00",
+      "entryPrice": 65000,
+      "riskPerUnit": 3250,
+      "riskPerUnitPct": 0.05
+    }
+  },
+  "riskReward": {
+    "risk": 5,
+    "reward": 20,
+    "ratio": "4.00",
+    "riskPct": 0.05,
+    "rewardPct": 0.2,
+    "breakevenWinRate": 0.2,
+    "requiredWinRatePct": "20.0",
+    "assessment": "EXCELLENT",
+    "recommendation": "ACCEPT",
+    "meetsMinimum": true,
+    "entryPrice": 100,
+    "stopLoss": 95,
+    "targetPrice": 120
+  },
+  "portfolio": {
+    "portfolioValue": 100000,
+    "totalPositionValue": 50000,
+    "cashPct": 0.5,
+    "totalRiskAmount": 7998,
+    "totalRiskPct": 0.07998,
+    "riskLevel": "CRITICAL",
+    "riskEmoji": "🔴",
+    "largestPosition": {
+      "symbol": "BTC",
+      "pct": 0.2
+    },
+    "top3Concentration": 0.44999999999999996,
+    "concentrationRisk": "MEDIUM",
+    "var95": -0.03,
+    "var99": -0.04,
+    "positionCount": 4,
+    "positionMetrics": [
+      {
+        "symbol": "BTC",
+        "positionValue": 20000,
+        "positionPct": 0.2,
+        "unrealizedPnl": 5000,
+        "unrealizedPnlPct": 0.08333333333333333,
+        "riskAmount": 2000,
+        "riskPct": 0.02,
+        "riskLevel": "LOW",
+        "entryPrice": 60000,
+        "currentPrice": 65000,
+        "stopLoss": 58000
+      },
+      {
+        "symbol": "ETH",
+        "positionValue": 15000,
+        "positionPct": 0.15,
+        "unrealizedPnl": 200,
+        "unrealizedPnlPct": 0.06666666666666667,
+        "riskAmount": 2000,
+        "riskPct": 0.02,
+        "riskLevel": "LOW",
+        "entryPrice": 3000,
+        "currentPrice": 3200,
+        "stopLoss": 2800
+      },
+      {
+        "symbol": "MSTR",
+        "positionValue": 10000,
+        "positionPct": 0.1,
+        "unrealizedPnl": 100,
+        "unrealizedPnlPct": 0.08333333333333333,
+        "riskAmount": 2000,
+        "riskPct": 0.02,
+        "riskLevel": "LOW",
+        "entryPrice": 1200,
+        "currentPrice": 1300,
+        "stopLoss": 1100
+      },
+      {
+        "symbol": "HIMS",
+        "positionValue": 5000,
+        "positionPct": 0.05,
+        "unrealizedPnl": 3,
+        "unrealizedPnlPct": 0.12,
+        "riskAmount": 1998,
+        "riskPct": 0.01998,
+        "riskLevel": "LOW",
+        "entryPrice": 25,
+        "currentPrice": 28,
+        "stopLoss": 22
+      }
+    ],
+    "timestamp": "2026-07-26T21:36:22.160Z"
+  },
+  "drawdown": {
+    "maxDrawdown": 7000,
+    "maxDrawdownPct": 0.06862745098039216,
+    "currentDrawdown": 0,
+    "currentDrawdownPct": 0,
+    "peak": 103000,
+    "currentValue": 103000,
+    "totalReturn": 0.03,
+    "drawdownHistory": [
+      {
+        "index": 0,
+        "value": 100000,
+        "peak": 100000,
+        "drawdown": 0,
+        "drawdownPct": 0
+      },
+      {
+        "index": 1,
+        "value": 102000,
+        "peak": 102000,
+        "drawdown": 0,
+        "drawdownPct": 0
+      },
+      {
+        "index": 2,
+        "value": 98000,
+        "peak": 102000,
+        "drawdown": 4000,
+        "drawdownPct": 0.0392156862745098
+      },
+      {
+        "index": 3,
+        "value": 101000,
+        "peak": 102000,
+        "drawdown": 1000,
+        "drawdownPct": 0.00980392156862745
+      },
+      {
+        "index": 4,
+        "value": 95000,
+        "peak": 102000,
+        "drawdown": 7000,
+        "drawdownPct": 0.06862745098039216
+      },
+      {
+        "index": 5,
+        "value": 97000,
+        "peak": 102000,
+        "drawdown": 5000,
+        "drawdownPct": 0.049019607843137254
+      },
+      {
+        "index": 6,
+        "value": 99000,
+        "peak": 102000,
+        "drawdown": 3000,
+        "drawdownPct": 0.029411764705882353
+      },
+      {
+        "index": 7,
+        "value": 102000,
+        "peak": 102000,
+        "drawdown": 0,
+        "drawdownPct": 0
+      },
+      {
+        "index": 8,
+        "value": 100000,
+        "peak": 102000,
+        "drawdown": 2000,
+        "drawdownPct": 0.0196078431372549
+      },
+      {
+        "index": 9,
+        "value": 103000,
+        "peak": 103000,
+        "drawdown": 0,
+        "drawdownPct": 0
+      }
+    ],
+    "alertTriggered": false,
+    "hardStopTriggered": false,
+    "timestamp": "2026-07-26T21:36:22.161Z"
+  },
+  "sharpe": {
+    "meanReturn": 0.006333333333333334,
+    "stdDev": 0.02266446912944444,
+    "sharpeRatio": 0.2759371162964254,
+    "annualizedSharpe": 4.3803659232759,
+    "riskFreeRate": 0.02,
+    "periodsPerYear": 252,
+    "excessReturn": 0.006253968253968255,
+    "assessment": "GOOD"
+  },
+  "sortino": {
+    "meanReturn": 0.006333333333333334,
+    "downsideDeviation": 0.02215646837627989,
+    "downsideReturns": 11,
+    "sortinoRatio": 0.28584579571867275,
+    "annualizedSortino": 4.537661332709877,
+    "targetReturn": 0,
+    "periodsPerYear": 252,
+    "assessment": "GOOD"
+  },
+  "tradeAssessment": {
+    "symbol": "AAPL",
+    "timestamp": "2026-07-26T21:36:22.162Z",
+    "sizing": {
+      "positionSize": 200,
+      "positionValue": 20000,
+      "positionPct": 0.2,
+      "riskAmount": 1000,
+      "riskPct": 0.01,
+      "riskPerUnit": 5,
+      "riskPerUnitPct": 0.05,
+      "isConstrained": true,
+      "maxPositionApplied": true,
+      "originalPositionSize": 400,
+      "originalPositionPct": 0.4,
+      "units": 200,
+      "entryPrice": 100,
+      "stopLoss": 95,
+      "portfolioValue": 100000,
+      "riskPctInput": 0.02,
+      "maxPositionPct": 0.2
+    },
+    "riskReward": {
+      "risk": 5,
+      "reward": 20,
+      "ratio": "4.00",
+      "riskPct": 0.05,
+      "rewardPct": 0.2,
+      "breakevenWinRate": 0.2,
+      "requiredWinRatePct": "20.0",
+      "assessment": "EXCELLENT",
+      "recommendation": "ACCEPT",
+      "meetsMinimum": true,
+      "entryPrice": 100,
+      "stopLoss": 95,
+      "targetPrice": 120
+    },
+    "stopAlternatives": {
+      "atr": {
+        "stopPrice": 94,
+        "stopPct": 0.06,
+        "stopDistance": 6,
+        "method": "atr",
+        "recommendation": "ATR(3.00) × 2 = 6.00",
+        "entryPrice": 100,
+        "riskPerUnit": 6,
+        "riskPerUnitPct": 0.06
+      },
+      "fixed": {
+        "stopPrice": 95,
+        "stopPct": 0.05,
+        "stopDistance": 5,
+        "method": "fixed",
+        "recommendation": "Fixed 5.0% = 5.00",
+        "entryPrice": 100,
+        "riskPerUnit": 5,
+        "riskPerUnitPct": 0.05
+      }
+    },
+    "portfolioImpact": {
+      "portfolioValue": 100000,
+      "totalPositionValue": 70000,
+      "cashPct": 0.30000000000000004,
+      "totalRiskAmount": 9998,
+      "totalRiskPct": 0.09998,
+      "riskLevel": "CRITICAL",
+      "riskEmoji": "🔴",
+      "largestPosition": {
+        "symbol": "BTC",
+        "pct": 0.2
+      },
+      "top3Concentration": 0.55,
+      "concentrationRisk": "MEDIUM",
+      "var95": -0.03,
+      "var99": -0.04,
+      "positionCount": 5,
+      "positionMetrics": [
+        {
+          "symbol": "BTC",
+          "positionValue": 20000,
+          "positionPct": 0.2,
+          "unrealizedPnl": 5000,
+          "unrealizedPnlPct": 0.08333333333333333,
+          "riskAmount": 2000,
+          "riskPct": 0.02,
+          "riskLevel": "LOW",
+          "entryPrice": 60000,
+          "currentPrice": 65000,
+          "stopLoss": 58000
+        },
+        {
+          "symbol": "ETH",
+          "positionValue": 15000,
+          "positionPct": 0.15,
+          "unrealizedPnl": 200,
+          "unrealizedPnlPct": 0.06666666666666667,
+          "riskAmount": 2000,
+          "riskPct": 0.02,
+          "riskLevel": "LOW",
+          "entryPrice": 3000,
+          "currentPrice": 3200,
+          "stopLoss": 2800
+        },
+        {
+          "symbol": "MSTR",
+          "positionValue": 10000,
+          "positionPct": 0.1,
+          "unrealizedPnl": 100,
+          "unrealizedPnlPct": 0.08333333333333333,
+          "riskAmount": 2000,
+          "riskPct": 0.02,
+          "riskLevel": "LOW",
+          "entryPrice": 1200,
+          "currentPrice": 1300,
+          "stopLoss": 1100
+        },
+        {
+          "symbol": "HIMS",
+          "positionValue": 5000,
+          "positionPct": 0.05,
+          "unrealizedPnl": 3,
+          "unrealizedPnlPct": 0.12,
+          "riskAmount": 1998,
+          "riskPct": 0.01998,
+          "riskLevel": "LOW",
+          "entryPrice": 25,
+          "currentPrice": 28,
+          "stopLoss": 22
+        },
+        {
+          "symbol": "AAPL",
+          "positionValue": 20000,
+          "positionPct": 0.2,
+          "unrealizedPnl": 0,
+          "unrealizedPnlPct": 0,
+          "riskAmount": 2000,
+          "riskPct": 0.02,
+          "riskLevel": "LOW",
+          "entryPrice": 100,
+          "currentPrice": 100,
+          "stopLoss": 95
+        }
+      ],
+      "timestamp": "2026-07-26T21:36:22.162Z"
+    },
+    "checks": {
+      "positionSizeOk": true,
+      "riskPerTradeOk": true,
+      "riskRewardOk": true,
+      "portfolioRiskOk": false
+    },
+    "approved": false,
+    "riskLevel": "LOW",
+    "warnings": [
+      "Portfolio risk 10.00% exceeds max 6.00%"
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "generated_at": "2026-07-26T21:30:40.172Z",
+  "summary": {
+    "starting_balance": 100000,
+    "current_balance": 102297.75,
+    "available_cash": 53767.549999999996,
+    "total_pnl": 2297.75,
+    "total_pnl_percent": 2.29775,
+    "unrealized_pnl": 0,
+    "total_equity": 102297.75
+  },
+  "stats": {
+    "total_trades": 3,
+    "winning_trades": 1,
+    "losing_trades": 1,
+    "win_rate": 50,
+    "avg_pnl_per_trade": 1148.875,
+    "max_drawdown": 0
+  },
+  "open_positions": [
+    {
+      "id": "TRADE-1785101440169",
+      "symbol": "MSTR",
+      "side": "LONG",
+      "entry_price": 145.3,
+      "quantity": 334,
+      "total_cost": 48530.200000000004,
+      "stop_loss": 130,
+      "take_profit": 170,
+      "opened_at": "2026-07-26T21:30:40.169Z",
+      "reason": "Technical breakout",
+      "status": "OPEN",
+      "current_price": 145.3,
+      "market_value": 48530.200000000004,
+      "unrealized_pnl": 0,
+      "unrealized_pnl_percent": 0,
+      "hit_stop_loss": false,
+      "hit_take_profit": false
+    }
+  ],
+  "closed_trades": [
+    {
+      "id": "TRADE-1785101440162",
+      "symbol": "BTC",
+      "side": "LONG",
+      "entry_price": 67850,
+      "quantity": 1,
+      "total_cost": 67850,
+      "stop_loss": 65000,
+      "take_profit": 72000,
+      "opened_at": "2026-07-26T21:30:40.162Z",
+      "reason": "STRONG BUY signal",
+      "status": "CLOSED",
+      "exit_price": 71500,
+      "proceeds": 71500,
+      "pnl": 3650,
+      "pnl_percent": 5.379513633014001,
+      "closed_at": "2026-07-26T21:30:40.166Z",
+      "close_reason": "Take profit hit"
+    },
+    {
+      "id": "TRADE-1785101440164",
+      "symbol": "ETH",
+      "side": "LONG",
+      "entry_price": 3450.25,
+      "quantity": 9,
+      "total_cost": 31052.25,
+      "stop_loss": 3200,
+      "take_profit": 3800,
+      "opened_at": "2026-07-26T21:30:40.164Z",
+      "reason": "Momentum breakout",
+      "status": "CLOSED",
+      "exit_price": 3300,
+      "proceeds": 29700,
+      "pnl": -1352.25,
+      "pnl_percent": -4.354756901673792,
+      "closed_at": "2026-07-26T21:30:40.168Z",
+      "close_reason": "Stop loss hit"
+    }
+  ],
+  "prices": {
+    "BTC": 67850,
+    "ETH": 3450.25,
+    "MSTR": 145.3,
+    "HIMS": 12.45
+  }
+}

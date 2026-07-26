@@ -1,0 +1,25 @@
+{
+  "team": {
+    "name": "Learning Tracker",
+    "version": "1.0.0",
+    "created": "2026-07-26T23:29:00+02:00"
+  },
+  "members": [
+    {
+      "id": "learning_tracker",
+      "role": "tracker",
+      "status": "active",
+      "capabilities": ["track_subjects", "log_sessions", "measure_progress", "suggest_topics"]
+    }
+  ],
+  "resources": {
+    "data_dir": "memory/learning",
+    "subjects_file": "memory/learning/subjects.json",
+    "sessions_file": "memory/learning/sessions.json",
+    "progress_file": "memory/learning/progress.json"
+  },
+  "state": {
+    "initialized": true,
+    "last_updated": "2026-07-26T23:29:00+02:00"
+  }
+}
