@@ -1,0 +1,58 @@
+=== OPENCLAW HEALTH AUDIT ===
+Date: 2026-07-26T09:02:50.906Z
+OS: Windows_NT 10.0.26200 x64
+Node: v24.14.1
+User: quent
+
+=== PROCESSES ===
+✅ 2 Node processes running
+  PID: 14252 | Memory: "604�880 Ko"
+  PID: 4436 | Memory: "54�408 Ko"
+
+=== CRITICAL FILES ===
+✅ openclaw.json (0.00 MB, 0 days old)
+✅ gateway.cmd (0.00 MB, 16 days old)
+✅ gateway.vbs (0.00 MB, 16 days old)
+✅ state/openclaw.sqlite (17.73 MB, 0 days old)
+
+=== CONFIG HEALTH ===
+✅ Config file is valid JSON
+  Models: 0
+  Cron jobs: 0
+  Skills: undefined
+⚠️  Config contains API keys/tokens (should use SecretRefs)
+
+=== DISK SPACE ===
+C: Drive: NaN / 14.0 GB used (NaN%)
+✅ Disk space OK
+
+=== WORKSPACE HEALTH ===
+✅ Workspace exists (422 items)
+✅ Git repository found
+⚠️  7 uncommitted changes
+✅ AGENTS.md exists
+✅ SOUL.md exists
+✅ USER.md exists
+✅ MEMORY.md exists
+✅ TOOLS.md exists
+
+=== RECENT ERRORS ===
+gateway-restart.log (20h ago)
+  ✅ No errors
+commands.log (309h ago)
+  ✅ No errors
+
+=== MEMORY ===
+Total: 7.9 GB | Used: 7.1 GB (89.2%) | Free: 0.9 GB
+🟡 WARNING: High memory usage
+
+=== ZOMBIE PROCESSES ===
+✅ Process count normal
+
+=== SECURITY ===
+⚠️  .env found (0.2 KB)
+⚠️  .env.printify found (1.8 KB)
+
+=== SUMMARY ===
+Errors: 0 | Warnings: 5 | OK: 17
+🟡 SYSTEM OK (with warnings)
