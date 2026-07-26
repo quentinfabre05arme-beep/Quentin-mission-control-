@@ -1,0 +1,114 @@
+﻿[
+    {
+        "Service":  "Gmail",
+        "Status":  "Working",
+        "Output":  {
+                       "Exception":  "System.Management.Automation.RemoteException: The --action option is required.",
+                       "TargetObject":  "The --action option is required.",
+                       "CategoryInfo":  "NotSpecified: (The --action option is required.:String) [], RemoteException",
+                       "FullyQualifiedErrorId":  "NativeCommandError",
+                       "ErrorDetails":  null,
+                       "InvocationInfo":  "System.Management.Automation.InvocationInfo",
+                       "ScriptStackTrace":  "à \u003cScriptBlock\u003e, C:\\Users\\quent\\.openclaw\\workspace\\test_oomol.ps1 : ligne 8",
+                       "PipelineIterationInfo":  "0 0",
+                       "writeErrorStream":  true,
+                       "PSMessageDetails":  null
+                   }
+    },
+    {
+        "Service":  "Calendar",
+        "Status":  "Working",
+        "Output":  {
+                       "Exception":  "System.Management.Automation.RemoteException: The --action option is required.",
+                       "TargetObject":  "The --action option is required.",
+                       "CategoryInfo":  "NotSpecified: (The --action option is required.:String) [], RemoteException",
+                       "FullyQualifiedErrorId":  "NativeCommandError",
+                       "ErrorDetails":  null,
+                       "InvocationInfo":  "System.Management.Automation.InvocationInfo",
+                       "ScriptStackTrace":  "à \u003cScriptBlock\u003e, C:\\Users\\quent\\.openclaw\\workspace\\test_oomol.ps1 : ligne 16",
+                       "PipelineIterationInfo":  "0 0",
+                       "writeErrorStream":  true,
+                       "PSMessageDetails":  null
+                   }
+    },
+    {
+        "Service":  "Drive",
+        "Status":  "Working",
+        "Output":  {
+                       "Exception":  "System.Management.Automation.RemoteException: The --action option is required.",
+                       "TargetObject":  "The --action option is required.",
+                       "CategoryInfo":  "NotSpecified: (The --action option is required.:String) [], RemoteException",
+                       "FullyQualifiedErrorId":  "NativeCommandError",
+                       "ErrorDetails":  null,
+                       "InvocationInfo":  "System.Management.Automation.InvocationInfo",
+                       "ScriptStackTrace":  "à \u003cScriptBlock\u003e, C:\\Users\\quent\\.openclaw\\workspace\\test_oomol.ps1 : ligne 24",
+                       "PipelineIterationInfo":  "0 0",
+                       "writeErrorStream":  true,
+                       "PSMessageDetails":  null
+                   }
+    },
+    {
+        "Service":  "Notion",
+        "Status":  "Working",
+        "Output":  {
+                       "Exception":  "System.Management.Automation.RemoteException: The --action option is required.",
+                       "TargetObject":  "The --action option is required.",
+                       "CategoryInfo":  "NotSpecified: (The --action option is required.:String) [], RemoteException",
+                       "FullyQualifiedErrorId":  "NativeCommandError",
+                       "ErrorDetails":  null,
+                       "InvocationInfo":  "System.Management.Automation.InvocationInfo",
+                       "ScriptStackTrace":  "à \u003cScriptBlock\u003e, C:\\Users\\quent\\.openclaw\\workspace\\test_oomol.ps1 : ligne 32",
+                       "PipelineIterationInfo":  "0 0",
+                       "writeErrorStream":  true,
+                       "PSMessageDetails":  null
+                   }
+    },
+    {
+        "Service":  "GitHub",
+        "Status":  "Working",
+        "Output":  {
+                       "Exception":  "System.Management.Automation.RemoteException: The --action option is required.",
+                       "TargetObject":  "The --action option is required.",
+                       "CategoryInfo":  "NotSpecified: (The --action option is required.:String) [], RemoteException",
+                       "FullyQualifiedErrorId":  "NativeCommandError",
+                       "ErrorDetails":  null,
+                       "InvocationInfo":  "System.Management.Automation.InvocationInfo",
+                       "ScriptStackTrace":  "à \u003cScriptBlock\u003e, C:\\Users\\quent\\.openclaw\\workspace\\test_oomol.ps1 : ligne 40",
+                       "PipelineIterationInfo":  "0 0",
+                       "writeErrorStream":  true,
+                       "PSMessageDetails":  null
+                   }
+    },
+    {
+        "Service":  "Weather",
+        "Status":  "Working",
+        "Output":  {
+                       "Exception":  "System.Management.Automation.RemoteException: The --action option is required.",
+                       "TargetObject":  "The --action option is required.",
+                       "CategoryInfo":  "NotSpecified: (The --action option is required.:String) [], RemoteException",
+                       "FullyQualifiedErrorId":  "NativeCommandError",
+                       "ErrorDetails":  null,
+                       "InvocationInfo":  "System.Management.Automation.InvocationInfo",
+                       "ScriptStackTrace":  "à \u003cScriptBlock\u003e, C:\\Users\\quent\\.openclaw\\workspace\\test_oomol.ps1 : ligne 48",
+                       "PipelineIterationInfo":  "0 0",
+                       "writeErrorStream":  true,
+                       "PSMessageDetails":  null
+                   }
+    },
+    {
+        "Service":  "OpenAI",
+        "Status":  "Working",
+        "Output":  {
+                       "Exception":  "System.Management.Automation.RemoteException: The --action option is required.",
+                       "TargetObject":  "The --action option is required.",
+                       "CategoryInfo":  "NotSpecified: (The --action option is required.:String) [], RemoteException",
+                       "FullyQualifiedErrorId":  "NativeCommandError",
+                       "ErrorDetails":  null,
+                       "InvocationInfo":  "System.Management.Automation.InvocationInfo",
+                       "ScriptStackTrace":  "à \u003cScriptBlock\u003e, C:\\Users\\quent\\.openclaw\\workspace\\test_oomol.ps1 : ligne 56",
+                       "PipelineIterationInfo":  "0 0",
+                       "writeErrorStream":  true,
+                       "PSMessageDetails":  null
+                   }
+    }
+]

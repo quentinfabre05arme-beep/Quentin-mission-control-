@@ -1,0 +1,30 @@
+
+╔══════════════════════════════════════════════════════════╗
+║           🌩️ OOMOL UNIFIED DASHBOARD                      ║
+║              26/07/2026 19:06:23                      ║
+╠══════════════════════════════════════════════════════════╣
+║ SERVICES                                                 ║
+╠══════════════════════════════════════════════════════════╣
+║  📧 Gmail        ✅ Active                 ║
+║  📅 Calendar     ✅ Active                 ║
+║  ☁️  Drive        ❌ Error                  ║
+║  📝 Notion       ❌ Error                  ║
+║  🐙 GitHub       ❌ Error                  ║
+║  🤖 OpenAI       ✅ Active                 ║
+║  🌤️  Weather      ❌ Error                  ║
+╠══════════════════════════════════════════════════════════╣
+║ WORKFLOWS                                               ║
+╠══════════════════════════════════════════════════════════╣
+║  📊 Daily Market Report    8:00 AM  Daily               ║
+║  🌤️  Weather + Calendar    7:00 AM  Daily               ║
+║  🔗 GitHub → Notion        Every 6h  Hourly             ║
+║  🔬 Research Pipeline        Mon 9 AM  Weekly             ║
+║  📁 File Librarian          2:00 AM  Daily               ║
+╠══════════════════════════════════════════════════════════╣
+║ SYSTEM                                                   ║
+╠══════════════════════════════════════════════════════════╣
+║  🧠 Models: 9 configured                                 ║
+║  🤖 Agents: 4 active                                     ║
+║  ⏰ Cron Jobs: 6 running                                  ║
+║  💾 Memory: 6.6GB/7.9GB                                   ║
+╚══════════════════════════════════════════════════════════╝
