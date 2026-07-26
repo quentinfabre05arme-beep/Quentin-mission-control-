@@ -3,18 +3,18 @@
   "name": "quentin-mission-control",
   "builds": [
     {
-      "src": "index.html",
+      "src": "v3.html",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/",
-      "dest": "/index.html"
+      "dest": "/v3.html"
     },
     {
-      "src": "/api/status",
-      "dest": "/api/status.js"
+      "src": "/index.html",
+      "dest": "/v3.html"
     }
   ]
 }
