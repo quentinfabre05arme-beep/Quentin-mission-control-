@@ -1,17 +1,16 @@
-# Vercel Configuration
 {
   "version": 2,
   "name": "quentin-mission-control",
   "builds": [
     {
-      "src": "live_dashboard.html",
+      "src": "index.html",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/",
-      "dest": "/live_dashboard.html"
+      "dest": "/index.html"
     },
     {
       "src": "/api/status",
