@@ -1,0 +1,47 @@
+=== COMPLETE OPENCLAW AUDIT ===
+Date: 2026-07-26T09:46:26.304Z
+Node: v24.14.1
+
+=== MEMORY & PERFORMANCE ===
+RAM: 4.5/7.9 GB (57%)
+CPU cores: 8
+Uptime: 2.2h
+
+=== CONFIG ANALYSIS ===
+Models: 6
+Primary: ollama-cloud/kimi-k2.6
+Skills enabled: 5
+Cron jobs: 0
+Telegram: YES
+Elevated tools: NO
+
+=== WORKSPACE ANALYSIS ===
+Items: 425
+OK AGENTS.md (15 KB, 3d old)
+OK SOUL.md (11 KB, 1d old)
+OK USER.md (0 KB, 16d old)
+OK MEMORY.md (5 KB, 0d old)
+OK TOOLS.md (28 KB, 4d old)
+OK HEARTBEAT.md (1 KB, 0d old)
+
+=== MISSION CONTROL ===
+Files: 113
+
+=== MEMORY FILES ===
+Daily notes: 14
+
+=== CRON STATUS ===
+Cron jobs stored internally
+
+=== GIT STATUS ===
+Uncommitted: 5 files
+
+=== RECOMMENDATIONS ===
+1. MEMORY: Add daily cron to clear Chrome caches
+2. CONFIG: Enable more skills (obsidian, healthcheck, heartbeat-v2)
+3. AUTOMATION: Create self-improvement loop cron
+4. BACKUP: Add daily git auto-commit cron
+5. MONITORING: Create system health dashboard
+6. LEARNING: Add pattern extraction from daily notes
+7. SECURITY: Move API keys to SecretRefs
+8. EFFICIENCY: Compress old session logs monthly

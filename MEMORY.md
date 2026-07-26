@@ -180,3 +180,98 @@ All jobs previously failing with kimi-k2.5:cloud (not in allowlist) updated to k
 ---
 
 *This file is maintained automatically. Last manual update: July 25, 2026*
+
+## Auto-Extracted Patterns (2026-07-26)
+
+### Decisions (0)
+
+
+### Errors Found (13)
+- **Issue:** Vercel GitHub auto-deploy broken (lovat URL stale)
+- - `memory-maintenance` cron job failing (file edit conflicts)
+- | index.html broken meta tag | 🔴 Critical | Merged duplicate timestamps | ✅ Fixed |
+- - **Analyze**: File had `content="..."2026-07-23T10:12..."` — broken syntax
+- - Token fails for: Creating products, reading catalog ❌
+
+### Improvements (29)
+- **Fix:** Manual CLI deploy to new URL
+- - Printify API fixed (July 21) ✅
+- ### Issues Fixed:
+- ### Self-Improvement Loop Applied:
+- **Problem Fixed:**
+
+## Auto-Extracted (2026-07-26)
+
+### Decisions
+
+
+### Errors Found
+- [2026-07-23.md] - `memory-maintenance` cron job failing (file edit conflicts)
+- [2026-07-24.md] - Token fails for: Creating products, reading catalog ❌
+- [2026-07-24.md] **Error:** "Provided images do not exist" — Printify requires uploaded images before creating products
+- [2026-07-24.md] | `autonomy_core_v2/` | `autonomy_core/` | 5 files (revenue_tracker, opportunity_scanner, error_recovery, self_improvement_loop, decision_matrix) |
+- [2026-07-24.md] ├── error_recovery.js
+
+### Improvements
+- ### Self-Improvement Loop Applied:
+- - **Self-Healing Orchestrator**: DETECT → FIX → IMPROVE → ASSESS → REPEAT
+- Phase 3: OPTIMIZATION — Suggest improvements
+- | `dashboard-autonomous-improvement` | Hourly | ✅ | Dashboard |
+- **Self-Improvement Loop Executed:**
+
+## Auto-Extracted (2026-07-26)
+
+### Decisions
+
+
+### Errors Found
+- [2026-07-23.md] - `memory-maintenance` cron job failing (file edit conflicts)
+- [2026-07-24.md] - Token fails for: Creating products, reading catalog ❌
+- [2026-07-24.md] **Error:** "Provided images do not exist" — Printify requires uploaded images before creating products
+- [2026-07-24.md] | `autonomy_core_v2/` | `autonomy_core/` | 5 files (revenue_tracker, opportunity_scanner, error_recovery, self_improvement_loop, decision_matrix) |
+- [2026-07-24.md] ├── error_recovery.js
+
+### Improvements
+- ### Self-Improvement Loop Applied:
+- - **Self-Healing Orchestrator**: DETECT → FIX → IMPROVE → ASSESS → REPEAT
+- Phase 3: OPTIMIZATION — Suggest improvements
+- | `dashboard-autonomous-improvement` | Hourly | ✅ | Dashboard |
+- **Self-Improvement Loop Executed:**
+
+## Auto-Extracted (2026-07-26)
+
+### Decisions
+
+
+### Errors Found
+- [2026-07-23.md] - `memory-maintenance` cron job failing (file edit conflicts)
+- [2026-07-24.md] - Token fails for: Creating products, reading catalog ❌
+- [2026-07-24.md] **Error:** "Provided images do not exist" — Printify requires uploaded images before creating products
+- [2026-07-24.md] | `autonomy_core_v2/` | `autonomy_core/` | 5 files (revenue_tracker, opportunity_scanner, error_recovery, self_improvement_loop, decision_matrix) |
+- [2026-07-24.md] ├── error_recovery.js
+
+### Improvements
+- ### Self-Improvement Loop Applied:
+- - **Self-Healing Orchestrator**: DETECT → FIX → IMPROVE → ASSESS → REPEAT
+- Phase 3: OPTIMIZATION — Suggest improvements
+- | `dashboard-autonomous-improvement` | Hourly | ✅ | Dashboard |
+- **Self-Improvement Loop Executed:**
+
+## Auto-Extracted (2026-07-26)
+
+### Decisions
+
+
+### Errors Found
+- [2026-07-23.md] - `memory-maintenance` cron job failing (file edit conflicts)
+- [2026-07-24.md] - Token fails for: Creating products, reading catalog ❌
+- [2026-07-24.md] **Error:** "Provided images do not exist" — Printify requires uploaded images before creating products
+- [2026-07-24.md] | `autonomy_core_v2/` | `autonomy_core/` | 5 files (revenue_tracker, opportunity_scanner, error_recovery, self_improvement_loop, decision_matrix) |
+- [2026-07-24.md] ├── error_recovery.js
+
+### Improvements
+- ### Self-Improvement Loop Applied:
+- - **Self-Healing Orchestrator**: DETECT → FIX → IMPROVE → ASSESS → REPEAT
+- Phase 3: OPTIMIZATION — Suggest improvements
+- | `dashboard-autonomous-improvement` | Hourly | ✅ | Dashboard |
+- **Self-Improvement Loop Executed:**
