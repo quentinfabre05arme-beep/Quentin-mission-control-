@@ -1,14 +1,16 @@
 {
   "mission": "cost_monitor",
   "role": "COST-TRACKING",
-  "status": "initialized",
+  "status": "active",
   "focus": "Expense management",
   "created": "2026-07-26T20:50:38.813Z",
-  "lastUpdate": "2026-07-26T20:54:40.537Z",
+  "lastUpdate": "2026-07-26T21:00:14.598Z",
   "metrics": {},
   "actions": [],
   "dependencies": [
     "central_orchestrator"
   ],
-  "hasWorkingCode": true
+  "hasWorkingCode": true,
+  "activated": "2026-07-26T21:00:14.597Z",
+  "lastRun": "2026-07-26T21:00:18.117Z"
 }

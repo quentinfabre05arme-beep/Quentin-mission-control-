@@ -1,10 +1,10 @@
 {
   "mission": "oomol_hub",
   "role": "OOMOL-INTEGRATION",
-  "status": "cleaned",
+  "status": "active",
   "focus": "OOMOL workflows",
   "created": "2026-07-26T20:50:38.823Z",
-  "lastUpdate": "2026-07-26T20:54:40.541Z",
+  "lastUpdate": "2026-07-26T21:00:14.600Z",
   "metrics": {},
   "actions": [],
   "dependencies": [
@@ -13,5 +13,7 @@
   "overlapsRemoved": [
     "orchestrator"
   ],
-  "hasWorkingCode": true
+  "hasWorkingCode": true,
+  "activated": "2026-07-26T21:00:14.600Z",
+  "lastRun": "2026-07-26T21:00:23.111Z"
 }

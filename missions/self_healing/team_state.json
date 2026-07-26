@@ -1,10 +1,10 @@
 {
   "mission": "self_healing",
   "role": "ERROR-RECOVERY",
-  "status": "cleaned",
+  "status": "active",
   "focus": "Automatic fixes",
   "created": "2026-07-26T20:50:38.828Z",
-  "lastUpdate": "2026-07-26T20:50:46.832Z",
+  "lastUpdate": "2026-07-26T21:00:14.605Z",
   "metrics": {},
   "actions": [],
   "dependencies": [
@@ -12,5 +12,6 @@
   ],
   "overlapsRemoved": [
     "orchestrator"
-  ]
+  ],
+  "activated": "2026-07-26T21:00:14.605Z"
 }

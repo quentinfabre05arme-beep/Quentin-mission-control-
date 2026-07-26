@@ -1,14 +1,15 @@
 {
   "mission": "openclaw_manager",
   "role": "undefined",
-  "status": "initialized",
+  "status": "active",
   "focus": "Needs definition",
   "created": "2026-07-26T20:50:38.825Z",
-  "lastUpdate": "2026-07-26T20:54:40.544Z",
+  "lastUpdate": "2026-07-26T21:00:14.603Z",
   "metrics": {},
   "actions": [],
   "dependencies": [
     "central_orchestrator"
   ],
-  "hasWorkingCode": true
+  "hasWorkingCode": true,
+  "activated": "2026-07-26T21:00:14.603Z"
 }
