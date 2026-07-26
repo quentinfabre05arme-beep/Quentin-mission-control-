@@ -1,10 +1,10 @@
 {
   "mission": "system_monitor",
   "role": "HEALTH-MONITORING",
-  "status": "cleaned",
+  "status": "active",
   "focus": "System health ONLY",
   "created": "2026-07-26T20:50:38.831Z",
-  "lastUpdate": "2026-07-26T20:50:46.836Z",
+  "lastUpdate": "2026-07-26T20:59:17.347Z",
   "metrics": {},
   "actions": [],
   "dependencies": [
@@ -13,6 +13,7 @@
   "overlapsRemoved": [
     "health"
   ],
-  "lastCheck": "2026-07-26T20:53:24.225Z",
-  "checksRun": null
+  "lastCheck": "2026-07-26T20:59:12.369Z",
+  "checksRun": 1,
+  "activated": "2026-07-26T20:59:17.346Z"
 }
