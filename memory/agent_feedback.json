@@ -52,12 +52,32 @@
           "verbose response"
         ]
       }
+    },
+    {
+      "timestamp": "2026-07-26T19:06:35.197Z",
+      "type": "positive",
+      "message": "test",
+      "satisfaction": 0.9,
+      "context": {
+        "hour": 21,
+        "day": 0,
+        "recentTopics": [
+          "too verbose",
+          "too long",
+          "verbose response",
+          "perfect!"
+        ]
+      }
     }
   ],
   "scores": {
     "20:00": {
       "count": 4,
       "total": 1.6
+    },
+    "21:00": {
+      "count": 1,
+      "total": 0.9
     }
   }
 }

@@ -201,4 +201,4 @@ class MultiAgentOrchestrator {
   }
 }
 
-module.exports = MultiAgentOrchestrator;
+module.exports = { MultiAgentOrchestrator };

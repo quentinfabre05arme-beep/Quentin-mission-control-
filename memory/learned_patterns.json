@@ -3,7 +3,12 @@
     {
       "type": "time_preference",
       "value": "20:00",
-      "confidence": 1
+      "confidence": 0.8
+    },
+    {
+      "type": "time_preference",
+      "value": "21:00",
+      "confidence": 0.2
     }
   ],
   "triggers": []
