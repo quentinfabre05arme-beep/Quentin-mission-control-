@@ -1,0 +1,41 @@
+{
+  "name": "OOMOL Workflows",
+  "description": "Automated workflows using OOMOL connectors",
+  "jobs": [
+    {
+      "name": "daily-market-report",
+      "schedule": "0 8 * * *",
+      "description": "Send daily market report via Gmail",
+      "command": "node missions/oomol_workflows/daily_market_report.js",
+      "enabled": true
+    },
+    {
+      "name": "weather-calendar-sync",
+      "schedule": "0 7 * * *",
+      "description": "Check weather and update calendar reminders",
+      "command": "node missions/oomol_workflows/weather_calendar_sync.js",
+      "enabled": true
+    },
+    {
+      "name": "github-notion-sync",
+      "schedule": "0 */6 * * *",
+      "description": "Sync GitHub issues to Notion every 6 hours",
+      "command": "node missions/oomol_workflows/github_notion_sync.js",
+      "enabled": true
+    },
+    {
+      "name": "research-pipeline",
+      "schedule": "0 9 * * 1",
+      "description": "Weekly research pipeline (Mondays 9 AM)",
+      "command": "node missions/oomol_workflows/research_pipeline.js",
+      "enabled": true
+    },
+    {
+      "name": "file-librarian-sync",
+      "schedule": "0 2 * * *",
+      "description": "Sync file library to Google Drive daily",
+      "command": "node missions/oomol_workflows/file_librarian_drive.js",
+      "enabled": true
+    }
+  ]
+}
