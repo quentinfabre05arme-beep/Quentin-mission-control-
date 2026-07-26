@@ -1,8 +1,8 @@
 {
   "version": "1.0.2",
   "startedAt": "2026-07-23T21:01:29.955Z",
-  "totalCycles": 337,
-  "lastCycle": "2026-07-26T06:01:01.801Z",
+  "totalCycles": 343,
+  "lastCycle": "2026-07-26T08:31:02.033Z",
   "errors": [
     {
       "time": "2026-07-23T21:01:29.990Z",
@@ -97,26 +97,31 @@
       "type": "LOW_RESEARCH_FREQUENCY",
       "observation": "Average 0.0 cycles/day over 12 days",
       "recommendation": "Increase to 3-4 cycles/day for better coverage"
+    },
+    {
+      "type": "LOW_RESEARCH_FREQUENCY",
+      "observation": "Average 0.0 cycles/day over 11 days",
+      "recommendation": "Increase to 3-4 cycles/day for better coverage"
     }
   ],
   "metrics": {
     "efficiency": {
-      "cycles": 336,
-      "actions": 463,
+      "cycles": 342,
+      "actions": 475,
       "wasteEliminated": 1
     },
     "intelligence": {
-      "patternsLearned": 325,
+      "patternsLearned": 331,
       "decisionsMade": 0,
       "accuracy": 1
     },
     "persistence": {
       "recoveries": 0,
-      "uptimeMinutes": 3419
+      "uptimeMinutes": 3569
     },
     "selfImprovement": {
       "skillsCreated": 0,
-      "optimizations": 13,
+      "optimizations": 14,
       "learnings": [
         "Engine key resolution requires explicit mapping for hyphenated/camelCase names",
         "Absolute paths (WORKSPACE_ROOT) more reliable than relative traversals",
@@ -145,8 +150,8 @@
     }
   ],
   "_lastMetricAnalysis": 1785035762235,
-  "_lastResearchAnalysis": 1785042962280,
-  "_lastProposal": 1785034862194,
+  "_lastResearchAnalysis": 1785050162844,
+  "_lastProposal": 1785049262278,
   "cycles_completed": null,
   "last_cycle": "2026-07-25T06:37:51.518Z",
   "last_results": {
