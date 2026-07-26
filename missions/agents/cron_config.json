@@ -1,0 +1,44 @@
+{
+  "name": "agent-team-autonomous",
+  "description": "Autonomous multi-agent team execution",
+  "jobs": [
+    {
+      "name": "agent-cycle",
+      "schedule": {
+        "kind": "every",
+        "everyMs": 3600000
+      },
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Run agent autonomous cycle: check schedule, health, self-improvement"
+      },
+      "enabled": true
+    },
+    {
+      "name": "agent-status-report",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */6 * * *",
+        "tz": "Europe/Paris"
+      },
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Agent team status report: check all agents, report issues"
+      },
+      "enabled": true
+    },
+    {
+      "name": "agent-performance-review",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * 1",
+        "tz": "Europe/Paris"
+      },
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Weekly agent performance review: analyze cycles, apply improvements"
+      },
+      "enabled": true
+    }
+  ]
+}
