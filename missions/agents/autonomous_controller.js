@@ -3,6 +3,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const MetaLearningAgent = require('./meta_learning_agent');
 
 const STATE_FILE = path.join(__dirname, 'team_state.json');
 const LOG_FILE = path.join(__dirname, 'team_log.txt');
@@ -160,13 +161,22 @@ class AutonomousController {
       this.applyImprovements(improvements);
     }
     
-    // 4. Record cycle
+    // 4. Meta-learning: Analyze myself and other missions
+    const metaLearner = new MetaLearningAgent();
+    const metaInsights = metaLearner.runCycle();
+    
+    // 5. Record cycle
     const cycle = {
       timestamp: new Date().toISOString(),
       duration: Date.now() - cycleStart,
       agentsDue: due.length,
       issuesFound: issues.length,
       improvementsApplied: improvements ? improvements.length : 0,
+      metaInsights: metaInsights ? {
+        skillsAnalyzed: Object.keys(metaInsights.skills || {}).length,
+        missionsChecked: Object.keys(metaInsights.missions || {}).length,
+        improvementsSuggested: metaInsights.improvements ? metaInsights.improvements.length : 0
+      } : null,
       success: issues.length === 0
     };
     

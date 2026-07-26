@@ -1,0 +1,257 @@
+{
+  "patterns": [
+    {
+      "timestamp": "2026-07-26T20:40:46.595Z",
+      "performance": {
+        "totalDecisions": 1,
+        "successRate": 0
+      },
+      "topSkills": [
+        [
+          "automated-report-generator",
+          0
+        ],
+        [
+          "competitive-intelligence",
+          0
+        ],
+        [
+          "config-manager",
+          0
+        ],
+        [
+          "content-pipeline",
+          0
+        ],
+        [
+          "cron-optimizer",
+          0
+        ]
+      ],
+      "missionHealth": [
+        {
+          "mission": "agents",
+          "healthy": true
+        },
+        {
+          "mission": "aggressive_scaling",
+          "healthy": false
+        },
+        {
+          "mission": "alpha_signals",
+          "healthy": false
+        },
+        {
+          "mission": "autonomy_core",
+          "healthy": false
+        },
+        {
+          "mission": "cost_monitor",
+          "healthy": false
+        },
+        {
+          "mission": "file_librarian",
+          "healthy": false
+        },
+        {
+          "mission": "meta_architect",
+          "healthy": false
+        },
+        {
+          "mission": "mission_control_center",
+          "healthy": false
+        },
+        {
+          "mission": "oomol_hub",
+          "healthy": false
+        },
+        {
+          "mission": "oomol_workflows",
+          "healthy": false
+        },
+        {
+          "mission": "openclaw_manager",
+          "healthy": false
+        },
+        {
+          "mission": "protocol_updates",
+          "healthy": false
+        },
+        {
+          "mission": "self_healing",
+          "healthy": false
+        },
+        {
+          "mission": "self_improvement",
+          "healthy": false
+        },
+        {
+          "mission": "smart_brain",
+          "healthy": false
+        },
+        {
+          "mission": "system_monitor",
+          "healthy": false
+        },
+        {
+          "mission": "ultimate_intelligence",
+          "healthy": false
+        }
+      ],
+      "improvements": 3
+    },
+    {
+      "timestamp": "2026-07-26T20:41:06.668Z",
+      "performance": {
+        "totalDecisions": 1,
+        "successRate": 0
+      },
+      "topSkills": [
+        [
+          "automated-report-generator",
+          0
+        ],
+        [
+          "competitive-intelligence",
+          0
+        ],
+        [
+          "config-manager",
+          0
+        ],
+        [
+          "content-pipeline",
+          0
+        ],
+        [
+          "cron-optimizer",
+          0
+        ]
+      ],
+      "missionHealth": [
+        {
+          "mission": "agents",
+          "healthy": true
+        },
+        {
+          "mission": "aggressive_scaling",
+          "healthy": false
+        },
+        {
+          "mission": "alpha_signals",
+          "healthy": false
+        },
+        {
+          "mission": "autonomy_core",
+          "healthy": false
+        },
+        {
+          "mission": "cost_monitor",
+          "healthy": false
+        },
+        {
+          "mission": "file_librarian",
+          "healthy": false
+        },
+        {
+          "mission": "meta_architect",
+          "healthy": false
+        },
+        {
+          "mission": "mission_control_center",
+          "healthy": false
+        },
+        {
+          "mission": "oomol_hub",
+          "healthy": false
+        },
+        {
+          "mission": "oomol_workflows",
+          "healthy": false
+        },
+        {
+          "mission": "openclaw_manager",
+          "healthy": false
+        },
+        {
+          "mission": "protocol_updates",
+          "healthy": false
+        },
+        {
+          "mission": "self_healing",
+          "healthy": false
+        },
+        {
+          "mission": "self_improvement",
+          "healthy": false
+        },
+        {
+          "mission": "smart_brain",
+          "healthy": false
+        },
+        {
+          "mission": "system_monitor",
+          "healthy": false
+        },
+        {
+          "mission": "ultimate_intelligence",
+          "healthy": false
+        }
+      ],
+      "improvements": 3
+    }
+  ],
+  "improvements": [
+    {
+      "timestamp": "2026-07-26T20:40:46.590Z",
+      "area": "reliability",
+      "issue": "Success rate below 80%",
+      "suggestion": "Add retry logic and better error handling",
+      "priority": "high",
+      "applied": true
+    },
+    {
+      "timestamp": "2026-07-26T20:40:46.594Z",
+      "area": "skill_utilization",
+      "issue": "37 skills never used",
+      "suggestion": "Integrate unused skills into workflows",
+      "priority": "medium",
+      "applied": true
+    },
+    {
+      "timestamp": "2026-07-26T20:40:46.594Z",
+      "area": "mission_health",
+      "issue": "16 missions need attention",
+      "suggestion": "Audit and fix unhealthy missions",
+      "priority": "critical",
+      "applied": true
+    },
+    {
+      "timestamp": "2026-07-26T20:41:06.667Z",
+      "area": "reliability",
+      "issue": "Success rate below 80%",
+      "suggestion": "Add retry logic and better error handling",
+      "priority": "high",
+      "applied": true
+    },
+    {
+      "timestamp": "2026-07-26T20:41:06.667Z",
+      "area": "skill_utilization",
+      "issue": "37 skills never used",
+      "suggestion": "Integrate unused skills into workflows",
+      "priority": "medium",
+      "applied": true
+    },
+    {
+      "timestamp": "2026-07-26T20:41:06.667Z",
+      "area": "mission_health",
+      "issue": "16 missions need attention",
+      "suggestion": "Audit and fix unhealthy missions",
+      "priority": "critical",
+      "applied": true
+    }
+  ],
+  "missionInsights": {},
+  "skillEffectiveness": {},
+  "lastUpdate": "2026-07-26T20:41:06.668Z"
+}

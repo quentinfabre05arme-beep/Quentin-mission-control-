@@ -7,6 +7,19 @@
       "issuesFound": 0,
       "improvementsApplied": 0,
       "success": true
+    },
+    {
+      "timestamp": "2026-07-26T20:41:06.668Z",
+      "duration": 28,
+      "agentsDue": 0,
+      "issuesFound": 0,
+      "improvementsApplied": 0,
+      "metaInsights": {
+        "skillsAnalyzed": 37,
+        "missionsChecked": 17,
+        "improvementsSuggested": 3
+      },
+      "success": true
     }
   ],
   "improvements": []
