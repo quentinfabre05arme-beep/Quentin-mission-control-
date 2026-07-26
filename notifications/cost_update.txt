@@ -1,0 +1,9 @@
+💰 API Usage Update
+
+Status: ✅ HEALTHY
+Today: $0.1339 / $2.67
+Percent: 5.0%
+Remaining: $2.5361
+Est. Monthly: $4.02
+
+Top Model: kimi-k2.6
