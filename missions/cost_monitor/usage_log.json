@@ -1,0 +1,54 @@
+{
+  "totalSpent": 0.13390724999999998,
+  "todaySpent": 0.13390724999999998,
+  "todayDate": "2026-07-26",
+  "byModel": {
+    "ollama-cloud/gemma4:31b": {
+      "tokens": 8386.5,
+      "cost": 0.0251595,
+      "requests": 4
+    },
+    "ollama-cloud/qwen3.5:0.8b": {
+      "tokens": 7138.5,
+      "cost": 0.0071385,
+      "requests": 5
+    },
+    "ollama-cloud/qwen3.6:35b": {
+      "tokens": 3543,
+      "cost": 0.010629000000000001,
+      "requests": 3
+    },
+    "ollama-cloud/kimi-k2.6": {
+      "tokens": 6387,
+      "cost": 0.051095999999999996,
+      "requests": 4
+    },
+    "ollama-cloud/kimi-k2.7-code": {
+      "tokens": 2484,
+      "cost": 0.019872,
+      "requests": 1
+    },
+    "ollama-cloud/qwen3-vl:8b": {
+      "tokens": 472.5,
+      "cost": 0.0014175,
+      "requests": 1
+    },
+    "ollama-cloud/glm-5.1": {
+      "tokens": 2241,
+      "cost": 0.017928,
+      "requests": 1
+    },
+    "ollama-cloud/nomic-embed-text": {
+      "tokens": 1333.5,
+      "cost": 0.0006667499999999999,
+      "requests": 1
+    }
+  },
+  "byHour": {
+    "19": {
+      "cost": 0.13390724999999998,
+      "requests": 20
+    }
+  },
+  "requests": 20
+}
