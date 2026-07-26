@@ -7,7 +7,7 @@
     {"symbol": "ETH", "quantity": 0.1, "avg_cost": 1850.00, "current_value": 185.60, "opened_at": "2026-07-20T10:00:00Z", "stop_loss": null, "take_profit": null},
     {"symbol": "SOL", "quantity": 5, "avg_cost": 145.50, "current_value": 727.50, "opened_at": "2026-07-20T10:00:00Z", "stop_loss": null, "take_profit": null},
     {"symbol": "MSTR", "quantity": 5, "avg_cost": 95.00, "current_value": 458.35, "opened_at": "2026-07-20T10:00:00Z", "stop_loss": 85.00, "take_profit": null},
-    {"symbol": "TSLA", "quantity": 3, "avg_cost": 340.00, "current_value": 959.07, "opened_at": "2026-07-20T10:00:00Z", "stop_loss": 295.00, "take_profit": null},
+    {"symbol": "TSLA", "quantity": 3, "avg_cost": 340.00, "current_value": 939.09, "opened_at": "2026-07-20T10:00:00Z", "stop_loss": 295.00, "take_profit": 450.00},
     {"symbol": "COIN", "quantity": 2, "avg_cost": 160.00, "current_value": 316.64, "opened_at": "2026-07-20T10:00:00Z", "stop_loss": null, "take_profit": null},
     {"symbol": "HIMS", "quantity": 10, "avg_cost": 33.50, "current_value": 280.90, "opened_at": "2026-07-20T10:00:00Z", "stop_loss": 25.00, "take_profit": null},
     {"symbol": "NVDA", "quantity": 2, "avg_cost": 180.00, "current_value": 413.68, "opened_at": "2026-07-20T10:00:00Z", "stop_loss": 160.00, "take_profit": null},
@@ -16,7 +16,7 @@
     {"symbol": "PLTR", "quantity": 8, "avg_cost": 25.00, "current_value": 200.00, "opened_at": "2026-07-20T10:00:00Z", "stop_loss": null, "take_profit": null},
     {"symbol": "CRWD", "quantity": 3, "avg_cost": 180.00, "current_value": 540.00, "opened_at": "2026-07-20T10:00:00Z", "stop_loss": null, "take_profit": null}
   ],
-  "last_updated": "2026-07-26T00:00:00Z",
+  "last_updated": "2026-07-26T14:11:00Z",
   "alerts": {
     "hims_stop_approaching": {
       "symbol": "HIMS",

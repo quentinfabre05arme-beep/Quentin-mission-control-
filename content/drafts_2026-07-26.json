@@ -1,0 +1,14 @@
+[
+  {
+    "type": "market_update",
+    "content": "📊 Market Update\n\nBTC: $64496.01 (+0.19%)\nETH: $1886.14 (+0.60%)\n\n#crypto #trading",
+    "platform": "twitter",
+    "scheduled": false
+  },
+  {
+    "type": "insight",
+    "content": "💡 Key Insight\n\nMarkets showing mixed signals today. Key levels to watch:\n• BTC support at $64K\n• ETH resistance at $1,900\n\nWhat do you think?\n\n#analysis #markets",
+    "platform": "twitter",
+    "scheduled": false
+  }
+]
