@@ -54,7 +54,12 @@ The following secrets remain as plaintext (by design/necessity):
    - Requires OpenClaw CLI to migrate
    - Mitigation: File is in user's home directory (OS-protected)
 
-### 5. Audit Results
+### 5. Startup Security
+- **Created** `start_secure.ps1` — Sets all API keys as env vars before starting OpenClaw
+- **Created** `create_startup_shortcut.ps1` — Adds OpenClaw to Windows startup with secure env vars
+- **Auto-starts** at login with all keys in memory (not on disk)
+
+### 6. Audit Results
 
 ```
 Before: 4+ plaintext secrets
@@ -63,6 +68,20 @@ Status: 95% migrated ✅
 ```
 
 ## How to Use
+
+### Starting OpenClaw Securely
+
+**Option A: Manual Start**
+```powershell
+# Navigate to OpenClaw directory
+cd C:\Users\quent\.openclaw
+
+# Run secure startup script (sets env vars)
+.\start_secure.ps1
+```
+
+**Option B: Auto-Start at Login**
+The startup shortcut has been created. OpenClaw will automatically start with secure env vars every time you log in.
 
 ### For Scripts
 Scripts now automatically load from:
