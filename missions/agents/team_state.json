@@ -1,6 +1,47 @@
 {
-  "cycles": 0,
-  "agents": {},
-  "lastRun": null,
+  "cycles": 1,
+  "agents": {
+    "system": {
+      "lastRun": "2026-07-26T13:40:39.697Z",
+      "status": "success",
+      "duration": 120482,
+      "tasks": [
+        "health_check",
+        "cleanup",
+        "optimize"
+      ]
+    },
+    "content": {
+      "lastRun": "2026-07-26T13:40:39.709Z",
+      "status": "success",
+      "duration": 120079,
+      "tasks": [
+        "generate_posts",
+        "schedule",
+        "engage"
+      ]
+    },
+    "revenue": {
+      "lastRun": "2026-07-26T13:40:39.710Z",
+      "status": "success",
+      "duration": 120072,
+      "tasks": [
+        "track_sales",
+        "analytics",
+        "opportunities"
+      ]
+    },
+    "research": {
+      "lastRun": "2026-07-26T13:40:39.710Z",
+      "status": "success",
+      "duration": 126548,
+      "tasks": [
+        "price_fetch",
+        "news_scan",
+        "ta_analysis"
+      ]
+    }
+  },
+  "lastRun": "2026-07-26T13:40:39.712Z",
   "created": "2026-07-26T15:37:00.000Z"
 }
