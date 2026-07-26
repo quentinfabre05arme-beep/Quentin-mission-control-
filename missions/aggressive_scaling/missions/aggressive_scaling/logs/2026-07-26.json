@@ -1,0 +1,24 @@
+{
+  "date": "2026-07-26",
+  "week": 1,
+  "targets": {
+    "podProducts": 10,
+    "xPosts": 35,
+    "newsletterSubscribers": 25,
+    "alphaSignals": 7
+  },
+  "actual": {
+    "podProducts": 35,
+    "xPosts": 0,
+    "newsletterSubs": 0,
+    "alphaSignals": 0
+  },
+  "progress": {
+    "products": 35,
+    "revenue": 0
+  },
+  "actions": [
+    "Increase X posting to 5/day",
+    "Add 65 more POD products"
+  ]
+}
