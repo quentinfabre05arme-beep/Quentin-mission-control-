@@ -1,10 +1,35 @@
 {
-  "cycles": 51,
-  "lastRun": "2026-07-26T22:01:02.393Z",
+  "cycles": 52,
+  "lastRun": "2026-07-26T22:16:02.357Z",
   "improvements": [
     {
       "type": "improvement",
       "text": "## Dashboard Autonomous Improvement Cycle",
+      "source": "2026-07-26.md"
+    },
+    {
+      "type": "improvement",
+      "text": "## Dashboard Autonomous Improvement Cycle",
+      "source": "2026-07-26.md"
+    },
+    {
+      "type": "improvement",
+      "text": "12. 💼 `skills/pricing_optimizer/` — Optimize pricing",
+      "source": "2026-07-26.md"
+    },
+    {
+      "type": "improvement",
+      "text": "15. 🧠 `skills/context_optimizer/` — Better context handling",
+      "source": "2026-07-26.md"
+    },
+    {
+      "type": "improvement",
+      "text": "16. 🔄 `missions/upgrade_scheduler/` — Plan improvements",
+      "source": "2026-07-26.md"
+    },
+    {
+      "type": "improvement",
+      "text": "- Continue self-improvement cycles",
       "source": "2026-07-26.md"
     },
     {
