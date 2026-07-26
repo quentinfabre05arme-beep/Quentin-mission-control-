@@ -1,47 +1,44 @@
 {
-  "cycles": 1,
-  "agents": {
-    "system": {
-      "lastRun": "2026-07-26T13:40:39.697Z",
-      "status": "success",
-      "duration": 120482,
-      "tasks": [
-        "health_check",
-        "cleanup",
-        "optimize"
-      ]
+  "agents": [
+    {
+      "id": "research",
+      "name": "Research Agent",
+      "status": "active",
+      "lastRun": "2026-07-26T20:28:14.490Z",
+      "tasksCompleted": 0,
+      "priority": "high"
     },
-    "content": {
-      "lastRun": "2026-07-26T13:40:39.709Z",
-      "status": "success",
-      "duration": 120079,
-      "tasks": [
-        "generate_posts",
-        "schedule",
-        "engage"
-      ]
+    {
+      "id": "system",
+      "name": "System Agent",
+      "status": "active",
+      "lastRun": "2026-07-26T20:28:14.491Z",
+      "tasksCompleted": 0,
+      "priority": "critical"
     },
-    "revenue": {
-      "lastRun": "2026-07-26T13:40:39.710Z",
-      "status": "success",
-      "duration": 120072,
-      "tasks": [
-        "track_sales",
-        "analytics",
-        "opportunities"
-      ]
+    {
+      "id": "content",
+      "name": "Content Agent",
+      "status": "active",
+      "lastRun": "2026-07-26T20:28:14.491Z",
+      "tasksCompleted": 0,
+      "priority": "medium"
     },
-    "research": {
-      "lastRun": "2026-07-26T13:40:39.710Z",
-      "status": "success",
-      "duration": 126548,
-      "tasks": [
-        "price_fetch",
-        "news_scan",
-        "ta_analysis"
-      ]
+    {
+      "id": "revenue",
+      "name": "Revenue Agent",
+      "status": "active",
+      "lastRun": "2026-07-26T20:28:14.491Z",
+      "tasksCompleted": 0,
+      "priority": "high"
     }
+  ],
+  "orchestrator": {
+    "status": "coordinating",
+    "lastCoordination": "2026-07-26T20:28:14.491Z",
+    "cycleCount": 2
   },
-  "lastRun": "2026-07-26T13:40:39.712Z",
-  "created": "2026-07-26T15:37:00.000Z"
+  "status": "running",
+  "lastUpdate": "2026-07-26T20:28:14.491Z",
+  "created": "2026-07-26T20:28:08.757Z"
 }
