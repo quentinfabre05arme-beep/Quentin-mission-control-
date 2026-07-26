@@ -1,0 +1,21 @@
+{
+  "facts": [],
+  "lessons": [
+    {
+      "lesson": "Must verify files are actually saved",
+      "context": {
+        "topic": "testing"
+      },
+      "timestamp": "2026-07-26T21:08:41.888Z"
+    },
+    {
+      "lesson": "Always test file writes before claiming success",
+      "context": {
+        "mission": "test_mission",
+        "status": "unknown"
+      },
+      "timestamp": "2026-07-26T21:09:01.391Z"
+    }
+  ],
+  "skills": []
+}
