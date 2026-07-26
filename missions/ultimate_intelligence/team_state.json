@@ -1,0 +1,13 @@
+{
+  "mission": "ultimate_intelligence",
+  "role": "INTELLIGENCE",
+  "status": "initialized",
+  "focus": "Advanced reasoning",
+  "created": "2026-07-26T20:50:38.833Z",
+  "lastUpdate": "2026-07-26T20:50:38.833Z",
+  "metrics": {},
+  "actions": [],
+  "dependencies": [
+    "central_orchestrator"
+  ]
+}

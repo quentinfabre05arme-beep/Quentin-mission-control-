@@ -20,3 +20,11 @@ Error recovery, resilience
 
 ### Status
 - Defined: 2026-07-26
+
+
+## Overlaps Removed
+This mission no longer does:
+- orchestrator
+- health
+
+These functions are now handled by central systems.

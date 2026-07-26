@@ -1,0 +1,16 @@
+{
+  "mission": "system_monitor",
+  "role": "HEALTH-MONITORING",
+  "status": "cleaned",
+  "focus": "System health ONLY",
+  "created": "2026-07-26T20:50:38.831Z",
+  "lastUpdate": "2026-07-26T20:50:46.836Z",
+  "metrics": {},
+  "actions": [],
+  "dependencies": [
+    "central_orchestrator"
+  ],
+  "overlapsRemoved": [
+    "health"
+  ]
+}

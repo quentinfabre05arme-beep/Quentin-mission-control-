@@ -1,0 +1,16 @@
+{
+  "mission": "smart_brain",
+  "role": "AI-ROUTING",
+  "status": "cleaned",
+  "focus": "Model selection, optimization",
+  "created": "2026-07-26T20:50:38.830Z",
+  "lastUpdate": "2026-07-26T20:50:46.834Z",
+  "metrics": {},
+  "actions": [],
+  "dependencies": [
+    "central_orchestrator"
+  ],
+  "overlapsRemoved": [
+    "orchestrator"
+  ]
+}

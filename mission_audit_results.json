@@ -1,0 +1,155 @@
+[
+  {
+    "name": "agents",
+    "role": "META-LEARNING",
+    "files": 26,
+    "clean": false,
+    "hasState": true,
+    "jsFiles": 11,
+    "loadable": 0
+  },
+  {
+    "name": "aggressive_scaling",
+    "role": "SCALING",
+    "files": 7,
+    "clean": true,
+    "hasState": true,
+    "jsFiles": 1,
+    "loadable": 0
+  },
+  {
+    "name": "alpha_signals",
+    "role": "TRADING-SIGNALS",
+    "files": 9,
+    "clean": true,
+    "hasState": false,
+    "jsFiles": 3,
+    "loadable": 0
+  },
+  {
+    "name": "autonomy_core",
+    "role": "SELF-HEALING",
+    "files": 23,
+    "clean": false,
+    "hasState": false,
+    "jsFiles": 8,
+    "loadable": 0
+  },
+  {
+    "name": "cost_monitor",
+    "role": "COST-TRACKING",
+    "files": 5,
+    "clean": true,
+    "hasState": false,
+    "jsFiles": 2,
+    "loadable": 0
+  },
+  {
+    "name": "file_librarian",
+    "role": "FILE-MANAGEMENT",
+    "files": 20,
+    "clean": true,
+    "hasState": false,
+    "jsFiles": 1,
+    "loadable": 0
+  },
+  {
+    "name": "meta_architect",
+    "role": "ARCHITECTURE",
+    "files": 9,
+    "clean": true,
+    "hasState": false,
+    "jsFiles": 1,
+    "loadable": 0
+  },
+  {
+    "name": "mission_control_center",
+    "role": "DASHBOARD",
+    "files": 4,
+    "clean": false,
+    "hasState": false,
+    "jsFiles": 1,
+    "loadable": 0
+  },
+  {
+    "name": "oomol_hub",
+    "role": "OOMOL-INTEGRATION",
+    "files": 6,
+    "clean": false,
+    "hasState": false,
+    "jsFiles": 4,
+    "loadable": 0
+  },
+  {
+    "name": "oomol_workflows",
+    "role": "WORKFLOWS",
+    "files": 10,
+    "clean": false,
+    "hasState": false,
+    "jsFiles": 8,
+    "loadable": 0
+  },
+  {
+    "name": "openclaw_manager",
+    "role": "undefined",
+    "files": 2,
+    "clean": true,
+    "hasState": false,
+    "jsFiles": 1,
+    "loadable": 0
+  },
+  {
+    "name": "protocol_updates",
+    "role": "UPDATES",
+    "files": 2,
+    "clean": true,
+    "hasState": false,
+    "jsFiles": 0,
+    "loadable": 0
+  },
+  {
+    "name": "self_healing",
+    "role": "ERROR-RECOVERY",
+    "files": 8,
+    "clean": false,
+    "hasState": false,
+    "jsFiles": 3,
+    "loadable": 0
+  },
+  {
+    "name": "self_improvement",
+    "role": "SELF-IMPROVEMENT",
+    "files": 2,
+    "clean": true,
+    "hasState": false,
+    "jsFiles": 1,
+    "loadable": 0
+  },
+  {
+    "name": "smart_brain",
+    "role": "AI-ROUTING",
+    "files": 12,
+    "clean": false,
+    "hasState": false,
+    "jsFiles": 5,
+    "loadable": 0
+  },
+  {
+    "name": "system_monitor",
+    "role": "HEALTH-MONITORING",
+    "files": 2,
+    "clean": false,
+    "hasState": false,
+    "jsFiles": 1,
+    "loadable": 0
+  },
+  {
+    "name": "ultimate_intelligence",
+    "role": "INTELLIGENCE",
+    "files": 3,
+    "clean": true,
+    "hasState": false,
+    "jsFiles": 2,
+    "loadable": 0
+  }
+]

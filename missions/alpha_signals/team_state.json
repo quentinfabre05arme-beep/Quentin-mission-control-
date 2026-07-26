@@ -1,0 +1,13 @@
+{
+  "mission": "alpha_signals",
+  "role": "TRADING-SIGNALS",
+  "status": "initialized",
+  "focus": "Alpha generation",
+  "created": "2026-07-26T20:50:38.809Z",
+  "lastUpdate": "2026-07-26T20:50:38.810Z",
+  "metrics": {},
+  "actions": [],
+  "dependencies": [
+    "central_orchestrator"
+  ]
+}

@@ -38,7 +38,12 @@
     "lastCoordination": "2026-07-26T20:28:14.491Z",
     "cycleCount": 2
   },
-  "status": "running",
-  "lastUpdate": "2026-07-26T20:28:14.491Z",
-  "created": "2026-07-26T20:28:08.757Z"
+  "status": "cleaned",
+  "lastUpdate": "2026-07-26T20:50:46.820Z",
+  "created": "2026-07-26T20:28:08.757Z",
+  "overlapsRemoved": [
+    "orchestrator",
+    "health",
+    "research"
+  ]
 }

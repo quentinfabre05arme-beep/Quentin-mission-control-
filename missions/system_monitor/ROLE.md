@@ -20,3 +20,10 @@ System health ONLY
 
 ### Status
 - Defined: 2026-07-26
+
+
+## Overlaps Removed
+This mission no longer does:
+- health
+
+These functions are now handled by central systems.

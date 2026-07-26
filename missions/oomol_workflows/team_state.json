@@ -1,0 +1,16 @@
+{
+  "mission": "oomol_workflows",
+  "role": "WORKFLOWS",
+  "status": "cleaned",
+  "focus": "Automation flows",
+  "created": "2026-07-26T20:50:38.824Z",
+  "lastUpdate": "2026-07-26T20:50:46.830Z",
+  "metrics": {},
+  "actions": [],
+  "dependencies": [
+    "central_orchestrator"
+  ],
+  "overlapsRemoved": [
+    "research"
+  ]
+}

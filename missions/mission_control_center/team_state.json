@@ -1,0 +1,16 @@
+{
+  "mission": "mission_control_center",
+  "role": "DASHBOARD",
+  "status": "cleaned",
+  "focus": "Command center, visualization",
+  "created": "2026-07-26T20:50:38.822Z",
+  "lastUpdate": "2026-07-26T20:50:46.825Z",
+  "metrics": {},
+  "actions": [],
+  "dependencies": [
+    "central_orchestrator"
+  ],
+  "overlapsRemoved": [
+    "orchestrator"
+  ]
+}
