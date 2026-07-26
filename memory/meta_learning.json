@@ -208,6 +208,15 @@
       },
       "missions": "9/17 healthy",
       "insights": 2
+    },
+    {
+      "timestamp": "2026-07-26T20:58:16.728Z",
+      "decisions": {
+        "total": 1,
+        "successRate": 0
+      },
+      "missions": "11/17 healthy",
+      "insights": 2
     }
   ],
   "improvements": [
@@ -262,5 +271,5 @@
   ],
   "missionInsights": {},
   "skillEffectiveness": {},
-  "lastUpdate": "2026-07-26T20:53:07.979Z"
+  "lastUpdate": "2026-07-26T20:58:16.728Z"
 }
