@@ -1,0 +1,32 @@
+name: Deploy Dashboard
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'mission_control/**'
+      - '.github/workflows/deploy.yml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Vercel CLI
+        run: npm install -g vercel@latest
+      
+      - name: Deploy to Vercel
+        run: |
+          cd mission_control
+          vercel --prod --yes \
+            --token=${{ secrets.VERCEL_TOKEN }} \
+            --scope=${{ secrets.VERCEL_SCOPE }} \
+            --project=${{ secrets.VERCEL_PROJECT_ID || 'quentin-dashboard' }}
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
