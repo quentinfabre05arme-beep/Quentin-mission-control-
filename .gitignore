@@ -50,6 +50,12 @@ cloudflared.exe
 nssm*.zip
 nssm-*/
 
+# X submodules
+x-tweet-fetcher/
+xactions-repo/
+xactions-toolkit/
+xactions-config/
+
 # Credentials - NEVER commit these
 config/google_credentials.json
 config/token.json
