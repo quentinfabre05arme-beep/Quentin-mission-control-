@@ -81,66 +81,69 @@ class GatewayLifecycleManager {
   }
 
   /**
-   * Restart gateway asynchronously
-   */
-  async restart(options = {}) {
+ * Restart gateway using host-native PowerShell script
+ */
+  async restart() {
     if (this.isRestarting) {
       return { status: 'already_restarting', message: 'Restart already in progress' };
     }
     
     this.isRestarting = true;
-    const startTime = Date.now();
     
     try {
-      // 1. Save session
+      // Save session before restart
       await this.saveSession();
       
-      // 2. Stop gateway gracefully
-      this.log('Stopping gateway...');
-      await this.stopGateway();
+      // Execute host-native PowerShell script
+      const scriptPath = path.join(__dirname, 'restart_gateway.ps1');
       
-      // 3. Wait for shutdown
-      await this.waitForShutdown(10000);
-      
-      // 4. Start gateway
-      this.log('Starting gateway...');
-      await this.startGateway(options);
-      
-      // 5. Wait for startup
-      await this.waitForStartup(15000);
-      
-      // 6. Verify health
-      const health = await this.checkHealth();
-      
-      // 7. Restore session
-      await this.restoreSession();
-      
-      // 8. Verify plugins
-      const plugins = await this.verifyPlugins();
-      
-      const duration = Date.now() - startTime;
-      this.isRestarting = false;
-      
-      return {
-        status: 'success',
-        duration: `${duration}ms`,
-        health,
-        plugins,
-        session: this.sessionState
-      };
+      return new Promise((resolve, reject) => {
+        const restartProcess = spawn('powershell.exe', [
+          '-ExecutionPolicy', 'Bypass',
+          '-File', scriptPath
+        ], {
+          shell: true,
+          detached: true,
+          stdio: ['ignore', 'pipe', 'pipe']
+        });
+        
+        let stdout = '';
+        let stderr = '';
+        
+        restartProcess.stdout.on('data', (data) => {
+          stdout += data.toString();
+          this.log(`Restart stdout: ${data.toString().trim()}`);
+        });
+        
+        restartProcess.stderr.on('data', (data) => {
+          stderr += data.toString();
+          this.log(`Restart stderr: ${data.toString().trim()}`);
+        });
+        
+        restartProcess.on('close', (code) => {
+          this.isRestarting = false;
+          
+          if (code === 0) {
+            resolve({
+              status: 'success',
+              message: 'Gateway restarted successfully',
+              output: stdout.trim(),
+              duration: 'completed'
+            });
+          } else {
+            reject(new Error(`Restart failed with code ${code}. Stderr: ${stderr}`));
+          }
+        });
+        
+        restartProcess.on('error', (error) => {
+          this.isRestarting = false;
+          reject(error);
+        });
+      });
       
     } catch (error) {
       this.isRestarting = false;
-      this.log(`Restart failed: ${error.message}`);
-      
-      // Attempt recovery
-      await this.attemptRecovery();
-      
-      return {
-        status: 'failed',
-        error: error.message,
-        recovery: 'attempted'
-      };
+      throw error;
     }
   }
 
