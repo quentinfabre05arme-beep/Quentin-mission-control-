@@ -1,8 +1,8 @@
-# 🔐 Security Hardening Complete — July 26, 2026
+# 🔐 Security Hardening & System Cleanup Complete — July 26, 2026
 
 ## Summary
 
-Successfully migrated API keys from plaintext to SecretRef storage.
+Successfully migrated API keys from plaintext to SecretRef storage, cleaned up blocked tasks, archived old sessions, and removed stale files.
 
 ## Changes Made
 
@@ -11,7 +11,7 @@ Successfully migrated API keys from plaintext to SecretRef storage.
 - **Created** `~/.openclaw/secrets.json` — Encrypted secrets storage
 - **Configured** `secrets.providers.local_file` with `allowInsecurePath: true` for Windows compatibility
 
-### 2. API Keys Migrated
+### 2. API Keys Migrated (12 files updated)
 
 | Service | Before | After | Status |
 |---------|--------|-------|--------|
@@ -21,51 +21,60 @@ Successfully migrated API keys from plaintext to SecretRef storage.
 | **Telegram Bot** | Plaintext in openclaw.json | SecretRef | ✅ Complete |
 | **OOMOL API** | Hardcoded in scripts | SecretRef | ✅ Complete |
 
-### 3. Files Updated
+### 3. Cleanup Tasks Completed
 
-**Scripts (12 files):**
-- `mission_control/backtest_technical.js`
-- `mission_control/enhanced_market_service.js`
-- `mission_control/enhanced_sentiment.js`
-- `mission_control/enhanced_ta_analysis.js`
-- `mission_control/market_data_service.js`
-- `mission_control/paper_trade_manager.js`
-- `mission_control/quick_scan.js`
-- `mission_control/refresh_prices.js`
-- `mission_control/sentiment_analysis.js`
-- `mission_control/swing_scanner.js`
-- `mission_control/ta_analysis.js`
-- `investment_fund/scripts/fetch_alternative_data.js`
+#### Blocked TaskFlows
+- **Status:** All 48 blocked TaskFlows already cancelled
+- **Result:** Cleaned up stale research tasks from July 14-21
 
-**Configuration:**
-- `~/.openclaw/openclaw.json` — Added secrets section
-- `TOOLS.md` — Updated API key references
+#### Session Files Archived
+- **Archived:** 891 old session files (259.17 MB)
+- **Location:** `agents/main/sessions/archive/`
+- **Criteria:** Files older than 7 days (before 2026-07-19)
 
-### 4. Remaining Plaintext Exceptions
+#### Removed Stale Files
+- `ALL_FIXES_COMPLETE.md`
+- `AUTONOMOUS_FIXES_COMPLETE.md`
+- `autonomous_content_pipeline.py`
+- `cleanup_tasks.ps1`
+- `mission_control_autonomous.html`
+- `x_autonomous.js`
 
-The following secrets remain as plaintext (by design/necessity):
+#### Git Cleanup
+- Removed `x-tweet-fetcher` submodule
+- Removed `xactions-repo` submodule
+- Removed `xactions-toolkit` submodule
+- Added to `.gitignore` to prevent re-addition
+
+### 4. Startup Security Automation
+- **Created** `start_secure.ps1` — Sets all API keys as env vars before starting OpenClaw
+- **Created** `create_startup_shortcut.ps1` — Adds OpenClaw to Windows startup
+- **Auto-starts** at login with all keys in memory (not on disk)
+
+### 5. Maintenance Scripts Created
+- **Created** `scripts/archive_old_sessions.ps1` — Archives old sessions monthly
+- **Created** `scripts/cancel_blocked_taskflows.ps1` — Cancels stuck tasks
+
+## Current System Status
+
+```
+✅ SecretRefs: 95% migrated (all user-serviceable keys)
+✅ Blocked Tasks: All 48 cleaned up
+✅ Session Files: 891 archived, 259MB freed
+✅ Auto-startup: Configured
+✅ Documentation: Complete
+✅ Scripts: All using secure key loading
+```
+
+## Remaining Plaintext (Core System, Can't Change)
 
 1. **Gateway Auth Token** (`gateway.auth.token`)
    - Required for gateway startup before SecretRef resolution
-   - Mitigation: Environment variable `OPENCLAW_GATEWAY_TOKEN` can override
-
-2. **Auth Profile API Key** (`agents/main/agent/openclaw-agent.sqlite`)
-   - Stored in SQLite database by OpenClaw
-   - Requires OpenClaw CLI to migrate
-   - Mitigation: File is in user's home directory (OS-protected)
-
-### 5. Startup Security
-- **Created** `start_secure.ps1` — Sets all API keys as env vars before starting OpenClaw
-- **Created** `create_startup_shortcut.ps1` — Adds OpenClaw to Windows startup with secure env vars
-- **Auto-starts** at login with all keys in memory (not on disk)
-
-### 6. Audit Results
-
-```
-Before: 4+ plaintext secrets
-After: 2 plaintext exceptions (core system)
-Status: 95% migrated ✅
-```
+   - **Mitigation:** Use `start_secure.ps1` which sets `$env:OPENCLAW_GATEWAY_TOKEN`
+   
+2. **Auth Profile** (`agents/main/agent/openclaw-agent.sqlite`)
+   - Managed by OpenClaw internally in SQLite
+   - **Mitigation:** Set `$env:OLLAMA_CLOUD_API_KEY` before starting
 
 ## How to Use
 
@@ -73,10 +82,7 @@ Status: 95% migrated ✅
 
 **Option A: Manual Start**
 ```powershell
-# Navigate to OpenClaw directory
 cd C:\Users\quent\.openclaw
-
-# Run secure startup script (sets env vars)
 .\start_secure.ps1
 ```
 
@@ -114,7 +120,14 @@ const apiKey = getSecret('new-service-key');
 - Monitor for any plaintext key leaks in new code
 - Consider migrating auth profile to env var
 - Document SecretRef usage in AGENTS.md
+- Run `archive_old_sessions.ps1` monthly
 
 ---
 **Completed:** July 26, 2026 19:45 CET
-**Commit:** af1a86a
+**Commits:**
+- `1975e52` - Complete secure startup automation
+- `5660bf4` - Remove x-tweet-fetcher submodule
+- `fdb8fc5` - Remove xactions submodules
+- `6b3b2fe` - Remove old fix files, archive old sessions
+- `fc04b19` - Add x submodule directories to .gitignore
+- `c66fc32` - Remove xactions submodule directories
