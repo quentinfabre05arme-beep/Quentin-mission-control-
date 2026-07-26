@@ -1,0 +1,63 @@
+{
+  "interactions": [
+    {
+      "timestamp": "2026-07-26T18:45:31.713Z",
+      "type": "negative",
+      "message": "too verbose",
+      "satisfaction": 0.2,
+      "context": {
+        "hour": 20,
+        "day": 0,
+        "recentTopics": []
+      }
+    },
+    {
+      "timestamp": "2026-07-26T18:45:31.716Z",
+      "type": "negative",
+      "message": "too long",
+      "satisfaction": 0.3,
+      "context": {
+        "hour": 20,
+        "day": 0,
+        "recentTopics": [
+          "too verbose"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-07-26T18:45:31.717Z",
+      "type": "negative",
+      "message": "verbose response",
+      "satisfaction": 0.2,
+      "context": {
+        "hour": 20,
+        "day": 0,
+        "recentTopics": [
+          "too verbose",
+          "too long"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-07-26T18:45:31.718Z",
+      "type": "positive",
+      "message": "perfect!",
+      "satisfaction": 0.9,
+      "context": {
+        "hour": 20,
+        "day": 0,
+        "recentTopics": [
+          "too verbose",
+          "too long",
+          "verbose response"
+        ]
+      }
+    }
+  ],
+  "scores": {
+    "20:00": {
+      "count": 4,
+      "total": 1.6
+    }
+  }
+}

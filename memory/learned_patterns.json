@@ -1,0 +1,10 @@
+{
+  "behaviors": [
+    {
+      "type": "time_preference",
+      "value": "20:00",
+      "confidence": 1
+    }
+  ],
+  "triggers": []
+}

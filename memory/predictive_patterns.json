@@ -1,0 +1,39 @@
+{
+  "timePatterns": [
+    {
+      "hour": 11,
+      "frequency": 3,
+      "confidence": 0.75
+    },
+    {
+      "hour": 16,
+      "frequency": 1,
+      "confidence": 0.25
+    }
+  ],
+  "topicPatterns": [
+    {
+      "topic": "BTC",
+      "frequency": 2,
+      "confidence": 0.5
+    },
+    {
+      "topic": "STOCK",
+      "frequency": 1,
+      "confidence": 0.25
+    },
+    {
+      "topic": "RESEARCH",
+      "frequency": 1,
+      "confidence": 0.25
+    }
+  ],
+  "actionChains": [
+    {
+      "from": "research",
+      "to": "deploy",
+      "timeGap": 5
+    }
+  ],
+  "lastUpdated": "2026-07-26T18:45:31.722Z"
+}
