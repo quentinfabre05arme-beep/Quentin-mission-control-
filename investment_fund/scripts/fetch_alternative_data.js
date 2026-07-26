@@ -10,8 +10,19 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
+// Try to load secret resolver, fallback to env or placeholder
+let SERPER_KEY = process.env.SERPER_KEY;
+if (!SERPER_KEY) {
+  try {
+    const secretResolver = require('../lib/secret_resolver');
+    SERPER_KEY = secretResolver.getSecret('serper-api');
+  } catch (e) {
+    SERPER_KEY = '';
+  }
+}
+
 const CONFIG = {
-  SERPER_KEY: process.env.SERPER_KEY || require('../lib/secret_resolver').getSecret('serper-api'),
+  SERPER_KEY,
   DATA_DIR: path.join(__dirname, '..', 'data', 'alternative'),
   MARKET_DATA_FILE: path.join(__dirname, '..', '..', 'mission_control', 'market_data.json'),
   CACHE_MINUTES: 60,
