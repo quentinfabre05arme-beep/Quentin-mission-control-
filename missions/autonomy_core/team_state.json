@@ -1,7 +1,7 @@
 {
   "mission": "autonomy_core",
   "role": "SELF-HEALING",
-  "status": "cleaned",
+  "status": "active",
   "focus": "Error recovery, resilience",
   "created": "2026-07-26T20:50:38.812Z",
   "lastUpdate": "2026-07-26T20:50:46.823Z",
@@ -13,5 +13,6 @@
   "overlapsRemoved": [
     "orchestrator",
     "health"
-  ]
+  ],
+  "fixesApplied": null
 }

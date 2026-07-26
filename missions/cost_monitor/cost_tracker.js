@@ -1,12 +1,12 @@
-// Manager
-// manager implementation
+// CostTracker
+// cost-tracking implementation
 
 const fs = require('fs');
 const path = require('path');
 
 const STATE_FILE = path.join(__dirname, 'team_state.json');
 
-class Manager {
+class CostTracker {
   constructor() {
     this.state = this.loadState();
   }
@@ -19,21 +19,21 @@ class Manager {
     }
   }
 
-  status() {
+  trackCosts() {
     this.state.lastRun = new Date().toISOString();
     this.state.status = 'active';
     fs.writeFileSync(STATE_FILE, JSON.stringify(this.state, null, 2));
     return { success: true, timestamp: this.state.lastRun };
   }
 
-  configure() {
+  getReport() {
     this.state.lastRun = new Date().toISOString();
     this.state.status = 'active';
     fs.writeFileSync(STATE_FILE, JSON.stringify(this.state, null, 2));
     return { success: true, timestamp: this.state.lastRun };
   }
 
-  restart() {
+  alerts() {
     this.state.lastRun = new Date().toISOString();
     this.state.status = 'active';
     fs.writeFileSync(STATE_FILE, JSON.stringify(this.state, null, 2));
@@ -42,26 +42,26 @@ class Manager {
 
   getStatus() {
     return {
-      mission: 'openclaw_manager',
-      role: 'manager',
+      mission: 'cost_monitor',
+      role: 'cost-tracking',
       status: this.state.status,
       lastRun: this.state.lastRun
     };
   }
 }
 
-module.exports = Manager;
+module.exports = CostTracker;
 
 if (require.main === module) {
-  const instance = new Manager();
+  const instance = new CostTracker();
   const command = process.argv[2];
   if (command === 'run') {
-    const result = instance.status();
-    console.log('✅ Manager ran successfully');
+    const result = instance.trackCosts();
+    console.log('✅ CostTracker ran successfully');
     console.log('Status:', JSON.stringify(instance.getStatus(), null, 2));
   } else if (command === 'status') {
     console.log(JSON.stringify(instance.getStatus(), null, 2));
   } else {
-    console.log('Usage: node manager.js [run|status]');
+    console.log('Usage: node cost_tracker.js [run|status]');
   }
 }
