@@ -1,0 +1,1 @@
+openclaw skills enable browser-automation\nopenclaw skills enable canvas\nopenclaw skills enable clawhub\nopenclaw skills enable coding-agent\nopenclaw skills enable fact-checker\nopenclaw skills enable healthcheck\nopenclaw skills enable heartbeat-v2
