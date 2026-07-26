@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-07-26T18:09:44.920Z",
+  "plugins": [
+    {
+      "name": "duckduckgo",
+      "description": "Free web search to replace broken Gemini",
+      "enabled": true,
+      "useCase": "Web search without API key"
+    },
+    {
+      "name": "elevenlabs",
+      "description": "Voice synthesis for audio content",
+      "enabled": true,
+      "useCase": "Generate voice from text"
+    },
+    {
+      "name": "document-extract",
+      "description": "Parse PDFs, images, documents",
+      "enabled": true,
+      "useCase": "Extract text from documents"
+    },
+    {
+      "name": "active-memory",
+      "description": "Persistent memory across sessions",
+      "enabled": true,
+      "useCase": "Remember context between sessions"
+    }
+  ],
+  "nextSteps": [
+    "Restart OpenClaw gateway to load new plugins",
+    "Test DuckDuckGo search",
+    "Verify ElevenLabs voice generation",
+    "Test document extraction on sample PDF"
+  ]
+}
