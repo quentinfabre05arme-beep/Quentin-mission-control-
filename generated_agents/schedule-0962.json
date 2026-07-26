@@ -1,0 +1,22 @@
+{
+  "name": "schedule-0962",
+  "description": "Research biotech trends every week",
+  "version": "1.0",
+  "created": "2026-07-26T18:40:30.962Z",
+  "components": [
+    {
+      "type": "trigger",
+      "config": {
+        "type": "cron",
+        "expression": "0 */6 * * *"
+      }
+    },
+    {
+      "type": "log",
+      "config": {
+        "file": "logs/schedule-0962.log",
+        "level": "info"
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "btc-alert-threshold-0958",
+  "description": "Alert me when BTC moves more than 5%",
+  "version": "1.0",
+  "created": "2026-07-26T18:40:30.958Z",
+  "components": [
+    {
+      "type": "trigger",
+      "config": {
+        "type": "threshold",
+        "asset": "BTC",
+        "threshold": 5,
+        "condition": "above"
+      }
+    },
+    {
+      "type": "action",
+      "config": {
+        "type": "notification",
+        "channel": "telegram",
+        "message": "Alert: BTC triggered"
+      }
+    },
+    {
+      "type": "log",
+      "config": {
+        "file": "logs/btc-alert-threshold-0958.log",
+        "level": "info"
+      }
+    }
+  ]
+}

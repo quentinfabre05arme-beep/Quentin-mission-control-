@@ -1,0 +1,21 @@
+{
+  "name": "btc-conditional-0963",
+  "description": "If BTC drops 10% then buy the dip",
+  "version": "1.0",
+  "created": "2026-07-26T18:40:30.963Z",
+  "components": [
+    {
+      "type": "trigger",
+      "config": {
+        "type": "manual"
+      }
+    },
+    {
+      "type": "log",
+      "config": {
+        "file": "logs/btc-conditional-0963.log",
+        "level": "info"
+      }
+    }
+  ]
+}
