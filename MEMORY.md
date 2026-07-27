@@ -1510,3 +1510,155 @@ All jobs previously failing with kimi-k2.5:cloud (not in allowlist) updated to k
 - ├── self_improvement_loop.js
 - **Meta Architect:** Autonomous system that continuously researches, implements, and optimizes revenue streams
 - ## Autonomy Core v2.0 - Self-Improvement Loop
+
+## Auto-Extracted (2026-07-27)
+
+### Decisions
+
+
+### Errors Found
+- [2026-07-24.md] - Token fails for: Creating products, reading catalog ❌
+- [2026-07-24.md] **Error:** "Provided images do not exist" — Printify requires uploaded images before creating products
+- [2026-07-24.md] | `autonomy_core_v2/` | `autonomy_core/` | 5 files (revenue_tracker, opportunity_scanner, error_recovery, self_improvement_loop, decision_matrix) |
+- [2026-07-24.md] ├── error_recovery.js
+- [2026-07-24.md] - Auto-recovery on failure
+
+### Improvements
+- **Self-Improvement Loop Executed:**
+- | `autonomy_core_v2/` | `autonomy_core/` | 5 files (revenue_tracker, opportunity_scanner, error_recovery, self_improvement_loop, decision_matrix) |
+- ├── self_improvement_loop.js
+- **Meta Architect:** Autonomous system that continuously researches, implements, and optimizes revenue streams
+- ## Autonomy Core v2.0 - Self-Improvement Loop
+
+## Auto-Extracted (2026-07-27)
+
+### Decisions
+
+
+### Errors Found
+- [2026-07-24.md] - Token fails for: Creating products, reading catalog ❌
+- [2026-07-24.md] **Error:** "Provided images do not exist" — Printify requires uploaded images before creating products
+- [2026-07-24.md] | `autonomy_core_v2/` | `autonomy_core/` | 5 files (revenue_tracker, opportunity_scanner, error_recovery, self_improvement_loop, decision_matrix) |
+- [2026-07-24.md] ├── error_recovery.js
+- [2026-07-24.md] - Auto-recovery on failure
+
+### Improvements
+- **Self-Improvement Loop Executed:**
+- | `autonomy_core_v2/` | `autonomy_core/` | 5 files (revenue_tracker, opportunity_scanner, error_recovery, self_improvement_loop, decision_matrix) |
+- ├── self_improvement_loop.js
+- **Meta Architect:** Autonomous system that continuously researches, implements, and optimizes revenue streams
+- ## Autonomy Core v2.0 - Self-Improvement Loop
+
+## Auto-Extracted (2026-07-27)
+
+### Decisions
+
+
+### Errors Found
+- [2026-07-24.md] - Token fails for: Creating products, reading catalog ❌
+- [2026-07-24.md] **Error:** "Provided images do not exist" — Printify requires uploaded images before creating products
+- [2026-07-24.md] | `autonomy_core_v2/` | `autonomy_core/` | 5 files (revenue_tracker, opportunity_scanner, error_recovery, self_improvement_loop, decision_matrix) |
+- [2026-07-24.md] ├── error_recovery.js
+- [2026-07-24.md] - Auto-recovery on failure
+
+### Improvements
+- **Self-Improvement Loop Executed:**
+- | `autonomy_core_v2/` | `autonomy_core/` | 5 files (revenue_tracker, opportunity_scanner, error_recovery, self_improvement_loop, decision_matrix) |
+- ├── self_improvement_loop.js
+- **Meta Architect:** Autonomous system that continuously researches, implements, and optimizes revenue streams
+- ## Autonomy Core v2.0 - Self-Improvement Loop
+
+## Auto-Extracted (2026-07-27)
+
+### Decisions
+
+
+### Errors Found
+- [2026-07-24.md] - Token fails for: Creating products, reading catalog ❌
+- [2026-07-24.md] **Error:** "Provided images do not exist" — Printify requires uploaded images before creating products
+- [2026-07-24.md] | `autonomy_core_v2/` | `autonomy_core/` | 5 files (revenue_tracker, opportunity_scanner, error_recovery, self_improvement_loop, decision_matrix) |
+- [2026-07-24.md] ├── error_recovery.js
+- [2026-07-24.md] - Auto-recovery on failure
+
+### Improvements
+- **Self-Improvement Loop Executed:**
+- | `autonomy_core_v2/` | `autonomy_core/` | 5 files (revenue_tracker, opportunity_scanner, error_recovery, self_improvement_loop, decision_matrix) |
+- ├── self_improvement_loop.js
+- **Meta Architect:** Autonomous system that continuously researches, implements, and optimizes revenue streams
+- ## Autonomy Core v2.0 - Self-Improvement Loop
+
+## Auto-Extracted (2026-07-27)
+
+### Decisions
+
+
+### Errors Found
+- [2026-07-24.md] - Token fails for: Creating products, reading catalog ❌
+- [2026-07-24.md] **Error:** "Provided images do not exist" — Printify requires uploaded images before creating products
+- [2026-07-24.md] | `autonomy_core_v2/` | `autonomy_core/` | 5 files (revenue_tracker, opportunity_scanner, error_recovery, self_improvement_loop, decision_matrix) |
+- [2026-07-24.md] ├── error_recovery.js
+- [2026-07-24.md] - Auto-recovery on failure
+
+### Improvements
+- **Self-Improvement Loop Executed:**
+- | `autonomy_core_v2/` | `autonomy_core/` | 5 files (revenue_tracker, opportunity_scanner, error_recovery, self_improvement_loop, decision_matrix) |
+- ├── self_improvement_loop.js
+- **Meta Architect:** Autonomous system that continuously researches, implements, and optimizes revenue streams
+- ## Autonomy Core v2.0 - Self-Improvement Loop
+
+## Auto-Extracted (2026-07-27)
+
+### Decisions
+
+
+### Errors Found
+- [2026-07-24.md] - Token fails for: Creating products, reading catalog ❌
+- [2026-07-24.md] **Error:** "Provided images do not exist" — Printify requires uploaded images before creating products
+- [2026-07-24.md] | `autonomy_core_v2/` | `autonomy_core/` | 5 files (revenue_tracker, opportunity_scanner, error_recovery, self_improvement_loop, decision_matrix) |
+- [2026-07-24.md] ├── error_recovery.js
+- [2026-07-24.md] - Auto-recovery on failure
+
+### Improvements
+- **Self-Improvement Loop Executed:**
+- | `autonomy_core_v2/` | `autonomy_core/` | 5 files (revenue_tracker, opportunity_scanner, error_recovery, self_improvement_loop, decision_matrix) |
+- ├── self_improvement_loop.js
+- **Meta Architect:** Autonomous system that continuously researches, implements, and optimizes revenue streams
+- ## Autonomy Core v2.0 - Self-Improvement Loop
+
+## Auto-Extracted (2026-07-27)
+
+### Decisions
+
+
+### Errors Found
+- [2026-07-24.md] - Token fails for: Creating products, reading catalog ❌
+- [2026-07-24.md] **Error:** "Provided images do not exist" — Printify requires uploaded images before creating products
+- [2026-07-24.md] | `autonomy_core_v2/` | `autonomy_core/` | 5 files (revenue_tracker, opportunity_scanner, error_recovery, self_improvement_loop, decision_matrix) |
+- [2026-07-24.md] ├── error_recovery.js
+- [2026-07-24.md] - Auto-recovery on failure
+
+### Improvements
+- **Self-Improvement Loop Executed:**
+- | `autonomy_core_v2/` | `autonomy_core/` | 5 files (revenue_tracker, opportunity_scanner, error_recovery, self_improvement_loop, decision_matrix) |
+- ├── self_improvement_loop.js
+- **Meta Architect:** Autonomous system that continuously researches, implements, and optimizes revenue streams
+- ## Autonomy Core v2.0 - Self-Improvement Loop
+
+## Auto-Extracted (2026-07-27)
+
+### Decisions
+
+
+### Errors Found
+- [2026-07-24.md] - Token fails for: Creating products, reading catalog ❌
+- [2026-07-24.md] **Error:** "Provided images do not exist" — Printify requires uploaded images before creating products
+- [2026-07-24.md] | `autonomy_core_v2/` | `autonomy_core/` | 5 files (revenue_tracker, opportunity_scanner, error_recovery, self_improvement_loop, decision_matrix) |
+- [2026-07-24.md] ├── error_recovery.js
+- [2026-07-24.md] - Auto-recovery on failure
+
+### Improvements
+- **Self-Improvement Loop Executed:**
+- | `autonomy_core_v2/` | `autonomy_core/` | 5 files (revenue_tracker, opportunity_scanner, error_recovery, self_improvement_loop, decision_matrix) |
+- ├── self_improvement_loop.js
+- **Meta Architect:** Autonomous system that continuously researches, implements, and optimizes revenue streams
+- ## Autonomy Core v2.0 - Self-Improvement Loop

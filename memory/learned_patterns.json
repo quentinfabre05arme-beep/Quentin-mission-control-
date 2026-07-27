@@ -1,15 +1,228 @@
 {
-  "behaviors": [
+  "metadata": {
+    "last_updated": "2026-07-27T06:00:00+02:00",
+    "analysis_window": "2026-06-27 to 2026-07-27",
+    "files_analyzed": 14,
+    "total_entries": 200
+  },
+  "time_based_patterns": {
+    "dashboard_cycles": {
+      "frequency": "hourly",
+      "peak_times": ["08:00", "12:00", "18:00", "23:00"],
+      "pattern": "Regular hourly timestamp updates with market data refresh every 1-2 hours",
+      "confidence": 0.95
+    },
+    "research_cycles": {
+      "frequency": "2-3 times daily",
+      "typical_times": ["08:00", "14:00", "19:00"],
+      "pattern": "Morning brief, midday pulse, evening wrap",
+      "confidence": 0.90
+    },
+    "maintenance_sweeps": {
+      "frequency": "every 6 hours",
+      "typical_times": ["06:00", "12:00", "18:00", "00:00"],
+      "pattern": "System health checks with timestamp synchronization",
+      "confidence": 0.92
+    },
+    "x_posting_schedule": {
+      "frequency": "3 times daily",
+      "times": ["08:00", "14:00", "19:00"],
+      "pattern": "Morning, afternoon, evening posts for maximum engagement",
+      "confidence": 0.85
+    },
+    "ethereum_authority_posts": {
+      "frequency": "4 times daily",
+      "times": ["07:30", "10:00", "14:00", "18:00"],
+      "pattern": "Morning brief, midday insight, afternoon update, evening summary",
+      "confidence": 0.80
+    },
+    "user_active_hours": {
+      "peak": "20:00-23:00",
+      "secondary": "08:00-12:00",
+      "pattern": "Evening sessions for major builds, morning for maintenance",
+      "confidence": 0.88
+    }
+  },
+  "topic_based_patterns": {
+    "recurring_themes": [
+      {
+        "theme": "Dashboard maintenance",
+        "frequency": "daily",
+        "indicators": ["timestamp update", "cycle count", "market data refresh"],
+        "confidence": 0.98
+      },
+      {
+        "theme": "Market research",
+        "frequency": "daily",
+        "indicators": ["BTC price", "ETH price", "MSTR price", "HIMS price", "Fear & Greed"],
+        "confidence": 0.95
+      },
+      {
+        "theme": "Revenue generation",
+        "frequency": "weekly",
+        "indicators": ["POD business", "Alpha Fund", "Printify", "Etsy"],
+        "confidence": 0.85
+      },
+      {
+        "theme": "System self-improvement",
+        "frequency": "daily",
+        "indicators": ["autonomy core", "self-healing", "mission control", "pattern extraction"],
+        "confidence": 0.90
+      },
+      {
+        "theme": "Skill/Mission creation",
+        "frequency": "weekly",
+        "indicators": ["new skill", "mission deployed", "infrastructure built"],
+        "confidence": 0.75
+      },
+      {
+        "theme": "API rate limiting",
+        "frequency": "daily",
+        "indicators": ["Twelve Data rate limit", "Yahoo rate limit", "fallback to cache"],
+        "confidence": 0.92
+      },
+      {
+        "theme": "Git authentication issues",
+        "frequency": "weekly",
+        "indicators": ["git push failed", "auth token expired", "manual fix required"],
+        "confidence": 0.80
+      }
+    ],
+    "topic_clusters": {
+      "finance": {
+        "weight": 0.35,
+        "subtopics": ["crypto", "stocks", "portfolio", "trading", "POD revenue"]
+      },
+      "automation": {
+        "weight": 0.30,
+        "subtopics": ["dashboard", "cron jobs", "X posting", "research cycles"]
+      },
+      "infrastructure": {
+        "weight": 0.20,
+        "subtopics": ["skills", "missions", "APIs", "system health"]
+      },
+      "learning": {
+        "weight": 0.15,
+        "subtopics": ["DSCG", "Ethereum", "pattern extraction", "self-improvement"]
+      }
+    }
+  },
+  "format_patterns": {
+    "log_entry_structure": {
+      "pattern": "Timestamp → Action → Result → Next steps",
+      "confidence": 0.95,
+      "example": "[2026-07-25 17:11] Dashboard cycle — Updated last-review to 17:10, cycle 214→215"
+    },
+    "market_data_format": {
+      "pattern": "Asset: $Price (Change%) — Signal — Comment",
+      "confidence": 0.98,
+      "example": "BTC: $65,352 (+0.97%) — ⚪ NEUTRAL — Steady"
+    },
+    "cycle_update_format": {
+      "pattern": "Cycle #N → Timestamp → Changes → Status",
+      "confidence": 0.90,
+      "example": "Cycle count: 133, Market data refreshed, Timestamp updated"
+    },
+    "self_improvement_loop": {
+      "pattern": "DETECT → ANALYZE → SOLVE → VERIFY → DOCUMENT",
+      "confidence": 0.95,
+      "triggers": ["error detected", "stale data", "system failure"]
+    },
+    "table_preference": {
+      "pattern": "Markdown tables for structured data",
+      "confidence": 0.88,
+      "use_cases": ["market data", "mission status", "system health"]
+    }
+  },
+  "behavioral_patterns": {
+    "autonomous_actions": {
+      "silent_execution": {
+        "pattern": "Fix issues without notifying user unless critical",
+        "frequency": "every cycle",
+        "confidence": 0.95
+      },
+      "fallback_usage": {
+        "pattern": "When primary API fails, automatically use cached/alternative data",
+        "frequency": "daily",
+        "confidence": 0.92
+      },
+      "git_commit_pattern": {
+        "pattern": "Commit after every significant change, push when auth available",
+        "frequency": "per cycle",
+        "confidence": 0.85
+      }
+    },
+    "error_recovery": {
+      "api_rate_limits": {
+        "pattern": "Twelve Data → Yahoo Finance → CoinGecko → Cache",
+        "success_rate": 0.95,
+        "confidence": 0.90
+      },
+      "git_auth_failure": {
+        "pattern": "Log failure, continue local work, retry later",
+        "success_rate": 0.30,
+        "confidence": 0.80
+      },
+      "sandbox_blocking": {
+        "pattern": "Detect sandbox, document blocker, request restart",
+        "success_rate": 0.70,
+        "confidence": 0.85
+      }
+    },
+    "decision_triggers": {
+      "escalate_to_user": [
+        "Financial transaction required",
+        "Irreversible deletion",
+        "External posting (tweet/email)",
+        "Git auth token expired (if deployment needed)",
+        "All 5 attempts exhausted"
+      ],
+      "silent_execution": [
+        "Dashboard timestamp updates",
+        "Market data refresh",
+        "Cycle count increment",
+        "File cleanup",
+        "Cache management"
+      ]
+    }
+  },
+  "emerging_patterns": {
+    "revenue_focus_shift": {
+      "pattern": "Increasing time on POD business and Alpha Fund",
+      "trend": "accelerating",
+      "confidence": 0.75
+    },
+    "skill_creation_acceleration": {
+      "pattern": "Batch skill creation during evening sessions",
+      "trend": "stable",
+      "confidence": 0.70
+    },
+    "system_consolidation": {
+      "pattern": "Merging duplicate missions, centralizing under Mission Control",
+      "trend": "accelerating",
+      "confidence": 0.80
+    }
+  },
+  "recommendations": [
     {
-      "type": "time_preference",
-      "value": "20:00",
-      "confidence": 0.8
+      "action": "Implement predictive API rate limiting",
+      "reason": "Twelve Data limit hit daily around 12:00-14:00",
+      "priority": "high"
     },
     {
-      "type": "time_preference",
-      "value": "21:00",
-      "confidence": 0.2
+      "action": "Auto-refresh git auth token before expiry",
+      "reason": "Git push fails every 3-5 days",
+      "priority": "medium"
+    },
+    {
+      "action": "Consolidate dashboard cycles into single batch update",
+      "reason": "Multiple files updated every hour with same timestamp",
+      "priority": "medium"
+    },
+    {
+      "action": "Add POD revenue metrics to daily logs",
+      "reason": "Revenue tracking inconsistent across days",
+      "priority": "low"
     }
-  ],
-  "triggers": []
+  ]
 }
