@@ -1,0 +1,147 @@
+{
+  "patterns": [
+    {
+      "id": "pattern-001",
+      "name": "WEAK_BUY + Earnings Catalyst",
+      "category": "Technical + Fundamental",
+      "description": "WEAK_BUY technical signal combined with upcoming earnings catalyst within 30 days",
+      "entry_criteria": [
+        "WEAK_BUY or BUY signal from enhanced research",
+        "Checklist score >= 80",
+        "Earnings or major catalyst within 30 days",
+        "Clear thesis with identifiable moat",
+        "REQUIRED: Price confirmation (close > prior day high OR pullback to 20 SMA)",
+        "REQUIRED: Broader market not in distribution phase"
+      ],
+      "exit_rules": [
+        "Stop loss: 6% or technical breakdown",
+        "Scale out: 5%, 10%, 15% profit targets",
+        "Time stop: Reevaluate after 30 days",
+        "Catalyst exit: Full exit after earnings if thesis plays out"
+      ],
+      "risk_management": {
+        "position_size": "8-12% based on conviction score",
+        "max_correlation": "Avoid if >0.7 correlation to existing positions",
+        "portfolio_heat": "Ensure total deployed < 44%"
+      },
+      "occurrences": [
+        {
+          "symbol": "HIMS",
+          "date": "2026-07-16",
+          "entry": 37.17,
+          "stop": 35.0,
+          "targets": [39.03, 40.89, 42.75],
+          "catalyst": "Q2 Earnings Aug 10",
+          "exit_date": "2026-07-16",
+          "exit_price": 33.67,
+          "exit_reason": "stop_loss_autonomous",
+          "result": "loss",
+          "pnl_pct": -9.42,
+          "holding_days": 0,
+          "lessons": "Entry lacked price confirmation. Early stop hit same day. Consider waiting for pullback to 20 SMA or momentum confirmation."
+        }
+      ],
+      "win_rate": 0,
+      "avg_return": -9.42,
+      "status": "under_review",
+      "pattern_grade": "C",
+      "notes": "Based on backtest: WEAK_BUY alone has 73-79% win rate. Adding earnings catalyst should improve odds. Need 5+ occurrences to calculate reliable stats."
+    },
+    {
+      "id": "pattern-004",
+      "name": "Deep Value AI Infrastructure",
+      "category": "Fundamental + Thematic",
+      "description": "AI beneficiary trading at significant discount to peers with clear growth runway",
+      "entry_criteria": [
+        "Checklist score >= 90",
+        "P/E or EV/Sales < 60% of peer median",
+        "Revenue growth > 15% CAGR",
+        "AI revenue exposure > 30%",
+        "Monthly/quarterly catalyst visibility"
+      ],
+      "exit_rules": [
+        "Stop: 8% technical or thesis violation",
+        "Scale out: +20%, +40%, +60%",
+        "Full exit: Valuation reaches peer average"
+      ],
+      "risk_management": {
+        "position_size": "10-15% (high conviction)",
+        "tiered_entry": "50/30/20 on momentum confirmation",
+        "catalyst_tracking": "Monitor monthly business updates"
+      },
+      "occurrences": [
+        {
+          "symbol": "SMCI",
+          "date": "2026-07-16",
+          "entry": 26.89,
+          "fair_value": 70.23,
+          "upside": 161.2,
+          "peers_pe": "25-30x",
+          "current_pe": "14.5x",
+          "status": "evaluating",
+          "result": null
+        }
+      ],
+      "win_rate": null,
+      "avg_return": null,
+      "notes": "SMCI at 14.5x P/E vs 25-30x peers. Deep value AI play. Requires monitoring of capex cycle and competition."
+    },
+    {
+      "id": "pattern-002",
+      "name": "Crypto Oversold Bounce",
+      "category": "Technical",
+      "description": "RSI < 40 on crypto with positive sentiment shift",
+      "entry_criteria": [
+        "RSI 14-day < 40",
+        "Sentiment score > 0.3",
+        "MACD histogram turning positive"
+      ],
+      "exit_rules": [
+        "Stop: Below recent low or RSI > 70",
+        "Target: RSI 60 or previous resistance"
+      ],
+      "risk_management": {
+        "position_size": "6-10% (crypto volatility)",
+        "correlation_note": "BTC/ETH highly correlated - size accordingly"
+      },
+      "occurrences": [],
+      "win_rate": null,
+      "avg_return": null,
+      "notes": "ETH candidate when RSI < 40"
+    },
+    {
+      "id": "pattern-003",
+      "name": "Semiconductor AI Play",
+      "category": "Thematic + Fundamental",
+      "description": "AI infrastructure beneficiary with accelerating demand",
+      "entry_criteria": [
+        "Clear AI revenue exposure",
+        "Customer wins announced",
+        "Backlog visibility",
+        "Reasonable valuation vs growth"
+      ],
+      "exit_rules": [
+        "Stop: Thesis violation or 8% technical",
+        "Target: 20-30% on thematic realization"
+      ],
+      "risk_management": {
+        "position_size": "8-15% (high conviction thematic)",
+        "catalyst_tracking": "Monitor customer announcements, capacity expansion"
+      },
+      "occurrences": [],
+      "win_rate": null,
+      "avg_return": null,
+      "notes": "SMCI candidate. Need to run checklist before entry."
+    }
+  ],
+  "stats": {
+    "total_patterns": 4,
+    "active_patterns": 1,
+    "total_occurrences": 1,
+    "completed_occurrences": 1,
+    "winning_trades": 0,
+    "losing_trades": 1,
+    "under_review": 1,
+    "last_updated": "2026-07-19T09:00:00Z"
+  }
+}

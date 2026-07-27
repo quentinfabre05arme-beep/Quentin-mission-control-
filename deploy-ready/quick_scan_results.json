@@ -1,0 +1,124 @@
+{
+  "scan_time": "2026-07-16T07:45:45.083Z",
+  "high_probability": [
+    {
+      "symbol": "SMCI",
+      "price": 26.89,
+      "change": -2.74864,
+      "volume": 25267665,
+      "rsi": 40.22675,
+      "high_52w": null,
+      "low_52w": null,
+      "setup_score": 2,
+      "reasons": [
+        "RSI low 40.2"
+      ],
+      "range_pct": null,
+      "sector": "AI Servers",
+      "catalyst": "Data center demand"
+    }
+  ],
+  "watchlist": [
+    {
+      "symbol": "COIN",
+      "price": 167.21001,
+      "change": 3.53561,
+      "volume": 7534949,
+      "rsi": 53.24123,
+      "high_52w": null,
+      "low_52w": null,
+      "setup_score": 1,
+      "reasons": [
+        "Positive momentum +3.5%"
+      ],
+      "range_pct": null,
+      "sector": "Crypto",
+      "catalyst": "BTC correlation"
+    },
+    {
+      "symbol": "NVDA",
+      "price": 212.5,
+      "change": 0.33049903,
+      "volume": 118979465,
+      "rsi": 56.89769,
+      "high_52w": null,
+      "low_52w": null,
+      "setup_score": 0,
+      "reasons": [],
+      "range_pct": null,
+      "sector": "AI/Tech",
+      "catalyst": "AI demand, earnings Aug 28"
+    },
+    {
+      "symbol": "TSLA",
+      "price": 394.45999,
+      "change": -0.43414641,
+      "volume": 31393664,
+      "rsi": 47.13799,
+      "high_52w": null,
+      "low_52w": null,
+      "setup_score": 0,
+      "reasons": [],
+      "range_pct": null,
+      "sector": "EV/Tech",
+      "catalyst": "Robotaxi event"
+    },
+    {
+      "symbol": "LLY",
+      "price": 1156.63,
+      "change": 0.3548654,
+      "volume": 2537112,
+      "rsi": 50.40402,
+      "high_52w": null,
+      "low_52w": null,
+      "setup_score": 0,
+      "reasons": [],
+      "range_pct": null,
+      "sector": "Healthcare",
+      "catalyst": "GLP-1 leader"
+    },
+    {
+      "symbol": "SPY",
+      "price": 754.81,
+      "change": 0.39636359,
+      "volume": 36741829,
+      "rsi": 58.0403,
+      "high_52w": null,
+      "low_52w": null,
+      "setup_score": 0,
+      "reasons": [],
+      "range_pct": null,
+      "sector": "Broad Market",
+      "catalyst": "Market direction"
+    },
+    {
+      "symbol": "QQQ",
+      "price": 717.73999,
+      "change": -0.27095169,
+      "volume": 30498589,
+      "rsi": 49.94522,
+      "high_52w": null,
+      "low_52w": null,
+      "setup_score": 0,
+      "reasons": [],
+      "range_pct": null,
+      "sector": "Tech ETF",
+      "catalyst": "Nasdaq leadership"
+    },
+    {
+      "symbol": "PLTR",
+      "price": null,
+      "change": null,
+      "volume": null,
+      "rsi": null,
+      "high_52w": null,
+      "low_52w": null,
+      "setup_score": 0,
+      "reasons": [],
+      "range_pct": null,
+      "sector": "AI/Defense",
+      "catalyst": "Gov contracts"
+    }
+  ],
+  "avoid": []
+}

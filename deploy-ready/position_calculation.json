@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-07-16T07:48:53.905Z",
+  "action": "TRADE",
+  "symbol": "SMCI",
+  "entryPrice": 26.89,
+  "stopPrice": 24.5,
+  "shares": 418,
+  "cost": 11240.02,
+  "positionPct": "11.2",
+  "stopPct": "8.89",
+  "riskDollars": "999.02",
+  "riskPct": "1.00",
+  "target": "28.77",
+  "rRatio": "0.79",
+  "confidence": "MEDIUM",
+  "signal": "WEAK_BUY"
+}

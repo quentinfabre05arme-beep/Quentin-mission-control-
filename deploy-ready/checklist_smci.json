@@ -1,0 +1,12 @@
+{
+  "symbol": "SMCI",
+  "date": "2026-07-16T10:03:30.242Z",
+  "scores": {
+    "businessQuality": 25,
+    "valuation": 25,
+    "catalyst": 25,
+    "risk": 25
+  },
+  "totalScore": 100,
+  "recommendation": ""
+}

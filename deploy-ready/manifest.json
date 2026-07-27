@@ -1,0 +1,16 @@
+﻿{
+  "name": "Mission Control Dashboard",
+  "short_name": "Mission Control",
+  "description": "Social media operations dashboard for @quentinvest1",
+  "start_url": "/mission_control/index.html",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🐾%3C/text%3E%3C/svg%3E",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

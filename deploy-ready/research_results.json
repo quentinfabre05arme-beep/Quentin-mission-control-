@@ -1,0 +1,94 @@
+{
+  "timestamp": "2026-07-26T13:38:33.164Z",
+  "prices": {
+    "BTC": {
+      "price": 64496.01,
+      "change_24h": 0.1879767,
+      "source": "twelvedata",
+      "signal": "NEUTRAL"
+    },
+    "ETH": {
+      "price": 1886.14,
+      "change_24h": 0.6000352,
+      "source": "twelvedata",
+      "signal": "NEUTRAL"
+    },
+    "NVDA": {
+      "price": 206.84,
+      "change_24h": -0.91971557,
+      "source": "twelvedata",
+      "signal": "NEUTRAL"
+    },
+    "TSLA": {
+      "price": 313.029999,
+      "change_24h": -2.083269,
+      "source": "twelvedata",
+      "signal": "BEARISH"
+    },
+    "MSTR": {
+      "price": 91.67,
+      "change_24h": -2.093345,
+      "source": "twelvedata",
+      "signal": "BEARISH"
+    },
+    "AAPL": {
+      "price": 333.019989,
+      "change_24h": 3.53167,
+      "source": "twelvedata",
+      "signal": "BULLISH"
+    },
+    "HIMS": {
+      "price": 28.09,
+      "change_24h": -14.20281,
+      "source": "twelvedata",
+      "signal": "BEARISH"
+    },
+    "COIN": {
+      "price": 158.28999,
+      "change_24h": -1.78085,
+      "source": "twelvedata",
+      "signal": "NEUTRAL"
+    },
+    "SPY": {
+      "price": 738.92999,
+      "change_24h": 0.10160124,
+      "source": "cached",
+      "signal": "NEUTRAL"
+    },
+    "QQQ": {
+      "price": 684.22998,
+      "change_24h": -1.11712,
+      "source": "cached",
+      "signal": "NEUTRAL"
+    },
+    "GLD": {
+      "price": 371.89999,
+      "change_24h": 0.10228383,
+      "source": "cached",
+      "signal": "NEUTRAL"
+    },
+    "TLT": {
+      "price": 83.25,
+      "change_24h": 0.096190733,
+      "source": "cached",
+      "signal": "NEUTRAL"
+    }
+  },
+  "analysis": {
+    "technical": {
+      "BTC": {
+        "error": "spawnSync C:\\WINDOWS\\system32\\cmd.exe ETIMEDOUT"
+      },
+      "ETH": {
+        "error": "spawnSync C:\\WINDOWS\\system32\\cmd.exe ETIMEDOUT"
+      },
+      "MSTR": {
+        "error": "spawnSync C:\\WINDOWS\\system32\\cmd.exe ETIMEDOUT"
+      },
+      "HIMS": {
+        "error": "spawnSync C:\\WINDOWS\\system32\\cmd.exe ETIMEDOUT"
+      }
+    }
+  },
+  "errors": []
+}

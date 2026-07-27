@@ -1,0 +1,8 @@
+{
+  "owner": "quentinfabre05arme-beep",
+  "repo": "Quentin-mission-control-",
+  "path": "package.json",
+  "message": "feat: Add package metadata",
+  "content": "ewogICJuYW1lIjogInF1ZW50aW4tbWlzc2lvbi1jb250cm9sIiwKICAidmVyc2lvbiI6ICIyLjAuMCIsCiAgImRlc2NyaXB0aW9uIjogIlF1ZW50aW4ncyByZWFsLXRpbWUgbWlzc2lvbiBjb250cm9sIGRhc2hib2FyZCIsCiAgInNjcmlwdHMiOiB7CiAgICAiZGV2IjogInZlcmNlbCBkZXYiLAogICAgImRlcGxveSI6ICJ2ZXJjZWwgLS1wcm9kIgogIH0KfQo=",
+  "branch": "main"
+}

@@ -1,0 +1,169 @@
+{
+  "strategy": "Enhanced Swing Trading Portfolio",
+  "version": "1.0",
+  "date": "2026-07-16",
+  "goal": {
+    "target_monthly_return": "5%",
+    "timeframe": "Swing trades (1-4 weeks)",
+    "risk_approach": "High-probability setups only, validated by backtest"
+  },
+  "account": {
+    "total_capital": 100000,
+    "max_position_size": 15,
+    "min_position_size": 8,
+    "max_correlated_positions": 2,
+    "cash_reserve": 20
+  },
+  "selection_criteria": {
+    "minimum_historical_win_rate": 70,
+    "preferred_signals": ["BUY", "WEAK_BUY"],
+    "avoid_signals": ["STRONG_SELL", "WEAK_SELL", "SELL"],
+    "minimum_confidence": "MEDIUM",
+    "catalyst_required": true
+  },
+  "current_opportunities": [
+    {
+      "rank": 1,
+      "symbol": "HIMS",
+      "signal": "WEAK_BUY",
+      "price": 37.17,
+      "allocation": 12,
+      "amount": 12000,
+      "shares": 322,
+      "confidence": "HIGH",
+      "historical_win_rate": 75,
+      "catalyst": "Q2 Earnings Aug 10",
+      "timeframe": "2-3 weeks",
+      "target": 40.0,
+      "stop": 35.0,
+      "rr_ratio": "1.3:1",
+      "sentiment": "VERY_BULLISH (+2.27)",
+      "rationale": "Best setup: momentum + sentiment + historical validation",
+      "status": "ENTERED",
+      "already_in_portfolio": true
+    },
+    {
+      "rank": 2,
+      "symbol": "ETH",
+      "signal": "HOLD",
+      "price": 1910.07,
+      "allocation": 10,
+      "amount": 0,
+      "shares": 0,
+      "confidence": "HIGH",
+      "historical_win_rate": 79,
+      "catalyst": "Oversold technicals, RSI 41.5",
+      "timeframe": "Watch for WEAK_BUY trigger",
+      "target": 2050,
+      "stop": 1820,
+      "rr_ratio": "1.5:1",
+      "sentiment": "NEUTRAL",
+      "rationale": "Strong historical WEAK_BUY performance (79%). Wait for signal.",
+      "status": "WATCHLIST",
+      "entry_trigger": "RSI < 40 OR WEAK_BUY signal"
+    },
+    {
+      "rank": 3,
+      "symbol": "BTC",
+      "signal": "HOLD",
+      "price": 64301.99,
+      "allocation": 8,
+      "amount": 0,
+      "shares": 0,
+      "confidence": "HIGH",
+      "historical_win_rate": 73,
+      "catalyst": "Inflation data support",
+      "timeframe": "Watch for dip to $62K-63K",
+      "target": 68000,
+      "stop": 61500,
+      "rr_ratio": "5.5:1",
+      "sentiment": "NEUTRAL",
+      "rationale": "WEAK_BUY historically works 73%. Wait for oversold bounce setup.",
+      "status": "WATCHLIST",
+      "entry_trigger": "RSI < 35 OR WEAK_BUY signal"
+    },
+    {
+      "rank": 4,
+      "symbol": "SMCI",
+      "signal": "WEAK_BUY",
+      "price": 26.89,
+      "allocation": 8,
+      "amount": 0,
+      "shares": 0,
+      "confidence": "MEDIUM",
+      "historical_win_rate": null,
+      "catalyst": "AI server demand, data center growth",
+      "timeframe": "1-2 weeks",
+      "target": 30.0,
+      "stop": 24.5,
+      "rr_ratio": "2.1:1",
+      "sentiment": "RSI low 40.2 (oversold bounce)",
+      "rationale": "RSI oversold at 40.2, -2.75% pullback offers entry. AI infrastructure play.",
+      "status": "READY",
+      "entry_trigger": "IMMEDIATE or on confirmation above $27.5"
+    },
+    {
+      "rank": 5,
+      "symbol": "COIN",
+      "signal": "WATCH",
+      "price": 167.21,
+      "allocation": 6,
+      "amount": 0,
+      "shares": 0,
+      "confidence": "MEDIUM",
+      "historical_win_rate": null,
+      "catalyst": "BTC correlation, institutional adoption",
+      "timeframe": "Watch for momentum continuation",
+      "target": 185,
+      "stop": 155,
+      "rr_ratio": "1.8:1",
+      "sentiment": "Positive momentum +3.5%, RSI 53 neutral",
+      "rationale": "Strong momentum play on crypto. Wait for pullback or WEAK_BUY.",
+      "status": "WATCHLIST",
+      "entry_trigger": "Pullback to $160 OR WEAK_BUY signal"
+    }
+  ],
+  "watchlist": [
+    {
+      "symbol": "MSTR",
+      "signal": "HOLD",
+      "price": 97.47,
+      "status": "AVOID",
+      "reason": "Bearish sentiment (-0.73), no catalyst, technical low confidence"
+    }
+  ],
+  "portfolio_rules": [
+    "Only enter WEAK_BUY or BUY signals (73-79% historical win rate)",
+    "Never enter STRONG_SELL, SELL, or WEAK_SELL (0-29% win rate)",
+    "Position size: 8-12% per trade based on confidence",
+    "Hold period: 5 days minimum, up to 4 weeks for earnings",
+    "Stop loss: -6% max (tighter than historical avg loss)",
+    "Take profit: Scale out at +5%, +10%, +15%",
+    "Max 3 open positions to avoid over-concentration",
+    "Keep 20% cash for new opportunities",
+    "Review all positions every Friday"
+  ],
+  "monthly_target_breakdown": {
+    "target_gain": 5000,
+    "avg_trade_return_needed": 4.17,
+    "trades_per_month": 4,
+    "win_rate_assumption": 75,
+    "avg_win": 7.5,
+    "avg_loss": 5.0,
+    "expected_value_per_trade": 4.06,
+    "monthly_expected_return": 4.06
+  },
+  "risk_management": {
+    "max_portfolio_heat": 40,
+    "max_sector_exposure": 30,
+    "max_single_position": 15,
+    "max_daily_loss": 2000,
+    "trailing_stop": true,
+    "breakeven_stop": true
+  },
+  "_meta": {
+    "created": "2026-07-16T09:40:00Z",
+    "next_review": "2026-07-19T09:00:00Z",
+    "backtest_reference": "BACKTEST_SUMMARY.md"
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "account": {
+    "starting_balance": 100000,
+    "current_balance": 90001.27,
+    "total_pnl": 0,
+    "total_pnl_pct": 0,
+    "open_positions": 1,
+    "closed_trades": 0,
+    "winning_trades": 0,
+    "losing_trades": 0
+  },
+  "positions": [
+    {
+      "id": "HIMS-20260716-001",
+      "symbol": "HIMS",
+      "entry_date": "2026-07-16T07:36:39.778Z",
+      "entry_price": 37.17,
+      "current_price": 37.17,
+      "shares": 269,
+      "cost_basis": 9998.73,
+      "target_price": 40,
+      "stop_loss": 35,
+      "signal_type": "WEAK_BUY",
+      "confidence": "HIGH",
+      "catalyst": "Q2 Earnings Aug 10",
+      "unrealized_pnl": 0,
+      "unrealized_pnl_pct": 0,
+      "status": "OPEN",
+      "days_held": 0
+    }
+  ],
+  "trade_history": [],
+  "active_signals": [
+    {
+      "id": "HIMS-20260716-001",
+      "symbol": "HIMS",
+      "signal_date": "2026-07-16",
+      "signal_time": "09:25:00",
+      "signal_type": "WEAK_BUY",
+      "entry_price": 37.17,
+      "current_price": 37.17,
+      "target_price": 40,
+      "stop_loss": 35,
+      "timeframe": "2-3 weeks",
+      "catalyst": "Q2 Earnings Aug 10",
+      "urgency": "THIS WEEK",
+      "confidence": "HIGH",
+      "factors": [
+        "Momentum: +5.75%",
+        "Sentiment: VERY_BULLISH (+2.36)",
+        "Technical: HOLD (neutral)"
+      ],
+      "status": "ENTERED",
+      "shares": 269,
+      "allocated": 9998.73,
+      "notes": "First enhanced system signal. 2-3 week hold into earnings."
+    },
+    {
+      "id": "ETH-20260716-002",
+      "symbol": "ETH",
+      "signal_date": "2026-07-16",
+      "signal_time": "09:38:00",
+      "signal_type": "WATCH",
+      "entry_price": 1850,
+      "current_price": 1910.07,
+      "target_price": 2050,
+      "stop_loss": 1820,
+      "timeframe": "1-2 weeks",
+      "catalyst": "Oversold bounce setup",
+      "urgency": "WAIT",
+      "confidence": "MEDIUM",
+      "factors": [
+        "RSI 41.5 approaching oversold",
+        "Historical WEAK_BUY win rate: 79%",
+        "Downtrend but oversold bounce likely"
+      ],
+      "status": "WATCHLIST",
+      "shares": 0,
+      "allocated": 0,
+      "notes": "Enter on RSI < 40 or WEAK_BUY signal. Target 10% allocation."
+    },
+    {
+      "id": "BTC-20260716-003",
+      "symbol": "BTC",
+      "signal_date": "2026-07-16",
+      "signal_time": "09:38:00",
+      "signal_type": "WATCH",
+      "entry_price": 62500,
+      "current_price": 64301.99,
+      "target_price": 68000,
+      "stop_loss": 61500,
+      "timeframe": "1-3 weeks",
+      "catalyst": "Dip buy opportunity",
+      "urgency": "WAIT",
+      "confidence": "MEDIUM",
+      "factors": [
+        "Historical WEAK_BUY win rate: 73%",
+        "Strong support at $62K",
+        "Inflation data support"
+      ],
+      "status": "WATCHLIST",
+      "shares": 0,
+      "allocated": 0,
+      "notes": "Enter on dip to $62K-63K or WEAK_BUY signal. Target 8% allocation."
+    }
+    {
+      "id": "SMCI-20260716-004",
+      "symbol": "SMCI",
+      "signal_date": "2026-07-16",
+      "signal_time": "09:45:00",
+      "signal_type": "WEAK_BUY",
+      "entry_price": 26.89,
+      "current_price": 26.89,
+      "target_price": 30.0,
+      "stop_loss": 24.5,
+      "timeframe": "1-2 weeks",
+      "catalyst": "AI server demand, oversold bounce",
+      "urgency": "THIS WEEK",
+      "confidence": "MEDIUM",
+      "factors": [
+        "RSI oversold at 40.2",
+        "Pullback -2.75% offers entry",
+        "AI infrastructure secular trend"
+      ],
+      "status": "READY",
+      "shares": 0,
+      "allocated": 0,
+      "notes": "Enter on confirmation above $27.5 or immediately. 8% allocation."
+    },
+    {
+      "id": "COIN-20260716-005",
+      "symbol": "COIN",
+      "signal_date": "2026-07-16",
+      "signal_time": "09:45:00",
+      "signal_type": "WATCH",
+      "entry_price": 160,
+      "current_price": 167.21,
+      "target_price": 185,
+      "stop_loss": 155,
+      "timeframe": "1-2 weeks",
+      "catalyst": "BTC correlation, institutional adoption",
+      "urgency": "WAIT",
+      "confidence": "MEDIUM",
+      "factors": [
+        "Strong momentum +3.5%",
+        "RSI neutral at 53",
+        "Wait for pullback or WEAK_BUY"
+      ],
+      "status": "WATCHLIST",
+      "shares": 0,
+      "allocated": 0,
+      "notes": "Enter on pullback to $160 or WEAK_BUY signal. 6% allocation."
+    }
+  ],
+  "_meta": {
+    "version": "1.0",
+    "created": "2026-07-16T09:30:00Z",
+    "last_updated": "2026-07-16T07:36:40.120Z",
+    "system": "Enhanced Research v2.0"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "quentin-mission-control",
+  "version": "2.0.0",
+  "description": "Quentin's real-time mission control dashboard",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  }
+}

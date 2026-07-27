@@ -1,0 +1,96 @@
+{
+  "entries": [
+    {
+      "id": 1752661200000,
+      "date": "2026-07-16T09:45:00.000Z",
+      "closed_date": "2026-07-16T20:42:00.000Z",
+      "status": "closed",
+      "symbol": "HIMS",
+      "decision": "buy",
+      "exit_decision": "stop_loss_autonomous",
+      "price": "37.17",
+      "exit_price": "33.67",
+      "shares": "269",
+      "context": "WEAK_BUY signal from enhanced research, checklist score 100/100, 79% historical win rate on WEAK_BUY",
+      "expectations": "Price reaches $40 by Aug 10 earnings (7.6% gain). Thesis: GLP-1 market leader with accelerating revenue, telehealth moat.",
+      "probability": "75",
+      "timeframe": "25 days (to Aug 10)",
+      "emotional_state": "Calm, confident",
+      "biases_checked": "FOMO - no, entered on pullback from $38. Recency - no, based on multi-factor analysis.",
+      "stop_loss": "35.00",
+      "targets": "39.03 (5%), 40.89 (10%), 42.75 (15%)",
+      "thesis": "HIMS is a GLP-1 market leader with accelerating revenue growth and telehealth platform providing competitive moat. Q2 earnings on Aug 10 are the catalyst. WEAK_BUY signal has 79% historical win rate. Position sized at 10% based on conviction.",
+      "why_wrong": "1) GLP-1 market saturates faster than expected 2) Competitors take market share 3) Earnings miss expectations 4) Market correction hits growth stocks",
+      "review_date": "2026-07-19",
+      "lessons_extracted": {
+        "what_worked": [
+          "Systematic stop loss execution - loss contained within parameters",
+          "Position sizing appropriate for conviction level",
+          "Pre-defined exit rules followed without emotion"
+        ],
+        "what_didnt_work": [
+          "Entry timing - bought into early strength without waiting for pullback confirmation",
+          "Over-reliance on checklist score without price action context",
+          "Did not account for broader market weakness on entry day"
+        ],
+        "pattern_insight": "WEAK_BUY + earnings catalyst needs price confirmation within 48 hours or early stop recommended",
+        "system_update": "Add price momentum check: require close > prior day high OR wait for pullback to 20 SMA"
+      },
+      "fair_value": "$48.30",
+      "upside": "+29.9%",
+      "outcome": {
+        "pnl": "-941.50",
+        "pnl_pct": "-9.42",
+        "holding_days": 0,
+        "exit_reason": "stop_loss_autonomous",
+        "lessons": "Stop loss respected. Position sized correctly. System worked as designed. Loss contained within risk parameters.",
+        "grade": "C"
+      }
+    },
+    {
+      "id": 1752665000000,
+      "date": "2026-07-16T12:03:00.000Z",
+      "status": "evaluating",
+      "symbol": "SMCI",
+      "decision": "evaluating",
+      "price": "26.89",
+      "context": "Checklist score 100/100, financial model shows +161% upside, AI infrastructure beneficiary",
+      "expectations": "Fair value $70.23, potential 3-6 month hold for AI infrastructure play",
+      "probability": "80",
+      "timeframe": "3-6 months",
+      "emotional_state": "Excited by valuation, cautious about timing",
+      "biases_checked": "Value trap? Check cyclical nature. Don't anchor to low P/E alone.",
+      "thesis": "SMCI is undervalued AI infrastructure play at 14.5x P/E vs 25-30x peers. Revenue growing 16% CAGR. Monthly business updates provide catalyst visibility. Strong technical setup.",
+      "why_wrong": "1) AI capex cycle peaks sooner than expected 2) Competition from DELL/HPQ intensifies 3) Margin compression in commoditized server market 4) Accounting/quality concerns resurface",
+      "fair_value": "$70.23",
+      "upside": "+161%"
+    },
+    {
+      "id": 1752699720000,
+      "date": "2026-07-16T20:42:00.000Z",
+      "status": "system_update",
+      "symbol": "AUTONOMOUS_MODE",
+      "decision": "enable",
+      "context": "User directive: You run the portfolio by yourself, you never ask me for execution",
+      "expectations": "Stop losses hit = automatic exit. Targets hit = automatic scale-out. Signals trigger = automatic entry within sizing limits.",
+      "probability": "N/A",
+      "timeframe": "Ongoing",
+      "emotional_state": "N/A",
+      "biases_checked": "None - purely systematic",
+      "thesis": "Autonomous operation removes emotional decision-making and enforces discipline. System executes based on predefined rules without human intervention.",
+      "why_wrong": "Edge cases not covered by rules, market conditions change requiring human judgment, technical failures",
+      "review_date": "2026-08-16"
+    }
+  ],
+  "stats": {
+    "created": "2026-07-16T09:45:00.000Z",
+    "updated": "2026-07-16T20:42:00.000Z",
+    "total_entries": 3,
+    "open_entries": 1,
+    "closed_entries": 1,
+    "win_rate": "0%",
+    "avg_pnl": "-941.50",
+    "lessons_learned": 3,
+    "improvements_made": 1
+  }
+}

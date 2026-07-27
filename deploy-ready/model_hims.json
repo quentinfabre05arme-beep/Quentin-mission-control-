@@ -1,0 +1,179 @@
+{
+  "model_metadata": {
+    "ticker": "HIMS",
+    "company": "Hims & Hers Health, Inc.",
+    "sector": "Healthcare / Telehealth",
+    "model_type": "Growth Company DCF",
+    "created": "2026-07-16",
+    "current_price": 37.17,
+    "market_cap_b": 8.14,
+    "52w_range": [13.74, 70.43],
+    "data_source": "Yahoo Finance"
+  },
+  "historical_financials": {
+    "revenue": {
+      "Q1_FY26": 608.1,
+      "Q4_FY25": 586.4,
+      "Q3_FY25": 401.6,
+      "Q2_FY25": 311.8,
+      "Q1_FY25": 278.2,
+      "fy_2024": 1220.0,
+      "fy_2023": 520.0
+    },
+    "earnings": {
+      "Q1_FY26": -92.11,
+      "Q4_FY25": -75.0,
+      "Q3_FY25": -48.0,
+      "Q2_FY25": -62.0
+    },
+    "gross_margin_pct": 78.5,
+    "eps_ttm": -0.09
+  },
+  "revenue_projections": {
+    "methodology": "GLP-1 Growth Model + Market Expansion",
+    "assumptions": {
+      "glpl_market_cagr": 0.35,
+      "him_s_glpl_share_2026": 0.08,
+      "him_s_glpl_share_2030": 0.12,
+      "non_glpl_cagr": 0.25,
+      "glpl_pct_of_revenue_2026": 0.65,
+      "glpl_pct_of_revenue_2030": 0.75
+    },
+    "quarterly_projections": {
+      "Q2_FY26": {"revenue": 685, "growth_pct": 119.5, "glpl_pct": 68},
+      "Q3_FY26": {"revenue": 780, "growth_pct": 94.2, "glpl_pct": 70},
+      "Q4_FY26": {"revenue": 890, "growth_pct": 51.8, "glpl_pct": 72},
+      "Q1_FY27": {"revenue": 1020, "growth_pct": 67.7, "glpl_pct": 73}
+    },
+    "annual_projections": {
+      "FY2026": {
+        "revenue": 2963,
+        "growth_pct": 142.9,
+        "glpl_revenue": 1926,
+        "non_glpl_revenue": 1037
+      },
+      "FY2027": {
+        "revenue": 4200,
+        "growth_pct": 41.7,
+        "glpl_revenue": 3108,
+        "non_glpl_revenue": 1092
+      },
+      "FY2028": {
+        "revenue": 5600,
+        "growth_pct": 33.3,
+        "glpl_revenue": 4200,
+        "non_glpl_revenue": 1400
+      },
+      "FY2029": {
+        "revenue": 7100,
+        "growth_pct": 26.8,
+        "glpl_revenue": 5467,
+        "non_glpl_revenue": 1633
+      },
+      "FY2030": {
+        "revenue": 8700,
+        "growth_pct": 22.5,
+        "glpl_revenue": 6525,
+        "non_glpl_revenue": 2175
+      }
+    }
+  },
+  "margin_analysis": {
+    "current_metrics": {
+      "gross_margin": 0.785,
+      "operating_margin": -0.151,
+      "ebitda_margin": -0.118
+    },
+    "margin_expansion_path": {
+      "FY2026": {"gross": 0.79, "operating": -0.08, "ebitda": -0.05},
+      "FY2027": {"gross": 0.80, "operating": 0.02, "ebitda": 0.05},
+      "FY2028": {"gross": 0.81, "operating": 0.08, "ebitda": 0.12},
+      "FY2029": {"gross": 0.82, "operating": 0.12, "ebitda": 0.16},
+      "FY2030": {"gross": 0.82, "operating": 0.15, "ebitda": 0.19}
+    },
+    "drivers": [
+      "Scale economies on GLP-1 distribution",
+      "Platform leverage - fixed costs spread",
+      "Marketing efficiency - brand recognition",
+      "Operating leverage as growth normalizes"
+    ]
+  },
+  "dcf_valuation": {
+    "assumptions": {
+      "terminal_growth": 0.03,
+      "wacc": 0.12,
+      "tax_rate": 0.21,
+      "shares_outstanding_mm": 219,
+      "net_cash_mm": 450
+    },
+    "projected_fcf": {
+      "FY2026": {"ebitda": -148, "capex": -45, "change_wc": -120, "fcf": -313},
+      "FY2027": {"ebitda": 210, "capex": -65, "change_wc": -80, "fcf": 65},
+      "FY8": {"ebitda": 672, "capex": -85, "change_wc": -60, "fcf": 527},
+      "FY2029": {"ebitda": 1136, "capex": -100, "change_wc": -40, "fcf": 996},
+      "FY2030": {"ebitda": 1653, "capex": -120, "change_wc": -30, "fcf": 1503}
+    },
+    "valuation": {
+      "pv_fy2026": -279.5,
+      "pv_fy2027": 51.8,
+      "pv_fy2028": 335.8,
+      "pv_fy2029": 633.4,
+      "pv_fy2030": 852.9,
+      "terminal_value": 15030,
+      "pv_terminal_value": 8534,
+      "enterprise_value": 10128,
+      "add_cash": 450,
+      "equity_value": 10578,
+      "per_share_value": 48.30
+    },
+    "implied_vs_current": {
+      "current_price": 37.17,
+      "fair_value": 48.30,
+      "upside_pct": 29.9,
+      "rating": "BUY"
+    }
+  },
+  "sensitivity_analysis": {
+    "wacc_vs_terminal_growth": {
+      "terminal_2pct": {
+        "wacc_10": 62.50,
+        "wacc_11": 54.20,
+        "wacc_12": 47.30,
+        "wacc_13": 41.50,
+        "wacc_14": 36.80
+      },
+      "terminal_3pct": {
+        "wacc_10": 71.80,
+        "wacc_11": 61.50,
+        "wacc_12": 48.30,
+        "wacc_13": 41.80,
+        "wacc_14": 36.40
+      },
+      "terminal_4pct": {
+        "wacc_10": 84.20,
+        "wacc_11": 70.80,
+        "wacc_12": 50.20,
+        "wacc_13": 42.50,
+        "wacc_14": 36.30
+      }
+    },
+    "revenue_growth_sensitivity": {
+      "bear_case": {"cagr": 0.25, "fv": 32.10, "downside": -13.6},
+      "base_case": {"cagr": 0.42, "fv": 48.30, "upside": 29.9},
+      "bull_case": {"cagr": 0.55, "fv": 68.50, "upside": 84.3}
+    },
+    "margin_sensitivity": {
+      "fy2030_ebitda_10pct": {"fv": 38.20, "downside": 2.8},
+      "fy2030_ebitda_15pct": {"fv": 48.30, "upside": 29.9},
+      "fy2030_ebitda_20pct": {"fv": 61.40, "upside": 65.2}
+    }
+  },
+  "key_risks": [
+    "GLP-1 supply constraints from Novo Nordisk/Eli Lilly",
+    "Regulatory changes in telehealth prescribing",
+    "Competition from Amazon, CVS, traditional pharma",
+    "Margin pressure as GLP-1 market matures",
+    "Customer acquisition cost inflation"
+  ],
+  "investment_thesis": "HIMS is a GLP-1 pure-play with first-mover advantage in direct-to-consumer weight loss. Revenue growth of 100%+ justified by GLP-1 market expansion. Path to profitability by FY2027. Key risk is supply dependency. Fair value of $48 suggests 30% upside."
+}

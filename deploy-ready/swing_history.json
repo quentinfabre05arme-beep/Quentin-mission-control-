@@ -1,0 +1,35 @@
+{
+  "trades": [
+    {
+      "id": "HIMS-1752661200000",
+      "symbol": "HIMS",
+      "entryPrice": 37.17,
+      "shares": 269,
+      "cost": 9998.73,
+      "entryDate": "2026-07-16T09:45:00.000Z",
+      "stopLoss": 35,
+      "targets": [
+        39.03,
+        40.89,
+        42.75
+      ],
+      "thesis": "GLP-1 market leader with accelerating revenue growth. Telehealth platform provides competitive moat. Q2 earnings catalyst on Aug 10.",
+      "catalyst": "Q2 Earnings Aug 10",
+      "timeframe": "swing",
+      "status": "closed",
+      "scaleOuts": [],
+      "exitPrice": 33.67,
+      "exitDate": "2026-07-16T20:43:15.210Z",
+      "exitShares": 269,
+      "netProceeds": 9048.17277,
+      "pnl": -941.5,
+      "pnlPct": -9.416195856873822,
+      "holdingDays": 0,
+      "reason": "stop_loss_autonomous"
+    }
+  ],
+  "stats": {
+    "initialized": "2026-07-16T09:45:00.000Z",
+    "startingBalance": 100000
+  }
+}

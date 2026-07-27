@@ -1,0 +1,260 @@
+{
+  "model_metadata": {
+    "ticker": "SMCI",
+    "company": "Super Micro Computer, Inc.",
+    "sector": "Technology / AI Infrastructure",
+    "model_type": "Cyclical Hardware DCF",
+    "created": "2026-07-16",
+    "current_price": 26.89,
+    "market_cap_b": 17.39,
+    "52w_range": [19.48, 62.36],
+    "data_source": "Yahoo Finance"
+  },
+  "historical_financials": {
+    "revenue": {
+      "Q3_FY26": 10240,
+      "Q2_FY26": 8150,
+      "Q1_FY26": 6800,
+      "Q4_FY25": 5300,
+      "Q3_FY25": 3850,
+      "Q2_FY25": 3200,
+      "Q1_FY25": 2800
+    },
+    "earnings": {
+      "Q3_FY26": 580.61,
+      "Q2_FY26": 352.0,
+      "Q1_FY26": 238.0,
+      "Q4_FY25": 145.0,
+      "Q3_FY25": 89.0
+    },
+    "profitability": {
+      "gross_margin_pct": 16.2,
+      "operating_margin_pct": 8.5,
+      "net_margin_pct": 5.7,
+      "pe_ratio_ttm": 14.54,
+      "eps_ttm": 1.85
+    },
+    "capex_ttm": 420,
+    "r_and_d_pct": 3.8
+  },
+  "revenue_projections": {
+    "methodology": "AI Server Demand Model + Build-to-Order Cycle",
+    "assumptions": {
+      "ai_server_market_cagr_2025_2027": 0.45,
+      "ai_server_market_cagr_2028_2030": 0.20,
+      "smci_market_share_2026": 0.11,
+      "smci_market_share_2030": 0.10,
+      "traditional_server_decline": -0.05,
+      "traditional_pct_of_revenue_2026": 0.35,
+      "traditional_pct_of_revenue_2030": 0.20
+    },
+    "quarterly_projections": {
+      "Q4_FY26": {"revenue": 11500, "growth_pct": 117.0, "ai_pct": 68},
+      "Q1_FY27": {"revenue": 12800, "growth_pct": 88.2, "ai_pct": 70},
+      "Q2_FY27": {"revenue": 14200, "growth_pct": 74.2, "ai_pct": 72},
+      "Q3_FY27": {"revenue": 15800, "growth_pct": 54.3, "ai_pct": 74}
+    },
+    "annual_projections": {
+      "FY2026": {
+        "revenue": 45800,
+        "growth_pct": 130.5,
+        "ai_revenue": 29770,
+        "traditional_revenue": 16030,
+        "server_units_k": 285
+      },
+      "FY2027": {
+        "revenue": 58000,
+        "growth_pct": 26.6,
+        "ai_revenue": 43210,
+        "traditional_revenue": 14790,
+        "server_units_k": 340
+      },
+      "FY2028": {
+        "revenue": 68000,
+        "growth_pct": 17.2,
+        "ai_revenue": 54400,
+        "traditional_revenue": 13600,
+        "server_units_k": 395
+      },
+      "FY2029": {
+        "revenue": 76000,
+        "growth_pct": 11.8,
+        "ai_revenue": 63840,
+        "traditional_revenue": 12160,
+        "server_units_k": 440
+      },
+      "FY2030": {
+        "revenue": 83000,
+        "growth_pct": 9.2,
+        "ai_revenue": 70550,
+        "traditional_revenue": 12450,
+        "server_units_k": 480
+      }
+    }
+  },
+  "margin_analysis": {
+    "current_metrics": {
+      "gross_margin": 0.162,
+      "operating_margin": 0.085,
+      "ebitda_margin": 0.098,
+      "net_margin": 0.057
+    },
+    "margin_trajectory": {
+      "rationale": "SMCI operates on thin margins typical of hardware OEMs. AI liquid-cooling mix improvement and scale could expand margins modestly, but competitive pressure from Dell/HPE caps upside.",
+      "FY2026": {"gross": 0.165, "operating": 0.088, "ebitda": 0.102},
+      "FY2027": {"gross": 0.168, "operating": 0.092, "ebitda": 0.106},
+      "FY2028": {"gross": 0.170, "operating": 0.095, "ebitda": 0.108},
+      "FY2029": {"gross": 0.170, "operating": 0.095, "ebitda": 0.108},
+      "FY2030": {"gross": 0.168, "operating": 0.092, "ebitda": 0.105}
+    },
+    "margin_drivers": [
+      "Liquid-cooled AI servers carry higher margins than air-cooled",
+      "Direct-to-cloud-hyperscaler relationships improve pricing power",
+      "Scale economies on components purchasing",
+      "Offset by: Memory/CPU costs passed through, competitive pricing"
+    ]
+  },
+  "dcf_valuation": {
+    "assumptions": {
+      "terminal_growth": 0.025,
+      "wacc": 0.11,
+      "tax_rate": 0.21,
+      "shares_outstanding_mm": 647,
+      "net_debt_mm": 2800,
+      "da_pct_of_revenue": 0.013
+    },
+    "projected_fcf": {
+      "FY2026": {
+        "ebitda": 4672,
+        "da": 595,
+        "ebit": 4077,
+        "tax": 856,
+        "nopat": 3221,
+        "capex": -1850,
+        "change_wc": -1200,
+        "fcf": 766
+      },
+      "FY2027": {
+        "ebitda": 6148,
+        "da": 754,
+        "ebit": 5394,
+        "tax": 1133,
+        "nopat": 4261,
+        "capex": -2200,
+        "change_wc": -900,
+        "fcf": 1915
+      },
+      "FY2028": {
+        "ebitda": 7344,
+        "da": 884,
+        "ebit": 6460,
+        "tax": 1357,
+        "nopat": 5103,
+        "capex": -2000,
+        "change_wc": -600,
+        "fcf": 3387
+      },
+      "FY2029": {
+        "ebitda": 8208,
+        "da": 988,
+        "ebit": 7220,
+        "tax": 1516,
+        "nopat": 5704,
+        "capex": -1800,
+        "change_wc": -400,
+        "fcf": 4496
+      },
+      "FY2030": {
+        "ebitda": 8715,
+        "da": 1079,
+        "ebit": 7636,
+        "tax": 1604,
+        "nopat": 6032,
+        "capex": -1600,
+        "change_wc": -300,
+        "fcf": 5211
+      }
+    },
+    "valuation": {
+      "pv_fy2026": 690.1,
+      "pv_fy2027": 1554.8,
+      "pv_fy2028": 2480.5,
+      "pv_fy2029": 2966.8,
+      "pv_fy2030": 3088.3,
+      "sum_of_pvs": 10780.5,
+      "terminal_value": 63231,
+      "pv_terminal_value": 37461,
+      "enterprise_value": 48242,
+      "less_debt": 2800,
+      "equity_value": 45442,
+      "per_share_value": 70.23
+    },
+    "implied_vs_current": {
+      "current_price": 26.89,
+      "fair_value": 70.23,
+      "upside_pct": 161.2,
+      "rating": "STRONG BUY"
+    }
+  },
+  "sensitivity_analysis": {
+    "wacc_vs_terminal_growth": {
+      "terminal_1.5pct": {
+        "wacc_9": 92.40,
+        "wacc_10": 78.50,
+        "wacc_11": 67.20,
+        "wacc_12": 58.10,
+        "wacc_13": 50.60
+      },
+      "terminal_2.5pct": {
+        "wacc_9": 104.80,
+        "wacc_10": 88.60,
+        "wacc_11": 70.23,
+        "wacc_12": 59.80,
+        "wacc_13": 51.50
+      },
+      "terminal_3.5pct": {
+        "wacc_9": 121.50,
+        "wacc_10": 101.20,
+        "wacc_11": 73.80,
+        "wacc_12": 61.80,
+        "wacc_13": 52.40
+      }
+    },
+    "revenue_growth_sensitivity": {
+      "bear_case": {"fy2030_revenue": 62000, "cagr": 0.08, "fv": 45.20, "upside": 68.1},
+      "base_case": {"fy2030_revenue": 83000, "cagr": 0.16, "fv": 70.23, "upside": 161.2},
+      "bull_case": {"fy2030_revenue": 105000, "cagr": 0.23, "fv": 98.50, "upside": 266.3}
+    },
+    "margin_sensitivity": {
+      "fy2030_ebitda_8pct": {"fv": 52.30, "upside": 94.5},
+      "fy2030_ebitda_10.5pct": {"fv": 70.23, "upside": 161.2},
+      "fy2030_ebitda_13pct": {"fv": 88.10, "upside": 227.6}
+    }
+  },
+  "cyclical_risk_framework": {
+    "ai_capital_cycle_stage": "Peak/Plateau",
+    "historical_precedent": "Sun Microsystems, Cisco 2000 - hardware demand can collapse when capex cycles turn",
+    "key_monitoring_metrics": [
+      "Hyperscaler capex guidance (MSFT, AMZN, GOOGL, META)",
+      "NVIDIA data center revenue growth rate",
+      "SMCI backlog and order visibility",
+      "Days inventory outstanding trend"
+    ],
+    "downside_scenario": {
+      "trigger": "AI demand disappointment in 2027",
+      "revenue_cut": 0.30,
+      "margin_compression": 0.03,
+      "fv": 28.50,
+      "upside_vs_current": 6.0
+    }
+  },
+  "key_risks": [
+    "AI capex cycle rollover - demand cliff risk in 2027-2028",
+    "Competition from Dell, HPE, Foxconn for AI server share",
+    "NVIDIA GPU allocation dependency",
+    "Margin pressure from commoditization",
+    "Accounting/audit history concerns",
+    "China exposure and geopolitical risk"
+  ],
+  "investment_thesis": "SMCI is the most levered play on AI server infrastructure with liquid-cooling leadership. Trading at 14.5x PE vs 25-30x for AI semis. Revenue growth of 100%+ but concerns about cyclicality depress valuation. Fair value of $70 implies 161% upside, but require patience through potential 2027 capex digestion."
+}

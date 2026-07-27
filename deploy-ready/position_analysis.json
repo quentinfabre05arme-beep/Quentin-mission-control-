@@ -1,0 +1,52 @@
+{
+  "timestamp": "2026-07-16T07:53:35.612Z",
+  "sizing": {
+    "symbol": "SMCI",
+    "entryPrice": 26.89,
+    "stopPrice": 24.5,
+    "stopPct": "8.89",
+    "baseSize": "11251.05",
+    "adjustedSize": "7856.04",
+    "finalSize": "7856.04",
+    "finalPct": "7.9",
+    "shares": 292,
+    "actualRisk": "698.25",
+    "riskPct": "0.70",
+    "multipliers": {
+      "winRate": "1.00",
+      "confidence": "1.0",
+      "volatility": "0.70",
+      "correlation": "1.00"
+    },
+    "kelly": {
+      "full": "43.3",
+      "half": "21.6",
+      "quarter": "10.8"
+    },
+    "warning": null,
+    "quality": "🟡 ACCEPTABLE"
+  },
+  "tiered": [
+    {
+      "pct": 0.5,
+      "size": 3928.02,
+      "trigger": "Initial signal"
+    },
+    {
+      "pct": 0.3,
+      "size": 2356.812,
+      "trigger": "+2% confirmation"
+    },
+    {
+      "pct": 0.2,
+      "size": 1571.208,
+      "trigger": "+5% breakout"
+    }
+  ],
+  "heat": {
+    "totalHeat": "0.00",
+    "status": "🟢 Safe",
+    "maxPositions": 8
+  },
+  "recommendation": "🟡 PROCEED with caution"
+}

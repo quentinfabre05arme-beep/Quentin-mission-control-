@@ -1,0 +1,156 @@
+{
+  "last_updated": "2026-07-19T09:00:00.000Z",
+  "review_cycle": 1,
+  "skills": {
+    "technical_analysis": {
+      "name": "Technical Analysis",
+      "current_level": 3,
+      "target_level": 5,
+      "progress_pct": 60,
+      "evidence": [
+        "11 indicators operational (RSI 14+7, SMA 20/50/200, EMA, MACD, Stochastic, ATR)",
+        "Enhanced TA analysis system deployed",
+        "Multi-timeframe analysis in development"
+      ],
+      "gaps": [
+        "Wyckoff methodology not yet mastered",
+        "Market Profile analysis not implemented",
+        "Volume profile analysis needed"
+      ],
+      "next_actions": [
+        "Study Wyckoff methodology (Vol 4)",
+        "Implement volume profile indicators",
+        "Practice pattern recognition drills"
+      ]
+    },
+    "fundamental_analysis": {
+      "name": "Fundamental Analysis",
+      "current_level": 2,
+      "target_level": 5,
+      "progress_pct": 40,
+      "evidence": [
+        "Checklist system operational (100 point framework)",
+        "Financial metrics tracking (P/E, EV/Sales, margins)",
+        "Business quality assessment started"
+      ],
+      "gaps": [
+        "Full 10-K analysis not yet routine",
+        "No custom financial models built",
+        "Industry economics understanding limited"
+      ],
+      "next_actions": [
+        "Read Vol 5 (Fundamental Analysis Deep Dive)",
+        "Build first custom DCF model",
+        "Study competitive dynamics framework"
+      ]
+    },
+    "macro_awareness": {
+      "name": "Macro & Market Context",
+      "current_level": 1,
+      "target_level": 4,
+      "progress_pct": 20,
+      "evidence": [
+        "Basic Fed policy awareness",
+        "Market breadth monitoring started",
+        "Sector rotation tracking planned"
+      ],
+      "gaps": [
+        "No formal macro overlay in research",
+        "Fed policy transmission not understood",
+        "Cross-asset correlations not tracked"
+      ],
+      "next_actions": [
+        "Complete Vol 3 (Market Context)",
+        "Start weekly macro summary",
+        "Add VIX and credit spreads monitoring"
+      ]
+    },
+    "behavioral_psychology": {
+      "name": "Behavioral Psychology",
+      "current_level": 2,
+      "target_level": 5,
+      "progress_pct": 40,
+      "evidence": [
+        "Decision journal system operational",
+        "Pre-trade checklist reduces biases",
+        "Pattern library tracks emotional states"
+      ],
+      "gaps": [
+        "Real-time bias detection not implemented",
+        "No formal post-trade emotional review",
+        "Kahneman frameworks not deeply studied"
+      ],
+      "next_actions": [
+        "Read Vol 6 (Behavioral Frameworks)",
+        "Implement post-trade emotional review",
+        "Study 'Thinking in Bets' framework"
+      ]
+    },
+    "risk_management": {
+      "name": "Risk Management",
+      "current_level": 3,
+      "target_level": 5,
+      "progress_pct": 60,
+      "evidence": [
+        "Position sizing rules implemented",
+        "Stop losses automated",
+        "Checklist score-based sizing active"
+      ],
+      "gaps": [
+        "Kelly criterion not fully applied",
+        "Correlation matrix not tracked",
+        "Tail risk hedging not implemented"
+      ],
+      "next_actions": [
+        "Read Vol 7 (Elite Risk Management)",
+        "Build correlation tracking system",
+        "Implement portfolio heat monitoring"
+      ]
+    },
+    "portfolio_construction": {
+      "name": "Portfolio Construction",
+      "current_level": 2,
+      "target_level": 4,
+      "progress_pct": 50,
+      "evidence": [
+        "Concentration limits defined (max 44% deployed)",
+        "Tiered position sizing (8%, 10%, 15%)",
+        "Basic diversification rules"
+      ],
+      "gaps": [
+        "No formal correlation analysis",
+        "Sector exposure not balanced",
+        "Rebalancing rules not formalized"
+      ],
+      "next_actions": [
+        "Build sector allocation framework",
+        "Implement correlation-based sizing",
+        "Define rebalancing triggers"
+      ]
+    }
+  },
+  "weekly_goals": {
+    "completed": [
+      "Decision journal system operational",
+      "Pattern library created with 4 patterns",
+      "Enhanced research system v2.0 deployed",
+      "Autonomous mode enabled"
+    ],
+    "in_progress": [
+      "Reading Investment Research Vol 3",
+      "Building post-mortem discipline"
+    ],
+    "planned": [
+      "Complete Vol 3 (Market Context)",
+      "Start Vol 4 (Advanced Frameworks)",
+      "First full post-mortem on HIMS trade"
+    ]
+  },
+  "learning_velocity": {
+    "hours_this_week": 8.5,
+    "frameworks_studied": 2,
+    "patterns_identified": 4,
+    "questions_answered": 12,
+    "books_chapters_completed": 1.5
+  }
+}
