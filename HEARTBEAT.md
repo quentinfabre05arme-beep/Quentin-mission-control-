@@ -1,29 +1,39 @@
-# Simple Status
+# Claw Full Power Heartbeat
 
-**Last updated:** 2026-07-26 00:40
+## Every 15 minutes
+- [ ] Check system health (RAM, disk, processes)
+- [ ] Verify OpenClaw gateway is responsive
+- [ ] Run recovery if any issues detected
 
-## What's Running
-- Auto-save code every 2 hours
-- Memory cleanup daily
+## Every 30 minutes
+- [ ] Check market data freshness
+- [ ] Update dashboard if data is stale
+- [ ] Review any pending alerts
 
-## What's Not Running (disabled)
-- All research reports
-- All dashboard updates
-- All POD business checks
-- All file organization
-- All token monitoring
+## Hourly
+- [ ] Refresh market data
+- [ ] Update dashboard
+- [ ] Run git backup if changes exist
+- [ ] Generate revenue stream updates
+- [ ] Check cron job health
 
-## Portfolio
-Check `investment_fund/portfolio.json` for current positions.
+## Daily (08:00)
+- [ ] Generate newsletter draft
+- [ ] Check trading signals
+- [ ] Review portfolio positions
+- [ ] Update MEMORY.md with significant events
 
-## When I'll Message You
-Only if:
-- Something breaks and needs your input
-- Your stop-loss is hit
-- Major market event (crash, rally >10%)
+## Daily (20:00)
+- [ ] Generate evening research wrap
+- [ ] Check next-day calendar
+- [ ] Prepare market open briefing
 
-## When You Can Ask Me
-Anytime. Just ask.
+## Continuous
+- [ ] Self-healing: RAM >90%, Disk >90%, process crashes
+- [ ] Auto-restart on failure
+- [ ] Log all actions to memory
+- [ ] Never stay offline
 
 ---
-*Simplified on 2026-07-26. No more jargon. No more noise.*
+*Full Power Mode v5.0*
+*Merged: Grok framework + Claw automations*
