@@ -4,12 +4,12 @@
     "calendar": null,
     "weather": null,
     "market": "2026-08-01T00:15:00.000Z",
-    "memory": "2026-07-31T21:43:00.000Z",
-    "systemHealth": "2026-08-01T00:15:00.000Z",
-    "gitBackup": "2026-08-01T00:15:00.000Z",
-    "system": 1785535965,
-    "git": 1785535965,
-    "heartbeat": "2026-07-31T22:15:23.149Z"
+    "memory": "2026-08-01T00:03:00.000Z",
+    "systemHealth": "2026-08-01T00:03:00.000Z",
+    "gitBackup": "2026-08-01T00:03:00.000Z",
+    "system": 1785536566,
+    "git": 1785536566,
+    "heartbeat": "2026-08-01T00:03:25.000Z"
   },
-  "notes": "Heartbeat 2026-08-01 00:15 CET: gateway responsive. RAM 81.6% used (stable). Disk C: 29.7 GB free / 118 GB total (~75% used). Market data still cache-only — Twelve Data quota resets at midnight UTC; attempted refresh but quota still exhausted (~1382/800). Yahoo rate-limited. Cache serving BTC $62,900 | ETH $1,860 | MSTR $93.28 | HIMS $27.75. Committed pending state files. Quiet night — no urgent issues."
+  "notes": "Heartbeat 2026-08-01 01:03 CET: gateway responsive. RAM ~7.9 GB total / ~1.3 GB free. Disk C: 35 GB free / 118 GB total (70.3% used). Market data cache-only; market_data.json stale (2026-07-15). Twelve Data quota exhausted; Yahoo rate-limited. Latest reliable alt report: BTC $62,900 (-2.7%) | ETH $1,867 (-2.6%) | MSTR $93.28-93.74 (-4%) | HIMS $27.75 (+2.6%). F&G 25 Extreme Fear. Committed pending state files and pushed (commit 3185da9). No urgent issues — quiet night."
 }
