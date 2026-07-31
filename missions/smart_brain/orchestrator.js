@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const SmartRouterV3 = require('./router.v3');
 
 // Load config fresh each time
 function loadConfig() {
@@ -14,6 +15,7 @@ class SmartBrainOrchestrator {
         this.activeTasks = new Map();
         this.performanceLog = [];
         this.costOptimization = options.costOptimization !== false;
+        this.router = new SmartRouterV3('./config.v3.json');
     }
 
     // Analyze task and route to best model
@@ -60,7 +62,12 @@ class SmartBrainOrchestrator {
     }
 
     // Select best model based on analysis
-    selectModel(analysis) {
+    selectModel(analysis, task = '') {
+        // Use v3 router when available
+        if (this.router && task) {
+            return this.router.route(task);
+        }
+        
         const rule = this.config.routing_rules[analysis.category];
         if (rule) {
             const modelKey = rule.model;
@@ -81,14 +88,14 @@ class SmartBrainOrchestrator {
             }
         }
         
-        // Default to primary model
-        return this.models.primary;
+        // Default to main_brain (grok-4.5)
+        return this.models.main_brain || this.models.primary;
     }
 
     // Execute task with selected model
     executeTask(task, options = {}) {
         const analysis = this.analyzeTask(task);
-        const model = this.selectModel(analysis);
+        const model = this.selectModel(analysis, task);
         const executionMode = options.mode || 'single';
         
         console.log(`🧠 Smart Brain v2.0 — Task Analysis`);

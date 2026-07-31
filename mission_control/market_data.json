@@ -1,53 +1,59 @@
 {
-  "timestamp": "2026-07-31T12:06:10.342Z",
+  "timestamp": "2026-07-31T13:52:14.149Z",
   "assets": {
     "BTC": {
-      "price": 63759.52,
-      "change_24h": -1.57533,
+      "price": 63315.79,
+      "change_24h": -2.26031,
       "source": "twelvedata",
-      "signal": "NEUTRAL"
+      "signal": "BEARISH"
     },
     "ETH": {
-      "price": 1881.44,
-      "change_24h": -1.922,
+      "price": 1869.74,
+      "change_24h": -2.53192,
       "source": "twelvedata",
-      "signal": "NEUTRAL"
+      "signal": "BEARISH"
     },
     "NVDA": {
-      "price": 195.039993,
-      "change_24h": 2.64723,
-      "source": "twelvedata",
-      "signal": "BULLISH"
-    },
-    "TSLA": {
-      "price": 308.85001,
-      "change_24h": 3.52977,
-      "source": "twelvedata",
-      "signal": "BULLISH"
-    },
-    "MSTR": {
-      "price": 97.74,
-      "change_24h": 4.72516,
-      "source": "twelvedata",
-      "signal": "BULLISH"
-    },
-    "AAPL": {
-      "price": 333.42999,
-      "change_24h": -1.4075,
+      "price": 197.85,
+      "change_24h": 1.44073,
       "source": "twelvedata",
       "signal": "NEUTRAL"
     },
+    "TSLA": {
+      "price": 306.29,
+      "change_24h": -0.82888329,
+      "source": "twelvedata",
+      "signal": "NEUTRAL"
+    },
+    "MSTR": {
+      "price": 92.775,
+      "change_24h": -5.079801,
+      "source": "twelvedata",
+      "signal": "BEARISH"
+    },
+    "AAPL": {
+      "price": 305.19,
+      "change_24h": -8.46954,
+      "source": "twelvedata",
+      "signal": "BEARISH"
+    },
     "HIMS": {
-      "price": 27.040001,
-      "change_24h": 8.16,
+      "price": 27.67,
+      "change_24h": 2.32988,
       "source": "twelvedata",
       "signal": "BULLISH"
     },
     "COIN": {
-      "price": 163.58,
-      "change_24h": 2.18003,
+      "price": 144.92,
+      "change_24h": -11.40726,
       "source": "twelvedata",
-      "signal": "BULLISH"
+      "signal": "BEARISH"
+    },
+    "GLD": {
+      "price": 377.16,
+      "change_24h": 0,
+      "source": "cached",
+      "signal": "NEUTRAL"
     }
   },
   "_meta": {
@@ -55,7 +61,6 @@
     "failures": [
       "SPY: All sources failed for SPY: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 9 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
       "QQQ: All sources failed for QQQ: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 10 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
-      "GLD: All sources failed for GLD: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 11 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
       "TLT: All sources failed for TLT: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 12 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON"
     ],
     "sources": [
@@ -66,7 +71,8 @@
       "twelvedata",
       "twelvedata",
       "twelvedata",
-      "twelvedata"
+      "twelvedata",
+      "cached"
     ]
   }
 }

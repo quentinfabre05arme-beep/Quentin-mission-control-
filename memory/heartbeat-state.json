@@ -1,43 +1,33 @@
-{
-    "lastChecks": {
-        "weather": 1784005103,
-        "email": 1752325339,
-        "calendar": 1752393240,
-        "autonomyMorning": 1752232000,
-        "heartbeat": 1752897720,
-        "heartbeatCheck": 1752753660,
-        "wsl": 1752354420,
-        "marketData": 1752897720
-    },
-    "wslInstall": {
-        "status": "completed",
-        "completedAt": 1752325339
-    },
-    "notes": {
-        "calendarCheck": "oo CLI installed but NOT authenticated - need oo auth login + Google Calendar connection",
-        "marketDataJul19": "BTC: $64,692 (-0.22%) | ETH: $1,868 (+0.26%) | MSTR: $94.85 (+0.87%) | HIMS: $32.84 (-2.49%) | Fear & Greed: 28 (FEAR) — Slight bullish contrarian signal (as of Jul 19, 06:03 CET)"
-    },
-    "lastChecks": {
-        "heartbeat": 1753246860,
-        "fundResearch": 1753246860,
-        "systemMaintenance": 1753246860
-    },
-    "fundResearch": {
-        "lastCycle": "2026-07-22",
-        "status": "complete",
-        "alerts": 0,
-        "nextCycle": "2026-07-23"
-    },
-    "podResearch": {
-        "lastCycle": "2026-07-22",
-        "status": "blocked",
-        "blocker": "SVG to PNG conversion for Printify upload",
-        "day": 10,
-        "nextCycle": "upon blocker resolution"
-    },
-    "morningCheck": {
-        "date": "2026-07-23",
-        "time": "18:02",
-        "report": "Evening check - all systems operational"
-    }
+﻿{
+    "lastChecks":  {
+                       "heartbeat":  1785514447,
+                       "fundResearch":  1753246860,
+                       "systemMaintenance":  1785514214
+                   },
+    "wslInstall":  {
+                       "status":  "completed",
+                       "completedAt":  1752325339
+                   },
+    "notes":  {
+                  "calendarCheck":  "oo CLI installed but NOT authenticated - need oo auth login + Google Calendar connection",
+                  "marketDataJul19":  "BTC: $64,692 (-0.22%) | ETH: $1,868 (+0.26%) | MSTR: $94.85 (+0.87%) | HIMS: $32.84 (-2.49%) | Fear \u0026 Greed: 28 (FEAR) â€” Slight bullish contrarian signal (as of Jul 19, 06:03 CET)"
+              },
+    "fundResearch":  {
+                         "lastCycle":  "2026-07-22",
+                         "status":  "complete",
+                         "alerts":  0,
+                         "nextCycle":  "2026-07-23"
+                     },
+    "podResearch":  {
+                        "lastCycle":  "2026-07-22",
+                        "status":  "blocked",
+                        "blocker":  "SVG to PNG conversion for Printify upload",
+                        "day":  10,
+                        "nextCycle":  "upon blocker resolution"
+                    },
+    "morningCheck":  {
+                         "date":  "2026-07-31",
+                         "time":  "16:13",
+                         "report":  "Heartbeat OK - RAM 84.8pct Disk 71.2pct market ~22m gateway OK uptime ~2h"
+                     }
 }

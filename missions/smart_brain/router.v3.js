@@ -1,11 +1,13 @@
 const fs = require('fs');
 const path = require('path');
+const TokenWatch = require('./token_watch');
 
 class SmartRouterV3 {
     constructor(configPath = './config.v3.json') {
         this.config = JSON.parse(fs.readFileSync(path.resolve(__dirname, configPath), 'utf8'));
         this.models = this.config.available_models;
         this.decisionLog = [];
+        this.tokenWatch = new TokenWatch();
     }
 
     scoreComplexity(task) {
@@ -38,8 +40,10 @@ class SmartRouterV3 {
 
         // Priority 1: Code tasks (strongest signal)
         if (lowerTask.includes('script') || lowerTask.includes('code') || lowerTask.includes('function') || 
-            lowerTask.includes('bug') || lowerTask.includes('debug') || lowerTask.includes('python') || 
-            lowerTask.includes('javascript') || lowerTask.includes('fix this')) {
+            lowerTask.includes('python') || lowerTask.includes('javascript') || lowerTask.includes('implement') ||
+            lowerTask.includes('component') || lowerTask.includes('react') || lowerTask.includes('bug') || 
+            lowerTask.includes('debug') || lowerTask.includes('fix this') ||
+            lowerTask.includes('rest api') || lowerTask.includes('api') || lowerTask.includes('backend')) {
             chosenModel = this.models.code_specialist;
             reason = 'code_task';
         }
@@ -69,7 +73,7 @@ class SmartRouterV3 {
         }
 
         // High complexity escalation (only if not already code/scientific)
-        if (complexity >= 17 && !['code_specialist', 'deep_analyst'].includes(chosenModel.role)) {
+        if (complexity >= 17 && !['code_specialist', 'deep_analyst'].includes(chosenModel.role) && reason !== 'code_task') {
             chosenModel = this.models.deep_reasoner;
             reason = 'high_complexity_escalation';
         }
@@ -85,8 +89,15 @@ class SmartRouterV3 {
 
         this.decisionLog.push(decision);
 
+        // Record token usage
+        const tokenResult = this.tokenWatch.record(task, chosenModel.name);
+        decision.estimatedTokens = tokenResult.tokens;
+        if (tokenResult.warnings.length > 0) {
+            console.log(tokenResult.warnings.join('\n'));
+        }
+
         if (this.config.decision_logging.enabled) {
-            console.log(`[Router v3] ${chosenModel.name} | ${reason} | complexity=${complexity}`);
+            console.log(`[Router v3] ${chosenModel.name} | ${reason} | complexity=${complexity} | ~${tokenResult.tokens} tokens`);
         }
 
         return chosenModel;
