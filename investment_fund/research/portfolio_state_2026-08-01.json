@@ -1,0 +1,103 @@
+{
+  "as_of": "2026-08-01T00:10:00+02:00",
+  "cycle": "AF-RC-2026-08-01-0010",
+  "portfolio_value": 11150,
+  "cash": 1258.19,
+  "equity": 9892,
+  "invested_mv": 8708.57,
+  "unrealized_pnl": 2490,
+  "risk_exposure": 0.887,
+  "daily_pnl": -0.0066,
+  "max_position_pct": 10,
+  "daily_loss_limit_pct": 3,
+  "target_correlation": 0.4,
+  "marks": {
+    "BTC": 62900.4,
+    "ETH": 1860.79,
+    "SOL": 73.4,
+    "MSTR": 93.28,
+    "TSLA": 310.64,
+    "COIN": 147.95,
+    "HIMS": 27.81,
+    "NVDA": 199.93,
+    "AAPL": 301.44,
+    "AMD": 485.39,
+    "PLTR": 122.26,
+    "CRWD": 185.22
+  },
+  "weights_pct": {
+    "BTC": 6.4,
+    "ETH": 1.89,
+    "SOL": 3.68,
+    "MSTR": 4.9,
+    "TSLA": 9.3,
+    "COIN": 3.28,
+    "HIMS": 2.71,
+    "NVDA": 3.91,
+    "AAPL": 6.69,
+    "AMD": 29.22,
+    "PLTR": 9.81,
+    "CRWD": 5.58,
+    "CASH": 11.3
+  },
+  "stops": {
+    "MSTR": 85,
+    "TSLA": 295,
+    "HIMS": 25,
+    "NVDA": 160
+  },
+  "stops_pending": {
+    "AAPL": 285,
+    "COIN": 135,
+    "ETH": 1750
+  },
+  "alerts": [
+    {
+      "severity": "CRITICAL",
+      "asset": "AAPL",
+      "message": "No stop set after -9.6% gap. Set $285 stop before Monday open.",
+      "action": "SET_STOP_285"
+    },
+    {
+      "severity": "CRITICAL",
+      "asset": "AMD",
+      "message": "Position 29.2% exceeds 10% limit. Trim $2,100 at Monday open.",
+      "action": "TRIM_TO_10PCT"
+    },
+    {
+      "severity": "CRITICAL",
+      "asset": "COIN",
+      "message": "No stop set after -9.55% drop. Set $135 stop before Monday open.",
+      "action": "SET_STOP_135"
+    },
+    {
+      "severity": "WARNING",
+      "asset": "ETH",
+      "message": "Broke $1,875 support. Set $1,750 stop to protect downside.",
+      "action": "SET_STOP_1750"
+    },
+    {
+      "severity": "WARNING",
+      "asset": "TSLA",
+      "message": "5% from $295 stop. Monitor Monday pre-market for gap risk.",
+      "action": "MONITOR"
+    }
+  ],
+  "actions_required": [
+    "TRIM_AMD_TO_10PCT",
+    "SET_AAPL_STOP_285",
+    "SET_COIN_STOP_135",
+    "SET_ETH_STOP_1750",
+    "HONOR_TSLA_295",
+    "HONOR_HIMS_25",
+    "HONOR_NVDA_160"
+  ],
+  "fear_greed": 25,
+  "fear_greed_trend": "DECLINING",
+  "fear_greed_classification": "EXTREME_FEAR",
+  "market_regime": "FEAR_ACCUMULATION",
+  "composite_btc": "SLIGHTLY_BULLISH",
+  "composite_eth": "NEUTRAL",
+  "composite_hims": "SLIGHTLY_BULLISH",
+  "composite_mstr": "SLIGHTLY_BULLISH"
+}
