@@ -8,12 +8,15 @@ const { fetchAllEnhanced } = require('./enhanced_market_service');
 const { analyzeEnhanced: analyzeTA } = require('./enhanced_ta_analysis');
 const { analyzeSentimentEnhanced } = require('./enhanced_sentiment');
 
-async function enhancedResearch(symbol) {
+async function enhancedResearch(symbol, options = {}) {
   const startTime = Date.now();
+  const quiet = options.quiet || false;
   
-  console.log(`\n═══════════════════════════════════════════════════════`);
-  console.log(`   ENHANCED RESEARCH v2.0: ${symbol}`);
-  console.log(`═══════════════════════════════════════════════════════`);
+  if (!quiet) {
+    console.log(`\n═══════════════════════════════════════════════════════`);
+    console.log(`   ENHANCED RESEARCH v2.0: ${symbol}`);
+    console.log(`═══════════════════════════════════════════════════════`);
+  }
   
   // Run all analyses in parallel
   const [marketData, taData, sentimentData] = await Promise.allSettled([
@@ -214,6 +217,12 @@ async function main() {
   const format = args.includes('--json') ? 'json' : 'text';
   const all = args.includes('--all');
   
+  // Suppress decorative console output when producing JSON
+  const originalConsoleLog = console.log;
+  if (format === 'json') {
+    console.log = () => {};
+  }
+  
   try {
     if (all) {
       // Run for all assets
@@ -221,25 +230,28 @@ async function main() {
       const results = {};
       
       for (const asset of assets) {
-        results[asset] = await enhancedResearch(asset);
+        results[asset] = await enhancedResearch(asset, { quiet: true });
         await new Promise(r => setTimeout(r, 1000)); // Rate limit protection
       }
       
       if (format === 'json') {
-        console.log(JSON.stringify(results, null, 2));
+        console.log = originalConsoleLog;
+        process.stdout.write(JSON.stringify(results, null, 2) + '\n');
       } else {
         Object.values(results).forEach(r => formatEnhancedReport(r));
       }
     } else {
-      const report = await enhancedResearch(symbol);
+      const report = await enhancedResearch(symbol, { quiet: format === 'json' });
       
       if (format === 'json') {
-        console.log(JSON.stringify(report, null, 2));
+        console.log = originalConsoleLog;
+        process.stdout.write(JSON.stringify(report, null, 2) + '\n');
       } else {
         formatEnhancedReport(report);
       }
     }
   } catch (e) {
+    console.log = originalConsoleLog;
     console.error(`❌ Research failed: ${e.message}`);
     process.exit(1);
   }

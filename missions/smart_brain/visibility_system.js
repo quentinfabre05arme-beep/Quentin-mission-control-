@@ -48,11 +48,16 @@ class VisibilitySystem {
         const today = now.toISOString().split('T')[0];
         
         const todayLogs = this.logs.filter(log => log.timestamp.startsWith(today));
+        const lastLog = this.logs.length > 0 ? this.logs[this.logs.length - 1] : null;
         
+        // Return summary only to prevent recursive nesting in status logs
         return {
             totalActions: this.logs.length,
             todayActions: todayLogs.length,
-            lastAction: this.logs.length > 0 ? this.logs[this.logs.length - 1] : null
+            lastAction: lastLog ? {
+                timestamp: lastLog.timestamp,
+                action: lastLog.action
+            } : null
         };
     }
 
