@@ -21,23 +21,34 @@
                          "nextCycle":  "2026-07-23"
                      },
     "healthCheck":  {
+                        "time":  "20:09",
                         "date":  "2026-07-31",
-                        "time":  "18:13",
-                        "ramPct":  88,
-                        "diskCFreeGB":  34.64,
+                        "ramPct":  82.3,
+                        "diskCFreeGB":  35.2,
                         "gateway":  "ok",
                         "healthMonitor":  "ok",
                         "autoRestart":  "ok",
-                        "topProcesses":  "WindowsTerminal 672MB, chrome 471MB, node 462MB, MsMpEng 408MB"
+                        "marketDataAgeMin":  32,
+                        "note":  "RAM 82.3% under 90%; disk 35.2GB free; gateway 200; market_data ~32min; evening wrap already logged"
                     },
     "morningCheck":  {
                          "date":  "2026-07-31",
-                         "time":  "18:13",
-                         "report":  "Heartbeat OK - RAM 88pct Disk 34.64GB free gateway 200 market_data fresh 18:04"
+                         "time":  "20:09",
+                         "report":  "Heartbeat OK - RAM 82pct Disk 35.2GB free gateway ok evening wrap already done"
                      },
     "lastChecks":  {
                        "fundResearch":  1753246860,
-                       "systemMaintenance":  1785521661,
-                       "heartbeat":  1785521661
-                   }
+                       "systemMaintenance":  1785528619,
+                       "heartbeat":  1785528619,
+                       "email":  null,
+                       "calendar":  null,
+                       "weather":  null
+                   },
+    "eveningWrap":  {
+                        "date":  "2026-07-31",
+                        "time":  "20:02",
+                        "status":  "logged",
+                        "fearGreed":  25,
+                        "stance":  "MONITOR"
+                    }
 }
