@@ -251,9 +251,7 @@ $(foreach ($asset in $marketData.assets.PSObject.Properties) {
     }
 }
 
-# ═══════════════════════════════════════════════════
-# MODULE 5: GIT BACKUP
-# ═══════════════════════════════════════════════════
+# Git backup function with error handling
 function Backup-Git {
     Write-Log "Running git backup..."
     
@@ -267,15 +265,23 @@ function Backup-Git {
             Write-Log "Changes detected, committing..."
             git add -A >$null 2>&1
             git commit -m "Autonomous backup $(Get-Date -Format 'yyyy-MM-dd HH:mm')" --quiet 2>&1
-            git push origin master 2>&1 | Out-Null
-            Write-Log "Git backup complete"
+            
+            # Push without Select-Object to avoid PowerShell parsing error
+            $pushOutput = git push origin master 2>&1
+            $pushSuccess = $LASTEXITCODE -eq 0
+            
+            if ($pushSuccess) {
+                Write-Log "Git backup complete"
+            } else {
+                Write-Log "Git push returned non-zero exit code" "WARN"
+            }
         }
         else {
             Write-Log "No changes to backup"
         }
     }
     catch {
-        Write-Log "Git backup failed: $_" "WARN"
+        Write-Log "Git backup error: $($_.Exception.Message)" "WARN"
     }
 }
 
