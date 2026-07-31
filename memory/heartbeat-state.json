@@ -6,7 +6,9 @@
     "market": "2026-07-31T21:01:54.000Z",
     "memory": "2026-07-31T21:43:00.000Z",
     "systemHealth": "2026-07-31T21:01:54.000Z",
-    "gitBackup": "2026-07-31T20:55:28.006Z"
+    "gitBackup": "2026-07-31T20:55:28.006Z",
+    "system": 1785532847,
+    "git": 1785532847
   },
   "notes": "Heartbeat 2026-07-31 23:01 CET: gateway responsive. System healthy. Market data cache-only (Twelve Data quota exhausted 1226/800, Yahoo rate-limited). Alternative data fresh 22:47 CET with slight bullish contrarian signals. 2 state files pending commit. Quiet night — no urgent issues."
 }
