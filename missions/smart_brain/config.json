@@ -123,6 +123,14 @@
       "description": "Start with one model, escalate to stronger if needed",
       "use_when": "Unknown complexity or ambiguous tasks",
       "escalation_chain": ["fast", "coder", "primary", "analyst"]
+    },
+    "verification": {
+      "description": "Two models independently analyze, compare results, flag discrepancies",
+      "use_when": "Research, strategy, and high-stakes decisions",
+      "primary_model": "analyst",
+      "verify_model": "primary",
+      "threshold": 0.8,
+      "on_discrepancy": "flag_for_review"
     }
   },
   "fallback_chain": ["primary", "safety", "fast"],
