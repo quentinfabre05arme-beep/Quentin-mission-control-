@@ -6,7 +6,10 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Quentin Mission Control v3</title>
+    <meta name="version" content="v3.1">
+    <meta name="last-review" content="2026-07-31 10:08">
+    <meta name="cycle-count" content="216">
+    <title>Quentin Mission Control v3.1</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -104,6 +107,10 @@
             background: rgba(245, 158, 11, 0.3);
             color: #f59e0b;
         }
+        .status.neutral {
+            background: rgba(100, 116, 139, 0.3);
+            color: #cbd5e1;
+        }
         .footer {
             text-align: center;
             padding: 30px;
@@ -145,7 +152,7 @@
     </style>
 </head>
 <body>
-    <div class="version">V3.0 - 2026-07-27 07:26</div>
+    <div class="version">V3.1 - 2026-07-31 10:08</div>
     
     <div class="container">
         <div style="text-align: center; margin-bottom: 30px;">
@@ -161,12 +168,79 @@
         <div class="grid">
             <div class="card">
                 <div class="card-header">
-                    <div class="icon">🤖</div>
-                    <h2>AI Agent</h2>
+                    <div class="icon">₿</div>
+                    <h2>BTC</h2>
                 </div>
-                <div class="big-number">95%</div>
-                <div class="progress"><div class="progress-bar" style="width: 95%"></div></div>
-                <span class="status active">● Active</span>
+                <div class="big-number">63,903</div>
+                <div class="progress"><div class="progress-bar" style="width: 64%"></div></div>
+                <p>BTC/USD | -1.35%</p>
+                <span class="status neutral">⬇️ -824</span>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon">Ξ</div>
+                    <h2>ETH</h2>
+                </div>
+                <div class="big-number">1,892</div>
+                <div class="progress"><div class="progress-bar" style="width: 19%"></div></div>
+                <p>ETH/USD | -1.38%</p>
+                <span class="status neutral">⬇️ -26</span>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon">📈</div>
+                    <h2>MSTR</h2>
+                </div>
+                <div class="big-number">+4.7%</div>
+                <div class="progress"><div class="progress-bar" style="width: 60%"></div></div>
+                <p>$97.74 | Bitcoin Proxy</p>
+                <span class="status active">🟢 BULLISH</span>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon">💊</div>
+                    <h2>HIMS</h2>
+                </div>
+                <div class="big-number">+8.2%</div>
+                <div class="progress"><div class="progress-bar" style="width: 70%"></div></div>
+                <p>$27.04 | Telehealth</p>
+                <span class="status active">🟢 BULLISH</span>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon">🤖</div>
+                    <h2>NVDA</h2>
+                </div>
+                <div class="big-number">97.7</div>
+                <div class="progress"><div class="progress-bar" style="width: 98%"></div></div>
+                <p>$195.04 | AI/Tech</p>
+                <span class="status active">🟢 BULLISH</span>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon">🍎</div>
+                    <h2>AAPL</h2>
+                </div>
+                <div class="big-number">333.4</div>
+                <div class="progress"><div class="progress-bar" style="width: 67%"></div></div>
+                <p>$333.43 | -1.41%</p>
+                <span class="status neutral">⚪ NEUTRAL</span>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon">🚗</div>
+                    <h2>TSLA</h2>
+                </div>
+                <div class="big-number">+3.5%</div>
+                <div class="progress"><div class="progress-bar" style="width: 55%"></div></div>
+                <p>$308.85 | EV/Autonomy</p>
+                <span class="status active">🟢 BULLISH</span>
             </div>
 
             <div class="card">
@@ -179,54 +253,19 @@
                 <p>Days until exam</p>
                 <span class="status progress">⏳ 18.3h studied</span>
             </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="icon">💰</div>
-                    <h2>Revenue</h2>
-                </div>
-                <div class="big-number">€14.9K</div>
-                <div class="progress"><div class="progress-bar" style="width: 75%"></div></div>
-                <p>Tracked income</p>
-                <span class="status active">📈 +38% growth</span>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="icon">📈</div>
-                    <h2>Trading</h2>
-                </div>
-                <div class="big-number">+2.3%</div>
-                <div class="progress"><div class="progress-bar" style="width: 60%"></div></div>
-                <p>Paper trading P&L</p>
-                <span class="status active">💹 50% win rate</span>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="icon">📚</div>
-                    <h2>Learning</h2>
-                </div>
-                <div class="big-number">25%</div>
-                <div class="progress"><div class="progress-bar" style="width: 25%"></div></div>
-                <p>Library built</p>
-                <span class="status progress">📖 1/2 systems</span>
-            </div>
         </div>
 
         <div class="footer">
             <p>🚀 Built by Claw AI Agent | Real-time updates | Always online</p>
-            <p style="margin-top: 10px; font-size: 0.9rem;">Last updated: 2026-07-27 07:26 CET</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">Last updated: 2026-07-31 10:08 CET | Cycle #216</p>
         </div>
     </div>
 
     <script>
-        // Auto-refresh every 30 seconds
         setInterval(() => {
             window.location.reload(true);
         }, 30000);
 
-        // Animate progress bars on load
         window.addEventListener('load', () => {
             document.querySelectorAll('.progress-bar').forEach(bar => {
                 const width = bar.style.width;
