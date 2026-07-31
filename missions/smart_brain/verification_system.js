@@ -31,8 +31,10 @@ class MultiModelVerificationSystem {
     shouldVerify(task) {
         const text = task.toLowerCase();
         const verifyPatterns = [
-            'research', 'analyze', 'strategy', 'should I', 'recommend',
-            'advice', 'compare', 'evaluate', 'deep dive', 'investigate'
+            'research', 'analyze', 'analysis', 'strategy', 'should I', 'recommend',
+            'advice', 'compare', 'evaluate', 'deep dive', 'investigate',
+            'code', 'script', 'debug', 'program', 'develop', 'build',
+            'should', 'buy', 'sell', 'invest', 'portfolio'
         ];
         return verifyPatterns.some(p => text.includes(p));
     }
@@ -40,9 +42,9 @@ class MultiModelVerificationSystem {
     getVerificationPair(task) {
         const text = task.toLowerCase();
         
-        if (text.includes('research') || text.includes('analyze')) return this.verificationPairs.research;
+        if (text.includes('research') || text.includes('analyze') || text.includes('analysis')) return this.verificationPairs.research;
         if (text.includes('strategy') || text.includes('should I')) return this.verificationPairs.strategy;
-        if (text.includes('code') || text.includes('script')) return this.verificationPairs.coding;
+        if (text.includes('code') || text.includes('script') || text.includes('debug') || text.includes('program')) return this.verificationPairs.coding;
         
         return this.verificationPairs.analysis;
     }
