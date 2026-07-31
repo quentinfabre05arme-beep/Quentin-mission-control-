@@ -3,10 +3,10 @@
     "email": null,
     "calendar": null,
     "weather": null,
-    "market": "2026-07-31T22:17:00.000Z",
+    "market": "2026-07-31T20:27:00.000Z",
     "memory": "2026-07-31T21:43:00.000Z",
-    "systemHealth": "2026-07-31T22:17:00.000Z",
+    "systemHealth": "2026-07-31T22:27:00.000Z",
     "gitBackup": "2026-07-31T21:43:32.000Z"
   },
-  "notes": "Heartbeat 2026-07-31 22:17 CET: gateway up 8h14m, RAM OK (~1.49GB free / 8.3GB total), disk C: 37.7GB free / 126.7GB. Market data still cache-only due to Twelve Data daily quota exhausted + Yahoo rate-limited; alternative data report current (20:08 UTC). BTC contrarian setup: F&G 25 extreme fear + elevated funding divergence. Memory search index offline (different embedding provider) — not critical."
+  "notes": "Heartbeat 2026-07-31 22:27 CET: gateway responsive, OS process not listed under 'openclaw' name (gateway process likely Node-based under different name). Market data remains cache-only: Twelve Data quota exhausted (1202-1210 calls vs 800 limit) and Yahoo rate-limited. Alternative data fresh: F&G 25 extreme fear declining, MSTR -4.09% bearish momentum anomaly, HIMS +2.63% relative strength. Git backup available; small working-tree diff (market_data.json + 3 state files). No urgent user-facing issues."
 }
