@@ -58,28 +58,50 @@ investment_fund/data/alternative/YYYY-MM-DD.json
 | -0.5 to -0.2 | **SLIGHTLY_BEARISH** | Some negative divergence |
 | <-0.5 | **BEARISH** | Multiple warning signals |
 
-### Latest Report (Jul 22, 2026 09:19 UTC)
+### Latest Report (Jul 31, 2026 22:08 Paris / 20:08 UTC)
 ```
-📊 FEAR & GREED: 33 FEAR ↑ (improving from 25)
-🐋 WHALE SIGNALS: DISTRIBUTION (100% confidence)
-⛓️ MEMPOOL: 90,380 txs | MEDIUM congestion
-🚨 ANOMALIES: 3 detected
-   🔴 COIN: +9.61% (BULLISH MOMENTUM)
-   🟡 MSTR: +4.22% (BULLISH MOMENTUM)
-   🟡 MARKET: Sentiment recovery (CONTRARIAN BUY)
+📊 FEAR & GREED: 25 EXTREME FEAR ↓ (declining from 28, 3+ days in zone)
+🐋 WHALE SIGNALS: NEUTRAL (0% confidence - API issue)
+⛓️ MEMPOOL: 91,411 txs | MEDIUM congestion
+🚨 ANOMALIES: 4 detected
+   🔴 MARKET: Extreme fear persistence (CONTRARIAN BUY)
+   🔴 BTC: Funding divergence (POTENTIAL SHORT SQUEEZE)
+   🟡 BTC: Volume anomaly +7% with -2.7% price (CAPITULATION WATCH)
+   🟡 MSTR: -4.09% underperforming BTC (BEARISH MOMENTUM)
 
 COMPOSITE SCORES:
-   BTC: NEUTRAL (0.10) - Sentiment improving
-   ETH: NEUTRAL (0.10) - Sentiment improving
-   MSTR: SLIGHTLY_BULLISH (0.30) - +4.22% momentum
-   COIN: SLIGHTLY_BULLISH (0.30) - +9.61% momentum
+   BTC: BULLISH (0.65) - Contrarian setup + funding divergence
+   ETH: SLIGHTLY_BULLISH (0.40) - Deep value + elevated funding
+   MSTR: NEUTRAL (-0.10) - Underperforming BTC beta
+   HIMS: SLIGHTLY_BULLISH (0.50) - Relative strength
+
+MARKET SNAPSHOT:
+   BTC: $62,899 (-2.7%) | Volume: $29.99B (+7%)
+   ETH: $1,866 (-2.6%) | 62% below ATH
+   MSTR: $93.74 (-4.09%)
+   HIMS: $27.75 (+2.63%)
+
+EXECUTIVE SUMMARY:
+   Market Regime: FEAR/ACCUMULATION
+   Primary Signal: BTC contrarian bullish setup
+   Risk Level: MEDIUM-HIGH
+   Time Horizon: 1-4 weeks for mean reversion
+   Confidence: 65% (data gaps in news + exchange flows)
 ```
+
+### Data Quality Issues (Jul 31)
+| Source | Issue | Impact | Action |
+|--------|-------|--------|--------|
+| **Serper.dev** | Zero results returned | HIGH | Check API key/quota |
+| **Twelve Data** | Quota exhausted (1100+ calls) | MEDIUM | Implement rate limiting |
+| **Exchange Flows** | Not implemented | HIGH | Add Glassnode API |
+| **Funding Rates** | Proxy estimation only | MEDIUM | Integrate CoinGlass |
 
 ### Files
 - `fetch_alternative_data.js` — **Enhanced multi-source fetcher**
 - `run_alternative_data.ps1` — **Quick PowerShell runner**
 - `investment_fund/data/alternative/` — **Daily JSON reports**
-- `2026-07-22.json` — **Latest report** (sentiment recovery detected)
+- `2026-07-31.json` — **Latest report** (contrarian buy signals detected)
 
 ---
 
