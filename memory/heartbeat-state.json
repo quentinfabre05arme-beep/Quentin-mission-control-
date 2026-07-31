@@ -21,28 +21,29 @@
                          "nextCycle":  "2026-07-23"
                      },
     "healthCheck":  {
-                        "time":  "20:09",
-                        "date":  "2026-07-31",
-                        "ramPct":  82.3,
-                        "diskCFreeGB":  35.2,
-                        "gateway":  "ok",
+                        "note":  "RAM 82.7% under 90%; disk 35.1GB free; gateway 200; market_data ~6min fresh; evening wrap already logged 20:02",
                         "healthMonitor":  "ok",
+                        "gateway":  "ok",
+                        "diskCFreeGB":  35.1,
+                        "time":  "20:16",
+                        "date":  "2026-07-31",
                         "autoRestart":  "ok",
-                        "marketDataAgeMin":  32,
-                        "note":  "RAM 82.3% under 90%; disk 35.2GB free; gateway 200; market_data ~32min; evening wrap already logged"
+                        "ramPct":  82.7,
+                        "marketDataAgeMin":  6
                     },
     "morningCheck":  {
                          "date":  "2026-07-31",
-                         "time":  "20:09",
-                         "report":  "Heartbeat OK - RAM 82pct Disk 35.2GB free gateway ok evening wrap already done"
+                         "time":  "20:16",
+                         "report":  "Heartbeat OK - RAM 82.7pct Disk 35.1GB free gateway ok evening wrap done"
                      },
     "lastChecks":  {
                        "fundResearch":  1753246860,
-                       "systemMaintenance":  1785528619,
-                       "heartbeat":  1785528619,
+                       "systemMaintenance":  1785529011,
+                       "heartbeat":  1785529011,
                        "email":  null,
                        "calendar":  null,
-                       "weather":  null
+                       "weather":  null,
+                       "marketData":  1785529489
                    },
     "eveningWrap":  {
                         "date":  "2026-07-31",

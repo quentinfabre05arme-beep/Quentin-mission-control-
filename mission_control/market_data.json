@@ -1,66 +1,72 @@
 {
-  "timestamp": "2026-07-31T18:10:50.584Z",
+  "timestamp": "2026-07-31T18:25:19.610Z",
   "assets": {
     "BTC": {
-      "price": 63097.99,
-      "change_24h": -2.59653,
-      "source": "cached",
-      "signal": "MODERATE_BEARISH",
-      "fetch_time_ms": 3379,
-      "stale": true
+      "price": 63164,
+      "change_24h": -2.49463,
+      "source": "twelvedata",
+      "signal": "BEARISH"
     },
     "ETH": {
-      "price": 1873.14,
-      "change_24h": -2.35468,
-      "change_amount": -45.17,
-      "open": 1918.32,
-      "high": 1936.15,
-      "low": 1848.7,
-      "volume": null,
+      "price": 1872.39,
+      "change_24h": -2.39377,
       "source": "twelvedata",
-      "signal": "MODERATE_BEARISH",
-      "fetch_time_ms": 357,
-      "stale": false
+      "signal": "BEARISH"
+    },
+    "NVDA": {
+      "price": 198.97,
+      "change_24h": 2.014975,
+      "source": "twelvedata",
+      "signal": "BULLISH"
+    },
+    "TSLA": {
+      "price": 311.98,
+      "change_24h": 1.013435,
+      "source": "twelvedata",
+      "signal": "NEUTRAL"
     },
     "MSTR": {
-      "price": 93.59,
-      "change_24h": -4.24596,
-      "change_amount": -4.15,
-      "open": 94.94,
-      "high": 94.98,
-      "low": 89.225,
-      "volume": 1866144,
+      "price": 93.88,
+      "change_24h": -3.94925,
       "source": "twelvedata",
-      "signal": "MODERATE_BEARISH",
-      "fetch_time_ms": 364,
-      "stale": false
+      "signal": "BEARISH"
+    },
+    "AAPL": {
+      "price": 302.345,
+      "change_24h": -9.32279,
+      "source": "twelvedata",
+      "signal": "BEARISH"
     },
     "HIMS": {
-      "price": 27.78,
-      "change_24h": 2.73668,
-      "change_amount": 0.73999908,
-      "open": 27.5,
-      "high": 28.94,
-      "low": 26.87,
-      "volume": 1440868,
+      "price": 27.76,
+      "change_24h": 2.66272,
       "source": "twelvedata",
-      "signal": "MODERATE_BULLISH",
-      "fetch_time_ms": 349,
-      "stale": false
+      "signal": "BULLISH"
+    },
+    "SPY": {
+      "price": 746.275,
+      "change_24h": 0.61818247,
+      "source": "twelvedata",
+      "signal": "NEUTRAL"
     }
   },
   "_meta": {
     "fromCache": false,
-    "fetch_time_ms": 3379,
+    "failures": [
+      "COIN: All sources failed for COIN: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 11 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+      "QQQ: All sources failed for QQQ: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 9 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+      "GLD: All sources failed for GLD: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 10 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+      "TLT: All sources failed for TLT: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 12 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON"
+    ],
     "sources": [
-      "cached",
+      "twelvedata",
+      "twelvedata",
+      "twelvedata",
+      "twelvedata",
+      "twelvedata",
       "twelvedata",
       "twelvedata",
       "twelvedata"
-    ],
-    "assets_count": 4,
-    "stale_count": 1,
-    "saved_at": "2026-07-31T18:10:50.584Z",
-    "version": "2.0"
+    ]
   }
 }
