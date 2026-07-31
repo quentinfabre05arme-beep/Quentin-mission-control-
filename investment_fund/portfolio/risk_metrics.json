@@ -1,13 +1,17 @@
 {
-  "timestamp": "2026-07-23T22:10:00Z",
-  "cycle_id": "AF-RC-2026-07-24-001",
-  "risk_status": "MANAGEABLE",
+  "timestamp": "2026-07-31T12:15:00Z",
+  "cycle_id": "AF-RC-2026-07-31-1405",
+  "risk_status": "NON_COMPLIANT",
   "exposure": {
-    "total_positions": 4,
+    "total_positions": 12,
+    "equity": 9966.76,
     "max_position_size_pct": 10,
-    "max_position_violations": 0,
+    "max_position_violations": 1,
+    "largest_position": {"symbol": "AMD", "weight_pct": 29.22},
     "sector_concentration": "HIGH",
-    "correlation_risk": "HIGH"
+    "correlation_risk": "HIGH",
+    "ai_tech_cluster_pct": 55.21,
+    "crypto_cluster_pct": 20.15
   },
   "limits": {
     "daily_loss_limit_pct": 3,
@@ -16,17 +20,22 @@
     "hard_stop_pct": 40
   },
   "stops": {
-    "BTC": {"price": 64904, "stop": 58000, "distance_pct": -10.6, "status": "OK"},
-    "ETH": {"price": 1878, "stop": 1700, "distance_pct": -9.5, "status": "OK"},
-    "MSTR": {"price": 100.01, "stop": 88.0, "distance_pct": -12.0, "status": "OK"},
-    "HIMS": {"price": 31.68, "stop": 29.5, "distance_pct": -6.9, "status": "TIGHTENED"}
+    "TSLA": {"price": 308.85, "stop": 295.0, "distance_pct": -4.48, "status": "TIGHT"},
+    "HIMS": {"price": 27.04, "stop": 25.0, "distance_pct": -7.54, "status": "TIGHT"},
+    "MSTR": {"price": 97.74, "stop": 85.0, "distance_pct": -13.03, "status": "OK"},
+    "NVDA": {"price": 195.04, "stop": 160.0, "distance_pct": -17.97, "status": "OK"}
   },
   "market_environment": {
-    "fear_greed": 31,
+    "fear_greed": 25,
     "fear_greed_trend": "DECLINING",
-    "vix_proxy": "ELEVATED",
-    "whale_signal": "DISTRIBUTION",
-    "correlation_24h": 0.95
+    "vix_proxy": "UNKNOWN",
+    "whale_signal": "NEUTRAL",
+    "correlation_24h": null
   },
-  "alerts": []
+  "alerts": [
+    "CRITICAL: AMD 29.2% position size breach — trim to ≤10%",
+    "HIGH: TSLA 4.5% above $295 stop",
+    "HIGH: HIMS 7.5% above $25 stop; earnings Aug 10",
+    "MEDIUM: AI cluster 55% — concentration risk"
+  ]
 }

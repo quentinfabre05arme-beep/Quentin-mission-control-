@@ -1,144 +1,250 @@
 {
-  "version": "2.0",
-  "name": "Claw Model Architecture",
-  "description": "Multi-model AI orchestration with real model switching",
+  "version": "2.2",
+  "name": "Claw Token-Efficient Hybrid Architecture v2.2",
+  "description": "Smartest + Most Token-Efficient orchestration. Grok only for high-value tasks. Ollama for everything else.",
+  "updated": "2026-07-31T13:35:00Z",
+  "philosophy": "Use the cheapest/fastest model that can do the job well. Escalate to Grok only when intelligence justifies the cost.",
   "available_models": {
     "primary": {
+      "name": "grok-4.5",
+      "id": "xai/grok-4.5",
+      "role": "main_brain",
+      "strengths": ["reasoning", "general_intelligence", "fast_thinking", "versatile", "cost_efficient"],
+      "use_for": ["most_tasks", "default_intelligence", "chat", "research", "planning", "analysis"],
+      "priority": 1,
+      "cost": "low",
+      "speed": "very_fast",
+      "provider": "xai",
+      "when_to_use": "Default brain for almost everything — smartest efficient model"
+    },
+    "deep_reasoner": {
+      "name": "grok-4.3",
+      "id": "xai/grok-4.3",
+      "role": "deep_thinker",
+      "strengths": ["deep_reasoning", "complex_strategy", "novel_problems", "maximum_intelligence"],
+      "use_for": ["deep_research", "complex_strategy", "high_stakes_decisions", "when_grok_4.5_is_not_enough"],
+      "priority": 2,
+      "cost": "medium",
+      "speed": "fast",
+      "provider": "xai",
+      "when_to_use": "Only when grok-4.5 needs to escalate for deeper reasoning"
+    },
+    "grok_build": {
+      "name": "grok-build-0.1",
+      "id": "xai/grok-build-0.1",
+      "role": "build_specialist",
+      "strengths": ["implementation", "system_building", "code_generation"],
+      "use_for": ["building_systems", "scaffolding", "complex_implementation"],
+      "priority": 3,
+      "cost": "medium",
+      "speed": "fast",
+      "provider": "xai",
+      "when_to_use": "When building complex systems that need Grok's architectural thinking"
+    },
+    "ollama_primary": {
       "name": "kimi-k2.6",
       "id": "ollama-cloud/kimi-k2.6",
-      "role": "orchestrator",
-      "strengths": ["reasoning", "planning", "complex_analysis", "architecture_design", "multi_step_tasks"],
-      "use_for": ["task_decomposition", "quality_validation", "final_decisions", "system_design"],
-      "priority": 1,
+      "role": "general_purpose",
+      "strengths": ["reasoning", "planning", "analysis"],
+      "use_for": ["general_tasks", "cost_sensitive_work", "ollama_preferred"],
+      "priority": 4,
       "cost": "high",
-      "speed": "medium"
+      "speed": "medium",
+      "provider": "ollama-cloud",
+      "when_to_use": "Fallback when Grok quota is low or for routine analysis"
     },
     "coder": {
       "name": "qwen3-coder",
       "id": "ollama-cloud/qwen3-coder:cloud",
-      "role": "implementation",
-      "strengths": ["code_generation", "debugging", "technical_implementation", "architecture_coding"],
-      "use_for": ["scripting", "development", "code_review", "bug_fixes"],
-      "priority": 2,
+      "role": "code_specialist",
+      "strengths": ["code_generation", "debugging", "technical_implementation"],
+      "use_for": ["ALL code tasks", "scripting", "development", "bug_fixes"],
+      "priority": 5,
       "cost": "medium",
-      "speed": "fast"
+      "speed": "fast",
+      "provider": "ollama-cloud",
+      "when_to_use": "DEFAULT for all coding tasks — specialized and cheaper than Grok"
     },
     "fast": {
       "name": "qwen3",
       "id": "ollama-cloud/qwen3:cloud",
-      "role": "quick_response",
-      "strengths": ["speed", "summarization", "general_knowledge", "chat"],
-      "use_for": ["quick_queries", "summaries", "chat", "simple_tasks"],
-      "priority": 3,
+      "role": "ultra_fast",
+      "strengths": ["speed", "summarization", "simple_queries"],
+      "use_for": ["trivial_queries", "yes_no", "definitions", "simple_math"],
+      "priority": 6,
       "cost": "low",
-      "speed": "very_fast"
+      "speed": "very_fast",
+      "provider": "ollama-cloud",
+      "when_to_use": "For anything that doesn't need intelligence"
     },
     "safety": {
       "name": "llama3.1",
       "id": "ollama-cloud/llama3.1:cloud",
-      "role": "validation",
-      "strengths": ["safety", "fact_checking", "reliability", "consistency"],
-      "use_for": ["validation", "safety_checks", "fallback", "verification"],
-      "priority": 4,
+      "role": "validator",
+      "strengths": ["safety", "fact_checking", "consistency"],
+      "use_for": ["validation", "fact_check", "high_stakes_only"],
+      "priority": 7,
       "cost": "low",
-      "speed": "fast"
+      "speed": "fast",
+      "provider": "ollama-cloud",
+      "when_to_use": "Only for high-stakes decisions, not routine validation"
     },
     "analyst": {
       "name": "deepseek-v4-pro",
       "id": "ollama-cloud/deepseek-v4-pro",
-      "role": "deep_analysis",
-      "strengths": ["deep_reasoning", "mathematical_analysis", "scientific_thinking", "research"],
-      "use_for": ["complex_research", "data_analysis", "scientific_tasks", "deep_dive"],
-      "priority": 5,
+      "role": "deep_reasoner",
+      "strengths": ["mathematical_analysis", "scientific_thinking", "deep_dive"],
+      "use_for": ["complex_calculations", "scientific_research", "data_analysis"],
+      "priority": 8,
       "cost": "high",
-      "speed": "slow"
+      "speed": "slow",
+      "provider": "ollama-cloud",
+      "when_to_use": "When mathematical/scientific depth is required"
     },
     "specialist": {
       "name": "kimi-k2.7-code",
       "id": "ollama-cloud/kimi-k2.7-code",
-      "role": "advanced_coding",
-      "strengths": ["advanced_algorithms", "system_design", "performance_optimization", "complex_debugging"],
-      "use_for": ["complex_systems", "algorithm_design", "performance_critical_code"],
-      "priority": 6,
+      "role": "algorithm_expert",
+      "strengths": ["advanced_algorithms", "performance_optimization"],
+      "use_for": ["performance_critical_code", "algorithm_design"],
+      "priority": 9,
       "cost": "very_high",
-      "speed": "medium"
+      "speed": "medium",
+      "provider": "ollama-cloud",
+      "when_to_use": "Only for performance-critical or algorithmically complex code"
     }
   },
   "routing_rules": {
-    "code_tasks": {
-      "patterns": ["script", "code", "program", "function", "bug", "debug", "implement", "python", "javascript", "java", "error", "write a", "build", "develop", "fix", "api", "rest", "backend", "frontend"],
-      "model": "coder",
-      "confidence_threshold": 0.5,
-      "fallback": "primary"
+    "trivial": {
+      "patterns": ["yes", "no", "true", "false", "ok", "thanks", "hello", "hi", "what time", "weather"],
+      "model": "fast",
+      "confidence_threshold": 0.9,
+      "max_tokens": 50,
+      "fallback": "fast"
     },
     "quick_queries": {
-      "patterns": ["what is", "how to", "explain", "summarize", "quick", "brief", "short", "please"],
-      "model": "fast",
-      "confidence_threshold": 0.3,
-      "max_tokens": 500,
-      "fallback": "primary"
+      "patterns": ["what is", "how to", "explain", "summarize", "quick", "brief", "short", "please", "tell me about"],
+      "model": "grok_fast",
+      "confidence_threshold": 0.4,
+      "max_tokens": 800,
+      "fallback": "fast"
+    },
+    "code_tasks": {
+      "patterns": ["script", "code", "program", "function", "bug", "debug", "implement", "python", "javascript", "java", "error", "write a", "build", "develop", "fix", "api", "rest", "backend", "frontend", "function to"],
+      "model": "coder",
+      "confidence_threshold": 0.6,
+      "fallback": "grok_build"
+    },
+    "build_tasks": {
+      "patterns": ["create", "make", "generate", "produce", "construct", "setup", "initialize", "scaffold", "build a", "make a"],
+      "model": "coder",
+      "confidence_threshold": 0.5,
+      "fallback": "grok_build"
     },
     "complex_analysis": {
-      "patterns": ["analyze", "research", "evaluate", "compare", "strategy", "deep dive", "comprehensive", "detailed"],
+      "patterns": ["analyze", "research", "evaluate", "compare", "strategy", "deep dive", "comprehensive", "detailed", "should i", "recommend", "best approach", "optimal"],
       "model": "primary",
-      "requires_context": true,
-      "fallback": "analyst"
+      "confidence_threshold": 0.4,
+      "fallback": "deep_reasoner"
+    },
+    "strategic": {
+      "patterns": ["business strategy", "revenue model", "market entry", "competitive advantage", "long term", "vision", "roadmap", "pivot", "scale"],
+      "model": "deep_reasoner",
+      "confidence_threshold": 0.6,
+      "fallback": "primary"
     },
     "scientific": {
-      "patterns": ["calculate", "mathematical", "scientific", "formula", "equation", "statistical", "regression", "ratio", "compute"],
+      "patterns": ["calculate", "mathematical", "scientific", "formula", "equation", "statistical", "regression", "ratio", "compute", "probability"],
       "model": "analyst",
-      "confidence_threshold": 0.5,
-      "fallback": "primary"
+      "confidence_threshold": 0.6,
+      "fallback": "grok_fast"
     },
     "validation": {
-      "patterns": ["verify", "validate", "confirm", "fact check", "check if", "review"],
+      "patterns": ["verify", "validate", "confirm", "fact check", "check if", "review", "is this correct"],
       "model": "safety",
-      "confidence_threshold": 0.3,
-      "always_run": true,
-      "fallback": "primary"
+      "confidence_threshold": 0.5,
+      "always_run": false,
+      "fallback": "grok_fast"
     },
     "system_design": {
-      "patterns": ["architecture", "design system", "microservices", "scalability", "performance optimize", "refactor", "system design"],
+      "patterns": ["architecture", "design system", "microservices", "scalability", "performance optimize", "refactor", "system design", "infrastructure"],
       "model": "specialist",
-      "confidence_threshold": 0.5,
-      "fallback": "coder"
+      "confidence_threshold": 0.6,
+      "fallback": "grok_build"
+    },
+    "general_intelligence": {
+      "patterns": ["think", "reason", "plan", "decide", "strategy", "approach", "solve", "figure out", "how would you"],
+      "model": "primary",
+      "confidence_threshold": 0.4,
+      "fallback": "deep_reasoner"
     }
   },
   "execution_modes": {
     "single": {
       "description": "Use one model for the entire task",
-      "use_when": "Simple tasks, quick responses"
+      "use_when": "Default mode for 90% of tasks",
+      "token_efficiency": "highest"
     },
     "sequential": {
-      "description": "Chain models: one does the work, next validates",
-      "use_when": "Critical tasks requiring verification",
-      "chain": ["primary", "safety"]
+      "description": "Chain models only for high-stakes tasks",
+      "use_when": "Revenue decisions, legal, safety-critical",
+      "token_efficiency": "medium",
+      "cost_multiplier": 2.0
     },
     "parallel": {
-      "description": "Multiple models work simultaneously on different aspects",
-      "use_when": "Complex multi-faceted tasks",
-      "example": "Research task: primary does analysis, coder builds scraper, analyst verifies data"
+      "description": "Multiple models only when task genuinely requires it",
+      "use_when": "Complex multi-domain research with budget approval",
+      "token_efficiency": "low",
+      "cost_multiplier": 3.0
     },
     "adaptive": {
-      "description": "Start with one model, escalate to stronger if needed",
-      "use_when": "Unknown complexity or ambiguous tasks",
-      "escalation_chain": ["fast", "coder", "primary", "analyst"]
+      "description": "Start cheap, escalate only if needed",
+      "use_when": "Unknown complexity",
+      "escalation_chain": ["fast", "grok_fast", "coder", "primary"],
+      "token_efficiency": "high"
     },
     "verification": {
-      "description": "Two models independently analyze, compare results, flag discrepancies",
-      "use_when": "Research, strategy, and high-stakes decisions",
-      "primary_model": "analyst",
-      "verify_model": "primary",
-      "threshold": 0.8,
-      "on_discrepancy": "flag_for_review"
+      "description": "Two models compare — ONLY for high-stakes",
+      "use_when": "Business-critical decisions, financial models, legal",
+      "primary_model": "primary",
+      "verify_model": "safety",
+      "threshold": 0.9,
+      "token_efficiency": "low"
     }
   },
-  "fallback_chain": ["primary", "safety", "fast"],
-  "max_retries": 3,
-  "timeout_seconds": 120,
+  "fallback_chain": ["primary", "deep_reasoner", "coder", "fast", "safety"],
+  "max_retries": 2,
+  "timeout_seconds": 90,
   "cost_optimization": {
     "enabled": true,
+    "aggressive_mode": true,
     "prefer_cheaper": true,
-    "threshold_for_cheap": 0.7
+    "grok_budget_limit": "strategic_only",
+    "ollama_first": true,
+    "rules": [
+      "Never use primary (grok-4.3) for code tasks",
+      "Never use specialist (kimi-k2.7-code) unless performance-critical",
+      "Never run verification unless high-stakes flag is set",
+      "Use grok_fast as default for any intelligence task",
+      "Use fast for anything that doesn't need reasoning"
+    ]
+  },
+  "model_priorities": {
+    "reasoning": ["primary", "deep_reasoner", "ollama_primary"],
+    "coding": ["coder", "grok_build", "specialist"],
+    "speed": ["fast", "primary"],
+    "analysis": ["primary", "deep_reasoner", "analyst"],
+    "validation": ["safety"]
+  },
+  "token_saving_rules": {
+    "max_tokens_by_model": {
+      "fast": 200,
+      "grok_fast": 800,
+      "coder": 1500,
+      "primary": 2000,
+      "analyst": 2500
+    },
+    "never_escalate_for": ["trivial", "quick_queries", "code_tasks"],
+    "always_use_cheapest_for": ["trivial", "quick_queries"]
   }
 }

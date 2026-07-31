@@ -1,0 +1,137 @@
+{
+  "version": "3.0",
+  "name": "Claw Token-Efficient Orchestration v3.0",
+  "description": "Optimized for maximum intelligence with minimum token cost. Grok-4.5 is the default brain. Grok-4.3 is used only for deep strategic work.",
+  "philosophy": "Use the cheapest model that can deliver acceptable quality. Escalate only when necessary.",
+  "updated": "2026-07-31T14:05:00Z",
+  "available_models": {
+    "main_brain": {
+      "name": "grok-4.5",
+      "id": "xai/grok-4.5",
+      "role": "default_intelligence",
+      "priority": 1,
+      "cost": "low",
+      "speed": "very_fast",
+      "provider": "xai",
+      "use_for": ["most_tasks", "chat", "research", "planning", "analysis", "quick_reasoning"]
+    },
+    "deep_reasoner": {
+      "name": "grok-4.3",
+      "id": "xai/grok-4.3",
+      "role": "deep_strategic",
+      "priority": 2,
+      "cost": "medium",
+      "speed": "fast",
+      "provider": "xai",
+      "use_for": ["complex_strategy", "high_stakes", "novel_problems", "when_4.5_fails"]
+    },
+    "code_specialist": {
+      "name": "qwen3-coder",
+      "id": "ollama-cloud/qwen3-coder:cloud",
+      "role": "coding",
+      "priority": 3,
+      "cost": "medium",
+      "speed": "fast",
+      "provider": "ollama-cloud",
+      "use_for": ["all_code_tasks", "scripting", "debugging", "implementation"]
+    },
+    "ultra_fast": {
+      "name": "qwen3",
+      "id": "ollama-cloud/qwen3:cloud",
+      "role": "trivial",
+      "priority": 4,
+      "cost": "low",
+      "speed": "very_fast",
+      "provider": "ollama-cloud",
+      "use_for": ["trivial_queries", "yes_no", "definitions", "simple_math"]
+    },
+    "validator": {
+      "name": "llama3.1",
+      "id": "ollama-cloud/llama3.1:cloud",
+      "role": "validation",
+      "priority": 5,
+      "cost": "low",
+      "speed": "fast",
+      "provider": "ollama-cloud",
+      "use_for": ["fact_check", "high_stakes_validation"]
+    },
+    "deep_analyst": {
+      "name": "deepseek-v4-pro",
+      "id": "ollama-cloud/deepseek-v4-pro",
+      "role": "scientific",
+      "priority": 6,
+      "cost": "high",
+      "speed": "slow",
+      "provider": "ollama-cloud",
+      "use_for": ["mathematical", "scientific", "complex_calculations"]
+    },
+    "algorithm_expert": {
+      "name": "kimi-k2.7-code",
+      "id": "ollama-cloud/kimi-k2.7-code",
+      "role": "performance_critical",
+      "priority": 7,
+      "cost": "very_high",
+      "speed": "medium",
+      "provider": "ollama-cloud",
+      "use_for": ["performance_critical_code", "advanced_algorithms"]
+    }
+  },
+  "routing": {
+    "complexity_scoring": {
+      "enabled": true,
+      "factors": ["keyword_weight", "length", "question_words", "strategic_keywords"],
+      "thresholds": {
+        "trivial": 2,
+        "simple": 5,
+        "medium": 8,
+        "complex": 12,
+        "strategic": 16
+      }
+    },
+    "rules": [
+      {
+        "name": "trivial",
+        "patterns": ["yes", "no", "true", "false", "ok", "thanks", "hi", "hello", "what time"],
+        "model": "ultra_fast",
+        "max_tokens": 80
+      },
+      {
+        "name": "code",
+        "patterns": ["script", "code", "function", "bug", "debug", "python", "javascript", "implement", "fix", "api"],
+        "model": "code_specialist",
+        "max_tokens": 2000
+      },
+      {
+        "name": "strategic",
+        "patterns": ["strategy", "business", "revenue", "market", "competitive", "long term", "vision", "scale", "pivot"],
+        "model": "deep_reasoner",
+        "max_tokens": 2500
+      },
+      {
+        "name": "scientific",
+        "patterns": ["calculate", "probability", "statistical", "regression", "formula", "equation"],
+        "model": "deep_analyst",
+        "max_tokens": 2000
+      },
+      {
+        "name": "default",
+        "model": "main_brain",
+        "max_tokens": 1200
+      }
+    ]
+  },
+  "decision_logging": {
+    "enabled": true,
+    "log_model_choice": true,
+    "log_estimated_cost": true,
+    "log_reason": true
+  },
+  "verification": {
+    "enabled": true,
+    "only_for": ["strategic", "high_stakes"],
+    "model": "validator"
+  },
+  "fallback": {
+    "chain": ["main_brain", "deep_reasoner", "code_specialist", "ultra_fast", "validator"]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "as_of": "2026-07-31T12:15:00Z",
+  "cycle": "AF-RC-2026-07-31-1405",
+  "cash": 1258.19,
+  "equity": 9966.76,
+  "invested_mv": 8708.57,
+  "unrealized_pnl": 2566.07,
+  "risk_exposure": 0.8738,
+  "daily_pnl": 0,
+  "max_position_pct": 10,
+  "daily_loss_limit_pct": 3,
+  "target_correlation": 0.4,
+  "marks": {
+    "BTC": 63759.52,
+    "ETH": 1881.44,
+    "SOL": 73.4,
+    "MSTR": 97.74,
+    "TSLA": 308.85,
+    "COIN": 163.58,
+    "HIMS": 27.04,
+    "NVDA": 195.04,
+    "AAPL": 333.43,
+    "AMD": 485.39,
+    "PLTR": 122.26,
+    "CRWD": 185.22
+  },
+  "weights_pct": {
+    "BTC": 6.4,
+    "ETH": 1.89,
+    "SOL": 3.68,
+    "MSTR": 4.9,
+    "TSLA": 9.3,
+    "COIN": 3.28,
+    "HIMS": 2.71,
+    "NVDA": 3.91,
+    "AAPL": 6.69,
+    "AMD": 29.22,
+    "PLTR": 9.81,
+    "CRWD": 5.58,
+    "CASH": 12.62
+  },
+  "stops": {
+    "MSTR": 85,
+    "TSLA": 295,
+    "HIMS": 25,
+    "NVDA": 160
+  },
+  "actions_required": [
+    "TRIM_AMD_TO_10PCT",
+    "HONOR_TSLA_295",
+    "HONOR_HIMS_25",
+    "SET_MISSING_STOPS"
+  ]
+}

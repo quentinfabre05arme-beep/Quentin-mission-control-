@@ -1,58 +1,146 @@
 {
-  "timestamp": "2026-07-24T14:12:00Z",
-  "date": "2026-07-24",
-  "cycle": "fund-research-2026-07-24-1610",
-  "risk_status": "COMPLIANT",
+  "timestamp": "2026-07-31T12:15:00.000Z",
+  "date": "2026-07-31",
+  "cycle": "AF-RC-2026-07-31-1405",
+  "risk_status": "NON_COMPLIANT",
+  "equity": 9966.76,
+  "cash": 1258.19,
+  "invested_mv": 8708.57,
+  "cash_pct": 0.1262,
+  "unrealized_pnl": 2566.07,
+  "unrealized_pnl_pct_vs_cost": 0.4178,
   "risk_checks": {
     "max_position_size": {
       "limit": 0.10,
-      "current": 0.0,
-      "status": "PASS",
-      "largest_position": null
+      "current": 0.2922,
+      "status": "FAIL",
+      "largest_position": "AMD",
+      "largest_mv": 2912.34
     },
     "daily_loss_limit": {
       "limit": 0.03,
       "current": 0.0,
       "status": "PASS",
-      "daily_pnl": 0.0
+      "daily_pnl": 0.0,
+      "note": "Session winners (AMD/HIMS/MSTR) offset soft crypto; no breach"
     },
     "correlation_limit": {
       "limit": 0.40,
-      "current": null,
-      "status": "PASS",
-      "note": "No active positions"
+      "current": 0.552,
+      "status": "FAIL",
+      "note": "AI/tech cluster AMD+PLTR+NVDA+CRWD+AAPL ~55% of equity"
     },
     "cash_position": {
-      "minimum": 0.20,
-      "current": 1.0,
+      "minimum": 0.10,
+      "current": 0.1262,
       "status": "PASS"
     },
     "max_crypto_exposure": {
       "limit": 0.25,
-      "current": 0.0,
-      "status": "PASS"
+      "current": 0.2015,
+      "status": "PASS",
+      "components": ["BTC", "ETH", "SOL", "MSTR", "COIN"]
     }
   },
-  "position_stops": [],
-  "alerts": [],
+  "clusters": {
+    "btc_proxy_crypto": 0.2015,
+    "ai_tech": 0.5521,
+    "growth_tsla_hims": 0.1201
+  },
+  "position_stops": [
+    {"symbol": "BTC", "price": 63759.52, "stop": null, "distance_pct": null, "status": "NO_STOP", "weight_pct": 6.4},
+    {"symbol": "ETH", "price": 1881.44, "stop": null, "distance_pct": null, "status": "NO_STOP", "weight_pct": 1.9},
+    {"symbol": "SOL", "price": 73.4, "stop": null, "distance_pct": null, "status": "NO_STOP", "weight_pct": 3.7, "note": "−49.6% vs avg; re-underwrite or cut"},
+    {"symbol": "MSTR", "price": 97.74, "stop": 85.0, "distance_pct": 13.03, "status": "OK", "weight_pct": 4.9},
+    {"symbol": "TSLA", "price": 308.85, "stop": 295.0, "distance_pct": 4.48, "status": "TIGHT", "weight_pct": 9.3},
+    {"symbol": "COIN", "price": 163.58, "stop": null, "distance_pct": null, "status": "NO_STOP", "weight_pct": 3.3},
+    {"symbol": "HIMS", "price": 27.04, "stop": 25.0, "distance_pct": 7.54, "status": "TIGHT", "weight_pct": 2.7, "note": "Earnings Aug 10 2026"},
+    {"symbol": "NVDA", "price": 195.04, "stop": 160.0, "distance_pct": 17.97, "status": "OK", "weight_pct": 3.9},
+    {"symbol": "AAPL", "price": 333.43, "stop": null, "distance_pct": null, "status": "NO_STOP", "weight_pct": 6.7},
+    {"symbol": "AMD", "price": 485.39, "stop": null, "distance_pct": null, "status": "SIZE_VIOLATION", "weight_pct": 29.22},
+    {"symbol": "PLTR", "price": 122.26, "stop": null, "distance_pct": null, "status": "NEAR_CAP", "weight_pct": 9.81},
+    {"symbol": "CRWD", "price": 185.22, "stop": null, "distance_pct": null, "status": "NO_STOP", "weight_pct": 5.58}
+  ],
+  "market_environment": {
+    "fear_greed": 25,
+    "fear_greed_class": "EXTREME_FEAR",
+    "fear_greed_trend": "DECLINING",
+    "mempool_count": 97731,
+    "network_congestion": "MEDIUM",
+    "whale_signal": "NEUTRAL"
+  },
+  "alerts": [
+    {
+      "severity": "CRITICAL",
+      "type": "MAX_POSITION_BREACH",
+      "asset": "AMD",
+      "message": "AMD is 29.2% of equity vs 10% max. Trim to ≤10% immediately (~sell 3.9 of 6 shares)."
+    },
+    {
+      "severity": "HIGH",
+      "type": "STOP_PROXIMITY",
+      "asset": "TSLA",
+      "message": "TSLA $308.85 only 4.5% above stop $295. No add; honor stop."
+    },
+    {
+      "severity": "HIGH",
+      "type": "STOP_PROXIMITY_EVENT",
+      "asset": "HIMS",
+      "message": "HIMS $27.04 is 7.5% above stop $25; Q2 earnings Aug 10 2026. Do not add into event."
+    },
+    {
+      "severity": "MEDIUM",
+      "type": "CLUSTER_CONCENTRATION",
+      "asset": "AI_TECH",
+      "message": "AI/tech cluster ~55% of book. Reduce via AMD trim before new tech adds."
+    },
+    {
+      "severity": "MEDIUM",
+      "type": "MISSING_STOPS",
+      "asset": "MULTIPLE",
+      "message": "Stops missing on BTC, ETH, SOL, COIN, AAPL, AMD, PLTR, CRWD."
+    }
+  ],
   "recommendations": [
     {
-      "type": "OPPORTUNITY",
-      "asset": "BTC",
-      "signal": "BREAKOUT",
-      "message": "BTC +3.1%, breakout above $65K zone. Consider 2-3% entry on pullback to $66,500 or confirm breakout continuation."
+      "type": "REBALANCE",
+      "asset": "AMD",
+      "signal": "TRIM",
+      "message": "Cut AMD from 29.2% to ≤10%. Book momentum gains; restore risk budget."
     },
     {
       "type": "WATCH",
-      "asset": "ETH",
-      "signal": "STRENGTH",
-      "message": "ETH +2.9%, outperforming. Wait for pullback to $1,850-$1,900 entry zone."
+      "asset": "TSLA",
+      "signal": "HARD_STOP",
+      "message": "Exit if $295 prints. Bounce only — no averaging down."
     },
     {
       "type": "WATCH",
       "asset": "HIMS",
-      "signal": "PULLBACK",
-      "message": "HIMS -4.81% to $31.17. Watch $30 support for potential entry."
+      "signal": "EVENT_RISK",
+      "message": "Hold tiny sleeve with $25 stop into Aug 10 earnings; no size-up."
+    },
+    {
+      "type": "OPPORTUNITY",
+      "asset": "BTC",
+      "signal": "EXTREME_FEAR",
+      "message": "F&G 25 extreme fear. Hold core; ladder bids only after AMD rebalance. Prefer dips <$63k / F&G <20."
+    },
+    {
+      "type": "OPPORTUNITY",
+      "asset": "NVDA",
+      "signal": "PULLBACK_ADD",
+      "message": "Tier2 add candidate on $185–190 after concentration fixed. Avoid chase >$200 pre-rebalance."
     }
-  ]
+  ],
+  "proposed_stops": {
+    "SOL": 65,
+    "COIN": 145,
+    "AAPL": 300,
+    "CRWD": 165,
+    "PLTR": 105,
+    "AMD": 430,
+    "BTC_trade": 58000,
+    "ETH": 1700
+  }
 }

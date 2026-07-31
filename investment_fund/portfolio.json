@@ -3,28 +3,152 @@
   "description": "Unified long-term portfolio with active management",
   "cash": 1258.19,
   "positions": [
-    {"symbol": "BTC", "quantity": 0.01, "avg_cost": 64000.00, "current_value": 640.00, "opened_at": "2026-07-20T10:00:00Z", "stop_loss": null, "take_profit": null},
-    {"symbol": "ETH", "quantity": 0.1, "avg_cost": 1850.00, "current_value": 185.60, "opened_at": "2026-07-20T10:00:00Z", "stop_loss": null, "take_profit": null},
-    {"symbol": "SOL", "quantity": 5, "avg_cost": 145.50, "current_value": 727.50, "opened_at": "2026-07-20T10:00:00Z", "stop_loss": null, "take_profit": null},
-    {"symbol": "MSTR", "quantity": 5, "avg_cost": 95.00, "current_value": 458.35, "opened_at": "2026-07-20T10:00:00Z", "stop_loss": 85.00, "take_profit": null},
-    {"symbol": "TSLA", "quantity": 3, "avg_cost": 340.00, "current_value": 939.09, "opened_at": "2026-07-20T10:00:00Z", "stop_loss": 295.00, "take_profit": 450.00},
-    {"symbol": "COIN", "quantity": 2, "avg_cost": 160.00, "current_value": 316.64, "opened_at": "2026-07-20T10:00:00Z", "stop_loss": null, "take_profit": null},
-    {"symbol": "HIMS", "quantity": 10, "avg_cost": 33.50, "current_value": 280.90, "opened_at": "2026-07-20T10:00:00Z", "stop_loss": 25.00, "take_profit": null},
-    {"symbol": "NVDA", "quantity": 2, "avg_cost": 180.00, "current_value": 413.68, "opened_at": "2026-07-20T10:00:00Z", "stop_loss": 160.00, "take_profit": null},
-    {"symbol": "AAPL", "quantity": 2, "avg_cost": 310.00, "current_value": 666.04, "opened_at": "2026-07-20T10:00:00Z", "stop_loss": null, "take_profit": null},
-    {"symbol": "AMD", "quantity": 6, "avg_cost": 120.00, "current_value": 720.00, "opened_at": "2026-07-20T10:00:00Z", "stop_loss": null, "take_profit": null},
-    {"symbol": "PLTR", "quantity": 8, "avg_cost": 25.00, "current_value": 200.00, "opened_at": "2026-07-20T10:00:00Z", "stop_loss": null, "take_profit": null},
-    {"symbol": "CRWD", "quantity": 3, "avg_cost": 180.00, "current_value": 540.00, "opened_at": "2026-07-20T10:00:00Z", "stop_loss": null, "take_profit": null}
-  ],
-  "last_updated": "2026-07-26T14:11:00Z",
-  "alerts": {
-    "hims_stop_approaching": {
+    {
+      "symbol": "BTC",
+      "quantity": 0.01,
+      "avg_cost": 64000,
+      "current_value": 637.6,
+      "opened_at": "2026-07-20T10:00:00Z",
+      "stop_loss": null,
+      "take_profit": null,
+      "last_mark": 63759.52
+    },
+    {
+      "symbol": "ETH",
+      "quantity": 0.1,
+      "avg_cost": 1850,
+      "current_value": 188.14,
+      "opened_at": "2026-07-20T10:00:00Z",
+      "stop_loss": null,
+      "take_profit": null,
+      "last_mark": 1881.44
+    },
+    {
+      "symbol": "SOL",
+      "quantity": 5,
+      "avg_cost": 145.5,
+      "current_value": 367,
+      "opened_at": "2026-07-20T10:00:00Z",
+      "stop_loss": null,
+      "take_profit": null,
+      "last_mark": 73.4
+    },
+    {
+      "symbol": "MSTR",
+      "quantity": 5,
+      "avg_cost": 95,
+      "current_value": 488.7,
+      "opened_at": "2026-07-20T10:00:00Z",
+      "stop_loss": 85,
+      "take_profit": null,
+      "last_mark": 97.74
+    },
+    {
+      "symbol": "TSLA",
+      "quantity": 3,
+      "avg_cost": 340,
+      "current_value": 926.55,
+      "opened_at": "2026-07-20T10:00:00Z",
+      "stop_loss": 295,
+      "take_profit": 450,
+      "last_mark": 308.85
+    },
+    {
+      "symbol": "COIN",
+      "quantity": 2,
+      "avg_cost": 160,
+      "current_value": 327.16,
+      "opened_at": "2026-07-20T10:00:00Z",
+      "stop_loss": null,
+      "take_profit": null,
+      "last_mark": 163.58
+    },
+    {
       "symbol": "HIMS",
-      "current_price": 28.09,
-      "stop_loss": 25.00,
-      "distance_pct": 10.99,
-      "status": "watch",
-      "message": "HIMS within 11% of stop-loss. Consider reducing position if doesn't recover by Tuesday."
+      "quantity": 10,
+      "avg_cost": 33.5,
+      "current_value": 270.4,
+      "opened_at": "2026-07-20T10:00:00Z",
+      "stop_loss": 25,
+      "take_profit": null,
+      "last_mark": 27.04
+    },
+    {
+      "symbol": "NVDA",
+      "quantity": 2,
+      "avg_cost": 180,
+      "current_value": 390.08,
+      "opened_at": "2026-07-20T10:00:00Z",
+      "stop_loss": 160,
+      "take_profit": null,
+      "last_mark": 195.04
+    },
+    {
+      "symbol": "AAPL",
+      "quantity": 2,
+      "avg_cost": 310,
+      "current_value": 666.86,
+      "opened_at": "2026-07-20T10:00:00Z",
+      "stop_loss": null,
+      "take_profit": null,
+      "last_mark": 333.43
+    },
+    {
+      "symbol": "AMD",
+      "quantity": 6,
+      "avg_cost": 120,
+      "current_value": 2912.34,
+      "opened_at": "2026-07-20T10:00:00Z",
+      "stop_loss": null,
+      "take_profit": null,
+      "last_mark": 485.39
+    },
+    {
+      "symbol": "PLTR",
+      "quantity": 8,
+      "avg_cost": 25,
+      "current_value": 978.08,
+      "opened_at": "2026-07-20T10:00:00Z",
+      "stop_loss": null,
+      "take_profit": null,
+      "last_mark": 122.26
+    },
+    {
+      "symbol": "CRWD",
+      "quantity": 3,
+      "avg_cost": 180,
+      "current_value": 555.66,
+      "opened_at": "2026-07-20T10:00:00Z",
+      "stop_loss": null,
+      "take_profit": null,
+      "last_mark": 185.22
     }
-  }
+  ],
+  "last_updated": "2026-07-31T12:15:00Z",
+  "alerts": {
+    "amd_position_breach": {
+      "symbol": "AMD",
+      "weight_pct": 29.22,
+      "limit_pct": 10,
+      "status": "critical",
+      "message": "AMD 29.2% of equity vs 10% max. Trim immediately."
+    },
+    "tsla_stop_tight": {
+      "symbol": "TSLA",
+      "current_price": 308.85,
+      "stop_loss": 295,
+      "distance_pct": 4.48,
+      "status": "tight",
+      "message": "TSLA within 4.5% of stop."
+    },
+    "hims_stop_tight": {
+      "symbol": "HIMS",
+      "current_price": 27.04,
+      "stop_loss": 25,
+      "distance_pct": 7.54,
+      "status": "tight",
+      "message": "HIMS within 7.5% of stop; earnings Aug 10 2026."
+    }
+  },
+  "total_equity": 9966.76
 }
