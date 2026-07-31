@@ -30,22 +30,42 @@ function Get-SystemHealth {
 }
 
 function Test-OpenClawRunning {
-    $process = Get-Process -Name "openclaw*" -ErrorAction SilentlyContinue
-    return ($null -ne $process)
+    # Gateway runs as node.exe on port 18789, not process name openclaw*
+    $listeners = Get-NetTCPConnection -LocalPort 18789 -State Listen -ErrorAction SilentlyContinue
+    if ($listeners) { return $true }
+    $nodeGw = Get-CimInstance Win32_Process -Filter "Name = 'node.exe'" -ErrorAction SilentlyContinue |
+        Where-Object { $_.CommandLine -match 'openclaw.*gateway|dist\\index\.js gateway' }
+    return ($null -ne $nodeGw)
 }
 
 function Test-CronHealth {
-    # Check if cron jobs are running by looking at recent logs
-    $lastHeartbeat = if (Test-Path $StateFile) { 
-        (Get-Content $StateFile | ConvertFrom-Json -ErrorAction SilentlyContinue).last_heartbeat 
+    # Prefer workspace heartbeat-state; fall back to recovery state file
+    $hbPath = "C:\Users\quent\.openclaw\workspace\memory\heartbeat-state.json"
+    if (Test-Path $hbPath) {
+        try {
+            $hb = Get-Content $hbPath -Raw | ConvertFrom-Json
+            $ts = $hb.lastChecks.heartbeat
+            if ($ts) {
+                # unix seconds
+                if ($ts -gt 1000000000000) { $last = [DateTimeOffset]::FromUnixTimeMilliseconds([int64]$ts).LocalDateTime }
+                else { $last = [DateTimeOffset]::FromUnixTimeSeconds([int64]$ts).LocalDateTime }
+                $minutesSince = ([datetime]::Now - $last).TotalMinutes
+                return ($minutesSince -lt 360)  # health cron every 6h + slack
+            }
+        } catch {}
+    }
+
+    $lastHeartbeat = if (Test-Path $StateFile) {
+        (Get-Content $StateFile -Raw | ConvertFrom-Json -ErrorAction SilentlyContinue).last_heartbeat
     } else { $null }
-    
+
     if ($lastHeartbeat) {
         $lastTime = [datetime]::Parse($lastHeartbeat)
         $minutesSince = ([datetime]::Now - $lastTime).TotalMinutes
-        return ($minutesSince -lt 35)  # Should heartbeat every 30 min
+        return ($minutesSince -lt 360)
     }
-    return $false
+    # If no history yet, do not fail closed on first run
+    return $true
 }
 
 function Repair-OpenClaw {
@@ -74,27 +94,24 @@ function Repair-OpenClaw {
 }
 
 function Repair-HighRAM {
-    Write-Log "High RAM usage detected ($($health.RAM%). Cleaning up..." "WARN"
-    
-    # Clear non-critical processes
-    $heavyProcesses = Get-Process | Sort-Object WorkingSet -Descending | Select-Object -First 5
-    foreach ($proc in $heavyProcesses) {
-        if ($proc.ProcessName -notin @"openclaw", "powershell", "explorer", "csrss", "svchost") {
-            Write-Log "Terminating: $($proc.ProcessName) ($([math]::Round($proc.WorkingSet/1MB, 0)) MB)" "INFO"
-            Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue
-        }
-    }
-    
-    # Trigger .NET garbage collection if applicable
+    $ramPct = $health.RAM
+    Write-Log "High RAM usage detected ($ramPct pct). Cleaning up temp only (no process kills)." "WARN"
+
+    # Safe cleanup only — never kill user apps/chrome/node gateway
+    $cut = (Get-Date).AddDays(-1)
+    Get-ChildItem -Path $env:TEMP -Recurse -Force -ErrorAction SilentlyContinue |
+        Where-Object { -not $_.PSIsContainer -and $_.LastWriteTime -lt $cut } |
+        ForEach-Object { Remove-Item $_.FullName -Force -ErrorAction SilentlyContinue }
+
     [System.GC]::Collect()
-    
     Start-Sleep -Seconds 2
     $newRam = Get-SystemHealth
-    Write-Log "RAM after cleanup: $($newRam.RAM)%" "INFO"
+    Write-Log "RAM after cleanup: $($newRam.RAM) pct" "INFO"
 }
 
 function Repair-DiskSpace {
-    Write-Log "Disk space critical ($($health.Disk%). Cleaning up..." "WARN"
+    $diskPct = $health.Disk
+    Write-Log "Disk space critical ($diskPct pct). Cleaning up..." "WARN"
     
     # Clean temp files
     Remove-Item -Path "$env:TEMP\*" -Recurse -Force -ErrorAction SilentlyContinue

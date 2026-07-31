@@ -1,0 +1,14 @@
+{
+    "issues_found":  [
+
+                     ],
+    "disk_percent":  70.6,
+    "repairs_made":  [
+
+                     ],
+    "last_check":  "2026-07-31T18:14:07.5306192+02:00",
+    "ram_percent":  88.9,
+    "last_heartbeat":  "2026-07-31T18:14:07.5306192+02:00",
+    "openclaw_running":  true,
+    "cron_healthy":  true
+}

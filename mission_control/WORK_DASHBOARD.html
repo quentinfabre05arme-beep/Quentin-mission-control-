@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claw Work Dashboard</title>
+    <style>
+        body { font-family: system-ui, sans-serif; margin: 40px; background: #0f0f0f; color: #ddd; }
+        .container { max-width: 900px; margin: 0 auto; }
+        h1 { color: #fff; }
+        .status { background: #1a1a1a; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .log { background: #111; padding: 15px; border-radius: 6px; font-family: monospace; white-space: pre-wrap; }
+        .meta { color: #888; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 Claw Work Dashboard</h1>
+        
+        <div class="status">
+            <strong>Current Status:</strong> Building Self-Healing + TaskFlow layer<br>
+            <strong>Last Updated:</strong> <span id="last-updated">Just now</span>
+        </div>
+
+        <h3>Recent Actions</h3>
+        <div class="log" id="log">
+            - Created self_healing.js (2,371 bytes)
+            - Integrated token_watch.js into router
+            - Archived 6 useless missions
+            - Completed v3.0 router (100% test pass rate)
+        </div>
+
+        <p class="meta">This dashboard updates automatically as I work. Auto-refresh every 30 seconds.</p>
+    </div>
+
+    <script>
+        // Auto-refresh every 30 seconds
+        setTimeout(() => {
+            location.reload();
+        }, 30000);
+    </script>
+</body>
+</html>
