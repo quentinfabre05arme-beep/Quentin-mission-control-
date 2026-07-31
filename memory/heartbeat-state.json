@@ -8,7 +8,8 @@
     "systemHealth": "2026-08-01T00:15:00.000Z",
     "gitBackup": "2026-08-01T00:15:00.000Z",
     "system": 1785535965,
-    "git": 1785535965
+    "git": 1785535965,
+    "heartbeat": "2026-07-31T22:15:23.149Z"
   },
   "notes": "Heartbeat 2026-08-01 00:15 CET: gateway responsive. RAM 81.6% used (stable). Disk C: 29.7 GB free / 118 GB total (~75% used). Market data still cache-only — Twelve Data quota resets at midnight UTC; attempted refresh but quota still exhausted (~1382/800). Yahoo rate-limited. Cache serving BTC $62,900 | ETH $1,860 | MSTR $93.28 | HIMS $27.75. Committed pending state files. Quiet night — no urgent issues."
 }
