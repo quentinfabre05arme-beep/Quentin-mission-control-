@@ -11,5 +11,5 @@
       "disk": "OK"
     }
   },
-  "notes": "Heartbeat 2026-08-01 15:16 CET: Market data fresh via CoinGecko/Yahoo. BTC $63,046 (-1.1%), ETH $1,867.70 (-0.7%), MSTR $93.28 (-4.56%), HIMS $27.77 (+2.70%). Fear & Greed 27 FEAR — contrarian buy signal active. Twelve Data still rate-limited. RAM WARNING persists (83.4% used, 1.3GB free / 7.9GB). Git has uncommitted heartbeat/market file changes. Daytime monitoring active."
+  "notes": "Heartbeat 2026-08-01 15:24 CET: Market data refreshed via CoinGecko/Yahoo. BTC $63,035 (-1.13%), ETH $1,867.07 (-1.06%), MSTR $93.28, HIMS $27.77. Fear & Greed 27 FEAR recovering from 25 — contrarian buy signal active. Alternative data: 1 sentiment-recovery anomaly. RAM at 82.6% (elevated but improved from 83.4%). Disk 70.3% OK. Git committed and pushed 5 changed files. Daytime monitoring active."
 }
