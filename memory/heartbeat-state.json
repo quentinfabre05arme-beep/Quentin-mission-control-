@@ -1,15 +1,15 @@
 {
   "lastChecks": {
-    "market": 1754058960000,
-    "system": 1754058960000,
-    "git": 1754058960000,
+    "market": 1754061600000,
+    "system": 1754061600000,
+    "git": 1754061600000,
     "calendar": null,
     "weather": null,
     "heartbeat": {
-      "ts": "2026-08-01T15:56:00.000+02:00",
-      "ram": "OK",
-      "disk": "OK"
+      "ts": "2026-08-01T16:00:00.000+02:00",
+      "ram": "OK (84.6%)",
+      "disk": "OK (C: 70.2%, D: 42.6%, E: 88.1% monitor)"
     }
   },
-  "notes": "Heartbeat 2026-08-01 15:56 CET: Market data refreshed via CoinGecko/Yahoo. BTC $63,011 (-0.35%), ETH $1,867.22 (+0.11%), MSTR $93.28, HIMS $27.77. Fear & Greed 27 FEAR recovering from 25 (improving) — contrarian buy signal still active. Mempool 93,307 txs (medium congestion). Alternative data: 1 sentiment-recovery anomaly. Git committed and pushed 3 changed files. Daytime monitoring active."
+  "notes": "Heartbeat 2026-08-01 16:00 CET: Market data refreshed. BTC $63,013 (-0.31%), ETH $1,867.62 (+0.16%). Fear & Greed 27 FEAR improving from 25 — sentiment recovery contrarian buy signal active. Mempool 94,272 txs (medium congestion). Alternative data: 1 anomaly (SENTIMENT_RECOVERY). Git committed/pushed 3 files. RAM 84.6% (watch), E: drive 88.1% (monitor)."
 }
