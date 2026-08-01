@@ -1,15 +1,15 @@
 {
   "lastChecks": {
-    "market": 1785576631686,
-    "system": 1785576631686,
-    "git": 1785576631686,
+    "market": 1754046635184,
+    "system": 1754046635184,
+    "git": 1754046635184,
     "calendar": null,
     "weather": null,
     "heartbeat": {
-      "ts": "2026-08-01T09:57:50.276Z",
-      "ram": "90%",
-      "disk": "C:70%,D:43%,E:88%"
+      "ts": "2026-08-01T12:30:00.000+02:00",
+      "ram": "87.7%",
+      "disk": "C:70.4%,D:42.6%,E:88.1%"
     }
   },
-  "notes": "Heartbeat 2026-08-01 11:40 CET: Market refresh attempted. Twelve Data quota exhausted (1839/800). Yahoo blocked (Too Many Requests). CoinGecko fallback not engaging in market_data_service.js. Cache used. BTC $63,012.78 +0.20%, ETH $1,867.28 0.00%, MSTR $93.28 -4.56%, HIMS $27.775 +2.72%. RAM 85.5%, uptime 146h. Git: 5 modified + 6 untracked files. Action: repair CoinGecko/Yahoo fetch path."
+  "notes": "Heartbeat 2026-08-01 12:30 CET: Market data refreshed. BTC $62,988 -1.20%, ETH $1,863.70 -1.14%, MSTR $93.28 flat, HIMS $27.77 flat. RAM 87.7% (1.0GB free of 7.9GB). E: drive at 88.1% used (1.8GB free) — monitor. Git has uncommitted modified files (heartbeat-state, market_data.json, health report, recovery state). Need git backup. No calendar or weather check performed yet."
 }
