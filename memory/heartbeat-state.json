@@ -1,8 +1,8 @@
 {
   "lastChecks": {
-    "market": 1785572580000,
-    "system": 1785572583000,
-    "git": 1785571057000
+    "market": 1785575918059,
+    "system": 1785575918059,
+    "git": 1785575918059
   },
-  "notes": "Heartbeat 2026-08-01 10:04 CET: Market data cache-only (Twelve Data quota exhausted, Yahoo rate limits). BTC $63,013 +0.20% | ETH $1,867 flat | MSTR $93.28 -4.56% (bearish) | HIMS $27.78 +2.72% (bullish). RAM 88.12% warning (improved from 91-93% critical). Disk 70.32% OK. Gateway processes running. Uncommitted files: market_data.json, health_reports/latest.json, smart_brain config/log, recovery heartbeat, plus 2 untracked test files."
+  "notes": "Heartbeat 2026-08-01 10:58 CET: Market data fetch failed (Twelve Data quota exhausted 1802/800; Yahoo rate-limited). Using cache. BTC $63,013 (+0.20%), ETH $1,867 (flat), MSTR $93.28 (-4.56% bearish), HIMS $27.78 (+2.72% bullish). RAM critical 89.03% (7.39/7.91 GB used). Disk 70.36% OK. Gateway responsive. 3 modified files pending commit."
 }

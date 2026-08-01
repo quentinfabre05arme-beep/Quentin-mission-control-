@@ -1,6 +1,54 @@
 # MEMORY.md — Claw's Long-Term Memory
 
-## Last Updated: July 31, 2026
+## Last Updated: August 1, 2026
+
+---
+
+## 📊 Market Data (August 1, 2026)
+
+**Current Prices:**
+- BTC: $63,013 (+0.20%) | ETH: $1,867 (flat) | MSTR: $93.28 (-4.56%) | HIMS: $27.78 (+2.72%)
+
+**Fear & Greed:** 27 (FEAR) — recovering from 25
+**Data Quality:** Twelve Data quota exhausted (1802/800); Yahoo rate-limited. Using cache.
+**System Health:** RAM 89.03% (critical warning), Disk 70.36% OK
+
+---
+
+## ⚠️ SECURITY INCIDENT - 2026-08-01 10:57
+
+**CREDENTIALS EXPOSED IN CHAT** - Immediate action required
+
+### What Happened
+- Gmail credentials shared in Telegram chat
+- X/Twitter credentials shared in Telegram chat  
+- Chat messages may be logged by OpenClaw/Telegram
+
+### Immediate Actions Taken
+- Flagged in MEMORY.md for cleanup
+- Will be purged from session history
+- **YOU MUST CHANGE THESE PASSWORDS NOW**
+
+### Exposed Credentials
+- Gmail: quentin.fabre05arme@gmail.com
+- X: Quentin.fabre@live.fr
+
+### Recommended Steps
+1. **Change both passwords immediately** on real devices (not through chat)
+2. **Enable 2FA** on both accounts
+3. **Review active sessions** on X and Gmail, revoke unknown ones
+4. **Never share passwords in chat again** - use the secure storage system I created
+
+### Secure Storage System
+Files created for future use:
+- `Store-Credentials.bat` - Double-click to store passwords securely
+- `credential_manager.js` - AES-256 encrypted storage
+- Passwords stored locally, encrypted, never in chat
+
+### Lesson Learned
+- Telegram/OpenClaw session history may persist
+- Always use secure storage system for credentials
+- Even "private" chats can have logging/retention
 
 ---
 
