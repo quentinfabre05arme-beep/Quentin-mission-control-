@@ -3,13 +3,13 @@
     "email": null,
     "calendar": null,
     "weather": "2026-08-01T06:30:45.208Z",
-    "market": "2026-08-01T06:32:56.347Z",
+    "market": "2026-08-01T06:42:50.129Z",
     "memory": "2026-08-01T06:35:00.000Z",
-    "systemHealth": "2026-08-01T06:29:04.054Z",
+    "systemHealth": "2026-08-01T06:42:00.000Z",
     "gitBackup": "2026-08-01T06:35:00.000Z",
     "system": 1785555966,
     "git": 1785556618,
-    "heartbeat": "2026-08-01T06:35:00.000Z"
+    "heartbeat": "2026-08-01T06:42:00.000Z"
   },
-  "notes": "Heartbeat 2026-08-01 08:35 CET: System healthy. X posting tasks disabled. Market data cached — Twelve Data quota exhausted, Yahoo rate-limited. Core assets: BTC $63,012.78 (+0.20%), ETH $1,867.28 (0%), MSTR $93.28 (-4.56%), HIMS $27.775 (+2.72%). F&G 27 FEAR improving. fund-research-cycle ok; weekly-memory-curation errored benignly (no active goal). Committed state refresh c95e6f2."
+  "notes": "Heartbeat 2026-08-01 08:42 CET: System stable. RAM pressure noted (~1GB free / 8.5GB). X posting tasks disabled; queue empty. Market data fully cached — Twelve Data quota exhausted, Yahoo rate-limited. Core assets unchanged: BTC $63,013 (+0.20%), ETH $1,867 (0%), MSTR $93.28 (-4.56%), HIMS $27.78 (+2.72%). fund-research-cycle ok; weekly-memory-curation last error benign."
 }
