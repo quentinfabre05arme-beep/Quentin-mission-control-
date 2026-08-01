@@ -41,28 +41,34 @@
 
 ---
 
-## 🔧 System Configuration — August 1, 2026 19:13 CET
+## 🔧 System Configuration — August 1, 2026 19:17 CET
 
 **Status Reports:** Every 15 minutes to this chat
 **Heartbeat Messages:** DISABLED (silent background only)
 **RAM Cleanup:** Every 2 hours (silent)
-**Market Refresh:** Every 30 minutes (silent)
-**Dashboard Review:** Every 2 hours (silent)
+**Market Refresh:** DISABLED (manual only to save API)
+**Dashboard Review:** DISABLED (manual only)
+**API Conservation:** ENABLED (Twelve Data protected)
 
 **Reporting Rules:**
 - ✅ Send status report every 15 min with full system + market data
 - ❌ NO heartbeat pulse checks
 - ❌ NO repetitive "work in progress" messages
-- ❌ NO duplicate responses
+- ❌ NO duplicate responses - ONE reply per user message
 - ✅ Only respond to direct user messages
 - ✅ Alert on critical errors only
+- ✅ STOP after one confirmation message
 
 **Cron Jobs Active:**
 - `status-report-15min` → Every 15 min (announce to chat)
 - `ram-cleanup-every-2h` → Every 2 hours (silent)
-- `alternative-data-fetch` → Periodic (silent)
-- `fund-research-cycle` → Periodic (silent)
 - `auto-commit-pending` → Periodic (silent)
+
+**Cron Jobs DISABLED (API conservation):**
+- `alternative-data-fetch` → Manual only
+- `fund-research-cycle` → Manual only
+
+**Next Status Report:** ~19:30 CET
 
 ---
 
