@@ -1,8 +1,10 @@
 {
   "lastChecks": {
-    "market": 1785566930004,
-    "calendar": 1785566930004,
-    "email": 1785566930004
+    "market": 1754046482000,
+    "calendar": 1754046482000,
+    "email": 1754046482000,
+    "weather": 1754046482000,
+    "system": 1754046482000
   },
-  "notes": "Heartbeat 2026-08-01 08:46 CET: System stable. Alternative data refresh completed. Fear & Greed 27 (recovering from extreme fear). BTC/ETH slightly bullish contrarian, MSTR neutral with volume anomaly, HIMS bullish. Git backup pushed. Twelve Data quota exhausted until reset; cached prices serving. RAM ~1GB free / 8.5GB."
+  "notes": "Heartbeat 2026-08-01 09:08 CET: System stable. RAM OK (10% free ~822MB). Disk OK (37GB free). All Windows X posting tasks remain DISABLED (safe). Market data refreshed but all live APIs failed/cached — Twelve Data quota exhausted (1694/800), Yahoo rate limited, CoinGecko failed. Cached snapshot active: BTC $63,013 (+0.20%), ETH $1,867 (0%), MSTR $93.28 (-4.56%), HIMS $27.78 (+2.72%). Health report updated. Git has 3 modified files (heartbeat-state, health report, recovery state)."
 }
