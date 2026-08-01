@@ -2,13 +2,13 @@
     "issues_found":  [
 
                      ],
-    "disk_percent":  70.3,
+    "disk_percent":  70.2,
     "repairs_made":  [
 
                      ],
-    "last_check":  "2026-08-01T15:29:03.6441208+02:00",
-    "ram_percent":  84.9,
-    "last_heartbeat":  "2026-08-01T15:29:03.6441208+02:00",
+    "last_check":  "2026-08-01T15:39:03.1395800+02:00",
+    "ram_percent":  87.2,
+    "last_heartbeat":  "2026-08-01T15:39:03.1395800+02:00",
     "openclaw_running":  true,
     "cron_healthy":  true
 }

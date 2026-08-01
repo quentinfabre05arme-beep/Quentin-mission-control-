@@ -6,8 +6,8 @@
     "calendar": null,
     "weather": null,
     "heartbeat": {
-      "ts": "2026-08-01T15:16:00.000+02:00",
-      "ram": "WARNING",
+      "ts": "2026-08-01T15:32:00.000+02:00",
+      "ram": "OK",
       "disk": "OK"
     }
   },
