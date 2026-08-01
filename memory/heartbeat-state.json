@@ -1,10 +1,10 @@
 {
   "lastChecks": {
-    "market": 1785568208399,
-    "calendar": 1785568208399,
-    "email": 1785568208399,
-    "weather": 1785568208399,
-    "system": 1785568208399
+    "market": 1785568435399,
+    "calendar": 1785568435399,
+    "email": 1785568435399,
+    "weather": 1785568435399,
+    "system": 1785568435399
   },
-  "notes": "Heartbeat 2026-08-01 09:09 CET: System stable. RAM OK. Disk OK. Market data refreshed (cache-only, APIs rate-limited). Alternative data fetched: F&G 27 recovering from extreme fear, BTC/ETH slightly bullish, MSTR bearish momentum -4.56%, HIMS bullish +2.72%. Git backup pushed (commit e6523c8). Windows X posting tasks remain DISABLED."
+  "notes": "Heartbeat 2026-08-01 09:13 CET: System stable. Fixed 3 broken X-Post scheduled tasks (were pointing to non-existent content_pipeline/x_autonomous.js, now point to workspace/x_free_poster.js). X posting remains simulated/browser-login-gated. Market data cache-only due to Twelve Data quota exhausted (1700+/800) and Yahoo rate limits. Alternative data: F&G 27 recovering from extreme fear (contrarian buy), MSTR -4.56% bearish momentum, HIMS +2.72% bullish. Git clean."
 }
