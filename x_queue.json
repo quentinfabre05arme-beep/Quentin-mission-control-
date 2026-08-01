@@ -7,7 +7,7 @@
       "scheduled_date": "2026-07-24",
       "timezone": "Europe/Paris",
       "pillar": "Market Structure",
-      "status": "pending",
+      "status": "archived",
       "character_count": 442,
       "created_at": "2026-07-24T15:00:00+02:00",
       "market_context": {
@@ -26,7 +26,7 @@
       "scheduled_date": "2026-07-25",
       "timezone": "Europe/Paris",
       "pillar": "Institutional/Macro",
-      "status": "pending",
+      "status": "archived",
       "character_count": 438,
       "created_at": "2026-07-24T15:00:00+02:00",
       "market_context": {
@@ -42,7 +42,7 @@
       "scheduled_date": "2026-07-25",
       "timezone": "Europe/Paris",
       "pillar": "DeFi/Ecosystem",
-      "status": "pending",
+      "status": "archived",
       "character_count": 556,
       "created_at": "2026-07-24T15:00:00+02:00",
       "market_context": {
@@ -58,7 +58,7 @@
       "scheduled_date": "2026-07-25",
       "timezone": "Europe/Paris",
       "pillar": "Narrative/Opinion",
-      "status": "pending",
+      "status": "archived",
       "character_count": 496,
       "created_at": "2026-07-24T15:00:00+02:00",
       "market_context": {
@@ -77,8 +77,16 @@
     "reason": "Resumed per user request - X posting automation reactivated",
     "schedule": {
       "timezone": "Europe/Paris",
-      "postTimes": ["08:00", "14:00", "19:00"],
-      "pillars": ["Institutional/Macro", "DeFi/Ecosystem", "Market Structure/Narrative"]
+      "postTimes": [
+        "08:00",
+        "14:00",
+        "19:00"
+      ],
+      "pillars": [
+        "Institutional/Macro",
+        "DeFi/Ecosystem",
+        "Market Structure/Narrative"
+      ]
     }
   },
   "lastPost": {

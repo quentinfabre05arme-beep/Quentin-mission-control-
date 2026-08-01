@@ -109,7 +109,25 @@ const { chromium } = require('playwright');
   return { success: true, simulated: true };
 }
 
+async function showStatus() {
+  await log('=== X Free Poster Status ===');
+  const post = await getQueuedPost();
+  if (!post) {
+    await log('No pending posts in queue');
+  } else {
+    await log(`Next pending post: ${post.id} | scheduled ${post.scheduled_date} ${post.scheduled_time} | ${post.text.substring(0, 60)}...`);
+  }
+  await log('=== Status Complete ===');
+}
+
 async function main() {
+  const args = process.argv.slice(2);
+  const isStatus = args.includes('status') || args.includes('--status') || args.includes('-s');
+  
+  if (isStatus) {
+    return showStatus();
+  }
+  
   await log('=== X Free Poster Starting ===');
   
   const post = await getQueuedPost();
@@ -121,9 +139,13 @@ async function main() {
   await log(`Found post: ${post.id}`);
   const result = await postToX(post.text);
   
-  if (result.success) {
+  // Only mark as posted if the browser automation actually succeeded.
+  // Simulated runs must NOT mutate the queue.
+  if (result.success && !result.simulated) {
     await markPosted(post.id);
     await log('Post completed successfully');
+  } else if (result.simulated) {
+    await log('Simulated run - queue unchanged');
   } else {
     await log('Post failed - will retry on next run');
   }
