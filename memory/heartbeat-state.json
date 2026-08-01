@@ -3,13 +3,13 @@
     "email": null,
     "calendar": null,
     "weather": null,
-    "market": "2026-08-01T00:15:00.000Z",
+    "market": "2026-08-01T01:46:00.000Z",
     "memory": "2026-08-01T00:03:00.000Z",
     "systemHealth": "2026-08-01T01:19:00.000Z",
     "gitBackup": "2026-08-01T01:19:00.000Z",
-    "system": 1785536566,
-    "git": 1785536566,
-    "heartbeat": "2026-08-01T01:19:00.000Z"
+    "system": 1785537105,
+    "git": 1785537105,
+    "heartbeat": "2026-08-01T01:31:55.000Z"
   },
-  "notes": "Heartbeat 2026-08-01 01:19 CET: gateway responsive. RAM ~7.9 GB total / ~1.2 GB free. Disk C: 35 GB free / 118 GB total (70.3% used). Market data cache-only; market_data.json from 2026-07-31 22:53. Twelve Data quota exhausted; Yahoo rate-limited. BTC $62,900 | ETH $1,861 (-2.95%) | MSTR $93.28 | HIMS $27.75 (+2.6%). Committed pending state files and pushed (commit b3bbde1). No urgent issues — quiet night."
+  "notes": "Heartbeat 2026-08-01 01:46 CET: market refresh attempted. Twelve Data quota exhausted (1442 credits used, limit 800). Yahoo rate-limited. All tracked assets using cached data. BTC ,900 | ETH ,861 (-2.95%) | MSTR .28 | HIMS .75 (+2.6%). Next refresh after market open / API quota reset. No urgent issues."
 }
