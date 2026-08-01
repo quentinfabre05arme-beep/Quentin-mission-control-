@@ -4,7 +4,12 @@
     "system": 1785576631686,
     "git": 1785576631686,
     "calendar": null,
-    "weather": null
+    "weather": null,
+    "heartbeat": {
+      "ts": "2026-08-01T09:57:50.276Z",
+      "ram": "90%",
+      "disk": "C:70%,D:43%,E:88%"
+    }
   },
   "notes": "Heartbeat 2026-08-01 11:40 CET: Market refresh attempted. Twelve Data quota exhausted (1839/800). Yahoo blocked (Too Many Requests). CoinGecko fallback not engaging in market_data_service.js. Cache used. BTC $63,012.78 +0.20%, ETH $1,867.28 0.00%, MSTR $93.28 -4.56%, HIMS $27.775 +2.72%. RAM 85.5%, uptime 146h. Git: 5 modified + 6 untracked files. Action: repair CoinGecko/Yahoo fetch path."
 }
