@@ -1,8 +1,8 @@
 {
-  "version": "2.2",
-  "name": "Claw Token-Efficient Hybrid Architecture v2.2",
-  "description": "Smartest + Most Token-Efficient orchestration. Grok only for high-value tasks. Ollama for everything else.",
-  "updated": "2026-07-31T13:35:00Z",
+  "version": "2.3",
+  "name": "Claw Token-Efficient Hybrid Architecture v2.3",
+  "description": "Minimized Grok usage. Ollama-first for all tasks except high-stakes strategy. Grok reserved for complex decisions only.",
+  "updated": "2026-08-01T09:26:00Z",
   "philosophy": "Use the cheapest/fastest model that can do the job well. Escalate to Grok only when intelligence justifies the cost.",
   "available_models": {
     "primary": {
@@ -148,7 +148,7 @@
       "fallback": "analyst"
     },
     "strategic": {
-      "patterns": ["business strategy", "revenue model", "market entry", "competitive advantage", "long term", "vision", "roadmap", "pivot", "scale"],
+      "patterns": ["business strategy", "revenue model", "market entry", "competitive advantage", "long term", "vision", "roadmap", "pivot", "scale", "develop strategy", "strategic planning", "Q4 strategy", "business plan"],
       "model": "deep_reasoner",
       "confidence_threshold": 0.6,
       "fallback": "primary"
@@ -166,6 +166,12 @@
       "always_run": false,
       "fallback": "grok_fast"
     },
+    "high_stakes": {
+      "patterns": ["high-stakes", "critical decision", "major investment", "significant risk", "crucial", "pivotal", "life-changing", "irreversible"],
+      "model": "primary",
+      "confidence_threshold": 0.5,
+      "fallback": "deep_reasoner"
+    },
     "system_design": {
       "patterns": ["architecture", "design system", "microservices", "scalability", "performance optimize", "refactor", "system design", "infrastructure"],
       "model": "specialist",
@@ -174,9 +180,9 @@
     },
     "general_intelligence": {
       "patterns": ["think", "reason", "plan", "decide", "strategy", "approach", "solve", "figure out", "how would you"],
-      "model": "primary",
+      "model": "ollama_primary",
       "confidence_threshold": 0.4,
-      "fallback": "deep_reasoner"
+      "fallback": "analyst"
     }
   },
   "execution_modes": {
@@ -222,18 +228,22 @@
     "grok_budget_limit": "strategic_only",
     "ollama_first": true,
     "rules": [
-      "Never use primary (grok-4.3) for code tasks",
+      "Never use primary (grok-4.5) for code tasks",
+      "Never use deep_reasoner (grok-4.3) for analysis",
       "Never use specialist (kimi-k2.7-code) unless performance-critical",
       "Never run verification unless high-stakes flag is set",
-      "Use grok_fast as default for any intelligence task",
-      "Use fast for anything that doesn't need reasoning"
+      "Use ollama_primary (kimi-k2.6) as default for intelligence tasks",
+      "Use fast (qwen3) for anything that doesn't need reasoning",
+      "Use analyst (deepseek-v4-pro) for mathematical/scientific tasks",
+      "Reserve grok-4.5 for high-stakes decisions and complex strategy only",
+      "Use grok-4.3 only when ollama_primary is insufficient"
     ]
   },
   "model_priorities": {
-    "reasoning": ["primary", "deep_reasoner", "ollama_primary"],
+    "reasoning": ["ollama_primary", "analyst", "primary", "deep_reasoner"],
     "coding": ["coder", "grok_build", "specialist"],
-    "speed": ["fast", "primary"],
-    "analysis": ["primary", "deep_reasoner", "analyst"],
+    "speed": ["fast", "ollama_primary"],
+    "analysis": ["analyst", "ollama_primary", "deep_reasoner"],
     "validation": ["safety"]
   },
   "token_saving_rules": {
