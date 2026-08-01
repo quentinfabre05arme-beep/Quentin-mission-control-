@@ -6,9 +6,9 @@
     "repairs_made":  [
 
                      ],
-    "last_check":  "2026-08-01T14:04:06.2882537+02:00",
-    "ram_percent":  82,
-    "last_heartbeat":  "2026-08-01T14:04:06.2882537+02:00",
+    "last_check":  "2026-08-01T14:14:05.6310503+02:00",
+    "ram_percent":  83.2,
+    "last_heartbeat":  "2026-08-01T14:14:05.6310503+02:00",
     "openclaw_running":  true,
     "cron_healthy":  true
 }

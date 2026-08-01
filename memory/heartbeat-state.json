@@ -1,15 +1,15 @@
 {
   "lastChecks": {
-    "market": 1754064391000,
-    "system": 1754064391000,
+    "market": 1754064749000,
+    "system": 1754064749000,
     "git": 1754064391000,
     "calendar": null,
     "weather": null,
     "heartbeat": {
-      "ts": "2026-08-01T14:06:41.000+02:00",
-      "ram": "checking",
-      "disk": "checking"
+      "ts": "2026-08-01T14:12:29.000+02:00",
+      "ram": "WARNING",
+      "disk": "OK"
     }
   },
-  "notes": "Heartbeat 2026-08-01 14:06 CET: Market data fresh via CoinGecko/Yahoo fallbacks (BTC $63,044 -1.05%, ETH $1,866.04 -0.75%, MSTR $93.28 0%, HIMS $27.77 0%). Fear & Greed at 27 FEAR (up from 25, sentiment recovery). One anomaly: contrarian buy signal. Twelve Data API still down."
+  "notes": "Heartbeat 2026-08-01 14:12 CET: Market data refreshed. BTC $63,044 (-1.05%), ETH $1,866 (-0.75%). Fear & Greed 27 FEAR → recovering from extreme. Contrarian buy signal active. RAM CRITICAL: only 1.3GB free of 8GB (83% used). Twelve Data still down."
 }
