@@ -1,29 +1,29 @@
 {
-  "timestamp": "2026-07-15 18:01:00",
+  "timestamp": "2026-08-01 09:22:19",
   "assets": {
     "BTC": {
-      "price": 65333,
-      "change_24h": 1.03,
-      "source": "coingecko",
-      "signal": "BULLISH"
+      "price": 63048,
+      "change_24h": -0.99,
+      "source": "coingecko_direct",
+      "signal": "NEUTRAL"
     },
     "ETH": {
-      "price": 1928.63,
-      "change_24h": 3.14,
-      "source": "coingecko",
-      "signal": "BULLISH"
+      "price": 1868.29,
+      "change_24h": -0.91,
+      "source": "coingecko_direct",
+      "signal": "NEUTRAL"
     },
     "MSTR": {
-      "price": 97.58,
-      "change_24h": 5.95,
-      "source": "twelvedata_expired",
-      "signal": "BULLISH"
+      "price": 93.28,
+      "change_24h": -4.56,
+      "source": "cached",
+      "signal": "BEARISH"
     },
     "HIMS": {
-      "price": 35.15,
-      "change_24h": 2.24,
-      "source": "simulated",
-      "signal": "NEUTRAL"
+      "price": 27.775,
+      "change_24h": 2.72,
+      "source": "cached",
+      "signal": "BULLISH"
     }
   },
   "midday_analysis": {
