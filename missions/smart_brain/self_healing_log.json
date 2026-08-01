@@ -172,5 +172,32 @@
         }
       }
     }
+  },
+  {
+    "timestamp": "2026-08-01T08:56:07.338Z",
+    "action": "auto_heal",
+    "details": {
+      "actions": [
+        "ram_warning_88.37%"
+      ],
+      "health": {
+        "timestamp": "2026-08-01T08:56:05.774Z",
+        "ram": {
+          "status": "warning",
+          "value": 88.37,
+          "totalGB": 7.92,
+          "freeGB": 0.92
+        },
+        "disk": {
+          "status": "ok",
+          "value": 70.36
+        },
+        "gateway": {
+          "status": "ok",
+          "value": "processes_running",
+          "details": "[{\"ProcessName\":\"node\",\"Id\":724},{\"ProcessName\":\"node\",\"Id\":5696},{\"ProcessName\":\"node\",\"Id\":10076},{\"ProcessName\":\"node\",\"Id\":15124}]"
+        }
+      }
+    }
   }
 ]
