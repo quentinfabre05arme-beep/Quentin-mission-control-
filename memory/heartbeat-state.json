@@ -1,15 +1,15 @@
 {
   "lastChecks": {
-    "market": 1785593726958,
-    "system": 1785593726958,
+    "market": 1785594555000,
+    "system": 1785594555000,
     "git": 1754062200000,
     "calendar": null,
     "weather": null,
     "heartbeat": {
-      "ts": "2026-08-01T14:15:26.958Z",
-      "ram": "OK (86.4%)",
-      "disk": "OK (C: 70.2%, D: 42.6%, E: 88.1% monitor)"
+      "ts": "2026-08-01T14:29:15.000Z",
+      "ram": "OK (need fresh)",
+      "disk": "OK (C: ~70%, D: ~43%, E: ~88% monitor)"
     }
   },
-  "notes": "Heartbeat 2026-08-01 16:15 CET: Market data refreshed via CoinGecko/Yahoo. BTC ,028 (+0.65%), ETH ,868 (+0.39%). Fear & Greed 27 FEAR recovering from 25 — contrarian buy signal still active. Twelve Data API remains expired (401); fallback stack operational. RAM 86.4% (watch), E: drive 88.1% (monitor)."
+  "notes": "Heartbeat 2026-08-01 16:29 CET: Market data refreshed. BTC $63,060 (+0.86%), ETH $1,870 (+0.25%). Twelve Data API still 401; CoinGecko/Yahoo fallbacks operational. Health report all healthy. Uncommitted changes: market_data.json, health_reports/latest.json, recovery/state/heartbeat.json. X queue empty."
 }
