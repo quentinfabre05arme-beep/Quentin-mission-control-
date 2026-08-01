@@ -1,48 +1,72 @@
 {
-  "timestamp": "2026-08-01T02:11:02.587Z",
+  "timestamp": "2026-08-01T02:42:34.367Z",
   "assets": {
     "BTC": {
-      "price": 62987.36,
-      "change_24h": 0.15818628,
+      "price": 63080.01,
+      "change_24h": 0.30551197,
       "source": "twelvedata",
       "signal": "NEUTRAL"
     },
     "ETH": {
-      "price": 1867.01,
-      "change_24h": 0.23676581,
-      "source": "cached",
+      "price": 1867.85,
+      "change_24h": 0.28186406,
+      "source": "twelvedata",
+      "signal": "NEUTRAL"
+    },
+    "NVDA": {
+      "price": 200.75,
+      "change_24h": 2.92761,
+      "source": "twelvedata",
+      "signal": "BULLISH"
+    },
+    "TSLA": {
+      "price": 311.20999,
+      "change_24h": 0.76412022,
+      "source": "twelvedata",
       "signal": "NEUTRAL"
     },
     "MSTR": {
       "price": 93.28,
       "change_24h": -4.56313,
-      "source": "cached",
+      "source": "twelvedata",
+      "signal": "BEARISH"
+    },
+    "AAPL": {
+      "price": 308.91,
+      "change_24h": -7.35386,
+      "source": "twelvedata",
       "signal": "BEARISH"
     },
     "HIMS": {
       "price": 27.77,
       "change_24h": 2.6997,
-      "source": "cached",
+      "source": "twelvedata",
       "signal": "BULLISH"
+    },
+    "COIN": {
+      "price": 146.25999,
+      "change_24h": -10.5881,
+      "source": "twelvedata",
+      "signal": "BEARISH"
     }
   },
   "_meta": {
     "fromCache": false,
     "failures": [
-      "NVDA: All sources failed for NVDA: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 17 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
-      "TSLA: All sources failed for TSLA: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 18 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
-      "AAPL: All sources failed for AAPL: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 21 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
-      "COIN: All sources failed for COIN: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 29 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
-      "SPY: All sources failed for SPY: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 30 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
-      "QQQ: All sources failed for QQQ: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 31 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
-      "GLD: All sources failed for GLD: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 32 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
-      "TLT: All sources failed for TLT: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 33 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON"
+      "SPY: All sources failed for SPY: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 9 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+      "QQQ: All sources failed for QQQ: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 10 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+      "GLD: All sources failed for GLD: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 11 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+      "TLT: All sources failed for TLT: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 12 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON"
     ],
     "sources": [
       "twelvedata",
-      "cached",
-      "cached",
-      "cached"
+      "twelvedata",
+      "twelvedata",
+      "twelvedata",
+      "twelvedata",
+      "twelvedata",
+      "twelvedata",
+      "twelvedata"
     ]
   }
 }
