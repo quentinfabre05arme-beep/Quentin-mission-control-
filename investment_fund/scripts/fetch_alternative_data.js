@@ -363,48 +363,97 @@ function detectAnomalies(marketData, fearGreed, whaleSignals, fundingRates, soci
   return flags;
 }
 
-// Generate composite scores
+// Generate composite scores with asset-specific weighting
 function generateCompositeScores(marketData, fearGreed, whaleSignals, fundingRates) {
   const scores = {};
-  
+
   if (!marketData) return scores;
+
+  // Asset sensitivity to crypto sentiment / macro regime
+  const ASSET_PROFILES = {
+    BTC: { cryptoBeta: 1.0, macroBeta: 0.3, sector: 'Crypto' },
+    ETH: { cryptoBeta: 1.0, macroBeta: 0.3, sector: 'Crypto' },
+    COIN: { cryptoBeta: 0.85, macroBeta: 0.45, sector: 'Crypto Infrastructure' },
+    MSTR: { cryptoBeta: 0.85, macroBeta: 0.5, sector: 'Bitcoin Proxy' },
+    TSLA: { cryptoBeta: 0.25, macroBeta: 0.6, sector: 'EV/Autonomy' },
+    NVDA: { cryptoBeta: 0.15, macroBeta: 0.5, sector: 'AI/Tech' },
+    HIMS: { cryptoBeta: 0.0, macroBeta: 0.35, sector: 'Telehealth' },
+    AAPL: { cryptoBeta: 0.0, macroBeta: 0.45, sector: 'Consumer Tech' },
+    SPY: { cryptoBeta: 0.1, macroBeta: 0.9, sector: 'Index' },
+    QQQ: { cryptoBeta: 0.15, macroBeta: 0.85, sector: 'Tech Index' },
+    GLD: { cryptoBeta: -0.1, macroBeta: 0.4, sector: 'Gold' },
+    TLT: { cryptoBeta: 0.0, macroBeta: 0.6, sector: 'Bonds' }
+  };
 
   Object.keys(marketData.assets || {}).forEach(symbol => {
     let score = 0;
     const factors = [];
-
-    // Price momentum
+    const profile = ASSET_PROFILES[symbol] || { cryptoBeta: 0.3, macroBeta: 0.5 };
     const asset = marketData.assets[symbol];
-    if (asset.change_24h > 1) { score += 0.2; factors.push('Positive 24h momentum'); }
-    if (asset.change_24h < -1) { score -= 0.2; factors.push('Negative 24h momentum'); }
 
-    // Fear & Greed impact
+    // Price momentum — scaled by asset volatility expectations
+    const move = asset.change_24h || 0;
+    if (move > 2) { score += 0.15; factors.push('Strong 24h momentum'); }
+    else if (move > 0.5) { score += 0.05; factors.push('Positive 24h momentum'); }
+    else if (move < -2) { score -= 0.15; factors.push('Strong 24h decline'); }
+    else if (move < -0.5) { score -= 0.05; factors.push('Negative 24h momentum'); }
+
+    // Fear & Greed impact — weighted by crypto beta
     if (fearGreed) {
-      if (fearGreed.value < 20) {
-        score += 0.4;
-        factors.push('Extreme fear = strong contrarian buy');
-      } else if (fearGreed.value < 30) {
-        score += 0.3;
-        factors.push('Extreme fear = contrarian buy opportunity');
+      const fgValue = fearGreed.value || 50;
+      const fgTrend = fearGreed.trend;
+
+      if (fgValue < 20 && profile.cryptoBeta > 0) {
+        score += 0.4 * profile.cryptoBeta;
+        factors.push('Extreme fear contrarian setup');
+      } else if (fgValue < 30 && profile.cryptoBeta > 0) {
+        score += 0.3 * profile.cryptoBeta;
+        factors.push('Fear zone contrarian setup');
+      } else if (fgValue > 75 && profile.cryptoBeta > 0) {
+        score -= 0.2 * profile.cryptoBeta;
+        factors.push('Greed zone caution');
       }
-      
-      if (fearGreed.trend === 'IMPROVING') {
-        score += 0.1;
+
+      if (fgTrend === 'IMPROVING' && profile.cryptoBeta > 0) {
+        score += 0.1 * profile.cryptoBeta;
         factors.push('Sentiment improving');
+      } else if (fgTrend === 'DECLINING' && profile.cryptoBeta > 0) {
+        score -= 0.05 * profile.cryptoBeta;
+        factors.push('Sentiment declining');
       }
     }
 
-    // Whale signals (BTC only)
-    if (symbol === 'BTC' && whaleSignals.signal === 'ACCUMULATION') {
-      score += 0.4;
-      factors.push('Whale accumulation detected');
+    // Whale accumulation — BTC gets full effect; crypto proxies get partial
+    if (whaleSignals && whaleSignals.signal === 'ACCUMULATION') {
+      if (symbol === 'BTC') {
+        score += 0.4;
+        factors.push('Whale accumulation');
+      } else if (profile.cryptoBeta > 0.5) {
+        score += 0.2 * profile.cryptoBeta;
+        factors.push('Whale accumulation spillover');
+      }
     }
 
-    // Funding rates
-    if (fundingRates && fundingRates[symbol]) {
-      if (fundingRates[symbol].sentiment === 'POSITIVE_FUNDING') {
-        score += 0.15;
+    // Funding rates — relevant only for crypto assets
+    if (fundingRates && fundingRates[symbol] && profile.cryptoBeta > 0.3) {
+      const fr = fundingRates[symbol];
+      if (fr.sentiment === 'POSITIVE_FUNDING') {
+        score += 0.15 * profile.cryptoBeta;
         factors.push('Positive funding rates');
+      } else if (fr.sentiment === 'NEGATIVE_FUNDING') {
+        score -= 0.1 * profile.cryptoBeta;
+        factors.push('Negative funding rates');
+      }
+    }
+
+    // Macro / risk-off adjustments for non-crypto assets
+    if (profile.macroBeta > 0 && profile.cryptoBeta < 0.3) {
+      if (fearGreed && fearGreed.value < 25) {
+        // Flight-to-safety tends to help gold/bonds during panic
+        if (symbol === 'GLD' || symbol === 'TLT') {
+          score += 0.1 * profile.macroBeta;
+          factors.push('Risk-off flow tailwind');
+        }
       }
     }
 
