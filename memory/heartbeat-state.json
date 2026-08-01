@@ -1,15 +1,15 @@
 {
   "lastChecks": {
-    "market": 1754057796000,
-    "system": 1754057796000,
-    "git": 1754057796000,
+    "market": 1754057460000,
+    "system": 1754057460000,
+    "git": 1754057460000,
     "calendar": null,
     "weather": null,
     "heartbeat": {
-      "ts": "2026-08-01T14:36:58.000+02:00",
+      "ts": "2026-08-01T14:50:58.000+02:00",
       "ram": "WARNING",
       "disk": "OK"
     }
   },
-  "notes": "Heartbeat 2026-08-01 14:36 CET: Market data fresh. Fear & Greed 27 (improving from 25, contrarian buy signal). BTC $63,038 (-0.89%), ETH $1,865.90 (-0.41%). Mempool MEDIUM congestion (87,810 txs). Twelve Data still down; CoinGecko + Yahoo fallbacks active. RAM WARNING persists (81.6% used / 1.46GB free). Git backup committed and pushed (38a3336)."
+  "notes": "Heartbeat 2026-08-01 14:50 CET: Fear & Greed 27 (Fear, up from 25 Extreme Fear — contrarian buy signal). BTC $63,032 (-0.91%), ETH $1,865.77 (-0.44%). Twelve Data still down; CoinGecko + Yahoo fallbacks active. RAM WARNING persists (85.5%). Git has uncommitted changes in recovery/state/heartbeat.json. No urgent calendar check configured. Daytime active monitoring."
 }

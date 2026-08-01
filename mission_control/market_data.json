@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-08-01T12:40:40.778Z",
+  "timestamp": "2026-08-01T13:00:21.960Z",
   "assets": {
     "BTC": {
-      "price": 63032,
-      "change_24h": -0.9105214939669211,
+      "price": 63050,
+      "change_24h": -1.0061019610581095,
       "source": "coingecko",
       "signal": "NEUTRAL"
     },
     "ETH": {
-      "price": 1865.77,
-      "change_24h": -0.43558079822871143,
+      "price": 1868.01,
+      "change_24h": -0.678502119404457,
       "source": "coingecko",
       "signal": "NEUTRAL"
     },
