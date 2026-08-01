@@ -60,6 +60,8 @@ xactions-config/
 # Credentials - NEVER commit these
 config/google_credentials.json
 config/token.json
+google_credentials.json
+google_token.json
 daily_briefing_example.py
 .claw_secret.key
 .credentials.enc
