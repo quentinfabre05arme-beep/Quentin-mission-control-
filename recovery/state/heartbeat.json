@@ -1,11 +1,14 @@
 {
-    "last_heartbeat": "2026-08-01T08:56:07.339Z",
-    "ram_percent": 88.37,
-    "disk_percent": 70.36,
-    "openclaw_running": true,
-    "cron_healthy": true,
-    "issues_found": [],
-    "repairs_made": [
-        "ram_warning_88.37%"
-    ]
+    "issues_found":  [
+                         "RAM critical: 90.1%"
+                     ],
+    "disk_percent":  70.4,
+    "repairs_made":  [
+
+                     ],
+    "last_check":  "2026-08-01T11:04:06.2576499+02:00",
+    "ram_percent":  90.1,
+    "last_heartbeat":  "2026-08-01T11:04:06.2576499+02:00",
+    "openclaw_running":  true,
+    "cron_healthy":  true
 }
