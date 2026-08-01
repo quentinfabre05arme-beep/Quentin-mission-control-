@@ -1,15 +1,15 @@
 {
   "lastChecks": {
-    "market": 1785594555000,
-    "system": 1785594555000,
-    "git": 1754062200000,
+    "market": 1785601809659,
+    "system": 1785601809659,
+    "git": 1785601809659,
     "calendar": null,
     "weather": null,
     "heartbeat": {
-      "ts": "2026-08-01T14:29:15.000Z",
-      "ram": "OK (need fresh)",
-      "disk": "OK (C: ~70%, D: ~43%, E: ~88% monitor)"
+      "ts": "2026-08-01T15:30:27.659Z",
+      "ram": "LOW (11.3% free). Top: WindowsTerminal 940MB, node 800MB. Monitor.",
+      "disk": "C: 29.3% free, D: 57.4% free, E: 11.9% free (monitor E:)"
     }
   },
-  "notes": "Heartbeat 2026-08-01 16:48 CET: Market data refreshed. BTC $63,049 (+0.70%), ETH $1,870.83 (+0.67%), MSTR $93.28 (cached), HIMS $27.77 (cached). Twelve Data API still 401; CoinGecko/Yahoo fallbacks operational. RAM OK (818MB free), Disk OK (C: 70%, D: 43%, E: 88%). Git backup committed 58b97c6. X queue empty."
+  "notes": "Heartbeat 2026-08-01 17:30 CET: Market data refreshed. BTC $63,007 (+0.82%), ETH $1,870.35 (+0.84%). MSTR $93.28, HIMS $27.77. Twelve Data API failed; used CoinGecko/Yahoo fallbacks. RAM low (11% free) — WindowsTerminal and node top consumers. Git has 3 modified state files to auto-commit."
 }
