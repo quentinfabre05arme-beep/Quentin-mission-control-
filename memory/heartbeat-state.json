@@ -1,15 +1,15 @@
 {
   "lastChecks": {
-    "market": 1754061158000,
-    "system": 1754061158000,
-    "git": 1754061158000,
+    "market": 1754064391000,
+    "system": 1754064391000,
+    "git": 1754064391000,
     "calendar": null,
     "weather": null,
     "heartbeat": {
-      "ts": "2026-08-01T11:52:38.870Z",
-      "ram": "80.7%",
-      "disk": "C:70.4%,D:42.6%,E:88.1%"
+      "ts": "2026-08-01T14:06:41.000+02:00",
+      "ram": "checking",
+      "disk": "checking"
     }
   },
-  "notes": "Heartbeat 2026-08-01 13:52 CET: Market data fresh (BTC $63,013 -1.18%, ETH $1,864.8 -0.92%, MSTR $93.28 -4.56%, HIMS $27.77 +2.70%). F&G 27 FEAR (improving from 25). Mempool MEDIUM (86,585 txs). 2 anomalies: MARKET sentiment recovery (contrarian buy), MSTR -4.56% bearish momentum. Composite: BTC/ETH slightly bullish, MSTR neutral, HIMS bullish. Twelve Data still down; CoinGecko + Yahoo fallbacks active. Duplicate ram-cleanup cron jobs still present. OAuth credential files untracked — not committed."
+  "notes": "Heartbeat 2026-08-01 14:06 CET: Market data fresh via CoinGecko/Yahoo fallbacks (BTC $63,044 -1.05%, ETH $1,866.04 -0.75%, MSTR $93.28 0%, HIMS $27.77 0%). Fear & Greed at 27 FEAR (up from 25, sentiment recovery). One anomaly: contrarian buy signal. Twelve Data API still down."
 }
