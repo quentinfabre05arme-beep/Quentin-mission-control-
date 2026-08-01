@@ -1,8 +1,8 @@
 {
   "lastChecks": {
-    "market": 1785571057000,
-    "system": 1785571160000,
-    "git": 1785569320000
+    "market": 1785572580000,
+    "system": 1785572583000,
+    "git": 1785571057000
   },
-  "notes": "Heartbeat 2026-08-01 09:28 CET: RAM critical (91.9%-93.06%) detected. Fixed self_healing.js to parse RAM/disk and free memory (cleared temp, killed idle Chrome). RAM improved to 90.97% but still above 90% threshold. Market data cache-only due to Twelve Data quota exhausted and Yahoo rate limits. Alternative data: F&G 27 improving (contrarian buy), MSTR bearish momentum, HIMS bullish. Git committed and pushed (b18e981)."
+  "notes": "Heartbeat 2026-08-01 10:04 CET: Market data cache-only (Twelve Data quota exhausted, Yahoo rate limits). BTC $63,013 +0.20% | ETH $1,867 flat | MSTR $93.28 -4.56% (bearish) | HIMS $27.78 +2.72% (bullish). RAM 88.12% warning (improved from 91-93% critical). Disk 70.32% OK. Gateway processes running. Uncommitted files: market_data.json, health_reports/latest.json, smart_brain config/log, recovery heartbeat, plus 2 untracked test files."
 }

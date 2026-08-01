@@ -116,14 +116,14 @@
   },
   "routing_rules": {
     "trivial": {
-      "patterns": ["yes", "no", "true", "false", "ok", "thanks", "hello", "hi", "what time", "weather"],
+      "patterns": ["^yes$", "^no$", "^true$", "^false$", "^ok$", "^thanks$", "^hello$", "^hi$", "what time is it", "current weather"],
       "model": "fast",
       "confidence_threshold": 0.9,
       "max_tokens": 50,
       "fallback": "fast"
     },
     "quick_queries": {
-      "patterns": ["what is", "how to", "explain", "summarize", "quick", "brief", "short", "please", "tell me about"],
+      "patterns": ["what is the", "how to ", "explain the", "summarize the", "quick summary", "brief overview", "short explanation", "please tell me", "tell me about"],
       "model": "fast",
       "confidence_threshold": 0.4,
       "max_tokens": 800,
@@ -142,7 +142,7 @@
       "fallback": "grok_build"
     },
     "complex_analysis": {
-      "patterns": ["analyze", "research", "evaluate", "compare", "strategy", "deep dive", "comprehensive", "detailed", "should i", "recommend", "best approach", "optimal"],
+      "patterns": ["analyze the", "research the", "evaluate the", "compare the", "analyze market", "deep dive into", "comprehensive analysis", "detailed analysis", "should i buy", "should i sell", "recommendation for", "best approach to", "optimal strategy"],
       "model": "ollama_primary",
       "confidence_threshold": 0.4,
       "fallback": "analyst"
@@ -167,7 +167,7 @@
       "fallback": "grok_fast"
     },
     "high_stakes": {
-      "patterns": ["high-stakes", "critical decision", "major investment", "significant risk", "crucial", "pivotal", "life-changing", "irreversible"],
+      "patterns": ["high-stakes", "critical decision", "major investment", "significant risk", "crucial choice", "pivotal moment", "life-changing", "irreversible decision", "sell all", "all in"],
       "model": "primary",
       "confidence_threshold": 0.5,
       "fallback": "deep_reasoner"
@@ -179,7 +179,7 @@
       "fallback": "grok_build"
     },
     "general_intelligence": {
-      "patterns": ["think", "reason", "plan", "decide", "strategy", "approach", "solve", "figure out", "how would you"],
+      "patterns": ["think about the", "reason through", "plan the", "decide on the", "strategic approach", "solve the", "figure out the", "how would you approach"],
       "model": "ollama_primary",
       "confidence_threshold": 0.4,
       "fallback": "analyst"
