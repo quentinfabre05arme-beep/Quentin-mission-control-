@@ -4,6 +4,43 @@
 
 ---
 
+## 📅 Google API Access — August 1, 2026
+
+**Status:** ✅ FULLY OPERATIONAL
+**Account:** quentin.fabre05arme@gmail.com
+**OAuth:** Completed and token stored
+
+### Connected Services
+| Service | Status | Scope |
+|---------|--------|-------|
+| **Gmail** | ✅ Active | Read/Send emails |
+| **Google Calendar** | ✅ Active | Read/Create events |
+| **Google Drive** | ✅ Active | Read files/folders |
+
+### Discovered Data
+**Drive Files:**
+- Discounted Cash Flow Valuations (Spreadsheet)
+- Stock Recommendation List (Spreadsheet)
+- Youtube Portfolio Tracker (Spreadsheet)
+- Invité mariage (Spreadsheet)
+- Les "spots" de Toudulon (Map)
+
+**Gmail Stats:** 27,707 messages, 27,302 threads
+**Calendar:** No events in next 7 days (checked 2026-08-01)
+
+### Files Created for Management
+- `google_token.json` — OAuth tokens (encrypted)
+- `google_credentials.json` — Client credentials (encrypted)
+- `test_google_api.js` — API verification script
+- `scan_drive.js` — Drive scanner
+
+### Security Notes
+- Tokens auto-refresh via refresh_token
+- Client secret exposed in chat (must be revoked)
+- Full access granted for Gmail, Calendar, Drive
+
+---
+
 ## 📊 Market Data (August 1, 2026)
 
 **Current Prices:**
@@ -49,6 +86,33 @@ Files created for future use:
 - Telegram/OpenClaw session history may persist
 - Always use secure storage system for credentials
 - Even "private" chats can have logging/retention
+
+---
+
+## 🔐 Credential Storage System — August 1, 2026
+
+**Status:** ✅ OPERATIONAL
+**Encryption:** AES-256-GCM
+**Location:** `.credentials.enc` + `.claw_secret.key`
+
+### Stored Credentials
+| Service | Username | Status |
+|---------|----------|--------|
+| **Gmail** | quentin.fabre05arme@gmail.com | ✅ Stored |
+| **X/Twitter** | Quentin.fabre@live.fr | ✅ Stored |
+| **Google OAuth** | quentin.fabre05arme | ✅ Token active |
+
+### Files
+- `credential_manager.js` — Core encryption/storage engine
+- `Store-Credentials.bat` — Quick launcher
+- `.credentials.enc` — Encrypted vault (owner-only permissions)
+- `.claw_secret.key` — Master encryption key
+
+### Security Incident Log
+- **2026-08-01 10:57** — Credentials exposed in Telegram chat
+- **2026-08-01 11:00** — User requested secure storage
+- **2026-08-01 11:08** — Credentials encrypted and stored
+- **Action required:** User must change passwords on real accounts
 
 ---
 
