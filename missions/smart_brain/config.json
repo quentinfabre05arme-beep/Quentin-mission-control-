@@ -124,10 +124,10 @@
     },
     "quick_queries": {
       "patterns": ["what is", "how to", "explain", "summarize", "quick", "brief", "short", "please", "tell me about"],
-      "model": "grok_fast",
+      "model": "fast",
       "confidence_threshold": 0.4,
       "max_tokens": 800,
-      "fallback": "fast"
+      "fallback": "ollama_primary"
     },
     "code_tasks": {
       "patterns": ["script", "code", "program", "function", "bug", "debug", "implement", "python", "javascript", "java", "error", "write a", "build", "develop", "fix", "api", "rest", "backend", "frontend", "function to"],
@@ -143,9 +143,9 @@
     },
     "complex_analysis": {
       "patterns": ["analyze", "research", "evaluate", "compare", "strategy", "deep dive", "comprehensive", "detailed", "should i", "recommend", "best approach", "optimal"],
-      "model": "primary",
+      "model": "ollama_primary",
       "confidence_threshold": 0.4,
-      "fallback": "deep_reasoner"
+      "fallback": "analyst"
     },
     "strategic": {
       "patterns": ["business strategy", "revenue model", "market entry", "competitive advantage", "long term", "vision", "roadmap", "pivot", "scale"],
