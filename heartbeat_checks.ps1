@@ -1,0 +1,2 @@
+Get-CimInstance Win32_LogicalDisk | Where-Object { $_.DriveType -eq 3 } | ForEach-Object { $pct=[math]::Round(($_.FreeSpace/$_.Size)*100,1); Write-Output ('{0} {1}% free' -f $_.DeviceID,$pct) }
+Get-Process | Where-Object { $_.ProcessName -match 'openclaw|node|python|x_poster' } | Select-Object ProcessName, Id, @{N='RAM_MB';E={[math]::Round($_.WorkingSet64/1MB)}}, CPU -First 20 | Format-Table -AutoSize
