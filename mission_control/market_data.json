@@ -1,51 +1,48 @@
 {
-  "timestamp": "2026-08-01T04:30:48.123Z",
+  "timestamp": "2026-08-01T04:46:47.466Z",
   "assets": {
     "BTC": {
       "price": 63012.78,
       "change_24h": 0.19860743,
       "source": "cached",
-      "signal": "NEUTRAL",
-      "fetch_time_ms": 3270,
-      "stale": true
+      "signal": "NEUTRAL"
     },
     "ETH": {
       "price": 1869.97,
       "change_24h": 0.39568345,
       "source": "cached",
-      "signal": "NEUTRAL",
-      "fetch_time_ms": 3248,
-      "stale": true
+      "signal": "NEUTRAL"
     },
     "MSTR": {
       "price": 93.28,
       "change_24h": -4.56313,
       "source": "cached",
-      "signal": "MODERATE_BEARISH",
-      "fetch_time_ms": 3248,
-      "stale": true
+      "signal": "BEARISH"
     },
     "HIMS": {
       "price": 27.775,
       "change_24h": 2.71819,
       "source": "cached",
-      "signal": "MODERATE_BULLISH",
-      "fetch_time_ms": 3172,
-      "stale": true
+      "signal": "BULLISH"
     }
   },
   "_meta": {
     "fromCache": false,
-    "fetch_time_ms": 3273,
+    "failures": [
+      "NVDA: All sources failed for NVDA: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1144 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+      "TSLA: All sources failed for TSLA: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1145 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+      "AAPL: All sources failed for AAPL: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1147 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+      "COIN: All sources failed for COIN: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1149 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+      "SPY: All sources failed for SPY: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1150 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+      "QQQ: All sources failed for QQQ: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1151 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+      "GLD: All sources failed for GLD: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1152 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+      "TLT: All sources failed for TLT: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1153 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON"
+    ],
     "sources": [
       "cached",
       "cached",
       "cached",
       "cached"
-    ],
-    "assets_count": 4,
-    "stale_count": 4,
-    "saved_at": "2026-08-01T04:30:48.123Z",
-    "version": "2.0"
+    ]
   }
 }
