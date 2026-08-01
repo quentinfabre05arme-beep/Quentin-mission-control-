@@ -1,15 +1,15 @@
 {
   "lastChecks": {
-    "market": 1754046635184,
-    "system": 1754046635184,
-    "git": 1754046635184,
+    "market": 1754046799000,
+    "system": 1754046799000,
+    "git": 1754046825000,
     "calendar": null,
     "weather": null,
     "heartbeat": {
-      "ts": "2026-08-01T12:30:00.000+02:00",
-      "ram": "87.7%",
+      "ts": "2026-08-01T12:33:00.000+02:00",
+      "ram": "87.0%",
       "disk": "C:70.4%,D:42.6%,E:88.1%"
     }
   },
-  "notes": "Heartbeat 2026-08-01 12:30 CET: Market data refreshed. BTC $62,988 -1.20%, ETH $1,863.70 -1.14%, MSTR $93.28 flat, HIMS $27.77 flat. RAM 87.7% (1.0GB free of 7.9GB). E: drive at 88.1% used (1.8GB free) — monitor. Git has uncommitted modified files (heartbeat-state, market_data.json, health report, recovery state). Need git backup. No calendar or weather check performed yet."
+  "notes": "Heartbeat 2026-08-01 12:33 CET: Market data refreshed. BTC $62,993 -1.25%, ETH $1,863.74 -1.16%, MSTR $93.28 flat, HIMS $27.77 flat. Fear & Greed 27 (FEAR, improving from 25). RAM ~87% (1.0GB free of 7.9GB). E: drive at 88.1% used (1.8GB free) — monitor. Git backup completed (commit 306dc88). No calendar or weather check performed."
 }
