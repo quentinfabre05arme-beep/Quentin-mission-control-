@@ -1,15 +1,14 @@
 {
-    "last_heartbeat": "2026-08-01T07:30:05.882Z",
-    "ram_percent": 90.97,
-    "disk_percent": 70.31,
-    "openclaw_running": true,
-    "cron_healthy": true,
-    "issues_found": [
-        "RAM critical: 90.97%"
-    ],
-    "repairs_made": [
-        "cleared_temp_files",
-        "killed_idle_chrome_processes",
-        "ram_critical_90.97%"
-    ]
+    "issues_found":  [
+
+                     ],
+    "disk_percent":  70.3,
+    "repairs_made":  [
+
+                     ],
+    "last_check":  "2026-08-01T09:34:05.5972153+02:00",
+    "ram_percent":  88.2,
+    "last_heartbeat":  "2026-08-01T09:34:05.5972153+02:00",
+    "openclaw_running":  true,
+    "cron_healthy":  true
 }
