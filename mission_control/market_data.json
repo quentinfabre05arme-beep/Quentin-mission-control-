@@ -1,54 +1,61 @@
 {
-  "timestamp": "2026-08-01T09:56:30.960Z",
+  "timestamp": "2026-08-01T10:01:35.786Z",
   "assets": {
     "BTC": {
-      "price": 63012.78,
-      "change_24h": 0.19860743,
-      "source": "cached",
-      "signal": "NEUTRAL"
+      "price": 63001,
+      "change_24h": -1.2,
+      "market_cap": 1264070547704,
+      "source": "coingecko (coingecko)",
+      "signal": "NEUTRAL",
+      "fetch_time_ms": 1937,
+      "stale": false
     },
     "ETH": {
-      "price": 1867.28,
-      "change_24h": 0,
-      "source": "cached",
-      "signal": "NEUTRAL"
+      "price": 1866.71,
+      "change_24h": -1.2,
+      "market_cap": 225279467502,
+      "source": "coingecko (coingecko)",
+      "signal": "NEUTRAL",
+      "fetch_time_ms": 1920,
+      "stale": false
     },
     "MSTR": {
       "price": 93.28,
-      "change_24h": -4.56313,
-      "source": "cached",
-      "signal": "BEARISH"
+      "change_24h": -4.563124576681387,
+      "open": 97.73999786376953,
+      "high": 95.2,
+      "low": 89.21,
+      "volume": 20486826,
+      "source": "yahoo (yahoo)",
+      "signal": "MODERATE_BEARISH",
+      "fetch_time_ms": 2615,
+      "stale": false
     },
     "HIMS": {
-      "price": 27.775,
-      "change_24h": 2.71819,
-      "source": "cached",
-      "signal": "BULLISH"
-    },
-    "TLT": {
-      "price": 82.25,
-      "change_24h": 0,
-      "source": "cached",
-      "signal": "NEUTRAL"
+      "price": 27.77,
+      "change_24h": 2.699700664778691,
+      "open": 27.040000915527344,
+      "high": 28.94,
+      "low": 26.86,
+      "volume": 12550120,
+      "source": "yahoo (yahoo)",
+      "signal": "MODERATE_BULLISH",
+      "fetch_time_ms": 2615,
+      "stale": false
     }
   },
   "_meta": {
     "fromCache": false,
-    "failures": [
-      "NVDA: All sources failed for NVDA: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1843 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
-      "TSLA: All sources failed for TSLA: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1844 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
-      "AAPL: All sources failed for AAPL: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1846 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
-      "COIN: All sources failed for COIN: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1848 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
-      "SPY: All sources failed for SPY: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1849 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
-      "QQQ: All sources failed for QQQ: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1850 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
-      "GLD: All sources failed for GLD: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1851 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON"
-    ],
+    "fetch_time_ms": 2641,
     "sources": [
-      "cached",
-      "cached",
-      "cached",
-      "cached",
-      "cached"
-    ]
+      "coingecko (coingecko)",
+      "coingecko (coingecko)",
+      "yahoo (yahoo)",
+      "yahoo (yahoo)"
+    ],
+    "assets_count": 4,
+    "stale_count": 0,
+    "saved_at": "2026-08-01T10:01:35.786Z",
+    "version": "2.0"
   }
 }

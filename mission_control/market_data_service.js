@@ -122,14 +122,18 @@ const ASSETS = {
 // HTTP request helper
 function fetchJSON(url, options = {}) {
   return new Promise((resolve, reject) => {
-    const req = https.get(url, { ...options, timeout: CONFIG.TIMEOUT_MS }, (res) => {
+    const headers = {
+      'User-Agent': 'OpenClawMarketData/1.0 (research; contact: openclaw-local)',
+      ...(options.headers || {})
+    };
+    const req = https.get(url, { ...options, headers, timeout: CONFIG.TIMEOUT_MS }, (res) => {
       let data = '';
       res.on('data', chunk => data += chunk);
       res.on('end', () => {
         try {
           resolve(JSON.parse(data));
         } catch (e) {
-          reject(new Error(`Parse error: ${e.message}`));
+          reject(new Error(`Parse error: ${e.message} | body: ${data.slice(0, 200)}`));
         }
       });
     });
@@ -171,11 +175,9 @@ async function fetchTwelveDataQuote(symbol) {
 }
 
 // Source 2: CoinGecko (free, no key needed for basic calls)
-// Add delay to avoid rate limits
 async function fetchCoinGecko(coinId) {
   if (!coinId) throw new Error('No CoinGecko ID for this asset');
-  // Add 1 second delay before CoinGecko call to avoid rate limits
-  await new Promise(r => setTimeout(r, 1000));
+  await new Promise(r => setTimeout(r, 2000));
   const url = `https://api.coingecko.com/api/v3/simple/price?ids=${coinId}&vs_currencies=usd&include_24hr_change=true`;
   const data = await fetchJSON(url);
   if (data[coinId]) {
@@ -187,6 +189,23 @@ async function fetchCoinGecko(coinId) {
     };
   }
   throw new Error('CoinGecko: No data');
+}
+
+// Source 2b: CoinGecko markets (crypto only, richer data)
+async function fetchCoinGeckoMarkets(coinId) {
+  if (!coinId) throw new Error('No CoinGecko ID for this asset');
+  await new Promise(r => setTimeout(r, 2000));
+  const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${coinId}`;
+  const data = await fetchJSON(url);
+  if (data && data[0]) {
+    return {
+      price: data[0].current_price,
+      change_24h: data[0].price_change_percentage_24h || 0,
+      source: 'coingecko',
+      timestamp: new Date().toISOString()
+    };
+  }
+  throw new Error('CoinGecko markets: No data');
 }
 
 // Source 3: Yahoo Finance (unofficial endpoint)
@@ -252,14 +271,21 @@ async function fetchAssetWithFallback(assetKey) {
   // Try CoinGecko for crypto (free tier, no key needed)
   if (asset.coingecko) {
     try {
-      console.log(`[${assetKey}] Trying CoinGecko...`);
+      console.log(`[${assetKey}] Trying CoinGecko simple...`);
       const data = await fetchCoinGecko(asset.coingecko);
       return { ...data, symbol: assetKey };
     } catch (e) {
-      errors.push(`CoinGecko: ${e.message}`);
+      errors.push(`CoinGecko simple: ${e.message}`);
+    }
+    try {
+      console.log(`[${assetKey}] Trying CoinGecko markets...`);
+      const data = await fetchCoinGeckoMarkets(asset.coingecko);
+      return { ...data, symbol: assetKey };
+    } catch (e) {
+      errors.push(`CoinGecko markets: ${e.message}`);
     }
   }
-  
+
   // Try Yahoo Finance as last resort
   try {
     console.log(`[${assetKey}] Trying Yahoo Finance...`);

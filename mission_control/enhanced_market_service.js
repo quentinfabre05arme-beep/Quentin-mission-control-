@@ -69,7 +69,11 @@ async function fetchWithRetry(url, options = {}, retries = CONFIG.RETRY_ATTEMPTS
 
 function fetchJSON(url, options = {}) {
   return new Promise((resolve, reject) => {
-    const req = https.get(url, { ...options, timeout: CONFIG.TIMEOUT_MS }, (res) => {
+    const headers = {
+      'User-Agent': 'OpenClawMarketData/1.0 (research; contact: openclaw-local)',
+      ...(options.headers || {})
+    };
+    const req = https.get(url, { ...options, headers, timeout: CONFIG.TIMEOUT_MS }, (res) => {
       if (res.statusCode === 429) {
         reject(new Error('Rate limited'));
         return;
@@ -85,7 +89,7 @@ function fetchJSON(url, options = {}) {
             resolve(parsed);
           }
         } catch (e) {
-          reject(new Error(`Parse error: ${e.message}`));
+          reject(new Error(`Parse error: ${e.message} | body: ${data.slice(0, 200)}`));
         }
       });
     });

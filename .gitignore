@@ -33,6 +33,7 @@ Thumbs.db
 *.cache
 response_cache.json
 cached_templates.json
+nul.json
 
 # Build artifacts
 dist/
@@ -60,3 +61,6 @@ xactions-config/
 config/google_credentials.json
 config/token.json
 daily_briefing_example.py
+.claw_secret.key
+.credentials.enc
+.market_cache.json
