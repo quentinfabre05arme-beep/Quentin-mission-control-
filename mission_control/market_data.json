@@ -1,71 +1,51 @@
 {
-  "timestamp": "2026-08-01T04:14:36.207Z",
+  "timestamp": "2026-08-01T04:30:48.123Z",
   "assets": {
     "BTC": {
       "price": 63012.78,
       "change_24h": 0.19860743,
-      "change_amount": 124.9,
-      "open": 62887.88,
-      "high": 63106.55,
-      "low": 62887.87,
-      "volume": null,
-      "source": "twelvedata",
+      "source": "cached",
       "signal": "NEUTRAL",
-      "fetch_time_ms": 336,
-      "stale": false
+      "fetch_time_ms": 3270,
+      "stale": true
     },
     "ETH": {
       "price": 1869.97,
       "change_24h": 0.39568345,
-      "change_amount": 7.37,
-      "open": 1862.6,
-      "high": 1870.2,
-      "low": 1862.38,
-      "volume": null,
-      "source": "twelvedata",
+      "source": "cached",
       "signal": "NEUTRAL",
-      "fetch_time_ms": 335,
-      "stale": false
+      "fetch_time_ms": 3248,
+      "stale": true
     },
     "MSTR": {
       "price": 93.28,
       "change_24h": -4.56313,
-      "change_amount": -4.46,
-      "open": 94.896,
-      "high": 95.2,
-      "low": 89.21,
-      "volume": 20486826,
       "source": "cached",
       "signal": "MODERATE_BEARISH",
-      "fetch_time_ms": 3257,
+      "fetch_time_ms": 3248,
       "stale": true
     },
     "HIMS": {
       "price": 27.775,
       "change_24h": 2.71819,
-      "change_amount": 0.7349987,
-      "open": 27.48,
-      "high": 28.94,
-      "low": 26.86,
-      "volume": 12550120,
-      "source": "twelvedata",
+      "source": "cached",
       "signal": "MODERATE_BULLISH",
-      "fetch_time_ms": 302,
-      "stale": false
+      "fetch_time_ms": 3172,
+      "stale": true
     }
   },
   "_meta": {
     "fromCache": false,
-    "fetch_time_ms": 3283,
+    "fetch_time_ms": 3273,
     "sources": [
-      "twelvedata",
-      "twelvedata",
       "cached",
-      "twelvedata"
+      "cached",
+      "cached",
+      "cached"
     ],
     "assets_count": 4,
-    "stale_count": 1,
-    "saved_at": "2026-08-01T04:14:36.207Z",
+    "stale_count": 4,
+    "saved_at": "2026-08-01T04:30:48.123Z",
     "version": "2.0"
   }
 }
