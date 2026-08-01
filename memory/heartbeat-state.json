@@ -1,15 +1,15 @@
 {
   "lastChecks": {
-    "market": 1754056574000,
-    "system": 1754056574000,
-    "git": 1754064391000,
+    "market": 1754057218000,
+    "system": 1754057218000,
+    "git": 1754057218000,
     "calendar": null,
     "weather": null,
     "heartbeat": {
-      "ts": "2026-08-01T14:20:29.000+02:00",
+      "ts": "2026-08-01T14:26:58.000+02:00",
       "ram": "WARNING",
       "disk": "OK"
     }
   },
-  "notes": "Heartbeat 2026-08-01 14:20 CET: Market data refreshed. BTC $63,047 (-0.98%), ETH $1,866 (-0.53%). Fixed composite scoring bug in fetch_alternative_data.js — assets now get differentiated scores based on crypto/macro beta profiles instead of identical ratings. RAM WARNING: ~1.4GB free of 8GB (~83% used). Git has 3 modified files ready to commit."
+  "notes": "Heartbeat 2026-08-01 14:26 CET: Market data fresh. Alternative data report regenerated. Fear & Greed 27 (recovering from extreme fear, contrarian buy signal). BTC/ETH/MSTR/COIN slightly bullish. RAM WARNING persists (~83% used). Git backup committed and pushed to master."
 }
