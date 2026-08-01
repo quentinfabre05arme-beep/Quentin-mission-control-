@@ -1,7 +1,7 @@
 {
-  "valuation_gap": 0.25,
-  "asymmetry": 0.25,
-  "catalyst_certainty": 0.15,
-  "information_edge": 0.2,
-  "technical_setup": 0.15
+  "valuation_gap": 0.25000000000000006,
+  "asymmetry": 0.25000000000000006,
+  "catalyst_certainty": 0.20000000000000004,
+  "information_edge": 0.20000000000000004,
+  "technical_setup": 0.10000000000000002
 }

@@ -564,3 +564,30 @@ Scanner is functioning but dataset is contaminated with pre-fix artifacts. Need 
 - Low coverage: Only 6 tickers vs 25 target
 
 ---
+
+## Improvement Cycle — 2026-08-01T04:09:08.879Z
+
+### Performance Analysis
+- Total opportunities: 162
+- Hit rate: 0.0% (target: 60%)
+- Status: IMPROVEMENT NEEDED
+
+### Weight Adjustments
+
+
+### Current Weights
+- valuation_gap: 25.0%
+- asymmetry: 25.0%
+- catalyst_certainty: 20.0%
+- information_edge: 20.0%
+- technical_setup: 10.0%
+
+### Data Gaps Identified
+- Low coverage: Only 6 tickers vs 25 target
+- Missing: Options flow data (Cheddar Flow integration needed)
+- Missing: On-chain crypto data (Glassnode integration needed)
+
+### Next Actions
+- Low coverage: Only 6 tickers vs 25 target
+
+---

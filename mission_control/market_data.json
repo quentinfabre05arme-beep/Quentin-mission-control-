@@ -1,30 +1,30 @@
 {
-  "timestamp": "2026-08-01T04:09:14.443Z",
+  "timestamp": "2026-08-01T04:14:36.207Z",
   "assets": {
     "BTC": {
-      "price": 62998.01,
-      "change_24h": 0.17512118,
-      "change_amount": 110.13,
+      "price": 63012.78,
+      "change_24h": 0.19860743,
+      "change_amount": 124.9,
       "open": 62887.88,
       "high": 63106.55,
       "low": 62887.87,
       "volume": null,
       "source": "twelvedata",
       "signal": "NEUTRAL",
-      "fetch_time_ms": 360,
+      "fetch_time_ms": 336,
       "stale": false
     },
     "ETH": {
-      "price": 1869.37,
-      "change_24h": 0.36347042,
-      "change_amount": 6.77,
+      "price": 1869.97,
+      "change_24h": 0.39568345,
+      "change_amount": 7.37,
       "open": 1862.6,
       "high": 1870.2,
       "low": 1862.38,
       "volume": null,
       "source": "twelvedata",
       "signal": "NEUTRAL",
-      "fetch_time_ms": 344,
+      "fetch_time_ms": 335,
       "stale": false
     },
     "MSTR": {
@@ -35,37 +35,37 @@
       "high": 95.2,
       "low": 89.21,
       "volume": 20486826,
-      "source": "twelvedata",
+      "source": "cached",
       "signal": "MODERATE_BEARISH",
-      "fetch_time_ms": 327,
-      "stale": false
+      "fetch_time_ms": 3257,
+      "stale": true
     },
     "HIMS": {
-      "price": 27.77,
-      "change_24h": 2.6997,
-      "change_amount": 0.72999954,
+      "price": 27.775,
+      "change_24h": 2.71819,
+      "change_amount": 0.7349987,
       "open": 27.48,
       "high": 28.94,
       "low": 26.86,
       "volume": 12550120,
-      "source": "cached",
+      "source": "twelvedata",
       "signal": "MODERATE_BULLISH",
-      "fetch_time_ms": 3201,
-      "stale": true
+      "fetch_time_ms": 302,
+      "stale": false
     }
   },
   "_meta": {
     "fromCache": false,
-    "fetch_time_ms": 3226,
+    "fetch_time_ms": 3283,
     "sources": [
       "twelvedata",
       "twelvedata",
-      "twelvedata",
-      "cached"
+      "cached",
+      "twelvedata"
     ],
     "assets_count": 4,
     "stale_count": 1,
-    "saved_at": "2026-08-01T04:09:14.443Z",
+    "saved_at": "2026-08-01T04:14:36.207Z",
     "version": "2.0"
   }
 }
