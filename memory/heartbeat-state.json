@@ -1,15 +1,15 @@
 {
   "lastChecks": {
-    "market": 1785584444345,
-    "system": 1785584444345,
-    "git": 1754052330000,
+    "market": 1754061158000,
+    "system": 1754061158000,
+    "git": 1754061158000,
     "calendar": null,
     "weather": null,
     "heartbeat": {
-      "ts": "2026-08-01T11:40:44.345Z",
+      "ts": "2026-08-01T11:52:38.870Z",
       "ram": "80.7%",
       "disk": "C:70.4%,D:42.6%,E:88.1%"
     }
   },
-  "notes": "Heartbeat 2026-08-01 13:40 CET: Market data refreshed live (BTC ,020 -1.22%, ETH ,864.88 -0.90%, MSTR .28 flat, HIMS .77 flat). Twelve Data API still down; CoinGecko + Yahoo fallbacks active. RAM 80.7%. Duplicate ram-cleanup-every-2h jobs detected (IDs 33524d74 + 88be2053). Git has OAuth credential files untracked — do not commit."
+  "notes": "Heartbeat 2026-08-01 13:52 CET: Market data fresh (BTC $63,013 -1.18%, ETH $1,864.8 -0.92%, MSTR $93.28 -4.56%, HIMS $27.77 +2.70%). F&G 27 FEAR (improving from 25). Mempool MEDIUM (86,585 txs). 2 anomalies: MARKET sentiment recovery (contrarian buy), MSTR -4.56% bearish momentum. Composite: BTC/ETH slightly bullish, MSTR neutral, HIMS bullish. Twelve Data still down; CoinGecko + Yahoo fallbacks active. Duplicate ram-cleanup cron jobs still present. OAuth credential files untracked — not committed."
 }
