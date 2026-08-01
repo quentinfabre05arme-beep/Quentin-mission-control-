@@ -1,15 +1,15 @@
 {
   "lastChecks": {
-    "market": 1754061600000,
-    "system": 1754061600000,
-    "git": 1754061600000,
+    "market": 1754062200000,
+    "system": 1754062200000,
+    "git": 1754062200000,
     "calendar": null,
     "weather": null,
     "heartbeat": {
-      "ts": "2026-08-01T16:00:00.000+02:00",
+      "ts": "2026-08-01T16:10:00.000+02:00",
       "ram": "OK (84.6%)",
       "disk": "OK (C: 70.2%, D: 42.6%, E: 88.1% monitor)"
     }
   },
-  "notes": "Heartbeat 2026-08-01 16:00 CET: Market data refreshed. BTC $63,013 (-0.31%), ETH $1,867.62 (+0.16%). Fear & Greed 27 FEAR improving from 25 — sentiment recovery contrarian buy signal active. Mempool 94,272 txs (medium congestion). Alternative data: 1 anomaly (SENTIMENT_RECOVERY). Git committed/pushed 3 files. RAM 84.6% (watch), E: drive 88.1% (monitor)."
+  "notes": "Heartbeat 2026-08-01 16:10 CET: Market data OK via CoinGecko/Yahoo. BTC $63,054 (+0.76%), ETH $1,870.20 (+0.99%). Previous Fear & Greed 27 FEAR improving from 25 — contrarian buy signal still relevant. Twelve Data API remains expired (401); fallback stack operational. Committed/pushed 2 files (health + recovery state). RAM 84.6% (watch), E: drive 88.1% (monitor)."
 }
