@@ -3,13 +3,13 @@
     "email": null,
     "calendar": null,
     "weather": null,
-    "market": "2026-08-01T01:46:00.000Z",
+    "market": "2026-08-01T00:28:00.591Z",
     "memory": "2026-08-01T00:03:00.000Z",
-    "systemHealth": "2026-08-01T02:07:00.000Z",
-    "gitBackup": "2026-08-01T02:07:00.000Z",
+    "systemHealth": "2026-08-01T00:28:00.592Z",
+    "gitBackup": "2026-08-01T00:28:00.592Z",
     "system": 1785544020,
     "git": 1785544020,
-    "heartbeat": "2026-08-01T02:07:00.000Z"
+    "heartbeat": "2026-08-01T00:28:00.592Z"
   },
-  "notes": "Heartbeat 2026-08-01 02:07 CET: system health OK. RAM free 17.0%. Disk C: 29.6%, D: 57.4%, E: 11.9%. Gateway node running. Market data still using cached values (Twelve Data quota exhausted 1433+ credits, Yahoo rate-limited). Git backup pushed (commit 1d722c4). No urgent issues."
+  "notes": "Heartbeat 2026-08-01 02:27 CET: market data refreshed via Twelve Data (some ETF indices rate-limited). Health monitor OK. Git backup pushed commit c4e452e."
 }
