@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "cash": 100000,
+  "baseCurrency": "USD",
+  "positions": [],
+  "options": [],
+  "pendingOrders": [],
+  "lastRebalanced": null,
+  "marketValue": 100000,
+  "unrealizedPnl": 0
+}

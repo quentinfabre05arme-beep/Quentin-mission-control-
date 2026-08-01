@@ -1,0 +1,166 @@
+{
+  "date": "2026-08-01T17:52:34.216Z",
+  "results": {
+    "mean_reversion": [
+      {
+        "symbol": "SPY",
+        "trades": 22,
+        "wins": 10,
+        "losses": 1,
+        "totalPnl": 7.397245717215611,
+        "avgReturn": 0.005104821458706441,
+        "winRate": 90.9090909090909
+      },
+      {
+        "symbol": "QQQ",
+        "trades": 36,
+        "wins": 14,
+        "losses": 4,
+        "totalPnl": 12.387712030518685,
+        "avgReturn": 0.005114530908630493,
+        "winRate": 77.77777777777779
+      },
+      {
+        "symbol": "AAPL",
+        "trades": 30,
+        "wins": 11,
+        "losses": 4,
+        "totalPnl": 14.619552926882974,
+        "avgReturn": 0.0075866063383188236,
+        "winRate": 73.33333333333333
+      },
+      {
+        "symbol": "MSFT",
+        "trades": 22,
+        "wins": 7,
+        "losses": 4,
+        "totalPnl": -1.9669749476952632,
+        "avgReturn": -0.000925445773683346,
+        "winRate": 63.63636363636363
+      },
+      {
+        "symbol": "GLD",
+        "trades": 28,
+        "wins": 10,
+        "losses": 4,
+        "totalPnl": 12.928308119996302,
+        "avgReturn": 0.006208125731894448,
+        "winRate": 71.42857142857143
+      }
+    ],
+    "momentum": [
+      {
+        "symbol": "SPY",
+        "trades": 52,
+        "wins": 10,
+        "losses": 16,
+        "totalPnl": 31.904538658593054,
+        "avgReturn": 0.007544266572518472,
+        "winRate": 38.46153846153847
+      },
+      {
+        "symbol": "QQQ",
+        "trades": 52,
+        "wins": 4,
+        "losses": 22,
+        "totalPnl": -15.083182556215235,
+        "avgReturn": -0.004001060613170186,
+        "winRate": 15.384615384615385
+      },
+      {
+        "symbol": "AAPL",
+        "trades": 54,
+        "wins": 4,
+        "losses": 23,
+        "totalPnl": 0.15899682610344712,
+        "avgReturn": 0.0002856911407843359,
+        "winRate": 14.814814814814813
+      },
+      {
+        "symbol": "MSFT",
+        "trades": 54,
+        "wins": 7,
+        "losses": 20,
+        "totalPnl": 4.1224229600314,
+        "avgReturn": 0.001222333205960439,
+        "winRate": 25.925925925925924
+      },
+      {
+        "symbol": "GLD",
+        "trades": 64,
+        "wins": 6,
+        "losses": 26,
+        "totalPnl": -3.819845462622709,
+        "avgReturn": -0.0006934489282473662,
+        "winRate": 18.75
+      }
+    ],
+    "value": [
+      {
+        "symbol": "SPY",
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "totalPnl": 0,
+        "avgReturn": 0,
+        "winRate": 0
+      },
+      {
+        "symbol": "QQQ",
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "totalPnl": 0,
+        "avgReturn": 0,
+        "winRate": 0
+      },
+      {
+        "symbol": "AAPL",
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "totalPnl": 0,
+        "avgReturn": 0,
+        "winRate": 0
+      },
+      {
+        "symbol": "MSFT",
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "totalPnl": 0,
+        "avgReturn": 0,
+        "winRate": 0
+      },
+      {
+        "symbol": "GLD",
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "totalPnl": 0,
+        "avgReturn": 0,
+        "winRate": 0
+      }
+    ]
+  },
+  "summary": [
+    {
+      "strategy": "mean_reversion",
+      "symbolsTested": 5,
+      "avgWinRate": 75.41702741702741,
+      "totalPnl": 45.36584384691831
+    },
+    {
+      "strategy": "momentum",
+      "symbolsTested": 5,
+      "avgWinRate": 22.66737891737892,
+      "totalPnl": 17.28293042588996
+    },
+    {
+      "strategy": "value",
+      "symbolsTested": 5,
+      "avgWinRate": 0,
+      "totalPnl": 0
+    }
+  ]
+}

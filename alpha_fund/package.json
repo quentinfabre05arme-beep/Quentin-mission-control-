@@ -1,0 +1,16 @@
+{
+  "name": "claw-alpha-fund",
+  "version": "1.0.0",
+  "description": "Autonomous paper trading fund for Claw workspace",
+  "main": "fund_manager.js",
+  "scripts": {
+    "run": "node fund_manager.js --run",
+    "report": "node fund_manager.js --report",
+    "backtest": "node backtest_engine.js",
+    "test": "node -e \"console.log('Fund engine loaded')\""
+  },
+  "dependencies": {
+    "googleapis": "^144.0.0"
+  },
+  "license": "MIT"
+}

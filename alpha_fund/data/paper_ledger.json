@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "currency": "USD",
+  "trades": [],
+  "stats": {
+    "totalTrades": 0,
+    "winningTrades": 0,
+    "losingTrades": 0,
+    "totalRealizedPnl": 0,
+    "totalFees": 0
+  }
+}

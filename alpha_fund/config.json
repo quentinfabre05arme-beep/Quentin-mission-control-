@@ -1,0 +1,32 @@
+{
+  "fundName": "Claw Alpha Fund",
+  "mode": "paper",
+  "initialCapital": 100000,
+  "baseCurrency": "USD",
+  "maxSinglePositionPct": 0.05,
+  "maxSectorConcentrationPct": 0.20,
+  "maxCashDeployPct": 0.80,
+  "maxDrawdownStopPct": 0.20,
+  "trailingStopPct": 0.10,
+  "hardStopPct": 0.15,
+  "minPositionSize": 100,
+  "allowOptions": true,
+  "allowedOptionTypes": ["covered_call", "protective_put", "cash_secured_put"],
+  "leverageAllowed": false,
+  "rebalancingFreqDays": 7,
+  "markets": ["equity", "crypto", "forex", "commodity", "fixed_income"],
+  "reportRecipients": ["quent@claw.local"],
+  "dataSources": {
+    "primaryPrice": "twelve_data",
+    "cryptoFallback": "coingecko",
+    "stockFallback": "yahoo",
+    "macro": "fred",
+    "sentiment": "serper"
+  },
+  "strategyWeights": {
+    "momentum": 0.25,
+    "mean_reversion": 0.25,
+    "value": 0.25,
+    "macro": 0.25
+  }
+}
