@@ -1,15 +1,15 @@
 {
   "lastChecks": {
-    "market": 1754046799000,
-    "system": 1754046799000,
-    "git": 1754046825000,
+    "market": 1785584444345,
+    "system": 1785584444345,
+    "git": 1754052330000,
     "calendar": null,
     "weather": null,
     "heartbeat": {
-      "ts": "2026-08-01T12:33:00.000+02:00",
-      "ram": "87.0%",
+      "ts": "2026-08-01T11:40:44.345Z",
+      "ram": "80.7%",
       "disk": "C:70.4%,D:42.6%,E:88.1%"
     }
   },
-  "notes": "Heartbeat 2026-08-01 12:33 CET: Market data refreshed. BTC $62,993 -1.25%, ETH $1,863.74 -1.16%, MSTR $93.28 flat, HIMS $27.77 flat. Fear & Greed 27 (FEAR, improving from 25). RAM ~87% (1.0GB free of 7.9GB). E: drive at 88.1% used (1.8GB free) — monitor. Git backup completed (commit 306dc88). No calendar or weather check performed."
+  "notes": "Heartbeat 2026-08-01 13:40 CET: Market data refreshed live (BTC ,020 -1.22%, ETH ,864.88 -0.90%, MSTR .28 flat, HIMS .77 flat). Twelve Data API still down; CoinGecko + Yahoo fallbacks active. RAM 80.7%. Duplicate ram-cleanup-every-2h jobs detected (IDs 33524d74 + 88be2053). Git has OAuth credential files untracked — do not commit."
 }
