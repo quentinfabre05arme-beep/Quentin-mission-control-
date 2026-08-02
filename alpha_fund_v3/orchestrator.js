@@ -205,28 +205,56 @@ const COMMANDS = {
     return await runExecution(research, intelligence);
   },
   
-  status: () => {
+  status: (args) => {
+    const isJson = args && args.includes('--json');
     const portfolio = loadPortfolio();
     const totalValue = portfolio.cash + portfolio.positions.reduce((sum, p) => sum + (p.quantity * p.current_price), 0);
     const totalReturn = ((totalValue / portfolio.initial_capital) - 1) * 100;
     
-    console.log(`\n╔══════════════════════════════════════════════════════════════╗`);
-    console.log(`║           ${CONFIG.fund_name.toUpperCase()} — PORTFOLIO STATUS           ║`);
-    console.log(`╚══════════════════════════════════════════════════════════════╝`);
-    console.log(`\n   Mode: ${CONFIG.mode === 'PAPER' ? '📄 PAPER TRADING' : '💰 LIVE TRADING'}`);
-    console.log(`\n💰 Cash: $${portfolio.cash.toFixed(2)}`);
-    console.log(`📈 Total Value: $${totalValue.toFixed(2)} (${totalReturn >= 0 ? '+' : ''}${totalReturn.toFixed(2)}%)`);
-    console.log(`📊 Positions: ${portfolio.positions.length}/${CONFIG.max_positions}`);
-    console.log(`🔄 Trades: ${portfolio.performance.total_trades}`);
-    console.log(`🏆 Win Rate: ${portfolio.performance.win_rate.toFixed(1)}%`);
-    console.log(`📉 Max Drawdown: ${portfolio.performance.max_drawdown.toFixed(1)}%`);
-    console.log(`\n📋 Holdings:`);
-    portfolio.positions.forEach(p => {
-      const pnl = ((p.current_price / p.entry_price) - 1) * 100;
-      console.log(`   ${p.ticker}: ${p.quantity} @ $${p.entry_price.toFixed(2)} → $${p.current_price.toFixed(2)} (${pnl >= 0 ? '+' : ''}${pnl.toFixed(1)}%)`);
-    });
-    console.log();
-    return portfolio;
+    const status = {
+      mode: CONFIG.mode,
+      fund_name: CONFIG.fund_name,
+      cash: portfolio.cash,
+      total_value: totalValue,
+      total_return_pct: totalReturn,
+      positions: portfolio.positions.length,
+      max_positions: CONFIG.max_positions,
+      trades: portfolio.performance.total_trades,
+      win_rate: portfolio.performance.win_rate,
+      max_drawdown: portfolio.performance.max_drawdown,
+      holdings: portfolio.positions.map(p => ({
+        ticker: p.ticker,
+        quantity: p.quantity,
+        entry_price: p.entry_price,
+        current_price: p.current_price,
+        stop_loss: p.stop_loss,
+        take_profit: p.take_profit,
+        unrealized_pnl_pct: ((p.current_price / p.entry_price) - 1) * 100
+      })),
+      timestamp: new Date().toISOString()
+    };
+    
+    if (isJson) {
+      console.log(JSON.stringify(status));
+    } else {
+      console.log(`\n╔══════════════════════════════════════════════════════════════╗`);
+      console.log(`║           ${CONFIG.fund_name.toUpperCase()} — PORTFOLIO STATUS           ║`);
+      console.log(`╚══════════════════════════════════════════════════════════════╝`);
+      console.log(`\n   Mode: ${CONFIG.mode === 'PAPER' ? '📄 PAPER TRADING' : '💰 LIVE TRADING'}`);
+      console.log(`\n💰 Cash: $${portfolio.cash.toFixed(2)}`);
+      console.log(`📈 Total Value: $${totalValue.toFixed(2)} (${totalReturn >= 0 ? '+' : ''}${totalReturn.toFixed(2)}%)`);
+      console.log(`📊 Positions: ${portfolio.positions.length}/${CONFIG.max_positions}`);
+      console.log(`🔄 Trades: ${portfolio.performance.total_trades}`);
+      console.log(`🏆 Win Rate: ${portfolio.performance.win_rate.toFixed(1)}%`);
+      console.log(`📉 Max Drawdown: ${portfolio.performance.max_drawdown.toFixed(1)}%`);
+      console.log(`\n📋 Holdings:`);
+      portfolio.positions.forEach(p => {
+        const pnl = ((p.current_price / p.entry_price) - 1) * 100;
+        console.log(`   ${p.ticker}: ${p.quantity} @ $${p.entry_price.toFixed(2)} → $${p.current_price.toFixed(2)} (${pnl >= 0 ? '+' : ''}${pnl.toFixed(1)}%)`);
+      });
+      console.log();
+    }
+    return status;
   },
   
   init: () => {
@@ -244,10 +272,11 @@ const COMMANDS = {
 // ─── MAIN ───────────────────────────────────────────────────
 async function main() {
   const command = process.argv[2] || 'status';
+  const args = process.argv.slice(3);
   
   if (COMMANDS[command]) {
     try {
-      await COMMANDS[command]();
+      await COMMANDS[command](args);
     } catch (err) {
       console.error(`❌ Error: ${err.message}`);
       process.exit(1);

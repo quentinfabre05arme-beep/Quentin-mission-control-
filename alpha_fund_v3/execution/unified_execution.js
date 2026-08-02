@@ -59,15 +59,49 @@ signals.push(signal);
     }
   });
   
-  // Check catalysts for position holders
-  if (intelligence && intelligence.upcoming) {
-    portfolio.positions.forEach(pos => {
-      const catalyst = intelligence.upcoming.find(c => c.ticker === pos.ticker && c.impact === 'high');
-      if (catalyst && !signals.find(s => s.ticker === pos.ticker)) {
-        // Don't auto-sell, but add alert
+  // Check stop losses and take profits for existing positions
+  portfolio.positions.forEach(pos => {
+    const signal = composite[pos.ticker];
+    if (!signal) return;
+    
+    const currentPrice = signal.price || pos.current_price;
+    pos.current_price = currentPrice;
+    
+    // Trailing stop: move stop up if price rises
+    if (currentPrice > pos.entry_price) {
+      const newStop = currentPrice * (1 - CONFIG.stop_loss);
+      if (newStop > pos.stop_loss) {
+        pos.stop_loss = newStop;
       }
-    });
-  }
+    }
+    
+    // Check hard stop loss or take profit
+    if (currentPrice <= pos.stop_loss) {
+      const exitSignal = {
+        action: 'SELL',
+        ticker: pos.ticker,
+        score: -2,
+        confidence: 'HIGH',
+        price: currentPrice,
+        rating: 'STOP_LOSS',
+        reason: 'Stop loss hit'
+      };
+      signals.push(exitSignal);
+      logger.logSignal(exitSignal);
+    } else if (currentPrice >= pos.take_profit) {
+      const exitSignal = {
+        action: 'SELL',
+        ticker: pos.ticker,
+        score: 2,
+        confidence: 'HIGH',
+        price: currentPrice,
+        rating: 'TAKE_PROFIT',
+        reason: 'Take profit hit'
+      };
+      signals.push(exitSignal);
+      logger.logSignal(exitSignal);
+    }
+  });
   
   return signals.sort((a, b) => b.score - a.score);
 }
