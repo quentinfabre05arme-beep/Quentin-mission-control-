@@ -432,9 +432,32 @@ Grok 4.5 (Brain)
 
 ---
 
-*This file is maintained automatically. Last manual update: August 2, 2026*
+## 🛡️ Alpha Fund v3.0 — Self-Improvement Cycle #3
+
+**Time:** 16:06 CET  
+**Commit:** 15332cc  
+**Status:** ✅ SUCCESS
+
+### What Was Fixed
+1. **Trailing stops** — execution engine now moves stop-loss up as price rises, locking in profits.
+2. **Take-profit exits** — positions auto-sell when hitting 25% profit target.
+3. **Stop-loss exits** — positions auto-sell when hitting 8% stop-loss.
+4. **status --json** — added proper JSON output with no decorative console noise.
+
+### Test Result
+• Research pipeline: 12 assets analyzed ✅
+• Execution: 0 trades (Sunday, markets closed) ✅
+• Portfolio intact: $10,000, 2 positions ✅
+• JSON status: valid, parseable ✅
+
+### Learning
+• Execution engine must actively manage existing positions, not just generate new signals.
+• Trailing stops protect profits while allowing upside.
+• CLI tools need a clean JSON mode for automation.
 
 ---
+
+*This file is maintained automatically. Last manual update: August 2, 2026*
 
 ## 🔄 Alpha Fund Auto-Improvement — August 2, 2026 15:03 CET
 
