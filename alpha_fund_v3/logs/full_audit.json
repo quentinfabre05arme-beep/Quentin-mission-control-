@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-08-02T19:27:10.305Z",
+  "timestamp": "2026-08-02T20:27:09.975Z",
   "system": {
     "platform": "win32",
     "release": "10.0.26200",
     "arch": "x64",
     "cpus": 8,
     "total_ram_gb": 8,
-    "free_ram_gb": 2,
-    "uptime_hours": 179,
+    "free_ram_gb": 1,
+    "uptime_hours": 180,
     "user": "quent",
     "home": "C:\\Users\\quent"
   },
   "workspace": {
-    "total_files": 2385,
-    "total_dirs": 198,
-    "total_size": 92489598,
+    "total_files": 2514,
+    "total_dirs": 199,
+    "total_size": 88803834,
     "top_dirs": [
       {
         "name": "project_claw_core",
-        "files": 358,
-        "dirs": 9,
-        "size_mb": 27,
+        "files": 485,
+        "dirs": 10,
+        "size_mb": 24,
         "old_files": 0,
         "types": {
-          ".js": 108,
-          ".log": 78,
-          "(no ext)": 71,
+          ".js": 176,
+          ".log": 116,
+          "(no ext)": 80,
           ".md": 54,
-          ".json": 16
+          ".json": 18
         }
       },
       {
@@ -184,13 +184,14 @@
       },
       {
         "name": "scripts",
-        "files": 22,
+        "files": 24,
         "dirs": 0,
         "size_mb": 0,
         "old_files": 0,
         "types": {
           ".py": 17,
-          ".ps1": 5
+          ".ps1": 6,
+          ".bat": 1
         }
       },
       {
@@ -223,7 +224,7 @@
       }
     ],
     "file_types": {},
-    "empty_dirs": 92,
+    "empty_dirs": 91,
     "old_files": 35,
     "duplicates": [],
     "dead_code": [
@@ -260,7 +261,7 @@
   "recommendations": [
     {
       "priority": "MEDIUM",
-      "issue": "92 empty directories",
+      "issue": "91 empty directories",
       "action": "Remove empty directories"
     }
   ]
