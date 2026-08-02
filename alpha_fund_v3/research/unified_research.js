@@ -151,6 +151,10 @@ function scanAsymmetry(signals, sentiment) {
       asymmetryScore += 2;
       factors.push('Fear + negative price = contrarian');
     }
+    if (sentiment.fear_greed > 75 && signal.change_24h > 0) {
+      asymmetryScore += 2;
+      factors.push('Greed + positive price = contrarian short');
+    }
     
     // Factor 3: Technical momentum
     asymmetryScore += Math.abs(signal.momentum_score);
