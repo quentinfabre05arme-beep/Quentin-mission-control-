@@ -1,14 +1,14 @@
 {
     "issues_found":  [
-                         "OpenClaw not running"
+
                      ],
     "disk_percent":  71.6,
     "repairs_made":  [
 
                      ],
-    "last_check":  "2026-08-02T15:59:15.8414611+02:00",
-    "ram_percent":  86.8,
-    "last_heartbeat":  "2026-08-02T15:59:15.8414611+02:00",
-    "openclaw_running":  false,
+    "last_check":  "2026-08-02T16:14:03.5445616+02:00",
+    "ram_percent":  86,
+    "last_heartbeat":  "2026-08-02T16:14:03.5445616+02:00",
+    "openclaw_running":  true,
     "cron_healthy":  true
 }
