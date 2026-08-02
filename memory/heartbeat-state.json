@@ -1,15 +1,15 @@
 {
-    "lastChecks": {
-        "market": 1785643200000,
-        "system": 1785643200000,
-        "git": 1785643200000,
-        "calendar": null,
-        "weather": null,
-        "heartbeat": {
-            "ram": "91.3% used (0.74 GB free / 8.5 GB total). RAM usage flagged critical by recovery monitor.",
-            "disk": "C: ~29% free, D: ~57% free, E: ~12% free",
-            "ts": "2026-08-02T07:00:00+02:00"
-        }
-    },
-    "notes": "Heartbeat 2026-08-02 07:00 CET: Market refreshed. BTC $63,591 (+1.22%), ETH $1,881 (+1.97%). 4 anomalies flagged including AAPL -7.35% and COIN -10.59%. Git backup pushed 3d5d8e9. RAM critical 91.3% stable - no safe process to terminate; monitoring only."
+  "lastChecks": {
+    "market": 1785650445855,
+    "system": 1785650445855,
+    "git": 1785650445855,
+    "calendar": null,
+    "weather": null,
+    "heartbeat": {
+      "ram": "93% critical stable (0.38GB free / 8.3GB)",
+      "disk": "C:29% free, D:57% free, E:12% free",
+      "ts": "2026-08-02T06:00:45.855Z"
+    }
+  },
+  "notes": "Heartbeat 2026-08-02 08:00 CET: Market fresh. BTC ,455 (+1.00%), ETH ,877 (+1.72%). AAPL -7.35%, COIN -10.59% flagged. Newsletter generated and pushed. Git backup 117f344. RAM critical 93% stable - monitoring only."
 }
