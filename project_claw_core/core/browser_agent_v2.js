@@ -1,4 +1,8 @@
-const puppeteer = require('puppeteer');
+/**
+ * PROJECT CLAW CORE — Browser Agent v3
+ * Real browser automation with Puppeteer.
+ */
+
 const fs = require('fs');
 const path = require('path');
 
@@ -10,46 +14,81 @@ function log(msg) {
   fs.appendFileSync(LOG_FILE, entry);
 }
 
+async function getBrowser() {
+  let puppeteer;
+  try {
+    puppeteer = require('puppeteer');
+  } catch(e) {
+    throw new Error('Puppeteer not installed. Run: npm install puppeteer');
+  }
+  
+  return await puppeteer.launch({
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });
+}
+
 class BrowserAgent {
   constructor() {
     this.browser = null;
     this.page = null;
   }
-
-  async launch(headless = true) {
-    this.browser = await puppeteer.launch({ headless, args: ['--no-sandbox'] });
+  
+  async open(url) {
+    log(`Opening: ${url}`);
+    this.browser = await getBrowser();
     this.page = await this.browser.newPage();
-    log('Browser launched');
-    return this;
+    await this.page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+    return { success: true, url };
   }
-
-  async goto(url) {
-    await this.page.goto(url, { waitUntil: 'networkidle2' });
-    log('Navigated to ' + url);
+  
+  async getText() {
+    if (!this.page) throw new Error('No page open');
+    const text = await this.page.evaluate(() => document.body.innerText);
+    return text.slice(0, 5000);
   }
-
-  async click(selector) {
-    await this.page.click(selector);
-    log('Clicked ' + selector);
+  
+  async click(selectorOrText) {
+    if (!this.page) throw new Error('No page open');
+    log(`Clicking: ${selectorOrText}`);
+    
+    // Try selector first
+    try {
+      await this.page.click(selectorOrText);
+      return { success: true };
+    } catch(e) {}
+    
+    // Try text content
+    const clicked = await this.page.evaluate((text) => {
+      const elements = Array.from(document.querySelectorAll('*'));
+      const el = elements.find(e => e.textContent.trim().includes(text));
+      if (el) { el.click(); return true; }
+      return false;
+    }, selectorOrText);
+    
+    return { success: clicked };
   }
-
+  
   async type(selector, text) {
-    await this.page.type(selector, text);
-    log('Typed into ' + selector);
+    if (!this.page) throw new Error('No page open');
+    log(`Typing into ${selector}: ${text.slice(0, 50)}`);
+    await this.page.type(selector, text, { delay: 50 });
+    return { success: true };
   }
-
-  async getText(selector) {
-    return await this.page.$eval(selector, el => el.textContent);
+  
+  async screenshot(outputPath) {
+    if (!this.page) throw new Error('No page open');
+    const file = outputPath || path.join(__dirname, '..', 'logs', `screenshot_${Date.now()}.png`);
+    await this.page.screenshot({ path: file, fullPage: true });
+    return { success: true, path: file };
   }
-
-  async screenshot(file) {
-    await this.page.screenshot({ path: file });
-    log('Screenshot saved ' + file);
-  }
-
+  
   async close() {
-    await this.browser.close();
-    log('Browser closed');
+    if (this.browser) {
+      await this.browser.close();
+      this.browser = null;
+      this.page = null;
+    }
   }
 }
 
@@ -58,10 +97,14 @@ module.exports = { BrowserAgent };
 if (require.main === module) {
   (async () => {
     const agent = new BrowserAgent();
-    await agent.launch();
-    await agent.goto('https://example.com');
-    const title = await agent.page.title();
-    console.log('Page title:', title);
-    await agent.close();
+    try {
+      await agent.open('https://example.com');
+      const text = await agent.getText();
+      console.log('Page text:', text.slice(0, 200));
+    } catch(e) {
+      console.error('Error:', e.message);
+    } finally {
+      await agent.close();
+    }
   })();
 }
