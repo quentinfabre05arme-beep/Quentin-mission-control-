@@ -1,0 +1,259 @@
+{
+  "timestamp": "2026-08-02T11:23:40.323Z",
+  "system": {
+    "platform": "win32",
+    "release": "10.0.26200",
+    "arch": "x64",
+    "cpus": 8,
+    "total_ram_gb": 8,
+    "free_ram_gb": 1,
+    "uptime_hours": 171,
+    "user": "quent",
+    "home": "C:\\Users\\quent"
+  },
+  "workspace": {
+    "total_files": 2133,
+    "total_dirs": 190,
+    "total_size": 105608808,
+    "top_dirs": [
+      {
+        "name": "pod_business",
+        "files": 216,
+        "dirs": 9,
+        "size_mb": 44,
+        "old_files": 0,
+        "types": {
+          ".js": 53,
+          ".json": 49,
+          ".md": 48,
+          ".png": 23,
+          ".svg": 23
+        }
+      },
+      {
+        "name": "missions",
+        "files": 263,
+        "dirs": 15,
+        "size_mb": 20,
+        "old_files": 0,
+        "types": {
+          ".js": 93,
+          ".json": 89,
+          ".md": 40,
+          ".log": 15,
+          ".ps1": 12
+        }
+      },
+      {
+        "name": "logs",
+        "files": 99,
+        "dirs": 2,
+        "size_mb": 19,
+        "old_files": 0,
+        "types": {
+          ".png": 90,
+          ".log": 6,
+          ".zip": 2,
+          ".jsonl": 1
+        }
+      },
+      {
+        "name": "automation_data",
+        "files": 181,
+        "dirs": 1,
+        "size_mb": 9,
+        "old_files": 0,
+        "types": {
+          "(no ext)": 137,
+          ".old": 16,
+          ".json": 12,
+          ".log": 8,
+          ".db": 2
+        }
+      },
+      {
+        "name": "mission_control",
+        "files": 117,
+        "dirs": 6,
+        "size_mb": 3,
+        "old_files": 0,
+        "types": {
+          ".md": 39,
+          ".js": 34,
+          ".json": 29,
+          ".html": 5,
+          ".ps1": 3
+        }
+      },
+      {
+        "name": "archive_2026-08-02_2026-08-02_1257",
+        "files": 636,
+        "dirs": 10,
+        "size_mb": 3,
+        "old_files": 35,
+        "types": {
+          ".json": 452,
+          ".md": 65,
+          ".js": 41,
+          ".txt": 27,
+          ".h": 13
+        }
+      },
+      {
+        "name": "deploy-ready",
+        "files": 88,
+        "dirs": 0,
+        "size_mb": 1,
+        "old_files": 0,
+        "types": {
+          ".md": 31,
+          ".js": 26,
+          ".json": 22,
+          ".ps1": 3,
+          ".cmd": 2
+        }
+      },
+      {
+        "name": "x-tweet-fetcher",
+        "files": 46,
+        "dirs": 3,
+        "size_mb": 0,
+        "old_files": 0,
+        "types": {
+          ".py": 26,
+          ".txt": 8,
+          ".md": 4,
+          "(no ext)": 3,
+          ".json": 2
+        }
+      },
+      {
+        "name": "archive_2026-08-02_1256",
+        "files": 66,
+        "dirs": 11,
+        "size_mb": 0,
+        "old_files": 0,
+        "types": {
+          ".json": 23,
+          ".md": 22,
+          ".js": 11,
+          ".py": 4,
+          ".ps1": 3
+        }
+      },
+      {
+        "name": "skills",
+        "files": 84,
+        "dirs": 48,
+        "size_mb": 0,
+        "old_files": 0,
+        "types": {
+          ".md": 44,
+          ".js": 35,
+          ".json": 4,
+          ".ps1": 1
+        }
+      },
+      {
+        "name": "memory",
+        "files": 49,
+        "dirs": 3,
+        "size_mb": 0,
+        "old_files": 0,
+        "types": {
+          ".json": 27,
+          ".md": 11,
+          ".jsonl": 6,
+          ".log": 4,
+          ".1784988057731": 1
+        }
+      },
+      {
+        "name": "scripts",
+        "files": 22,
+        "dirs": 0,
+        "size_mb": 0,
+        "old_files": 0,
+        "types": {
+          ".py": 17,
+          ".ps1": 5
+        }
+      },
+      {
+        "name": "alpha_fund_v3",
+        "files": 40,
+        "dirs": 11,
+        "size_mb": 0,
+        "old_files": 0,
+        "types": {
+          ".js": 16,
+          ".log": 6,
+          ".md": 5,
+          ".json": 5,
+          ".jsonl": 4
+        }
+      },
+      {
+        "name": "operations",
+        "files": 41,
+        "dirs": 8,
+        "size_mb": 0,
+        "old_files": 0,
+        "types": {
+          ".json": 31,
+          ".md": 6,
+          ".py": 2,
+          ".txt": 1,
+          ".log": 1
+        }
+      },
+      {
+        "name": "investment",
+        "files": 29,
+        "dirs": 1,
+        "size_mb": 0,
+        "old_files": 0,
+        "types": {
+          ".md": 15,
+          ".json": 7,
+          ".js": 7
+        }
+      }
+    ],
+    "file_types": {},
+    "empty_dirs": 42,
+    "old_files": 35,
+    "duplicates": [],
+    "dead_code": [
+      {
+        "package": "C:\\Users\\quent\\.openclaw\\workspace\\archive_2026-08-02_2026-08-02_1257\\alpha_fund\\package.json",
+        "unused_deps": 45,
+        "examples": [
+          "agent-base",
+          "base64-js",
+          "bignumber.js",
+          "buffer-equal-constant-time",
+          "call-bind-apply-helpers"
+        ]
+      },
+      {
+        "package": "C:\\Users\\quent\\.openclaw\\workspace\\package.json",
+        "unused_deps": 994,
+        "examples": [
+          "abbrev",
+          "abort-controller",
+          "abort-controller-x",
+          "accepts",
+          "acorn"
+        ]
+      }
+    ],
+    "orphans": []
+  },
+  "processes": [],
+  "registry": [],
+  "services": [],
+  "network": {},
+  "security": {},
+  "recommendations": []
+}
