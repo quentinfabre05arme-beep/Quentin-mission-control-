@@ -18,8 +18,23 @@ const CONFIG = {
   stop_loss: 0.08, // -8%
   take_profit: 0.25, // +25%
   data_dir: path.join(__dirname, 'data'),
-  config_dir: path.join(__dirname, 'config')
+  config_dir: path.join(__dirname, 'config'),
+  enable_ram_cleanup: true // Auto-cleanup between cycles
 };
+
+// ─── RAM CLEANUP UTILITY ────────────────────────────────────
+const ramCleanup = require('./scripts/ram_cleanup');
+
+function autoCleanup() {
+  if (CONFIG.enable_ram_cleanup) {
+    try {
+      const result = ramCleanup.cleanup();
+      if (result.saved_mb > 0) {
+        console.log(`🧹 Auto-cleanup: ${result.before.pct}% → ${result.after.pct}% (${result.saved_mb}MB freed)`);
+      }
+    } catch(e) {}
+  }
+}
 
 // ─── UNIFIED PORTFOLIO ──────────────────────────────────────
 const PORTFOLIO_FILE = path.join(CONFIG.data_dir, 'portfolio.json');
@@ -113,10 +128,16 @@ const COMMANDS = {
     console.log(`║     Mode: ${CONFIG.mode} | Capital: $${CONFIG.capital.toLocaleString()}                    ║`);
     console.log(`╚══════════════════════════════════════════════════════════════╝\n`);
     
+    // Auto-cleanup before heavy operations
+    autoCleanup();
+    
     const research = await runResearch();
     const intelligence = await runIntelligence();
     const execution = await runExecution(research, intelligence);
     updateDashboard({ research, intelligence, execution });
+    
+    // Auto-cleanup after heavy operations
+    autoCleanup();
     
     console.log('🎯 Daily cycle complete!\n');
     return execution.portfolio;
