@@ -55,7 +55,19 @@ module.exports = { CapabilityInvoker };
 if (require.main === module) {
   const invoker = new CapabilityInvoker();
   (async () => {
-    const r = await invoker.invoke('system_health_monitor', 'getHealth');
-    console.log(JSON.stringify({ ram: r.result.memory.used_percent }, null, 2));
+    const args = process.argv.slice(2);
+    if (args.length < 2) {
+      console.log('Usage: node capability_invoker.js <capability> <method> [arg1] [arg2] ...');
+      process.exit(1);
+    }
+    const [capability, method, ...methodArgs] = args;
+    // Try to parse numeric args
+    const parsedArgs = methodArgs.map(a => {
+      if (!isNaN(a) && a.trim() !== '') return Number(a);
+      return a;
+    });
+    const r = await invoker.invoke(capability, method, parsedArgs);
+    console.log(JSON.stringify(r, null, 2));
+    process.exit(r.success ? 0 : 1);
   })();
 }

@@ -39,18 +39,19 @@ class UnifiedOrchestrator {
     };
   }
   
-  async runCommand(command) {
+  async runCommand(command, extraArgs = []) {
     log(`Run command: ${command}`);
     if (typeof command !== 'string') return { success: false, error: 'command must be string' };
     const parts = command.split(' ');
     const capability = parts[0];
     const method = parts[1] || 'run';
-    const args = parts.slice(2).map(a => {
+    const parsedArgs = parts.slice(2).map(a => {
       if (a === 'true') return true;
       if (a === 'false') return false;
-      if (!isNaN(Number(a))) return Number(a);
+      if (!isNaN(Number(a)) && a.trim() !== '') return Number(a);
       return a;
     });
+    const args = [...parsedArgs, ...extraArgs];
     return await this.invoker.invoke(capability, method, args);
   }
   

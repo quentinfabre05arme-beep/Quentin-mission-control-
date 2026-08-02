@@ -43,10 +43,7 @@ class UnifiedMasterOrchestrator {
   async runResearch(query = 'BTC crypto market news today') {
     log(`Step: Market research — ${query}`);
     try {
-      const { CapabilityInvoker } = require(path.join(WORKSPACE, 'project_claw_core', 'core', 'capability_invoker'));
-      const invoker = new CapabilityInvoker();
-      // Serper key might be in secret ref; pass empty string to avoid array replace error
-      const research = await invoker.invoke('research_agent', 'research', [query, 5]);
+      const research = await this.workflows.orch.runCommand('research_agent research', [query, 5]);
       if (!research.success) {
         log(`Research failed: ${research.error}`, 'warn');
         return { success: false, error: research.error };
@@ -147,7 +144,8 @@ class UnifiedMasterOrchestrator {
       // 6. Self-audit
       log('Step 4: Self audit');
       const audit = await this.workflows.orch.runCommand('self_audit run');
-      actions.push({ step: 'self_audit', real: audit.result.summary.real, stubs: audit.result.summary.stubs });
+      const auditSummary = audit.success && audit.result && audit.result.summary ? audit.result.summary : { real: 0, stubs: 0, syntax_errors: 0 };
+      actions.push({ step: 'self_audit', real: auditSummary.real, stubs: auditSummary.stubs, syntax_errors: auditSummary.syntax_errors });
 
       // 7. Git backup
       log('Step 5: Git backup');
