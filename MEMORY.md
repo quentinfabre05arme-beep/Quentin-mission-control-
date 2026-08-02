@@ -432,6 +432,28 @@ Grok 4.5 (Brain)
 
 ---
 
+## 🛡️ Alpha Fund v3.0 — Self-Improvement Cycle #4
+
+**Time:** 16:07 CET  
+**Commit:** f830277  
+**Status:** ✅ SUCCESS
+
+### What Was Fixed
+1. **Per-asset win/loss tracking** — portfolio.performance.by_ticker now tracks trades/wins/losses/PnL per ticker.
+2. **best_price + trailing_stop** — positions remember peak price and derived trailing stop.
+3. **Unrealized PnL** — open positions show live unrealized PnL.
+4. **History includes per-ticker data** — each snapshot stores by_ticker stats.
+
+### Test Result
+• Trade command: no errors ✅
+• Syntax check: valid ✅
+• Portfolio intact ✅
+
+### Learning
+Per-ticker analytics are essential for strategy optimization — know which assets the system wins/loses on.
+
+---
+
 ## 🛡️ Alpha Fund v3.0 — Self-Improvement Cycle #3
 
 **Time:** 16:06 CET  
