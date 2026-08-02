@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-02T11:23:40.323Z",
+  "timestamp": "2026-08-02T12:27:11.984Z",
   "system": {
     "platform": "win32",
     "release": "10.0.26200",
@@ -7,29 +7,15 @@
     "cpus": 8,
     "total_ram_gb": 8,
     "free_ram_gb": 1,
-    "uptime_hours": 171,
+    "uptime_hours": 172,
     "user": "quent",
     "home": "C:\\Users\\quent"
   },
   "workspace": {
-    "total_files": 2133,
-    "total_dirs": 190,
-    "total_size": 105608808,
+    "total_files": 1962,
+    "total_dirs": 184,
+    "total_size": 62456051,
     "top_dirs": [
-      {
-        "name": "pod_business",
-        "files": 216,
-        "dirs": 9,
-        "size_mb": 44,
-        "old_files": 0,
-        "types": {
-          ".js": 53,
-          ".json": 49,
-          ".md": 48,
-          ".png": 23,
-          ".svg": 23
-        }
-      },
       {
         "name": "missions",
         "files": 263,
@@ -72,6 +58,20 @@
         }
       },
       {
+        "name": "alpha_fund_v3",
+        "files": 85,
+        "dirs": 14,
+        "size_mb": 3,
+        "old_files": 0,
+        "types": {
+          ".js": 38,
+          ".json": 15,
+          ".log": 11,
+          ".md": 7,
+          ".jsonl": 4
+        }
+      },
+      {
         "name": "mission_control",
         "files": 117,
         "dirs": 6,
@@ -86,7 +86,7 @@
         }
       },
       {
-        "name": "archive_2026-08-02_2026-08-02_1257",
+        "name": "archive_2026-08-02_1257_v2",
         "files": 636,
         "dirs": 10,
         "size_mb": 3,
@@ -180,20 +180,6 @@
         }
       },
       {
-        "name": "alpha_fund_v3",
-        "files": 40,
-        "dirs": 11,
-        "size_mb": 0,
-        "old_files": 0,
-        "types": {
-          ".js": 16,
-          ".log": 6,
-          ".md": 5,
-          ".json": 5,
-          ".jsonl": 4
-        }
-      },
-      {
         "name": "operations",
         "files": 41,
         "dirs": 8,
@@ -218,15 +204,29 @@
           ".json": 7,
           ".js": 7
         }
+      },
+      {
+        "name": "recovery",
+        "files": 8,
+        "dirs": 2,
+        "size_mb": 0,
+        "old_files": 0,
+        "types": {
+          ".bat": 3,
+          ".ps1": 2,
+          ".xml": 1,
+          ".log": 1,
+          ".json": 1
+        }
       }
     ],
     "file_types": {},
-    "empty_dirs": 42,
+    "empty_dirs": 43,
     "old_files": 35,
     "duplicates": [],
     "dead_code": [
       {
-        "package": "C:\\Users\\quent\\.openclaw\\workspace\\archive_2026-08-02_2026-08-02_1257\\alpha_fund\\package.json",
+        "package": "C:\\Users\\quent\\.openclaw\\workspace\\archive_2026-08-02_1257_v2\\alpha_fund\\package.json",
         "unused_deps": 45,
         "examples": [
           "agent-base",
@@ -238,7 +238,7 @@
       },
       {
         "package": "C:\\Users\\quent\\.openclaw\\workspace\\package.json",
-        "unused_deps": 994,
+        "unused_deps": 993,
         "examples": [
           "abbrev",
           "abort-controller",

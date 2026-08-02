@@ -28,17 +28,23 @@ function screenshot(filename = null) {
 
 // ─── OCR (Text from image) ────────────────────────────────
 function ocr(imagePath) {
+  const tesseractPath = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe';
+  
+  if (!fs.existsSync(tesseractPath)) {
+    return { error: 'Tesseract not found at ' + tesseractPath };
+  }
+  
   try {
     if (!fs.existsSync(imagePath)) return { error: 'Image not found' };
     
     const result = execSync(
-      `python -c "import pytesseract; from PIL import Image; print(pytesseract.image_to_string(Image.open(r'${imagePath.replace(/\\/g, '\\\\')}')))"`,
+      `"${tesseractPath}" "${imagePath}" stdout`,
       { encoding: 'utf8', timeout: 30000, windowsHide: true }
     );
     
     return { success: true, text: result.trim() };
   } catch(e) {
-    return { error: e.message, note: 'Install: pip install pytesseract tesseract-ocr' };
+    return { error: e.message };
   }
 }
 
