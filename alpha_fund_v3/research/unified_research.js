@@ -34,7 +34,10 @@ async function fetchPrices() {
   const ibkr = require('../data/ibkr_connector');
   if (ibkr.IBKR_CONFIG.enabled) {
     try {
-      const ibkrPrices = await ibkr.fetchIBKRPrices(CONFIG.assets);
+      const ibkrPrices = await Promise.race([
+        ibkr.fetchIBKRPrices(CONFIG.assets),
+        new Promise((_, reject) => setTimeout(() => reject(new Error('IBKR timeout')), 20000))
+      ]);
       if (ibkrPrices && Object.keys(ibkrPrices).length > 0) {
         Object.entries(ibkrPrices).forEach(([symbol, info]) => {
           prices[symbol] = {

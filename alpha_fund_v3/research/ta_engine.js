@@ -5,47 +5,117 @@
  */
 
 const https = require('https');
+const fs = require('fs');
+const path = require('path');
+
+// ─── CACHE ─────────────────────────────────────────────────
+const CACHE_DIR = path.join(__dirname, '..', 'data', 'ta_cache');
+const CACHE_TTL_MS = 4 * 60 * 60 * 1000; // 4 hours for historical bars
+const REQUEST_DELAY_MS = 3500; // Yahoo rate limit protection
+const RETRY_BASE_MS = 3000;
+
+function getCacheFile(ticker, range, interval) {
+  fs.mkdirSync(CACHE_DIR, { recursive: true });
+  return path.join(CACHE_DIR, `${ticker}_${range}_${interval}.json`);
+}
+
+function loadCache(ticker, range, interval) {
+  const file = getCacheFile(ticker, range, interval);
+  if (!fs.existsSync(file)) return null;
+  try {
+    const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+    if (Date.now() - new Date(data.timestamp).getTime() > CACHE_TTL_MS) return null;
+    return data.bars;
+  } catch(e) { return null; }
+}
+
+function saveCache(ticker, range, interval, bars) {
+  const file = getCacheFile(ticker, range, interval);
+  fs.writeFileSync(file, JSON.stringify({ bars, timestamp: new Date().toISOString() }, null, 2));
+}
 
 // ─── FETCH HISTORICAL BARS FROM YAHOO ──────────────────────
-async function fetchYahooBars(ticker, range = '1y', interval = '1d') {
-  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${ticker}?interval=${interval}&range=${range}`;
+async function fetchYahooBars(ticker, range = '1y', interval = '1d', retries = 3) {
+  const cached = loadCache(ticker, range, interval);
+  if (cached) {
+    return cached;
+  }
   
-  return new Promise((resolve, reject) => {
-    https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }, timeout: 10000 }, (res) => {
-      let data = '';
-      res.on('data', chunk => data += chunk);
-      res.on('end', () => {
-        try {
-          const json = JSON.parse(data);
-          const result = json.chart?.result?.[0];
-          if (!result) return resolve([]);
-          
-          const timestamps = result.timestamp || [];
-          const quote = result.indicators?.quote?.[0] || {};
-          const closes = quote.close || [];
-          const opens = quote.open || [];
-          const highs = quote.high || [];
-          const lows = quote.low || [];
-          const volumes = quote.volume || [];
-          
-          const bars = [];
-          for (let i = 0; i < timestamps.length; i++) {
-            if (closes[i] !== null) {
-              bars.push({
-                date: new Date(timestamps[i] * 1000).toISOString(),
-                open: opens[i],
-                high: highs[i],
-                low: lows[i],
-                close: closes[i],
-                volume: volumes[i] || 0
-              });
+  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${ticker}?interval=${interval}&range=${range}`;
+  const userAgents = [
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+    'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36'
+  ];
+  
+  for (let attempt = 0; attempt < retries; attempt++) {
+    try {
+      const bars = await new Promise((resolve, reject) => {
+        const req = https.get(url, {
+          headers: {
+            'User-Agent': userAgents[Math.floor(Math.random() * userAgents.length)],
+            'Accept': 'application/json',
+            'Accept-Language': 'en-US,en;q=0.9'
+          },
+          timeout: 10000
+        }, (res) => {
+          let data = '';
+          res.on('data', chunk => data += chunk);
+          res.on('end', () => {
+            if (res.statusCode === 429) {
+              return reject(new Error('RATE_LIMIT'));
             }
-          }
-          resolve(bars);
-        } catch(e) { reject(e); }
+            if (res.statusCode !== 200) {
+              return reject(new Error(`HTTP ${res.statusCode}`));
+            }
+            try {
+              const json = JSON.parse(data);
+              const result = json.chart?.result?.[0];
+              if (!result) return resolve([]);
+              
+              const timestamps = result.timestamp || [];
+              const quote = result.indicators?.quote?.[0] || {};
+              const closes = quote.close || [];
+              const opens = quote.open || [];
+              const highs = quote.high || [];
+              const lows = quote.low || [];
+              const volumes = quote.volume || [];
+              
+              const bars = [];
+              for (let i = 0; i < timestamps.length; i++) {
+                if (closes[i] !== null) {
+                  bars.push({
+                    date: new Date(timestamps[i] * 1000).toISOString(),
+                    open: opens[i],
+                    high: highs[i],
+                    low: lows[i],
+                    close: closes[i],
+                    volume: volumes[i] || 0
+                  });
+                }
+              }
+              resolve(bars);
+            } catch(e) { reject(e); }
+          });
+        }).on('error', (e) => { req.destroy(); reject(e); }).on('timeout', () => {
+          req.destroy();
+          reject(new Error('Timeout'));
+        });
       });
-    }).on('error', reject).on('timeout', () => reject(new Error('Timeout')));
-  });
+      
+      if (bars.length >= 50) {
+        saveCache(ticker, range, interval, bars);
+        return bars;
+      }
+      throw new Error('Insufficient bars');
+    } catch(e) {
+      if (attempt >= retries - 1) throw e;
+      const delay = RETRY_BASE_MS * Math.pow(1.5, attempt) + Math.random() * 1000;
+      console.log(`   ⚠️ Yahoo ${ticker} attempt ${attempt + 1} failed (${e.message}), retrying in ${Math.round(delay)}ms...`);
+      await new Promise(r => setTimeout(r, delay));
+    }
+  }
+  return [];
 }
 
 // ─── INDICATORS ────────────────────────────────────────────
@@ -100,7 +170,6 @@ function macd(closes) {
   const ema26 = ema(closes, 26);
   if (!ema12 || !ema26) return null;
   
-  // Compute full MACD line series
   const macdSeries = [];
   for (let i = 26; i < closes.length; i++) {
     const e12 = ema(closes.slice(0, i + 1), 12);
@@ -168,40 +237,33 @@ async function analyzeTicker(ticker, currentPrice) {
     let score = 0;
     let reasons = [];
     
-    // RSI
     if (indicators.rsi_14 < 30) { score += 1.5; reasons.push('RSI oversold'); }
     else if (indicators.rsi_14 > 70) { score -= 1.5; reasons.push('RSI overbought'); }
     
-    // Trend structure
     if (last > indicators.sma_20 && indicators.sma_20 > indicators.sma_50) {
       score += 1; reasons.push('Price > SMA20 > SMA50');
     } else if (last < indicators.sma_20 && indicators.sma_20 < indicators.sma_50) {
       score -= 1; reasons.push('Price < SMA20 < SMA50');
     }
     
-    // Golden/Death cross
     if (indicators.sma_50 && indicators.sma_200) {
       if (indicators.sma_50 > indicators.sma_200) { score += 0.5; reasons.push('Golden cross'); }
       else { score -= 0.5; reasons.push('Death cross'); }
     }
     
-    // MACD
     if (indicators.macd) {
       if (indicators.macd.histogram > 0) { score += 0.5; reasons.push('MACD bullish'); }
       else { score -= 0.5; }
     }
     
-    // Bollinger
     if (indicators.bollinger) {
       if (last < indicators.bollinger.lower) { score += 1; reasons.push('Below lower Bollinger'); }
       else if (last > indicators.bollinger.upper) { score -= 1; reasons.push('Above upper Bollinger'); }
     }
     
-    // Short-term momentum
     if (change_24h > 3) { score -= 0.5; reasons.push('Strong +24h move'); }
     else if (change_24h < -3) { score += 0.5; reasons.push('Weak -24h move'); }
     
-    // Volume
     if (indicators.volume_avg_20 && indicators.last_volume > indicators.volume_avg_20 * 1.5) {
       reasons.push('Above-average volume');
     }
@@ -256,12 +318,23 @@ function fallbackMomentum(currentPrice) {
   };
 }
 
-async function analyzeAll(prices) {
+async function analyzeAll(prices, timeoutMs = 12000) {
   const results = {};
-  for (const [ticker, info] of Object.entries(prices)) {
+  const tickers = Object.entries(prices);
+  
+  for (let i = 0; i < tickers.length; i++) {
+    const [ticker, info] = tickers[i];
     try {
-      results[ticker] = await analyzeTicker(ticker, info);
+      const analysis = await Promise.race([
+        analyzeTicker(ticker, info),
+        new Promise((_, reject) => setTimeout(() => reject(new Error('TA timeout')), timeoutMs))
+      ]);
+      results[ticker] = analysis;
+      if (i < tickers.length - 1) {
+        await new Promise(r => setTimeout(r, REQUEST_DELAY_MS));
+      }
     } catch(e) {
+      console.log(`   ⚠️ TA failed/skip ${ticker}: ${e.message}`);
       results[ticker] = fallbackMomentum({ ...info, asset: ticker });
     }
   }

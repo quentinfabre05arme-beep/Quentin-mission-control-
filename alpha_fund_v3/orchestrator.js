@@ -189,11 +189,13 @@ const COMMANDS = {
     }
     
     console.log('🎯 Daily cycle complete!\n');
+    setTimeout(() => process.exit(0), 500);
     return execution.portfolio;
   },
   
   research: async () => {
     const results = await runResearch();
+    setTimeout(() => process.exit(0), 500);
     return results;
   },
   
@@ -211,7 +213,9 @@ const COMMANDS = {
   trade: async () => {
     const research = await runResearch();
     const intelligence = await runIntelligence();
-    return await runExecution(research, intelligence);
+    const result = await runExecution(research, intelligence);
+    setTimeout(() => process.exit(0), 500);
+    return result;
   },
   
   status: (args) => {
