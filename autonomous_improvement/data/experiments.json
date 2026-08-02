@@ -11,10 +11,11 @@
         "newText": "const { ResearchAgent } = require('./research_agent');\nconst { BrowserResearcher } = require('./browser_researcher');\n\nfunction runWithTimeout(fn, ms) {\n  return Promise.race([\n    fn(),\n    new Promise((_, reject) => setTimeout(() => reject(new Error('Research timeout')), ms))\n  ]);\n}\n",
         "hypothesisId": "hyp_1785708512619_5z18t"
       },
-      "outcome": null,
+      "outcome": "error",
       "tests": {},
       "metrics": {},
-      "status": "running"
+      "status": "aborted",
+      "error": "Orphaned experiment marked aborted on startup"
     },
     {
       "id": "hyp_1785708512884_kfalg",
@@ -108,6 +109,198 @@
       "applied": {
         "filePath": "project_claw_core/agents/research_router.js",
         "linesChanged": 7
+      }
+    },
+    {
+      "id": "hyp_1785709730149_69ypf",
+      "title": "Rotate oversized logs to prevent disk bloat",
+      "category": "performance",
+      "timestamp": "2026-08-02T22:28:50.166Z",
+      "change": {
+        "filePath": "alpha_fund_v3/core/always_on_daemon.js",
+        "oldText": "function log(msg) {\n  const cleanMsg = msg.replace(/[^\\x20-\\x7E]/g, '?');\n  const entry = `[${new Date().toISOString()}] ${cleanMsg}\\n`;\n  fs.mkdirSync('alpha_fund_v3/logs', { recursive: true });\n  fs.appendFileSync(LOG_FILE, entry);\n}",
+        "newText": "const MAX_LOG_BYTES = 100 * 1024;\n\nfunction rotateLog() {\n  try {\n    if (fs.existsSync(LOG_FILE) && fs.statSync(LOG_FILE).size > MAX_LOG_BYTES) {\n      const archive = `${LOG_FILE}.${Date.now()}.old`;\n      fs.renameSync(LOG_FILE, archive);\n    }\n  } catch(e) {}\n}\n\nfunction log(msg) {\n  const cleanMsg = msg.replace(/[^\\x20-\\x7E]/g, '?');\n  const entry = `[${new Date().toISOString()}] ${cleanMsg}\\n`;\n  fs.mkdirSync('alpha_fund_v3/logs', { recursive: true });\n  rotateLog();\n  fs.appendFileSync(LOG_FILE, entry);\n}",
+        "hypothesisId": "hyp_1785709730149_69ypf"
+      },
+      "outcome": "failed_review",
+      "tests": {
+        "syntax": true,
+        "load": true,
+        "functional": false
+      },
+      "metrics": {
+        "file_size_after": 1547
+      },
+      "review": {
+        "ok": false,
+        "depCheck": {
+          "dependents": [],
+          "results": [],
+          "allOk": true
+        },
+        "verifier": {
+          "total": 0,
+          "passed": 0,
+          "failed": 0,
+          "allOk": false,
+          "error": "Unexpected token 'S', \"Safe verif\"... is not valid JSON"
+        }
+      },
+      "benchmark": {
+        "runLatencyMs": null,
+        "hasRunMethod": false
+      },
+      "status": "reverted",
+      "applied": {
+        "filePath": "alpha_fund_v3/core/always_on_daemon.js",
+        "linesChanged": 12
+      }
+    },
+    {
+      "id": "hyp_1785709793294_bjt7y",
+      "title": "Rotate always_on_daemon.log when >100KB",
+      "category": "performance",
+      "timestamp": "2026-08-02T22:29:53.309Z",
+      "change": {
+        "filePath": "alpha_fund_v3/core/always_on_daemon.js",
+        "oldText": "function log(msg) {\n  const cleanMsg = msg.replace(/[^\\x20-\\x7E]/g, '?');\n  const entry = `[${new Date().toISOString()}] ${cleanMsg}\\n`;\n  fs.mkdirSync('alpha_fund_v3/logs', { recursive: true });\n  fs.appendFileSync(LOG_FILE, entry);\n}",
+        "newText": "const MAX_LOG_BYTES = 100 * 1024;\n\nfunction rotateLog() {\n  try {\n    if (fs.existsSync(LOG_FILE) && fs.statSync(LOG_FILE).size > MAX_LOG_BYTES) {\n      const archive = `${LOG_FILE}.${Date.now()}.old`;\n      fs.renameSync(LOG_FILE, archive);\n    }\n  } catch(e) {}\n}\n\nfunction log(msg) {\n  const cleanMsg = msg.replace(/[^\\x20-\\x7E]/g, '?');\n  const entry = `[${new Date().toISOString()}] ${cleanMsg}\\n`;\n  fs.mkdirSync('alpha_fund_v3/logs', { recursive: true });\n  rotateLog();\n  fs.appendFileSync(LOG_FILE, entry);\n}",
+        "hypothesisId": "hyp_1785709793294_bjt7y"
+      },
+      "outcome": "failed_review",
+      "tests": {
+        "syntax": true,
+        "load": true,
+        "functional": false
+      },
+      "metrics": {
+        "file_size_after": 1547
+      },
+      "review": {
+        "ok": false,
+        "depCheck": {
+          "dependents": [],
+          "results": [],
+          "allOk": true
+        },
+        "verifier": {
+          "total": 0,
+          "passed": 0,
+          "failed": 0,
+          "allOk": false,
+          "error": "No JSON found in verifier output"
+        }
+      },
+      "benchmark": {
+        "runLatencyMs": null,
+        "hasRunMethod": false
+      },
+      "status": "reverted",
+      "applied": {
+        "filePath": "alpha_fund_v3/core/always_on_daemon.js",
+        "linesChanged": 12
+      }
+    },
+    {
+      "id": "hyp_1785709881462_tgaog",
+      "title": "Rotate oversized logs to prevent disk bloat",
+      "category": "performance",
+      "timestamp": "2026-08-02T22:31:21.478Z",
+      "change": {
+        "filePath": "alpha_fund_v3/core/always_on_daemon.js",
+        "oldText": "function log(msg) {\n  const cleanMsg = msg.replace(/[^\\x20-\\x7E]/g, '?');\n  const entry = `[${new Date().toISOString()}] ${cleanMsg}\\n`;\n  fs.mkdirSync('alpha_fund_v3/logs', { recursive: true });\n  fs.appendFileSync(LOG_FILE, entry);",
+        "newText": "#!/usr/bin/env node\n/**\n * 🤖 ALWAYS-ON DAEMON\n * Runs continuously, no sleep mode, executes build loop every minute\n */\n\nconst fs = require('fs');\nconst { execSync } = require('child_process');\n\nconst LOG_FILE = 'alpha_fund_v3/logs/always_on_daemon.log';\n\nconst MAX_LOG_BYTES = 100 * 1024;\n\nfunction rotateLog() {\n  try {\n    if (fs.existsSync(LOG_FILE) && fs.statSync(LOG_FILE).size > MAX_LOG_BYTES) {\n      const archive = `${LOG_FILE}.${Date.now()}.old`;\n      fs.renameSync(LOG_FILE, archive);\n    }\n  } catch(e) {}\n}\n\nfunction log(msg) {\n  const cleanMsg = msg.replace(/[^\\x20-\\x7E]/g, '?');\n  const entry = `[${new Date().toISOString()}] ${cleanMsg}\\n`;\n  fs.mkdirSync('alpha_fund_v3/logs', { recursive: true });\n  rotateLog();\n  fs.appendFileSync(LOG_FILE, entry);\n}\n}\n\nfunction aliveCheck() {\n  try {\n    log('ALIVE');\n    return true;\n  } catch(e) {\n    log('ERROR: ' + e.message);\n    return false;\n  }\n}\n\nfunction runVerifier() {\n  try {\n    log('Running safe capability verifier...');\n    execSync('node safe_capability_verifier.js', {\n      cwd: 'C:\\\\Users\\\\quent\\\\.openclaw\\\\workspace',\n      windowsHide: true,\n      timeout: 300000,\n      stdio: ['pipe', 'pipe', 'pipe']\n    });\n    log('Verifier complete');\n  } catch(e) {\n    log('Verifier error: ' + e.message);\n  }\n}\n\n// Run every 60 seconds\nlog('Always-on daemon started');\n\nsetInterval(() => {\n  aliveCheck();\n}, 60000);\n\n// Initial verifier\nrunVerifier();\n\n// Run verifier every 10 minutes (not every minute to reduce load)\nsetInterval(() => {\n  runVerifier();\n}, 600000);\n",
+        "hypothesisId": "hyp_1785709881462_tgaog"
+      },
+      "outcome": "failed",
+      "tests": {
+        "syntax": false,
+        "load": false,
+        "functional": false,
+        "syntaxError": "Command failed: node -c C:\\Users\\quent\\.openclaw\\workspace\\alpha_fund_v3\\core\\always_on_daemon.js\nC:\\Users\\quent\\.openclaw\\workspace\\alpha_fund_v3\\core\\always_on_daemon.js:12\r\n#!/usr/bin/env node\r\n^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at wrapSafe (node:internal/modules/cjs/loader:1743:18)\r\n    at checkSyntax (node:internal/main/check_syntax:76:3)\r\n\r\nNode.js v24.14.1\r\n",
+        "loadError": "Invalid or unexpected token"
+      },
+      "metrics": {
+        "file_size_after": 2581
+      },
+      "review": null,
+      "benchmark": null,
+      "status": "reverted",
+      "applied": {
+        "filePath": "alpha_fund_v3/core/always_on_daemon.js",
+        "linesChanged": 66
+      }
+    },
+    {
+      "id": "hyp_1785710027948_1pgex",
+      "title": "Prune duplicate test plans in planner.js",
+      "category": "workflow",
+      "timestamp": "2026-08-02T22:33:47.968Z",
+      "change": {
+        "filePath": "project_claw_core/data/plans.json",
+        "oldText": "{\n  \"plans\": [\n    {\n      \"id\": \"plan_1785695060777\",\n      \"goal\": \"Make all capabilities functional\",\n      \"created_at\": \"2026-08-02T18:24:20.777Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"Build remaining core utilities\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_1\",\n          \"description\": \"Test each capability\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_2\",\n          \"description\": \"Run self audit\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_3\",\n          \"description\": \"Commit changes\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785708814492\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:13:34.493Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709396133\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:23:16.133Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709396163\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:23:16.163Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709414232\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:23:34.232Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709739512\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:28:59.512Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709753929\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:29:13.929Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709768007\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:29:28.007Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709800833\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:30:00.833Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709816889\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:30:16.889Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709832960\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:30:32.960Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709852981\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:30:52.981Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709923968\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:32:03.968Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709995085\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:33:15.085Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709995371\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:33:15.371Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785710012288\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:33:32.288Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    }\n  ]\n}",
+        "newText": "{\n  \"plans\": [\n    {\n      \"id\": \"plan_1785695060777\",\n      \"goal\": \"Make all capabilities functional\",\n      \"created_at\": \"2026-08-02T18:24:20.777Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"Build remaining core utilities\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_1\",\n          \"description\": \"Test each capability\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_2\",\n          \"description\": \"Run self audit\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_3\",\n          \"description\": \"Commit changes\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    }\n  ]\n}",
+        "hypothesisId": "hyp_1785710027948_1pgex"
+      },
+      "outcome": "failed",
+      "tests": {
+        "syntax": false,
+        "load": true,
+        "functional": false,
+        "syntaxError": "Command failed: node -c C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\data\\plans.json\nC:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\data\\plans.json:2\r\n  \"plans\": [\r\n         ^\r\n\r\nSyntaxError: Unexpected token ':'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1743:18)\r\n    at checkSyntax (node:internal/main/check_syntax:76:3)\r\n\r\nNode.js v24.14.1\r\n"
+      },
+      "metrics": {
+        "file_size_after": 836
+      },
+      "review": null,
+      "benchmark": null,
+      "status": "reverted",
+      "applied": {
+        "filePath": "project_claw_core/data/plans.json",
+        "linesChanged": -210
+      }
+    },
+    {
+      "id": "hyp_1785710043856_hgc4u",
+      "title": "Prune duplicate test plans in planner.js",
+      "category": "workflow",
+      "timestamp": "2026-08-02T22:34:03.881Z",
+      "change": {
+        "filePath": "project_claw_core/data/plans.json",
+        "oldText": "{\n  \"plans\": [\n    {\n      \"id\": \"plan_1785695060777\",\n      \"goal\": \"Make all capabilities functional\",\n      \"created_at\": \"2026-08-02T18:24:20.777Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"Build remaining core utilities\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_1\",\n          \"description\": \"Test each capability\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_2\",\n          \"description\": \"Run self audit\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_3\",\n          \"description\": \"Commit changes\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785708814492\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:13:34.493Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709396133\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:23:16.133Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709396163\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:23:16.163Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709414232\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:23:34.232Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709739512\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:28:59.512Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709753929\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:29:13.929Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709768007\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:29:28.007Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709800833\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:30:00.833Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709816889\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:30:16.889Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709832960\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:30:32.960Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709852981\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:30:52.981Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709923968\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:32:03.968Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709995085\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:33:15.085Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785709995371\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:33:15.371Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785710012288\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-02T22:33:32.288Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    }\n  ]\n}",
+        "newText": "{\n  \"plans\": [\n    {\n      \"id\": \"plan_1785695060777\",\n      \"goal\": \"Make all capabilities functional\",\n      \"created_at\": \"2026-08-02T18:24:20.777Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"Build remaining core utilities\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_1\",\n          \"description\": \"Test each capability\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_2\",\n          \"description\": \"Run self audit\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_3\",\n          \"description\": \"Commit changes\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    }\n  ]\n}",
+        "hypothesisId": "hyp_1785710043856_hgc4u"
+      },
+      "outcome": "success",
+      "tests": {
+        "syntax": true,
+        "load": true,
+        "functional": false
+      },
+      "metrics": {
+        "file_size_after": 836
+      },
+      "review": {
+        "ok": true,
+        "depCheck": {
+          "dependents": [],
+          "results": [],
+          "allOk": true
+        },
+        "metrics": {
+          "total": 106,
+          "passed": 63,
+          "failed": 43
+        }
+      },
+      "benchmark": {
+        "runLatencyMs": null,
+        "hasRunMethod": false
+      },
+      "status": "committed",
+      "applied": {
+        "filePath": "project_claw_core/data/plans.json",
+        "linesChanged": -210
       }
     }
   ]

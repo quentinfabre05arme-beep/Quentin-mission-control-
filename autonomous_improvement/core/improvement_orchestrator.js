@@ -46,37 +46,38 @@ async function runCycle() {
   // 3. Hypothesize
   const allHypotheses = HypothesisGenerator.generate();
 
-  // 4. Pick top hypothesis, skipping repeatedly-failed ones
-  let top = null;
+  // 4. Pick top actionable hypothesis, skipping repeatedly-failed or already-applied ones
+  let selected = null;
+  let change = null;
   for (const h of allHypotheses) {
     const failures = learning.failures_by_title[h.title] || 0;
     if (failures >= 3) {
       log(`Skipping repeatedly-failed hypothesis: ${h.title} (${failures} failures)`);
       continue;
     }
-    top = h;
-    break;
+    const candidate = ChangeGenerator.generate(h);
+    if (candidate && candidate.alreadyApplied) {
+      log(`Fix already applied: ${h.title}`);
+      continue;
+    }
+    if (candidate) {
+      selected = h;
+      change = candidate;
+      break;
+    }
+    log(`Could not generate change for: ${h.title}`, 'warn');
   }
 
-  if (!top) {
+  if (!selected || !change) {
     log('No actionable hypothesis this cycle');
     saveState(state);
-    return { success: true, state, note: 'no_hypothesis' };
+    return { success: true, state, note: 'no_actionable_hypothesis' };
   }
 
-  log(`Selected hypothesis: ${top.title}`);
-
-  // 5. Generate change
-  const change = ChangeGenerator.generate(top);
-  if (!change) {
-    log('Could not generate safe change', 'warn');
-    state.failures++;
-    saveState(state);
-    return { success: false, state, note: 'no_change' };
-  }
+  log(`Selected hypothesis: ${selected.title}`);
 
   // 6. Run experiment
-  const experiment = await ExperimentRunner.runExperiment(top, change);
+  const experiment = await ExperimentRunner.runExperiment(selected, change);
   if (experiment.outcome === 'success' && experiment.status === 'committed') {
     state.successes++;
   } else {

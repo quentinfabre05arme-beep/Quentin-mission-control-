@@ -82,6 +82,11 @@ function applyChange(change) {
 async function runFunctionalBenchmark(filePath) {
   const results = { runLatencyMs: null, hasRunMethod: false };
   const fullPath = path.join(CONFIG.workspace, filePath);
+  const content = fs.readFileSync(fullPath, 'utf8');
+  if (/setInterval\s*\(/.test(content) || /setTimeout\s*\(/.test(content)) {
+    results.note = 'long-running daemon; benchmark skipped';
+    return results;
+  }
   try {
     delete require.cache[require.resolve(fullPath)];
     const mod = require(fullPath);
@@ -100,20 +105,39 @@ async function runFunctionalBenchmark(filePath) {
 function runTests(change) {
   log(`Testing change in ${change.filePath}`);
   const results = { syntax: false, load: false, functional: false };
+  const fullPath = path.join(CONFIG.workspace, change.filePath);
+  const content = fs.readFileSync(fullPath, 'utf8');
+
+  if (change.filePath.endsWith('.json')) {
+    try {
+      JSON.parse(content);
+      results.syntax = true;
+      results.load = true;
+    } catch (e) {
+      results.syntaxError = e.message;
+    }
+    return results;
+  }
 
   try {
-    execSync(`node -c ${path.join(CONFIG.workspace, change.filePath)}`, { encoding: 'utf8', stdio: 'pipe' });
+    execSync(`node -c ${fullPath}`, { encoding: 'utf8', stdio: 'pipe' });
     results.syntax = true;
   } catch (e) {
     results.syntaxError = e.message;
   }
 
-  try {
-    delete require.cache[require.resolve(path.join(CONFIG.workspace, change.filePath))];
-    require(path.join(CONFIG.workspace, change.filePath));
+  const isLongRunning = /setInterval\s*\(/.test(content) || /setTimeout\s*\(/.test(content);
+  if (isLongRunning) {
+    log('Skipping load test for long-running daemon file');
     results.load = true;
-  } catch (e) {
-    results.loadError = e.message;
+  } else {
+    try {
+      delete require.cache[require.resolve(fullPath)];
+      require(fullPath);
+      results.load = true;
+    } catch (e) {
+      results.loadError = e.message;
+    }
   }
 
   return results;

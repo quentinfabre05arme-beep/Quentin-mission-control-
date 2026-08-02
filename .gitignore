@@ -72,3 +72,4 @@ project_claw_core/logs/capability_verification.jsonl
 project_claw_core/logs/capability_verify_run.txt
 project_claw_core/core_backup_verify/
 project_claw_core/logs/safe_verify_run*.txt
+autonomous_improvement/backups/
