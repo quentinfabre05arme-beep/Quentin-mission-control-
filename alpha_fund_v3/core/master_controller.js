@@ -26,8 +26,7 @@ let state = {
   last_health_check: null,
   revenue_streams: {
     alpha_fund: { status: 'paper_trading', target: 'live_at_55pct_accuracy' },
-    pod: { status: 'blocked_pricing', target: 'unblock_then_launch' },
-    newsletter: { status: 'draft_ready', target: 'publish_when_engaged' },
+        newsletter: { status: 'draft_ready', target: 'publish_when_engaged' },
     skills: { status: '4_skills_created', target: 'publish_quarterly' }
   }
 };
