@@ -19,11 +19,17 @@ const path = require('path');
 const IBKR_CONFIG = {
   host: '127.0.0.1',        // TWS running locally
   port: 7496,               // TWS default port (7496 TWS, 4001 Gateway)
-  clientId: 1,              // Unique client ID
+  clientId: 1,              // Base client ID; actual ID rotates to avoid stuck sessions
   enabled: true             // ✅ ENABLED — Ready to connect
 };
 
 const CACHE_FILE = path.join(__dirname, '..', 'data', 'ibkr_cache.json');
+let lastClientId = IBKR_CONFIG.clientId;
+
+function getClientId() {
+  lastClientId = (lastClientId % 100) + 1;
+  return lastClientId;
+}
 
 // ─── PRICE FETCHER ──────────────────────────────────────────
 async function fetchIBKRPrices(tickers) {
@@ -34,7 +40,7 @@ async function fetchIBKRPrices(tickers) {
   
   try {
     // Dynamic import to avoid loading if not configured
-    const { IBApi, EventName, Contract } = require('@stoqey/ib');
+    const { IBApi, EventName, Stock, Crypto, MarketDataType } = require('@stoqey/ib');
     
     const ib = new IBApi({
       host: IBKR_CONFIG.host,
@@ -43,65 +49,71 @@ async function fetchIBKRPrices(tickers) {
     });
     
     const prices = {};
+    let resolved = false;
     
     return new Promise((resolve, reject) => {
-      let pendingRequests = tickers.length;
+      
+      function finish() {
+        if (!resolved) {
+          resolved = true;
+          try { ib.disconnect(); } catch(e) {}
+          resolve(Object.keys(prices).length > 0 ? prices : null);
+        }
+      }
       
       // Market data callback
       ib.on(EventName.tickPrice, (reqId, tickType, price, attrib) => {
-        if (tickType === 4 || tickType === 9) { // Last price or Close price
+        // Tick types: 4=last, 9=close, 68=delayed-last, 75=delayed-close
+        const validPriceTypes = [4, 9, 68, 75];
+        if (validPriceTypes.includes(tickType) && price > 0) {
           const ticker = tickers[reqId];
           if (ticker) {
             prices[ticker] = {
               price: price,
+              change_24h: 0,
               source: 'IBKR',
               timestamp: new Date().toISOString()
             };
-            pendingRequests--;
-            
-            if (pendingRequests <= 0) {
-              ib.disconnect();
-              resolve(prices);
-            }
           }
         }
       });
       
       // Error handling
       ib.on(EventName.error, (err) => {
-        if (err.message && err.message.includes('ECONNREFUSED')) {
+        const msg = err.message || String(err);
+        if (msg.includes('ECONNREFUSED')) {
           console.log('   ⚠️ IBKR TWS not running');
+        } else if (msg.includes('delayed')) {
+          console.log('   ℹ️ IBKR using delayed market data');
+          return;
+        } else if (msg.includes('Not connected')) {
+          console.log('   ⚠️ IBKR not connected');
         } else {
-          console.error('IBKR Error:', err.message || err);
+          console.error('IBKR Error:', msg);
         }
         try { ib.disconnect(); } catch(e) {}
-        reject(err);
+        if (!resolved) reject(err);
       });
       
       // Connect and request data
-      ib.connect();
+      ib.connect(getClientId());
+      
+      // Request delayed market data (no real-time subscription needed)
+      try {
+        ib.reqMarketDataType(MarketDataType.DELAYED);
+      } catch(e) {}
       
       tickers.forEach((ticker, index) => {
-        const contract = new Contract();
-        contract.symbol = ticker;
-        contract.secType = 'STK';  // Stock
-        contract.exchange = 'SMART';
-        contract.currency = 'USD';
+        // Skip crypto — IBKR requires separate crypto subscription
+        if (['BTC', 'ETH'].includes(ticker)) return;
         
-        // For crypto, use different contract type
-        if (['BTC', 'ETH'].includes(ticker)) {
-          contract.secType = 'CRYPTO';
-          contract.exchange = 'PAXOS';
-          contract.currency = 'USD';
-        }
-        
+        const contract = new Stock(ticker, 'SMART', 'USD');
         ib.reqMktData(index, contract, '', false, false);
       });
       
       // Timeout fallback
       setTimeout(() => {
-        ib.disconnect();
-        resolve(prices);
+        finish();
       }, 10000);
     });
     
