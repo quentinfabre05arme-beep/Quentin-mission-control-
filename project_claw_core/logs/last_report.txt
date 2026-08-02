@@ -1,36 +1,28 @@
-🤖 **Project Claw Core — 10-Min Report**
-🕓 14:59:41 CET
+Project Claw Core — 10-Min Report
+Time: 18:46:17 CET
 
-━━━━━━━━━━━━━━━━━━━━━━
-📊 PROGRESS
-━━━━━━━━━━━━━━━━━━━━━━
+PROGRESS
+--------
+Capabilities: 190 / 200 (95.0%)
+Target: Full human-level autonomous agent
+Loop: Every 60 seconds
 
-**Capabilities:** 11 / 200 (5.5%)
-**Target:** Full human-level autonomous agent
-**Loop:** Every 60 seconds
+LAST BUILDS
+-----------
+- [2026-08-02T16:46:08.789Z] postgres_agent_v7 ? agents/postgres_agent_v7.js
+- [2026-08-02T16:46:08.793Z] scheduler_agent_v7 ? core/scheduler_agent_v7.js
+- [2026-08-02T16:46:08.800Z] mongo_agent_v7 ? agents/mongo_agent_v7.js
+- [2026-08-02T16:46:08.804Z] rate_limiter_agent_v7 ? core/rate_limiter_agent_v7.js
+- [2026-08-02T16:46:08.808Z] ftp_agent_v7 ? agents/ftp_agent_v7.js
 
-━━━━━━━━━━━━━━━━━━━━━━
-✅ LAST BUILDS
-━━━━━━━━━━━━━━━━━━━━━━
+VERIFICATION
+------------
+Verified: 180 passed, 0 failed, 180 total
 
-No new builds in last 10 minutes
+NO BLOCKERS
 
-━━━━━━━━━━━━━━━━━━━━━━
-🧪 VERIFICATION
-━━━━━━━━━━━━━━━━━━━━━━
-
-Verified: 11 passed, 0 failed, 11 total
-
-━━━━━━━━━━━━━━━━━━━━━━
-⚠️ BLOCKERS
-━━━━━━━━━━━━━━━━━━━━━━
-
-• Initial capability list exhausted — need to expand CAPABILITIES array
-
-━━━━━━━━━━━━━━━━━━━━━━
-🔐 CREDENTIALS NEEDED
-━━━━━━━━━━━━━━━━━━━━━━
-
+CREDENTIALS NEEDED
+------------------
 None currently. Will ask if new accounts/APIs needed.
 
-**Status: Building.**
+Status: Building.

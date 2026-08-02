@@ -13,3 +13,4 @@
 2026-08-02T13:37:06.322Z: Recovery attempted for Market Data
 2026-08-02T13:52:05.186Z: Recovery attempted for Market Data
 2026-08-02T14:07:03.225Z: Recovery attempted for Market Data
+2026-08-02T17:22:11.570Z: Recovery attempted for OpenClaw Gateway
