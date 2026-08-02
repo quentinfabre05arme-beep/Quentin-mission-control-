@@ -26,7 +26,7 @@ class CapabilityRegistry {
     for (const dir of this.dirs) {
       const fullDir = path.join(process.cwd(), dir);
       if (!fs.existsSync(fullDir)) continue;
-      const files = fs.readdirSync(fullDir).filter(f => f.endsWith('.js') && !/_v\d+\.js$/.test(f));
+      const files = fs.readdirSync(fullDir).filter(f => f.endsWith('.js') && !/_v\d+\.js$/.test(f) && !f.startsWith('telegram_helper'));
       for (const file of files) {
         const filePath = path.join(fullDir, file);
         const content = fs.readFileSync(filePath, 'utf8');

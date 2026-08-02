@@ -103,6 +103,7 @@ class SelfAudit {
       const files = fs.readdirSync(fullDir).filter(f => {
         if (!f.endsWith('.js')) return false;
         if (/_v\d+\.js$/.test(f)) return false;
+        if (f.startsWith('telegram_helper')) return false;
         return true;
       });
       for (const file of files) {

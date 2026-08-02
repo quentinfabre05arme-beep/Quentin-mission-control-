@@ -30,15 +30,16 @@ function aliveCheck() {
 
 function runBuildLoop() {
   try {
-    log('Running Project Claw Core build loop...');
-    execSync('node project_claw_core/core/build_loop_continuous.js', {
+    log('Running safe capability verifier...');
+    execSync('node safe_capability_verifier.js', {
       cwd: 'C:\\Users\\quent\\.openclaw\\workspace',
       windowsHide: true,
-      timeout: 300000
+      timeout: 300000,
+      stdio: ['pipe', 'pipe', 'pipe']
     });
-    log('Build loop complete');
+    log('Verifier complete');
   } catch(e) {
-    log('Build loop error: ' + e.message);
+    log('Verifier error: ' + e.message);
   }
 }
 
