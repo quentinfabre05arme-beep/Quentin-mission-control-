@@ -13,7 +13,7 @@
 
 ---
 
-## Last Updated: August 3, 2026
+## Last Updated: August 3, 2026 00:20 CET
 
 ---
 
@@ -34,6 +34,41 @@
 - `FREE_RESEARCH_STACK.md` — full research options guide
 
 **Action required:** User will reboot later to finish Docker Desktop initialization; then OpenSERP will auto-deploy via scheduled task.
+
+---
+
+## 🤖 Autonomous Self-Improvement Engine — August 3, 2026
+
+**Status:** ✅ OPERATIONAL — first successful auto-improvement committed.
+
+**What it does:**
+1. Profiles all capabilities weekly (usage, errors, bloat).
+2. Researches external best practices for AI agent improvement (browser + web_search).
+3. Generates ranked hypotheses (effort/impact scoring).
+4. Converts top hypothesis into a concrete, validated code diff.
+5. Runs the experiment: backup → apply → syntax/load test → commit if passed, restore if failed.
+6. Logs every experiment outcome to `autonomous_improvement/data/experiments.json`.
+
+**First success:**
+- Hypothesis: Add timeout guards to long-running capabilities.
+- Target: `project_claw_core/agents/research_router.js`.
+- Change: Added `runWithTimeout()` helper + wrapped browser research with 30s timeout.
+- Commits: `545cef7`, `806594e`, `b2f0450`.
+
+**Files:**
+- `autonomous_improvement/core/improvement_orchestrator.js` — main loop
+- `autonomous_improvement/core/capability_profiler.js` — capability health scan
+- `autonomous_improvement/core/improvement_radar.js` — external research
+- `autonomous_improvement/core/hypothesis_generator.js` — ranked ideas
+- `autonomous_improvement/core/change_generator.js` — validated code diffs
+- `autonomous_improvement/core/experiment_runner.js` — safe experiment harness
+- `scripts/start_improvement_loop.ps1` — 30-min loop runner
+- `scripts/autonomous_improvement_task.xml` — Task Scheduler definition
+
+**Schedule:**
+- Task Scheduler job `OpenClaw-Autonomous-Improvement` runs at logon/boot.
+- Loop cycles every 30 minutes.
+- Auto-restart on failure.
 
 ---
 
