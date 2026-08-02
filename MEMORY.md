@@ -322,7 +322,116 @@ All jobs previously failing with kimi-k2.5:cloud (not in allowlist) updated to k
 
 ---
 
-*This file is maintained automatically. Last manual update: July 27, 2026*
+---
+
+## 🧠 Multi-Model AI Architecture v2.0
+
+**Status:** ✅ DEPLOYED & OPERATIONAL
+**Location:** missions/smart_brain/
+**Test Results:** 22/22 tests passed (100%)
+
+### Models Configured
+- **Primary/Orchestrator:** kimi-k2.6 (current model)
+- **Coder:** qwen3-coder (code tasks)
+- **Fast:** qwen3 (quick queries)
+- **Analyst:** deepseek-v4-pro (deep analysis)
+- **Specialist:** kimi-k2.7-code (advanced coding)
+- **Safety:** llama3.1 (validation)
+
+### Key Files
+- config.json — Model definitions & routing rules
+- orchestrator.js — Main engine (13KB)
+- model_switcher.js — Real-time switching (4KB)
+- test_suite.js — Comprehensive tests
+- README.md — Full documentation
+
+### Routing Performance
+- Code tasks → qwen3-coder (100% confidence)
+- Analysis tasks → deepseek-v4-pro (50% confidence)
+- Quick queries → qwen3 (100% confidence)
+- Validation → llama3.1 (50% confidence)
+- System design → kimi-k2.7-code (50% confidence)
+
+### Execution Modes
+1. Single — One model handles task
+2. Sequential — Task model + validation
+3. Parallel — Multiple models simultaneously
+4. Adaptive — Escalate through models
+
+---
+
+## 🤖 Alpha Fund v3.0 — Autonomous Brain (Aug 2, 2026)
+
+**Status:** 🧠 **GROK POWERED** — Best model for brain
+**Model:** xai/grok-4.5 (reasoning ON)
+**Reports:** 3x/day (08:00, 12:00, 20:00 CET)
+
+### Brain Architecture
+```
+Grok 4.5 (Brain)
+├── Hourly: Self-improvement cycles
+│   └── Test → Verify → Fix → Commit
+├── 3x/Day: Trading execution
+│   └── Scan → Signal → Trade → Log
+└── 3x/Day: Reports to Quentin
+    ├── 08:00 Morning brief
+    ├── 12:00 Midday update
+    └── 20:00 Evening wrap
+```
+
+### Why Grok 4.5?
+- **Reasoning**: ON — Deep analysis for investment decisions
+- **Research**: Superior web search for market intel
+- **Code**: Advanced debugging for system fixes
+- **Memory**: Better context for long-term strategy
+
+### Token Budget (Grok)
+- Improvement cycles: ~30K/day (hourly)
+- Trading cycles: ~15K/day (3x)
+- Reports: ~20K/day (3x detailed)
+- Total: ~65K/day (worth the quality)
+
+---
+
+## 🔁 Alpha Fund v3.0 — Autonomous Improvement Loop (Aug 2, 2026)
+
+**Status:** ✅ ACTIVE
+**Cron Jobs:**
+- `alpha-fund-auto-improve` — Every hour (self-improvement) — **GROK 4.5**
+- `alpha-fund-daily-cycle` — 09:00, 15:00, 21:00 CET (trading) — **GROK 4.5**
+- `alpha-fund-morning-report` — 08:00 daily (report) — **GROK 4.5**
+- `alpha-fund-midday-report` — 12:00 daily (report) — **GROK 4.5**
+- `alpha-fund-evening-report` — 20:00 daily (report) — **GROK 4.5**
+
+**Self-Permission:** Owner authorized autonomous improvement without asking
+**Token Budget:** 65K/day (Grok for quality)
+
+**Current Improvements Running:**
+1. Hourly system health checks
+2. Signal accuracy monitoring
+3. Quick bug fixes & enhancements
+4. Daily trading cycles (paper mode)
+5. Auto-commit & documentation
+
+**Next Scheduled:**
+- Improvement cycle: ~10:58 CET (GROK)
+- Trading cycle: 15:00 CET (GROK)
+- Report #1: 08:00 tomorrow (GROK)
+
+---
+
+## 📈 Alpha Fund v3.0 Portfolio (Aug 2, 2026)
+
+**Status:** Paper Trading | Capital: $10,000
+**Positions:**
+- NVDA: 3 shares @ $200.75
+- HIMS: 28 shares @ $27.77
+**Cash:** $8,620.19
+**Commit:** ae32bbf
+
+---
+
+*This file is maintained automatically. Last manual update: August 2, 2026*
 
 ---
 
