@@ -20,11 +20,11 @@ function isStub(content) {
   // Count lines and return statements to distinguish real code from stubs
   const lines = content.split('\n').length;
   const stubPatterns = [
-    /\/\/ Placeholder/,
-    /\/\/ TODO/,
-    /NOT_IMPLEMENTED/,
-    /throw new Error\(['"]Not implemented['"]\)/,
-    /console\.log\(['"]Stub:/
+    /\/\/ Placeholder/i,
+    /\/\/ TODO\b/i,
+    /NOT_IMPLEMENTED/i,
+    /throw new Error\(['"]Not implemented['"]\)/i,
+    /console\.log\(['"]Stub:/i
   ];
   
   let stubScore = 0;
@@ -46,6 +46,8 @@ function isStub(content) {
 function analyzeFile(filePath, content) {
   const lines = content.split('\n').length;
   const stubScore = isStub(content);
+  const hasClass = /class\s+\w+\s*\{/.test(content);
+  const hasRealMethods = hasClass && (content.match(/\b\w+\([^)]*\)\s*\{/g) || []).length >= 2;
   const hasRealLogic = lines > 40 && (
     content.includes('require(') ||
     content.includes('execSync(') ||
@@ -55,8 +57,8 @@ function analyzeFile(filePath, content) {
     content.includes('http.request(') ||
     content.includes('fetch(') ||
     content.includes('new Promise(') ||
-    /class\s+\w+\s*\{/.test(content)
-  ) && stubScore < 3;
+    hasClass
+  ) && stubScore < 5 && (hasRealMethods || hasClass || (lines > 60 && content.includes('module.exports')));
   
   return {
     path: filePath,
