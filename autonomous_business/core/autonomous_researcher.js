@@ -42,32 +42,31 @@ async function researchOpportunity(id) {
   };
 
   try {
-    const { CapabilityInvoker } = require(path.join(CONFIG.workspace, 'project_claw_core/core/capability_invoker'));
-    const invoker = new CapabilityInvoker();
+    const { BrowserResearcher } = require(path.join(CONFIG.workspace, 'project_claw_core/agents/browser_researcher'));
+    const researcher = new BrowserResearcher();
 
     // Market research
     const marketQuery = `${opp.name} market size demand 2026`;
-    const marketRes = await invoker.invoke('research_agent', 'research', [marketQuery, 3]);
-    evidence.market_queries.push({ query: marketQuery, result: marketRes.result });
+    const marketRes = await researcher.research(marketQuery, 3);
+    evidence.market_queries.push({ query: marketQuery, result: marketRes });
 
     // Competitor research
     const compQuery = `${opp.name} competitors alternatives`;
-    const compRes = await invoker.invoke('research_agent', 'research', [compQuery, 3]);
-    evidence.competitor_queries.push({ query: compQuery, result: compRes.result });
+    const compRes = await researcher.research(compQuery, 3);
+    evidence.competitor_queries.push({ query: compQuery, result: compRes });
 
     // Pricing research
     const priceQuery = `${opp.name} pricing subscription`;
-    const priceRes = await invoker.invoke('research_agent', 'research', [priceQuery, 3]);
-    evidence.pricing_queries.push({ query: priceQuery, result: priceRes.result });
+    const priceRes = await researcher.research(priceQuery, 3);
+    evidence.pricing_queries.push({ query: priceQuery, result: priceRes });
 
-    evidence.findings.push('Research agent completed queries');
+    evidence.findings.push(`Browser research completed. Market results: ${marketRes.length}, Competitor: ${compRes.length}, Pricing: ${priceRes.length}`);
   } catch(e) {
-    log(`Research error for ${id}: ${e.message}`);
-    evidence.findings.push(`Error: ${e.message}`);
+    log(`Browser research error for ${id}: ${e.message}`);
+    evidence.findings.push(`Browser research error: ${e.message}`);
   }
 
-  // Validate: if we got at least some results, mark validated
-  opp.validated = evidence.market_queries.length > 0 || evidence.competitor_queries.length > 0;
+  opp.validated = evidence.market_queries.length > 0 && evidence.market_queries[0].result.length > 0;
   opp.evidence.push(evidence);
   opp.status = opp.validated ? 'validated' : 'idea';
 

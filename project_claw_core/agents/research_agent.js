@@ -11,6 +11,8 @@ const LOG_FILE = path.join(__dirname, '..', 'logs', 'research_agent.log');
 const CACHE_DIR = path.join(__dirname, '..', 'memory', 'research_cache');
 const CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
 
+const { getCredential } = require('../../credential_manager');
+
 function log(msg) {
   const entry = `[${new Date().toISOString()}] ${msg}\n`;
   fs.mkdirSync(path.dirname(LOG_FILE), { recursive: true });
@@ -37,23 +39,78 @@ function saveCache(query, results) {
 
 function getSerperKey() {
   try {
-    // Try to read from credential manager or env
+    // Try environment first
     if (process.env.SERPER_API_KEY) return process.env.SERPER_API_KEY;
-    // Fallback: read from .env style file
+
+    // Try credential manager
+    try {
+      const cred = getCredential('serper');
+      if (cred && cred.password) return cred.password;
+    } catch(e) {}
+
+    // Try .env file
     const envFile = path.join(__dirname, '..', '..', '.env');
     if (fs.existsSync(envFile)) {
       const lines = fs.readFileSync(envFile, 'utf8').split('\n');
       for (const line of lines) {
         if (line.startsWith('SERPER_API_KEY=')) {
-          return line.split('=')[1].trim();
+          return line.split('=').slice(1).join('=').trim();
         }
       }
     }
-    // Fallback: OpenClaw secret ref pattern
+
+    // Last resort placeholder
     return '{{secret:serper-api}}';
   } catch(e) {
-    return null;
+    log('No Serper API key available');
+    return [];
   }
+}
+
+async function searchWebFallback(query, count = 5) {
+  // DuckDuckGo HTML fallback when Serper is unavailable
+  log(`Serper unavailable, trying DuckDuckGo fallback for: ${query}`);
+  return new Promise((resolve, reject) => {
+    const url = `https://duckduckgo.com/html/?q=${encodeURIComponent(query)}`;
+    https.get(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+      },
+      timeout: 15000
+    }, (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => {
+        const results = [];
+        const regex = /<a[^\u003e]*href="(https?:\/\/[^"]+)"[^\u003e]*class="result__a"[^\u003e]*>([^\u003c]*)<\/a>/gi;
+        let match;
+        while ((match = regex.exec(data)) !== null && results.length < count) {
+          results.push({ title: match[2].trim(), link: match[1], snippet: '', source: 'duckduckgo_fallback' });
+        }
+        resolve(results);
+      });
+      // DuckDuckGo often returns cloudflare blocks; try Brave search API-less approach
+      const braveUrl = `https://search.brave.com/search?q=${encodeURIComponent(query)}`;
+      https.get(braveUrl, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        },
+        timeout: 15000
+      }, (res2) => {
+        let data2 = '';
+        res2.on('data', chunk => data2 += chunk);
+        res2.on('end', () => {
+          const results2 = [];
+          const regex2 = /<div[^\u003e]*class="snippet"[^\u003e]*>\s*<a[^\u003e]*href="(https?:\/\/[^"]+)"[^\u003e]*>([^\u003c]*)<\/a>/gi;
+          let match2;
+          while ((match2 = regex2.exec(data2)) !== null && results2.length < count) {
+            results2.push({ title: match2[2].trim(), link: match2[1], snippet: '', source: 'brave_fallback' });
+          }
+          resolve(results.length > 0 ? results : results2);
+        });
+      }).on('error', () => resolve(results)).on('timeout', () => resolve(results));
+    }).on('error', reject).on('timeout', () => reject(new Error('Timeout')));
+  });
 }
 
 async function searchWeb(query, count = 5) {
@@ -64,9 +121,11 @@ async function searchWeb(query, count = 5) {
   }
   
   const apiKey = getSerperKey();
-  if (!apiKey || apiKey.includes('secret:')) {
-    log('No Serper API key available');
-    return [];
+  if (!apiKey || apiKey.includes('secret:') || apiKey.length < 20) {
+    log('No Serper API key available, using browser fallback');
+    const { BrowserResearcher } = require('./browser_researcher');
+    const browser = new BrowserResearcher();
+    return await browser.search(query, count);
   }
   
   log(`Searching: ${query}`);
@@ -94,6 +153,22 @@ async function searchWeb(query, count = 5) {
             snippet: r.snippet,
             date: r.date
           }));
+          
+          if (results.length === 0) {
+            log('Serper returned empty, falling back to browser research');
+            const { BrowserResearcher } = require('./browser_researcher');
+            const browser = new BrowserResearcher();
+            browser.search(query, count).then(fallback => {
+              saveCache(query, fallback.length > 0 ? fallback : results);
+              resolve(fallback);
+            }).catch(err => {
+              log(`Browser fallback error: ${err.message}`);
+              saveCache(query, results);
+              resolve(results);
+            });
+            return;
+          }
+          
           saveCache(query, results);
           resolve(results);
         } catch(e) {
@@ -136,11 +211,17 @@ async function fetchPageText(url) {
 
 class ResearchAgent {
   constructor() {}
-  
+
   async search(query, count = 5) {
     return await searchWeb(query, count);
   }
-  
+
+  async searchDeep(query, count = 5) {
+    const { BrowserResearcher } = require('./browser_researcher');
+    const browser = new BrowserResearcher();
+    return await browser.search(query, count);
+  }
+
   async summarize(url) {
     log(`Summarizing: ${url}`);
     const text = await fetchPageText(url);
@@ -154,6 +235,12 @@ class ResearchAgent {
   
   async research(query, count = 5) {
     const results = await this.search(query, count);
+    // If Serper/raw search returns nothing, fall back to browser-based deep research
+    if (!results || results.length === 0) {
+      log('Serper returned empty, falling back to browser-based research');
+      return await this.searchDeep(query, count);
+    }
+
     const enriched = [];
     for (const r of results.slice(0, 3)) {
       try {
