@@ -1,15 +1,15 @@
 {
   "lastChecks": {
-    "market": 1754137774688,
-    "system": 1754137774688,
-    "git": 1754137774688,
+    "market": 1754149600000,
+    "system": 1754149600000,
+    "git": 1754149600000,
     "calendar": null,
     "weather": null,
     "heartbeat": {
-      "ram": "92.5% used (~0.6GB free / 7.9GB)",
-      "disk": "C:29% free, D:57% free, E:12% free",
-      "ts": "2026-08-02T09:29:54.688Z"
+      "ram": "93.0% used (~580MB free / 7.9GB) - CRITICAL",
+      "disk": "C:27.7% free, D:57.3% free, E:11.9% free",
+      "ts": "2026-08-02T16:15:58.792Z"
     }
   },
-  "notes": "Heartbeat 2026-08-02 11:30 CET: Market data refreshed and committed. BTC $63,247 (+0.67%), ETH $1,871 (+1.40%). NVDA +2.93% BULLISH; MSTR -4.56%, AAPL -7.35%, COIN -10.59% BEARISH. SPY/QQQ/GLD/TLT at 0% change via Yahoo (weekend). RAM still critical at 92.5% — needs attention. Git backup 9ac55b5."
+  "notes": "Heartbeat 2026-08-02 18:15 CET: Market data refreshed. BTC $63,049 (+0.21%), ETH $1,856.07 (-0.61%). Twelve Data API failed (all assets), fallbacks CoinGecko/Yahoo active. RAM CRITICAL at 93.0% (~580MB free). Top memory hogs: tws 1011MB, node 659MB, Chrome/Chromium ~1.6GB combined. No auto-kill performed to avoid disrupting trading/browsing. Git: uncommitted tracked files in alpha_fund_v3/logs, missions/health_reports, recovery/state. Many new untracked project_claw_core v4/v5 agent files."
 }
