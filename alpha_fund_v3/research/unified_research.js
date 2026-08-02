@@ -116,11 +116,11 @@ function analyzeSentiment() {
   let fear_greed = 50; // Neutral default
   
   try {
-    const files = fs.readdirSync(altDataPath).filter(f => f.endsWith('.json')).sort().reverse();
+    const files = fs.readdirSync(altDataPath).filter(f => f.endsWith('.json') && f.startsWith('20')).sort().reverse();
     if (files.length > 0) {
       const latest = JSON.parse(fs.readFileSync(path.join(altDataPath, files[0]), 'utf8'));
       if (latest.sentiment && latest.sentiment.fear_greed) {
-        fear_greed = latest.sentiment.fear_greed.value;
+        fear_greed = latest.sentiment.fear_greed.value || latest.sentiment.fear_greed.index || 50;
       }
     }
   } catch (e) {}

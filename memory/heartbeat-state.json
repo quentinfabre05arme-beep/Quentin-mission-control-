@@ -1,15 +1,15 @@
 {
   "lastChecks": {
-    "market": 1785652212455,
-    "system": 1785652212455,
-    "git": 1785652212455,
+    "market": 1754137774688,
+    "system": 1754137774688,
+    "git": 1754137774688,
     "calendar": null,
     "weather": null,
     "heartbeat": {
-      "ram": "86.6% used (~1.1GB free / 8.3GB) — improved from critical",
+      "ram": "92.5% used (~0.6GB free / 7.9GB)",
       "disk": "C:29% free, D:57% free, E:12% free",
-      "ts": "2026-08-02T06:30:12.455Z"
+      "ts": "2026-08-02T09:29:54.688Z"
     }
   },
-  "notes": "Heartbeat 2026-08-02 08:30 CET: Market data fresh. BTC $63,498 (+1.07%), ETH $1,878 (+1.78%). AAPL -7.35%, COIN -10.59%, MSTR -4.56% flagged as anomalies. Fear & Greed 27 FEAR/DECLINING. Research: BTC technical SELL (strong downtrend), ETH/HOLD, MSTR/HOLD, HIMS/HOLD. Git backup f37026e. RAM improved to ~86.6%. Memory search still disabled."
+  "notes": "Heartbeat 2026-08-02 11:30 CET: Market data refreshed and committed. BTC $63,247 (+0.67%), ETH $1,871 (+1.40%). NVDA +2.93% BULLISH; MSTR -4.56%, AAPL -7.35%, COIN -10.59% BEARISH. SPY/QQQ/GLD/TLT at 0% change via Yahoo (weekend). RAM still critical at 92.5% — needs attention. Git backup 9ac55b5."
 }
