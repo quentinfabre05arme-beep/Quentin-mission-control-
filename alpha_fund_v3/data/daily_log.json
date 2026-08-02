@@ -1,0 +1,13 @@
+{
+  \"date\": \"2026-08-02\",
+  \"time\": \"15:00\",
+  \"day\": \"Sunday\",
+  \"mode\": \"paper\",
+  \"fear_greed\": 50,
+  \"signals\": { \"buy\": 3, \"hold\": 6, \"sell\": 3 },
+  \"trades_executed\": 0,
+  \"cash\": 8620.19,
+  \"total_value\": 10000.00,
+  \"positions\": 2,
+  \"notes\": \"Markets closed Sunday. ETH buy signal detected but not executed.\" 
+}
