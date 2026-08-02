@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-02T22:23:27.908Z",
+  "generated_at": "2026-08-02T23:25:35.233Z",
   "goals": [
     {
       "id": "functional_capabilities",
       "title": "Continue making top capabilities functional",
-      "reason": "111 capability files exist; most are stubs that need real implementations",
+      "reason": "114 capability files exist; most are stubs that need real implementations",
       "priority": "high",
       "action": "Implement real logic for GitHub, Slack, Discord, package installer, system monitor"
     },

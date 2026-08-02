@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-02T22:27:10.152Z",
+  "timestamp": "2026-08-02T23:27:10.064Z",
   "system": {
     "platform": "win32",
     "release": "10.0.26200",
@@ -7,27 +7,27 @@
     "cpus": 8,
     "total_ram_gb": 8,
     "free_ram_gb": 2,
-    "uptime_hours": 182,
+    "uptime_hours": 183,
     "user": "quent",
     "home": "C:\\Users\\quent"
   },
   "workspace": {
-    "total_files": 2594,
+    "total_files": 2643,
     "total_dirs": 209,
-    "total_size": 89106111,
+    "total_size": 89335466,
     "top_dirs": [
       {
         "name": "project_claw_core",
-        "files": 526,
+        "files": 564,
         "dirs": 10,
         "size_mb": 23,
         "old_files": 0,
         "types": {
-          ".js": 204,
+          ".js": 233,
           ".log": 113,
           "(no ext)": 79,
           ".md": 54,
-          ".json": 35
+          ".json": 44
         }
       },
       {
@@ -73,7 +73,7 @@
       },
       {
         "name": "alpha_fund_v3",
-        "files": 147,
+        "files": 148,
         "dirs": 14,
         "size_mb": 5,
         "old_files": 0,
@@ -184,15 +184,28 @@
       },
       {
         "name": "scripts",
-        "files": 29,
+        "files": 31,
         "dirs": 0,
         "size_mb": 0,
         "old_files": 0,
         "types": {
           ".py": 17,
-          ".ps1": 10,
-          ".xml": 1,
+          ".ps1": 11,
+          ".xml": 2,
           ".bat": 1
+        }
+      },
+      {
+        "name": "autonomous_improvement",
+        "files": 27,
+        "dirs": 4,
+        "size_mb": 0,
+        "old_files": 0,
+        "types": {
+          ".bak": 9,
+          ".js": 9,
+          ".json": 7,
+          ".log": 2
         }
       },
       {
@@ -207,20 +220,6 @@
           ".py": 2,
           ".txt": 1,
           ".log": 1
-        }
-      },
-      {
-        "name": "recovery",
-        "files": 8,
-        "dirs": 2,
-        "size_mb": 0,
-        "old_files": 0,
-        "types": {
-          ".bat": 3,
-          ".ps1": 2,
-          ".xml": 1,
-          ".log": 1,
-          ".json": 1
         }
       }
     ],

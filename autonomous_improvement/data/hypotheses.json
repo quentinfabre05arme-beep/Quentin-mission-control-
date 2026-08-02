@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-02T22:34:03.856Z",
+  "generated_at": "2026-08-02T23:23:59.464Z",
   "hypotheses": [
     {
-      "id": "hyp_1785710043856_2gxro",
+      "id": "hyp_1785713039463_k89v3",
       "title": "Add timeout guards to long-running capabilities",
       "category": "reliability",
       "reason": "Research suggests timeouts prevent stuck browser/API calls",
@@ -13,7 +13,7 @@
       "failure_count": 0
     },
     {
-      "id": "hyp_1785710043856_520ef",
+      "id": "hyp_1785713039463_bsnz8",
       "title": "Add timeout to research_router browser searches",
       "category": "performance",
       "reason": "ABOS research hangs when Puppeteer stalls",
@@ -24,7 +24,7 @@
       "failure_count": 0
     },
     {
-      "id": "hyp_1785710043856_ieiu5",
+      "id": "hyp_1785713039463_l66jo",
       "title": "Add functional smoke tests to capability modules",
       "category": "capability",
       "reason": "Research emphasizes automated testing for agent reliability",
@@ -35,7 +35,18 @@
       "failure_count": 0
     },
     {
-      "id": "hyp_1785710043856_xe8ah",
+      "id": "hyp_1785713039463_a1io2",
+      "title": "Prune duplicate test plans in planner.js",
+      "category": "workflow",
+      "reason": "10 active plans, 9 are \"test\" noise — clutters memory",
+      "target_file": "project_claw_core/data/plans.json",
+      "estimated_effort": 5,
+      "estimated_impact": "low",
+      "score": 5,
+      "failure_count": 0
+    },
+    {
+      "id": "hyp_1785713039463_3cgoo",
       "title": "Rotate always_on_daemon.log when >100KB",
       "category": "performance",
       "reason": "Log grew to 350KB+ in one day",
@@ -46,7 +57,7 @@
       "failure_count": 1
     },
     {
-      "id": "hyp_1785710043856_0vk5y",
+      "id": "hyp_1785713039463_y2j6k",
       "title": "Rotate oversized logs to prevent disk bloat",
       "category": "performance",
       "reason": "Large logs indicate potential memory/disk pressure",
@@ -55,17 +66,6 @@
       "estimated_impact": "medium",
       "score": 0,
       "failure_count": 2
-    },
-    {
-      "id": "hyp_1785710043856_hgc4u",
-      "title": "Prune duplicate test plans in planner.js",
-      "category": "workflow",
-      "reason": "10 active plans, 9 are \"test\" noise — clutters memory",
-      "target_file": "project_claw_core/data/plans.json",
-      "estimated_effort": 5,
-      "estimated_impact": "low",
-      "score": 0,
-      "failure_count": 1
     }
   ]
 }

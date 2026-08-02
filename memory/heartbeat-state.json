@@ -1,16 +1,12 @@
 {
   "lastChecks": {
-    "market": 1754160180000,
-    "system": 1754160180000,
-    "git": 1754159160000,
-    "calendar": null,
-    "weather": null,
+    "market": 1785711783566,
+    "system": 1785711783566,
+    "git": 1785711783566,
     "heartbeat": {
-      "ram": "80.2% used (1.68GB free / 8.50GB total)",
+      "ram": "77.1% used (1.81GB free / 7.92GB total)",
       "disk": "C: 76.0% used | D: 42.7% used | E: 88.1% used",
-      "cpu": "n/a",
-      "ts": "2026-08-03T00:23:00.000+02:00"
+      "ts": "2026-08-02T23:03:03.566Z"
     }
-  },
-  "notes": "Heartbeat 2026-08-03 00:23 CET: All systems healthy. BTC $63,630 (+1.34%), ETH $1,891.83 (+2.50%), MSTR $93.28 (0.00%), HIMS $27.77 (0.00%). RAM improved to 80.2% (1.68GB free). Disk C: 76%, D: 42.7%, E: 88.1%. Twelve Data still failing; CoinGecko/Yahoo fallbacks active."
+  }
 }
