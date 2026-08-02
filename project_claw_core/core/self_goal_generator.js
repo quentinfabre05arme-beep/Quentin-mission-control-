@@ -107,9 +107,16 @@ function generateGoals() {
   return data;
 }
 
-module.exports = { generateGoals, readMemoryHints };
+class SelfGoalGenerator {
+  generateGoals() {
+    return generateGoals();
+  }
+}
+
+module.exports = { SelfGoalGenerator, generateGoals, readMemoryHints };
 
 if (require.main === module) {
-  const goals = generateGoals();
+  const gen = new SelfGoalGenerator();
+  const goals = gen.generateGoals();
   console.log(JSON.stringify(goals, null, 2));
 }

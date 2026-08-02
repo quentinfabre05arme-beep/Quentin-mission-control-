@@ -72,6 +72,9 @@ class ServiceManager {
       return { success: false, error: e.message };
     }
   }
+  run() {
+    return this.list();
+  }
 }
 
 module.exports = { ServiceManager };

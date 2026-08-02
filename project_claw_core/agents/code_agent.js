@@ -84,6 +84,10 @@ class CodeAgent {
   validate(file) {
     return syntaxCheck(file);
   }
+  analyzeProject(file) {
+    const stat = fs.statSync(file);
+    return stat.isDirectory() ? this.read(file, undefined, 50) : this.read(path.dirname(file), undefined, 50);
+  }
 }
 
 module.exports = { CodeAgent, readCodebase, writeFile, runTests, syntaxCheck };

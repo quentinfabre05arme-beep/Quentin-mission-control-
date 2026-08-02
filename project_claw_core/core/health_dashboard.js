@@ -81,7 +81,13 @@ function updateDashboard() {
   return { success: true, path: file, health };
 }
 
-module.exports = { updateDashboard, generateDashboard };
+class HealthDashboard {
+  generate() {
+    return updateDashboard();
+  }
+}
+
+module.exports = { HealthDashboard, updateDashboard, generateDashboard };
 
 if (require.main === module) {
   const result = updateDashboard();

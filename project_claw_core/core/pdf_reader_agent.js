@@ -23,7 +23,8 @@ async function extractText(filePath) {
     const output = execSync(`pdftotext "${filePath}" -`, {
       encoding: 'utf8',
       windowsHide: true,
-      timeout: 30000
+      timeout: 30000,
+      stdio: ['pipe', 'pipe', 'pipe']
     });
     return { success: true, text: output.trim().slice(0, 5000), method: 'pdftotext' };
   } catch(e) {
@@ -58,6 +59,9 @@ class PdfReaderAgent {
       full_length: result.text.length,
       method: result.method
     };
+  }
+  async extractText(filePath) {
+    return await extractText(filePath);
   }
 }
 

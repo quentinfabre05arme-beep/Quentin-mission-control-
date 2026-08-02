@@ -78,9 +78,8 @@ class FileIndexer {
     return { success: true, path: filePath, count: this.index.length };
   }
   
-  loadIndex(filePath) {
-    this.index = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-    return { success: true, count: this.index.length };
+  index(dir, options = {}) {
+    return { success: true, files: this.indexDirectory(dir, options).length };
   }
 }
 

@@ -67,7 +67,13 @@ function organizeDownloads(downloadDir) {
   return { success: true, moved, summary, total_files: files.length };
 }
 
-module.exports = { organizeDownloads, getCategory, CATEGORIES };
+class FileOrganizer {
+  organize(dir) {
+    return organizeDownloads(dir);
+  }
+}
+
+module.exports = { FileOrganizer, organizeDownloads, getCategory, CATEGORIES };
 
 if (require.main === module) {
   const downloads = process.argv[2] || path.join(process.env.USERPROFILE || '', 'Downloads');

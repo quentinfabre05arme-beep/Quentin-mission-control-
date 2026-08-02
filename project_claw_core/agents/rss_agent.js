@@ -69,6 +69,9 @@ class RssAgent {
     }
     return results;
   }
+  async readFeed(url, maxItems = 10) {
+    return await this.read(url || 'https://techcrunch.com/feed/', maxItems);
+  }
 }
 
 module.exports = { RssAgent, parseRss };

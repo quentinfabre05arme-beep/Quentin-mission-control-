@@ -19,7 +19,7 @@ class DockerAgent {
   runCommand(cmd) {
     log(`Docker command: ${cmd}`);
     try {
-      const output = execSync(`docker ${cmd}`, { encoding: 'utf8', windowsHide: true, timeout: 30000 });
+      const output = execSync(`docker ${cmd}`, { encoding: 'utf8', windowsHide: true, timeout: 30000, stdio: ['pipe', 'pipe', 'pipe'] });
       return { success: true, output: output.trim() };
     } catch(e) {
       return { success: false, error: e.message };

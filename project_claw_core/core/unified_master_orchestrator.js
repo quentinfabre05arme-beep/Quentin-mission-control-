@@ -131,6 +131,15 @@ class UnifiedMasterOrchestrator {
     }
   }
   
+  async status() {
+    return {
+      success: true,
+      cycles: this.state.cycles,
+      last_cycle: this.state.last_cycle,
+      duration_ms: this.state.duration_ms
+    };
+  }
+  
   async runOnce() {
     return await this.runCycle();
   }

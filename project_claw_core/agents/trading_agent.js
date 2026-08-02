@@ -66,6 +66,9 @@ class TradingAgent {
     if (!fs.existsSync(portfolioPath)) return null;
     return JSON.parse(fs.readFileSync(portfolioPath, 'utf8'));
   }
+  run() {
+    return this.status();
+  }
 }
 
 module.exports = { TradingAgent };

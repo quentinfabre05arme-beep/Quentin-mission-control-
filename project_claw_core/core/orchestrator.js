@@ -50,6 +50,10 @@ class ClawCore {
       timestamp: new Date().toISOString()
     };
   }
+  async run() {
+    await this.initialize();
+    return this.statusReport();
+  }
 }
 
 module.exports = { ClawCore };

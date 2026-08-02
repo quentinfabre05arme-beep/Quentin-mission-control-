@@ -18,6 +18,9 @@ class CircuitBreaker {
   }
   
   async call(...args) {
+    if (!this.fn) {
+      return { success: false, error: 'no function set' };
+    }
     if (this.state === 'OPEN') {
       if (Date.now() - this.lastFailureTime > this.resetTimeoutMs) {
         this.state = 'HALF_OPEN';
@@ -73,6 +76,10 @@ class CircuitBreaker {
       lastFailureTime: this.lastFailureTime,
       halfOpenCalls: this.halfOpenCalls
     };
+  }
+  async run(...args) {
+    if (!this.fn) return { success: false, error: 'no function set' };
+    return await this.call(...args);
   }
 }
 

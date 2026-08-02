@@ -7,7 +7,16 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const { captureScreenshot, ocrImage } = require('./vision_v2');
+// OCR fallback if vision_v2 not available
+let captureScreenshot, ocrImage;
+try {
+  const v2 = require('./vision_v2');
+  captureScreenshot = v2.captureScreenshot;
+  ocrImage = v2.ocrImage;
+} catch(e) {
+  captureScreenshot = () => ({ success: false, error: 'vision_v2 not available' });
+  ocrImage = () => ({ success: false, error: 'vision_v2 not available' });
+}
 
 const LOG_FILE = path.join(__dirname, '..', 'logs', 'clipboard_ocr_agent.log');
 const TEMP_DIR = path.join(__dirname, '..', 'logs', 'clipboard');
@@ -85,6 +94,10 @@ async function readClipboard() {
 
 class ClipboardOcrAgent {
   async read() {
+    return await readClipboard();
+  }
+  
+  async readClipboard() {
     return await readClipboard();
   }
 }

@@ -19,7 +19,7 @@ class AWSAgent {
   runCommand(cmd) {
     log(`AWS command: ${cmd}`);
     try {
-      const output = execSync(`aws ${cmd}`, { encoding: 'utf8', windowsHide: true, timeout: 30000 });
+      const output = execSync(`aws ${cmd}`, { encoding: 'utf8', windowsHide: true, timeout: 30000, stdio: ['pipe', 'pipe', 'pipe'] });
       return { success: true, output: output.trim() };
     } catch(e) {
       return { success: false, error: e.message };

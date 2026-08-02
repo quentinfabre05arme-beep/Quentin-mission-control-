@@ -54,6 +54,11 @@ class RateLimiter {
       refillRate: this.refillRate
     };
   }
+  async allow(key) {
+    const ticket = await this.acquire(1);
+    ticket.release();
+    return { success: true, allowed: true, key };
+  }
 }
 
 module.exports = { RateLimiter };
