@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-02T14:27:10.003Z",
+  "timestamp": "2026-08-02T16:27:09.840Z",
   "system": {
     "platform": "win32",
     "release": "10.0.26200",
@@ -7,14 +7,14 @@
     "cpus": 8,
     "total_ram_gb": 8,
     "free_ram_gb": 1,
-    "uptime_hours": 174,
+    "uptime_hours": 176,
     "user": "quent",
     "home": "C:\\Users\\quent"
   },
   "workspace": {
-    "total_files": 2092,
+    "total_files": 2185,
     "total_dirs": 190,
-    "total_size": 63538988,
+    "total_size": 68505034,
     "top_dirs": [
       {
         "name": "missions",
@@ -58,17 +58,30 @@
         }
       },
       {
+        "name": "project_claw_core",
+        "files": 162,
+        "dirs": 5,
+        "size_mb": 5,
+        "old_files": 0,
+        "types": {
+          ".js": 155,
+          ".log": 4,
+          ".txt": 2,
+          ".md": 1
+        }
+      },
+      {
         "name": "alpha_fund_v3",
-        "files": 128,
+        "files": 146,
         "dirs": 14,
         "size_mb": 4,
         "old_files": 0,
         "types": {
-          ".js": 69,
-          ".json": 18,
-          ".log": 15,
+          ".js": 72,
+          ".json": 30,
+          ".log": 16,
           ".md": 8,
-          ".bat": 4
+          ".bat": 5
         }
       },
       {
@@ -97,19 +110,6 @@
           ".js": 41,
           ".txt": 27,
           ".h": 13
-        }
-      },
-      {
-        "name": "project_claw_core",
-        "files": 87,
-        "dirs": 5,
-        "size_mb": 1,
-        "old_files": 0,
-        "types": {
-          ".js": 80,
-          ".log": 4,
-          ".txt": 2,
-          ".md": 1
         }
       },
       {
@@ -254,5 +254,11 @@
   "services": [],
   "network": {},
   "security": {},
-  "recommendations": []
+  "recommendations": [
+    {
+      "priority": "CRITICAL",
+      "issue": "RAM at 91%",
+      "action": "Restart gateway, close browser tabs, stop unused processes"
+    }
+  ]
 }
