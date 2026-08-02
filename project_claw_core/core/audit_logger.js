@@ -1,16 +1,43 @@
+/**
+ * PROJECT CLAW CORE — Audit Logger
+ * Immutable audit trail of actions.
+ */
+
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
-const LOG_FILE = path.join(__dirname, '..', 'logs', 'audit.log');
+const LOG_DIR = path.join(__dirname, '..', 'logs');
+const AUDIT_FILE = path.join(LOG_DIR, 'audit.jsonl');
 
-function audit(action, details = {}) {
+function logAudit(action, actor, details = {}) {
   const entry = {
-    time: new Date().toISOString(),
+    timestamp: new Date().toISOString(),
     action,
-    details
+    actor,
+    details,
+    hash: crypto.createHash('sha256').update(JSON.stringify({ action, actor, details })).digest('hex')
   };
-  fs.mkdirSync(path.dirname(LOG_FILE), { recursive: true });
-  fs.appendFileSync(LOG_FILE, JSON.stringify(entry) + '\n');
+  fs.mkdirSync(LOG_DIR, { recursive: true });
+  fs.appendFileSync(AUDIT_FILE, JSON.stringify(entry) + '\n');
+  return entry;
 }
 
-module.exports = { audit };
+function readAudit(limit = 100) {
+  if (!fs.existsSync(AUDIT_FILE)) return [];
+  const lines = fs.readFileSync(AUDIT_FILE, 'utf8').trim().split('\n').filter(Boolean);
+  return lines.slice(-limit).map(JSON.parse);
+}
+
+class AuditLogger {
+  log(action, actor, details) { return logAudit(action, actor, details); }
+  read(limit) { return readAudit(limit); }
+}
+
+module.exports = { AuditLogger, logAudit, readAudit };
+
+if (require.main === module) {
+  const logger = new AuditLogger();
+  logger.log('test_action', 'claw', { status: 'ok' });
+  console.log(JSON.stringify(logger.read(5), null, 2));
+}
