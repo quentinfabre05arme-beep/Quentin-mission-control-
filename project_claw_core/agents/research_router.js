@@ -16,7 +16,8 @@ function log(msg) {
 }
 
 class ResearchRouter {
-  constructor() {
+  constructor(options = {}) {
+    this.webSearchFn = options.webSearchFn || null; // Optional OpenClaw web_search function
     this.sources = [];
     this.initSources();
   }
@@ -29,14 +30,17 @@ class ResearchRouter {
       this.sources.push('openserp');
     } catch(e) { log(`OpenSERP init error: ${e.message}`); }
 
-    // 2. Legacy research agent (Serper + HTTP fallbacks)
+    // 2. OpenClaw web_search tool (when invoked from agent context)
+    if (this.webSearchFn) this.sources.push('openclaw_web_search');
+
+    // 3. Legacy research agent (Serper + HTTP fallbacks)
     try {
       const { ResearchAgent } = require('./research_agent');
       this.legacyAgent = new ResearchAgent();
       this.sources.push('legacy');
     } catch(e) { log(`Legacy research agent init error: ${e.message}`); }
 
-    // 3. Browser researcher
+    // 4. Browser researcher
     try {
       const { BrowserResearcher } = require('./browser_researcher');
       this.browser = new BrowserResearcher();
@@ -54,6 +58,23 @@ class ResearchRouter {
         log(`OpenSERP returned ${results.length} results`);
         return { source: 'openserp', results };
       }
+    }
+
+    // Try OpenClaw web_search if available
+    if (this.webSearchFn) {
+      try {
+        const raw = await this.webSearchFn({ query, count });
+        const results = (raw.results || []).map(r => ({
+          title: r.title || '',
+          link: r.url || r.link || '',
+          snippet: r.snippet || '',
+          source: 'openclaw_web_search'
+        })).slice(0, count);
+        if (results.length > 0) {
+          log(`OpenClaw web_search returned ${results.length} results`);
+          return { source: 'openclaw_web_search', results };
+        }
+      } catch(e) { log(`OpenClaw web_search error: ${e.message}`); }
     }
 
     // Try legacy (Serper + HTTP fallbacks)
