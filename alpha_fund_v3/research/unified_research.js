@@ -12,11 +12,22 @@ const CONFIG = {
   assets: ['BTC', 'ETH', 'MSTR', 'HIMS', 'NVDA', 'TSLA', 'AAPL', 'COIN', 'SPY', 'QQQ'],
   data_sources: ['twelvedata', 'coingecko', 'yahoo', 'alternative.me', 'mempool.space'],
   indicators: ['rsi', 'macd', 'sma', 'ema', 'atr', 'bollinger', 'stochastic'],
-  min_confidence: 0.3
+  min_confidence: 0.3,
+  cache_ttl_ms: 5 * 60 * 1000 // 5 minutes
 };
 
-// ─── PRICE FETCHER (Multi-Source) ───────────────────────────
+// Simple in-memory cache
+let priceCache = { data: null, timestamp: 0 };
+
+// ─── PRICE FETCHER (Multi-Source + Cached) ────────────────────
 async function fetchPrices() {
+  const now = Date.now();
+  
+  // Return cached prices if fresh
+  if (priceCache.data && (now - priceCache.timestamp) < CONFIG.cache_ttl_ms) {
+    return priceCache.data;
+  }
+  
   const prices = {};
   
   // Try mission_control market data first
@@ -55,7 +66,14 @@ async function fetchPrices() {
     }
   }
   
+  // Update cache
+  priceCache = { data: prices, timestamp: now };
+  
   return prices;
+}
+
+function clearCache() {
+  priceCache = { data: null, timestamp: 0 };
 }
 
 // ─── TECHNICAL ANALYSIS ─────────────────────────────────────
