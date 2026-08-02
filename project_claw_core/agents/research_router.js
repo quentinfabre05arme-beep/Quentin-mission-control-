@@ -99,7 +99,7 @@ class ResearchRouter {
     // Fallback to browser-based research
     if (this.browser) {
       try {
-        const results = await this.browser.research(query, count);
+        const results = await runWithTimeout(() => this.browser.research(query, count), 30000);
         if (results.length > 0) {
           log(`Browser returned ${results.length} results`);
           return { source: 'browser', results };
