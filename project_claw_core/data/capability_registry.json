@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-02T18:56:46.106Z",
-  "count": 103,
+  "generated_at": "2026-08-02T19:02:38.251Z",
+  "count": 101,
   "by_category": {
     "core": [
       "agent_swarm",
@@ -9,6 +9,7 @@
       "auto_updater",
       "battery_manager",
       "build_loop_continuous",
+      "build_loop_optimizer",
       "capability_generator",
       "capability_invoker",
       "capability_registry",
@@ -48,7 +49,6 @@
       "rollback_manager",
       "scheduler_agent",
       "screen_recorder",
-      "secure_vault",
       "self_audit",
       "self_goal_generator",
       "service_manager",
@@ -63,6 +63,7 @@
       "task_graph",
       "temperature_monitor",
       "ui_automation",
+      "unified_orchestrator",
       "usb_manager",
       "vector_brain",
       "verifier",
@@ -91,20 +92,17 @@
       "microsoft_browser_agent",
       "microsoft_graph_agent",
       "microsoft_graph_auth",
-      "project_manager",
       "proxy_server_agent",
       "research_agent",
       "risk_engine",
       "rss_agent",
       "slack_agent",
       "social_agent",
-      "store_manager",
       "stripe_agent",
       "test_runner",
       "trading_agent",
       "video_editor_agent",
       "vpn_agent",
-      "web_monitor",
       "x_agent"
     ],
     "memory": [
@@ -165,6 +163,15 @@
       "class": null,
       "lines": 195,
       "functions": 13,
+      "has_tests": true
+    },
+    {
+      "name": "build_loop_optimizer",
+      "category": "core",
+      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\build_loop_optimizer.js",
+      "class": "BuildLoopOptimizer",
+      "lines": 65,
+      "functions": 4,
       "has_tests": true
     },
     {
@@ -519,21 +526,12 @@
       "has_tests": true
     },
     {
-      "name": "secure_vault",
-      "category": "core",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\secure_vault.js",
-      "class": "SecureVault",
-      "lines": 82,
-      "functions": 9,
-      "has_tests": true
-    },
-    {
       "name": "self_audit",
       "category": "core",
       "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\self_audit.js",
       "class": "SelfAudit",
-      "lines": 151,
-      "functions": 6,
+      "lines": 161,
+      "functions": 9,
       "has_tests": true
     },
     {
@@ -651,6 +649,15 @@
       "class": "WinAPI",
       "lines": 111,
       "functions": 11,
+      "has_tests": true
+    },
+    {
+      "name": "unified_orchestrator",
+      "category": "core",
+      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\unified_orchestrator.js",
+      "class": "UnifiedOrchestrator",
+      "lines": 75,
+      "functions": 5,
       "has_tests": true
     },
     {
@@ -888,15 +895,6 @@
       "has_tests": true
     },
     {
-      "name": "project_manager",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\project_manager.js",
-      "class": null,
-      "lines": 18,
-      "functions": 2,
-      "has_tests": false
-    },
-    {
       "name": "proxy_server_agent",
       "category": "agents",
       "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\proxy_server_agent.js",
@@ -951,15 +949,6 @@
       "has_tests": true
     },
     {
-      "name": "store_manager",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\store_manager.js",
-      "class": "StoreManager",
-      "lines": 19,
-      "functions": 4,
-      "has_tests": false
-    },
-    {
       "name": "stripe_agent",
       "category": "agents",
       "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\stripe_agent.js",
@@ -1003,15 +992,6 @@
       "lines": 62,
       "functions": 7,
       "has_tests": true
-    },
-    {
-      "name": "web_monitor",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\web_monitor.js",
-      "class": "WebMonitor",
-      "lines": 18,
-      "functions": 3,
-      "has_tests": false
     },
     {
       "name": "x_agent",

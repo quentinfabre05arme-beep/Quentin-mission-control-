@@ -81,17 +81,27 @@ function syntaxCheck(content) {
 }
 
 class SelfAudit {
+  constructor() {
+    this.dirs = ['core', 'agents', 'memory'];
+  }
+  
   run() {
+    const results = this._runInternal();
+    const report = this._buildReport(results);
+    fs.writeFileSync(LOG_FILE, JSON.stringify(report, null, 2) + '\n', { flag: 'a' });
+    return report;
+  }
+  
+  _runInternal() {
     log('Running self audit');
     const root = path.join(__dirname, '..');
     const results = { total: 0, real: 0, stubs: 0, syntax_errors: 0, details: [] };
     
-    for (const dir of DIRS) {
+    for (const dir of this.dirs) {
       const fullDir = path.join(root, dir);
       if (!fs.existsSync(fullDir)) continue;
       const files = fs.readdirSync(fullDir).filter(f => {
         if (!f.endsWith('.js')) return false;
-        // Skip auto-generated v2+ stub duplicates to focus audit
         const base = f.replace(/_v\d+\.js$/, '.js');
         return base === f || !fs.existsSync(path.join(fullDir, base));
       });
@@ -114,10 +124,12 @@ class SelfAudit {
       }
     }
     
-    // Sort by real first, then by lines
     results.details.sort((a, b) => (b.real - a.real) || (b.lines - a.lines));
-    
-    const report = {
+    return results;
+  }
+  
+  _buildReport(results) {
+    return {
       timestamp: new Date().toISOString(),
       summary: {
         total: results.total,
@@ -131,11 +143,9 @@ class SelfAudit {
         error: d.syntax_error
       })),
       real_capabilities: results.details.filter(d => d.real).map(d => path.basename(d.path)),
-      top_stubs: results.details.filter(d => !d.real).slice(0, 20).map(d => path.basename(d.path))
+      top_stubs: results.details.filter(d => !d.real).slice(0, 20).map(d => path.basename(d.path)),
+      details: results.details
     };
-    
-    fs.writeFileSync(LOG_FILE, JSON.stringify(report, null, 2) + '\n', { flag: 'a' });
-    return report;
   }
 }
 
