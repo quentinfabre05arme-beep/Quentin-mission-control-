@@ -19,8 +19,6 @@ function log(msg) {
 function aliveCheck() {
   try {
     log('ALIVE');
-    // Every minute, run build loop
-    runBuildLoop();
     return true;
   } catch(e) {
     log('ERROR: ' + e.message);
@@ -28,7 +26,7 @@ function aliveCheck() {
   }
 }
 
-function runBuildLoop() {
+function runVerifier() {
   try {
     log('Running safe capability verifier...');
     execSync('node safe_capability_verifier.js', {
@@ -50,5 +48,10 @@ setInterval(() => {
   aliveCheck();
 }, 60000);
 
-// Initial build loop
-runBuildLoop();
+// Initial verifier
+runVerifier();
+
+// Run verifier every 10 minutes (not every minute to reduce load)
+setInterval(() => {
+  runVerifier();
+}, 600000);
