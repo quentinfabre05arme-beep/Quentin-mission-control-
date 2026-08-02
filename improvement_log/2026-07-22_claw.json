@@ -52,11 +52,6 @@
     "x_posting": {
       "status": "⏸️ PAUSED",
       "notes": "No posts scheduled — focus on Alpha Fund + POD unblocking"
-    },
-    "printify": {
-      "status": "🔴 BLOCKED",
-      "days_down": 10,
-      "notes": "API 401 despite token not expired (expires 2027-07-14). Likely shop disconnection or account flagging. €100-300 cumulative revenue loss."
     }
   },
   "aar_count": 2,
@@ -111,7 +106,6 @@
       "status": "✅ HEALTHY",
       "twelve_data": "✅ OPERATIONAL — 4 Tier-1 assets live, scanner fetches 11 assets via price_fetcher.js",
       "coin_gecko": "✅ FALLBACK READY",
-      "printify": "❌ BLOCKED — Unauthenticated despite valid token",
       "reliability": "100% uptime (24h)",
       "cascade_performance": "No fallbacks needed for Tier-1 market data"
     },

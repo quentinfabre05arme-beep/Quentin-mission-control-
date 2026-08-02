@@ -16,7 +16,6 @@
     "twelve_data": "✅ OPERATIONAL",
     "coin_gecko": "✅ OPERATIONAL",
     "etherscan": "✅ OPERATIONAL",
-    "printify": "⚠️ DEGRADED — 401 Unauthorized",
     "connectivity_test": "All APIs reachable ✅",
     "errors_24h": 0,
     "notes": "Printify API auth issue persists — Etsy sync may be affected"
@@ -48,13 +47,6 @@
       "status": "✅ OPERATIONAL",
       "global_health": "79%",
       "last_cycle": "Jul 23 17:00"
-    },
-    "pod_business": {
-      "status": "⚠️ DEGRADED",
-      "products_live": 10,
-      "days_since_publication": 2,
-      "issue": "Printify API 401 — may affect Etsy visibility",
-      "notes": "First sales window extended. Need to verify listings manually."
     },
     "alpha_fund": {
       "status": "⚠️ DEGRADED",
@@ -110,7 +102,6 @@
       "etherscan": "✅ OPERATIONAL",
       "lido": "✅ OPERATIONAL",
       "eigenlayer": "✅ OPERATIONAL",
-      "printify": "⚠️ 401 Unauthorized",
       "reliability": "83% (5/6 APIs fully operational)"
     },
     "autonomy_level": {

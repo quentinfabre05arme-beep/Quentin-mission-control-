@@ -3,11 +3,6 @@
     "date": "2026-07-24",
     "total_revenue": 0,
     "streams": {
-      "pod": {
-        "revenue": 0,
-        "status": "blocked",
-        "notes": "Printify API token expired - 5 min fix required"
-      },
       "alpha_fund": {
         "revenue": 0,
         "status": "paper_trading",

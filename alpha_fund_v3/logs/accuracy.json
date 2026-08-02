@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-08-02T11:07:06.647Z",
+  "overall_accuracy": 50,
+  "total_decisions": 2,
+  "correct": 1,
+  "wrong": 1,
+  "by_ticker": {
+    "BTC": {
+      "accuracy": 100,
+      "total": 1
+    },
+    "MSTR": {
+      "accuracy": 0,
+      "total": 1
+    }
+  }
+}

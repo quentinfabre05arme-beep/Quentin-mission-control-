@@ -10,7 +10,7 @@
 Based on your history and interests:
 
 1. **Alpha Fund v3.0** — Autonomous trading system with real returns
-2. **POD Business** — Revenue-generating print-on-demand (BLOCKED: pricing)
+2. **DEPRECATED Business** — Revenue-generating print-on-demand (BLOCKED: pricing)
 3. **Content Authority** — Ethereum/crypto analysis, high-signal posts
 4. **Infrastructure** — Self-improving, self-healing AI system
 5. **Knowledge Base** — Indexed, searchable, growing intelligence
@@ -92,7 +92,7 @@ Based on your history and interests:
 - **Month 3+:** Live trading with risk limits
 - **Target:** $50-200/day consistent returns
 
-### **Stream 2: POD Business (BLOCKED → Unblock)**
+### **Stream 2: DEPRECATED Business (BLOCKED → Unblock)**
 - **Problem:** Pricing at $4.91 (loss-making)
 - **Auto-action:** Weekly check Printify API for pricing fix
 - **When fixed:** Auto-launch AI + Discipline niches

@@ -46,14 +46,14 @@
           "action": "Publish remaining 5 designs to reach 10+ live products (Etsy algorithm favors larger shops)",
           "effort": "medium",
           "expected_lift": "+40-60% shop visibility",
-          "confidence": 0.80,
+          "confidence": 0.8,
           "time_to_impact": "48 hours"
         },
         {
           "action": "Cross-sell on X: Post '5 designs now live on Etsy!' with product links",
           "effort": "low",
           "expected_lift": "First external traffic to new listings",
-          "confidence": 0.70,
+          "confidence": 0.7,
           "time_to_impact": "Same day"
         }
       ],
@@ -83,7 +83,7 @@
           "action": "Create simple Carrd.co landing page with email capture for newsletter waitlist",
           "effort": "low",
           "expected_lift": "Captures interested visitors; +50-100 subscribers in 30 days",
-          "confidence": 0.80,
+          "confidence": 0.8,
           "time_to_impact": "7-14 days"
         },
         {
@@ -111,7 +111,7 @@
           "action": "Add newsletter subscribe link to Mission Control dashboard footer (existing traffic)",
           "effort": "low",
           "expected_lift": "Captures dashboard users; +5-10 subscribers/week",
-          "confidence": 0.70,
+          "confidence": 0.7,
           "time_to_impact": "24 hours"
         }
       ],
@@ -128,7 +128,12 @@
       "performance": "low",
       "current_state": {
         "server_status": "Local only (port 3000)",
-        "features": ["Rate limiting", "CORS", "2-min cache", "7 symbols"],
+        "features": [
+          "Rate limiting",
+          "CORS",
+          "2-min cache",
+          "7 symbols"
+        ],
         "pricing_tiers_defined": true,
         "stripe_integration": false,
         "completion_percentage": 95,
@@ -148,7 +153,7 @@
           "action": "Integrate Stripe subscription webhooks (Pro €29/mo, Enterprise €299/mo)",
           "effort": "medium",
           "expected_lift": "Enables self-service signup; removes manual billing friction",
-          "confidence": 0.80,
+          "confidence": 0.8,
           "time_to_impact": "48 hours"
         },
         {
@@ -184,7 +189,11 @@
         "research_cycles_completed": 135,
         "active_positions": 6,
         "composite_scoring": "+4 to -4 scale",
-        "alternative_data": ["Fear & Greed", "Whale signals", "Anomaly detection"],
+        "alternative_data": [
+          "Fear & Greed",
+          "Whale signals",
+          "Anomaly detection"
+        ],
         "track_record_days": "~14 days",
         "monetization": "None"
       },
@@ -202,14 +211,14 @@
           "action": "Create free Telegram bot for 24h delayed signals (builds audience without giving away edge)",
           "effort": "medium",
           "expected_lift": "+50-200 free subscribers in 30 days; upsell funnel to paid",
-          "confidence": 0.70,
+          "confidence": 0.7,
           "time_to_impact": "7-14 days"
         },
         {
           "action": "Implement tighter stop-losses (current TSLA -13.5% drawdown is excessive)",
           "effort": "low",
           "expected_lift": "Reduce max drawdown from -25% to -15%; improves track record appeal",
-          "confidence": 0.90,
+          "confidence": 0.9,
           "time_to_impact": "Immediate"
         },
         {
@@ -254,7 +263,7 @@
           "action": "Add fallback: PowerShell keyboard automation if Puppeteer fails (script exists: x_post_simple.ps1)",
           "effort": "low",
           "expected_lift": "99% uptime vs current 0%; ensures posts go out regardless",
-          "confidence": 0.90,
+          "confidence": 0.9,
           "time_to_impact": "Same day"
         },
         {
@@ -268,14 +277,13 @@
           "action": "Track engagement metrics (impressions, likes, CTR) in structured log for optimization",
           "effort": "low",
           "expected_lift": "Data-driven content optimization; +15-30% engagement over time",
-          "confidence": 0.70,
+          "confidence": 0.7,
           "time_to_impact": "7 days for first insights"
         }
       ],
       "revenue_potential": {
         "direct_revenue": "€0 (X doesn't monetize directly at this scale)",
-        "indirect_via_newsletter": "€500-2,900/month (newsletter subscribers from X)",
-        "indirect_via_pod": "€150-600/month (Etsy traffic from product posts)"
+        "indirect_via_newsletter": "€500-2,900/month (newsletter subscribers from X)"
       }
     },
     {
@@ -304,14 +312,14 @@
           "action": "Add newsletter signup CTA to dashboard footer (capture existing internal traffic)",
           "effort": "low",
           "expected_lift": "+5-10 newsletter subscribers/week from dashboard users",
-          "confidence": 0.70,
+          "confidence": 0.7,
           "time_to_impact": "24 hours"
         },
         {
           "action": "Add simple analytics (Plausible or self-hosted) to track actual dashboard usage",
           "effort": "low",
           "expected_lift": "Data to optimize white-label offering; understand user behavior",
-          "confidence": 0.80,
+          "confidence": 0.8,
           "time_to_impact": "24 hours"
         }
       ],
@@ -333,31 +341,42 @@
   "conversion_bottlenecks": [
     {
       "stage": "Product → Published",
-      "streams_affected": ["POD"],
+      "streams_affected": [
+        "POD"
+      ],
       "status": "FIXED on Jul 23 — 5 products now live",
       "next_risk": "No sales yet; need ads + traffic"
     },
     {
       "stage": "Content → Distribution",
-      "streams_affected": ["newsletter", "alpha_fund_signals"],
+      "streams_affected": [
+        "newsletter",
+        "alpha_fund_signals"
+      ],
       "status": "CRITICAL — Content generates daily but reaches ZERO people",
       "root_cause": "No subscriber base, no delivery mechanism, no landing page"
     },
     {
       "stage": "Built → Deployed",
-      "streams_affected": ["data_api"],
+      "streams_affected": [
+        "data_api"
+      ],
       "status": "CRITICAL — 95% built, 30 days idle, €0 revenue",
       "root_cause": "Missing deployment + Stripe integration (48h task)"
     },
     {
       "stage": "Automation → Working",
-      "streams_affected": ["x_automation"],
+      "streams_affected": [
+        "x_automation"
+      ],
       "status": "BROKEN — 8 days of failed posts due to browser conflict",
       "root_cause": "Puppeteer userDataDir conflict; needs fix or fallback"
     },
     {
       "stage": "Internal Tool → Product",
-      "streams_affected": ["mission_control"],
+      "streams_affected": [
+        "mission_control"
+      ],
       "status": "UNEXPLOITED — 137 cycles of improvement, zero monetization",
       "root_cause": "Never positioned as sellable product"
     }
@@ -378,12 +397,11 @@
     "biggest_leak": "Publication → Traffic: Products exist but nobody knows about them"
   },
   "confidence_matrix": {
-    "pod_ads_generate_sales": 0.88,
-    "x_automation_fixable_today": 0.90,
+    "x_automation_fixable_today": 0.9,
     "newsletter_grows_with_x_promo": 0.85,
     "api_deploys_in_48h": 0.75,
     "first_api_customer_in_30d": 0.65,
-    "white_label_dashboard_sells": 0.60,
+    "white_label_dashboard_sells": 0.6,
     "alpha_fund_profitable_in_60d": 0.55,
     "total_6mo_revenue_over_5000": 0.52
   },
@@ -391,7 +409,11 @@
     {
       "rank": 1,
       "action": "Fix X automation (30 min) + activate Etsy Ads (15 min) + pin newsletter tweet (5 min)",
-      "streams": ["x_automation", "print_on_demand", "newsletter"],
+      "streams": [
+        "x_automation",
+        "print_on_demand",
+        "newsletter"
+      ],
       "time_total": "50 minutes",
       "impact": "Restore traffic generation + first product visibility + subscriber funnel",
       "confidence": 0.88
@@ -399,15 +421,21 @@
     {
       "rank": 2,
       "action": "Create newsletter landing page + add CTAs to dashboard + publish remaining 5 POD designs",
-      "streams": ["newsletter", "mission_control", "print_on_demand"],
+      "streams": [
+        "newsletter",
+        "mission_control",
+        "print_on_demand"
+      ],
       "time_total": "2-3 hours",
       "impact": "Subscriber acquisition begins + dashboard monetization + larger Etsy catalog",
-      "confidence": 0.80
+      "confidence": 0.8
     },
     {
       "rank": 3,
       "action": "Deploy Data API to Railway + Stripe integration + landing page",
-      "streams": ["data_api_subscriptions"],
+      "streams": [
+        "data_api_subscriptions"
+      ],
       "time_total": "4-6 hours",
       "impact": "First sellable MRR product live; fastest path to recurring revenue",
       "confidence": 0.75
@@ -415,7 +443,9 @@
     {
       "rank": 4,
       "action": "Fix Alpha Fund stops + publish track record dashboard + Telegram bot",
-      "streams": ["alpha_fund_signals"],
+      "streams": [
+        "alpha_fund_signals"
+      ],
       "time_total": "6-8 hours",
       "impact": "Credibility building for future monetization; free tier subscriber growth",
       "confidence": 0.68
@@ -423,10 +453,12 @@
     {
       "rank": 5,
       "action": "White-label Mission Control dashboard + Gumroad listing",
-      "streams": ["mission_control"],
+      "streams": [
+        "mission_control"
+      ],
       "time_total": "8-12 hours",
       "impact": "New revenue stream from existing asset; B2B SaaS model",
-      "confidence": 0.60
+      "confidence": 0.6
     }
   ]
 }

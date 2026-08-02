@@ -10,48 +10,134 @@
     "folder_structure": {
       "root": {
         "Investment": {
-          "AlphaFund": ["analysis", "positions", "reports", "research"],
-          "Crypto": ["BTC", "ETH", "Altcoins", "Research"],
-          "Stocks": ["MSTR", "HIMS", "Watchlist", "Research"]
+          "AlphaFund": [
+            "analysis",
+            "positions",
+            "reports",
+            "research"
+          ],
+          "Crypto": [
+            "BTC",
+            "ETH",
+            "Altcoins",
+            "Research"
+          ],
+          "Stocks": [
+            "MSTR",
+            "HIMS",
+            "Watchlist",
+            "Research"
+          ]
         },
         "Business": {
-          "POD": ["designs", "listings", "metrics", "marketing"],
-          "Automation": ["scripts", "configs", "logs"],
-          "Revenue": ["tracking", "reports", "analytics"]
+          "Automation": [
+            "scripts",
+            "configs",
+            "logs"
+          ],
+          "Revenue": [
+            "tracking",
+            "reports",
+            "analytics"
+          ]
         },
         "Development": {
-          "MissionControl": ["dashboards", "data", "research", "docs"],
-          "Scripts": ["powershell", "javascript", "python"],
-          "Configs": ["env", "settings", "templates"]
+          "MissionControl": [
+            "dashboards",
+            "data",
+            "research",
+            "docs"
+          ],
+          "Scripts": [
+            "powershell",
+            "javascript",
+            "python"
+          ],
+          "Configs": [
+            "env",
+            "settings",
+            "templates"
+          ]
         },
         "Archive": {
-          "2026": ["Q1", "Q2", "Q3", "Q4"],
-          "2025": ["by_quarter"],
+          "2025": [
+            "by_quarter"
+          ],
+          "2026": [
+            "Q1",
+            "Q2",
+            "Q3",
+            "Q4"
+          ],
           "Old_Projects": []
         }
       }
     },
     "tagging_rules": {
       "auto_tags": {
-        "priority_high": ["urgent", "important", "deadline", "critical"],
-        "priority_medium": ["review", "follow-up", "pending"],
-        "priority_low": ["reference", "archive", "completed"],
-        "status": ["draft", "final", "approved", "rejected"]
+        "priority_high": [
+          "urgent",
+          "important",
+          "deadline",
+          "critical"
+        ],
+        "priority_medium": [
+          "review",
+          "follow-up",
+          "pending"
+        ],
+        "priority_low": [
+          "reference",
+          "archive",
+          "completed"
+        ],
+        "status": [
+          "draft",
+          "final",
+          "approved",
+          "rejected"
+        ]
       },
       "project_tags": {
-        "alpha_fund": ["investment", "trading", "portfolio"],
-        "mission_control": ["dashboard", "automation", "research"],
-        "pod_business": ["printify", "etsy", "merchandise"],
-        "personal": ["home", "family", "misc"]
+        "alpha_fund": [
+          "investment",
+          "trading",
+          "portfolio"
+        ],
+        "mission_control": [
+          "dashboard",
+          "automation",
+          "research"
+        ],
+        "personal": [
+          "home",
+          "family",
+          "misc"
+        ]
       }
     }
   },
   "search_aliases": {
-    "mstr": ["microstrategy", "strategy", "bitcoin treasury"],
-    "btc": ["bitcoin", "crypto"],
-    "eth": ["ethereum"],
-    "hims": ["telehealth", "glp-1"],
-    "pod": ["print on demand", "printify", "etsy", "merch"],
-    "dashboard": ["mission control", "hub", "panel"]
+    "mstr": [
+      "microstrategy",
+      "strategy",
+      "bitcoin treasury"
+    ],
+    "btc": [
+      "bitcoin",
+      "crypto"
+    ],
+    "eth": [
+      "ethereum"
+    ],
+    "hims": [
+      "telehealth",
+      "glp-1"
+    ],
+    "dashboard": [
+      "mission control",
+      "hub",
+      "panel"
+    ]
   }
 }

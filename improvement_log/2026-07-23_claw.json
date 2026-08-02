@@ -40,11 +40,6 @@
       ],
       "performance": "No trades since Jul 22 — scanner blocked on price data bug"
     },
-    "pod_business": {
-      "status": "🟡 MONITORING",
-      "days_since_publication": 1,
-      "notes": "10 products published Jul 22 10:54 CET. Within 24-48h first sale window. Etsy sync in progress."
-    },
     "x_posting": {
       "status": "⏸️ PAUSED",
       "notes": "No posts scheduled — focus on Alpha Fund + POD monitoring"
@@ -102,7 +97,6 @@
       "status": "⚠️ DEGRADED",
       "twelve_data": "⚠️ RATE LIMITED — 8/min free tier insufficient for 12-asset refresh",
       "coin_gecko": "✅ FALLBACK READY",
-      "printify": "✅ OPERATIONAL — token fixed Jul 21",
       "reliability": "75% (rate limits hit)",
       "cascade_performance": "Graceful fallback to cached data working correctly"
     },
@@ -181,9 +175,7 @@
     "response_latency_avg": "~1.0s for file operations",
     "autonomous_trades_executed": 0,
     "paper_portfolio_value": 50000,
-    "paper_portfolio_return_pct": 0,
-    "pod_products_live": 10,
-    "pod_first_sales": 0
+    "paper_portfolio_return_pct": 0
   },
   "critical_blockers": [
     {

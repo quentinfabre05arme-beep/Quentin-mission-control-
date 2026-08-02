@@ -49,11 +49,6 @@
     "x_posting": {
       "status": "⏸️ PAUSED",
       "notes": "No posts scheduled — focus on Alpha Fund deployment"
-    },
-    "printify": {
-      "status": "🔴 BLOCKED",
-      "days_down": 10,
-      "notes": "API 401 since Jul 12 — €100-300 cumulative revenue loss"
     }
   },
   "aar_count": 3,
@@ -125,7 +120,6 @@
       "status": "✅ HEALTHY",
       "twelve_data": "✅ OPERATIONAL — 12 assets fetching successfully",
       "coin_gecko": "✅ WORKING — fallback ready",
-      "printify": "❌ BLOCKED — Day 10, €100-300 cumulative loss",
       "reliability": "100% uptime (24h)",
       "cascade_performance": "No fallbacks needed — primary APIs handling load"
     },

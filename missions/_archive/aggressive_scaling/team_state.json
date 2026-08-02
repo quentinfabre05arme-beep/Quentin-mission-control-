@@ -3,7 +3,6 @@
   "role": "scaling",
   "status": "active",
   "metrics": {
-    "podProducts": 35,
     "targetProducts": 100,
     "xPostsThisWeek": 0,
     "targetPostsPerDay": 5

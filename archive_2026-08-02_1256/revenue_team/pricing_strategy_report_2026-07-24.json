@@ -5,7 +5,12 @@
     "total_streams_analyzed": 6,
     "immediate_opportunities": 4,
     "annual_revenue_potential": "€15,000-30,000",
-    "priority_actions": ["Launch premium newsletter tier", "Create digital product line", "Introduce annual pricing", "Test consulting packages"]
+    "priority_actions": [
+      "Launch premium newsletter tier",
+      "Create digital product line",
+      "Introduce annual pricing",
+      "Test consulting packages"
+    ]
   },
   "pricing_recommendations": [
     {
@@ -40,7 +45,7 @@
         "saas_ai_tools": "$10-50/month",
         "github_sponsors": "$5-25/month"
       },
-      "confidence": 0.80,
+      "confidence": 0.8,
       "expected_impact": "€300-1,500/month at 20-100 customers",
       "implementation": {
         "product_1": "Mission Control Dashboard Template - €49 one-time",
@@ -58,7 +63,6 @@
       "competitor_benchmark": {
         "notion_official_templates": "$5-50",
         "gumroad_notion": "$10-100",
-        "etsy_notion": "$5-25",
         "premium_finance_templates": "$25-75"
       },
       "confidence": 0.75,
@@ -82,7 +86,7 @@
         "senior_ai_consultant": "€1,000-2,000/day",
         "project_rates": "€2,000-10,000/project"
       },
-      "confidence": 0.70,
+      "confidence": 0.7,
       "expected_impact": "€2,000-5,000/month (2-5 days/month)",
       "implementation": {
         "service_1": "AI Workflow Audit & Setup - €2,000 fixed",
@@ -124,7 +128,7 @@
         "sprout_social": "$249-499/month",
         "managed_smm": "$500-2,000/month"
       },
-      "confidence": 0.60,
+      "confidence": 0.6,
       "expected_impact": "€500-1,500/month at 5-15 clients",
       "implementation": {
         "tier_1": "Setup + Training - €499 one-time",
