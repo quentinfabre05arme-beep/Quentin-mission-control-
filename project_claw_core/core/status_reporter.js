@@ -12,7 +12,8 @@ const ROOT = path.resolve(__dirname, '..');
 const LOG_FILE = path.join(ROOT, 'logs', 'status_reporter.log');
 
 function log(msg) {
-  const entry = `[${new Date().toISOString()}] ${msg}\n`;
+  const cleanMsg = msg.replace(/[^\x20-\x7E]/g, '?');
+  const entry = `[${new Date().toISOString()}] ${cleanMsg}\n`;
   fs.mkdirSync(path.dirname(LOG_FILE), { recursive: true });
   fs.appendFileSync(LOG_FILE, entry);
 }
@@ -63,38 +64,30 @@ function generateReport() {
     blockers.push('Some capabilities failed verification');
   }
   
-  const report = `🤖 **Project Claw Core — 10-Min Report**
-🕓 ${new Date().toLocaleTimeString('fr-FR', { timeZone: 'Europe/Paris' })} CET
+  const report = `Project Claw Core — 10-Min Report
+Time: ${new Date().toLocaleTimeString('fr-FR', { timeZone: 'Europe/Paris' })} CET
 
-━━━━━━━━━━━━━━━━━━━━━━
-📊 PROGRESS
-━━━━━━━━━━━━━━━━━━━━━━
+PROGRESS
+--------
+Capabilities: ${total} / ${target} (${progress}%)
+Target: Full human-level autonomous agent
+Loop: Every 60 seconds
 
-**Capabilities:** ${total} / ${target} (${progress}%)
-**Target:** Full human-level autonomous agent
-**Loop:** Every 60 seconds
+LAST BUILDS
+-----------
+${recentBuilt.length ? recentBuilt.map(b => '- ' + b.replace('BUILT: ', '').replace('BUILT ', '')).join('\n') : 'No new builds in last 10 minutes'}
 
-━━━━━━━━━━━━━━━━━━━━━━
-✅ LAST BUILDS
-━━━━━━━━━━━━━━━━━━━━━━
-
-${recentBuilt.length ? recentBuilt.map(b => '• ' + b.replace('BUILT: ', '').replace('BUILT ', '')).join('\n') : 'No new builds in last 10 minutes'}
-
-━━━━━━━━━━━━━━━━━━━━━━
-🧪 VERIFICATION
-━━━━━━━━━━━━━━━━━━━━━━
-
+VERIFICATION
+------------
 ${lastVerify.replace(/^\[[^\]]+\]\s*/, '')}
 
-${blockers.length ? `━━━━━━━━━━━━━━━━━━━━━━\n⚠️ BLOCKERS\n━━━━━━━━━━━━━━━━━━━━━━\n\n${blockers.map(b => '• ' + b).join('\n')}` : '━━━━━━━━━━━━━━━━━━━━━━\n✅ NO BLOCKERS\n━━━━━━━━━━━━━━━━━━━━━━'}
+${blockers.length ? `BLOCKERS\n--------\n${blockers.map(b => '- ' + b).join('\n')}` : 'NO BLOCKERS'}
 
-━━━━━━━━━━━━━━━━━━━━━━
-🔐 CREDENTIALS NEEDED
-━━━━━━━━━━━━━━━━━━━━━━
-
+CREDENTIALS NEEDED
+------------------
 None currently. Will ask if new accounts/APIs needed.
 
-**Status: Building.**`;
+Status: Building.`;
 
   return report;
 }

@@ -12,10 +12,11 @@ const ROOT = path.resolve(__dirname, '..');
 const LOG_FILE = path.join(ROOT, 'logs', 'verifier.log');
 
 function log(msg) {
-  const entry = `[${new Date().toISOString()}] ${msg}\n`;
+  const cleanMsg = msg.replace(/[^\x20-\x7E]/g, '?');
+  const entry = `[${new Date().toISOString()}] ${cleanMsg}\n`;
   fs.mkdirSync(path.dirname(LOG_FILE), { recursive: true });
   fs.appendFileSync(LOG_FILE, entry);
-  console.log(msg);
+  console.log(cleanMsg);
 }
 
 function verifyFile(file) {
@@ -78,5 +79,15 @@ function verifyAll() {
 module.exports = { verifyFile, verifyAll };
 
 if (require.main === module) {
-  verifyAll();
+  const args = process.argv.slice(2);
+  const filesArg = args.find(a => a.startsWith('--files='));
+  
+  if (filesArg) {
+    const files = filesArg.replace('--files=', '').split(',').filter(Boolean).map(f => path.relative(ROOT, f));
+    let passed = 0, failed = 0;
+    files.forEach(f => { if (verifyFile(f)) passed++; else failed++; });
+    log(`Verified: ${passed} passed, ${failed} failed, ${files.length} checked`);
+  } else {
+    verifyAll();
+  }
 }

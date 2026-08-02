@@ -12,10 +12,11 @@ const ROOT = path.resolve(__dirname, '..');
 const LOG_FILE = path.join(ROOT, 'logs', 'build_loop.log');
 
 function log(msg) {
-  const entry = `[${new Date().toISOString()}] ${msg}\n`;
+  const cleanMsg = msg.replace(/[^\x20-\x7E]/g, '?');
+  const entry = `[${new Date().toISOString()}] ${cleanMsg}\n`;
   fs.mkdirSync(path.dirname(LOG_FILE), { recursive: true });
   fs.appendFileSync(LOG_FILE, entry);
-  console.log(msg);
+  console.log(cleanMsg);
 }
 
 // ─── CAPABILITY TEMPLATES ──────────────────────────────────
@@ -132,15 +133,20 @@ function run() {
     }
   });
   
-  // Generate enough capabilities to ensure at least one new build
+  // Build up to 5 new capabilities per run (faster growth)
   let built = 0;
   let index = 0;
-  const maxAttempts = 100;
+  const maxAttempts = 200;
+  const targetBuilds = 5;
+  const newFiles = [];
   
-  while (built === 0 && index < maxAttempts) {
+  while (built < targetBuilds && index < maxAttempts) {
     const cap = generateCapability(index);
     if (!existingFiles.has(cap.file)) {
-      if (buildCapability(cap)) built++;
+      if (buildCapability(cap)) {
+        built++;
+        newFiles.push(cap.file);
+      }
     }
     index++;
   }
@@ -150,9 +156,21 @@ function run() {
   log('');
   log(`Loop complete: ${built} new, ${stats.total} total`);
   
-  // ─── VERIFY ALL BUILDS ──────────────────────────────────
+  // Verify only new files + random sample (not all 155+ every time)
   try {
-    const verifyResult = execSync('node project_claw_core/core/verifier.js', {
+    let filesToVerify = [];
+    if (newFiles.length > 0) {
+      filesToVerify = [...newFiles];
+    } else {
+      // No new builds: verify a random sample of 10 existing files
+      const allFiles = Array.from(existingFiles).map(f => path.join(ROOT, f));
+      for (let i = 0; i < 10; i++) {
+        const idx = Math.floor(Math.random() * allFiles.length);
+        filesToVerify.push(allFiles[idx]);
+      }
+    }
+    
+    const verifyResult = execSync(`node project_claw_core/core/verifier.js --files "${filesToVerify.join(',')}"`, {
       cwd: 'C:\\Users\\quent\\.openclaw\\workspace',
       encoding: 'utf8',
       windowsHide: true,

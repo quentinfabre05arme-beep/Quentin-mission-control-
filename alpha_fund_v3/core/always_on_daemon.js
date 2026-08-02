@@ -10,7 +10,8 @@ const { execSync } = require('child_process');
 const LOG_FILE = 'alpha_fund_v3/logs/always_on_daemon.log';
 
 function log(msg) {
-  const entry = `[${new Date().toISOString()}] ${msg}\n`;
+  const cleanMsg = msg.replace(/[^\x20-\x7E]/g, '?');
+  const entry = `[${new Date().toISOString()}] ${cleanMsg}\n`;
   fs.mkdirSync('alpha_fund_v3/logs', { recursive: true });
   fs.appendFileSync(LOG_FILE, entry);
 }
