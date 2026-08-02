@@ -1,0 +1,22 @@
+{
+  "fund_name": "Alpha Fund v3.0",
+  "mode": "PAPER",
+  "capital": 10000,
+  "currency": "USD",
+  "max_positions": 10,
+  "risk_per_trade": 0.15,
+  "stop_loss": 0.08,
+  "take_profit": 0.25,
+  "min_confidence": "MEDIUM",
+  "rebalance_frequency": "weekly",
+  "report_frequency": "daily",
+  "data_sources": {
+    "primary": "twelvedata",
+    "fallback": ["coingecko", "yahoo"]
+  },
+  "assets": {
+    "core": ["BTC", "ETH", "MSTR", "HIMS"],
+    "watch": ["NVDA", "TSLA", "AAPL", "COIN", "SPY", "QQQ"],
+    "opportunities": ["PLTR", "CRWD", "SNOW", "NET", "DUOL"]
+  }
+}

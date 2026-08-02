@@ -1,0 +1,63 @@
+{
+  "cash": 8620.19,
+  "initial_capital": 10000,
+  "positions": [
+    {
+      "ticker": "NVDA",
+      "quantity": 3,
+      "entry_price": 200.75,
+      "current_price": 200.75,
+      "stop_loss": 184.69,
+      "take_profit": 250.9375,
+      "entry_date": "2026-08-02T07:50:49.098Z",
+      "unrealized_pnl": 0
+    },
+    {
+      "ticker": "HIMS",
+      "quantity": 28,
+      "entry_price": 27.77,
+      "current_price": 27.77,
+      "stop_loss": 25.5484,
+      "take_profit": 34.7125,
+      "entry_date": "2026-08-02T07:50:49.098Z",
+      "unrealized_pnl": 0
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-08-02T07:50:49.099Z",
+      "total_value": 10000,
+      "cash": 8620.19,
+      "positions": 2,
+      "return_pct": 0
+    }
+  ],
+  "trades": [
+    {
+      "action": "BUY",
+      "ticker": "NVDA",
+      "quantity": 3,
+      "price": 200.75,
+      "total": 602.25,
+      "date": "2026-08-02T07:50:49.098Z",
+      "reason": "NEUTRAL technical + NEUTRAL sentiment"
+    },
+    {
+      "action": "BUY",
+      "ticker": "HIMS",
+      "quantity": 28,
+      "price": 27.77,
+      "total": 777.56,
+      "date": "2026-08-02T07:50:49.098Z",
+      "reason": "NEUTRAL technical + NEUTRAL sentiment"
+    }
+  ],
+  "performance": {
+    "total_return": 0,
+    "win_rate": 0,
+    "total_trades": 0,
+    "max_drawdown": 0
+  },
+  "created": "2026-08-02T09:49:00Z",
+  "version": "3.0.0"
+}
