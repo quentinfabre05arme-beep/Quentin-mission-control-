@@ -1,6 +1,0 @@
-2026/08/02-19:31:52.709 4480 Reusing MANIFEST C:\Users\quent\.openclaw\workspace\project_claw_core\data\microsoft_profile\Default\Local Storage\leveldb/MANIFEST-000001
-2026/08/02-19:31:52.728 4480 Recovering log #4
-2026/08/02-19:31:52.736 4480 Reusing old log C:\Users\quent\.openclaw\workspace\project_claw_core\data\microsoft_profile\Default\Local Storage\leveldb/000004.log 
-2026/08/02-19:33:07.098 4f78 Level-0 table #8: started
-2026/08/02-19:33:07.121 4f78 Level-0 table #8: 76381 bytes OK
-2026/08/02-19:33:07.126 4f78 Delete type=0 #4

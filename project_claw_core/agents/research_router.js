@@ -15,6 +15,13 @@ function log(msg) {
   console.log(`[ResearchRouter] ${msg}`);
 }
 
+function runWithTimeout(fn, ms) {
+  return Promise.race([
+    fn(),
+    new Promise((_, reject) => setTimeout(() => reject(new Error('Research timeout')), ms))
+  ]);
+}
+
 class ResearchRouter {
   constructor(options = {}) {
     this.webSearchFn = options.webSearchFn || null; // Optional OpenClaw web_search function
