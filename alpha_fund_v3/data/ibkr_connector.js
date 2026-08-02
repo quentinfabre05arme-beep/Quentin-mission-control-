@@ -20,7 +20,7 @@ const IBKR_CONFIG = {
   host: '127.0.0.1',        // TWS running locally
   port: 7496,               // TWS default port (7496 TWS, 4001 Gateway)
   clientId: 1,              // Unique client ID
-  enabled: false            // Set to true once TWS is configured
+  enabled: true             // ✅ ENABLED — Ready to connect
 };
 
 const CACHE_FILE = path.join(__dirname, '..', 'data', 'ibkr_cache.json');
