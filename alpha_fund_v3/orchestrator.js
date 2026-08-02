@@ -109,6 +109,27 @@ async function runResearch() {
   return results;
 }
 
+// ─── PROJECT CLAW CORE BRIDGE ─────────────────────────────
+let clawCore = null;
+function loadClawCore() {
+  if (!clawCore) {
+    try {
+      clawCore = require('../project_claw_core/core/unified_orchestrator');
+      console.log('🐾 Project Claw Core bridge loaded — 100 capabilities available');
+    } catch(e) {
+      console.log('⚠️ Project Claw Core bridge not available:', e.message);
+    }
+  }
+  return clawCore;
+}
+
+async function claw(command, ...args) {
+  const core = loadClawCore();
+  if (!core) return { success: false, error: 'Claw Core not available' };
+  const orchestrator = new core.UnifiedOrchestrator();
+  return await orchestrator.runCommand(`${command} ${args.join(' ')}`);
+}
+
 // ─── INTELLIGENCE LAYER ─────────────────────────────────────
 async function runIntelligence() {
   console.log('🧠 [INTELLIGENCE] Running catalyst & risk analysis...\n');
@@ -224,6 +245,9 @@ const COMMANDS = {
     const totalValue = portfolio.cash + portfolio.positions.reduce((sum, p) => sum + (p.quantity * p.current_price), 0);
     const totalReturn = ((totalValue / portfolio.initial_capital) - 1) * 100;
     
+    // Project Claw Core health snapshot
+    const coreStatus = loadClawCore() ? (new (loadClawCore().UnifiedOrchestrator)().status()) : null;
+    
     const status = {
       mode: CONFIG.mode,
       fund_name: CONFIG.fund_name,
@@ -244,7 +268,12 @@ const COMMANDS = {
         take_profit: p.take_profit,
         unrealized_pnl_pct: ((p.current_price / p.entry_price) - 1) * 100
       })),
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
+      claw_core: coreStatus ? {
+        capabilities_total: coreStatus.capabilities_total,
+        ram_used_percent: coreStatus.health.ram_used_percent,
+        disk_c_used_percent: coreStatus.health.disk_c_used_percent
+      } : null
     };
     
     if (isJson) {
@@ -265,9 +294,20 @@ const COMMANDS = {
         const pnl = ((p.current_price / p.entry_price) - 1) * 100;
         console.log(`   ${p.ticker}: ${p.quantity} @ $${p.entry_price.toFixed(2)} → $${p.current_price.toFixed(2)} (${pnl >= 0 ? '+' : ''}${pnl.toFixed(1)}%)`);
       });
+    console.log(`\n🐾 Claw Core: ${coreStatus.capabilities_total} capabilities | RAM ${coreStatus.health.ram_used_percent}% | Disk C ${coreStatus.health.disk_c_used_percent}%`);
       console.log();
     }
     return status;
+  },
+  
+  claw: async (args) => {
+    if (!args || args.length === 0) {
+      console.log('Usage: node orchestrator.js claw <capability> <method> [args...]');
+      return null;
+    }
+    const result = await claw(...args);
+    console.log(JSON.stringify(result, null, 2));
+    return result;
   },
   
   init: () => {
@@ -302,6 +342,7 @@ async function main() {
     console.log(`  signals   — Generate trading signals`);
     console.log(`  trade     — Execute paper trades`);
     console.log(`  status    — Show portfolio status`);
+    console.log(`  claw      — Invoke Project Claw Core capability (e.g., claw system_health_monitor getHealth)`);
     console.log(`  init      — Initialize fund\n`);
   }
 }
