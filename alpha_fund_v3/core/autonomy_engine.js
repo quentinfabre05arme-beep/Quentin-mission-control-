@@ -15,7 +15,8 @@ const CONFIG = {
   ram_critical: 93,
   ram_emergency: 97,
   log_dir: path.join(__dirname, '..', 'logs'),
-  dashboard_file: path.join(__dirname, '..', 'dashboard', 'self_monitor.html')
+  dashboard_file: path.join(__dirname, '..', 'dashboard', 'self_monitor.html'),
+  restart_request_file: path.join(__dirname, '..', '..', '.RESTART_GATEWAY_REQUESTED')
 };
 
 // ─── STATE ──────────────────────────────────────────────────
@@ -23,7 +24,8 @@ const state = {
   ram_pct: 0,
   status: 'OK',
   last_check: null,
-  paused: false
+  paused: false,
+  restart_requested: false
 };
 
 // ─── CHECK RAM ──────────────────────────────────────────────
@@ -49,6 +51,16 @@ function ramGuard() {
   if (status === 'EMERGENCY') {
     logEvent('RAM_EMERGENCY', { pct: state.ram_pct });
     state.paused = true;
+    
+    // If sustained above 95%, request gateway restart
+    if (state.ram_pct >= 95 && !state.restart_requested) {
+      try {
+        fs.writeFileSync(CONFIG.restart_request_file, new Date().toISOString());
+        state.restart_requested = true;
+        logEvent('RESTART_REQUESTED', { pct: state.ram_pct, reason: 'RAM sustained above 95%' });
+      } catch(e) {}
+    }
+    
     return false;
   }
   
