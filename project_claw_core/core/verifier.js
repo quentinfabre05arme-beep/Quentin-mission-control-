@@ -27,7 +27,8 @@ function verifyFile(file) {
   
   try {
     // Syntax check
-    execSync(`node -c "${fullPath}"`, { windowsHide: true });
+    const escapedPath = fullPath.replace(/"/g, '\\"');
+    execSync(`node -c "${escapedPath}"`, { windowsHide: true });
     log(`SYNTAX OK: ${file}`);
     
     // Try to require it
@@ -53,7 +54,7 @@ function verifyAll() {
   log('═══════════════════════════════════════════');
   
   const files = [];
-  ['core', 'agents'].forEach(dir => {
+  ['core', 'agents', 'memory'].forEach(dir => {
     const fullDir = path.join(ROOT, dir);
     if (fs.existsSync(fullDir)) {
       fs.readdirSync(fullDir).filter(f => f.endsWith('.js')).forEach(f => files.push(path.join(dir, f)));
