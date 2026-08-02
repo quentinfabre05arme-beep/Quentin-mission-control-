@@ -8,3 +8,5 @@
 2026-08-02T01:37:03.661Z: Recovery attempted for Market Data
 2026-08-02T01:52:04.843Z: Recovery attempted for Market Data
 2026-08-02T02:07:03.573Z: Recovery attempted for Market Data
+2026-08-02T13:07:04.315Z: Recovery attempted for Market Data
+2026-08-02T13:22:03.850Z: Recovery attempted for Market Data

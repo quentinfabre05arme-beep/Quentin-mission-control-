@@ -58,6 +58,13 @@
       "cash": 8620.19,
       "positions": 2,
       "return_pct": 0
+    },
+    {
+      "date": "2026-08-02T13:03:48.550Z",
+      "total_value": 10000,
+      "cash": 8620.19,
+      "positions": 2,
+      "return_pct": 0
     }
   ],
   "trades": [
