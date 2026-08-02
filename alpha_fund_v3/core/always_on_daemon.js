@@ -29,8 +29,8 @@ function aliveCheck() {
 
 function runBuildLoop() {
   try {
-    log('Running build loop...');
-    execSync('node alpha_fund_v3/core/build_loop_continuous.js', {
+    log('Running Project Claw Core build loop...');
+    execSync('node project_claw_core/core/build_loop_continuous.js', {
       cwd: 'C:\\Users\\quent\\.openclaw\\workspace',
       windowsHide: true,
       timeout: 300000
