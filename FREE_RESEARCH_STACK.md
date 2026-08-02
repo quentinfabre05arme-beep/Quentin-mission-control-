@@ -11,25 +11,59 @@ Give Claw a solid, autonomous web research capability without relying on paid AP
 **Why:** Free, multi-engine, no API keys, structured JSON, page extraction.
 **Options:**
 - **OpenSERP** (Go, Docker) — `docker run -p 7000:7000 karust/openserp:latest serve`
-- **SearXNG** (Python, Docker) — meta-search across 70+ engines
+- **SearXNG** (Python, Docker) — meta-search across 70+ engines (`SEARXNG_URL=http://localhost:8080`)
 - **vandyand/free-search** (Node.js) — Puppeteer-based, parallel engines
 
 **Cost:** $0 (runs on your machine)
 **Reliability:** High — uses real browsers
 **Setup time:** 5-15 minutes
 
-### 2. Browser-Based Research (Already Built)
+### 2. OpenClaw Native `web_search`
+**Tool:** `web_search`
+**Cost:** $0 (uses configured provider)
+**Reliability:** Good for quick SERP snippets
+**Note:** Set via OpenClaw gateway config; already wired into `research_router.js`
+
+### 3. Browser-Based Research (Already Built)
 **File:** `project_claw_core/agents/browser_researcher.js`
 **How:** Headless Puppeteer + DuckDuckGo HTML
 **Cost:** $0
 **Reliability:** Medium-High — works today, can break if DuckDuckGo changes HTML
 **Speed:** ~3-5s per query
 
-### 3. RSS + Direct Site Monitoring (Niche/High-Signal)
+### 4. Tavily (Free AI Search)
+**File:** `project_claw_core/agents/tavily_search.js`
+**Free Tier:** 1,000 searches/month
+**Setup:** `export TAVILY_API_KEY=tvly-...`
+**Best for:** Clean, AI-ready structured results
+
+### 5. Brave Search (Free Privacy Search)
+**File:** `project_claw_core/agents/brave_search.js`
+**Free Tier:** ~$5 in credits/month
+**Setup:** `export BRAVE_API_KEY=...`
+**Best for:** Fast, privacy-first SERP
+
+### 6. RSS + Direct Site Monitoring (Niche/High-Signal)
 **File:** `project_claw_core/agents/rss_agent.js`
 **How:** Monitor RSS feeds from specific sources (news sites, blogs, SEC, arXiv)
 **Cost:** $0
 **Best for:** Ongoing monitoring, not broad discovery
+
+---
+
+## Current Router Priority
+
+`research_router.js` now tries, in order:
+
+1. OpenSERP local
+2. OpenClaw `web_search`
+3. Tavily (if `TAVILY_API_KEY` set)
+4. Brave Search (if `BRAVE_API_KEY` set)
+5. SearXNG (if `SEARXNG_URL` set)
+6. Legacy Serper + HTTP fallbacks
+7. Browser-based DuckDuckGo (with 30s timeout)
+
+All optional sources auto-disable if no key/URL is configured.
 
 ---
 
@@ -52,37 +86,33 @@ Give Claw a solid, autonomous web research capability without relying on paid AP
 2. Deploy **OpenSERP** locally via Docker
 3. Add OpenSERP client to `project_claw_core/agents/` as a first-class source
 
-### Short-term (this week, low-cost)
-4. Sign up for **Brave Search API free tier** (2,000/month)
-5. Add Brave as a fast API source before falling back to browser
-6. Add **Tavily** or **Exa** for AI-focused research queries
+### Short-term (this week, low-cost or free)
+4. Self-host **SearXNG** for unlimited free search
+5. Sign up for **Tavily** free tier (1,000/month) — best for AI agents
+6. Sign up for **Brave Search API** free tier ($5/month credits)
+7. Add all three as fast API sources before falling back to browser
 
 ### Long-term
-7. Self-host **SearXNG** for unlimited, private, multi-engine search
-8. Build a research router that picks source by query type:
-   - Quick facts → Brave API
-   - Market/competitors → OpenSERP/SearXNG
-   - Deep research → Tavily/Exa
-   - Fallback → browser_researcher
+8. Keep OpenSERP/SearXNG as the primary free backbone
+9. Use Tavily/Brave for high-priority queries when local sources are slow
 
 ---
 
 ## My Recommendation for You
 
-**Deploy OpenSERP locally** — it's the cleanest solution:
+**Deploy OpenSERP or SearXNG locally** — it's the cleanest solution:
 - One Docker command
 - No API keys needed
 - Google, Bing, DuckDuckGo, Yandex, Baidu, Ecosia
 - JSON output with page extraction
 - No rate limits (your own infra)
 
-Then I build a unified `research_router.js` that tries:
-1. OpenSERP local
-2. Browser-based DuckDuckGo
-3. Any API key you later add (Brave/Tavily)
+Then optionally add free API keys for speed:
+- Tavily (`TAVILY_API_KEY`) — 1,000 AI-ready searches/month
+- Brave Search (`BRAVE_API_KEY`) — ~$5 credits/month
 
-This gives you **unlimited free research** with high reliability.
+This gives you **unlimited free research** with high reliability and fast API fallbacks.
 
 ---
 
-*Created: August 2, 2026*
+*Updated: August 3, 2026*

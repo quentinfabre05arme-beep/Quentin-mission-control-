@@ -1,6 +1,6 @@
 /**
  * Research Router — unified research that picks the best free/low-cost source.
- * Priority: OpenSERP local → Serper API → Browser-based fallback
+ * Priority: OpenSERP local → OpenClaw web_search → Tavily → Brave → SearXNG → Serper → Browser fallback
  */
 
 const fs = require('fs');
@@ -40,14 +40,35 @@ class ResearchRouter {
     // 2. OpenClaw web_search tool (when invoked from agent context)
     if (this.webSearchFn) this.sources.push('openclaw_web_search');
 
-    // 3. Legacy research agent (Serper + HTTP fallbacks)
+    // 3. Tavily (free tier 1,000 searches/month)
+    try {
+      const { TavilySearch } = require('./tavily_search');
+      this.tavily = new TavilySearch();
+      if (this.tavily.isAvailable()) this.sources.push('tavily');
+    } catch(e) { log(`Tavily init error: ${e.message}`); }
+
+    // 4. Brave Search (free $5 credits/month)
+    try {
+      const { BraveSearch } = require('./brave_search');
+      this.brave = new BraveSearch();
+      if (this.brave.isAvailable()) this.sources.push('brave');
+    } catch(e) { log(`Brave init error: ${e.message}`); }
+
+    // 5. SearXNG self-hosted (free forever)
+    try {
+      const { SearxngClient } = require('./searxng_client');
+      this.searxng = new SearxngClient();
+      if (this.searxng.isAvailable()) this.sources.push('searxng');
+    } catch(e) { log(`SearXNG init error: ${e.message}`); }
+
+    // 6. Legacy research agent (Serper + HTTP fallbacks)
     try {
       const { ResearchAgent } = require('./research_agent');
       this.legacyAgent = new ResearchAgent();
       this.sources.push('legacy');
     } catch(e) { log(`Legacy research agent init error: ${e.message}`); }
 
-    // 4. Browser researcher
+    // 7. Browser researcher
     try {
       const { BrowserResearcher } = require('./browser_researcher');
       this.browser = new BrowserResearcher();
@@ -82,6 +103,39 @@ class ResearchRouter {
           return { source: 'openclaw_web_search', results };
         }
       } catch(e) { log(`OpenClaw web_search error: ${e.message}`); }
+    }
+
+    // Try Tavily if available
+    if (this.tavily && this.tavily.isAvailable()) {
+      try {
+        const results = await runWithTimeout(() => this.tavily.search(query, count), 15000);
+        if (results.length > 0) {
+          log(`Tavily returned ${results.length} results`);
+          return { source: 'tavily', results };
+        }
+      } catch(e) { log(`Tavily error: ${e.message}`); }
+    }
+
+    // Try Brave if available
+    if (this.brave && this.brave.isAvailable()) {
+      try {
+        const results = await runWithTimeout(() => this.brave.search(query, count), 15000);
+        if (results.length > 0) {
+          log(`Brave returned ${results.length} results`);
+          return { source: 'brave', results };
+        }
+      } catch(e) { log(`Brave error: ${e.message}`); }
+    }
+
+    // Try SearXNG if available
+    if (this.searxng && this.searxng.isAvailable()) {
+      try {
+        const results = await runWithTimeout(() => this.searxng.search(query, count), 15000);
+        if (results.length > 0) {
+          log(`SearXNG returned ${results.length} results`);
+          return { source: 'searxng', results };
+        }
+      } catch(e) { log(`SearXNG error: ${e.message}`); }
     }
 
     // Try legacy (Serper + HTTP fallbacks)
