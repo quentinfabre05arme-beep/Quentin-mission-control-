@@ -1,0 +1,123 @@
+[
+  {
+    "id": "msbrmurj_v8x2q",
+    "text": "Alpha Fund v3.0 uses BTC ETH MSTR HIMS for paper trading",
+    "vector": {
+      "alpha": 1,
+      "fund": 1,
+      "uses": 1,
+      "btc": 1,
+      "eth": 1,
+      "mstr": 1,
+      "hims": 1,
+      "for": 1,
+      "paper": 1,
+      "trading": 1
+    },
+    "metadata": {
+      "source": "config"
+    },
+    "category": "trading",
+    "timestamp": "2026-08-02T12:17:39.391Z"
+  },
+  {
+    "id": "msbrmurn_11qs0",
+    "text": "Fear and Greed index at 27 means extreme fear and contrarian buy signal",
+    "vector": {
+      "fear": 2,
+      "and": 2,
+      "greed": 1,
+      "index": 1,
+      "means": 1,
+      "extreme": 1,
+      "contrarian": 1,
+      "buy": 1,
+      "signal": 1
+    },
+    "metadata": {
+      "source": "market"
+    },
+    "category": "trading",
+    "timestamp": "2026-08-02T12:17:39.395Z"
+  },
+  {
+    "id": "msbrmuro_wprx0",
+    "text": "Gateway immortality engine restarts crashed processes automatically every 5 seconds",
+    "vector": {
+      "gateway": 1,
+      "immortality": 1,
+      "engine": 1,
+      "restarts": 1,
+      "crashed": 1,
+      "processes": 1,
+      "automatically": 1,
+      "every": 1,
+      "seconds": 1
+    },
+    "metadata": {
+      "source": "system"
+    },
+    "category": "infrastructure",
+    "timestamp": "2026-08-02T12:17:39.396Z"
+  },
+  {
+    "id": "msbrmurp_304tn",
+    "text": "User Quentin granted full admin access on August 2 2026",
+    "vector": {
+      "2026": 1,
+      "user": 1,
+      "quentin": 1,
+      "granted": 1,
+      "full": 1,
+      "admin": 1,
+      "access": 1,
+      "august": 1
+    },
+    "metadata": {
+      "source": "conversation"
+    },
+    "category": "security",
+    "timestamp": "2026-08-02T12:17:39.398Z"
+  },
+  {
+    "id": "msbrmurr_b429i",
+    "text": "POD business was erased and deleted from all configs",
+    "vector": {
+      "pod": 1,
+      "business": 1,
+      "was": 1,
+      "erased": 1,
+      "and": 1,
+      "deleted": 1,
+      "from": 1,
+      "all": 1,
+      "configs": 1
+    },
+    "metadata": {
+      "source": "action"
+    },
+    "category": "business",
+    "timestamp": "2026-08-02T12:17:39.399Z"
+  },
+  {
+    "id": "msbrmurs_d2t8s",
+    "text": "Execution loop runs every 10 minutes checking RAM goals and predictions",
+    "vector": {
+      "execution": 1,
+      "loop": 1,
+      "runs": 1,
+      "every": 1,
+      "minutes": 1,
+      "checking": 1,
+      "ram": 1,
+      "goals": 1,
+      "and": 1,
+      "predictions": 1
+    },
+    "metadata": {
+      "source": "system"
+    },
+    "category": "infrastructure",
+    "timestamp": "2026-08-02T12:17:39.400Z"
+  }
+]
