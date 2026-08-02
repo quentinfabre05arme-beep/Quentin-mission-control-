@@ -1,15 +1,15 @@
 {
     "lastChecks": {
-        "market": 1785628200000,
-        "system": 1785628200000,
-        "git": 1785628200000,
+        "market": 1785631800000,
+        "system": 1785631800000,
+        "git": null,
         "calendar": null,
         "weather": null,
         "heartbeat": {
-            "ram": "9.5% free physical (~774MB / 8.3GB). Two node processes: 78.9 MB + 967.9 MB. RAM usage 91.8% flagged critical by recovery monitor.",
-            "disk": "C: ~30% free, D: 57% free, E: 12% free",
-            "ts": "2026-08-02T00:30:00+02:00"
+            "ram": "8.2% free physical (~682MB / 8.3GB). RAM usage 91.8% flagged critical by recovery monitor.",
+            "disk": "C: 29.2% free, D: 57.4% free, E: 11.9% free",
+            "ts": "2026-08-02T05:30:00+02:00"
         }
     },
-    "notes": "Heartbeat 2026-08-02 00:30 CET: BTC $62,794 (-0.24%), ETH $1,847.08 (-0.79%). Fear & Greed 27 FEAR (improving from 25) = contrarian buy setup persists. Mempool MEDIUM (85,408 txs). Twelve Data still down; CoinGecko + Yahoo fallbacks active. Health report + heartbeat state committed/pushed. RAM critical (91.8%) - no safe process to kill; monitoring. Memory search disabled (index provider mismatch). System otherwise stable."
+    "notes": "Heartbeat 2026-08-02 05:30 CET: BTC $63,448 (+0.99%), ETH $1,876 (+1.68%). Fear & Greed 27 FEAR, trend DECLINING. Mempool MEDIUM (85,172 txs, improving). Twelve Data back online for core assets. Anomalies: SENTIMENT_RECOVERY contrarian buy, MSTR -4.56%, AAPL -7.35%, COIN -10.59%. RAM critical (91.8%) - no safe process to terminate; monitoring only. Memory search disabled (index provider mismatch)."
 }
