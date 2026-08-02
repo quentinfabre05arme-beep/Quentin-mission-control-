@@ -1,0 +1,321 @@
+{
+  "metadata": {
+    "fetch_timestamp": "2026-08-02T09:00:27.215Z",
+    "local_time": "02/08/2026 11:00:27",
+    "utc_time": "2026-08-02T09:00:27.215Z",
+    "cycle_id": "alternative-data-2026-08-02",
+    "data_sources": [
+      "alternative.me (Fear & Greed)",
+      "serper.dev (News & Sentiment)",
+      "coingecko.com (Funding proxy)",
+      "mempool.space (On-chain)",
+      "market_data.json (Price)"
+    ],
+    "focus": "Early signals not visible in price data"
+  },
+  "market_snapshot": {
+    "timestamp": "2026-08-02T09:00:16.094Z",
+    "assets": {
+      "BTC": {
+        "price": 63179.99,
+        "change_24h": 0.56722278,
+        "source": "twelvedata",
+        "signal": "NEUTRAL"
+      },
+      "ETH": {
+        "price": 1867.94,
+        "change_24h": 1.24665,
+        "source": "twelvedata",
+        "signal": "NEUTRAL"
+      },
+      "NVDA": {
+        "price": 200.75,
+        "change_24h": 2.92761,
+        "source": "twelvedata",
+        "signal": "BULLISH"
+      },
+      "TSLA": {
+        "price": 311.20999,
+        "change_24h": 0.76412022,
+        "source": "twelvedata",
+        "signal": "NEUTRAL"
+      },
+      "MSTR": {
+        "price": 93.28,
+        "change_24h": -4.56313,
+        "source": "twelvedata",
+        "signal": "BEARISH"
+      },
+      "AAPL": {
+        "price": 308.91,
+        "change_24h": -7.35386,
+        "source": "twelvedata",
+        "signal": "BEARISH"
+      },
+      "HIMS": {
+        "price": 27.77,
+        "change_24h": 2.6997,
+        "source": "twelvedata",
+        "signal": "BULLISH"
+      },
+      "COIN": {
+        "price": 146.25999,
+        "change_24h": -10.5881,
+        "source": "twelvedata",
+        "signal": "BEARISH"
+      },
+      "SPY": {
+        "price": 747.03,
+        "change_24h": 0,
+        "source": "yahoo",
+        "signal": "NEUTRAL"
+      },
+      "QQQ": {
+        "price": 687.99,
+        "change_24h": 0,
+        "source": "yahoo",
+        "signal": "NEUTRAL"
+      },
+      "GLD": {
+        "price": 371.54,
+        "change_24h": 0,
+        "source": "yahoo",
+        "signal": "NEUTRAL"
+      },
+      "TLT": {
+        "price": 82.25,
+        "change_24h": 0,
+        "source": "yahoo",
+        "signal": "NEUTRAL"
+      }
+    },
+    "_meta": {
+      "fromCache": false,
+      "sources": [
+        "twelvedata",
+        "twelvedata",
+        "twelvedata",
+        "twelvedata",
+        "twelvedata",
+        "twelvedata",
+        "twelvedata",
+        "twelvedata",
+        "yahoo",
+        "yahoo",
+        "yahoo",
+        "yahoo"
+      ]
+    }
+  },
+  "sentiment": {
+    "fear_greed": {
+      "value": 27,
+      "previous_value": 27,
+      "classification": "FEAR",
+      "timestamp": "2026-08-02T00:00:00.000Z",
+      "trend": "DECLINING"
+    },
+    "social_sentiment": {
+      "bullish_pct": "0.0",
+      "bearish_pct": "0.0",
+      "neutral_pct": "0.0",
+      "overall_sentiment": "NEUTRAL",
+      "sources": []
+    }
+  },
+  "on_chain": {
+    "whale_activity": {
+      "signal": "NEUTRAL",
+      "score": 0,
+      "confidence": 0,
+      "headlines": []
+    },
+    "exchange_flows": {
+      "status": "PENDING_IMPLEMENTATION",
+      "note": "Requires Glassnode/Chainalysis API"
+    },
+    "network_metrics": {
+      "mempool_size": 85273,
+      "mempool_vsize": 43330045,
+      "network_congestion": "MEDIUM",
+      "timestamp": "2026-08-02T09:00:27.364Z"
+    },
+    "mempool": {
+      "mempool_size": 85273,
+      "mempool_vsize": 43330045,
+      "network_congestion": "MEDIUM",
+      "timestamp": "2026-08-02T09:00:27.364Z"
+    }
+  },
+  "order_flow": {
+    "funding_rates": null,
+    "unusual_volume": {
+      "BTC": "NORMAL",
+      "ETH": "NORMAL"
+    }
+  },
+  "anomalies": {
+    "flags": [
+      {
+        "asset": "MARKET",
+        "type": "SENTIMENT_RECOVERY",
+        "severity": "MEDIUM",
+        "description": "Fear & Greed at 27 - recovering from extreme fear",
+        "signal": "CONTRARIAN_BUY",
+        "timestamp": "2026-08-02T09:00:27.555Z"
+      },
+      {
+        "asset": "MSTR",
+        "type": "VOLUME_ANOMALY",
+        "severity": "MEDIUM",
+        "description": "MSTR moved -4.56% in 24h",
+        "signal": "BEARISH_MOMENTUM",
+        "timestamp": "2026-08-02T09:00:27.555Z"
+      },
+      {
+        "asset": "AAPL",
+        "type": "VOLUME_ANOMALY",
+        "severity": "HIGH",
+        "description": "AAPL moved -7.35% in 24h",
+        "signal": "BEARISH_MOMENTUM",
+        "timestamp": "2026-08-02T09:00:27.555Z"
+      },
+      {
+        "asset": "COIN",
+        "type": "VOLUME_ANOMALY",
+        "severity": "HIGH",
+        "description": "COIN moved -10.59% in 24h",
+        "signal": "BEARISH_MOMENTUM",
+        "timestamp": "2026-08-02T09:00:27.555Z"
+      }
+    ],
+    "count": 4,
+    "summary": "4 anomaly(s) detected"
+  },
+  "composite_scores": {
+    "BTC": {
+      "score": "0.30",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Positive 24h momentum",
+        "Fear zone contrarian setup",
+        "Sentiment declining"
+      ]
+    },
+    "ETH": {
+      "score": "0.30",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Positive 24h momentum",
+        "Fear zone contrarian setup",
+        "Sentiment declining"
+      ]
+    },
+    "NVDA": {
+      "score": "0.19",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Strong 24h momentum",
+        "Fear zone contrarian setup",
+        "Sentiment declining"
+      ]
+    },
+    "TSLA": {
+      "score": "0.11",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Positive 24h momentum",
+        "Fear zone contrarian setup",
+        "Sentiment declining"
+      ]
+    },
+    "MSTR": {
+      "score": "0.06",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Strong 24h decline",
+        "Fear zone contrarian setup",
+        "Sentiment declining"
+      ]
+    },
+    "AAPL": {
+      "score": "-0.15",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Strong 24h decline"
+      ]
+    },
+    "HIMS": {
+      "score": "0.15",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Strong 24h momentum"
+      ]
+    },
+    "COIN": {
+      "score": "0.06",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Strong 24h decline",
+        "Fear zone contrarian setup",
+        "Sentiment declining"
+      ]
+    },
+    "SPY": {
+      "score": "0.02",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Fear zone contrarian setup",
+        "Sentiment declining"
+      ]
+    },
+    "QQQ": {
+      "score": "0.04",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Fear zone contrarian setup",
+        "Sentiment declining"
+      ]
+    },
+    "GLD": {
+      "score": "0.00",
+      "rating": "NEUTRAL",
+      "factors": []
+    },
+    "TLT": {
+      "score": "0.00",
+      "rating": "NEUTRAL",
+      "factors": []
+    }
+  },
+  "research_flags": [
+    {
+      "priority": "MEDIUM",
+      "asset": "MARKET",
+      "task": "Investigate SENTIMENT_RECOVERY: Fear & Greed at 27 - recovering from extreme fear",
+      "signal": "CONTRARIAN_BUY",
+      "timestamp": "2026-08-02T09:00:27.215Z"
+    },
+    {
+      "priority": "MEDIUM",
+      "asset": "MSTR",
+      "task": "Investigate VOLUME_ANOMALY: MSTR moved -4.56% in 24h",
+      "signal": "BEARISH_MOMENTUM",
+      "timestamp": "2026-08-02T09:00:27.215Z"
+    },
+    {
+      "priority": "HIGH",
+      "asset": "AAPL",
+      "task": "Investigate VOLUME_ANOMALY: AAPL moved -7.35% in 24h",
+      "signal": "BEARISH_MOMENTUM",
+      "timestamp": "2026-08-02T09:00:27.215Z"
+    },
+    {
+      "priority": "HIGH",
+      "asset": "COIN",
+      "task": "Investigate VOLUME_ANOMALY: COIN moved -10.59% in 24h",
+      "signal": "BEARISH_MOMENTUM",
+      "timestamp": "2026-08-02T09:00:27.215Z"
+    }
+  ]
+}

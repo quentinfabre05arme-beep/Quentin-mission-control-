@@ -1,0 +1,265 @@
+{
+  "metadata": {
+    "fetch_timestamp": "2026-07-25T18:10:35.845Z",
+    "local_time": "25/07/2026 20:10:35",
+    "utc_time": "2026-07-25T18:10:35.845Z",
+    "cycle_id": "alternative-data-2026-07-25",
+    "data_sources": [
+      "alternative.me (Fear & Greed)",
+      "serper.dev (News & Sentiment)",
+      "coingecko.com (Funding proxy)",
+      "mempool.space (On-chain)",
+      "market_data.json (Price)"
+    ],
+    "focus": "Early signals not visible in price data"
+  },
+  "market_snapshot": {
+    "timestamp": "2026-07-25T17:13:08.838Z",
+    "assets": {
+      "BTC": {
+        "price": 64216,
+        "change_24h": 0.11850641,
+        "source": "twelvedata",
+        "signal": "NEUTRAL"
+      },
+      "ETH": {
+        "price": 1868.65,
+        "change_24h": 0.38733454,
+        "source": "twelvedata",
+        "signal": "NEUTRAL"
+      },
+      "NVDA": {
+        "price": 206.84,
+        "change_24h": -0.91971557,
+        "source": "twelvedata",
+        "signal": "NEUTRAL"
+      },
+      "TSLA": {
+        "price": 313.029999,
+        "change_24h": -2.083269,
+        "source": "twelvedata",
+        "signal": "BEARISH"
+      },
+      "MSTR": {
+        "price": 91.67,
+        "change_24h": -2.093345,
+        "source": "twelvedata",
+        "signal": "BEARISH"
+      },
+      "AAPL": {
+        "price": 333.019989,
+        "change_24h": 3.53167,
+        "source": "twelvedata",
+        "signal": "BULLISH"
+      },
+      "HIMS": {
+        "price": 28.09,
+        "change_24h": -14.20281,
+        "source": "twelvedata",
+        "signal": "BEARISH"
+      },
+      "COIN": {
+        "price": 158.28999,
+        "change_24h": -1.78085,
+        "source": "twelvedata",
+        "signal": "NEUTRAL"
+      }
+    },
+    "_meta": {
+      "fromCache": false,
+      "failures": [
+        "SPY: All sources failed for SPY: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 9 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "QQQ: All sources failed for QQQ: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 10 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "GLD: All sources failed for GLD: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 11 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "TLT: All sources failed for TLT: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 12 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON"
+      ],
+      "sources": [
+        "twelvedata",
+        "twelvedata",
+        "twelvedata",
+        "twelvedata",
+        "twelvedata",
+        "twelvedata",
+        "twelvedata",
+        "twelvedata"
+      ]
+    }
+  },
+  "sentiment": {
+    "fear_greed": {
+      "value": 27,
+      "previous_value": 28,
+      "classification": "FEAR",
+      "timestamp": "2026-07-25T00:00:00.000Z",
+      "trend": "DECLINING"
+    },
+    "social_sentiment": {
+      "bullish_pct": "20.0",
+      "bearish_pct": "20.0",
+      "neutral_pct": "60.0",
+      "overall_sentiment": "NEUTRAL",
+      "sources": [
+        "Range-bound until a confirmed breakout. ETHEREUM ...",
+        "Bitcoin Fear and Greed Index Today: 44 (Neutral) - CFGI.io",
+        "How crypto fits into a diversified investment portfolio"
+      ]
+    }
+  },
+  "on_chain": {
+    "whale_activity": {
+      "signal": "ACCUMULATION",
+      "score": 2,
+      "confidence": 0.4,
+      "headlines": [
+        {
+          "sentiment": "accumulation",
+          "title": "Dormant Shiba Inu Whale Ends Seven-Month Silence With 30 Billion SHIB Purchase From Binance"
+        },
+        {
+          "sentiment": "accumulation",
+          "title": "XRP Whales Are Buying While Retail Sells: Is a Major Price Move Coming Next?"
+        }
+      ]
+    },
+    "exchange_flows": {
+      "status": "PENDING_IMPLEMENTATION",
+      "note": "Requires Glassnode/Chainalysis API"
+    },
+    "network_metrics": {
+      "mempool_size": 84086,
+      "mempool_vsize": 41650538,
+      "network_congestion": "MEDIUM",
+      "timestamp": "2026-07-25T18:10:36.036Z"
+    },
+    "mempool": {
+      "mempool_size": 84086,
+      "mempool_vsize": 41650538,
+      "network_congestion": "MEDIUM",
+      "timestamp": "2026-07-25T18:10:36.036Z"
+    }
+  },
+  "order_flow": {
+    "funding_rates": null,
+    "unusual_volume": {
+      "BTC": "NORMAL",
+      "ETH": "NORMAL"
+    }
+  },
+  "anomalies": {
+    "flags": [
+      {
+        "asset": "MARKET",
+        "type": "SENTIMENT_RECOVERY",
+        "severity": "MEDIUM",
+        "description": "Fear & Greed at 27 - recovering from extreme fear",
+        "signal": "CONTRARIAN_BUY",
+        "timestamp": "2026-07-25T18:10:36.958Z"
+      },
+      {
+        "asset": "AAPL",
+        "type": "VOLUME_ANOMALY",
+        "severity": "MEDIUM",
+        "description": "AAPL moved +3.53% in 24h",
+        "signal": "BULLISH_MOMENTUM",
+        "timestamp": "2026-07-25T18:10:36.958Z"
+      },
+      {
+        "asset": "HIMS",
+        "type": "VOLUME_ANOMALY",
+        "severity": "HIGH",
+        "description": "HIMS moved -14.20% in 24h",
+        "signal": "BEARISH_MOMENTUM",
+        "timestamp": "2026-07-25T18:10:36.958Z"
+      }
+    ],
+    "count": 3,
+    "summary": "3 anomaly(s) detected"
+  },
+  "composite_scores": {
+    "BTC": {
+      "score": "0.70",
+      "rating": "BULLISH",
+      "factors": [
+        "Extreme fear = contrarian buy opportunity",
+        "Whale accumulation detected"
+      ]
+    },
+    "ETH": {
+      "score": "0.30",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "NVDA": {
+      "score": "0.30",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "TSLA": {
+      "score": "0.10",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Negative 24h momentum",
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "MSTR": {
+      "score": "0.10",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Negative 24h momentum",
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "AAPL": {
+      "score": "0.50",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Positive 24h momentum",
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "HIMS": {
+      "score": "0.10",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Negative 24h momentum",
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "COIN": {
+      "score": "0.10",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Negative 24h momentum",
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    }
+  },
+  "research_flags": [
+    {
+      "priority": "MEDIUM",
+      "asset": "MARKET",
+      "task": "Investigate SENTIMENT_RECOVERY: Fear & Greed at 27 - recovering from extreme fear",
+      "signal": "CONTRARIAN_BUY",
+      "timestamp": "2026-07-25T18:10:35.845Z"
+    },
+    {
+      "priority": "MEDIUM",
+      "asset": "AAPL",
+      "task": "Investigate VOLUME_ANOMALY: AAPL moved +3.53% in 24h",
+      "signal": "BULLISH_MOMENTUM",
+      "timestamp": "2026-07-25T18:10:35.845Z"
+    },
+    {
+      "priority": "HIGH",
+      "asset": "HIMS",
+      "task": "Investigate VOLUME_ANOMALY: HIMS moved -14.20% in 24h",
+      "signal": "BEARISH_MOMENTUM",
+      "timestamp": "2026-07-25T18:10:35.845Z"
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "metadata": {
+    "fetch_timestamp": "2026-07-31T21:38:35.811Z",
+    "local_time": "31/07/2026 23:38:35",
+    "utc_time": "2026-07-31T21:38:35.811Z",
+    "cycle_id": "alternative-data-2026-07-31",
+    "data_sources": [
+      "alternative.me (Fear & Greed)",
+      "serper.dev (News & Sentiment)",
+      "coingecko.com (Funding proxy)",
+      "mempool.space (On-chain)",
+      "market_data.json (Price)"
+    ],
+    "focus": "Early signals not visible in price data"
+  },
+  "market_snapshot": {
+    "timestamp": "2026-07-31T21:34:47.703Z",
+    "assets": {
+      "BTC": {
+        "price": 62900.4,
+        "change_24h": 0,
+        "source": "cached",
+        "signal": "NEUTRAL"
+      },
+      "ETH": {
+        "price": 1866.87,
+        "change_24h": -2.68153,
+        "source": "cached",
+        "signal": "BEARISH"
+      },
+      "NVDA": {
+        "price": 200.75,
+        "change_24h": 0,
+        "source": "cached",
+        "signal": "NEUTRAL"
+      },
+      "MSTR": {
+        "price": 93.28,
+        "change_24h": 0,
+        "source": "cached",
+        "signal": "NEUTRAL"
+      },
+      "AAPL": {
+        "price": 308.91,
+        "change_24h": 0,
+        "source": "cached",
+        "signal": "NEUTRAL"
+      },
+      "HIMS": {
+        "price": 27.75,
+        "change_24h": 2.62574,
+        "source": "cached",
+        "signal": "BULLISH"
+      }
+    },
+    "_meta": {
+      "fromCache": false,
+      "failures": [
+        "TSLA: All sources failed for TSLA: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1238 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "COIN: All sources failed for COIN: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1242 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "SPY: All sources failed for SPY: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1243 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "QQQ: All sources failed for QQQ: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1244 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "GLD: All sources failed for GLD: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1245 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "TLT: All sources failed for TLT: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1246 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON"
+      ],
+      "sources": [
+        "cached",
+        "cached",
+        "cached",
+        "cached",
+        "cached",
+        "cached"
+      ]
+    }
+  },
+  "sentiment": {
+    "fear_greed": {
+      "value": 25,
+      "previous_value": 28,
+      "classification": "EXTREME FEAR",
+      "timestamp": "2026-07-31T00:00:00.000Z",
+      "trend": "DECLINING"
+    },
+    "social_sentiment": {
+      "bullish_pct": "0.0",
+      "bearish_pct": "0.0",
+      "neutral_pct": "0.0",
+      "overall_sentiment": "NEUTRAL",
+      "sources": []
+    }
+  },
+  "on_chain": {
+    "whale_activity": {
+      "signal": "NEUTRAL",
+      "score": 0,
+      "confidence": 0,
+      "headlines": []
+    },
+    "exchange_flows": {
+      "status": "PENDING_IMPLEMENTATION",
+      "note": "Requires Glassnode/Chainalysis API"
+    },
+    "network_metrics": {
+      "mempool_size": 93483,
+      "mempool_vsize": 47075684,
+      "network_congestion": "MEDIUM",
+      "timestamp": "2026-07-31T21:38:35.971Z"
+    },
+    "mempool": {
+      "mempool_size": 93483,
+      "mempool_vsize": 47075684,
+      "network_congestion": "MEDIUM",
+      "timestamp": "2026-07-31T21:38:35.971Z"
+    }
+  },
+  "order_flow": {
+    "funding_rates": null,
+    "unusual_volume": {
+      "BTC": "NORMAL",
+      "ETH": "NORMAL"
+    }
+  },
+  "anomalies": {
+    "flags": [],
+    "count": 0,
+    "summary": "0 anomaly(s) detected"
+  },
+  "composite_scores": {
+    "BTC": {
+      "score": "0.30",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "ETH": {
+      "score": "0.10",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Negative 24h momentum",
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "NVDA": {
+      "score": "0.30",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "MSTR": {
+      "score": "0.30",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "AAPL": {
+      "score": "0.30",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "HIMS": {
+      "score": "0.50",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Positive 24h momentum",
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    }
+  },
+  "research_flags": []
+}

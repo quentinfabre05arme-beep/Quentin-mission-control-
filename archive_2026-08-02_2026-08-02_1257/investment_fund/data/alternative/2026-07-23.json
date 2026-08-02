@@ -1,0 +1,207 @@
+{
+  "metadata": {
+    "fetch_timestamp": "2026-07-23T21:18:12.462Z",
+    "local_time": "23/07/2026 23:18:12",
+    "utc_time": "2026-07-23T21:18:12.462Z",
+    "cycle_id": "alternative-data-2026-07-23",
+    "data_sources": [
+      "alternative.me (Fear & Greed)",
+      "serper.dev (News & Sentiment)",
+      "coingecko.com (Funding proxy)",
+      "mempool.space (On-chain)",
+      "market_data.json (Price)"
+    ],
+    "focus": "Early signals not visible in price data"
+  },
+  "market_snapshot": {
+    "timestamp": "2026-07-23T18:10:45.459Z",
+    "assets": {
+      "BTC": {
+        "price": 64904,
+        "change_24h": -1.65705975,
+        "source": "cached",
+        "signal": "NEUTRAL",
+        "fetch_time_ms": 3436,
+        "stale": true
+      },
+      "ETH": {
+        "price": 1878.07,
+        "change_24h": -2.8663250953286608,
+        "open": 1933.4901123046875,
+        "high": 1938.456,
+        "low": 1876.5299,
+        "volume": 9876169728,
+        "source": "yahoo (yahoo)",
+        "signal": "MODERATE_BEARISH",
+        "fetch_time_ms": 2759,
+        "stale": false
+      },
+      "MSTR": {
+        "price": 100.010002,
+        "change_24h": -1.90289,
+        "source": "cached",
+        "signal": "NEUTRAL",
+        "fetch_time_ms": 3391,
+        "stale": true
+      },
+      "HIMS": {
+        "price": 31.68,
+        "change_24h": -3.20806,
+        "source": "cached",
+        "signal": "MODERATE_BEARISH",
+        "fetch_time_ms": 3296,
+        "stale": true
+      }
+    },
+    "_meta": {
+      "fromCache": false,
+      "fetch_time_ms": 3438,
+      "sources": [
+        "cached",
+        "yahoo (yahoo)",
+        "cached",
+        "cached"
+      ],
+      "assets_count": 4,
+      "stale_count": 3,
+      "saved_at": "2026-07-23T18:10:45.459Z",
+      "version": "2.0"
+    }
+  },
+  "sentiment": {
+    "fear_greed": {
+      "value": 31,
+      "previous_value": 33,
+      "classification": "FEAR",
+      "timestamp": "2026-07-23T00:00:00.000Z",
+      "trend": "DECLINING"
+    },
+    "social_sentiment": {
+      "bullish_pct": "0.0",
+      "bearish_pct": "0.0",
+      "neutral_pct": "0.0",
+      "overall_sentiment": "NEUTRAL",
+      "sources": []
+    }
+  },
+  "on_chain": {
+    "whale_activity": {
+      "signal": "DISTRIBUTION",
+      "score": -2,
+      "confidence": 1,
+      "headlines": [
+        {
+          "sentiment": "accumulation",
+          "title": "XRP News: Whales Reduce Exchange Inflows as Price Hovers at $1.14"
+        },
+        {
+          "sentiment": "distribution",
+          "title": "XRP News: Whales Reduce Exchange Inflows as Price Hovers at $1.14"
+        },
+        {
+          "sentiment": "distribution",
+          "title": "XRP News: Whales Reduce Exchange Inflows as Price Hovers at $1.14"
+        },
+        {
+          "sentiment": "accumulation",
+          "title": "XRP’s $1.16 recovery gets support from whales and a $285 million ETF streak"
+        },
+        {
+          "sentiment": "distribution",
+          "title": "XRP’s $1.16 recovery gets support from whales and a $285 million ETF streak"
+        }
+      ]
+    },
+    "exchange_flows": {
+      "status": "PENDING_IMPLEMENTATION",
+      "note": "Requires Glassnode/Chainalysis API"
+    },
+    "network_metrics": {
+      "mempool_size": 90079,
+      "mempool_vsize": 43316367,
+      "network_congestion": "MEDIUM",
+      "timestamp": "2026-07-23T21:18:12.958Z"
+    },
+    "mempool": {
+      "mempool_size": 90079,
+      "mempool_vsize": 43316367,
+      "network_congestion": "MEDIUM",
+      "timestamp": "2026-07-23T21:18:12.958Z"
+    }
+  },
+  "order_flow": {
+    "funding_rates": null,
+    "unusual_volume": {
+      "BTC": "NORMAL",
+      "ETH": "NORMAL"
+    }
+  },
+  "anomalies": {
+    "flags": [
+      {
+        "asset": "MARKET",
+        "type": "SENTIMENT_RECOVERY",
+        "severity": "MEDIUM",
+        "description": "Fear & Greed at 31 - recovering from extreme fear",
+        "signal": "CONTRARIAN_BUY",
+        "timestamp": "2026-07-23T21:18:15.004Z"
+      },
+      {
+        "asset": "HIMS",
+        "type": "VOLUME_ANOMALY",
+        "severity": "MEDIUM",
+        "description": "HIMS moved -3.21% in 24h",
+        "signal": "BEARISH_MOMENTUM",
+        "timestamp": "2026-07-23T21:18:15.004Z"
+      }
+    ],
+    "count": 2,
+    "summary": "2 anomaly(s) detected"
+  },
+  "composite_scores": {
+    "BTC": {
+      "score": "-0.20",
+      "rating": "SLIGHTLY_BEARISH",
+      "factors": [
+        "Negative 24h momentum"
+      ]
+    },
+    "ETH": {
+      "score": "-0.20",
+      "rating": "SLIGHTLY_BEARISH",
+      "factors": [
+        "Negative 24h momentum"
+      ]
+    },
+    "MSTR": {
+      "score": "-0.20",
+      "rating": "SLIGHTLY_BEARISH",
+      "factors": [
+        "Negative 24h momentum"
+      ]
+    },
+    "HIMS": {
+      "score": "-0.20",
+      "rating": "SLIGHTLY_BEARISH",
+      "factors": [
+        "Negative 24h momentum"
+      ]
+    }
+  },
+  "research_flags": [
+    {
+      "priority": "MEDIUM",
+      "asset": "MARKET",
+      "task": "Investigate SENTIMENT_RECOVERY: Fear & Greed at 31 - recovering from extreme fear",
+      "signal": "CONTRARIAN_BUY",
+      "timestamp": "2026-07-23T21:18:12.462Z"
+    },
+    {
+      "priority": "MEDIUM",
+      "asset": "HIMS",
+      "task": "Investigate VOLUME_ANOMALY: HIMS moved -3.21% in 24h",
+      "signal": "BEARISH_MOMENTUM",
+      "timestamp": "2026-07-23T21:18:12.462Z"
+    }
+  ]
+}

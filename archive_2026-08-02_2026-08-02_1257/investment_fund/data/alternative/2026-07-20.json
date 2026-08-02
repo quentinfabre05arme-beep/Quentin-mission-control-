@@ -1,0 +1,244 @@
+{
+  "metadata": {
+    "fetch_timestamp": "2026-07-20T22:18:13.924Z",
+    "local_time": "21/07/2026 00:18:13",
+    "cycle_id": "alternative-data-2026-07-20",
+    "data_sources": [
+      "alternative.me",
+      "serper.dev",
+      "market_data.json"
+    ]
+  },
+  "market_snapshot": {
+    "timestamp": "2026-07-20T22:12:13.179Z",
+    "assets": {
+      "BTC": {
+        "price": 65214,
+        "change_24h": 0.75933361,
+        "source": "twelvedata",
+        "signal": "NEUTRAL"
+      },
+      "ETH": {
+        "price": 1900.72,
+        "change_24h": 1.52171,
+        "source": "twelvedata",
+        "signal": "NEUTRAL"
+      },
+      "NVDA": {
+        "price": 203.28,
+        "change_24h": 0.2317446,
+        "source": "twelvedata",
+        "signal": "NEUTRAL"
+      },
+      "TSLA": {
+        "price": 369.57001,
+        "change_24h": -2.95925,
+        "source": "twelvedata",
+        "signal": "BEARISH"
+      },
+      "MSTR": {
+        "price": 97.82,
+        "change_24h": 3.13126,
+        "source": "twelvedata",
+        "signal": "BULLISH"
+      },
+      "AAPL": {
+        "price": 326.59,
+        "change_24h": -2.14238,
+        "source": "twelvedata",
+        "signal": "BEARISH"
+      },
+      "HIMS": {
+        "price": 32.7,
+        "change_24h": -0.42630752,
+        "source": "twelvedata",
+        "signal": "NEUTRAL"
+      },
+      "COIN": {
+        "price": 160.42999,
+        "change_24h": 2.10667,
+        "source": "twelvedata",
+        "signal": "BULLISH"
+      }
+    },
+    "_meta": {
+      "fromCache": false,
+      "failures": [
+        "SPY: All sources failed for SPY: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 9 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "QQQ: All sources failed for QQQ: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 10 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "GLD: All sources failed for GLD: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 11 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "TLT: All sources failed for TLT: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the current minute. 12 API credits were used, with the current limit being 8. Wait for the next minute or consider switching to a higher tier plan at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON"
+      ],
+      "sources": [
+        "twelvedata",
+        "twelvedata",
+        "twelvedata",
+        "twelvedata",
+        "twelvedata",
+        "twelvedata",
+        "twelvedata",
+        "twelvedata"
+      ]
+    }
+  },
+  "sentiment": {
+    "fear_greed": {
+      "value": 29,
+      "classification": "FEAR",
+      "timestamp": "2026-07-20T00:00:00.000Z"
+    },
+    "whale_signals": {
+      "signal": "NEUTRAL",
+      "score": -1,
+      "confidence": 0.6,
+      "headlines": [
+        {
+          "sentiment": "distribution",
+          "title": "Bitcoin whales scoop up 66,700 BTC while mid-tier holders head for the exits"
+        },
+        {
+          "sentiment": "accumulation",
+          "title": "HYPE Spot ETF Records First Weekly Outflow Since Launch, Diverging from Bitcoin and Ethereum ETF Inflows"
+        },
+        {
+          "sentiment": "distribution",
+          "title": "HYPE Spot ETF Records First Weekly Outflow Since Launch, Diverging from Bitcoin and Ethereum ETF Inflows"
+        }
+      ]
+    }
+  },
+  "on_chain": {
+    "whale_activity": {
+      "signal": "NEUTRAL",
+      "score": -1,
+      "confidence": 0.6,
+      "headlines": [
+        {
+          "sentiment": "distribution",
+          "title": "Bitcoin whales scoop up 66,700 BTC while mid-tier holders head for the exits"
+        },
+        {
+          "sentiment": "accumulation",
+          "title": "HYPE Spot ETF Records First Weekly Outflow Since Launch, Diverging from Bitcoin and Ethereum ETF Inflows"
+        },
+        {
+          "sentiment": "distribution",
+          "title": "HYPE Spot ETF Records First Weekly Outflow Since Launch, Diverging from Bitcoin and Ethereum ETF Inflows"
+        }
+      ]
+    },
+    "exchange_flows": {
+      "status": "PENDING_IMPLEMENTATION"
+    }
+  },
+  "anomalies": {
+    "flags": [
+      {
+        "asset": "MARKET",
+        "type": "SENTIMENT_RECOVERY",
+        "severity": "MEDIUM",
+        "description": "Fear & Greed at 29 - recovering from extreme fear",
+        "signal": "CONTRARIAN_BUY"
+      },
+      {
+        "asset": "TSLA",
+        "type": "PRICE_DIVERGENCE",
+        "severity": "LOW",
+        "description": "TSLA down -2.96% vs neutral market",
+        "signal": "MONITOR"
+      },
+      {
+        "asset": "AAPL",
+        "type": "PRICE_DIVERGENCE",
+        "severity": "LOW",
+        "description": "AAPL down -2.14% vs neutral market",
+        "signal": "MONITOR"
+      }
+    ],
+    "count": 3,
+    "summary": "3 anomaly(s) detected"
+  },
+  "composite_scores": {
+    "BTC": {
+      "score": "0.30",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "ETH": {
+      "score": "0.50",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Positive 24h momentum",
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "NVDA": {
+      "score": "0.30",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "TSLA": {
+      "score": "0.10",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Negative 24h momentum",
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "MSTR": {
+      "score": "0.50",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Positive 24h momentum",
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "AAPL": {
+      "score": "0.10",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Negative 24h momentum",
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "HIMS": {
+      "score": "0.30",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "COIN": {
+      "score": "0.50",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Positive 24h momentum",
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    }
+  },
+  "research_flags": [
+    {
+      "priority": "MEDIUM",
+      "asset": "MARKET",
+      "task": "Investigate SENTIMENT_RECOVERY: Fear & Greed at 29 - recovering from extreme fear",
+      "signal": "CONTRARIAN_BUY"
+    },
+    {
+      "priority": "MEDIUM",
+      "asset": "TSLA",
+      "task": "Investigate PRICE_DIVERGENCE: TSLA down -2.96% vs neutral market",
+      "signal": "MONITOR"
+    },
+    {
+      "priority": "MEDIUM",
+      "asset": "AAPL",
+      "task": "Investigate PRICE_DIVERGENCE: AAPL down -2.14% vs neutral market",
+      "signal": "MONITOR"
+    }
+  ]
+}

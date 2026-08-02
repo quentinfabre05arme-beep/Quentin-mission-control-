@@ -1,0 +1,167 @@
+{
+  "metadata": {
+    "fetch_timestamp": "2026-07-21T21:18:20.294Z",
+    "local_time": "21/07/2026 23:18:20",
+    "utc_time": "2026-07-21T21:18:20.294Z",
+    "cycle_id": "alternative-data-2026-07-21",
+    "data_sources": [
+      "alternative.me",
+      "serper.dev",
+      "market_data.json"
+    ],
+    "focus": "Early signals not visible in price data"
+  },
+  "market_snapshot": {
+    "timestamp": "2026-07-21T21:11:58.611Z",
+    "assets": {
+      "BTC": {
+        "price": 66269.99,
+        "change_24h": 1.5943005063750737,
+        "source": "cached",
+        "signal": "NEUTRAL"
+      },
+      "ETH": {
+        "price": 1929.57,
+        "change_24h": 1.30199,
+        "source": "cached",
+        "signal": "NEUTRAL"
+      },
+      "MSTR": {
+        "price": 97.82,
+        "change_24h": 3.13126,
+        "source": "cached",
+        "signal": "BULLISH"
+      },
+      "HIMS": {
+        "price": 32.7,
+        "change_24h": -0.42630752,
+        "source": "cached",
+        "signal": "NEUTRAL"
+      }
+    },
+    "_meta": {
+      "fromCache": false,
+      "failures": [
+        "NVDA: All sources failed for NVDA: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1475 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "TSLA: All sources failed for TSLA: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1476 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "AAPL: All sources failed for AAPL: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1478 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "COIN: All sources failed for COIN: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1480 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "SPY: All sources failed for SPY: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1481 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "QQQ: All sources failed for QQQ: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1482 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "GLD: All sources failed for GLD: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1483 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "TLT: All sources failed for TLT: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1484 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON"
+      ],
+      "sources": [
+        "cached",
+        "cached",
+        "cached",
+        "cached"
+      ]
+    }
+  },
+  "sentiment": {
+    "fear_greed": {
+      "value": 25,
+      "classification": "EXTREME FEAR",
+      "timestamp": "2026-07-21T00:00:00.000Z"
+    },
+    "whale_signals": {
+      "signal": "NEUTRAL",
+      "score": 0,
+      "confidence": 1,
+      "headlines": [
+        {
+          "sentiment": "distribution",
+          "title": "Bitcoin’s $66,000 price breakout survives continued US-Iran escalation, but a bigger test looms"
+        },
+        {
+          "sentiment": "distribution",
+          "title": "Bitcoin’s $66,000 price breakout survives continued US-Iran escalation, but a bigger test looms"
+        },
+        {
+          "sentiment": "accumulation",
+          "title": "Stablecoins Post 35th Straight Day of Net Exchange Outflows, Signaling Weak Bitcoin Demand"
+        },
+        {
+          "sentiment": "accumulation",
+          "title": "Stablecoins Post 35th Straight Day of Net Exchange Outflows, Signaling Weak Bitcoin Demand"
+        },
+        {
+          "sentiment": "accumulation",
+          "title": "Crypto News: Bitcoin ETFs Post Their Longest Inflow Streak Since May — $727 Million Over Five Days as YTD Outflows Fall Below $5 Billion"
+        }
+      ]
+    }
+  },
+  "on_chain": {
+    "whale_activity": {
+      "signal": "NEUTRAL",
+      "score": 0,
+      "confidence": 1,
+      "headlines": [
+        {
+          "sentiment": "distribution",
+          "title": "Bitcoin’s $66,000 price breakout survives continued US-Iran escalation, but a bigger test looms"
+        },
+        {
+          "sentiment": "distribution",
+          "title": "Bitcoin’s $66,000 price breakout survives continued US-Iran escalation, but a bigger test looms"
+        },
+        {
+          "sentiment": "accumulation",
+          "title": "Stablecoins Post 35th Straight Day of Net Exchange Outflows, Signaling Weak Bitcoin Demand"
+        },
+        {
+          "sentiment": "accumulation",
+          "title": "Stablecoins Post 35th Straight Day of Net Exchange Outflows, Signaling Weak Bitcoin Demand"
+        },
+        {
+          "sentiment": "accumulation",
+          "title": "Crypto News: Bitcoin ETFs Post Their Longest Inflow Streak Since May — $727 Million Over Five Days as YTD Outflows Fall Below $5 Billion"
+        }
+      ]
+    },
+    "exchange_flows": {
+      "status": "PENDING_IMPLEMENTATION"
+    }
+  },
+  "anomalies": {
+    "flags": [],
+    "count": 0,
+    "summary": "0 anomaly(s) detected"
+  },
+  "composite_scores": {
+    "BTC": {
+      "score": "0.50",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Positive 24h momentum",
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "ETH": {
+      "score": "0.50",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Positive 24h momentum",
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "MSTR": {
+      "score": "0.50",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Positive 24h momentum",
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "HIMS": {
+      "score": "0.30",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    }
+  },
+  "research_flags": []
+}

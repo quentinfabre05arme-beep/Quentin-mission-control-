@@ -1,0 +1,203 @@
+{
+  "metadata": {
+    "fetch_timestamp": "2026-07-24T19:18:26.523Z",
+    "local_time": "24/07/2026 21:18:26",
+    "utc_time": "2026-07-24T19:18:26.523Z",
+    "cycle_id": "alternative-data-2026-07-24",
+    "data_sources": [
+      "alternative.me (Fear & Greed)",
+      "serper.dev (News & Sentiment)",
+      "coingecko.com (Funding proxy)",
+      "mempool.space (On-chain)",
+      "market_data.json (Price)"
+    ],
+    "focus": "Early signals not visible in price data"
+  },
+  "market_snapshot": {
+    "timestamp": "2026-07-24T17:13:05.247Z",
+    "assets": {
+      "BTC": {
+        "price": 65467.53,
+        "change_24h": 0.56615335,
+        "source": "cached",
+        "signal": "NEUTRAL",
+        "fetch_time_ms": 3412,
+        "stale": true
+      },
+      "ETH": {
+        "price": 1895.16,
+        "change_24h": 0.89332297,
+        "source": "cached",
+        "signal": "NEUTRAL",
+        "fetch_time_ms": 3929,
+        "stale": true
+      },
+      "MSTR": {
+        "price": 93.63,
+        "change_24h": -6.37937,
+        "source": "cached",
+        "signal": "BEARISH",
+        "fetch_time_ms": 3386,
+        "stale": true
+      },
+      "HIMS": {
+        "price": 32.74,
+        "change_24h": 3.34596,
+        "source": "cached",
+        "signal": "MODERATE_BULLISH",
+        "fetch_time_ms": 3382,
+        "stale": true
+      }
+    },
+    "_meta": {
+      "fromCache": false,
+      "fetch_time_ms": 3961,
+      "sources": [
+        "cached",
+        "cached",
+        "cached",
+        "cached"
+      ],
+      "assets_count": 4,
+      "stale_count": 4,
+      "saved_at": "2026-07-24T17:13:05.247Z",
+      "version": "2.0"
+    }
+  },
+  "sentiment": {
+    "fear_greed": {
+      "value": 28,
+      "previous_value": 31,
+      "classification": "FEAR",
+      "timestamp": "2026-07-24T00:00:00.000Z",
+      "trend": "DECLINING"
+    },
+    "social_sentiment": {
+      "bullish_pct": "0.0",
+      "bearish_pct": "0.0",
+      "neutral_pct": "100.0",
+      "overall_sentiment": "NEUTRAL",
+      "sources": [
+        "Why Crypto Prices Swing So Much",
+        "Here's how you can protect yourself from cryptocurrency ...",
+        "Current price of Ethereum for July 24, 2026"
+      ]
+    }
+  },
+  "on_chain": {
+    "whale_activity": {
+      "signal": "NEUTRAL",
+      "score": 0,
+      "confidence": 0,
+      "headlines": []
+    },
+    "exchange_flows": {
+      "status": "PENDING_IMPLEMENTATION",
+      "note": "Requires Glassnode/Chainalysis API"
+    },
+    "network_metrics": {
+      "mempool_size": 92700,
+      "mempool_vsize": 44651269,
+      "network_congestion": "MEDIUM",
+      "timestamp": "2026-07-24T19:18:27.280Z"
+    },
+    "mempool": {
+      "mempool_size": 92700,
+      "mempool_vsize": 44651269,
+      "network_congestion": "MEDIUM",
+      "timestamp": "2026-07-24T19:18:27.280Z"
+    }
+  },
+  "order_flow": {
+    "funding_rates": null,
+    "unusual_volume": {
+      "BTC": "NORMAL",
+      "ETH": "NORMAL"
+    }
+  },
+  "anomalies": {
+    "flags": [
+      {
+        "asset": "MARKET",
+        "type": "SENTIMENT_RECOVERY",
+        "severity": "MEDIUM",
+        "description": "Fear & Greed at 28 - recovering from extreme fear",
+        "signal": "CONTRARIAN_BUY",
+        "timestamp": "2026-07-24T19:18:28.755Z"
+      },
+      {
+        "asset": "MSTR",
+        "type": "VOLUME_ANOMALY",
+        "severity": "HIGH",
+        "description": "MSTR moved -6.38% in 24h",
+        "signal": "BEARISH_MOMENTUM",
+        "timestamp": "2026-07-24T19:18:28.755Z"
+      },
+      {
+        "asset": "HIMS",
+        "type": "VOLUME_ANOMALY",
+        "severity": "MEDIUM",
+        "description": "HIMS moved +3.35% in 24h",
+        "signal": "BULLISH_MOMENTUM",
+        "timestamp": "2026-07-24T19:18:28.755Z"
+      }
+    ],
+    "count": 3,
+    "summary": "3 anomaly(s) detected"
+  },
+  "composite_scores": {
+    "BTC": {
+      "score": "0.30",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "ETH": {
+      "score": "0.30",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "MSTR": {
+      "score": "0.10",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Negative 24h momentum",
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    },
+    "HIMS": {
+      "score": "0.50",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Positive 24h momentum",
+        "Extreme fear = contrarian buy opportunity"
+      ]
+    }
+  },
+  "research_flags": [
+    {
+      "priority": "MEDIUM",
+      "asset": "MARKET",
+      "task": "Investigate SENTIMENT_RECOVERY: Fear & Greed at 28 - recovering from extreme fear",
+      "signal": "CONTRARIAN_BUY",
+      "timestamp": "2026-07-24T19:18:26.523Z"
+    },
+    {
+      "priority": "HIGH",
+      "asset": "MSTR",
+      "task": "Investigate VOLUME_ANOMALY: MSTR moved -6.38% in 24h",
+      "signal": "BEARISH_MOMENTUM",
+      "timestamp": "2026-07-24T19:18:26.523Z"
+    },
+    {
+      "priority": "MEDIUM",
+      "asset": "HIMS",
+      "task": "Investigate VOLUME_ANOMALY: HIMS moved +3.35% in 24h",
+      "signal": "BULLISH_MOMENTUM",
+      "timestamp": "2026-07-24T19:18:26.523Z"
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+﻿­ƒöä Fetching alternative data for Alpha Fund...
+
+{
+  "metadata": {
+    "fetch_timestamp": "2026-08-01T12:50:46.773Z",
+    "local_time": "01/08/2026 14:50:46",
+    "utc_time": "2026-08-01T12:50:46.773Z",
+    "cycle_id": "alternative-data-2026-08-01",
+    "data_sources": [
+      "alternative.me (Fear & Greed)",
+      "serper.dev (News & Sentiment)",
+      "coingecko.com (Funding proxy)",
+      "mempool.space (On-chain)",
+      "market_data.json (Price)"
+    ],
+    "focus": "Early signals not visible in price data"
+  },
+  "market_snapshot": {
+    "timestamp": "2026-08-01T12:40:40.778Z",
+    "assets": {
+      "BTC": {
+        "price": 63032,
+        "change_24h": -0.9105214939669211,
+        "source": "coingecko",
+        "signal": "NEUTRAL"
+      },
+      "ETH": {
+        "price": 1865.77,
+        "change_24h": -0.43558079822871143,
+        "source": "coingecko",
+        "signal": "NEUTRAL"
+      },
+      "NVDA": {
+        "price": 200.75,
+        "change_24h": 0,
+        "source": "yahoo",
+        "signal": "NEUTRAL"
+      },
+      "TSLA": {
+        "price": 311.21,
+        "change_24h": 0,
+        "source": "yahoo",
+        "signal": "NEUTRAL"
+      },
+      "MSTR": {
+        "price": 93.28,
+        "change_24h": 0,
+        "source": "yahoo",
+        "signal": "NEUTRAL"
+      },
+      "AAPL": {
+        "price": 308.91,
+        "change_24h": 0,
+        "source": "yahoo",
+        "signal": "NEUTRAL"
+      },
+      "HIMS": {
+        "price": 27.77,
+        "change_24h": 0,
+        "source": "yahoo",
+        "signal": "NEUTRAL"
+      },
+      "COIN": {
+        "price": 146.26,
+        "change_24h": 0,
+        "source": "yahoo",
+        "signal": "NEUTRAL"
+      },
+      "SPY": {
+        "price": 747.03,
+        "change_24h": 0,
+        "source": "yahoo",
+        "signal": "NEUTRAL"
+      },
+      "QQQ": {
+        "price": 687.99,
+        "change_24h": 0,
+        "source": "yahoo",
+        "signal": "NEUTRAL"
+      },
+      "GLD": {
+        "price": 371.54,
+        "change_24h": 0,
+        "source": "yahoo",
+        "signal": "NEUTRAL"
+      },
+      "TLT": {
+        "price": 82.25,
+        "change_24h": 0,
+        "source": "yahoo",
+        "signal": "NEUTRAL"
+      }
+    },
+    "_meta": {
+      "fromCache": false,
+      "sources": [
+        "coingecko",
+        "coingecko",
+        "yahoo",
+        "yahoo",
+        "yahoo",
+        "yahoo",
+        "yahoo",
+        "yahoo",
+        "yahoo",
+        "yahoo",
+        "yahoo",
+        "yahoo"
+      ]
+    }
+  },
+  "sentiment": {
+    "fear_greed": {
+      "value": 27,
+      "previous_value": 25,
+      "classification": "FEAR",
+      "timestamp": "2026-08-01T00:00:00.000Z",
+      "trend": "IMPROVING"
+    },
+    "social_sentiment": {
+      "bullish_pct": "0.0",
+      "bearish_pct": "0.0",
+      "neutral_pct": "0.0",
+      "overall_sentiment": "NEUTRAL",
+      "sources": []
+    }
+  },
+  "on_chain": {
+    "whale_activity": {
+      "signal": "NEUTRAL",
+      "score": 0,
+      "confidence": 0,
+      "headlines": []
+    },
+    "exchange_flows": {
+      "status": "PENDING_IMPLEMENTATION",
+      "note": "Requires Glassnode/Chainalysis API"
+    },
+    "network_metrics": {
+      "mempool_size": 91154,
+      "mempool_vsize": 43601759,
+      "network_congestion": "MEDIUM",
+      "timestamp": "2026-08-01T12:50:46.912Z"
+    },
+    "mempool": {
+      "mempool_size": 91154,
+      "mempool_vsize": 43601759,
+      "network_congestion": "MEDIUM",
+      "timestamp": "2026-08-01T12:50:46.912Z"
+    }
+  },
+  "order_flow": {
+    "funding_rates": null,
+    "unusual_volume": {
+      "BTC": "NORMAL",
+      "ETH": "NORMAL"
+    }
+  },
+  "anomalies": {
+    "flags": [
+      {
+        "asset": "MARKET",
+        "type": "SENTIMENT_RECOVERY",
+        "severity": "MEDIUM",
+        "description": "Fear & Greed at 27 - recovering from extreme fear",
+        "signal": "CONTRARIAN_BUY",
+        "timestamp": "2026-08-01T12:50:47.138Z"
+      }
+    ],
+    "count": 1,
+    "summary": "1 anomaly(s) detected"
+  },
+  "composite_scores": {
+    "BTC": {
+      "score": "0.35",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Negative 24h momentum",
+        "Fear zone contrarian setup",
+        "Sentiment improving"
+      ]
+    },
+    "ETH": {
+      "score": "0.40",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Fear zone contrarian setup",
+        "Sentiment improving"
+      ]
+    },
+    "NVDA": {
+      "score": "0.06",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Fear zone contrarian setup",
+        "Sentiment improving"
+      ]
+    },
+    "TSLA": {
+      "score": "0.10",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Fear zone contrarian setup",
+        "Sentiment improving"
+      ]
+    },
+    "MSTR": {
+      "score": "0.34",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Fear zone contrarian setup",
+        "Sentiment improving"
+      ]
+    },
+    "AAPL": {
+      "score": "0.00",
+      "rating": "NEUTRAL",
+      "factors": []
+    },
+    "HIMS": {
+      "score": "0.00",
+      "rating": "NEUTRAL",
+      "factors": []
+    },
+    "COIN": {
+      "score": "0.34",
+      "rating": "SLIGHTLY_BULLISH",
+      "factors": [
+        "Fear zone contrarian setup",
+        "Sentiment improving"
+      ]
+    },
+    "SPY": {
+      "score": "0.04",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Fear zone contrarian setup",
+        "Sentiment improving"
+      ]
+    },
+    "QQQ": {
+      "score": "0.06",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Fear zone contrarian setup",
+        "Sentiment improving"
+      ]
+    },
+    "GLD": {
+      "score": "0.00",
+      "rating": "NEUTRAL",
+      "factors": []
+    },
+    "TLT": {
+      "score": "0.00",
+      "rating": "NEUTRAL",
+      "factors": []
+    }
+  },
+  "research_flags": [
+    {
+      "priority": "MEDIUM",
+      "asset": "MARKET",
+      "task": "Investigate SENTIMENT_RECOVERY: Fear & Greed at 27 - recovering from extreme fear",
+      "signal": "CONTRARIAN_BUY",
+      "timestamp": "2026-08-01T12:50:46.773Z"
+    }
+  ]
+}

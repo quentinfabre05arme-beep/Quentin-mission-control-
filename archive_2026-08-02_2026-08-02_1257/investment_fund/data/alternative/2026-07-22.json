@@ -1,0 +1,198 @@
+{
+  "metadata": {
+    "fetch_timestamp": "2026-07-22T21:18:05.579Z",
+    "local_time": "22/07/2026 23:18:05",
+    "utc_time": "2026-07-22T21:18:05.579Z",
+    "cycle_id": "alternative-data-2026-07-22",
+    "data_sources": [
+      "alternative.me (Fear & Greed)",
+      "serper.dev (News & Sentiment)",
+      "coingecko.com (Funding proxy)",
+      "mempool.space (On-chain)",
+      "market_data.json (Price)"
+    ],
+    "focus": "Early signals not visible in price data"
+  },
+  "market_snapshot": {
+    "timestamp": "2026-07-22T21:11:12.614Z",
+    "assets": {
+      "BTC": {
+        "price": 66000,
+        "change_24h": -0.83562513,
+        "source": "cached",
+        "signal": "NEUTRAL"
+      },
+      "ETH": {
+        "price": 1944.87,
+        "change_24h": 0.7657674,
+        "source": "cached",
+        "signal": "NEUTRAL"
+      },
+      "NVDA": {
+        "price": 213.63,
+        "change_24h": 0,
+        "source": "cached",
+        "signal": "NEUTRAL"
+      },
+      "MSTR": {
+        "price": 101.01,
+        "change_24h": -0.92201763,
+        "source": "cached",
+        "signal": "NEUTRAL"
+      },
+      "HIMS": {
+        "price": 32.5,
+        "change_24h": -0.70271783,
+        "source": "cached",
+        "signal": "NEUTRAL"
+      }
+    },
+    "_meta": {
+      "fromCache": false,
+      "failures": [
+        "TSLA: All sources failed for TSLA: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1248 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "AAPL: All sources failed for AAPL: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1250 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "COIN: All sources failed for COIN: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1252 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "SPY: All sources failed for SPY: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1253 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "QQQ: All sources failed for QQQ: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1254 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "GLD: All sources failed for GLD: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1255 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+        "TLT: All sources failed for TLT: Twelve Data quote: Twelve Data quote error: You have run out of API credits for the day. 1256 API credits were used, with the current limit being 800. Wait for the next day or consider switching to a paid plan that will remove daily limits at https://twelvedata.com/pricing; Yahoo: Parse error: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON"
+      ],
+      "sources": [
+        "cached",
+        "cached",
+        "cached",
+        "cached",
+        "cached"
+      ]
+    }
+  },
+  "sentiment": {
+    "fear_greed": {
+      "value": 33,
+      "previous_value": 25,
+      "classification": "FEAR",
+      "timestamp": "2026-07-22T00:00:00.000Z",
+      "trend": "IMPROVING"
+    },
+    "social_sentiment": {
+      "bullish_pct": "20.0",
+      "bearish_pct": "0.0",
+      "neutral_pct": "80.0",
+      "overall_sentiment": "BULLISH",
+      "sources": [
+        "The Motives Behind Crypto Investment: Social Media vs. \" ...",
+        "Current price of Ethereum for July 22, 2026",
+        "HYPE, HOOD, And The Next Crypto Bull Market"
+      ]
+    }
+  },
+  "on_chain": {
+    "whale_activity": {
+      "signal": "DISTRIBUTION",
+      "score": -4,
+      "confidence": 0.8,
+      "headlines": [
+        {
+          "sentiment": "distribution",
+          "title": "Ethereum Surges Past $1,900 as Whales Stake $160M and ETF Inflows Hit 3-Month High"
+        },
+        {
+          "sentiment": "distribution",
+          "title": "Bitcoin ETFs Record $723M Inflows in 5 Consecutive Days"
+        },
+        {
+          "sentiment": "distribution",
+          "title": "Bitcoin ETFsNews: Bitcoin ETFs Post Sixth Straight Day of Inflows — $930 Million Over Six Sessions as AUM Hits $80.9 Billion and Fear Index Rises From Extreme Fear"
+        },
+        {
+          "sentiment": "distribution",
+          "title": "Institutional Capital Returns: Bitcoin ETFs Pull $900NM in Six-Day Streak"
+        }
+      ]
+    },
+    "exchange_flows": {
+      "status": "PENDING_IMPLEMENTATION",
+      "note": "Requires Glassnode/Chainalysis API"
+    },
+    "network_metrics": {
+      "mempool_size": 88622,
+      "mempool_vsize": 43524009,
+      "network_congestion": "MEDIUM",
+      "timestamp": "2026-07-22T21:18:05.836Z"
+    },
+    "mempool": {
+      "mempool_size": 88622,
+      "mempool_vsize": 43524009,
+      "network_congestion": "MEDIUM",
+      "timestamp": "2026-07-22T21:18:05.836Z"
+    }
+  },
+  "order_flow": {
+    "funding_rates": null,
+    "unusual_volume": {
+      "BTC": "NORMAL",
+      "ETH": "NORMAL"
+    }
+  },
+  "anomalies": {
+    "flags": [
+      {
+        "asset": "MARKET",
+        "type": "SENTIMENT_RECOVERY",
+        "severity": "MEDIUM",
+        "description": "Fear & Greed at 33 - recovering from extreme fear",
+        "signal": "CONTRARIAN_BUY",
+        "timestamp": "2026-07-22T21:18:07.015Z"
+      }
+    ],
+    "count": 1,
+    "summary": "1 anomaly(s) detected"
+  },
+  "composite_scores": {
+    "BTC": {
+      "score": "0.10",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Sentiment improving"
+      ]
+    },
+    "ETH": {
+      "score": "0.10",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Sentiment improving"
+      ]
+    },
+    "NVDA": {
+      "score": "0.10",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Sentiment improving"
+      ]
+    },
+    "MSTR": {
+      "score": "0.10",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Sentiment improving"
+      ]
+    },
+    "HIMS": {
+      "score": "0.10",
+      "rating": "NEUTRAL",
+      "factors": [
+        "Sentiment improving"
+      ]
+    }
+  },
+  "research_flags": [
+    {
+      "priority": "MEDIUM",
+      "asset": "MARKET",
+      "task": "Investigate SENTIMENT_RECOVERY: Fear & Greed at 33 - recovering from extreme fear",
+      "signal": "CONTRARIAN_BUY",
+      "timestamp": "2026-07-22T21:18:05.579Z"
+    }
+  ]
+}
