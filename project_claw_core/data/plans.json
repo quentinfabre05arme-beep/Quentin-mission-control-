@@ -33,9 +33,9 @@
       ]
     },
     {
-      "id": "plan_1785713047961",
+      "id": "plan_1785714954275",
       "goal": "test",
-      "created_at": "2026-08-02T23:24:07.961Z",
+      "created_at": "2026-08-02T23:55:54.275Z",
       "status": "active",
       "steps": [
         {
@@ -47,23 +47,9 @@
       ]
     },
     {
-      "id": "plan_1785713091716",
+      "id": "plan_1785714997428",
       "goal": "test",
-      "created_at": "2026-08-02T23:24:51.716Z",
-      "status": "active",
-      "steps": [
-        {
-          "id": "step_0",
-          "description": "step1",
-          "status": "pending",
-          "dependencies": []
-        }
-      ]
-    },
-    {
-      "id": "plan_1785713139790",
-      "goal": "test",
-      "created_at": "2026-08-02T23:25:39.790Z",
+      "created_at": "2026-08-02T23:56:37.428Z",
       "status": "active",
       "steps": [
         {
