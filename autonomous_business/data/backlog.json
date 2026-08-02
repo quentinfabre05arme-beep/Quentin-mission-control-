@@ -1,0 +1,196 @@
+[
+  {
+    "id": "alpha_fund_newsletter",
+    "name": "Alpha Fund Signal Newsletter",
+    "category": "trading_signals",
+    "description": "Daily contrarian market signals for BTC/ETH/MSTR/HIMS with risk framing",
+    "revenue_model": "paid_subscription",
+    "build_time_hours": 4,
+    "feasibility": 9,
+    "profit_potential": 7,
+    "alignment": 10,
+    "score": 8.7,
+    "status": "built",
+    "created_at": "2026-08-02T20:32:47.000Z",
+    "validated": true,
+    "evidence": [
+      {
+        "researched_at": "2026-08-02T20:32:47.137Z",
+        "market_queries": [
+          {
+            "query": "Alpha Fund Signal Newsletter market size demand 2026",
+            "result": []
+          }
+        ],
+        "competitor_queries": [
+          {
+            "query": "Alpha Fund Signal Newsletter competitors alternatives",
+            "result": []
+          }
+        ],
+        "pricing_queries": [
+          {
+            "query": "Alpha Fund Signal Newsletter pricing subscription",
+            "result": []
+          }
+        ],
+        "findings": [
+          "Research agent completed queries"
+        ]
+      }
+    ],
+    "tasks": [
+      {
+        "name": "build_mvp",
+        "status": "done",
+        "result": {
+          "success": true,
+          "artifact": "C:\\Users\\quent\\.openclaw\\workspace\\autonomous_business\\reports\\newsletter_2026-08-02.md",
+          "type": "newsletter"
+        }
+      }
+    ],
+    "artifacts": [
+      {
+        "path": "C:\\Users\\quent\\.openclaw\\workspace\\autonomous_business\\reports\\newsletter_2026-08-02.md",
+        "type": "newsletter",
+        "created_at": "2026-08-02T20:32:47.559Z"
+      }
+    ]
+  },
+  {
+    "id": "trading_bot_saas",
+    "name": "Trading Bot SaaS",
+    "category": "saas",
+    "description": "Configurable paper trading bot engine as a service",
+    "revenue_model": "subscription",
+    "build_time_hours": 16,
+    "feasibility": 8,
+    "profit_potential": 8,
+    "alignment": 9,
+    "score": 8.1,
+    "status": "built",
+    "created_at": "2026-08-02T20:32:47.000Z",
+    "validated": true,
+    "evidence": [
+      {
+        "researched_at": "2026-08-02T20:32:47.282Z",
+        "market_queries": [
+          {
+            "query": "Trading Bot SaaS market size demand 2026",
+            "result": []
+          }
+        ],
+        "competitor_queries": [
+          {
+            "query": "Trading Bot SaaS competitors alternatives",
+            "result": []
+          }
+        ],
+        "pricing_queries": [
+          {
+            "query": "Trading Bot SaaS pricing subscription",
+            "result": []
+          }
+        ],
+        "findings": [
+          "Research agent completed queries"
+        ]
+      }
+    ],
+    "tasks": [
+      {
+        "name": "build_mvp",
+        "status": "done",
+        "result": {
+          "success": true,
+          "artifact": "C:\\Users\\quent\\.openclaw\\workspace\\autonomous_business\\reports\\trading_bot_saas_2026-08-02.md",
+          "type": "report"
+        }
+      }
+    ],
+    "artifacts": [
+      {
+        "path": "C:\\Users\\quent\\.openclaw\\workspace\\autonomous_business\\reports\\trading_bot_saas_2026-08-02.md",
+        "type": "report",
+        "created_at": "2026-08-02T20:32:47.562Z"
+      }
+    ]
+  },
+  {
+    "id": "ai_research_reports",
+    "name": "AI Research Reports",
+    "category": "content",
+    "description": "Premium sector/market PDF reports generated automatically",
+    "revenue_model": "pay_per_report",
+    "build_time_hours": 6,
+    "feasibility": 9,
+    "profit_potential": 6,
+    "alignment": 8,
+    "score": 7.7,
+    "status": "validated",
+    "created_at": "2026-08-02T20:32:47.000Z",
+    "validated": true,
+    "evidence": [
+      {
+        "researched_at": "2026-08-02T20:32:47.422Z",
+        "market_queries": [
+          {
+            "query": "AI Research Reports market size demand 2026",
+            "result": []
+          }
+        ],
+        "competitor_queries": [
+          {
+            "query": "AI Research Reports competitors alternatives",
+            "result": []
+          }
+        ],
+        "pricing_queries": [
+          {
+            "query": "AI Research Reports pricing subscription",
+            "result": []
+          }
+        ],
+        "findings": [
+          "Research agent completed queries"
+        ]
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "id": "automation_templates",
+    "name": "Automation Templates",
+    "category": "digital_product",
+    "description": "Reusable scripts for email/Notion/Airtable/workflows",
+    "revenue_model": "one_time_sale",
+    "build_time_hours": 8,
+    "feasibility": 9,
+    "profit_potential": 5,
+    "alignment": 7,
+    "score": 7.1,
+    "status": "idea",
+    "created_at": "2026-08-02T20:32:47.000Z",
+    "validated": false,
+    "evidence": [],
+    "tasks": []
+  },
+  {
+    "id": "claw_core_service",
+    "name": "Claw Core as a Service",
+    "category": "agency",
+    "description": "Deploy autonomous agent setups for others",
+    "revenue_model": "service",
+    "build_time_hours": 40,
+    "feasibility": 6,
+    "profit_potential": 9,
+    "alignment": 6,
+    "score": 6.45,
+    "status": "idea",
+    "created_at": "2026-08-02T20:32:47.000Z",
+    "validated": false,
+    "evidence": [],
+    "tasks": []
+  }
+]

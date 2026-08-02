@@ -1,0 +1,60 @@
+{
+  "workspace": "C:\\Users\\quent\\.openclaw\\workspace",
+  "cycles_dir": "autonomous_business/cycles",
+  "backlog_file": "autonomous_business/data/backlog.json",
+  "metrics_file": "autonomous_business/data/metrics.json",
+  "reports_dir": "autonomous_business/reports",
+  "log_file": "autonomous_business/logs/abos.log",
+  "opportunities": {
+    "alpha_fund_newsletter": {
+      "name": "Alpha Fund Signal Newsletter",
+      "category": "trading_signals",
+      "description": "Daily contrarian market signals for BTC/ETH/MSTR/HIMS with risk framing",
+      "revenue_model": "paid_subscription",
+      "build_time_hours": 4,
+      "feasibility": 9,
+      "profit_potential": 7,
+      "alignment": 10
+    },
+    "trading_bot_saas": {
+      "name": "Trading Bot SaaS",
+      "category": "saas",
+      "description": "Configurable paper trading bot engine as a service",
+      "revenue_model": "subscription",
+      "build_time_hours": 16,
+      "feasibility": 8,
+      "profit_potential": 8,
+      "alignment": 9
+    },
+    "ai_research_reports": {
+      "name": "AI Research Reports",
+      "category": "content",
+      "description": "Premium sector/market PDF reports generated automatically",
+      "revenue_model": "pay_per_report",
+      "build_time_hours": 6,
+      "feasibility": 9,
+      "profit_potential": 6,
+      "alignment": 8
+    },
+    "automation_templates": {
+      "name": "Automation Templates",
+      "category": "digital_product",
+      "description": "Reusable scripts for email/Notion/Airtable/workflows",
+      "revenue_model": "one_time_sale",
+      "build_time_hours": 8,
+      "feasibility": 9,
+      "profit_potential": 5,
+      "alignment": 7
+    },
+    "claw_core_service": {
+      "name": "Claw Core as a Service",
+      "category": "agency",
+      "description": "Deploy autonomous agent setups for others",
+      "revenue_model": "service",
+      "build_time_hours": 40,
+      "feasibility": 6,
+      "profit_potential": 9,
+      "alignment": 6
+    }
+  }
+}
