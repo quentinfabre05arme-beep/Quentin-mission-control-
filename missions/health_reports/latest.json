@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-08-02T17:22:02.913Z",
+  "timestamp": "2026-08-02T17:52:02.176Z",
   "systems": [
     {
       "name": "OpenClaw Gateway",
-      "status": "failed"
+      "status": "healthy"
     },
     {
       "name": "Newsletter",
@@ -26,7 +26,5 @@
       "status": "healthy"
     }
   ],
-  "failed": [
-    "OpenClaw Gateway"
-  ]
+  "failed": []
 }
