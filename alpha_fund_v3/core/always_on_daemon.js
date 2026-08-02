@@ -18,7 +18,8 @@ function log(msg) {
 function aliveCheck() {
   try {
     log('ALIVE');
-    // Every minute, run a tiny operation to prove existence
+    // Every minute, run build loop
+    runBuildLoop();
     return true;
   } catch(e) {
     log('ERROR: ' + e.message);
@@ -42,16 +43,9 @@ function runBuildLoop() {
 
 // Run every 60 seconds
 log('Always-on daemon started');
-let ticks = 0;
 
 setInterval(() => {
-  ticks++;
   aliveCheck();
-  
-  // Every 60 ticks (1 hour), run build loop
-  if (ticks % 60 === 0) {
-    runBuildLoop();
-  }
 }, 60000);
 
 // Initial build loop
