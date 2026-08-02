@@ -464,3 +464,10 @@ Grok 4.5 (Brain)
 - Runtime logs must never be embedded recursively in status objects
 - JSON-mode CLI tools must suppress all decorative console output
 - Weekly curation needs explicit scope limits to avoid token spikes
+
+
+## 📝 Logger Unicode Fix — Aug 2, 2026 14:07
+- Execution loop logs had corrupted unicode (emoji/garbled chars)
+- Rebuilt logger.js with ASCII-safe plain logger
+- Unicode characters now replaced with ? to prevent corruption
+- Added logDecision/logInfo/logPlain functions

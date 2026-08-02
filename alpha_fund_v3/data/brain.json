@@ -1,0 +1,62 @@
+[
+  {
+    "text": "Alpha Fund v3.0 is an autonomous trading system with  paper capital",
+    "metadata": {},
+    "id": "1785672296865_0.4175932220729961"
+  },
+  {
+    "text": "BTC is at , Fear & Greed at 27 (extreme fear)",
+    "metadata": {},
+    "id": "1785672296865_0.7735135590803506"
+  },
+  {
+    "text": "POD business was stopped and erased on August 2, 2026",
+    "metadata": {},
+    "id": "1785672296865_0.05958815088321956"
+  },
+  {
+    "text": "Gateway immortality engine checks every 5 seconds",
+    "metadata": {},
+    "id": "1785672296865_0.4299250428050715"
+  },
+  {
+    "id": "msbr6v45_96nzy",
+    "text": "Alpha Fund uses BTC, ETH, MSTR, HIMS as primary assets",
+    "metadata": {
+      "source": "config"
+    },
+    "category": "trading",
+    "timestamp": "2026-08-02T12:05:13.349Z",
+    "embeddings": null
+  },
+  {
+    "id": "msbr6v47_xgpon",
+    "text": "Fear & Greed index below 25 indicates extreme fear and contrarian buy opportunities",
+    "metadata": {
+      "source": "market"
+    },
+    "category": "trading",
+    "timestamp": "2026-08-02T12:05:13.351Z",
+    "embeddings": null
+  },
+  {
+    "id": "msbr6v48_9193e",
+    "text": "Gateway immortality checks every 5 seconds via PID 8404 daemon",
+    "metadata": {
+      "source": "system"
+    },
+    "category": "infrastructure",
+    "timestamp": "2026-08-02T12:05:13.352Z",
+    "embeddings": null
+  },
+  {
+    "id": "msbr6v49_2p6me",
+    "text": "User granted full admin access on August 2, 2026 at 13:10 CET",
+    "metadata": {
+      "source": "conversation"
+    },
+    "category": "security",
+    "timestamp": "2026-08-02T12:05:13.353Z",
+    "embeddings": null
+  }
+]

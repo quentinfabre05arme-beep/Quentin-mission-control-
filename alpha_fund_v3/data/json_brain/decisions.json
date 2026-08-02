@@ -1,0 +1,26 @@
+{
+  "schema": {
+    "ticker": "string",
+    "action": "string",
+    "score": "number"
+  },
+  "rows": [
+    {
+      "ticker": "BTC",
+      "action": "HOLD",
+      "score": 0.5,
+      "reasoning": "Fear at 27",
+      "_id": 1,
+      "_created": "2026-08-02T12:09:20.208Z"
+    },
+    {
+      "ticker": "ETH",
+      "action": "BUY",
+      "score": 1.2,
+      "reasoning": "Oversold",
+      "_id": 2,
+      "_created": "2026-08-02T12:09:20.211Z"
+    }
+  ],
+  "id": 2
+}
