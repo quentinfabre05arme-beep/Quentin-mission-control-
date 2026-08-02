@@ -436,6 +436,17 @@ Grok 4.5 (Brain)
 
 ---
 
+## 🔄 Alpha Fund Auto-Improvement — August 2, 2026 15:03 CET
+
+**Improvement:** Asymmetry scanner now detects greed + positive price as a contrarian short signal.
+**File:** `alpha_fund_v3/research/unified_research.js`
+**Test:** Research pipeline runs successfully, 12 assets analyzed.
+**Commit:** `6bbac98`
+
+**Learning:** Sentiment divergence works both directions — extreme fear with negative price is bullish, extreme greed with positive price is bearish. This improves signal accuracy for contrarian entries.
+
+---
+
 ## 🛠️ Week of 2026-07-28 to 2026-07-31 — Fixes & Cleanup
 
 ### Mission Cleanup (Jul 31)
