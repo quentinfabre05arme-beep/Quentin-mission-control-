@@ -204,6 +204,21 @@ function run() {
   log('');
   log(`Loop complete: ${built} new, ${stats.total} total`);
   
+  // ─── VERIFY ALL BUILDS ──────────────────────────────────
+  try {
+    const verifyResult = execSync('node project_claw_core/core/verifier.js', {
+      cwd: 'C:\\Users\\quent\\.openclaw\\workspace',
+      encoding: 'utf8',
+      windowsHide: true,
+      timeout: 120000
+    });
+    log('');
+    log('VERIFICATION:');
+    verifyResult.split('\n').filter(l => l.trim()).forEach(l => log(l));
+  } catch(e) {
+    log('VERIFY ERROR: ' + e.message);
+  }
+  
   return { built, stats };
 }
 

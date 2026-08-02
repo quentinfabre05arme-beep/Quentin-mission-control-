@@ -4,7 +4,7 @@ const path = require('path');
 const LOG_FILE = path.join(__dirname, '..', 'logs', 'gmail_agent.log');
 
 function log(msg) {
-  const entry = [] \n;
+  const entry = `[${new Date().toISOString()}] ${msg}\n`;
   fs.mkdirSync(path.dirname(LOG_FILE), { recursive: true });
   fs.appendFileSync(LOG_FILE, entry);
 }
