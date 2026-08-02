@@ -1,5 +1,5 @@
-/**
- * PROJECT CLAW CORE — Microsoft Browser Agent
+﻿/**
+ * PROJECT CLAW CORE â€” Microsoft Browser Agent
  * Access Outlook, OneDrive, Calendar via browser automation (no Azure app needed).
  * Requires Chrome/Edge logged into a Microsoft account.
  */
@@ -44,38 +44,119 @@ class MicrosoftBrowserAgent {
     this.page.setViewport({ width: 1280, height: 900 });
   }
   
-  async openOutlook() {
-    if (!this.page) await this.init();
+  async openOutlook(waitForSignIn = true) {
+    if (!this.page) await this.init(true);
     log('Opening Outlook');
-    await this.page.goto('https://outlook.live.com/mail/0/', { waitUntil: 'networkidle2', timeout: 60000 });
-    await this.page.waitForTimeout(5000);
-    return { success: true, url: this.page.url() };
+    
+    // First try direct login if not authenticated
+    await this.page.goto('https://outlook.live.com/mail/0/', {
+      waitUntil: 'domcontentloaded',
+      timeout: 120000
+    }).catch(e => log(`Navigation warning: ${e.message}`));
+    await new Promise(r => setTimeout(r, 5000));
+    
+    const info = await this.page.evaluate(() => ({
+      url: window.location.href,
+      title: document.title,
+      hasSignIn: document.body.innerText.toLowerCase().includes('sign in'),
+      hasEmailInput: !!document.querySelector('input[type="email"], input[name="loginfmt"]'),
+      hasPasswordInput: !!document.querySelector('input[type="password"]')
+    }));
+    log(`Page info: ${JSON.stringify(info)}`);
+    
+    const screenshot = await this.screenshot();
+    
+    if (waitForSignIn && (info.hasSignIn || info.hasEmailInput || info.hasPasswordInput)) {
+      log('Waiting for sign-in (up to 5 minutes)...');
+      for (let i = 0; i < 60; i++) {
+        await new Promise(r => setTimeout(r, 5000));
+        try {
+          const pages = await this.browser.pages();
+          const currentPage = pages[pages.length - 1];
+          if (currentPage !== this.page) this.page = currentPage;
+          
+          const current = await this.page.evaluate(() => ({
+            url: window.location.href,
+            title: document.title,
+            hasSignIn: document.body.innerText.toLowerCase().includes('sign in'),
+            hasEmailInput: !!document.querySelector('input[type="email"], input[name="loginfmt"]'),
+            hasPasswordInput: !!document.querySelector('input[type="password"]')
+          }));
+          log(`Wait iteration ${i}: ${JSON.stringify(current)}`);
+          if (!current.hasSignIn && !current.hasEmailInput && !current.hasPasswordInput && current.url.includes('outlook')) {
+            log('Sign-in detected');
+            await new Promise(r => setTimeout(r, 5000));
+            break;
+          }
+        } catch(e) {
+          log(`Navigation error during wait: ${e.message}`);
+        }
+      }
+    }
+    
+    return { success: true, url: info.url, screenshot: screenshot.path };
   }
   
   async readOutlookInbox(count = 5) {
-    const opened = await this.openOutlook();
+    const opened = await this.openOutlook(true);
     if (!opened.success) return opened;
     
     log('Reading Outlook inbox');
-    await this.page.waitForSelector('[data-testid="ThreadListItem"], [role="listitem"]', { timeout: 15000 }).catch(() => {});
+    await new Promise(r => setTimeout(r, 5000));
     
+    // Scroll the message list to load items
+    for (let scroll = 0; scroll < 3; scroll++) {
+      await this.page.evaluate(() => {
+        const list = document.querySelector('[role="listbox"], [role="list"], .folderPaneContent');
+        if (list) list.scrollTop += 300;
+      });
+      await new Promise(r => setTimeout(r, 1500));
+    }
+    
+    const pageInfo = await this.page.evaluate(() => ({
+      url: window.location.href,
+      title: document.title,
+      bodyText: document.body.innerText.slice(0, 500)
+    })).catch(e => ({ url: this.page.url(), title: 'navigation error', bodyText: e.message }));
+    log(`Inbox page: ${JSON.stringify(pageInfo)}`);
+    
+    await this.screenshot(path.join(__dirname, '..', 'logs', 'outlook_inbox.png'));
+    
+    // Try multiple selector strategies
     const emails = await this.page.evaluate((max) => {
-      const items = document.querySelectorAll('[data-testid="ThreadListItem"], [role="listitem"]');
+      const strategies = [
+        '[data-testid="ThreadListItem"]',
+        '[role="listitem"]',
+        '.ZtMcN',
+        '.q1dxR',
+        '.lvHighlightAllClass',
+        '[aria-label*="email" i]',
+        '[aria-label*="message" i]',
+        '.mailListItem',
+        '.ReactVirtualized__Grid__innerScrollContainer > *'
+      ];
+      
+      let items = [];
+      for (const sel of strategies) {
+        const found = document.querySelectorAll(sel);
+        if (found.length > 0) {
+          items = found;
+          break;
+        }
+      }
+      
       const result = [];
       for (let i = 0; i < Math.min(items.length, max); i++) {
         const el = items[i];
-        const senderEl = el.querySelector('[title]');
-        const subjectEl = el.querySelector('[data-testid="MessagePreview.Subject"], .Q93Pwc, span');
-        result.push({
-          sender: senderEl ? senderEl.textContent.trim() : '',
-          subject: subjectEl ? subjectEl.textContent.trim() : '',
-          preview: el.innerText.slice(0, 200)
-        });
+        const text = el.innerText.trim();
+        if (text.length > 20) {
+          result.push({ text: text.slice(0, 400) });
+        }
       }
       return result;
     }, count);
     
-    return { success: true, emails };
+    return { success: true, emails, page: pageInfo, screenshot: path.join(__dirname, '..', 'logs', 'outlook_inbox.png') };
   }
   
   async sendOutlookEmail(to, subject, body) {
@@ -84,7 +165,7 @@ class MicrosoftBrowserAgent {
     log(`Composing email to ${to}`);
     
     await this.page.goto('https://outlook.live.com/mail/0/deeplink/compose', { waitUntil: 'networkidle2', timeout: 60000 });
-    await this.page.waitForTimeout(3000);
+    await new Promise(r => setTimeout(r, 3000));
     
     // Fill recipient
     await this.page.waitForSelector('input[role="combobox"], div[contenteditable="true"]', { timeout: 15000 }).catch(() => {});
@@ -107,7 +188,7 @@ class MicrosoftBrowserAgent {
     if (!this.page) await this.init();
     log('Opening Calendar');
     await this.page.goto('https://outlook.live.com/calendar/0/view/week', { waitUntil: 'networkidle2', timeout: 60000 });
-    await this.page.waitForTimeout(5000);
+    await new Promise(r => setTimeout(r, 5000));
     
     const events = await this.page.evaluate(() => {
       const items = document.querySelectorAll('[role="button"], [data-testid]');
@@ -121,7 +202,7 @@ class MicrosoftBrowserAgent {
     if (!this.page) await this.init();
     log('Opening OneDrive');
     await this.page.goto('https://onedrive.live.com/', { waitUntil: 'networkidle2', timeout: 60000 });
-    await this.page.waitForTimeout(5000);
+    await new Promise(r => setTimeout(r, 5000));
     
     const files = await this.page.evaluate((max) => {
       const items = document.querySelectorAll('[data-testid="list-item"], [role="row"], .ms-DetailsRow, .DriveItemTile');
