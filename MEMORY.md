@@ -17,6 +17,42 @@
 
 ---
 
+## 🔄 24/7 Runtime Status — August 3, 2026
+
+**Status:** ✅ MOSTLY OPERATIONAL
+
+### Running 24/7
+| System | Mechanism | Status |
+|---|---|---|
+| **Unified Master Orchestrator** | Task Scheduler `OpenClaw-Unified-Master` (10 min) | ✅ Running |
+| **ABOS** | Task Scheduler `OpenClaw-ABOS` (1 hr) | ✅ Running |
+| **Autonomous Improvement** | Task Scheduler `OpenClaw-Autonomous-Improvement` (30 min) | ✅ Running |
+| **Always-On Daemon** | Task Scheduler `OpenClaw-Always-On-Daemon` (logon + restart) | ✅ Fixed: 1 instance |
+| **Cron jobs** | 13 active (reports, cleanup, audits, Alpha Fund) | ✅ Running |
+
+### Fixed during this session
+- Killed 5 duplicate `always_on_daemon.js` processes (resource leak).
+- Created `scripts/start_always_on_daemon.ps1` with restart loop.
+- Updated Task Scheduler task to run the loop with auto-restart on failure.
+- Now exactly 1 always-on daemon instance is running.
+
+### Current blockages / limitations
+| Issue | Impact | Status |
+|---|---|---|
+| **Docker Desktop engine** | OpenSERP not yet deployed | 🔴 Pending user reboot |
+| **Twelve Data API quota** | TA/pricing sometimes falls back to cache/Yahoo | 🟡 Mitigated by fallbacks |
+| **Grok 4.5 model** | Brain/reports use lighter model | 🟡 Rate-limited / unavailable |
+| **RAM 80.8%** | High but stable | 🟡 Cleanup active |
+| **Disk C: 76%** | OK | 🟢 |
+| **Duplicate cron + Task Scheduler overlap** | Some redundancy, token burn risk | 🟡 Auditable; no immediate failure |
+
+### Health snapshot
+- Capabilities: **109 real, 0 stubs, 0 syntax errors**
+- Alpha Fund: PAPER, $9,978.11 (-0.22%), 2 positions
+- Unified Master cycle #14: ✅ 1.99s
+
+---
+
 ## 🔍 Web Research Stack — August 3, 2026
 
 **Status:** Multi-source research router deployed with optional free API sources.
