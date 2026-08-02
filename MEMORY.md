@@ -17,20 +17,27 @@
 
 ---
 
-## 🔍 Web Research Stack — August 2, 2026
+## 🔍 Web Research Stack — August 3, 2026
 
-**Status:** Multi-source research router deployed.
+**Status:** Multi-source research router deployed with optional free API sources.
 
 **Sources (priority order):**
 1. OpenSERP local (Docker, free, multi-engine) — pending Docker engine reboot
-2. Serper API (placeholder key unresolved)
-3. Browser-based Puppeteer + DuckDuckGo HTML — ✅ working now
-4. Direct HTTP fallbacks (blocked by bot detection)
+2. OpenClaw `web_search` (free, configured provider)
+3. **Tavily** (free 1,000/month, AI-ready results) — `TAVILY_API_KEY`
+4. **Brave Search** (free ~$5 credits/month, privacy-first) — `BRAVE_API_KEY`
+5. **SearXNG** (self-hosted, free forever) — `SEARXNG_URL`
+6. Serper API (placeholder key unresolved)
+7. Browser-based Puppeteer + DuckDuckGo HTML — ✅ working now with 30s timeout
+8. Direct HTTP fallbacks (blocked by bot detection)
 
 **Files:**
+- `project_claw_core/agents/research_router.js` — unified router with all sources
+- `project_claw_core/agents/tavily_search.js` — Tavily client
+- `project_claw_core/agents/brave_search.js` — Brave client
+- `project_claw_core/agents/searxng_client.js` — SearXNG client
 - `project_claw_core/agents/browser_researcher.js` — headless browser research
 - `project_claw_core/agents/openserp_client.js` — OpenSERP client
-- `project_claw_core/agents/research_router.js` — unified router
 - `FREE_RESEARCH_STACK.md` — full research options guide
 
 **Action required:** User will reboot later to finish Docker Desktop initialization; then OpenSERP will auto-deploy via scheduled task.
