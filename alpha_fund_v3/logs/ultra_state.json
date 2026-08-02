@@ -1,0 +1,9 @@
+{
+  "checks": 73,
+  "restarts": 0,
+  "last_restart": null,
+  "last_check": null,
+  "consecutive_failures": 0,
+  "start_time": "2026-08-02T11:54:00.953Z",
+  "is_immortal": true
+}

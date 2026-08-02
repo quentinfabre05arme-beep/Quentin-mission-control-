@@ -1,0 +1,11 @@
+{
+  "restarts_today": 3,
+  "last_restart": "2026-08-02T12:00:18.283Z",
+  "restart_history": [
+    1785670818558,
+    1785671014548,
+    1785672018283
+  ],
+  "gateway_pid": null,
+  "status": "down"
+}
