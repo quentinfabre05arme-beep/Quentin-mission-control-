@@ -92,7 +92,8 @@ class UnifiedMasterOrchestrator {
       // 7. Git backup
       log('Step 6: Git backup');
       const gitStatus = await this.workflows.orch.runCommand('git_agent status');
-      if (gitStatus.result && gitStatus.result.has_changes) {
+      const hasChanges = gitStatus.result && (gitStatus.result.has_changes || gitStatus.result.ahead || gitStatus.result.modified > 0);
+      if (hasChanges) {
         const commit = await this.workflows.orch.runCommand('git_agent autoCommitPush', ['Auto: Unified master cycle']);
         actions.push({ step: 'git_backup', success: commit.success });
       } else {
