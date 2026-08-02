@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T19:07:37.942Z",
+  "generated_at": "2026-08-02T19:09:01.564Z",
   "count": 102,
   "by_category": {
     "core": [
@@ -441,8 +441,8 @@
       "category": "core",
       "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\predictive_maintenance.js",
       "class": "PredictiveMaintenance",
-      "lines": 130,
-      "functions": 7,
+      "lines": 137,
+      "functions": 9,
       "has_tests": true
     },
     {
@@ -657,8 +657,8 @@
       "category": "core",
       "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\unified_master_orchestrator.js",
       "class": "UnifiedMasterOrchestrator",
-      "lines": 133,
-      "functions": 9,
+      "lines": 144,
+      "functions": 10,
       "has_tests": true
     },
     {
