@@ -69,8 +69,12 @@ async function fetchIBKRPrices(tickers) {
       
       // Error handling
       ib.on(EventName.error, (err) => {
-        console.error('IBKR Error:', err);
-        ib.disconnect();
+        if (err.message && err.message.includes('ECONNREFUSED')) {
+          console.log('   ⚠️ IBKR TWS not running');
+        } else {
+          console.error('IBKR Error:', err.message || err);
+        }
+        try { ib.disconnect(); } catch(e) {}
         reject(err);
       });
       
@@ -87,6 +91,8 @@ async function fetchIBKRPrices(tickers) {
         // For crypto, use different contract type
         if (['BTC', 'ETH'].includes(ticker)) {
           contract.secType = 'CRYPTO';
+          contract.exchange = 'PAXOS';
+          contract.currency = 'USD';
         }
         
         ib.reqMktData(index, contract, '', false, false);

@@ -30,25 +30,72 @@ async function fetchPrices() {
   
   const prices = {};
   
-  // Try mission_control market data first
+// Try IBKR first (if enabled and TWS/Gateway running)
+  const ibkr = require('../data/ibkr_connector');
+  if (ibkr.IBKR_CONFIG.enabled) {
+    try {
+      const ibkrPrices = await ibkr.fetchIBKRPrices(CONFIG.assets);
+      if (ibkrPrices && Object.keys(ibkrPrices).length > 0) {
+        Object.entries(ibkrPrices).forEach(([symbol, info]) => {
+          prices[symbol] = {
+            price: info.price,
+            change_24h: info.change_24h || 0,
+            source: 'IBKR',
+            timestamp: info.timestamp || new Date().toISOString()
+          };
+        });
+      }
+    } catch(e) {
+      console.log('   ⚠️ IBKR TWS unavailable, falling back...');
+    }
+  }
+  
+  // Try IBKR Client Portal API (alternative, no TWS)
+  if (Object.keys(prices).length < CONFIG.assets.length) {
+    try {
+      const cp = require('../data/ibkr_client_portal');
+      if (cp.CLIENT_PORTAL_CONFIG.enabled) {
+        const cpTickers = CONFIG.assets.filter(a => !prices[a]);
+        const cpPrices = await cp.getPricesWithFallback(cpTickers);
+        if (cpPrices) {
+          Object.entries(cpPrices).forEach(([symbol, info]) => {
+            if (!prices[symbol]) {
+              prices[symbol] = {
+                price: info.price,
+                change_24h: info.change_24h || 0,
+                source: 'IBKR-CP',
+                timestamp: info.timestamp || new Date().toISOString()
+              };
+            }
+          });
+        }
+      }
+    } catch(e) {
+      console.log('   ⚠️ IBKR Client Portal unavailable, falling back...');
+    }
+  }
+  
+  // Try mission_control market data as fallback
   const marketDataPath = path.join(__dirname, '..', '..', 'mission_control', 'market_data.json');
   if (fs.existsSync(marketDataPath)) {
     try {
       const data = JSON.parse(fs.readFileSync(marketDataPath, 'utf8'));
       if (data.assets) {
         Object.entries(data.assets).forEach(([symbol, info]) => {
-          prices[symbol] = {
-            price: info.price,
-            change_24h: info.change_24h,
-            source: info.source || 'cache',
-            timestamp: data.timestamp
-          };
+          if (!prices[symbol]) {
+            prices[symbol] = {
+              price: info.price,
+              change_24h: info.change_24h,
+              source: info.source || 'cache',
+              timestamp: data.timestamp
+            };
+          }
         });
       }
     } catch (e) {}
   }
   
-  // Fill gaps with Twelve Data API
+  // Fill remaining gaps with Twelve Data API
   for (const asset of CONFIG.assets) {
     if (!prices[asset]) {
       try {
