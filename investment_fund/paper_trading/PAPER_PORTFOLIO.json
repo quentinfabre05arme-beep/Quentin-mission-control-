@@ -1,0 +1,26 @@
+{
+  "cash": 10000,
+  "initial_capital": 10000,
+  "positions": [],
+  "history": [],
+  "trades": [],
+  "performance": {
+    "total_return": 0,
+    "win_rate": 0,
+    "total_trades": 0,
+    "max_drawdown": 0
+  },
+  "created": "2026-08-02",
+  "version": "1.0",
+  "current_value": 10000,
+  "daily_snapshots": [
+    {
+      "date": "2026-08-02",
+      "value": 10000,
+      "cash": 10000,
+      "unrealized_pnl": 0,
+      "positions_count": 0,
+      "timestamp": "2026-08-02T07:46:05.264Z"
+    }
+  ]
+}
