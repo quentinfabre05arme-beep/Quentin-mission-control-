@@ -19,8 +19,23 @@ const CONFIG = {
   take_profit: 0.25, // +25%
   data_dir: path.join(__dirname, 'data'),
   config_dir: path.join(__dirname, 'config'),
-  enable_ram_cleanup: true // Auto-cleanup between cycles
+  enable_ram_cleanup: true, // Auto-cleanup between cycles
+  enable_autonomy: true // A+ engine integration
 };
+
+// ─── A+ AUTONOMY ENGINE ────────────────────────────────────
+let autonomyEngine = null;
+function loadAutonomy() {
+  if (CONFIG.enable_autonomy && !autonomyEngine) {
+    try {
+      autonomyEngine = require('./core/autonomy_engine');
+      console.log('🛡️ A+ Autonomy Engine loaded');
+    } catch(e) {
+      console.log('⚠️ Autonomy engine not available');
+    }
+  }
+  return autonomyEngine;
+}
 
 // ─── RAM CLEANUP UTILITY ────────────────────────────────────
 const ramCleanup = require('./scripts/ram_cleanup');
@@ -34,6 +49,20 @@ function autoCleanup() {
       }
     } catch(e) {}
   }
+}
+
+function guardedCleanup() {
+  const a = loadAutonomy();
+  if (a) {
+    const canProceed = a.ramGuard();
+    if (!canProceed) {
+      console.error('⏸️ RAM CRITICAL — Operation paused');
+      a.logEvent('OPERATION_PAUSED', { ram: a.state.ram_pct, reason: 'RAM critical before operation' });
+      return false;
+    }
+  }
+  autoCleanup();
+  return true;
 }
 
 // ─── UNIFIED PORTFOLIO ──────────────────────────────────────
@@ -128,16 +157,27 @@ const COMMANDS = {
     console.log(`║     Mode: ${CONFIG.mode} | Capital: $${CONFIG.capital.toLocaleString()}                    ║`);
     console.log(`╚══════════════════════════════════════════════════════════════╝\n`);
     
+    // A+ AUTONOMY: RAM guard before heavy operations
+    const a = loadAutonomy();
+    if (a && !a.ramGuard()) {
+      console.error('⏸️ SYSTEM PAUSED — RAM critical. Skipping cycle.');
+      a.logDecision('DAILY_CYCLE_SKIPPED', `RAM at ${a.state.ram_pct}% — too dangerous to run`);
+      return null;
+    }
+    
     // Auto-cleanup before heavy operations
-    autoCleanup();
+    if (!guardedCleanup()) return null;
     
     const research = await runResearch();
     const intelligence = await runIntelligence();
     const execution = await runExecution(research, intelligence);
     updateDashboard({ research, intelligence, execution });
     
-    // Auto-cleanup after heavy operations
-    autoCleanup();
+    // Log decision
+    if (a) {
+      a.logDecision('DAILY_CYCLE_COMPLETE', 'Ran research + intelligence + execution');
+      a.updateDashboard();
+    }
     
     console.log('🎯 Daily cycle complete!\n');
     return execution.portfolio;
