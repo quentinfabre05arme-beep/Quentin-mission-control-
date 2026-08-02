@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-02T00:07:02.739Z",
+  "timestamp": "2026-08-02T02:07:02.661Z",
   "systems": [
     {
       "name": "OpenClaw Gateway",
@@ -19,12 +19,14 @@
     },
     {
       "name": "Market Data",
-      "status": "healthy"
+      "status": "failed"
     },
     {
       "name": "System Monitor Mission",
       "status": "healthy"
     }
   ],
-  "failed": []
+  "failed": [
+    "Market Data"
+  ]
 }
