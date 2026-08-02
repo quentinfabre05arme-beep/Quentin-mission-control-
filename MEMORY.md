@@ -39,21 +39,28 @@
 
 ## 🤖 Autonomous Self-Improvement Engine — August 3, 2026
 
-**Status:** ✅ OPERATIONAL — first successful auto-improvement committed.
+**Status:** ✅ OPERATIONAL — second successful auto-improvement committed.
 
 **What it does:**
 1. Profiles all capabilities weekly (usage, errors, bloat).
 2. Researches external best practices for AI agent improvement (browser + web_search).
-3. Generates ranked hypotheses (effort/impact scoring).
-4. Converts top hypothesis into a concrete, validated code diff.
-5. Runs the experiment: backup → apply → syntax/load test → commit if passed, restore if failed.
-6. Logs every experiment outcome to `autonomous_improvement/data/experiments.json`.
+3. Generates ranked, de-duplicated hypotheses with failure penalties.
+4. Converts top hypothesis into a concrete, validated code diff (exact-match, failure-aware anchors).
+5. Runs the experiment: backup → apply → syntax/load test → self-review → benchmark → commit if passed, restore if failed.
+6. Records every outcome in `autonomous_improvement/data/learning.json` to avoid repeating failures.
+7. Skips repeatedly-failed or already-applied hypotheses.
 
-**First success:**
-- Hypothesis: Add timeout guards to long-running capabilities.
-- Target: `project_claw_core/agents/research_router.js`.
-- Change: Added `runWithTimeout()` helper + wrapped browser research with 30s timeout.
-- Commits: `545cef7`, `806594e`, `b2f0450`.
+**Improvements applied:**
+- `project_claw_core/agents/research_router.js` — added `runWithTimeout()` + 30s browser research timeout.
+- `alpha_fund_v3/core/always_on_daemon.js` — added log rotation when >100KB.
+- `project_claw_core/data/plans.json` — pruned 15 plans to 1 (removed test noise).
+
+**Engine improvements v2:**
+- `learning_engine.js` — failure tracking, deduplication, scoring with failure penalty.
+- `self_review.js` — dependent syntax checks + verifier metrics.
+- `experiment_runner.js` — stale experiment cleanup, daemon/JSON handling, outcome benchmarking.
+- `change_generator.js` — removed risky line-based fallbacks; exact-match only.
+- `improvement_orchestrator.js` — loops through hypotheses until actionable one found.
 
 **Files:**
 - `autonomous_improvement/core/improvement_orchestrator.js` — main loop
@@ -62,6 +69,8 @@
 - `autonomous_improvement/core/hypothesis_generator.js` — ranked ideas
 - `autonomous_improvement/core/change_generator.js` — validated code diffs
 - `autonomous_improvement/core/experiment_runner.js` — safe experiment harness
+- `autonomous_improvement/core/learning_engine.js` — failure learning
+- `autonomous_improvement/core/self_review.js` — post-change impact review
 - `scripts/start_improvement_loop.ps1` — 30-min loop runner
 - `scripts/autonomous_improvement_task.xml` — Task Scheduler definition
 
