@@ -10,6 +10,7 @@ const path = require('path');
 // ─── CONFIGURATION ──────────────────────────────────────────
 const CONFIG = {
   version: '3.0.0',
+  fund_name: 'Alpha Fund v3.0',
   mode: 'PAPER', // PAPER | LIVE
   capital: 10000,
   max_positions: 10,
@@ -149,8 +150,9 @@ const COMMANDS = {
     const totalReturn = ((totalValue / portfolio.initial_capital) - 1) * 100;
     
     console.log(`\n╔══════════════════════════════════════════════════════════════╗`);
-    console.log(`║           ALPHA FUND v${CONFIG.version} — PORTFOLIO STATUS           ║`);
+    console.log(`║           ${CONFIG.fund_name.toUpperCase()} — PORTFOLIO STATUS           ║`);
     console.log(`╚══════════════════════════════════════════════════════════════╝`);
+    console.log(`\n   Mode: ${CONFIG.mode === 'PAPER' ? '📄 PAPER TRADING' : '💰 LIVE TRADING'}`);
     console.log(`\n💰 Cash: $${portfolio.cash.toFixed(2)}`);
     console.log(`📈 Total Value: $${totalValue.toFixed(2)} (${totalReturn >= 0 ? '+' : ''}${totalReturn.toFixed(2)}%)`);
     console.log(`📊 Positions: ${portfolio.positions.length}/${CONFIG.max_positions}`);
