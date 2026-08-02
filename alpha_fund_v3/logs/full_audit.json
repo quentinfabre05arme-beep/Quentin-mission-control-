@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-02T16:27:09.840Z",
+  "timestamp": "2026-08-02T18:27:10.275Z",
   "system": {
     "platform": "win32",
     "release": "10.0.26200",
@@ -7,15 +7,29 @@
     "cpus": 8,
     "total_ram_gb": 8,
     "free_ram_gb": 1,
-    "uptime_hours": 176,
+    "uptime_hours": 178,
     "user": "quent",
     "home": "C:\\Users\\quent"
   },
   "workspace": {
-    "total_files": 2185,
-    "total_dirs": 190,
-    "total_size": 68505034,
+    "total_files": 2312,
+    "total_dirs": 197,
+    "total_size": 85846381,
     "top_dirs": [
+      {
+        "name": "project_claw_core",
+        "files": 286,
+        "dirs": 8,
+        "size_mb": 21,
+        "old_files": 0,
+        "types": {
+          ".js": 135,
+          "(no ext)": 71,
+          ".log": 43,
+          ".json": 8,
+          ".png": 6
+        }
+      },
       {
         "name": "missions",
         "files": 263,
@@ -58,23 +72,10 @@
         }
       },
       {
-        "name": "project_claw_core",
-        "files": 162,
-        "dirs": 5,
-        "size_mb": 5,
-        "old_files": 0,
-        "types": {
-          ".js": 155,
-          ".log": 4,
-          ".txt": 2,
-          ".md": 1
-        }
-      },
-      {
         "name": "alpha_fund_v3",
         "files": 146,
         "dirs": 14,
-        "size_mb": 4,
+        "size_mb": 5,
         "old_files": 0,
         "types": {
           ".js": 72,
@@ -207,20 +208,22 @@
         }
       },
       {
-        "name": "investment",
-        "files": 29,
-        "dirs": 1,
+        "name": "recovery",
+        "files": 8,
+        "dirs": 2,
         "size_mb": 0,
         "old_files": 0,
         "types": {
-          ".md": 15,
-          ".json": 7,
-          ".js": 7
+          ".bat": 3,
+          ".ps1": 2,
+          ".xml": 1,
+          ".log": 1,
+          ".json": 1
         }
       }
     ],
     "file_types": {},
-    "empty_dirs": 44,
+    "empty_dirs": 92,
     "old_files": 35,
     "duplicates": [],
     "dead_code": [
@@ -256,9 +259,9 @@
   "security": {},
   "recommendations": [
     {
-      "priority": "CRITICAL",
-      "issue": "RAM at 91%",
-      "action": "Restart gateway, close browser tabs, stop unused processes"
+      "priority": "MEDIUM",
+      "issue": "92 empty directories",
+      "action": "Remove empty directories"
     }
   ]
 }

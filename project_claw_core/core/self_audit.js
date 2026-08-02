@@ -17,28 +17,46 @@ function log(msg) {
 }
 
 function isStub(content) {
+  // Count lines and return statements to distinguish real code from stubs
+  const lines = content.split('\n').length;
   const stubPatterns = [
-    /return \{ success: (true|false)\s*\};/,
-    /return \[\];/,
-    /return '';\s*$/m,
-    /return \{\};\s*$/m,
     /\/\/ Placeholder/,
     /\/\/ TODO/,
     /NOT_IMPLEMENTED/,
-    /throw new Error\(['"]Not implemented['"]\)/
+    /throw new Error\(['"]Not implemented['"]\)/,
+    /console\.log\(['"]Stub:/
   ];
   
   let stubScore = 0;
   for (const pattern of stubPatterns) {
-    if (pattern.test(content)) stubScore++;
+    if (pattern.test(content)) stubScore += 2;
   }
+  
+  // Short files with many simple return statements are likely stubs
+  const simpleReturns = (content.match(/return \{ success: (true|false)\s*\};/g) || []).length;
+  const emptyReturns = (content.match(/return \[\];/g) || []).length;
+  const emptyObjects = (content.match(/return \{\};/g) || []).length;
+  
+  if (lines < 30 && (simpleReturns + emptyReturns + emptyObjects) >= 2) stubScore += 3;
+  if (lines < 50 && stubScore >= 2) stubScore += 2;
+  
   return stubScore;
 }
 
 function analyzeFile(filePath, content) {
   const lines = content.split('\n').length;
   const stubScore = isStub(content);
-  const hasRealLogic = content.includes('require(') && lines > 30 && stubScore < 2;
+  const hasRealLogic = lines > 40 && (
+    content.includes('require(') ||
+    content.includes('execSync(') ||
+    content.includes('exec(') ||
+    content.includes('spawn(') ||
+    content.includes('https.request(') ||
+    content.includes('http.request(') ||
+    content.includes('fetch(') ||
+    content.includes('new Promise(') ||
+    /class\s+\w+\s*\{/.test(content)
+  ) && stubScore < 3;
   
   return {
     path: filePath,
@@ -49,9 +67,11 @@ function analyzeFile(filePath, content) {
   };
 }
 
+const vm = require('vm');
+
 function syntaxCheck(content) {
   try {
-    new Function(content);
+    new vm.Script(content);
     return { valid: true };
   } catch(e) {
     return { valid: false, error: e.message };
@@ -104,6 +124,10 @@ class SelfAudit {
         syntax_errors: results.syntax_errors,
         real_percent: ((results.real / results.total) * 100).toFixed(1)
       },
+      syntax_errors_details: results.details.filter(d => !d.syntax_valid).map(d => ({
+        path: d.path,
+        error: d.syntax_error
+      })),
       real_capabilities: results.details.filter(d => d.real).map(d => path.basename(d.path)),
       top_stubs: results.details.filter(d => !d.real).slice(0, 20).map(d => path.basename(d.path))
     };

@@ -1,15 +1,16 @@
 {
   "lastChecks": {
-    "market": 1754149600000,
-    "system": 1754149600000,
-    "git": 1754149600000,
+    "market": 1754155440000,
+    "system": 1754155440000,
+    "git": 1754155440000,
     "calendar": null,
     "weather": null,
     "heartbeat": {
-      "ram": "93.0% used (~580MB free / 7.9GB) - CRITICAL",
-      "disk": "C:27.7% free, D:57.3% free, E:11.9% free",
-      "ts": "2026-08-02T16:15:58.792Z"
+      "ram": "85.6% used (1.14GB free / 7.92GB)",
+      "disk": "C: 72.5% used",
+      "cpu": "63.5%",
+      "ts": "2026-08-02T20:04:00.000+02:00"
     }
   },
-  "notes": "Heartbeat 2026-08-02 18:15 CET: Market data refreshed. BTC $63,049 (+0.21%), ETH $1,856.07 (-0.61%). Twelve Data API failed (all assets), fallbacks CoinGecko/Yahoo active. RAM CRITICAL at 93.0% (~580MB free). Top memory hogs: tws 1011MB, node 659MB, Chrome/Chromium ~1.6GB combined. No auto-kill performed to avoid disrupting trading/browsing. Git: uncommitted tracked files in alpha_fund_v3/logs, missions/health_reports, recovery/state. Many new untracked project_claw_core v4/v5 agent files."
+  "notes": "Heartbeat 2026-08-02 20:04 CET: Market data OK. BTC $63,258 (+0.96%), ETH $1,867.53 (+0.38%). Fallbacks CoinGecko/Yahoo active (Twelve Data exhausted). RAM improved to 85.6% from prior 93% critical. Git push command attempted; PowerShell process detached. Need verify push."
 }
