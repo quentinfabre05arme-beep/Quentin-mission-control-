@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T19:09:01.564Z",
+  "generated_at": "2026-08-02T19:10:47.499Z",
   "count": 102,
   "by_category": {
     "core": [
@@ -657,8 +657,8 @@
       "category": "core",
       "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\unified_master_orchestrator.js",
       "class": "UnifiedMasterOrchestrator",
-      "lines": 144,
-      "functions": 10,
+      "lines": 158,
+      "functions": 12,
       "has_tests": true
     },
     {

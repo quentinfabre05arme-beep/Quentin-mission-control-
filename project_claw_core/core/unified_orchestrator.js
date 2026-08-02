@@ -56,7 +56,7 @@ class UnifiedOrchestrator {
   async healthCheck() {
     const h = this.health.getHealth();
     const issues = [];
-    if (parseFloat(h.memory.used_percent) > 90) issues.push('RAM critical');
+    if (parseFloat(h.memory.used_percent) > 92) issues.push('RAM critical');
     if (parseFloat(h.disk.find(d => d.drive === 'C:')?.used_percent) > 90) issues.push('Disk C critical');
     return { success: true, healthy: issues.length === 0, issues, health: h };
   }

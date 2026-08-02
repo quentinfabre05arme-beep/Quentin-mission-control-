@@ -66,3 +66,4 @@ daily_briefing_example.py
 .claw_secret.key
 .credentials.enc
 .market_cache.json
+project_claw_core/data/unified_master_state.json

@@ -42,13 +42,19 @@ class UnifiedMasterOrchestrator {
   
   async runResearch(query = 'BTC crypto market news today') {
     log(`Step: Market research — ${query}`);
-    const research = await this.workflows.orch.runCommand('research_agent research', [query]);
-    if (!research.success) {
-      log(`Research failed: ${research.error}`, 'warn');
-      // Fallback: use market_watcher only
-      return { success: false, error: research.error };
+    try {
+      const { CapabilityInvoker } = require(path.join(WORKSPACE, 'project_claw_core', 'core', 'capability_invoker'));
+      const invoker = new CapabilityInvoker();
+      const research = await invoker.invoke('research_agent', 'research', [query]);
+      if (!research.success) {
+        log(`Research failed: ${research.error}`, 'warn');
+        return { success: false, error: research.error };
+      }
+      return research;
+    } catch(e) {
+      log(`Research exception: ${e.message}`, 'error');
+      return { success: false, error: e.message };
     }
-    return research;
   }
   
   async runCycle() {
@@ -65,8 +71,16 @@ class UnifiedMasterOrchestrator {
       // 2. Self-healing if issues
       if (!healthCheck.healthy) {
         log('Health issues detected, running self-healing', 'warn');
-        const cleanup = await this.workflows.orch.runCommand('predictive_maintenance predict');
+        const cleanup = await this.workflows.orch.runCommand('predictive_maintenance run');
         actions.push({ step: 'predictive_maintenance', result: cleanup.success });
+        // Also run RAM cleanup directly
+        try {
+          const rc = require(path.join(WORKSPACE, 'alpha_fund_v3', 'scripts', 'ram_cleanup'));
+          const before = rc.cleanup();
+          actions.push({ step: 'ram_cleanup', saved_mb: before.saved_mb, after_pct: before.after.pct });
+        } catch(e) {
+          actions.push({ step: 'ram_cleanup', error: e.message });
+        }
       }
       
       // 3. Alpha Fund status
