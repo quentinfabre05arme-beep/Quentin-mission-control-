@@ -1,0 +1,19 @@
+{
+  "projects": [
+    {
+      "id": "proj_1785696565674",
+      "name": "Alpha Fund v4",
+      "description": "Next-gen investment engine",
+      "status": "active",
+      "created_at": "2026-08-02T18:49:25.674Z",
+      "tasks": [
+        {
+          "id": "task_1785696565675",
+          "description": "Build risk engine",
+          "status": "todo",
+          "created_at": "2026-08-02T18:49:25.675Z"
+        }
+      ]
+    }
+  ]
+}

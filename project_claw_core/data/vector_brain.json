@@ -1,0 +1,34 @@
+{
+  "vectors": [
+    {
+      "id": "btc",
+      "text": "Bitcoin crypto BTC",
+      "vector": [
+        1,
+        0.9,
+        0.8
+      ],
+      "created_at": "2026-08-02T18:49:01.078Z"
+    },
+    {
+      "id": "eth",
+      "text": "Ethereum smart contract",
+      "vector": [
+        0.9,
+        1,
+        0.7
+      ],
+      "created_at": "2026-08-02T18:49:01.081Z"
+    },
+    {
+      "id": "aapl",
+      "text": "Apple stock technology",
+      "vector": [
+        0.1,
+        0.2,
+        0.3
+      ],
+      "created_at": "2026-08-02T18:49:01.084Z"
+    }
+  ]
+}
