@@ -1,0 +1,23 @@
+{
+  "results": [
+    {
+      "title": "Memory-Safe Node.js: Patterns for Long-Running Processes",
+      "link": "https://medium.com/@bhagyarana80/memory-safe-node-js-patterns-for-long-running-processes-0d0e192cb629",
+      "snippet": "",
+      "source": "duckduckgo_browser"
+    },
+    {
+      "title": "Preventing and Debugging Memory Leaks in Node.js",
+      "link": "https://betterstack.com/community/guides/scaling-nodejs/high-performance-nodejs/nodejs-memory-leaks/",
+      "snippet": "",
+      "source": "duckduckgo_browser"
+    },
+    {
+      "title": "Debugging Node.js Memory Leaks: A Complete Troubleshooting Guide with ...",
+      "link": "https://dev.to/pockit_tools/debugging-nodejs-memory-leaks-a-complete-troubleshooting-guide-with-real-world-examples-ohm",
+      "snippet": "",
+      "source": "duckduckgo_browser"
+    }
+  ],
+  "timestamp": "2026-08-02T22:08:14.188Z"
+}

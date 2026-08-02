@@ -1,0 +1,25 @@
+{
+  "workspace": "C:\\Users\\quent\\.openclaw\\workspace",
+  "cycles_dir": "autonomous_improvement/cycles",
+  "data_dir": "autonomous_improvement/data",
+  "log_file": "autonomous_improvement/logs/improvement.log",
+  "experiments_file": "autonomous_improvement/data/experiments.json",
+  "max_lines_per_change": 100,
+  "test_timeout_ms": 30000,
+  "cycle_interval_ms": 1800000,
+  "research_queries": [
+    "best autonomous AI agent architecture 2026",
+    "Node.js long-running process memory leak prevention",
+    "OpenClaw advanced usage patterns",
+    "AI agent self-improvement workflow examples",
+    "reliable browser automation Puppeteer best practices 2026"
+  ],
+  "improvement_categories": [
+    "performance",
+    "reliability",
+    "capability",
+    "workflow",
+    "memory",
+    "security"
+  ]
+}

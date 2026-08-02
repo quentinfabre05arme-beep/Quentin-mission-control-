@@ -1,0 +1,114 @@
+{
+  "experiments": [
+    {
+      "id": "hyp_1785708512619_5z18t",
+      "title": "Add timeout guards to long-running capabilities",
+      "category": "reliability",
+      "timestamp": "2026-08-02T22:08:32.624Z",
+      "change": {
+        "filePath": "project_claw_core/agents/research_router.js",
+        "oldText": "const { ResearchAgent } = require('./research_agent');\nconst { BrowserResearcher } = require('./browser_researcher');",
+        "newText": "const { ResearchAgent } = require('./research_agent');\nconst { BrowserResearcher } = require('./browser_researcher');\n\nfunction runWithTimeout(fn, ms) {\n  return Promise.race([\n    fn(),\n    new Promise((_, reject) => setTimeout(() => reject(new Error('Research timeout')), ms))\n  ]);\n}\n",
+        "hypothesisId": "hyp_1785708512619_5z18t"
+      },
+      "outcome": null,
+      "tests": {},
+      "metrics": {},
+      "status": "running"
+    },
+    {
+      "id": "hyp_1785708512884_kfalg",
+      "title": "Add timeout guards to long-running capabilities",
+      "category": "reliability",
+      "timestamp": "2026-08-02T22:08:32.888Z",
+      "change": {
+        "filePath": "project_claw_core/agents/research_router.js",
+        "oldText": "const { ResearchAgent } = require('./research_agent');\nconst { BrowserResearcher } = require('./browser_researcher');",
+        "newText": "const { ResearchAgent } = require('./research_agent');\nconst { BrowserResearcher } = require('./browser_researcher');\n\nfunction runWithTimeout(fn, ms) {\n  return Promise.race([\n    fn(),\n    new Promise((_, reject) => setTimeout(() => reject(new Error('Research timeout')), ms))\n  ]);\n}\n",
+        "hypothesisId": "hyp_1785708512884_kfalg"
+      },
+      "outcome": "error",
+      "tests": {},
+      "metrics": {},
+      "status": "reverted",
+      "error": "Command failed: git stash push -u -m \"exp_1785708512889\"\nwarning: in the working copy of 'MISSION_AUTONOMOUS_SELF_IMPROVEMENT.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/config.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/core/capability_profiler.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/core/change_generator.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/core/experiment_runner.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/core/hypothesis_generator.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/core/improvement_orchestrator.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/core/improvement_radar.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/core/utils.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/data/capability_profile.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/data/experiments.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/data/hypotheses.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/data/improvement_knowledge.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/data/improvement_state.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/data/microsoft_profile/CertificateRevocation/10690/LICENSE', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/data/microsoft_profile/CertificateRevocation/10690/manifest.json', LF will be replaced by CRLF the next time Git touches it\nerror: open(\"project_claw_core/data/microsoft_profile/Default/Code Cache/pc/7ae44a30-646b-4431-836d-6bf7a8ff5331.db-shm\"): Permission denied\nfatal: Unable to process path project_claw_core/data/microsoft_profile/Default/Code Cache/pc/7ae44a30-646b-4431-836d-6bf7a8ff5331.db-shm\nCannot save the untracked files\n"
+    },
+    {
+      "id": "hyp_1785708565611_6gepx",
+      "title": "Add timeout guards to long-running capabilities",
+      "category": "reliability",
+      "timestamp": "2026-08-02T22:09:25.614Z",
+      "change": {
+        "filePath": "project_claw_core/agents/research_router.js",
+        "oldText": "const { ResearchAgent } = require('./research_agent');\nconst { BrowserResearcher } = require('./browser_researcher');",
+        "newText": "const { ResearchAgent } = require('./research_agent');\nconst { BrowserResearcher } = require('./browser_researcher');\n\nfunction runWithTimeout(fn, ms) {\n  return Promise.race([\n    fn(),\n    new Promise((_, reject) => setTimeout(() => reject(new Error('Research timeout')), ms))\n  ]);\n}\n",
+        "hypothesisId": "hyp_1785708565611_6gepx"
+      },
+      "outcome": "error",
+      "tests": {},
+      "metrics": {},
+      "status": "reverted",
+      "error": "Command failed: git stash push -u -m \"exp_1785708565616\"\nwarning: in the working copy of 'MISSION_AUTONOMOUS_SELF_IMPROVEMENT.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/config.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/core/capability_profiler.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/core/change_generator.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/core/experiment_runner.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/core/hypothesis_generator.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/core/improvement_orchestrator.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/core/improvement_radar.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/core/utils.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/data/capability_profile.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/data/experiments.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/data/hypotheses.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/data/improvement_knowledge.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/data/improvement_state.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/logs/documents/last_report.txt', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/logs/other/audit.jsonl', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/logs/other/capability_verification.jsonl', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/logs/other/safe_verification.jsonl', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_AI_agent_self_improvement_workflow_examples.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_Automation_Templates_competitors_alternatives.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_Automation_Templates_market_size_demand_2026.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_Automation_Templates_pricing_subscription.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_BTC_crypto_market_news_today.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_BTC_news.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_Claw_Core_as_a_Service_competitors_alternatives.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_Claw_Core_as_a_Service_market_size_demand_2026.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_Claw_Core_as_a_Service_pricing_subscription.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_Node_js_long_running_process_memory_leak_prevention.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_OpenClaw_advanced_usage_patterns.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser__.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_best_autonomous_AI_agent_architecture_2026.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_bitcoin.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_bitcoin_price.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_bitcoin_price_today.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_reliable_browser_automation_Puppeteer_best_practices_2026.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'scripts/start_improvement_loop.ps1', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'test_research_agent.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'tmp_research_router.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'tmp_router.txt', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'tmp_router2.txt', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'alpha_fund_v3/logs/ultra_state.json', LF will be replaced by CRLF the next time Git touches it\nerror: open(\"project_claw_core/data/microsoft_profile/Default/Cache/Cache_Data/sqldb0\"): Permission denied\nfatal: Unable to process path project_claw_core/data/microsoft_profile/Default/Cache/Cache_Data/sqldb0\nCannot save the current worktree state\n"
+    },
+    {
+      "id": "hyp_1785708789758_hvx94",
+      "title": "Add timeout guards to long-running capabilities",
+      "category": "reliability",
+      "timestamp": "2026-08-02T22:13:09.768Z",
+      "change": {
+        "filePath": "project_claw_core/agents/research_router.js",
+        "oldText": "const { ResearchAgent } = require('./research_agent');\nconst { BrowserResearcher } = require('./browser_researcher');",
+        "newText": "const { ResearchAgent } = require('./research_agent');\nconst { BrowserResearcher } = require('./browser_researcher');\n\nfunction runWithTimeout(fn, ms) {\n  return Promise.race([\n    fn(),\n    new Promise((_, reject) => setTimeout(() => reject(new Error('Research timeout')), ms))\n  ]);\n}\n",
+        "hypothesisId": "hyp_1785708789758_hvx94"
+      },
+      "outcome": "error",
+      "tests": {},
+      "metrics": {},
+      "status": "reverted",
+      "error": "Command failed: git stash push -u -m \"exp_1785708789771\"\nwarning: in the working copy of 'MISSION_AUTONOMOUS_SELF_IMPROVEMENT.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/config.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/core/capability_profiler.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/core/change_generator.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/core/experiment_runner.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/core/hypothesis_generator.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/core/improvement_orchestrator.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/core/improvement_radar.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/core/utils.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/data/capability_profile.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/data/experiments.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/data/hypotheses.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/data/improvement_knowledge.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'autonomous_improvement/data/improvement_state.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/logs/other/safe_verification.jsonl', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_AI_agent_self_improvement_workflow_examples.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_Automation_Templates_competitors_alternatives.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_Automation_Templates_market_size_demand_2026.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_Automation_Templates_pricing_subscription.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_BTC_crypto_market_news_today.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_BTC_news.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_Claw_Core_as_a_Service_competitors_alternatives.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_Claw_Core_as_a_Service_market_size_demand_2026.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_Claw_Core_as_a_Service_pricing_subscription.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_Node_js_long_running_process_memory_leak_prevention.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_OpenClaw_advanced_usage_patterns.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser__.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_best_autonomous_AI_agent_architecture_2026.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_bitcoin.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_bitcoin_price.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_bitcoin_price_today.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/memory/research_cache/browser_reliable_browser_automation_Puppeteer_best_practices_2026.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'scripts/start_improvement_loop.ps1', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'test_research_agent.js', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'tmp_research_router.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'tmp_router.txt', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'tmp_router2.txt', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'alpha_fund_v3/logs/ultra_state.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/dashboard/health.html', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/data/capability_registry.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/data/claw_memory.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/data/current_goals.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project_claw_core/data/drive_index.json', LF will be replaced by CRLF the next time Git touches it\nerror: open(\"project_claw_core/data/microsoft_profile/Default/Cache/Cache_Data/sqldb0\"): Permission denied\nfatal: Unable to process path project_claw_core/data/microsoft_profile/Default/Cache/Cache_Data/sqldb0\nCannot save the current worktree state\n"
+    },
+    {
+      "id": "hyp_1785709201072_rtqdx",
+      "title": "Add timeout guards to long-running capabilities",
+      "category": "reliability",
+      "timestamp": "2026-08-02T22:20:01.078Z",
+      "change": {
+        "filePath": "project_claw_core/agents/research_router.js",
+        "oldText": "const { ResearchAgent } = require('./research_agent');\nconst { BrowserResearcher } = require('./browser_researcher');",
+        "newText": "const { ResearchAgent } = require('./research_agent');\nconst { BrowserResearcher } = require('./browser_researcher');\n\nfunction runWithTimeout(fn, ms) {\n  return Promise.race([\n    fn(),\n    new Promise((_, reject) => setTimeout(() => reject(new Error('Research timeout')), ms))\n  ]);\n}\n",
+        "hypothesisId": "hyp_1785709201072_rtqdx"
+      },
+      "outcome": "error",
+      "tests": {},
+      "metrics": {},
+      "status": "reverted",
+      "error": "oldText not found in file"
+    },
+    {
+      "id": "hyp_1785709237310_tskto",
+      "title": "Add timeout guards to long-running capabilities",
+      "category": "reliability",
+      "timestamp": "2026-08-02T22:20:37.319Z",
+      "change": {
+        "filePath": "project_claw_core/agents/research_router.js",
+        "oldText": "function log(msg) {\n  const entry = `[${new Date().toISOString()}] ${msg}\\n`;\n  fs.mkdirSync(path.dirname(LOG_FILE), { recursive: true });\n  fs.appendFileSync(LOG_FILE, entry);\n  console.log(`[ResearchRouter] ${msg}`);\n}",
+        "newText": "function log(msg) {\n  const entry = `[${new Date().toISOString()}] ${msg}\\n`;\n  fs.mkdirSync(path.dirname(LOG_FILE), { recursive: true });\n  fs.appendFileSync(LOG_FILE, entry);\n  console.log(`[ResearchRouter] ${msg}`);\n}\n\nfunction runWithTimeout(fn, ms) {\n  return Promise.race([\n    fn(),\n    new Promise((_, reject) => setTimeout(() => reject(new Error('Research timeout')), ms))\n  ]);\n}",
+        "hypothesisId": "hyp_1785709237310_tskto"
+      },
+      "outcome": "success",
+      "tests": {
+        "syntax": true,
+        "load": true,
+        "functional": false
+      },
+      "metrics": {
+        "file_size_after": 4107
+      },
+      "status": "committed",
+      "applied": {
+        "filePath": "project_claw_core/agents/research_router.js",
+        "linesChanged": 7
+      }
+    }
+  ]
+}

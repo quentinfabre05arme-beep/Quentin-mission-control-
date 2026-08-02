@@ -1,0 +1,10 @@
+Usage:
+  node credential_manager.js store [service] [username] [password]
+  node credential_manager.js store microsoft_graph
+  node credential_manager.js store              # interactive
+  node credential_manager.js get [service]
+  node credential_manager.js list
+[ResearchRouter] Research: "
+[BrowserResearcher] Browser search: "
+[ResearchRouter] Legacy returned 3 results via duckduckgo_browser
+Source: duckduckgo_browser, Results: 3

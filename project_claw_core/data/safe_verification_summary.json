@@ -1,8 +1,17 @@
 {
-  "timestamp": "2026-08-02T20:03:00.153Z",
-  "total": 100,
-  "verified": 65,
+  "timestamp": "2026-08-02T22:23:43.427Z",
+  "total": 106,
+  "verified": 63,
   "skipped": 35,
-  "failed": 0,
-  "failed_capabilities": []
+  "failed": 8,
+  "failed_capabilities": [
+    "browser_researcher",
+    "research_router",
+    "openserp_client",
+    "browser_search_agent",
+    "anomaly_detector",
+    "verifier",
+    "web_search_agent",
+    "capability_generator"
+  ]
 }

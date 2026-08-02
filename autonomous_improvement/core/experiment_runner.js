@@ -1,13 +1,15 @@
 /**
- * Experiment Runner
- * Applies a small code change safely, tests it, and measures outcome.
+ * Experiment Runner v2
+ * Applies a small code change safely, tests it, measures outcome, and reviews impact.
  * Uses file-level backup/restore to avoid git stash issues with locked browser profiles.
  */
 
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
-const { log, saveJson, loadJson } = require('./utils');
+const { log, saveJson, loadJson, runWithTimeout } = require('./utils');
+const { recordOutcome } = require('./learning_engine');
+const { review } = require('./self_review');
 
 const CONFIG = require('../config.json');
 
@@ -16,10 +18,6 @@ const BACKUP_DIR = path.join(CONFIG.workspace, 'autonomous_improvement', 'backup
 
 function ensureBackupDir() {
   if (!fs.existsSync(BACKUP_DIR)) fs.mkdirSync(BACKUP_DIR, { recursive: true });
-}
-
-function git(args, cwd = CONFIG.workspace) {
-  return execSync(`git ${args}`, { cwd, encoding: 'utf8', stdio: ['pipe', 'pipe', 'pipe'] }).trim();
 }
 
 function safeGit(args, cwd = CONFIG.workspace) {
@@ -41,6 +39,20 @@ function safeGit(args, cwd = CONFIG.workspace) {
     }
     throw e;
   }
+}
+
+function cleanupStaleExperiments() {
+  const data = loadJson(EXPERIMENTS_FILE) || { experiments: [] };
+  let changed = false;
+  for (const exp of data.experiments) {
+    if (exp.status === 'running' || exp.outcome === null) {
+      exp.status = 'aborted';
+      exp.outcome = 'error';
+      exp.error = exp.error || 'Orphaned experiment marked aborted on startup';
+      changed = true;
+    }
+  }
+  if (changed) saveJson(EXPERIMENTS_FILE, data);
 }
 
 function backupFile(filePath) {
@@ -67,6 +79,24 @@ function applyChange(change) {
   return { filePath, linesChanged: updated.split('\n').length - content.split('\n').length };
 }
 
+async function runFunctionalBenchmark(filePath) {
+  const results = { runLatencyMs: null, hasRunMethod: false };
+  const fullPath = path.join(CONFIG.workspace, filePath);
+  try {
+    delete require.cache[require.resolve(fullPath)];
+    const mod = require(fullPath);
+    if (typeof mod.run === 'function') {
+      results.hasRunMethod = true;
+      const start = Date.now();
+      await runWithTimeout(() => Promise.resolve(mod.run()), CONFIG.test_timeout_ms);
+      results.runLatencyMs = Date.now() - start;
+    }
+  } catch (e) {
+    results.error = e.message;
+  }
+  return results;
+}
+
 function runTests(change) {
   log(`Testing change in ${change.filePath}`);
   const results = { syntax: false, load: false, functional: false };
@@ -86,17 +116,6 @@ function runTests(change) {
     results.loadError = e.message;
   }
 
-  try {
-    delete require.cache[require.resolve(path.join(CONFIG.workspace, change.filePath))];
-    const mod = require(path.join(CONFIG.workspace, change.filePath));
-    if (typeof mod.run === 'function') {
-      const r = mod.run();
-      if (r && r.success !== undefined) results.functional = !!r.success;
-    }
-  } catch (e) {
-    results.functionalError = e.message;
-  }
-
   return results;
 }
 
@@ -107,6 +126,7 @@ function measureBeforeAfter(change) {
 }
 
 async function runExperiment(hypothesis, change) {
+  cleanupStaleExperiments();
   log(`Running experiment: ${hypothesis.id}`);
   const experiment = {
     id: hypothesis.id,
@@ -117,6 +137,8 @@ async function runExperiment(hypothesis, change) {
     outcome: null,
     tests: {},
     metrics: {},
+    review: null,
+    benchmark: null,
     status: 'running'
   };
 
@@ -138,13 +160,23 @@ async function runExperiment(hypothesis, change) {
     const passed = tests.syntax && tests.load;
     if (passed) {
       experiment.outcome = 'success';
-      experiment.status = 'committed';
-      try {
-        safeGit(`add ${change.filePath}`);
-        safeGit(`commit -m "Auto-improvement: ${hypothesis.title}"`);
-      } catch (commitErr) {
-        experiment.status = 'tested-not-committed';
-        experiment.commitError = commitErr.message;
+      experiment.status = 'reviewing';
+      experiment.review = review(change);
+      experiment.benchmark = await runFunctionalBenchmark(change.filePath);
+
+      if (experiment.review.ok) {
+        experiment.status = 'committed';
+        try {
+          safeGit(`add ${change.filePath}`);
+          safeGit(`commit -m "Auto-improvement: ${hypothesis.title}"`);
+        } catch (commitErr) {
+          experiment.status = 'tested-not-committed';
+          experiment.commitError = commitErr.message;
+        }
+      } else {
+        experiment.outcome = 'failed_review';
+        experiment.status = 'reverted';
+        restoreFile(change.filePath, backupPath);
       }
     } else {
       experiment.outcome = 'failed';
@@ -160,6 +192,7 @@ async function runExperiment(hypothesis, change) {
     }
   }
 
+  recordOutcome(experiment);
   saveJson(EXPERIMENTS_FILE, experiments);
   log(`Experiment ${experiment.id}: ${experiment.outcome}`);
   return experiment;

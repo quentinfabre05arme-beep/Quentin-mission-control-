@@ -18,21 +18,21 @@
 </head>
 <body>
   <h1>🐾 Claw Core Health Dashboard</h1>
-  <p>Last updated: 2026-08-02T18:23:48.997Z</p>
+  <p>Last updated: 2026-08-02T22:23:33.664Z</p>
   
   <div class="grid">
     <div class="card">
       <h2>Memory</h2>
       <div class="metric"><span>Total</span><span>7.92 GB</span></div>
-      <div class="metric"><span>Used</span><span class="warn">6.92 GB (87.5%)</span></div>
-      <div class="metric"><span>Free</span><span>0.99 GB</span></div>
+      <div class="metric"><span>Used</span><span class="warn">6.45 GB (81.4%)</span></div>
+      <div class="metric"><span>Free</span><span>1.47 GB</span></div>
     </div>
     
     <div class="card">
       <h2>CPU</h2>
       <div class="metric"><span>Cores</span><span>8</span></div>
       <div class="metric"><span>Model</span><span>Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz</span></div>
-      <div class="metric"><span>Uptime</span><span>179h</span></div>
+      <div class="metric"><span>Uptime</span><span>183h</span></div>
     </div>
     
     <div class="card">
@@ -40,12 +40,12 @@
       
         <div class="metric">
           <span>C:</span>
-          <span class="ok">32.15 GB free (72.8%)</span>
+          <span class="ok">28.34 GB free (76.0%)</span>
         </div>
       
         <div class="metric">
           <span>D:</span>
-          <span class="ok">524.99 GB free (42.7%)</span>
+          <span class="ok">524.98 GB free (42.7%)</span>
         </div>
       
         <div class="metric">
@@ -57,18 +57,18 @@
     
     <div class="card">
       <h2>Top Processes</h2>
-      <pre>Name                  Id MemoryMB          CPU
-----                  -- --------          ---
-tws                 8112   870,96  1192,078125
-node                8764   665,79   2705,84375
-MsMpEng             4772   328,45 39257,765625
-chrome             14488   320,47    1625,1875
-Memory Compression  3032   212,54  1273,890625
-chrome              9692   206,56   2165,53125
-chrome              6852   172,96     527,8125
-chromium            6728    140,1  1738,640625
-WindowsTerminal     1748   139,73      180,375
-explorer            4852    95,49 17042,109375</pre>
+      <pre>Name                   Id MemoryMB          CPU
+----                   -- --------          ---
+node                 8764  1139,45   6424,40625
+MsMpEng              4772   299,27 42986,078125
+WindowsTerminal      1748   234,61    356,34375
+node                19104    213,7     4,171875
+Memory Compression   3032   116,53  1367,921875
+explorer             4852   104,81  17160,96875
+vmmemWSL            13352   103,45    146,21875
+com.docker.backend   9628    81,14   339,484375
+PhoneExperienceHost 13072    77,07   2649,53125
+dwm                  1596    74,95  79825,53125</pre>
     </div>
     
     <div class="card">
@@ -95,6 +95,16 @@ explorer            4852    95,49 17042,109375</pre>
     },
     {
       "address": "127.0.0.1",
+      "family": "IPv4"
+    }
+  ],
+  "vEthernet (WSL (Hyper-V firewall))": [
+    {
+      "address": "fe80::492:5645:aa97:37c3",
+      "family": "IPv6"
+    },
+    {
+      "address": "172.18.64.1",
       "family": "IPv4"
     }
   ]

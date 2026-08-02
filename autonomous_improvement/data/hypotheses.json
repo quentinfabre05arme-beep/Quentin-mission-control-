@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-08-02T22:21:42.946Z",
+  "hypotheses": [
+    {
+      "id": "hyp_1785709302946_dccx3",
+      "title": "Add timeout guards to long-running capabilities",
+      "category": "reliability",
+      "reason": "Research suggests timeouts prevent stuck browser/API calls",
+      "target_file": "project_claw_core/agents/research_router.js",
+      "estimated_effort": 10,
+      "estimated_impact": "high",
+      "score": 20
+    },
+    {
+      "id": "hyp_1785709302946_m682y",
+      "title": "Add timeout to research_router browser searches",
+      "category": "performance",
+      "reason": "ABOS research hangs when Puppeteer stalls",
+      "target_file": "project_claw_core/agents/research_router.js",
+      "estimated_effort": 10,
+      "estimated_impact": "high",
+      "score": 20
+    },
+    {
+      "id": "hyp_1785709302946_492k9",
+      "title": "Rotate oversized logs to prevent disk bloat",
+      "category": "performance",
+      "reason": "Large logs indicate potential memory/disk pressure",
+      "target_file": "alpha_fund_v3/core/always_on_daemon.js",
+      "estimated_effort": 10,
+      "estimated_impact": "medium",
+      "score": 10
+    },
+    {
+      "id": "hyp_1785709302946_o0wpn",
+      "title": "Add functional smoke tests to capability modules",
+      "category": "capability",
+      "reason": "Research emphasizes automated testing for agent reliability",
+      "target_file": "safe_capability_verifier.js",
+      "estimated_effort": 20,
+      "estimated_impact": "high",
+      "score": 10
+    },
+    {
+      "id": "hyp_1785709302946_jqetz",
+      "title": "Rotate always_on_daemon.log when >100KB",
+      "category": "performance",
+      "reason": "Log grew to 350KB+ in one day",
+      "target_file": "alpha_fund_v3/core/always_on_daemon.js",
+      "estimated_effort": 10,
+      "estimated_impact": "medium",
+      "score": 10
+    },
+    {
+      "id": "hyp_1785709302946_tfi06",
+      "title": "Prune duplicate test plans in planner.js",
+      "category": "workflow",
+      "reason": "10 active plans, 9 are \"test\" noise — clutters memory",
+      "target_file": "project_claw_core/data/plans.json",
+      "estimated_effort": 5,
+      "estimated_impact": "low",
+      "score": 5
+    }
+  ]
+}

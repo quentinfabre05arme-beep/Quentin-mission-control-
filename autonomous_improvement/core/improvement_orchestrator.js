@@ -1,0 +1,115 @@
+/**
+ * Improvement Orchestrator v2
+ * Runs the full autonomous self-improvement cycle with learning and self-review.
+ */
+
+const fs = require('fs');
+const path = require('path');
+const { log, saveJson, loadJson } = require('./utils');
+const { loadLearning } = require('./learning_engine');
+
+const CONFIG = require('../config.json');
+
+const CapabilityProfiler = require('./capability_profiler');
+const ImprovementRadar = require('./improvement_radar');
+const HypothesisGenerator = require('./hypothesis_generator');
+const ChangeGenerator = require('./change_generator');
+const ExperimentRunner = require('./experiment_runner');
+
+const STATE_FILE = path.join(CONFIG.workspace, CONFIG.data_dir, 'improvement_state.json');
+
+function loadState() {
+  if (fs.existsSync(STATE_FILE)) {
+    try { return JSON.parse(fs.readFileSync(STATE_FILE, 'utf8')); } catch(e) { return {}; }
+  }
+  return { cycles: 0, last_run: null, experiments: 0, successes: 0, failures: 0 };
+}
+
+function saveState(state) {
+  fs.mkdirSync(path.dirname(STATE_FILE), { recursive: true });
+  fs.writeFileSync(STATE_FILE, JSON.stringify(state, null, 2));
+}
+
+async function runCycle() {
+  const state = loadState();
+  state.cycles++;
+  log(`=== IMPROVEMENT CYCLE #${state.cycles} ===`);
+
+  const learning = loadLearning();
+
+  // 1. Profile
+  const profile = CapabilityProfiler.analyze();
+
+  // 2. Research
+  const knowledge = await ImprovementRadar.scan();
+
+  // 3. Hypothesize
+  const allHypotheses = HypothesisGenerator.generate();
+
+  // 4. Pick top hypothesis, skipping repeatedly-failed ones
+  let top = null;
+  for (const h of allHypotheses) {
+    const failures = learning.failures_by_title[h.title] || 0;
+    if (failures >= 3) {
+      log(`Skipping repeatedly-failed hypothesis: ${h.title} (${failures} failures)`);
+      continue;
+    }
+    top = h;
+    break;
+  }
+
+  if (!top) {
+    log('No actionable hypothesis this cycle');
+    saveState(state);
+    return { success: true, state, note: 'no_hypothesis' };
+  }
+
+  log(`Selected hypothesis: ${top.title}`);
+
+  // 5. Generate change
+  const change = ChangeGenerator.generate(top);
+  if (!change) {
+    log('Could not generate safe change', 'warn');
+    state.failures++;
+    saveState(state);
+    return { success: false, state, note: 'no_change' };
+  }
+
+  // 6. Run experiment
+  const experiment = await ExperimentRunner.runExperiment(top, change);
+  if (experiment.outcome === 'success' && experiment.status === 'committed') {
+    state.successes++;
+  } else {
+    state.failures++;
+  }
+
+  state.last_run = new Date().toISOString();
+  state.experiments++;
+  saveState(state);
+
+  log(`Cycle complete: ${experiment.outcome}`);
+  return { success: experiment.outcome === 'success', state, experiment };
+}
+
+function startLoop(intervalMs = CONFIG.cycle_interval_ms) {
+  log(`Starting improvement loop every ${intervalMs / 60000} minutes`);
+  runCycle().then(() => {});
+  setInterval(runCycle, intervalMs);
+}
+
+module.exports = { runCycle, startLoop };
+
+if (require.main === module) {
+  const mode = process.argv[2] || 'once';
+  if (mode === 'loop') {
+    startLoop();
+  } else {
+    runCycle().then(r => {
+      console.log(JSON.stringify(r, null, 2));
+      process.exit(0);
+    }).catch(e => {
+      console.error(e);
+      process.exit(1);
+    });
+  }
+}

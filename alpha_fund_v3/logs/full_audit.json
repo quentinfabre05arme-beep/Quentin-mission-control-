@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-08-02T21:28:49.554Z",
+  "timestamp": "2026-08-02T22:27:10.152Z",
   "system": {
     "platform": "win32",
     "release": "10.0.26200",
     "arch": "x64",
     "cpus": 8,
     "total_ram_gb": 8,
-    "free_ram_gb": 0,
-    "uptime_hours": 181,
+    "free_ram_gb": 2,
+    "uptime_hours": 182,
     "user": "quent",
     "home": "C:\\Users\\quent"
   },
   "workspace": {
-    "total_files": 2545,
-    "total_dirs": 204,
-    "total_size": 89200671,
+    "total_files": 2594,
+    "total_dirs": 209,
+    "total_size": 89106111,
     "top_dirs": [
       {
         "name": "project_claw_core",
-        "files": 500,
+        "files": 526,
         "dirs": 10,
-        "size_mb": 24,
+        "size_mb": 23,
         "old_files": 0,
         "types": {
-          ".js": 181,
-          ".log": 118,
-          "(no ext)": 80,
+          ".js": 204,
+          ".log": 113,
+          "(no ext)": 79,
           ".md": 54,
-          ".json": 26
+          ".json": 35
         }
       },
       {
@@ -170,13 +170,13 @@
       },
       {
         "name": "memory",
-        "files": 49,
+        "files": 50,
         "dirs": 3,
         "size_mb": 0,
         "old_files": 0,
         "types": {
           ".json": 27,
-          ".md": 11,
+          ".md": 12,
           ".jsonl": 6,
           ".log": 4,
           ".1784988057731": 1
@@ -184,13 +184,14 @@
       },
       {
         "name": "scripts",
-        "files": 27,
+        "files": 29,
         "dirs": 0,
         "size_mb": 0,
         "old_files": 0,
         "types": {
           ".py": 17,
-          ".ps1": 9,
+          ".ps1": 10,
+          ".xml": 1,
           ".bat": 1
         }
       },
@@ -259,11 +260,6 @@
   "network": {},
   "security": {},
   "recommendations": [
-    {
-      "priority": "CRITICAL",
-      "issue": "RAM at 93%",
-      "action": "Restart gateway, close browser tabs, stop unused processes"
-    },
     {
       "priority": "MEDIUM",
       "issue": "90 empty directories",
