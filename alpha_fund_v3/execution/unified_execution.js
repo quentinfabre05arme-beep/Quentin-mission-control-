@@ -5,6 +5,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const logger = require('../utils/logger');
 
 // ─── CONFIG ─────────────────────────────────────────────────
 const CONFIG = {
@@ -28,7 +29,7 @@ function generateSignals(research, intelligence, portfolio) {
     if (c.rating.includes('BUY') && !existingPosition) {
       const confidence = c.confidence || 'LOW';
       if (confidence === 'HIGH' || (confidence === 'MEDIUM' && c.score >= 1.5)) {
-        signals.push({
+        const signal = {
           action: 'BUY',
           ticker: c.asset,
           score: c.score,
@@ -36,13 +37,15 @@ function generateSignals(research, intelligence, portfolio) {
           price: c.price,
           rating: c.rating,
           reason: `${c.technical} technical + ${c.sentiment} sentiment`
-        });
+        };
+signals.push(signal);
+        logger.logSignal(signal);
       }
     }
     
     // Exit signals
     if (existingPosition && c.rating.includes('SELL')) {
-      signals.push({
+      const signal = {
         action: 'SELL',
         ticker: c.asset,
         score: c.score,
@@ -50,7 +53,9 @@ function generateSignals(research, intelligence, portfolio) {
         price: c.price,
         rating: c.rating,
         reason: `Signal flipped to ${c.rating}`
-      });
+      };
+      signals.push(signal);
+      logger.logSignal(signal);
     }
   });
   
