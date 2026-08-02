@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-08-02T18:27:10.275Z",
+  "timestamp": "2026-08-02T19:27:10.305Z",
   "system": {
     "platform": "win32",
     "release": "10.0.26200",
     "arch": "x64",
     "cpus": 8,
     "total_ram_gb": 8,
-    "free_ram_gb": 1,
-    "uptime_hours": 178,
+    "free_ram_gb": 2,
+    "uptime_hours": 179,
     "user": "quent",
     "home": "C:\\Users\\quent"
   },
   "workspace": {
-    "total_files": 2312,
-    "total_dirs": 197,
-    "total_size": 85846381,
+    "total_files": 2385,
+    "total_dirs": 198,
+    "total_size": 92489598,
     "top_dirs": [
       {
         "name": "project_claw_core",
-        "files": 286,
-        "dirs": 8,
-        "size_mb": 21,
+        "files": 358,
+        "dirs": 9,
+        "size_mb": 27,
         "old_files": 0,
         "types": {
-          ".js": 135,
+          ".js": 108,
+          ".log": 78,
           "(no ext)": 71,
-          ".log": 43,
-          ".json": 8,
-          ".png": 6
+          ".md": 54,
+          ".json": 16
         }
       },
       {
@@ -73,12 +73,12 @@
       },
       {
         "name": "alpha_fund_v3",
-        "files": 146,
+        "files": 147,
         "dirs": 14,
         "size_mb": 5,
         "old_files": 0,
         "types": {
-          ".js": 72,
+          ".js": 73,
           ".json": 30,
           ".log": 16,
           ".md": 8,
