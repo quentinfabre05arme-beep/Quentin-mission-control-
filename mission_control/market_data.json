@@ -1,17 +1,17 @@
 {
-  "timestamp": "2026-08-02T18:00:38.628Z",
+  "timestamp": "2026-08-02T19:04:00.969Z",
   "assets": {
     "BTC": {
-      "price": 63258,
-      "change_24h": 0.9619793047678981,
+      "price": 63315,
+      "change_24h": 1.257043546265831,
       "source": "coingecko",
       "signal": "NEUTRAL"
     },
     "ETH": {
-      "price": 1867.53,
-      "change_24h": 0.38496495331594066,
+      "price": 1874.25,
+      "change_24h": 2.0738088824513428,
       "source": "coingecko",
-      "signal": "NEUTRAL"
+      "signal": "BULLISH"
     },
     "NVDA": {
       "price": 200.75,

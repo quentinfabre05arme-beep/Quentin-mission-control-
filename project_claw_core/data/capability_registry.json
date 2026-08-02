@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-02T19:02:38.251Z",
-  "count": 101,
+  "generated_at": "2026-08-02T19:07:37.942Z",
+  "count": 102,
   "by_category": {
     "core": [
       "agent_swarm",
@@ -63,6 +63,7 @@
       "task_graph",
       "temperature_monitor",
       "ui_automation",
+      "unified_master_orchestrator",
       "unified_orchestrator",
       "usb_manager",
       "vector_brain",
@@ -649,6 +650,15 @@
       "class": "WinAPI",
       "lines": 111,
       "functions": 11,
+      "has_tests": true
+    },
+    {
+      "name": "unified_master_orchestrator",
+      "category": "core",
+      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\unified_master_orchestrator.js",
+      "class": "UnifiedMasterOrchestrator",
+      "lines": 133,
+      "functions": 9,
       "has_tests": true
     },
     {

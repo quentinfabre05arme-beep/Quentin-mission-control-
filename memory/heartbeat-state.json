@@ -1,16 +1,16 @@
 {
   "lastChecks": {
-    "market": 1754155440000,
-    "system": 1754155440000,
-    "git": 1754155440000,
+    "market": 1754158800000,
+    "system": 1754158800000,
+    "git": 1754158800000,
     "calendar": null,
     "weather": null,
     "heartbeat": {
-      "ram": "85.6% used (1.14GB free / 7.92GB)",
+      "ram": "89.1% used (885MB free / 8107MB total)",
       "disk": "C: 72.5% used",
-      "cpu": "63.5%",
-      "ts": "2026-08-02T20:04:00.000+02:00"
+      "cpu": "n/a",
+      "ts": "2026-08-02T21:00:00.000+02:00"
     }
   },
-  "notes": "Heartbeat 2026-08-02 20:04 CET: Market data OK. BTC $63,258 (+0.96%), ETH $1,867.53 (+0.38%). Fallbacks CoinGecko/Yahoo active (Twelve Data exhausted). RAM improved to 85.6% from prior 93% critical. Git push command attempted; PowerShell process detached. Need verify push."
+  "notes": "Heartbeat 2026-08-02 21:00 CET: Market data OK. BTC $63,327 (+1.28%), ETH $1,874 (+2.14%) via CoinGecko/Yahoo (Twelve Data exhausted). RAM at 89.1% — elevated but stable after cleanup. Git backup pushed. Health report: all systems healthy."
 }

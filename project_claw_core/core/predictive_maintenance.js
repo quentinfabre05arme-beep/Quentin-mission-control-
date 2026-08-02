@@ -118,6 +118,13 @@ class PredictiveMaintenance {
     
     return { ...diag, actions };
   }
+  predict() {
+    return this.autoFix();
+  }
+  
+  run() {
+    return this.autoFix();
+  }
 }
 
 module.exports = { PredictiveMaintenance };

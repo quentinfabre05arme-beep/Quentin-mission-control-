@@ -3,3 +3,4 @@
 {"id":"msbp44r0","timestamp":"2026-08-02T11:07:06.636Z","action":"HOLD","ticker":"MSTR","reasoning":"Underperforming BTC, no clear signal","context":{"price":93.28},"status":"completed","outcome":{"pnl_pct":6.068082420247379,"exit_price":98.94030728160676,"days_held":7,"simulated":true},"outcome_timestamp":"2026-08-02T11:07:06.645Z","correct":false}
 {"id":"msbp44r0","timestamp":"2026-08-02T11:07:06.636Z","action":"BUY","ticker":"HIMS","reasoning":"Telehealth momentum +2.7%","context":{"price":27.77},"status":"pending"}
 {"id":"msbpggqa","timestamp":"2026-08-02T11:16:42.034Z","action":"TEST","ticker":"BTC","reasoning":"Test decision","context":{},"status":"pending"}
+{"id":"msc5tg1i","timestamp":"2026-08-02T18:54:41.526Z","action":"BUY","ticker":"BTC","reasoning":"Fear & Greed at 27 (extreme fear) — contrarian signal","context":{},"status":"pending"}

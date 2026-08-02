@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "id": "fb_1785696305803",
+      "timestamp": "2026-08-02T18:45:05.803Z",
+      "source": "self_audit",
+      "issue": "RAM above 90%",
+      "action": "Trigger cleanup",
+      "status": "open"
+    }
+  ]
+}

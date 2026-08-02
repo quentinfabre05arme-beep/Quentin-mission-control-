@@ -1,0 +1,11 @@
+{
+  "ram_cleanup": {
+    "attempts": 3,
+    "successes": 2,
+    "failures": 1,
+    "last": {
+      "timestamp": "2026-08-02T18:45:40.709Z",
+      "success": false
+    }
+  }
+}
