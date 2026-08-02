@@ -13,7 +13,27 @@
 
 ---
 
-## Last Updated: August 1, 2026
+## Last Updated: August 3, 2026
+
+---
+
+## 🔍 Web Research Stack — August 2, 2026
+
+**Status:** Multi-source research router deployed.
+
+**Sources (priority order):**
+1. OpenSERP local (Docker, free, multi-engine) — pending Docker engine reboot
+2. Serper API (placeholder key unresolved)
+3. Browser-based Puppeteer + DuckDuckGo HTML — ✅ working now
+4. Direct HTTP fallbacks (blocked by bot detection)
+
+**Files:**
+- `project_claw_core/agents/browser_researcher.js` — headless browser research
+- `project_claw_core/agents/openserp_client.js` — OpenSERP client
+- `project_claw_core/agents/research_router.js` — unified router
+- `FREE_RESEARCH_STACK.md` — full research options guide
+
+**Action required:** User will reboot later to finish Docker Desktop initialization; then OpenSERP will auto-deploy via scheduled task.
 
 ---
 
