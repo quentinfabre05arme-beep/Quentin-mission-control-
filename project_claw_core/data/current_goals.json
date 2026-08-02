@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-08-02T17:37:56.138Z",
+  "goals": [
+    {
+      "id": "functional_capabilities",
+      "title": "Continue making top capabilities functional",
+      "reason": "258 capability files exist; most are stubs that need real implementations",
+      "priority": "high",
+      "action": "Implement real logic for GitHub, Slack, Discord, package installer, system monitor"
+    },
+    {
+      "id": "health_dashboard",
+      "title": "Build real-time health dashboard",
+      "reason": "Need visibility into RAM, disk, processes, cron jobs, API quotas",
+      "priority": "medium",
+      "action": "Create project_claw_core/core/health_dashboard.js"
+    }
+  ]
+}
