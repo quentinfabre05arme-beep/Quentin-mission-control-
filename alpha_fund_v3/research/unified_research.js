@@ -95,7 +95,19 @@ async function fetchPrices() {
     } catch (e) {}
   }
   
-  // Fill remaining gaps with Twelve Data API
+  // Fill remaining gaps with free web APIs (no local software)
+  for (const asset of CONFIG.assets) {
+    if (!prices[asset]) {
+      try {
+        const webPrice = await fetchWebPrice(asset);
+        if (webPrice) {
+          prices[asset] = webPrice;
+        }
+      } catch (e) {}
+    }
+  }
+  
+  // Fill remaining gaps with Twelve Data API (legacy)
   for (const asset of CONFIG.assets) {
     if (!prices[asset]) {
       try {
@@ -117,6 +129,75 @@ async function fetchPrices() {
   priceCache = { data: prices, timestamp: now };
   
   return prices;
+}
+
+// ─── FREE WEB PRICE FALLBACK (Yahoo/CoinGecko) ─────────────
+async function fetchWebPrice(asset) {
+  const cryptoAssets = ['BTC', 'ETH'];
+  const isCrypto = cryptoAssets.includes(asset);
+  
+  if (isCrypto) {
+    return await fetchCoinGeckoPrice(asset);
+  }
+  
+  return await fetchYahooPrice(asset);
+}
+
+async function fetchYahooPrice(symbol) {
+  try {
+    const https = require('https');
+    const url = `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?interval=1d&range=2d`;
+    
+    return new Promise((resolve, reject) => {
+      https.get(url, (res) => {
+        let data = '';
+        res.on('data', chunk => data += chunk);
+        res.on('end', () => {
+          try {
+            const json = JSON.parse(data);
+            const result = json.chart.result[0];
+            const meta = result.meta;
+            const regular = meta.regularMarketPrice;
+            const prev = meta.previousClose || meta.chartPreviousClose || result.indicators.adjclose[0].adjclose[0];
+            const change = prev ? ((regular - prev) / prev) * 100 : 0;
+            resolve({
+              price: regular,
+              change_24h: change,
+              source: 'yahoo',
+              timestamp: new Date().toISOString()
+            });
+          } catch (e) { resolve(null); }
+        });
+      }).on('error', () => resolve(null)).setTimeout(8000, () => resolve(null));
+    });
+  } catch (e) { return null; }
+}
+
+async function fetchCoinGeckoPrice(asset) {
+  try {
+    const https = require('https');
+    const ids = { BTC: 'bitcoin', ETH: 'ethereum' };
+    const url = `https://api.coingecko.com/api/v3/simple/price?ids=${ids[asset]}&vs_currencies=usd&include_24hr_change=true`;
+    
+    return new Promise((resolve, reject) => {
+      https.get(url, (res) => {
+        let data = '';
+        res.on('data', chunk => data += chunk);
+        res.on('end', () => {
+          try {
+            const json = JSON.parse(data);
+            const info = json[ids[asset]];
+            resolve({
+              price: info.usd,
+              change_24h: info.usd_24h_change || 0,
+              source: 'coingecko',
+              timestamp: new Date().toISOString()
+            });
+          } catch (e) { resolve(null); }
+        });
+      }).on('error', () => resolve(null)).setTimeout(10000, () => resolve(null));
+    });
+  } catch (e) { return null; }
 }
 
 function clearCache() {

@@ -52,6 +52,54 @@ const ASSETS = {
     symbol: 'HIMS',
     type: 'stock',
     displayName: 'Hims & Hers'
+  },
+  NVDA: {
+    twelvedata: 'NVDA',
+    coingecko: null,
+    yahoo: 'NVDA',
+    symbol: 'NVDA',
+    type: 'stock',
+    displayName: 'NVIDIA'
+  },
+  TSLA: {
+    twelvedata: 'TSLA',
+    coingecko: null,
+    yahoo: 'TSLA',
+    symbol: 'TSLA',
+    type: 'stock',
+    displayName: 'Tesla'
+  },
+  AAPL: {
+    twelvedata: 'AAPL',
+    coingecko: null,
+    yahoo: 'AAPL',
+    symbol: 'AAPL',
+    type: 'stock',
+    displayName: 'Apple'
+  },
+  COIN: {
+    twelvedata: 'COIN',
+    coingecko: null,
+    yahoo: 'COIN',
+    symbol: 'COIN',
+    type: 'stock',
+    displayName: 'Coinbase'
+  },
+  SPY: {
+    twelvedata: 'SPY',
+    coingecko: null,
+    yahoo: 'SPY',
+    symbol: 'SPY',
+    type: 'etf',
+    displayName: 'SPY'
+  },
+  QQQ: {
+    twelvedata: 'QQQ',
+    coingecko: null,
+    yahoo: 'QQQ',
+    symbol: 'QQQ',
+    type: 'etf',
+    displayName: 'Invesco QQQ'
   }
 };
 
