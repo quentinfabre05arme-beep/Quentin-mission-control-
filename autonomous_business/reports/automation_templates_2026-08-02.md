@@ -12,7 +12,7 @@ Reusable scripts for email/Notion/Airtable/workflows
 
 ## Evidence
 [
-  "Browser research completed. Market results: 3, Competitor: 3, Pricing: 3"
+  "Research router completed. Market: duckduckgo_browser 3, Competitor: duckduckgo_browser 3, Pricing: duckduckgo_browser 3"
 ]
 
 ## Next Steps

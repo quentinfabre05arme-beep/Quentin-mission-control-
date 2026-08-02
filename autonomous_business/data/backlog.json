@@ -300,7 +300,7 @@
     "profit_potential": 6,
     "alignment": 8,
     "score": 7.7,
-    "status": "validated",
+    "status": "built",
     "created_at": "2026-08-02T22:35:07.962Z",
     "validated": true,
     "evidence": [
@@ -415,7 +415,24 @@
         ]
       }
     ],
-    "tasks": []
+    "tasks": [
+      {
+        "name": "build_mvp",
+        "status": "done",
+        "result": {
+          "success": true,
+          "artifact": "C:\\Users\\quent\\.openclaw\\workspace\\autonomous_business\\reports\\newsletter_2026-08-02.md",
+          "type": "newsletter"
+        }
+      }
+    ],
+    "artifacts": [
+      {
+        "path": "C:\\Users\\quent\\.openclaw\\workspace\\autonomous_business\\reports\\newsletter_2026-08-02.md",
+        "type": "newsletter",
+        "created_at": "2026-08-02T23:35:54.685Z"
+      }
+    ]
   },
   {
     "id": "automation_templates",
@@ -428,11 +445,139 @@
     "profit_potential": 5,
     "alignment": 7,
     "score": 7.1,
-    "status": "idea",
+    "status": "built",
     "created_at": "2026-08-02T22:35:07.962Z",
-    "validated": false,
-    "evidence": [],
-    "tasks": []
+    "validated": true,
+    "evidence": [
+      {
+        "researched_at": "2026-08-02T23:35:06.599Z",
+        "market_queries": [
+          {
+            "query": "Automation Templates market size demand 2026",
+            "source": "duckduckgo_browser",
+            "results": [
+              {
+                "title": "Automation Statistics 2026: Comprehensive Industry Data and Market Insights",
+                "link": "https://thunderbit.com/blog/automation-statistics-industry-data-insights",
+                "snippet": "",
+                "source": "duckduckgo_browser",
+                "url": "https://thunderbit.com/blog/automation-statistics-industry-data-insights",
+                "summary": "Automation Statistics 2026: Comprehensive Industry Data and Market Insights Products Use Cases Tools Resources Pricing Web Scraping Service EN Add to Chrome Home Blogs Automation Statistics 2026: Comprehensive Industry Data and Market Insights Automation Statistics 2026: Comprehensive Industry Data and Market Insights Last Updated on May 18, 2026 by Shuai Guan 12 min read Follow: Data extraction powered by Thunderbit. Picture this: It’s 8:00 a.m. on a Monday, and your inbox is already overflowing. You’re juggling spreadsheets, chasing down approvals, and wondering if you’ll ever get to the “real” work. Now imagine a world where the tedious stuff just… handles itself. No, this isn’t a sci-fi movie or a dream after too much coffee—it’s the reality for a growing number of businesses in 2026, thanks to automation and AI. The numbers are in, and they’re not just impressive—they’re reshaping how we all work, compete, and even think about our jobs. I’ve spent years in SaaS and automation, and",
+                "full_length": 5000
+              },
+              {
+                "title": "Digital Process Automation Market Report 2026, Size, Segments",
+                "link": "https://www.thebusinessresearchcompany.com/report/digital-process-automation-global-market-report",
+                "snippet": "",
+                "source": "duckduckgo_browser",
+                "url": "https://www.thebusinessresearchcompany.com/report/digital-process-automation-global-market-report",
+                "summary": "Digital Process Automation Market Size, Forecast Report 2026-2030 Our Offerings By Industry By Function About Us Our Viewpoint NEW Senior Management Experts Panel Global Consultants Webinar Infographics Case Studies Illustrations In The Press Contact Us Search Reports Store Top 50 Healthcare Market Reports NEW Top 50 Non-Healthcare Market Reports NEW Opportunities And Strategies Reports Aerospace And Defense Agriculture Chemicals Construction Electrical And Electronics Financial Services Food And Beverages Healthcare Services Hospitality Information Technology Machinery Media Medical Equipment Metal And Mineral Mining Oil And Gas Paper, Plastics, Rubber, Wood And Textile Pharmaceuticals Professional Services Recreation Retail And Wholesale Services Social Services Transport Transport Services Utilities Veterinary Healthcare Filter Reports by Trends NEW Market Intelligence Platform About GMM Global Forecast NEW Mega Trends Analysis Use Cases Consultancies Corporate Planning &amp; Strate",
+                "full_length": 5000
+              },
+              {
+                "title": "Automation Software Market Size and Forecast Report 2026-2030",
+                "link": "https://www.thebusinessresearchcompany.com/report/automation-software-global-market-report",
+                "snippet": "",
+                "source": "duckduckgo_browser",
+                "url": "https://www.thebusinessresearchcompany.com/report/automation-software-global-market-report",
+                "summary": "Automation Software Market Size and Forecast Report 2026-2030 Our Offerings By Industry By Function About Us Our Viewpoint NEW Senior Management Experts Panel Global Consultants Webinar Infographics Case Studies Illustrations In The Press Contact Us Search Reports Store Top 50 Healthcare Market Reports NEW Top 50 Non-Healthcare Market Reports NEW Opportunities And Strategies Reports Aerospace And Defense Agriculture Chemicals Construction Electrical And Electronics Financial Services Food And Beverages Healthcare Services Hospitality Information Technology Machinery Media Medical Equipment Metal And Mineral Mining Oil And Gas Paper, Plastics, Rubber, Wood And Textile Pharmaceuticals Professional Services Recreation Retail And Wholesale Services Social Services Transport Transport Services Utilities Veterinary Healthcare Filter Reports by Trends NEW Market Intelligence Platform About GMM Global Forecast NEW Mega Trends Analysis Use Cases Consultancies Corporate Planning &amp; Strategy A",
+                "full_length": 5000
+              }
+            ]
+          }
+        ],
+        "competitor_queries": [
+          {
+            "query": "Automation Templates competitors alternatives",
+            "source": "duckduckgo_browser",
+            "results": [
+              {
+                "title": "Top 8 Power Automate Alternatives: Updated for 2026 - FlowForma",
+                "link": "https://www.flowforma.com/blog/power-automate-alternatives-and-competitors",
+                "snippet": "",
+                "source": "duckduckgo_browser",
+                "url": "https://www.flowforma.com/blog/power-automate-alternatives-and-competitors",
+                "summary": "Top 8 Power Automate Alternatives: Updated for 2026 Platforms Automation Platform › FlowAssure › Platform Platform Overview AI Suite Form Automation Workflow Automation Insights Document Generation Features Mobile App Engage Governance Integrations Compliance Collaborate Microsoft Teams Pricing &amp; Info Pricing Benefits Return On Investment No Code Approach Migrations InfoPath Nintex Power Automate Kissflow Platform Platform Overview Showcase Webinar Request Demo Solutions Industries Insurance Financial Services Education Oil &amp; Gas Healthcare Construction See all industries → Roles Business Leaders IT Leaders Operations Leaders Chief Financial Officers Heads of HR Business Analysts See all roles → Resources Learn Case Studies Reports and eBooks Brochures Events and Webinars Video Library News Blog Support Support Services Training F.A.Q.s Customer Portal Company About About Us Our Customers Our Reviews Our Partners Get in Touch Contact Us Schedule a Call Book Demo Free Trial Book",
+                "full_length": 5000
+              },
+              {
+                "title": "10 Microsoft Power Automate alternatives to try in 2026",
+                "link": "https://www.gumloop.com/blog/power-automate-alternatives",
+                "snippet": "",
+                "source": "duckduckgo_browser",
+                "url": "https://www.gumloop.com/blog/power-automate-alternatives",
+                "summary": "10 Microsoft Power Automate alternatives to try in 2026 Use Cases Data Analysis Agent Support Agent CRM Agent Meeting Prep Agent Call Analysis Agent Resources Explore Templates Blog Customer stories Learn University Learning cohorts Webinars Docs Community Hire an expert Creators Forum Enterprise Careers Pricing Data Analysis Agent Get instant answers, directly from Slack Support Agent Automatically triage issues and spot patterns. CRM Agent Manage your CRM without clicking into your CRM. Meeting Prep Agent Triage, summarize and resolve requests Call Analysis Agent Understand what&#x27;s working through natural conversation. Explore Templates Launch ready-made AI automations in minutes Blog Product updates, how-tos, customer stories and AI updates Customer stories How AI-native teams automate with Gumloop Learn University Self-placed lessons to build AI workflows like a pro Learning Cohorts Week-long AI automation crash course Webinars See AI pros build real use cases, live and on-dema",
+                "full_length": 5000
+              },
+              {
+                "title": "Template Automation Alternatives & Competitors | 2026",
+                "link": "https://www.serchen.com/company/template-automation/alternatives/",
+                "snippet": "",
+                "source": "duckduckgo_browser",
+                "summary": "",
+                "error": "Invalid URL"
+              }
+            ]
+          }
+        ],
+        "pricing_queries": [
+          {
+            "query": "Automation Templates pricing subscription",
+            "source": "duckduckgo_browser",
+            "results": [
+              {
+                "title": "Power Automate Pricing | Microsoft Power Platform",
+                "link": "https://www.microsoft.com/en/power-platform/products/power-automate/pricing",
+                "snippet": "",
+                "source": "duckduckgo_browser",
+                "url": "https://www.microsoft.com/en/power-platform/products/power-automate/pricing",
+                "summary": "Power Automate Pricing | Microsoft Power Platform This is the Trace Id: 572d243b446f5e4da6d1ce83abea5a56 Skip to main content Power Platform Power Automate Build an agentic enterprise Try for free Guided Tours Security &amp; Governance Dataverse Connectors Power BI Desktop Pro Premium Embedded Report Server Power Apps Power Automate Power Pages Copilot Studio Pricing Partners Power Automate Learn Power Automate Blog Documentation Power Automate Support Power Automate Community Business Process &amp; Workflow Automation Topics Buy now Start free Sign in Choose your billing country/region: Afghanistan Albania American Samoa Angola Anguilla Antarctica Antigua and Barbuda Armenia Azerbaijan Bahamas Bahrain Bangladesh Barbados Belize Bermuda Bhutan Bolivia Bonaire, Sint Eustatius and Saba Bosnia &amp; Herzegovina Botswana British Indian Ocean Territory British Virgin Islands Brunei Cambodia Cameroon Cape Verde Cayman Islands Christmas Island Cocos (Keeling) Islands Cook Islands Curaçao Cypr",
+                "full_length": 5000
+              },
+              {
+                "title": "Pricing - Automation | Microsoft Azure",
+                "link": "https://azure.microsoft.com/en-us/pricing/details/automation/",
+                "snippet": "",
+                "source": "duckduckgo_browser",
+                "url": "https://azure.microsoft.com/en-us/pricing/details/automation/",
+                "summary": "Pricing - Automation | Microsoft Azure This browser is no longer supported. Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support. Download Microsoft Edge More information Skip to main content Microsoft Azure Azure Azure Home Explore Products Popular Popular View all products (200+) Microsoft Foundry Azure Copilot GitHub Copilot Azure Kubernetes Service (AKS) Azure Cosmos DB Azure Database for PostgreSQL Azure Arc​ Microsoft Fabric Linux virtual machines in Azure AI + Machine learning AI + Machine learning Foundry Models Foundry Agent Service Foundry IQ Foundry Tools Foundry Control Plane Observability in Foundry Control Plane Azure OpenAI in Foundry Models Azure Speech in Foundry Tools Azure Machine Learning Databases + analytics Databases + analytics View all databases Azure Cosmos DB Azure DocumentDB Azure SQL Azure Database for PostgreSQL Azure Managed Redis Microsoft Fabric Azure Databricks Compute Compute Linux virtual machine",
+                "full_length": 5000
+              },
+              {
+                "title": "Workflow Automation Pricing & Subscription Plans 2025",
+                "link": "https://4dventures.co/blog/workflow-automation-software-pricing-guide",
+                "snippet": "",
+                "source": "duckduckgo_browser",
+                "url": "https://4dventures.co/blog/workflow-automation-software-pricing-guide",
+                "summary": "Workflow Automation Pricing &amp; Subscription Plans 2025 | 4D Ventures Blog 4D Ventures 425-345-3040 Start a Conversation 4D Menu Home About Services Portfolio Team Blog Contact 425-345-3040 hello@4dventures.com Greater Seattle Area, WA Back to Blog April 18, 2026 ✦ Workflow Automation Workflow Automation Pricing &amp; Subscription Plans 2025 4D Ventures ✦ April 18, 2026 ✦ 6 min read Workflow Automation Pricing Guide Business Operations VENTURES If you are trying to make sense of workflow automation pricing and subscription plans 2025, the short answer is that costs split into two buckets: the monthly software subscription you pay a vendor, and the one-time setup work it takes to make that software actually run your business. Most owners only budget for the first bucket, then get surprised by the second. This guide breaks down both so you can put a real number on a project before you sign up for anything. We will cover how tool subscriptions are priced in 2025, the costs that vendors ",
+                "full_length": 5000
+              }
+            ]
+          }
+        ],
+        "findings": [
+          "Research router completed. Market: duckduckgo_browser 3, Competitor: duckduckgo_browser 3, Pricing: duckduckgo_browser 3"
+        ]
+      }
+    ],
+    "tasks": [
+      {
+        "name": "build_mvp",
+        "status": "done",
+        "result": {
+          "success": true,
+          "artifact": "C:\\Users\\quent\\.openclaw\\workspace\\autonomous_business\\reports\\automation_templates_2026-08-02.md",
+          "type": "report"
+        }
+      }
+    ],
+    "artifacts": [
+      {
+        "path": "C:\\Users\\quent\\.openclaw\\workspace\\autonomous_business\\reports\\automation_templates_2026-08-02.md",
+        "type": "report",
+        "created_at": "2026-08-02T23:35:54.696Z"
+      }
+    ]
   },
   {
     "id": "claw_core_service",
@@ -445,10 +590,119 @@
     "profit_potential": 9,
     "alignment": 6,
     "score": 6.45,
-    "status": "idea",
+    "status": "validated",
     "created_at": "2026-08-02T22:35:07.962Z",
-    "validated": false,
-    "evidence": [],
+    "validated": true,
+    "evidence": [
+      {
+        "researched_at": "2026-08-02T23:35:32.303Z",
+        "market_queries": [
+          {
+            "query": "Claw Core as a Service market size demand 2026",
+            "source": "duckduckgo_browser",
+            "results": [
+              {
+                "title": "Global Claw machine market Analysis 2026-2035 | Strategic Insights",
+                "link": "https://www.businessresearchinsights.com/market-reports/claw-machine-market-120331",
+                "snippet": "",
+                "source": "duckduckgo_browser",
+                "url": "https://www.businessresearchinsights.com/market-reports/claw-machine-market-120331",
+                "summary": "Global Claw machine market Analysis 2026–2035 | Strategic Insights US: +1 (888) 690-5999 (Toll-Free) UK: +44 8083 023308 (Toll-Free) Claw Machine Market Last Updated: 13 July 2026 | Report ID: 120331 &times; Industries HEALTHCARE CHEMICALS &amp; MATERIALS INFORMATION &amp; TECHNOLOGY MACHINERY &amp; EQUIPMENT ENERGY &amp; POWER AEROSPACE &amp; DEFENSE FOOD &amp; BEVERAGES AGRICULTURE CONSUMER GOODS AUTOMOTIVE &amp; TRANSPORTATION Mega trends Blogs About Contact Industries HEALTHCARE CHEMICALS &amp; MATERIALS INFORMATION &amp; TECHNOLOGY MACHINERY &amp; EQUIPMENT ENERGY &amp; POWER AEROSPACE &amp; DEFENSE FOOD &amp; BEVERAGES AGRICULTURE CONSUMER GOODS AUTOMOTIVE &amp; TRANSPORTATION Mega trends Blogs About Contact Regional/Country Report Global North America Europe Asia Pacific South America Middle East Africa United States Japan Germany United Kingdom France Canada Italy Australia South Korea Saudi Arabia China Spain Download FREE Sample Get a Quote Machinery &amp; Equipment / Claw Ma",
+                "full_length": 5000
+              },
+              {
+                "title": "Claw Machine Market Size, Share, Growth Trends & Forecast 2032",
+                "link": "https://www.maximizemarketresearch.com/market-report/claw-machine-market/77400/",
+                "snippet": "",
+                "source": "duckduckgo_browser",
+                "url": "https://www.maximizemarketresearch.com/market-report/claw-machine-market/77400/",
+                "summary": "Claw Machine Market Size, Share, Growth Trends &amp; Forecast 2032 Skip to main content Home About Company About Us Leadership Reports Technology &amp; Innovation IT and Telecommunication Electronics Automation and Process Control Semiconductor Engineering Equipment Industry &amp; Manufacturing Automobile Automotive Components Logistics and Transportation Aerospace and Defense Consumer Goods and Services Healthcare &amp; Life Sciences Healthcare Life Science Medical Devices Biotechnology Energy &amp; Resources Energy and Power Mining and Metals Chemical and Material Food and Beverages News Competitive Analysis Technology &amp; Innovation IT and Telecommunication Electronics Biotechnology Automation and Process Control Semiconductor Industry &amp; Manufacturing Automotive and Transportation Aerospace and Defense Engineering Equipment Mining and Metals Healthcare &amp; Life Sciences Healthcare Life Science Medical Devices Biotechnology Energy &amp; Resources Energy and Power Chemical and",
+                "full_length": 5000
+              },
+              {
+                "title": "Anode Steel Claw Market Size Report 2026-2033: Sales ... - LinkedIn",
+                "link": "https://www.linkedin.com/pulse/anode-steel-claw-market-size-report-2026-2033-sales-revenue-d6upe",
+                "snippet": "",
+                "source": "duckduckgo_browser",
+                "url": "https://www.linkedin.com/pulse/anode-steel-claw-market-size-report-2026-2033-sales-revenue-d6upe",
+                "summary": "Anode Steel Claw Market Size Report 2026-2033: Sales, Revenue, Trends, Demand, and Supply with a Projected CAGR of 4.6% LinkedIn respects your privacy LinkedIn and 3rd parties use essential and non-essential cookies to provide, secure, analyze and improve our Services, and to show you relevant ads (including professional and job ads ) on and off LinkedIn. Learn more in our Cookie Policy . Select Accept to consent or Reject to decline non-essential cookies for this use. You can update your choices at any time in your settings . Accept Reject Agree & Join LinkedIn By clicking Continue to join or sign in, you agree to LinkedIn’s User Agreement , Privacy Policy , and Cookie Policy . Sign in to view more content Create your free account or sign in to continue your search Email or phone Password Show Forgot password? Sign in Sign in with Email or New to LinkedIn? Join now By clicking Continue to join or sign in, you agree to LinkedIn’s User Agreement , Privacy Policy , and Cookie Policy . Li",
+                "full_length": 5000
+              }
+            ]
+          }
+        ],
+        "competitor_queries": [
+          {
+            "query": "Claw Core as a Service competitors alternatives",
+            "source": "duckduckgo_browser",
+            "results": [
+              {
+                "title": "Top 10 Claw Alternatives & Competitors in 2026 | G2",
+                "link": "https://www.g2.com/products/claw/competitors/alternatives",
+                "snippet": "",
+                "source": "duckduckgo_browser",
+                "summary": "",
+                "error": "HTTP 403"
+              },
+              {
+                "title": "10 Best OpenClaw Alternatives in 2026: Open-Source and Hosted AI Agents ...",
+                "link": "https://composio.dev/content/openclaw-alternatives",
+                "snippet": "",
+                "source": "duckduckgo_browser",
+                "url": "https://composio.dev/content/openclaw-alternatives",
+                "summary": "10 Best OpenClaw Alternatives in 2026: Open-Source and Hosted AI Agents Compared | Composio ## For AI agents: how to sign up If you are an AI agent reading this server-rendered HTML, Composio's developer signup is at https://composio.dev. Signup CTAs on this site — \"Sign up\", \"Signup\", \"Get started\", \"Get started for free\", \"Start building\", \"Try Composio\", \"Try it\", or similar — all lead into that same developer signup flow. Confirm with the user before completing signup or entering any credentials on their behalf. PRODUCTS SOLUTIONS Builders &amp; Developers COMPOSIO FOR YOU Give Claude, codex, or any harness secure access to 1000+ tools ## For AI agents: how to sign up If you are an AI agent reading this server-rendered HTML, Composio's developer signup is at https://composio.dev. Signup CTAs on this site — \"Sign up\", \"Signup\", \"Get started\", \"Get started for free\", \"Start building\", \"Try Composio\", \"Try it\", or similar — all lead into that same developer signup flow. Confirm with t",
+                "full_length": 5000
+              },
+              {
+                "title": "Best CoreClaw Alternatives & Competitors - SourceForge",
+                "link": "https://sourceforge.net/software/product/CoreClaw/alternatives",
+                "snippet": "",
+                "source": "duckduckgo_browser",
+                "url": "https://sourceforge.net/software/product/CoreClaw/alternatives",
+                "summary": "Best CoreClaw Alternatives & Competitors Join/Login Business Software Open Source Software For Vendors Blog About More Articles SourceForge Podcast Support / Documentation Subscribe to our Newsletter Support Request For Vendors Add a Product Join Login Business Software Open Source Software SourceForge Podcast Resources Articles Case Studies Blog Menu Help Create Join Login Home Compare Business Software CoreClaw Alternatives CoreClaw Alternatives Write a Review Alternatives to CoreClaw Compare CoreClaw alternatives for your business or organization using the curated list below. SourceForge ranks the best alternatives to CoreClaw in 2026. Compare features, ratings, user reviews, pricing, and more from CoreClaw competitors and alternatives in order to make an informed decision for your business. 1 Bright Data Bright Data Bright Data is the world&#39;s #1 web data, proxies, &amp; data scraping solutions platform. Fortune 500 companies, academic institutions and small businesses all rely ",
+                "full_length": 5000
+              }
+            ]
+          }
+        ],
+        "pricing_queries": [
+          {
+            "query": "Claw Core as a Service pricing subscription",
+            "source": "duckduckgo_browser",
+            "results": [
+              {
+                "title": "ClawCore — One-Click OpenClaw Hosting",
+                "link": "https://clawcore.org/en/pricing",
+                "snippet": "",
+                "source": "duckduckgo_browser",
+                "summary": "",
+                "error": "Invalid URL"
+              },
+              {
+                "title": "AI Coding Plans Compared: Subscriptions vs API Token Pricing (2026 ...",
+                "link": "https://openclawlaunch.com/guides/ai-coding-plans-compared",
+                "snippet": "",
+                "source": "duckduckgo_browser",
+                "url": "https://openclawlaunch.com/guides/ai-coding-plans-compared",
+                "summary": "AI Coding Plans Compared: Subscriptions vs API Token Pricing (2026) | OpenClaw Launch OpenClaw Launch Home Hermes Skills Models Pricing Integrations Sign in Get Started ← Home Comparison Guide AI Coding Plans Compared: Subscriptions vs API Tokens There are two ways to pay for AI coding: a flat monthly subscription (ChatGPT Plus, Claude Pro, Cursor, Copilot) or pay-as-you-go API tokens (DeepSeek, MiniMax, OpenRouter, Groq). This guide puts the current mid-2026 prices side by side and helps you pick — including which keys to bring to your OpenClaw Launch bot . Prices below were checked in June 2026 and are listed in USD. AI pricing moves fast and promotional rates come and go — always confirm on the provider’s own pricing page (linked in each row) before you commit. Where a figure could not be confirmed from a primary source, it is marked (verify) . Subscriptions vs Tokens: the Core Difference A subscription (also called a “coding plan”) is a fixed monthly fee that buys you a usage allow",
+                "full_length": 5000
+              },
+              {
+                "title": "Claw Pricing - G2",
+                "link": "https://www.g2.com/products/claw/pricing",
+                "snippet": "",
+                "source": "duckduckgo_browser",
+                "summary": "",
+                "error": "HTTP 403"
+              }
+            ]
+          }
+        ],
+        "findings": [
+          "Research router completed. Market: duckduckgo_browser 3, Competitor: duckduckgo_browser 3, Pricing: duckduckgo_browser 3"
+        ]
+      }
+    ],
     "tasks": []
   }
 ]
