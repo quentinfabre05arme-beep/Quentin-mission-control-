@@ -12,7 +12,7 @@ Configurable paper trading bot engine as a service
 
 ## Evidence
 [
-  "Research agent completed queries"
+  "Research router completed. Market: duckduckgo_browser 3, Competitor: duckduckgo_browser 3, Pricing: duckduckgo_browser 3"
 ]
 
 ## Next Steps

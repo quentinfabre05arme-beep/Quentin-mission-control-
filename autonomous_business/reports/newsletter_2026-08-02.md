@@ -1,4 +1,4 @@
-# AI Research Reports — 2026-08-02
+# Alpha Fund Signal Newsletter — 2026-08-02
 
 ## Market Regime
 Scanning contrarian signals across BTC, ETH, MSTR, HIMS.
