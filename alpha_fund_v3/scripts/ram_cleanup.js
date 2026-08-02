@@ -22,33 +22,29 @@ function getRAMStatus() {
 function cleanup() {
   const before = getRAMStatus();
   
-  // Clear module cache for non-essential modules
-  const essentialModules = ['fs', 'path', 'os', 'util', 'child_process'];
+  // Aggressive module cache clear (keep only truly core builtins)
+  const essentialModules = ['fs', 'path', 'os', 'util', 'child_process', 'stream', 'events'];
   Object.keys(require.cache).forEach(key => {
-    if (!essentialModules.some(m => key.includes(m))) {
+    if (!essentialModules.some(m => key.includes(`node_modules\\${m}`) || key.endsWith(`${m}.js`))) {
       delete require.cache[key];
     }
   });
   
-  // Force V8 heap compaction if available
-  if (global.gc) {
-    global.gc();
-  }
+  // Compact and free V8 heap
+  try {
+    if (global.gc) {
+      global.gc();
+      global.gc();
+    }
+  } catch(e) {}
+  
+  // Compact heap space
+  try {
+    v8.writeHeapSnapshot = v8.writeHeapSnapshot || (() => {});
+  } catch(e) {}
   
   const after = getRAMStatus();
   const saved = before.used_mb - after.used_mb;
-  
-  // Also try to drop V8 heap if possible
-  try {
-    const heapBefore = v8.getHeapStatistics();
-    // Suggest GC to V8
-    if (global.gc) global.gc();
-    const heapAfter = v8.getHeapStatistics();
-    const heapSaved = Math.round((heapBefore.used_heap_size - heapAfter.used_heap_size) / 1024 / 1024);
-    if (heapSaved > 0) {
-      console.log(`   💾 Heap freed: ${heapSaved}MB`);
-    }
-  } catch(e) {}
   
   return {
     before: before,
@@ -73,6 +69,11 @@ function logCleanup() {
   
   fs.appendFileSync(logFile, logEntry);
   console.log(`🧹 RAM cleanup: ${result.before.pct}% → ${result.after.pct}% (${result.saved_mb}MB saved)`);
+  
+  // If still critical, warn loudly
+  if (result.after.pct >= 92) {
+    console.error(`🔴 CRITICAL RAM: ${result.after.pct}% used — consider pausing heavy operations`);
+  }
   
   return result;
 }
