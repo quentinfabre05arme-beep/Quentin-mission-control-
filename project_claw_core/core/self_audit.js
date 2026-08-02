@@ -102,8 +102,8 @@ class SelfAudit {
       if (!fs.existsSync(fullDir)) continue;
       const files = fs.readdirSync(fullDir).filter(f => {
         if (!f.endsWith('.js')) return false;
-        const base = f.replace(/_v\d+\.js$/, '.js');
-        return base === f || !fs.existsSync(path.join(fullDir, base));
+        if (/_v\d+\.js$/.test(f)) return false;
+        return true;
       });
       for (const file of files) {
         const filePath = path.join(fullDir, file);

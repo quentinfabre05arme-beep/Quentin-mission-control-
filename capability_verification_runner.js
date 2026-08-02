@@ -228,7 +228,8 @@ async function main() {
   console.log(`Verifying ${realCapabilities.length} capabilities...`);
   const results = [];
   for (const cap of realCapabilities) {
-    const result = await verifyCapability(cap, invoker);
+    const name = cap.name || path.basename(cap.path, '.js');
+    const result = await verifyCapability({ ...cap, name }, invoker);
     results.push(result);
     process.stdout.write(`${result.success ? '✅' : '❌'} ${cap.name}: ${result.success ? result.duration_ms + 'ms' : result.error}\n`);
   }

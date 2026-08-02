@@ -67,3 +67,4 @@ daily_briefing_example.py
 .credentials.enc
 .market_cache.json
 project_claw_core/data/unified_master_state.json
+project_claw_core/core_backup_test/
