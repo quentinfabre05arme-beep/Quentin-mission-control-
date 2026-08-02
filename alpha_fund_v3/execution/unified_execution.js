@@ -75,6 +75,18 @@ signals.push(signal);
       }
     }
     
+    // Track best price and trailing stop
+    if (!pos.best_price || currentPrice > pos.best_price) {
+      pos.best_price = currentPrice;
+      pos.trailing_stop = currentPrice * (1 - CONFIG.stop_loss);
+    }
+    if (pos.trailing_stop > pos.stop_loss) {
+      pos.stop_loss = pos.trailing_stop;
+    }
+    
+    // Update unrealized PnL
+    pos.unrealized_pnl = (currentPrice - pos.entry_price) * pos.quantity;
+    
     // Check hard stop loss or take profit
     if (currentPrice <= pos.stop_loss) {
       const exitSignal = {
@@ -167,7 +179,7 @@ function executePaper(sizedSignals, portfolio) {
       
       // Execute buy
       portfolio.cash -= cost;
-      portfolio.positions.push({
+      const newPosition = {
         ticker: signal.ticker,
         quantity: signal.shares,
         entry_price: signal.price,
@@ -175,8 +187,22 @@ function executePaper(sizedSignals, portfolio) {
         stop_loss: signal.stop_loss,
         take_profit: signal.take_profit,
         entry_date: new Date().toISOString(),
-        unrealized_pnl: 0
-      });
+        unrealized_pnl: 0,
+        realized_pnl: 0,
+        best_price: signal.price,
+        trailing_stop: signal.stop_loss
+      };
+      portfolio.positions.push(newPosition);
+      
+      portfolio.performance.by_ticker = portfolio.performance.by_ticker || {};
+      portfolio.performance.by_ticker[signal.ticker] = portfolio.performance.by_ticker[signal.ticker] || {
+        ticker: signal.ticker,
+        trades: 0,
+        wins: 0,
+        losses: 0,
+        total_pnl: 0,
+        avg_return_pct: 0
+      };
       
       portfolio.trades.push({
         action: 'BUY',
@@ -207,6 +233,28 @@ function executePaper(sizedSignals, portfolio) {
       const proceeds = position.quantity * signal.price;
       const pnl = proceeds - (position.quantity * position.entry_price);
       const pnl_pct = ((signal.price / position.entry_price) - 1) * 100;
+      
+      // Update per-ticker performance
+      portfolio.performance.by_ticker = portfolio.performance.by_ticker || {};
+      const tickerPerf = portfolio.performance.by_ticker[position.ticker] || {
+        ticker: position.ticker,
+        trades: 0,
+        wins: 0,
+        losses: 0,
+        total_pnl: 0,
+        avg_return_pct: 0
+      };
+      tickerPerf.trades += 1;
+      tickerPerf.total_pnl += pnl;
+      if (pnl > 0) tickerPerf.wins += 1;
+      else tickerPerf.losses += 1;
+      const allReturns = portfolio.trades
+        .filter(t => t.action === 'SELL' && t.ticker === position.ticker)
+        .map(t => t.pnl_pct || 0);
+      tickerPerf.avg_return_pct = allReturns.length > 0
+        ? allReturns.reduce((a, b) => a + b, 0) / allReturns.length
+        : pnl_pct;
+      portfolio.performance.by_ticker[position.ticker] = tickerPerf;
       
       portfolio.cash += proceeds;
       portfolio.positions = portfolio.positions.filter(p => p.ticker !== signal.ticker);
@@ -277,13 +325,20 @@ function updatePerformance(portfolio) {
     total_value: totalValue,
     cash: portfolio.cash,
     positions: portfolio.positions.length,
-    return_pct: portfolio.performance.total_return
+    return_pct: portfolio.performance.total_return,
+    by_ticker: portfolio.performance.by_ticker || {}
   });
   
-  // Trim history to last 90 days
   if (portfolio.history.length > 90) {
     portfolio.history = portfolio.history.slice(-90);
   }
+  
+  // Update per-ticker unrealized PnL for open positions
+  portfolio.positions.forEach(p => {
+    if (p.current_price) {
+      p.unrealized_pnl = (p.current_price - p.entry_price) * p.quantity;
+    }
+  });
 }
 
 module.exports = { generateSignals, sizePositions, executePaper, updatePerformance };
