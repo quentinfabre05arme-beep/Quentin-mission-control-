@@ -99,6 +99,10 @@ class FileHygiene {
     walk(dir);
     return { success: true, duplicates };
   }
+  
+  scanDirectory(dir, maxFiles = 1000) {
+    return this.findDuplicates(dir, maxFiles);
+  }
 }
 
 module.exports = { FileHygiene };

@@ -124,7 +124,18 @@ function run() {
   console.log(report);
 }
 
-module.exports = { generateReport, sendTelegram, run };
+class StatusReporter {
+  constructor() {}
+  generate() {
+    return { success: true, report: generateReport() };
+  }
+  run() {
+    run();
+    return { success: true };
+  }
+}
+
+module.exports = { StatusReporter, generateReport, sendTelegram, run };
 
 if (require.main === module) {
   run();

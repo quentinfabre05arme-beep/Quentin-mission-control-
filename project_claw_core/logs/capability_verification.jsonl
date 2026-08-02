@@ -115,3 +115,49 @@
 {"timestamp":"2026-08-02T19:29:11.915Z","capability":"calendar_agent","method":"listEvents","success":true,"duration_ms":995,"error":null,"result_summary":"{\"success\":true,\"result\":[]}"}
 {"timestamp":"2026-08-02T19:29:12.139Z","capability":"self_goal_generator","method":"run","success":false,"duration_ms":222,"error":"Method run not found","result_summary":"{\"success\":false,\"error\":\"Method run not found\"}"}
 {"timestamp":"2026-08-02T19:29:12.435Z","capability":"file_hygiene","method":"scanDirectory","success":false,"duration_ms":294,"error":"Method scanDirectory not found","result_summary":"{\"success\":false,\"error\":\"Method scanDirectory not found\"}"}
+{"timestamp":"2026-08-02T19:41:28.399Z","capability":"microsoft_browser_agent","method":"init","success":false,"duration_ms":2757,"error":"The browser is already running for C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\data\\microsoft_profile. Use a different `userDataDir` or stop the running browser first.","result_summary":"{\"success\":false,\"error\":\"The browser is already running for C:\\\\Users\\\\quent\\\\.openclaw\\\\workspace\\\\project_claw_core\\\\data\\\\microsoft_profile. Use a different `userDataDir` or stop the running brows"}
+{"timestamp":"2026-08-02T19:41:28.470Z","capability":"research_agent","method":"research","success":true,"duration_ms":68,"error":null,"result_summary":"{\"success\":true,\"result\":[]}"}
+{"timestamp":"2026-08-02T19:41:28.573Z","capability":"self_audit","method":"run","success":true,"duration_ms":102,"error":null,"result_summary":"{\"success\":true,\"result\":{\"timestamp\":\"2026-08-02T19:41:28.573Z\",\"summary\":{\"total\":101,\"real\":101,\"stubs\":0,\"syntax_errors\":0,\"real_percent\":\"100.0\"},\"syntax_errors_details\":[],\"real_capabilities\":[\""}
+{"timestamp":"2026-08-02T19:41:28.641Z","capability":"unified_master_orchestrator","method":"status","success":false,"duration_ms":67,"error":"Method status not found","result_summary":"{\"success\":false,\"error\":\"Method status not found\"}"}
+{"timestamp":"2026-08-02T19:41:31.617Z","capability":"scheduler_agent","method":"listTasks","success":true,"duration_ms":2975,"error":null,"result_summary":"{\"success\":true,\"result\":{\"success\":true,\"output\":\"\\\"Nom de la t�che\\\",\\\"Prochaine ex�cution\\\",\\\"Statut\\\"\\r\\n\\\"\\\\Aggressive-Scaling-Daily\\\",\\\"03/08/2026 09:00:00\\\",\\\"Pr�t\\\"\\r\\n\\\"\\\\Alpha-Fund-Research-"}
+{"timestamp":"2026-08-02T19:41:31.677Z","capability":"microsoft_graph_agent","method":"init","success":false,"duration_ms":58,"error":"Method init not found","result_summary":"{\"success\":false,\"error\":\"Method init not found\"}"}
+{"timestamp":"2026-08-02T19:41:35.413Z","capability":"gmail_agent","method":"init","success":false,"duration_ms":3734,"error":"Method init not found","result_summary":"{\"success\":false,\"error\":\"Method init not found\"}"}
+{"timestamp":"2026-08-02T19:41:36.894Z","capability":"predictive_maintenance","method":"run","success":true,"duration_ms":1480,"error":null,"result_summary":"{\"success\":true,\"result\":{\"health\":{\"timestamp\":\"2026-08-02T19:41:35.457Z\",\"memory\":{\"total_gb\":\"7.92\",\"used_gb\":\"7.47\",\"free_gb\":\"0.44\",\"used_percent\":\"94.4\"},\"cpu\":{\"count\":8,\"model\":\"Intel(R) Core("}
+{"timestamp":"2026-08-02T19:41:37.146Z","capability":"status_reporter","method":"generate","success":false,"duration_ms":251,"error":"Method generate not found","result_summary":"{\"success\":false,\"error\":\"Method generate not found\"}"}
+{"timestamp":"2026-08-02T19:41:37.200Z","capability":"microsoft_graph_auth","method":"initiateAuth","success":false,"duration_ms":53,"error":"Microsoft credentials not found. Run: Store-Microsoft-Credentials.bat","result_summary":"{\"success\":false,\"error\":\"Microsoft credentials not found. Run: Store-Microsoft-Credentials.bat\"}"}
+{"timestamp":"2026-08-02T19:41:38.033Z","capability":"system_health_monitor","method":"getHealth","success":true,"duration_ms":832,"error":null,"result_summary":"{\"success\":true,\"result\":{\"timestamp\":\"2026-08-02T19:41:37.248Z\",\"memory\":{\"total_gb\":\"7.92\",\"used_gb\":\"7.52\",\"free_gb\":\"0.40\",\"used_percent\":\"94.9\"},\"cpu\":{\"count\":8,\"model\":\"Intel(R) Core(TM) i7-855"}
+{"timestamp":"2026-08-02T19:41:38.530Z","capability":"calendar_agent","method":"listEvents","success":true,"duration_ms":496,"error":null,"result_summary":"{\"success\":true,\"result\":[]}"}
+{"timestamp":"2026-08-02T19:41:38.603Z","capability":"self_goal_generator","method":"run","success":false,"duration_ms":71,"error":"Method run not found","result_summary":"{\"success\":false,\"error\":\"Method run not found\"}"}
+{"timestamp":"2026-08-02T19:41:38.653Z","capability":"file_hygiene","method":"scanDirectory","success":false,"duration_ms":50,"error":"Method scanDirectory not found","result_summary":"{\"success\":false,\"error\":\"Method scanDirectory not found\"}"}
+{"capability":"research_agent","success":false,"duration_ms":1,"error":"query.replace is not a function"}
+{"capability":"self_audit","success":true,"duration_ms":51,"error":null}
+{"capability":"unified_master_orchestrator","success":true,"duration_ms":50,"error":null}
+{"capability":"scheduler_agent","success":false,"duration_ms":189,"error":"Command failed: schtasks /run /tn \"undefined\"\nErreur�: Le fichier sp�cifi� est introuvable.\r\r\n"}
+{"capability":"predictive_maintenance","success":true,"duration_ms":908,"error":null}
+{"capability":"status_reporter","success":true,"duration_ms":205,"error":null}
+{"capability":"microsoft_graph_auth","success":false,"duration_ms":2,"error":"Microsoft credentials not found. Run: Store-Microsoft-Credentials.bat"}
+{"capability":"system_health_monitor","success":true,"duration_ms":741,"error":null}
+{"capability":"calendar_agent","success":true,"duration_ms":345,"error":null}
+{"capability":"self_goal_generator","success":true,"duration_ms":4,"error":null}
+{"capability":"file_hygiene","success":true,"duration_ms":10,"error":null}
+{"capability":"research_agent","success":false,"duration_ms":1,"error":"query.replace is not a function"}
+{"capability":"self_audit","success":true,"duration_ms":55,"error":null}
+{"capability":"unified_master_orchestrator","success":true,"duration_ms":52,"error":null}
+{"capability":"scheduler_agent","success":false,"duration_ms":71,"error":"Command failed: schtasks /run /tn \"undefined\"\nErreur�: Le fichier sp�cifi� est introuvable.\r\r\n"}
+{"capability":"predictive_maintenance","success":true,"duration_ms":751,"error":null}
+{"capability":"status_reporter","success":true,"duration_ms":176,"error":null}
+{"capability":"microsoft_graph_auth","success":false,"duration_ms":3,"error":"Microsoft credentials not found. Run: Store-Microsoft-Credentials.bat"}
+{"capability":"system_health_monitor","success":true,"duration_ms":788,"error":null}
+{"capability":"calendar_agent","success":true,"duration_ms":412,"error":null}
+{"capability":"self_goal_generator","success":true,"duration_ms":10,"error":null}
+{"capability":"file_hygiene","success":true,"duration_ms":2,"error":null}
+{"capability":"research_agent","success":false,"duration_ms":9,"error":"Cannot read properties of undefined (reading 'replace')"}
+{"capability":"self_audit","success":true,"duration_ms":53,"error":null}
+{"capability":"unified_master_orchestrator","success":true,"duration_ms":68,"error":null}
+{"capability":"scheduler_agent","success":false,"duration_ms":84,"error":"Command failed: schtasks /run /tn \"undefined\"\nErreur�: Le fichier sp�cifi� est introuvable.\r\r\n"}
+{"capability":"predictive_maintenance","success":true,"duration_ms":744,"error":null}
+{"capability":"status_reporter","success":true,"duration_ms":184,"error":null}
+{"capability":"system_health_monitor","success":true,"duration_ms":534,"error":null}
+{"capability":"calendar_agent","success":true,"duration_ms":3113,"error":null}
+{"capability":"self_goal_generator","success":true,"duration_ms":7,"error":null}
+{"capability":"file_hygiene","success":true,"duration_ms":7,"error":null}

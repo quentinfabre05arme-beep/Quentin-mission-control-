@@ -68,3 +68,6 @@ daily_briefing_example.py
 .market_cache.json
 project_claw_core/data/unified_master_state.json
 project_claw_core/core_backup_test/
+project_claw_core/logs/capability_verification.jsonl
+project_claw_core/logs/capability_verify_run.txt
+project_claw_core/core_backup_verify/

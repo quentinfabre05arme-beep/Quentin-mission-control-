@@ -41,6 +41,7 @@ class UnifiedOrchestrator {
   
   async runCommand(command) {
     log(`Run command: ${command}`);
+    if (typeof command !== 'string') return { success: false, error: 'command must be string' };
     const parts = command.split(' ');
     const capability = parts[0];
     const method = parts[1] || 'run';

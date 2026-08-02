@@ -47,6 +47,8 @@ function checkUrl(url, timeoutMs = 10000) {
   });
 }
 
+const COMMON_SITES = ['https://www.google.com', 'https://github.com', 'https://outlook.live.com', 'https://x.com', 'https://web.telegram.org'];
+
 class WebMonitor {
   constructor() {
     this.history = [];
@@ -77,6 +79,9 @@ class WebMonitor {
     if (this.history.length === 0) return [];
     const last = this.history[this.history.length - 1];
     return last.results.filter(r => !r.up);
+  }
+  async checkAll(urls = COMMON_SITES) {
+    return await this.check(urls);
   }
 }
 
