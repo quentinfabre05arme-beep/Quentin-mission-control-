@@ -1,6 +1,6 @@
 /**
- * Unified Logger
- * Logs errors, trades, and system events
+ * Unified Logger v2.0
+ * ASCII-safe logging for cross-platform compatibility
  */
 
 const fs = require('fs');
@@ -19,7 +19,7 @@ function logError(error, context = '') {
   const timestamp = new Date().toISOString();
   const entry = `[${timestamp}] ERROR: ${error.message || error}\nContext: ${context}\nStack: ${error.stack || 'N/A'}\n---\n`;
   fs.appendFileSync(path.join(LOG_DIR, 'errors.log'), entry);
-  console.error(`❌ Error logged: ${error.message || error}`);
+  console.error(`Error logged: ${error.message || error}`);
 }
 
 function logTrade(trade) {
@@ -43,4 +43,32 @@ function logSignal(signal) {
   fs.appendFileSync(path.join(LOG_DIR, 'signals.log'), entry);
 }
 
-module.exports = { logError, logTrade, logEvent, logSignal };
+function logDecision(action, data = {}) {
+  ensureLogDir();
+  const timestamp = new Date().toISOString();
+  const entry = `[${timestamp}] DECISION: ${action}\nData: ${JSON.stringify(data)}\n---\n`;
+  fs.appendFileSync(path.join(LOG_DIR, 'decisions.log'), entry);
+}
+
+function logInfo(message, data = {}) {
+  ensureLogDir();
+  const timestamp = new Date().toISOString();
+  const entry = `[${timestamp}] INFO: ${message}\nData: ${JSON.stringify(data)}\n---\n`;
+  fs.appendFileSync(path.join(LOG_DIR, 'info.log'), entry);
+}
+
+// ASCII-safe plain logger (no unicode corruption)
+function logPlain(level, message, data = {}) {
+  ensureLogDir();
+  const timestamp = new Date().toISOString();
+  const safeMessage = (message || '').toString().replace(/[^\x00-\x7F]/g, '?');
+  const entry = JSON.stringify({
+    timestamp,
+    level,
+    message: safeMessage,
+    data
+  }) + '\n';
+  fs.appendFileSync(path.join(LOG_DIR, 'plain.log'), entry);
+}
+
+module.exports = { logError, logTrade, logEvent, logSignal, logDecision, logInfo, logPlain };
