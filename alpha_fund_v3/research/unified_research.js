@@ -205,36 +205,21 @@ function clearCache() {
 }
 
 // ─── TECHNICAL ANALYSIS ─────────────────────────────────────
-function analyzeTechnical(prices) {
-  const signals = {};
+async function analyzeTechnical(prices) {
+  const ta = require('./ta_engine');
+  const analysis = await ta.analyzeAll(prices);
   
-  Object.entries(prices).forEach(([asset, data]) => {
-    const change = data.change_24h || 0;
-    let score = 0;
-    let confidence = 'LOW';
-    
-    // Momentum scoring
-    if (change > 3) score += 2;
-    else if (change > 1) score += 1;
-    else if (change < -3) score -= 2;
-    else if (change < -1) score -= 1;
-    
-    // Confidence based on data quality
-    if (data.source === 'twelvedata') confidence = 'HIGH';
-    else if (data.source === 'coingecko') confidence = 'MEDIUM';
-    
-    signals[asset] = {
-      asset,
-      price: data.price,
-      change_24h: change,
-      momentum_score: score,
-      technical_rating: score > 1 ? 'BULLISH' : score < -1 ? 'BEARISH' : 'NEUTRAL',
-      confidence,
-      source: data.source
-    };
-  });
-  
-  return signals;
+  return Object.entries(analysis).map(([asset, data]) => ({
+    asset,
+    price: data.price,
+    change_24h: data.change_24h,
+    momentum_score: data.score,
+    technical_rating: data.rating,
+    confidence: data.source === 'YAHOO-TA' ? 'HIGH' : 'MEDIUM',
+    source: data.source,
+    indicators: data.indicators,
+    reasons: data.reasons
+  })).reduce((acc, item) => { acc[item.asset] = item; return acc; }, {});
 }
 
 // ─── SENTIMENT ANALYSIS ─────────────────────────────────────
@@ -312,11 +297,14 @@ function compositeScore(technical, sentiment, asymmetry) {
   Object.values(technical).forEach(t => {
     const opp = asymmetry.find(a => a.ticker === t.asset);
     
-    let score = t.momentum_score;
+    let score = t.momentum_score || 0;
     
     // Add sentiment influence
     if (sentiment.contrarian_signal === 'BULLISH' && t.change_24h < 0) {
       score += 1; // Contrarian boost
+    }
+    if (sentiment.contrarian_signal === 'BEARISH' && t.change_24h > 0) {
+      score -= 1; // Contrarian short boost
     }
     
     // Add asymmetry
@@ -343,7 +331,9 @@ function compositeScore(technical, sentiment, asymmetry) {
       change_24h: t.change_24h,
       confidence: t.confidence,
       technical: t.technical_rating,
-      sentiment: sentiment.fear_greed_classification
+      sentiment: sentiment.fear_greed_classification,
+      indicators: t.indicators,
+      reasons: t.reasons
     };
   });
   
@@ -357,7 +347,7 @@ async function runAll() {
   const prices = await fetchPrices();
   console.log(`   📊 Fetched prices for ${Object.keys(prices).length} assets`);
   
-  const technical = analyzeTechnical(prices);
+  const technical = await analyzeTechnical(prices);
   console.log(`   📈 Technical analysis complete`);
   
   const sentiment = analyzeSentiment();
