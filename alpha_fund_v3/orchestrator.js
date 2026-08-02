@@ -20,7 +20,8 @@ const CONFIG = {
   data_dir: path.join(__dirname, 'data'),
   config_dir: path.join(__dirname, 'config'),
   enable_ram_cleanup: true, // Auto-cleanup between cycles
-  enable_autonomy: true // A+ engine integration
+  enable_autonomy: true, // A+ engine integration
+  ibkr_read_only: true // NEVER trade via IBKR; data only
 };
 
 // ─── A+ AUTONOMY ENGINE ────────────────────────────────────
@@ -124,7 +125,15 @@ async function runIntelligence() {
 async function runExecution(research, intelligence) {
   console.log('⚡ [EXECUTION] Generating signals & sizing positions...\n');
   
+  // Hard safety: verify paper mode before any trade
   const execution = require('./execution/unified_execution');
+  try {
+    execution.enforcePaperMode();
+  } catch(e) {
+    console.error('❌ ' + e.message);
+    return { signals: [], trades: [], portfolio: loadPortfolio() };
+  }
+  
   const portfolio = loadPortfolio();
   
   const signals = execution.generateSignals(research, intelligence, portfolio);

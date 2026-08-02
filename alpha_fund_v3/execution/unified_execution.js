@@ -9,13 +9,24 @@ const logger = require('../utils/logger');
 
 // ─── CONFIG ─────────────────────────────────────────────────
 const CONFIG = {
-  mode: 'PAPER', // PAPER | LIVE
+  mode: 'PAPER', // PAPER | LIVE — always PAPER until explicit user approval
+  ibkr_read_only: true, // NEVER place orders via IBKR
   max_positions: 10,
   risk_per_trade: 0.15,
   stop_loss: 0.08,
   take_profit: 0.25,
   min_confidence: 'MEDIUM'
 };
+
+// ─── SAFETY GUARD ───────────────────────────────────────────
+function enforcePaperMode() {
+  if (CONFIG.mode !== 'PAPER') {
+    throw new Error('Execution blocked: only PAPER trading is allowed. Set mode explicitly to PAPER.');
+  }
+  if (!CONFIG.ibkr_read_only) {
+    throw new Error('Execution blocked: IBKR connector must remain read-only.');
+  }
+}
 
 // ─── SIGNAL GENERATOR ───────────────────────────────────────
 function generateSignals(research, intelligence, portfolio) {
@@ -160,6 +171,8 @@ function sizePositions(signals, portfolio) {
 
 // ─── PAPER TRADER ───────────────────────────────────────────
 function executePaper(sizedSignals, portfolio) {
+  enforcePaperMode(); // Hard safety guard
+  
   const trades = [];
   
   sizedSignals.forEach(signal => {
@@ -341,4 +354,4 @@ function updatePerformance(portfolio) {
   });
 }
 
-module.exports = { generateSignals, sizePositions, executePaper, updatePerformance };
+module.exports = { generateSignals, sizePositions, executePaper, updatePerformance, enforcePaperMode };

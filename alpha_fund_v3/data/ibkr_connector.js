@@ -15,6 +15,15 @@
 const fs = require('fs');
 const path = require('path');
 
+// ─── SAFETY GUARD ───────────────────────────────────────────
+// This connector is READ-ONLY. It never places trades.
+// All trading remains in Alpha Fund's paper trading mode.
+const TRADING_DISABLED = true;
+
+function placeOrder() {
+  throw new Error('IBKR trading is DISABLED. This connector is read-only for market data only.');
+}
+
 // ─── CONFIG ─────────────────────────────────────────────────
 const IBKR_CONFIG = {
   host: '127.0.0.1',        // TWS running locally
@@ -198,5 +207,7 @@ module.exports = {
   fetchIBKRPrices,
   getPricesWithFallback,
   IBKR_CONFIG,
-  checkSetup
+  checkSetup,
+  placeOrder,
+  TRADING_DISABLED
 };
