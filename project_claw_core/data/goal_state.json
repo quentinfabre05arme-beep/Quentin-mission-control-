@@ -1,0 +1,25 @@
+{
+  "goals": [
+    {
+      "id": "g_1785752660551",
+      "priority": 1,
+      "progress": 0,
+      "status": "active",
+      "createdAt": "2026-08-03T10:24:20.551Z"
+    },
+    {
+      "id": "g_1785752671424",
+      "priority": 1,
+      "progress": 0,
+      "status": "active",
+      "createdAt": "2026-08-03T10:24:31.424Z"
+    },
+    {
+      "id": "g_1785752675350",
+      "priority": 1,
+      "progress": 0,
+      "status": "active",
+      "createdAt": "2026-08-03T10:24:35.350Z"
+    }
+  ]
+}

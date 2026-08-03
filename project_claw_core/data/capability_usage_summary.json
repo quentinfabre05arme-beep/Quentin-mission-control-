@@ -1,0 +1,11 @@
+{
+  "undefined": {
+    "calls": 1,
+    "successes": 1,
+    "failures": 0,
+    "totalLatencyMs": 0,
+    "lastError": null,
+    "avgLatencyMs": 0,
+    "winRate": 1
+  }
+}

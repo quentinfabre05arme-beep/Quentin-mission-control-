@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-03T10:15:06.058Z",
-  "count": 83,
+  "generated_at": "2026-08-03T10:24:35.386Z",
+  "count": 88,
   "by_category": {
     "core": [
       "agent_swarm",
@@ -9,8 +9,11 @@
       "auto_updater",
       "battery_manager",
       "build_loop_optimizer",
+      "capability_functional_tester",
       "capability_invoker",
       "capability_registry",
+      "capability_router",
+      "capability_usage_tracker",
       "click_by_text",
       "clipboard_manager",
       "clipboard_ocr_agent",
@@ -25,7 +28,9 @@
       "form_filler",
       "hash_agent",
       "health_dashboard",
+      "hierarchical_planner",
       "learning_engine",
+      "memory_tier",
       "microphone",
       "network_monitor",
       "network_speed_tester",
@@ -148,6 +153,15 @@
       "has_tests": true
     },
     {
+      "name": "capability_functional_tester",
+      "category": "core",
+      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\capability_functional_tester.js",
+      "class": null,
+      "lines": 91,
+      "functions": 6,
+      "has_tests": true
+    },
+    {
       "name": "capability_invoker",
       "category": "core",
       "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\capability_invoker.js",
@@ -162,6 +176,24 @@
       "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\capability_registry.js",
       "class": "CapabilityRegistry",
       "lines": 83,
+      "functions": 5,
+      "has_tests": true
+    },
+    {
+      "name": "capability_router",
+      "category": "core",
+      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\capability_router.js",
+      "class": null,
+      "lines": 97,
+      "functions": 6,
+      "has_tests": true
+    },
+    {
+      "name": "capability_usage_tracker",
+      "category": "core",
+      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\capability_usage_tracker.js",
+      "class": null,
+      "lines": 70,
       "functions": 5,
       "has_tests": true
     },
@@ -292,11 +324,29 @@
       "has_tests": true
     },
     {
+      "name": "hierarchical_planner",
+      "category": "core",
+      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\hierarchical_planner.js",
+      "class": null,
+      "lines": 106,
+      "functions": 8,
+      "has_tests": true
+    },
+    {
       "name": "learning_engine",
       "category": "core",
       "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\learning_engine.js",
       "class": "LearningEngine",
       "lines": 74,
+      "functions": 8,
+      "has_tests": true
+    },
+    {
+      "name": "memory_tier",
+      "category": "core",
+      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\memory_tier.js",
+      "class": null,
+      "lines": 136,
       "functions": 8,
       "has_tests": true
     },
