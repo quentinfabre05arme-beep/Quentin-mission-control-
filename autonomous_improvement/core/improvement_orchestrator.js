@@ -15,8 +15,10 @@ const ImprovementRadar = require('./improvement_radar');
 const HypothesisGenerator = require('./hypothesis_generator');
 const ChangeGenerator = require('./change_generator');
 const ExperimentRunner = require('./experiment_runner');
+const { acquire } = require(path.join(CONFIG.workspace, 'project_claw_core', 'core', 'process_lock'));
 
 const STATE_FILE = path.join(CONFIG.workspace, CONFIG.data_dir, 'improvement_state.json');
+const LOCK_FILE = path.join(CONFIG.workspace, 'autonomous_improvement', 'logs', 'improvement.lock');
 
 function loadState() {
   if (fs.existsSync(STATE_FILE)) {
@@ -103,8 +105,10 @@ module.exports = { runCycle, startLoop };
 if (require.main === module) {
   const mode = process.argv[2] || 'once';
   if (mode === 'loop') {
+    if (!acquire(LOCK_FILE)) process.exit(0);
     startLoop();
   } else {
+    if (!acquire(LOCK_FILE)) process.exit(0);
     runCycle().then(r => {
       console.log(JSON.stringify(r, null, 2));
       process.exit(0);

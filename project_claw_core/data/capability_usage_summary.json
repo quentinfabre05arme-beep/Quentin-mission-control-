@@ -1,7 +1,7 @@
 {
   "undefined": {
-    "calls": 17,
-    "successes": 17,
+    "calls": 19,
+    "successes": 19,
     "failures": 0,
     "totalLatencyMs": 0,
     "lastError": null,
@@ -9,39 +9,39 @@
     "winRate": 1
   },
   "status_reporter": {
-    "calls": 4,
-    "successes": 4,
+    "calls": 5,
+    "successes": 5,
     "failures": 0,
-    "totalLatencyMs": 27,
+    "totalLatencyMs": 32,
     "lastError": null,
-    "avgLatencyMs": 6.75,
+    "avgLatencyMs": 6.4,
     "winRate": 1
   },
   "system_health_monitor": {
-    "calls": 4,
-    "successes": 4,
+    "calls": 5,
+    "successes": 5,
     "failures": 0,
-    "totalLatencyMs": 17,
+    "totalLatencyMs": 21,
     "lastError": null,
-    "avgLatencyMs": 4.25,
+    "avgLatencyMs": 4.2,
     "winRate": 1
   },
   "research_agent": {
-    "calls": 4,
-    "successes": 4,
+    "calls": 5,
+    "successes": 5,
     "failures": 0,
-    "totalLatencyMs": 15,
+    "totalLatencyMs": 20,
     "lastError": null,
-    "avgLatencyMs": 3.75,
+    "avgLatencyMs": 4,
     "winRate": 1
   },
   "git_agent": {
-    "calls": 4,
-    "successes": 4,
+    "calls": 5,
+    "successes": 5,
     "failures": 0,
-    "totalLatencyMs": 14,
+    "totalLatencyMs": 19,
     "lastError": null,
-    "avgLatencyMs": 3.5,
+    "avgLatencyMs": 3.8,
     "winRate": 1
   }
 }

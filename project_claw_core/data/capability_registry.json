@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-03T10:56:10.306Z",
-  "count": 88,
+  "generated_at": "2026-08-03T11:23:11.923Z",
+  "count": 89,
   "by_category": {
     "core": [
       "agent_swarm",
@@ -44,6 +44,7 @@
       "predictive_maintenance",
       "process_automation",
       "process_killer",
+      "process_lock",
       "project_manager",
       "reasoning_engine",
       "registry_manager",
@@ -468,6 +469,15 @@
       "has_tests": true
     },
     {
+      "name": "process_lock",
+      "category": "core",
+      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\process_lock.js",
+      "class": null,
+      "lines": 46,
+      "functions": 1,
+      "has_tests": false
+    },
+    {
       "name": "project_manager",
       "category": "core",
       "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\project_manager.js",
@@ -652,7 +662,7 @@
       "category": "core",
       "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\unified_master_orchestrator.js",
       "class": "UnifiedMasterOrchestrator",
-      "lines": 363,
+      "lines": 367,
       "functions": 21,
       "has_tests": true
     },

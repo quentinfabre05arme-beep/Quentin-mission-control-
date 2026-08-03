@@ -10,6 +10,9 @@ const { execSync } = require('child_process');
 const WORKSPACE = 'C:\\Users\\quent\\.openclaw\\workspace';
 const LOG_FILE = path.join(WORKSPACE, 'project_claw_core', 'logs', 'unified_master.log');
 const STATE_FILE = path.join(WORKSPACE, 'project_claw_core', 'data', 'unified_master_state.json');
+const LOCK_FILE = path.join(WORKSPACE, 'project_claw_core', 'logs', 'unified_master.lock');
+
+const { acquire } = require(path.join(WORKSPACE, 'project_claw_core', 'core', 'process_lock'));
 
 // Load Alpha Fund
 const AlphaFund = require(path.join(WORKSPACE, 'alpha_fund_v3', 'orchestrator'));
@@ -352,6 +355,7 @@ if (require.main === module) {
   const mode = process.argv[2] || 'once';
   const orchestrator = new UnifiedMasterOrchestrator();
   if (mode === 'loop') {
+    if (!acquire(LOCK_FILE)) process.exit(0);
     orchestrator.startLoop(600000, process.argv[3]);
   } else {
     orchestrator.runOnce().then(r => {

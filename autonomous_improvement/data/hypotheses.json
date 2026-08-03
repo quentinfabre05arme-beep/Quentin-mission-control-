@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-03T10:45:12.415Z",
+  "generated_at": "2026-08-03T11:23:04.765Z",
   "hypotheses": [
     {
-      "id": "hyp_1785753912415_i2a5z",
+      "id": "hyp_1785756184765_bjs8h",
       "title": "Add timeout to research_router browser searches",
       "category": "performance",
       "reason": "ABOS research hangs when Puppeteer stalls",
@@ -13,7 +13,7 @@
       "failure_count": 0
     },
     {
-      "id": "hyp_1785753912415_6lsaf",
+      "id": "hyp_1785756184765_x56dx",
       "title": "Prune duplicate test plans in planner.js",
       "category": "workflow",
       "reason": "10 active plans, 9 are \"test\" noise — clutters memory",
@@ -24,7 +24,7 @@
       "failure_count": 0
     },
     {
-      "id": "hyp_1785753912415_us23k",
+      "id": "hyp_1785756184765_e4lx7",
       "title": "Rotate always_on_daemon.log when >100KB",
       "category": "performance",
       "reason": "Log grew to 350KB+ in one day",
@@ -35,7 +35,7 @@
       "failure_count": 1
     },
     {
-      "id": "hyp_1785753912415_x09f9",
+      "id": "hyp_1785756184764_4tn1i",
       "title": "Rotate oversized logs to prevent disk bloat",
       "category": "performance",
       "reason": "Large logs indicate potential memory/disk pressure",

@@ -1,1 +1,77 @@
-[]
+[
+  {
+    "goalId": "g_1785754444871",
+    "weekTasks": [
+      {
+        "day": "Mon",
+        "task": "Research undefined"
+      },
+      {
+        "day": "Tue",
+        "task": "Design undefined"
+      },
+      {
+        "day": "Wed",
+        "task": "Implement undefined"
+      },
+      {
+        "day": "Thu",
+        "task": "Verify undefined"
+      },
+      {
+        "day": "Fri",
+        "task": "Document undefined"
+      }
+    ]
+  },
+  {
+    "goalId": "g_1785754454959",
+    "weekTasks": [
+      {
+        "day": "Mon",
+        "task": "Research undefined"
+      },
+      {
+        "day": "Tue",
+        "task": "Design undefined"
+      },
+      {
+        "day": "Wed",
+        "task": "Implement undefined"
+      },
+      {
+        "day": "Thu",
+        "task": "Verify undefined"
+      },
+      {
+        "day": "Fri",
+        "task": "Document undefined"
+      }
+    ]
+  },
+  {
+    "goalId": "g_1785754507128",
+    "weekTasks": [
+      {
+        "day": "Mon",
+        "task": "Research undefined"
+      },
+      {
+        "day": "Tue",
+        "task": "Design undefined"
+      },
+      {
+        "day": "Wed",
+        "task": "Implement undefined"
+      },
+      {
+        "day": "Thu",
+        "task": "Verify undefined"
+      },
+      {
+        "day": "Fri",
+        "task": "Document undefined"
+      }
+    ]
+  }
+]

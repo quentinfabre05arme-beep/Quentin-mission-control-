@@ -9,6 +9,9 @@ const path = require('path');
 const CONFIG = require('../config.json');
 const LOG_FILE = path.join(CONFIG.workspace, CONFIG.log_file);
 const STATE_FILE = path.join(CONFIG.workspace, 'autonomous_business/data/abos_state.json');
+const LOCK_FILE = path.join(CONFIG.workspace, 'autonomous_business', 'logs', 'abos.lock');
+
+const { acquire } = require(path.join(CONFIG.workspace, 'project_claw_core', 'core', 'process_lock'));
 
 const OpportunityRadar = require('./opportunity_radar');
 const AutonomousResearcher = require('./autonomous_researcher');
@@ -140,10 +143,12 @@ if (require.main === module) {
   const mode = process.argv[2] || 'once';
   const orch = new ABOSOrchestrator();
   if (mode === 'loop') {
+    if (!acquire(LOCK_FILE)) process.exit(0);
     const interval = parseInt(process.argv[3], 10) || 3600000;
     const target = process.argv[4] || null;
     orch.startLoop(interval, target);
   } else {
+    if (!acquire(LOCK_FILE)) process.exit(0);
     orch.runCycle(process.argv[3]).then(r => {
       console.log(JSON.stringify(r, null, 2));
       process.exit(0);
