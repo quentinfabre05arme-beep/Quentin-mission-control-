@@ -59,6 +59,20 @@
           "dependencies": []
         }
       ]
+    },
+    {
+      "id": "plan_1785742936215",
+      "goal": "test",
+      "created_at": "2026-08-03T07:42:16.215Z",
+      "status": "active",
+      "steps": [
+        {
+          "id": "step_0",
+          "description": "step1",
+          "status": "pending",
+          "dependencies": []
+        }
+      ]
     }
   ]
 }
