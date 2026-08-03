@@ -55,17 +55,20 @@ function addGoal(title, { priority = 1, deadline } = {}) {
 function planWeek() {
   const state = loadGoals();
   const active = state.goals.filter(g => g.status === 'active').sort((a, b) => b.priority - a.priority);
-  const weekly = active.slice(0, 3).map(g => ({
-    goalId: g.id,
-    title: g.title,
-    weekTasks: [
-      { day: 'Mon', task: `Research ${g.title}` },
-      { day: 'Tue', task: `Design ${g.title}` },
-      { day: 'Wed', task: `Implement ${g.title}` },
-      { day: 'Thu', task: `Verify ${g.title}` },
-      { day: 'Fri', task: `Document ${g.title}` }
-    ]
-  }));
+  const weekly = active.slice(0, 3).map(g => {
+    const title = g.title || 'Untitled goal';
+    return {
+      goalId: g.id,
+      title,
+      weekTasks: [
+        { day: 'Mon', task: `Research ${title}` },
+        { day: 'Tue', task: `Design ${title}` },
+        { day: 'Wed', task: `Implement ${title}` },
+        { day: 'Thu', task: `Verify ${title}` },
+        { day: 'Fri', task: `Document ${title}` }
+      ]
+    };
+  });
   savePlans(weekly);
   return weekly;
 }
