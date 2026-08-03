@@ -22,6 +22,25 @@ function loadIndex() {
   try {
     return JSON.parse(fs.readFileSync(INDEX_PATH, 'utf8'));
   } catch (e) {
+    return seedIndexFromUsageTracker();
+  }
+}
+
+function seedIndexFromUsageTracker() {
+  try {
+    const summary = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'capability_usage_summary.json'), 'utf8'));
+    const seeded = {};
+    for (const [name, s] of Object.entries(summary)) {
+      seeded[name] = {
+        calls: s.calls || 0,
+        success: s.successes || 0,
+        failures: s.failures || 0,
+        totalLatencyMs: s.totalLatencyMs || 0,
+        avgLatencyMs: s.avgLatencyMs || 0
+      };
+    }
+    return seeded;
+  } catch (e) {
     return {};
   }
 }
