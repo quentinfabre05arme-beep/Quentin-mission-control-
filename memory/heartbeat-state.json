@@ -1,23 +1,23 @@
 {
   "lastChecks": {
-    "system": 1785751260000,
+    "system": 1785752706000,
     "heartbeat": {
-      "ts": "2026-08-03T10:14:00.000Z",
-      "ram": "90.9% used (7.73/8.50 GB)",
-      "disk": "C: 96.37/126.71 GB (76.1%) | D: 420.13/983.82 GB (42.7%) | E: 14.43/16.38 GB (88.1%)",
-      "node_processes": 9
+      "ts": "2026-08-03T12:25:06.000Z",
+      "ram": "80.3% used (6.83/8.50 GB)",
+      "disk": "C: 27.86/126.71 GB (78.0%) | D: 525.15/983.82 GB (46.6%) | E: 1.82/16.38 GB (11.2%)",
+      "node_processes": 10
     },
     "market": {
-      "ts": "2026-08-03T10:12:41.520Z",
-      "btc": 62771.98,
-      "eth": 1850.75,
+      "ts": "2026-08-03T10:23:50.122Z",
+      "btc": 62724,
+      "eth": 1852.09,
       "mstr": 93.28,
       "hims": 27.77,
       "fear_greed": 28
     },
     "daemons": {
-      "ts": "2026-08-03T10:14:34.189Z",
-      "status": "duplicate procs cleaned, Task Scheduler maintaining 1 instance"
+      "ts": "2026-08-03T12:25:06.000Z",
+      "status": "all node processes healthy"
     }
   }
 }
