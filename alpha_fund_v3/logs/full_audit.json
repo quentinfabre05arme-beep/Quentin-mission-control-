@@ -1,29 +1,29 @@
 {
-  "timestamp": "2026-08-03T01:27:10.372Z",
+  "timestamp": "2026-08-03T02:27:10.178Z",
   "system": {
     "platform": "win32",
     "release": "10.0.26200",
     "arch": "x64",
     "cpus": 8,
     "total_ram_gb": 8,
-    "free_ram_gb": 2,
-    "uptime_hours": 185,
+    "free_ram_gb": 1,
+    "uptime_hours": 186,
     "user": "quent",
     "home": "C:\\Users\\quent"
   },
   "workspace": {
-    "total_files": 2665,
+    "total_files": 2677,
     "total_dirs": 209,
-    "total_size": 89554958,
+    "total_size": 89650741,
     "top_dirs": [
       {
         "name": "project_claw_core",
-        "files": 582,
+        "files": 592,
         "dirs": 10,
         "size_mb": 23,
         "old_files": 0,
         "types": {
-          ".js": 251,
+          ".js": 261,
           ".log": 113,
           "(no ext)": 79,
           ".md": 54,
@@ -169,6 +169,19 @@
         }
       },
       {
+        "name": "autonomous_improvement",
+        "files": 32,
+        "dirs": 4,
+        "size_mb": 0,
+        "old_files": 0,
+        "types": {
+          ".bak": 14,
+          ".js": 9,
+          ".json": 7,
+          ".log": 2
+        }
+      },
+      {
         "name": "memory",
         "files": 50,
         "dirs": 3,
@@ -180,19 +193,6 @@
           ".jsonl": 6,
           ".log": 4,
           ".1784988057731": 1
-        }
-      },
-      {
-        "name": "autonomous_improvement",
-        "files": 30,
-        "dirs": 4,
-        "size_mb": 0,
-        "old_files": 0,
-        "types": {
-          ".bak": 12,
-          ".js": 9,
-          ".json": 7,
-          ".log": 2
         }
       },
       {

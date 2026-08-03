@@ -7,20 +7,14 @@
       "source": "duckduckgo_browser"
     },
     {
-      "title": "Latest news on Bitcoin | Cointelegraph",
-      "link": "https://cointelegraph.com/tags/bitcoin",
-      "snippet": "",
-      "source": "duckduckgo_browser"
-    },
-    {
       "title": "Bitcoin.com News: Latest Crypto News Across All Key Markets",
       "link": "https://news.bitcoin.com/",
       "snippet": "",
       "source": "duckduckgo_browser"
     },
     {
-      "title": "Google News - Bitcoin - Latest",
-      "link": "https://news.google.com/topics/CAAqJAgKIh5DQkFTRUFvS0wyMHZNRFZ3TUhKeWVCSUNaVzRvQUFQAQ?hl=en-US&ceid=US%3Aen",
+      "title": "Latest news on Bitcoin | Cointelegraph",
+      "link": "https://cointelegraph.com/tags/bitcoin",
       "snippet": "",
       "source": "duckduckgo_browser"
     },
@@ -29,7 +23,13 @@
       "link": "https://www.newsbtc.com/",
       "snippet": "",
       "source": "duckduckgo_browser"
+    },
+    {
+      "title": "Latest Bitcoin News - (BTC) Future Outlook, Trends & Market Insights",
+      "link": "https://coinmarketcap.com/cmc-ai/bitcoin/latest-updates/",
+      "snippet": "",
+      "source": "duckduckgo_browser"
     }
   ],
-  "timestamp": "2026-08-03T00:59:34.750Z"
+  "timestamp": "2026-08-03T02:03:30.301Z"
 }
