@@ -65,6 +65,8 @@ function run() {
 
   fs.mkdirSync(path.dirname(BENCHMARK_PATH), { recursive: true });
   fs.writeFileSync(BENCHMARK_PATH, JSON.stringify(report, null, 2));
+  const historyPath = path.join(__dirname, '..', 'project_claw_core', 'data', 'claw_benchmark_history.jsonl');
+  fs.appendFileSync(historyPath, JSON.stringify({ ...report, recorded_at: new Date().toISOString() }) + '\\n');
   return report;
 }
 
