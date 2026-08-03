@@ -72,6 +72,7 @@ project_claw_core/logs/capability_verification.jsonl
 project_claw_core/logs/capability_verify_run.txt
 project_claw_core/core_backup_verify/
 project_claw_core/logs/safe_verify_run*.txt
+alpha_fund_v3/logs/always_on_daemon.lock
 project_claw_core/data/goal_state.json
 project_claw_core/data/plans.json
 project_claw_core/data/polyglot/
