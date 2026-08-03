@@ -39,6 +39,12 @@ function saveHot(hot) {
 }
 
 function logAccess(query, tier) {
+  if (!query && query !== 0 && query !== '') {
+    console.warn(`logAccess called with empty query`);
+    return undefined;
+  }
+  // Input validation added by improvement engine
+
   ensureDirs();
   fs.appendFileSync(ACCESS_LOG_PATH, JSON.stringify({ query, tier, at: new Date().toISOString() }) + '\n');
 }
