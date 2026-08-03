@@ -124,33 +124,35 @@ function interactiveStoreMicrosoft() {
 }
 
 const args = process.argv.slice(2);
-if (args[0] === 'store') {
+if (require.main === module) {
+  if (args[0] === 'store') {
     const service = args[1];
     if (service === 'microsoft_graph') {
-        interactiveStoreMicrosoft();
+      interactiveStoreMicrosoft();
     } else if (args.length === 4) {
-        storeCredential(args[1], args[2], args[3]);
+      storeCredential(args[1], args[2], args[3]);
     } else if (service) {
-        interactiveStoreGeneric();
+      interactiveStoreGeneric();
     } else {
-        interactiveStoreGeneric();
+      interactiveStoreGeneric();
     }
-} else if (args[0] === 'get') {
+  } else if (args[0] === 'get') {
     const cred = getCredential(args[1]);
     if (cred) {
-        console.log(JSON.stringify({ username: cred.username, password: '***REDACTED***' }));
+      console.log(JSON.stringify({ username: cred.username, password: '***REDACTED***' }));
     } else {
-        console.log('Credential not found for:', args[1]);
+      console.log('Credential not found for:', args[1]);
     }
-} else if (args[0] === 'list') {
+  } else if (args[0] === 'list') {
     listCredentials();
-} else {
+  } else {
     console.log('Usage:');
     console.log('  node credential_manager.js store [service] [username] [password]');
     console.log('  node credential_manager.js store microsoft_graph');
     console.log('  node credential_manager.js store              # interactive');
     console.log('  node credential_manager.js get [service]');
     console.log('  node credential_manager.js list');
+  }
 }
 
 module.exports = { storeCredential, getCredential, listCredentials };

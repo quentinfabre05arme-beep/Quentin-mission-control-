@@ -33,14 +33,24 @@ class ResearchRouter {
     // 1. OpenClaw web_search tool (when invoked from agent context)
     if (this.webSearchFn) this.sources.push('openclaw_web_search');
 
-    // 2. Brave Search API (if key available)
+    // 1. Tavily Search API (free 1,000/mo, key available)
+    try {
+      const Tavily = require('./tavily_search');
+      this.tavily = Tavily;
+      if (Tavily.getApiKey()) this.sources.push('tavily');
+    } catch(e) { log(`Tavily init error: ${e.message}`); }
+
+    // 2. OpenClaw web_search tool (when invoked from agent context)
+    if (this.webSearchFn) this.sources.push('openclaw_web_search');
+
+    // 3. Brave Search API (if key available)
     try {
       const BraveSearch = require('./brave_search');
       this.brave = BraveSearch;
       if (process.env.BRAVE_API_KEY) this.sources.push('brave');
     } catch(e) { log(`Brave search init error: ${e.message}`); }
 
-    // 3. Local research cache (immediate fallback)
+    // 4. Local research cache (immediate fallback)
     try {
       this.localCache = require('./local_research_cache');
       this.sources.push('local_research_cache');
@@ -63,6 +73,17 @@ class ResearchRouter {
 
   async research(query, count = 5) {
     log(`Research: ${query}`);
+
+    // Try Tavily first
+    if (this.tavily) {
+      try {
+        const result = await runWithTimeout(() => this.tavily.search(query, { count, includeAnswer: true }), 20000);
+        if (result.results && result.results.length > 0) {
+          log(`Tavily returned ${result.results.length} results`);
+          return { source: 'tavily', results: result.results, answer: result.answer };
+        }
+      } catch(e) { log(`Tavily error: ${e.message}`); }
+    }
 
     // Try OpenClaw web_search if available
     if (this.webSearchFn) {
