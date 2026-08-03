@@ -1,11 +1,4 @@
 /**
-// Process error handler added by improvement engine
-process.on('unhandledRejection', (reason, promise) => {
-  console.error('Unhandled rejection at:', promise, 'reason:', reason);
-});
-process.on('uncaughtException', err => {
-  console.error('Uncaught exception:', err);
-});
  * UNIFIED MASTER ORCHESTRATOR v2.1
  * Integrates Alpha Fund v3.0 + Project Claw Core into one autonomous workflow.
  */
