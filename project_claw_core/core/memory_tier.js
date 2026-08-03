@@ -105,9 +105,17 @@ function search(query, { topK = 5 } = {}) {
   return coldHits.slice(0, topK);
 }
 
+const MAX_HOT_KEYS = 50;
+
 function setHot(key, value) {
   const hot = loadHot();
   hot[key] = { value, touched: Date.now() };
+  const entries = Object.entries(hot);
+  if (entries.length > MAX_HOT_KEYS) {
+    entries.sort((a, b) => a[1].touched - b[1].touched);
+    const toRemove = entries.slice(0, entries.length - MAX_HOT_KEYS);
+    for (const [k] of toRemove) delete hot[k];
+  }
   saveHot(hot);
 }
 
