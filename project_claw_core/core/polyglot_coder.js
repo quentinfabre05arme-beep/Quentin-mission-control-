@@ -6,9 +6,10 @@
 const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 
 const LOG_FILE = path.join(__dirname, '..', 'logs', 'polyglot_coder.log');
-const TEMP_DIR = path.join(__dirname, '..', 'data', 'polyglot');
+const TEMP_DIR = path.join(os.tmpdir(), 'claw_polyglot');
 
 function log(msg) {
   const entry = `[${new Date().toISOString()}] ${msg}\n`;
@@ -18,30 +19,38 @@ function log(msg) {
 
 class PolyglotCoder {
   constructor() {
-    fs.mkdirSync(TEMP_DIR, { recursive: true });
+    // Temp files are written to os.tmpdir() and cleaned after each run.
   }
   
   runJavaScript(code) {
     log('Running JavaScript snippet');
+    let file;
     try {
-      const file = path.join(TEMP_DIR, `js_${Date.now()}.js`);
+      fs.mkdirSync(TEMP_DIR, { recursive: true });
+      file = path.join(TEMP_DIR, `js_${Date.now()}.js`);
       fs.writeFileSync(file, code);
       const output = execSync(`node "${file}"`, { encoding: 'utf8', windowsHide: true, timeout: 30000 });
       return { success: true, language: 'javascript', output: output.trim() };
     } catch(e) {
       return { success: false, language: 'javascript', error: e.message };
+    } finally {
+      if (file && fs.existsSync(file)) fs.unlinkSync(file);
     }
   }
   
   runPython(code) {
     log('Running Python snippet');
+    let file;
     try {
-      const file = path.join(TEMP_DIR, `py_${Date.now()}.py`);
+      fs.mkdirSync(TEMP_DIR, { recursive: true });
+      file = path.join(TEMP_DIR, `py_${Date.now()}.py`);
       fs.writeFileSync(file, code);
       const output = execSync(`python "${file}"`, { encoding: 'utf8', windowsHide: true, timeout: 30000 });
       return { success: true, language: 'python', output: output.trim() };
     } catch(e) {
       return { success: false, language: 'python', error: e.message };
+    } finally {
+      if (file && fs.existsSync(file)) fs.unlinkSync(file);
     }
   }
   
