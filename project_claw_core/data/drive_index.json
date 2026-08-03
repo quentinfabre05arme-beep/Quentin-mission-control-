@@ -23,7 +23,7 @@
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\agent\\openclaw-agent.sqlite-wal",
       "name": "openclaw-agent.sqlite-wal",
       "size": 164832,
-      "modified": "2026-08-03T07:37:08.359Z"
+      "modified": "2026-08-03T07:51:07.840Z"
     },
     {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\.openclaw-trajectory-.10076.36a27666-00e8-4c1f-961f-2d0ecf11ff7d.tmp",
@@ -10612,26 +10612,20 @@
     {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\71ca780b-841e-486d-9774-703cd030f98e.jsonl",
       "name": "71ca780b-841e-486d-9774-703cd030f98e.jsonl",
-      "size": 6790716,
-      "modified": "2026-08-03T07:42:16.835Z"
-    },
-    {
-      "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\71ca780b-841e-486d-9774-703cd030f98e.jsonl.lock",
-      "name": "71ca780b-841e-486d-9774-703cd030f98e.jsonl.lock",
-      "size": 84,
-      "modified": "2026-08-03T07:42:16.916Z"
+      "size": 7340383,
+      "modified": "2026-08-03T07:51:08.774Z"
     },
     {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\71ca780b-841e-486d-9774-703cd030f98e.trajectory-path.json",
       "name": "71ca780b-841e-486d-9774-703cd030f98e.trajectory-path.json",
       "size": 255,
-      "modified": "2026-08-03T07:38:59.728Z"
+      "modified": "2026-08-03T07:49:31.145Z"
     },
     {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\71ca780b-841e-486d-9774-703cd030f98e.trajectory.jsonl",
       "name": "71ca780b-841e-486d-9774-703cd030f98e.trajectory.jsonl",
-      "size": 5517456,
-      "modified": "2026-08-03T07:36:57.676Z"
+      "size": 6859487,
+      "modified": "2026-08-03T07:51:07.799Z"
     },
     {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\71ed2491-0a8b-4897-acaa-b1f5389aadb0.trajectory-path.json",
@@ -29692,8 +29686,8 @@
     {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\sessions.json",
       "name": "sessions.json",
-      "size": 2893545,
-      "modified": "2026-08-03T07:38:59.919Z"
+      "size": 2893379,
+      "modified": "2026-08-03T07:51:08.837Z"
     },
     {
       "path": "C:\\Users\\quent\\.openclaw\\browser\\openclaw\\user-data\\.openclaw-profile-decorated",
@@ -30000,6 +29994,12 @@
       "name": "trusted_vault.pb",
       "size": 172,
       "modified": "2026-08-02T20:44:23.901Z"
+    },
+    {
+      "path": "C:\\Users\\quent\\.openclaw\\browser\\openclaw\\user-data\\Default\\Web Data",
+      "name": "Web Data",
+      "size": 163840,
+      "modified": "2026-08-02T20:44:28.245Z"
     }
   ]
 }

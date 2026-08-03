@@ -1,43 +1,43 @@
-{"capability":"file_organizer","method":"organize","success":true,"duration_ms":148,"error":null}
-{"capability":"pdf_reader_agent","method":"extractText","success":true,"duration_ms":84,"error":null}
-{"capability":"capability_generator","method":"run","success":false,"duration_ms":50,"error":"ENOENT: no such file or directory, open 'C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\build_loop_continuous.js'"}
-{"capability":"network_monitor","method":"getInterfaces","success":true,"duration_ms":50,"error":null}
-{"capability":"rate_limiter","method":"allow","success":true,"duration_ms":48,"error":null}
-{"capability":"trading_agent","method":"status","success":true,"duration_ms":604,"error":null}
-{"capability":"project_manager","method":"listProjects","success":true,"duration_ms":66,"error":null}
-{"capability":"feedback_loop","method":"getOpen","success":true,"duration_ms":59,"error":null}
-{"capability":"polyglot_coder","method":"run","success":true,"duration_ms":155,"error":null}
-{"capability":"market_watcher","method":"getTrend","success":true,"duration_ms":49,"error":null}
-{"capability":"unified_orchestrator","method":"status","success":true,"duration_ms":514,"error":null}
-{"capability":"drive_indexer","method":"indexDrive","success":true,"duration_ms":276,"error":null}
-{"capability":"task_graph","method":"run","success":true,"duration_ms":47,"error":null}
-{"capability":"vector_brain","method":"search","success":true,"duration_ms":49,"error":null}
-{"capability":"capability_invoker","method":"list","success":true,"duration_ms":89,"error":null}
-{"capability":"learning_engine","method":"recommend","success":true,"duration_ms":44,"error":null}
-{"capability":"memory_consolidator","method":"consolidateDaily","success":true,"duration_ms":50,"error":null}
-{"capability":"hash_agent","method":"hashString","success":true,"duration_ms":48,"error":null}
+{"capability":"file_organizer","method":"organize","success":true,"duration_ms":143,"error":null}
+{"capability":"pdf_reader_agent","method":"extractText","success":true,"duration_ms":89,"error":null}
+{"capability":"capability_generator","method":"run","success":false,"duration_ms":46,"error":"ENOENT: no such file or directory, open 'C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\build_loop_continuous.js'"}
+{"capability":"network_monitor","method":"getInterfaces","success":true,"duration_ms":52,"error":null}
+{"capability":"rate_limiter","method":"allow","success":true,"duration_ms":45,"error":null}
+{"capability":"trading_agent","method":"status","success":true,"duration_ms":600,"error":null}
+{"capability":"project_manager","method":"listProjects","success":true,"duration_ms":47,"error":null}
+{"capability":"feedback_loop","method":"getOpen","success":true,"duration_ms":44,"error":null}
+{"capability":"polyglot_coder","method":"run","success":true,"duration_ms":133,"error":null}
+{"capability":"market_watcher","method":"getTrend","success":true,"duration_ms":58,"error":null}
+{"capability":"unified_orchestrator","method":"status","success":true,"duration_ms":515,"error":null}
+{"capability":"drive_indexer","method":"indexDrive","success":true,"duration_ms":278,"error":null}
+{"capability":"task_graph","method":"run","success":true,"duration_ms":49,"error":null}
+{"capability":"vector_brain","method":"search","success":true,"duration_ms":45,"error":null}
+{"capability":"capability_invoker","method":"list","success":true,"duration_ms":91,"error":null}
+{"capability":"learning_engine","method":"recommend","success":true,"duration_ms":45,"error":null}
+{"capability":"memory_consolidator","method":"consolidateDaily","success":true,"duration_ms":51,"error":null}
+{"capability":"hash_agent","method":"hashString","success":true,"duration_ms":45,"error":null}
 {"capability":"orchestrator","method":"run","success":true,"duration_ms":47,"error":null}
-{"capability":"store_manager","method":"list","success":true,"duration_ms":48,"error":null}
-{"capability":"sync_manager","method":"syncDirectory","success":true,"duration_ms":108,"error":null}
-{"capability":"build_loop_optimizer","method":"recommend","success":true,"duration_ms":47,"error":null}
-{"capability":"credential_rotator","method":"rotate","success":true,"duration_ms":49,"error":null}
-{"capability":"business_intelligence","method":"generateDashboardReport","success":true,"duration_ms":528,"error":null}
-{"capability":"tavily_search","method":"run","success":false,"duration_ms":47,"error":"Method run not found"}
-{"capability":"doc_generator","method":"generateForFile","success":true,"duration_ms":53,"error":null}
-{"capability":"vpn_agent","method":"listConnections","success":true,"duration_ms":643,"error":null}
-{"capability":"battery_manager","method":"getStatus","success":true,"duration_ms":470,"error":null}
-{"capability":"risk_engine","method":"assessAction","success":true,"duration_ms":50,"error":null}
-{"capability":"strategy_optimizer","method":"optimize","success":true,"duration_ms":48,"error":null}
-{"capability":"brave_search","method":"run","success":false,"duration_ms":48,"error":"Method run not found"}
-{"capability":"reasoning_engine","method":"reason","success":true,"duration_ms":48,"error":null}
-{"capability":"content_factory","method":"generateSocialPost","success":true,"duration_ms":48,"error":null}
-{"capability":"agent_swarm","method":"runTask","success":true,"duration_ms":51,"error":null}
-{"capability":"temperature_monitor","method":"read","success":true,"duration_ms":436,"error":null}
-{"capability":"searxng_client","method":"run","success":false,"duration_ms":48,"error":"Method run not found"}
-{"capability":"stripe_agent","method":"status","success":true,"duration_ms":50,"error":null}
-{"capability":"clipboard_manager","method":"getText","success":true,"duration_ms":347,"error":null}
-{"capability":"design_agent","method":"createPalette","success":true,"duration_ms":50,"error":null}
-{"capability":"audit_logger","method":"log","success":true,"duration_ms":45,"error":null}
-{"capability":"aws_agent","method":"listBuckets","success":true,"duration_ms":101,"error":null}
-{"capability":"docker_agent","method":"listContainers","success":true,"duration_ms":30056,"error":null}
-{"capability":"usb_manager","method":"list","success":true,"duration_ms":924,"error":null}
+{"capability":"store_manager","method":"list","success":true,"duration_ms":45,"error":null}
+{"capability":"sync_manager","method":"syncDirectory","success":true,"duration_ms":107,"error":null}
+{"capability":"build_loop_optimizer","method":"recommend","success":true,"duration_ms":48,"error":null}
+{"capability":"credential_rotator","method":"rotate","success":true,"duration_ms":46,"error":null}
+{"capability":"business_intelligence","method":"generateDashboardReport","success":true,"duration_ms":495,"error":null}
+{"capability":"tavily_search","method":"run","success":false,"duration_ms":44,"error":"Method run not found"}
+{"capability":"doc_generator","method":"generateForFile","success":true,"duration_ms":48,"error":null}
+{"capability":"vpn_agent","method":"listConnections","success":true,"duration_ms":631,"error":null}
+{"capability":"battery_manager","method":"getStatus","success":true,"duration_ms":444,"error":null}
+{"capability":"risk_engine","method":"assessAction","success":true,"duration_ms":44,"error":null}
+{"capability":"strategy_optimizer","method":"optimize","success":true,"duration_ms":47,"error":null}
+{"capability":"brave_search","method":"run","success":false,"duration_ms":44,"error":"Method run not found"}
+{"capability":"reasoning_engine","method":"reason","success":true,"duration_ms":44,"error":null}
+{"capability":"content_factory","method":"generateSocialPost","success":true,"duration_ms":47,"error":null}
+{"capability":"agent_swarm","method":"runTask","success":true,"duration_ms":43,"error":null}
+{"capability":"temperature_monitor","method":"read","success":true,"duration_ms":428,"error":null}
+{"capability":"searxng_client","method":"run","success":false,"duration_ms":46,"error":"Method run not found"}
+{"capability":"stripe_agent","method":"status","success":true,"duration_ms":45,"error":null}
+{"capability":"clipboard_manager","method":"getText","success":true,"duration_ms":292,"error":null}
+{"capability":"design_agent","method":"createPalette","success":true,"duration_ms":48,"error":null}
+{"capability":"audit_logger","method":"log","success":true,"duration_ms":47,"error":null}
+{"capability":"aws_agent","method":"listBuckets","success":true,"duration_ms":81,"error":null}
+{"capability":"docker_agent","method":"listContainers","success":true,"duration_ms":30051,"error":null}
+{"capability":"usb_manager","method":"list","success":true,"duration_ms":950,"error":null}

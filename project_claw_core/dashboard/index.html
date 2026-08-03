@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claw Mission Control</title>
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --panel: #151520;
+      --border: #2a2a3a;
+      --text: #e0e0e0;
+      --muted: #8888a0;
+      --accent: #00d4ff;
+      --accent2: #7c3aed;
+      --ok: #22c55e;
+      --warn: #f59e0b;
+      --crit: #ef4444;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 20px;
+      line-height: 1.5;
+    }
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    h1 { margin: 0; color: var(--accent); font-size: 1.8rem; }
+    .refresh { color: var(--muted); font-size: 0.9rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+    .card h2 { margin-top: 0; color: var(--accent2); font-size: 1.2rem; }
+    .metric { display: flex; justify-content: space-between; margin: 10px 0; padding: 10px; background: #1a1a2a; border-radius: 6px; }
+    .metric span:first-child { color: var(--muted); }
+    .ok { color: var(--ok); }
+    .warn { color: var(--warn); }
+    .crit { color: var(--crit); }
+    .asset-row { display: grid; grid-template-columns: 60px 1fr 80px 60px; gap: 10px; align-items: center; padding: 8px; background: #1a1a2a; border-radius: 6px; margin: 6px 0; }
+    .asset-symbol { font-weight: 700; color: var(--accent); }
+    .asset-price { text-align: right; }
+    .asset-change { text-align: right; font-weight: 600; }
+    .status-badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; background: #2a2a3a; color: var(--muted); }
+    .status-badge.running { background: rgba(34,197,94,0.15); color: var(--ok); }
+    .status-badge.ready { background: rgba(0,212,255,0.15); color: var(--accent); }
+    pre { background: #0f0f18; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 12px; margin: 0; }
+    .footer { margin-top: 30px; color: var(--muted); font-size: 0.8rem; text-align: center; }
+    .loading { color: var(--muted); font-style: italic; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🐾 Claw Mission Control</h1>
+    <div class="refresh" id="lastRefresh">Loading...</div>
+  </header>
+
+  <div class="grid">
+    <div class="card">
+      <h2>System Health</h2>
+      <div class="metric"><span>Status</span><span id="sysStatus" class="ok">checking...</span></div>
+      <div class="metric"><span>RAM</span><span id="ramMetric">—</span></div>
+      <div class="metric"><span>Disk C:</span><span id="diskMetric">—</span></div>
+      <div class="metric"><span>Uptime</span><span id="uptimeMetric">—</span></div>
+    </div>
+
+    <div class="card">
+      <h2>Market Prices</h2>
+      <div id="marketList"><div class="loading">Loading market data...</div></div>
+    </div>
+
+    <div class="card">
+      <h2>Orchestrators</h2>
+      <div id="orchestratorList"><div class="loading">Loading state...</div></div>
+    </div>
+
+    <div class="card">
+      <h2>Capability Verification</h2>
+      <div class="metric"><span>Total</span><span id="capTotal">—</span></div>
+      <div class="metric"><span>Passed</span><span id="capPassed" class="ok">—</span></div>
+      <div class="metric"><span>Failed</span><span id="capFailed" class="crit">—</span></div>
+      <div class="metric"><span>Last Run</span><span id="capTime">—</span></div>
+    </div>
+
+    <div class="card">
+      <h2>Recent Actions</h2>
+      <pre id="actionsPre">Loading...</pre>
+    </div>
+
+    <div class="card">
+      <h2>Schedule</h2>
+      <div class="metric"><span>Unified Master</span><span class="status-badge running">10 min</span></div>
+      <div class="metric"><span>ABOS</span><span class="status-badge running">1 hr</span></div>
+      <div class="metric"><span>Improvement</span><span class="status-badge running">30 min</span></div>
+      <div class="metric"><span>Finance Report</span><span class="status-badge ready">08:05</span></div>
+      <div class="metric"><span>X Post</span><span class="status-badge ready">08:00</span></div>
+      <div class="metric"><span>Newsletter</span><span class="status-badge ready">Weekly</span></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Auto-refreshes every 60s · Data served from local JSON state files · Claw 24/7
+  </div>
+
+  <script>
+    async function loadJSON(path) {
+      try {
+        const res = await fetch(path + '?t=' + Date.now());
+        if (!res.ok) throw new Error(res.statusText);
+        return await res.json();
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function classForPct(pct) {
+      if (pct >= 90) return 'crit';
+      if (pct >= 75) return 'warn';
+      return 'ok';
+    }
+
+    function formatBytes(bytes) {
+      if (bytes >= 1e9) return (bytes / 1e9).toFixed(2) + ' GB';
+      if (bytes >= 1e6) return (bytes / 1e6).toFixed(2) + ' MB';
+      return bytes + ' B';
+    }
+
+    function formatTimeAgo(iso) {
+      if (!iso) return '—';
+      const diff = Math.floor((Date.now() - new Date(iso).getTime()) / 1000);
+      if (diff < 60) return 'just now';
+      if (diff < 3600) return Math.floor(diff / 60) + ' min ago';
+      return Math.floor(diff / 3600) + ' hr ago';
+    }
+
+    async function render() {
+      const market = await loadJSON('../../mission_control/market_data.json');
+      const state = await loadJSON('../data/unified_master_state.json');
+      const caps = await loadJSON('../data/capability_verification_summary.json');
+
+      document.getElementById('lastRefresh').textContent = 'Updated ' + new Date().toLocaleTimeString();
+
+      if (market && market.assets) {
+        const list = document.getElementById('marketList');
+        list.innerHTML = '';
+        Object.entries(market.assets).forEach(([sym, a]) => {
+          const change = a.change_24h || 0;
+          const cls = change >= 0 ? 'ok' : 'crit';
+          const row = document.createElement('div');
+          row.className = 'asset-row';
+          row.innerHTML = `
+            <span class="asset-symbol">${sym}</span>
+            <span class="asset-price">$${(a.price || 0).toLocaleString()}</span>
+            <span class="asset-change ${cls}">${change > 0 ? '+' : ''}${change.toFixed(2)}%</span>
+            <span class="status-badge" title="${a.source || 'unknown'}">${a.signal || 'N/A'}</span>
+          `;
+          list.appendChild(row);
+        });
+      }
+
+      if (state) {
+        document.getElementById('sysStatus').textContent = state.issues && state.issues.length ? `${state.issues.length} issue(s)` : 'Healthy';
+        document.getElementById('sysStatus').className = state.issues && state.issues.length ? 'warn' : 'ok';
+        document.getElementById('actionsPre').textContent = JSON.stringify(state.actions?.slice(-6) || [], null, 2);
+
+        const orch = document.getElementById('orchestratorList');
+        orch.innerHTML = `
+          <div class="metric"><span>Cycles</span><span>${state.cycles || 0}</span></div>
+          <div class="metric"><span>Last Cycle</span><span>${formatTimeAgo(state.last_cycle)}</span></div>
+          <div class="metric"><span>Duration</span><span>${state.duration_ms ? (state.duration_ms / 1000).toFixed(1) + 's' : '—'}</span></div>
+          <div class="metric"><span>Issues</span><span class="${state.issues?.length ? 'warn' : 'ok'}">${state.issues?.length || 0}</span></div>
+        `;
+      }
+
+      if (caps) {
+        document.getElementById('capTotal').textContent = caps.total || '—';
+        document.getElementById('capPassed').textContent = caps.passed || '—';
+        document.getElementById('capFailed').textContent = caps.failed || '—';
+        document.getElementById('capTime').textContent = formatTimeAgo(caps.timestamp);
+      }
+
+      try {
+        const perf = await loadJSON('../../alpha_fund_v3/logs/loop_state.json');
+        if (perf && perf.system) {
+          document.getElementById('ramMetric').textContent = perf.system.ram ? `${perf.system.ram.toFixed(1)}%` : '—';
+          document.getElementById('ramMetric').className = classForPct(perf.system.ram || 0);
+          document.getElementById('diskMetric').textContent = perf.system.disk ? `${perf.system.disk.toFixed(1)}%` : '—';
+          document.getElementById('diskMetric').className = classForPct(perf.system.disk || 0);
+          document.getElementById('uptimeMetric').textContent = perf.system.uptime || '—';
+        }
+      } catch (e) {}
+    }
+
+    render();
+    setInterval(render, 60000);
+  </script>
+</body>
+</html>
