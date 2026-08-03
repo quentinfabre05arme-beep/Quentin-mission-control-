@@ -26,14 +26,15 @@ function saveKnowledge(k) {
 
 function recordFailure(hypothesis, reason) {
   const k = loadKnowledge();
+  k.failures = k.failures || [];
   k.failures.push({ hypothesis, reason, at: new Date().toISOString() });
-  // Keep last 200
   k.failures = k.failures.slice(-200);
   saveKnowledge(k);
 }
 
 function recordSuccess(hypothesis, files) {
   const k = loadKnowledge();
+  k.successes = k.successes || [];
   k.successes.push({ hypothesis, files, at: new Date().toISOString() });
   k.successes = k.successes.slice(-200);
   saveKnowledge(k);
@@ -41,7 +42,7 @@ function recordSuccess(hypothesis, files) {
 
 function hasFailedBefore(hypothesis) {
   const k = loadKnowledge();
-  return k.failures.some(f => f.hypothesis === hypothesis);
+  return Array.isArray(k.failures) && k.failures.some(f => f.hypothesis === hypothesis);
 }
 
 function isDestructive(filePath) {

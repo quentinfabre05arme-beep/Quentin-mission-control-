@@ -13,6 +13,7 @@ const { review } = require('./self_review');
 const Guardian = require('./experiment_guardian');
 
 const CONFIG = require('../config.json');
+const Benchmark = require(path.join(CONFIG.workspace, 'scripts', 'run_claw_benchmark'));
 
 const EXPERIMENTS_FILE = path.join(CONFIG.workspace, CONFIG.experiments_file);
 const BACKUP_DIR = path.join(CONFIG.workspace, 'autonomous_improvement', 'backups');
@@ -78,6 +79,14 @@ function applyChange(change) {
   const updated = content.replace(oldText, newText);
   fs.writeFileSync(fullPath, updated);
   return { filePath, linesChanged: updated.split('\n').length - content.split('\n').length };
+}
+
+async function runClawBenchmark() {
+  try {
+    return await Benchmark.run();
+  } catch (e) {
+    return { total: 0, passed: 0, score: 0, error: e.message };
+  }
 }
 
 async function runFunctionalBenchmark(filePath) {
@@ -191,7 +200,11 @@ async function runExperiment(hypothesis, change) {
   saveJson(EXPERIMENTS_FILE, experiments);
 
   let backupPath = null;
+  let benchmarkBefore = null;
   try {
+    benchmarkBefore = await runClawBenchmark();
+    log(`Claw benchmark before: ${benchmarkBefore.passed}/${benchmarkBefore.total} (${(benchmarkBefore.score * 100).toFixed(0)}%)`);
+
     backupPath = backupFile(change.filePath);
     const applied = applyChange(change);
     const tests = runTests(change);
@@ -200,31 +213,43 @@ async function runExperiment(hypothesis, change) {
     experiment.applied = applied;
     experiment.tests = tests;
     experiment.metrics = metrics;
+    experiment.benchmark_before = benchmarkBefore;
 
     const passed = tests.syntax && tests.load;
     if (passed) {
-      experiment.outcome = 'success';
-      experiment.status = 'reviewing';
-      experiment.review = review(change);
-      experiment.benchmark = await runFunctionalBenchmark(change.filePath);
+      const benchmarkAfter = await runClawBenchmark();
+      experiment.benchmark_after = benchmarkAfter;
+      log(`Claw benchmark after: ${benchmarkAfter.passed}/${benchmarkAfter.total} (${(benchmarkAfter.score * 100).toFixed(0)}%)`);
 
-      if (experiment.review.ok) {
-        experiment.status = 'committed';
-        try {
-          safeGit(`add ${change.filePath}`);
-          safeGit(`commit -m "Auto-improvement: ${hypothesis.title}"`);
-        } catch (commitErr) {
-          experiment.status = 'tested-not-committed';
-          experiment.commitError = commitErr.message;
-        }
-      } else {
-        experiment.outcome = 'failed_review';
+      if (benchmarkAfter.score < benchmarkBefore.score) {
+        experiment.outcome = 'failed_benchmark_regression';
         experiment.status = 'reverted';
         restoreFile(change.filePath, backupPath);
+      } else {
+        experiment.outcome = 'success';
+        experiment.status = 'reviewing';
+        experiment.review = review(change);
+        experiment.benchmark = await runFunctionalBenchmark(change.filePath);
+
+        if (experiment.review.ok) {
+          experiment.status = 'committed';
+          try {
+            safeGit(`add ${change.filePath}`);
+            safeGit(`commit -m "Auto-improvement: ${hypothesis.title}"`);
+          } catch (commitErr) {
+            experiment.status = 'tested-not-committed';
+            experiment.commitError = commitErr.message;
+          }
+        } else {
+          experiment.outcome = 'failed_review';
+          experiment.status = 'reverted';
+          restoreFile(change.filePath, backupPath);
+        }
       }
     } else {
       experiment.outcome = 'failed';
       experiment.status = 'reverted';
+      experiment.benchmark_after = null;
       restoreFile(change.filePath, backupPath);
     }
   } catch (e) {
