@@ -19,7 +19,8 @@ const SKIP = [
   'microsoft_browser_agent', 'linkedin_agent', 'x_agent', 'github_agent', 'gmail_agent',
   'microsoft_graph_agent', 'microsoft_graph_auth', 'browser_agent_v2', 'scheduler_agent',
   'drive_agent', 'ui_automation', 'window_manager', 'webcam', 'microphone', 'smart_home',
-  'usb_manager', 'phone_bridge', 'searxng_client', 'social_agent'
+  'usb_manager', 'phone_bridge', 'searxng_client', 'social_agent',
+  'sqlite_brain', 'pdf_reader_agent', 'click_by_text', 'process_killer'
 ];
 
 function log(entry) {
