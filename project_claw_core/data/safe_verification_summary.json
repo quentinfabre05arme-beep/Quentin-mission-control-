@@ -1,11 +1,10 @@
 {
-  "timestamp": "2026-08-03T03:06:26.291Z",
+  "timestamp": "2026-08-03T03:26:19.134Z",
   "total": 109,
-  "verified": 62,
+  "verified": 63,
   "skipped": 35,
-  "failed": 12,
+  "failed": 11,
   "failed_capabilities": [
-    "research_agent",
     "research_router",
     "browser_researcher",
     "openserp_client",

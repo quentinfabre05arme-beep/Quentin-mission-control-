@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-03T02:27:10.178Z",
+  "timestamp": "2026-08-03T03:27:10.439Z",
   "system": {
     "platform": "win32",
     "release": "10.0.26200",
@@ -7,23 +7,23 @@
     "cpus": 8,
     "total_ram_gb": 8,
     "free_ram_gb": 1,
-    "uptime_hours": 186,
+    "uptime_hours": 187,
     "user": "quent",
     "home": "C:\\Users\\quent"
   },
   "workspace": {
-    "total_files": 2677,
+    "total_files": 2689,
     "total_dirs": 209,
-    "total_size": 89650741,
+    "total_size": 89750935,
     "top_dirs": [
       {
         "name": "project_claw_core",
-        "files": 592,
+        "files": 602,
         "dirs": 10,
         "size_mb": 23,
         "old_files": 0,
         "types": {
-          ".js": 261,
+          ".js": 271,
           ".log": 113,
           "(no ext)": 79,
           ".md": 54,
@@ -75,7 +75,7 @@
         "name": "alpha_fund_v3",
         "files": 148,
         "dirs": 14,
-        "size_mb": 5,
+        "size_mb": 6,
         "old_files": 0,
         "types": {
           ".js": 73,
@@ -170,12 +170,12 @@
       },
       {
         "name": "autonomous_improvement",
-        "files": 32,
+        "files": 34,
         "dirs": 4,
         "size_mb": 0,
         "old_files": 0,
         "types": {
-          ".bak": 14,
+          ".bak": 16,
           ".js": 9,
           ".json": 7,
           ".log": 2
