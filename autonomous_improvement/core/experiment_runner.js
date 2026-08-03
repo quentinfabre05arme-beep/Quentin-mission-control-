@@ -74,7 +74,7 @@ function applyChange(change) {
   const { filePath, oldText, newText } = change;
   const fullPath = path.join(CONFIG.workspace, filePath);
   if (!fs.existsSync(fullPath)) throw new Error(`File not found: ${filePath}`);
-  const content = fs.readFileSync(fullPath, 'utf8');
+  const content = fs.readFileSync(fullPath, 'utf8').replace(/\r\n/g, '\n');
   if (!content.includes(oldText)) throw new Error('oldText not found in file');
   const updated = content.replace(oldText, newText);
   fs.writeFileSync(fullPath, updated);

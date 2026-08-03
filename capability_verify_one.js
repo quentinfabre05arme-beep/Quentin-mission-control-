@@ -86,6 +86,15 @@ const METHOD_SELECT = {
   notify_engine: { method: 'notify', args: ['test', 'hello'] },
   polyglot_coder: { method: 'run', args: ['javascript', 'console.log(1)'] },
   form_filler: { method: 'fillFields', args: [[{ name: 'username', value: 'test' }]] },
+  // Tiered / search helpers
+  memory_tier: { method: 'search', args: ['test'] },
+  local_research_cache: { method: 'search', args: ['test'] },
+  hierarchical_planner: { method: 'addGoal', args: ['verify test goal'] },
+  capability_functional_tester: { method: 'runAll', args: [] },
+  capability_usage_tracker: { method: 'getHealth', args: [] },
+  // Search agents
+  ddg_researcher: { method: 'search', args: ['OpenClaw test'] },
+  tavily_search: { method: 'request', args: ['OpenClaw test'] }
 };
 
 function inferArg(paramName, index, total) {

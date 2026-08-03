@@ -1,7 +1,7 @@
 /**
- * Change Generator
+ * Change Generator v3
  * Converts a hypothesis into a concrete, validated code diff.
- * v2: failure-aware anchors + line-number fallback + learning integration.
+ * Each builder returns a single contiguous change to keep validation simple.
  */
 
 const fs = require('fs');
@@ -17,29 +17,16 @@ function readTarget(hypothesis) {
     log(`Target file missing: ${hypothesis.target_file}`, 'warn');
     return null;
   }
-  return { target, content: fs.readFileSync(target, 'utf8'), lines: fs.readFileSync(target, 'utf8').split(/\r?\n/) };
+  const raw = fs.readFileSync(target, 'utf8');
+  const content = raw.replace(/\r\n/g, '\n');
+  return { target, content, lines: content.split(/\n/) };
 }
 
 function validate(change, content) {
   return change && content.includes(change.oldText);
 }
 
-function applyByLineNumber(filePath, startLine, endLine, newLines, content) {
-  const lines = content.split(/\r?\n/);
-  if (startLine < 1 || endLine > lines.length) return null;
-  const oldText = lines.slice(startLine - 1, endLine).join('\n');
-  const before = lines.slice(0, startLine - 1);
-  const after = lines.slice(endLine);
-  const newText = [...before, ...newLines, ...after].join('\n');
-  return { oldText, newText };
-}
-
-function findLineIndex(lines, pattern) {
-  for (let i = 0; i < lines.length; i++) {
-    if (lines[i].includes(pattern)) return i;
-  }
-  return -1;
-}
+// ==== Builders =============================================================
 
 function buildTimeoutChange(hypothesis, file, learning) {
   const { content } = file;
@@ -59,13 +46,209 @@ function buildTimeoutChange(hypothesis, file, learning) {
     return null;
   }
 
-  // Helper missing: insert helper + wrap browser call in one exact change
-  const oldBlock = `    // Fallback to browser-based research\n    if (this.browser) {\n      try {\n        const results = await this.browser.research(query, count);\n        if (results.length > 0) {\n          log(\`Browser returned \${results.length} results\`);\n          return { source: 'browser', results };\n        }\n      } catch(e) { log(\`Browser error: \${e.message}\`); }\n    }`;
-  const helperBlock = `function runWithTimeout(fn, ms) {\n  return Promise.race([\n    fn(),\n    new Promise((_, reject) => setTimeout(() => reject(new Error('Research timeout')), ms))\n  ]);\n}`;
+  const oldBlock = `    // Fallback to browser-based research
+    if (this.browser) {
+      try {
+        const results = await this.browser.research(query, count);
+        if (results.length > 0) {
+          log(\`Browser returned \${results.length} results\`);
+          return { source: 'browser', results };
+        }
+      } catch(e) { log(\`Browser error: \${e.message}\`); }
+    }`;
+  const helperBlock = `function runWithTimeout(fn, ms) {
+  return Promise.race([
+    fn(),
+    new Promise((_, reject) => setTimeout(() => reject(new Error('Research timeout')), ms))
+  ]);
+}`;
   const newBlock = helperBlock + `\n\n` + oldBlock.replace('const results = await this.browser.research(query, count);', `const results = await runWithTimeout(() => this.browser.research(query, count), 30000);`);
   const change = { filePath: hypothesis.target_file, oldText: oldBlock, newText: newBlock };
   if (validate(change, content) && !isAnchorKnownBad(oldBlock, learning)) return change;
+  return null;
+}
 
+function buildFunctionalTesterTimeoutChange(hypothesis, file, learning) {
+  const { content } = file;
+  if (content.includes('TEST_TIMEOUT_MS')) {
+    log('Functional tester timeout guard already present', 'warn');
+    return { alreadyApplied: true };
+  }
+  const oldText = `    if (spec.async && raw && typeof raw.then === 'function') {
+      result = await raw;
+    } else {
+      result = normalizeResult(raw);
+    }`;
+  const newText = `    const TEST_TIMEOUT_MS = 5000;
+
+    if (spec.async && raw && typeof raw.then === 'function') {
+      result = await Promise.race([
+        raw,
+        new Promise((_, reject) => setTimeout(() => reject(new Error('async test timeout')), TEST_TIMEOUT_MS))
+      ]);
+    } else {
+      result = normalizeResult(raw);
+    }`;
+  const change = { filePath: hypothesis.target_file, oldText, newText };
+  if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
+  return null;
+}
+
+function buildRouterSeedChange(hypothesis, file, learning) {
+  const { content } = file;
+  if (content.includes('seedIndexFromUsageTracker')) {
+    log('Router index seeding already present', 'warn');
+    return { alreadyApplied: true };
+  }
+  const oldText = `function loadIndex() {
+  try {
+    return JSON.parse(fs.readFileSync(INDEX_PATH, 'utf8'));
+  } catch (e) {
+    return {};
+  }
+}`;
+  const newText = `function loadIndex() {
+  try {
+    return JSON.parse(fs.readFileSync(INDEX_PATH, 'utf8'));
+  } catch (e) {
+    return seedIndexFromUsageTracker();
+  }
+}
+
+function seedIndexFromUsageTracker() {
+  try {
+    const summary = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'capability_usage_summary.json'), 'utf8'));
+    const seeded = {};
+    for (const [name, s] of Object.entries(summary)) {
+      seeded[name] = {
+        calls: s.calls || 0,
+        success: s.successes || 0,
+        failures: s.failures || 0,
+        totalLatencyMs: s.totalLatencyMs || 0,
+        avgLatencyMs: s.avgLatencyMs || 0
+      };
+    }
+    return seeded;
+  } catch (e) {
+    return {};
+  }
+}`;
+  const change = { filePath: hypothesis.target_file, oldText, newText };
+  if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
+  return null;
+}
+
+function buildMemoryColdPruneChange(hypothesis, file, learning) {
+  const { content } = file;
+  if (content.includes('pruneOldArchive')) {
+    log('Cold archive pruning already present', 'warn');
+    return { alreadyApplied: true };
+  }
+  const oldText = `function forgetOld() {
+  const files = listDailyFiles();
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - FORGET_DAYS);
+  const removed = [];
+  for (const f of files) {
+    if (f.mtime < cutoff) {
+      const archiveDir = path.join(MEMORY_DIR, 'archive');
+      fs.mkdirSync(archiveDir, { recursive: true });
+      fs.renameSync(f.path, path.join(archiveDir, f.name));
+      removed.push(f.name);
+    }
+  }
+  return removed;
+}`;
+  const newText = `function forgetOld() {
+  const files = listDailyFiles();
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - FORGET_DAYS);
+  const removed = [];
+  for (const f of files) {
+    if (f.mtime < cutoff) {
+      const archiveDir = path.join(MEMORY_DIR, 'archive');
+      fs.mkdirSync(archiveDir, { recursive: true });
+      fs.renameSync(f.path, path.join(archiveDir, f.name));
+      removed.push(f.name);
+    }
+  }
+  return removed.concat(pruneOldArchive());
+}
+
+function pruneOldArchive() {
+  const archiveDir = path.join(MEMORY_DIR, 'archive');
+  if (!fs.existsSync(archiveDir)) return [];
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - 90);
+  const removed = [];
+  for (const f of fs.readdirSync(archiveDir)) {
+    const p = path.join(archiveDir, f);
+    try {
+      if (fs.statSync(p).mtime < cutoff) {
+        fs.unlinkSync(p);
+        removed.push(f);
+      }
+    } catch (e) {}
+  }
+  return removed;
+}`;
+  const change = { filePath: hypothesis.target_file, oldText, newText };
+  if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
+  return null;
+}
+
+function buildBenchmarkHistoryChange(hypothesis, file, learning) {
+  const { content } = file;
+  if (content.includes('claw_benchmark_history')) {
+    log('Benchmark history tracking already present', 'warn');
+    return { alreadyApplied: true };
+  }
+  const oldText = `  fs.mkdirSync(path.dirname(BENCHMARK_PATH), { recursive: true });
+  fs.writeFileSync(BENCHMARK_PATH, JSON.stringify(report, null, 2));
+  return report;`;
+  const newText = `  fs.mkdirSync(path.dirname(BENCHMARK_PATH), { recursive: true });
+  fs.writeFileSync(BENCHMARK_PATH, JSON.stringify(report, null, 2));
+  const historyPath = path.join(__dirname, '..', 'project_claw_core', 'data', 'claw_benchmark_history.jsonl');
+  fs.appendFileSync(historyPath, JSON.stringify({ ...report, recorded_at: new Date().toISOString() }) + '\n');
+  return report;`;
+  const change = { filePath: hypothesis.target_file, oldText, newText };
+  if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
+  return null;
+}
+
+function buildPlannerTitleChange(hypothesis, file, learning) {
+  const { content } = file;
+  if (content.includes("const title = g.title || 'Untitled goal';")) {
+    log('Planner title normalization already present', 'warn');
+    return { alreadyApplied: true };
+  }
+  const oldText = `  const weekly = active.slice(0, 3).map(g => ({
+    goalId: g.id,
+    title: g.title,
+    weekTasks: [
+      { day: 'Mon', task: \`Research \${g.title}\` },
+      { day: 'Tue', task: \`Design \${g.title}\` },
+      { day: 'Wed', task: \`Implement \${g.title}\` },
+      { day: 'Thu', task: \`Verify \${g.title}\` },
+      { day: 'Fri', task: \`Document \${g.title}\` }
+    ]
+  }));`;
+  const newText = `  const weekly = active.slice(0, 3).map(g => {
+    const title = g.title || 'Untitled goal';
+    return {
+      goalId: g.id,
+      title,
+      weekTasks: [
+        { day: 'Mon', task: \`Research \${title}\` },
+        { day: 'Tue', task: \`Design \${title}\` },
+        { day: 'Wed', task: \`Implement \${title}\` },
+        { day: 'Thu', task: \`Verify \${title}\` },
+        { day: 'Fri', task: \`Document \${title}\` }
+      ]
+    };
+  });`;
+  const change = { filePath: hypothesis.target_file, oldText, newText };
+  if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
   return null;
 }
 
@@ -75,8 +258,26 @@ function buildLogRotationChange(hypothesis, file, learning) {
     log('Log rotation already present', 'warn');
     return { alreadyApplied: true };
   }
-  const oldText = `const LOG_FILE = 'alpha_fund_v3/logs/always_on_daemon.log';\n\nfunction log(msg) {\n  const cleanMsg = msg.replace(/[^\\x20-\\x7E]/g, '?');\n  const entry = \`[\${new Date().toISOString()}] \${cleanMsg}\\n\`;\n  fs.mkdirSync('alpha_fund_v3/logs', { recursive: true });\n  fs.appendFileSync(LOG_FILE, entry);\n}`;
-  const newText = `const LOG_FILE = 'alpha_fund_v3/logs/always_on_daemon.log';\n\nconst MAX_LOG_BYTES = 100 * 1024;\n\nfunction rotateLog() {\n  try {\n    if (fs.existsSync(LOG_FILE) && fs.statSync(LOG_FILE).size > MAX_LOG_BYTES) {\n      const archive = \`\${LOG_FILE}.\${Date.now()}.old\`;\n      fs.renameSync(LOG_FILE, archive);\n    }\n  } catch(e) {}\n}\n\nfunction log(msg) {\n  const cleanMsg = msg.replace(/[^\\x20-\\x7E]/g, '?');\n  const entry = \`[\${new Date().toISOString()}] \${cleanMsg}\\n\`;\n  fs.mkdirSync('alpha_fund_v3/logs', { recursive: true });\n  rotateLog();\n  fs.appendFileSync(LOG_FILE, entry);\n}`;
+  const oldText = `const LOG_FILE = 'alpha_fund_v3/logs/always_on_daemon.log';\n\nfunction log(msg) {
+  const cleanMsg = msg.replace(/[^\\x20-\\x7E]/g, '?');
+  const entry = \`[\${new Date().toISOString()}] \${cleanMsg}\\n\`;
+  fs.mkdirSync('alpha_fund_v3/logs', { recursive: true });
+  fs.appendFileSync(LOG_FILE, entry);
+}`;
+  const newText = `const LOG_FILE = 'alpha_fund_v3/logs/always_on_daemon.log';\n\nconst MAX_LOG_BYTES = 100 * 1024;\n\nfunction rotateLog() {
+  try {
+    if (fs.existsSync(LOG_FILE) && fs.statSync(LOG_FILE).size > MAX_LOG_BYTES) {
+      const archive = \`\${LOG_FILE}.\${Date.now()}.old\`;
+      fs.renameSync(LOG_FILE, archive);
+    }
+  } catch(e) {}
+}\n\nfunction log(msg) {
+  const cleanMsg = msg.replace(/[^\\x20-\\x7E]/g, '?');
+  const entry = \`[\${new Date().toISOString()}] \${cleanMsg}\\n\`;
+  fs.mkdirSync('alpha_fund_v3/logs', { recursive: true });
+  rotateLog();
+  fs.appendFileSync(LOG_FILE, entry);
+}`;
   const change = { filePath: hypothesis.target_file, oldText, newText };
   if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
   return null;
@@ -101,6 +302,8 @@ function buildPrunePlansChange(hypothesis, file) {
   }
 }
 
+// ==== Router ===============================================================
+
 function buildChange(hypothesis, learning) {
   const file = readTarget(hypothesis);
   if (!file) return null;
@@ -109,6 +312,26 @@ function buildChange(hypothesis, learning) {
 
   if ((title.includes('timeout') || title.includes('browser')) && hypothesis.target_file.includes('research_router')) {
     return buildTimeoutChange(hypothesis, file, learning);
+  }
+
+  if (title.includes('timeout') && hypothesis.target_file.includes('capability_functional_tester')) {
+    return buildFunctionalTesterTimeoutChange(hypothesis, file, learning);
+  }
+
+  if (title.includes('seed') && hypothesis.target_file.includes('capability_router')) {
+    return buildRouterSeedChange(hypothesis, file, learning);
+  }
+
+  if (title.includes('prune') && hypothesis.target_file.includes('memory_tier')) {
+    return buildMemoryColdPruneChange(hypothesis, file, learning);
+  }
+
+  if (title.includes('history') && hypothesis.target_file.includes('run_claw_benchmark')) {
+    return buildBenchmarkHistoryChange(hypothesis, file, learning);
+  }
+
+  if ((title.includes('title') || title.includes('planner')) && hypothesis.target_file.includes('hierarchical_planner')) {
+    return buildPlannerTitleChange(hypothesis, file, learning);
   }
 
   if (title.includes('rotate') && hypothesis.target_file.includes('always_on_daemon')) {
@@ -141,7 +364,7 @@ function generate(hypothesis) {
     log('Generated change target missing', 'warn');
     return null;
   }
-  const content = fs.readFileSync(fullPath, 'utf8');
+  const content = fs.readFileSync(fullPath, 'utf8').replace(/\r\n/g, '\n');
   if (!validate(change, content)) {
     log('Generated change failed validation against file', 'warn');
     return null;

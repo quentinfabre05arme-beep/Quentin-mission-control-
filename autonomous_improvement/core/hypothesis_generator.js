@@ -76,7 +76,7 @@ function generateStaticHypotheses() {
   return [
     {
       id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-      title: 'Add async timeout guards to capability functional tester',
+      title: 'Add async timeout guard to capability functional tester',
       category: 'reliability',
       reason: 'Async capability tests can hang if child processes misbehave',
       target_file: 'project_claw_core/core/capability_functional_tester.js',
@@ -85,16 +85,16 @@ function generateStaticHypotheses() {
     },
     {
       id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-      title: 'Persist capability router performance index across restarts',
+      title: 'Seed capability router index from usage tracker',
       category: 'performance',
-      reason: 'Router index resets on every process restart, losing routing quality data',
+      reason: 'Router index resets when empty; usage tracker already has live win-rate data',
       target_file: 'project_claw_core/core/capability_router.js',
       estimated_effort: 10,
       estimated_impact: 'medium'
     },
     {
       id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-      title: 'Add memory tier pruning for old cold-tier entries',
+      title: 'Prune cold-tier memory archive older than 90 days',
       category: 'performance',
       reason: 'Cold memory archive grows indefinitely without pruning',
       target_file: 'project_claw_core/core/memory_tier.js',
@@ -103,16 +103,16 @@ function generateStaticHypotheses() {
     },
     {
       id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-      title: 'Track benchmark score trend over time',
+      title: 'Persist benchmark score history across runs',
       category: 'workflow',
-      reason: 'Benchmark results are ephemeral; trend tracking shows if system is improving',
+      reason: 'Benchmark results overwrite the same file; trend tracking shows if system is improving',
       target_file: 'scripts/run_claw_benchmark.js',
       estimated_effort: 15,
       estimated_impact: 'high'
     },
     {
       id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-      title: 'Improve hierarchical planner goal title handling',
+      title: 'Normalize undefined goal titles in hierarchical planner',
       category: 'reliability',
       reason: 'Planner can create tasks with undefined titles when goals lack title field',
       target_file: 'project_claw_core/core/hierarchical_planner.js',
