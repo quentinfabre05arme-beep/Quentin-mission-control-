@@ -22,6 +22,19 @@ function runWithTimeout(fn, ms) {
   ]);
 }
 
+async function retry(fn, retries = 2, delayMs = 500) {
+  let last;
+  for (let i = 0; i < retries; i++) {
+    try {
+      return await fn();
+    } catch (e) {
+      last = e;
+      await new Promise(resolve => setTimeout(resolve, delayMs));
+    }
+  }
+  throw last;
+}
+
 class ResearchRouter {
   constructor(options = {}) {
     this.webSearchFn = options.webSearchFn || null;
