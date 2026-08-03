@@ -14,15 +14,20 @@ function generateFromProfile(profile, learning) {
   const hypotheses = [];
   for (const cap of profile.top_weak || []) {
     if (!cap) continue;
-    const title = `Improve reliability of ${cap.name}`;
-    if ((learning.failures_by_title[title] || 0) >= 3) continue; // skip repeatedly-failing targets
+    const title = `Add smoke test for ${cap.name}`;
+    if ((learning.failures_by_title[title] || 0) >= 3) continue;
+    // Normalize absolute Windows paths to workspace-relative for deduplication
+    let targetFile = cap.path;
+    if (targetFile.includes(CONFIG.workspace)) {
+      targetFile = targetFile.replace(CONFIG.workspace, '').replace(/^\\/, '').replace(/^\//, '');
+    }
     hypotheses.push({
       id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
       title,
       category: 'reliability',
-      reason: `${cap.attempts} attempts, ${cap.failures} failures, success rate ${cap.success_rate ? (cap.success_rate * 100).toFixed(0) : 'unknown'}%`,
-      target_file: cap.path,
-      estimated_effort: 15,
+      reason: `${cap.name} is unused (${cap.attempts} invocations); smoke test validates it loads and runs`,
+      target_file: targetFile,
+      estimated_effort: 12,
       estimated_impact: cap.issue_score > 20 ? 'high' : 'medium'
     });
   }
@@ -115,9 +120,37 @@ function generateFromKnowledge(knowledge) {
     },
     {
       keywords: ['test', 'verify', 'smoke test', 'functional test'],
-      title: 'Add functional smoke tests to capability modules',
+      title: 'Add smoke test for anomaly_detector',
       category: 'capability',
-      target_file: 'safe_capability_verifier.js',
+      target_file: 'project_claw_core/core/anomaly_detector.js',
+      reason: 'Research emphasizes automated testing for agent reliability'
+    },
+    {
+      keywords: ['test', 'verify', 'smoke test', 'functional test'],
+      title: 'Add smoke test for auto_updater',
+      category: 'capability',
+      target_file: 'project_claw_core/core/auto_updater.js',
+      reason: 'Research emphasizes automated testing for agent reliability'
+    },
+    {
+      keywords: ['test', 'verify', 'smoke test', 'functional test'],
+      title: 'Add smoke test for capability_functional_tester',
+      category: 'capability',
+      target_file: 'project_claw_core/core/capability_functional_tester.js',
+      reason: 'Research emphasizes automated testing for agent reliability'
+    },
+    {
+      keywords: ['test', 'verify', 'smoke test', 'functional test'],
+      title: 'Add smoke test for capability_registry',
+      category: 'capability',
+      target_file: 'project_claw_core/data/capability_registry.json',
+      reason: 'Research emphasizes automated testing for agent reliability'
+    },
+    {
+      keywords: ['test', 'verify', 'smoke test', 'functional test'],
+      title: 'Add smoke test for capability_router',
+      category: 'capability',
+      target_file: 'project_claw_core/core/capability_router.js',
       reason: 'Research emphasizes automated testing for agent reliability'
     },
     {

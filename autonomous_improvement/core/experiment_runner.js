@@ -62,18 +62,34 @@ function backupFile(filePath) {
   ensureBackupDir();
   const fullPath = path.join(CONFIG.workspace, filePath);
   const backupPath = path.join(BACKUP_DIR, `${path.basename(filePath)}.${Date.now()}.bak`);
-  fs.copyFileSync(fullPath, backupPath);
+  if (fs.existsSync(fullPath)) {
+    fs.copyFileSync(fullPath, backupPath);
+  } else {
+    // New file: create an empty backup sentinel
+    fs.writeFileSync(backupPath, '');
+  }
   return backupPath;
 }
 
 function restoreFile(filePath, backupPath) {
   const fullPath = path.join(CONFIG.workspace, filePath);
-  fs.copyFileSync(backupPath, fullPath);
+  const backupContent = fs.readFileSync(backupPath, 'utf8');
+  if (backupContent === '') {
+    // New file was created; remove it
+    try { fs.unlinkSync(fullPath); } catch(e) {}
+  } else {
+    fs.copyFileSync(backupPath, fullPath);
+  }
 }
 
 function applyChange(change) {
   const { filePath, oldText, newText } = change;
   const fullPath = path.join(CONFIG.workspace, filePath);
+  if (oldText === '' && !fs.existsSync(fullPath)) {
+    fs.mkdirSync(path.dirname(fullPath), { recursive: true });
+    fs.writeFileSync(fullPath, newText);
+    return { filePath, linesChanged: newText.split('\n').length };
+  }
   if (!fs.existsSync(fullPath)) throw new Error(`File not found: ${filePath}`);
   const content = fs.readFileSync(fullPath, 'utf8').replace(/\r\n/g, '\n');
   if (!content.includes(oldText)) throw new Error('oldText not found in file');
