@@ -1,5 +1,5 @@
 /**
- * UNIFIED MASTER ORCHESTRATOR
+ * UNIFIED MASTER ORCHESTRATOR v2.1
  * Integrates Alpha Fund v3.0 + Project Claw Core into one autonomous workflow.
  */
 
@@ -42,6 +42,13 @@ function saveState(state) {
   fs.writeFileSync(STATE_FILE, JSON.stringify(state, null, 2));
 }
 
+function runWithTimeout(fn, ms = 15000, label = 'operation') {
+  return Promise.race([
+    Promise.resolve(fn()).catch(e => ({ success: false, error: e.message })),
+    new Promise(resolve => setTimeout(() => resolve({ success: false, error: `${label} timed out after ${ms}ms` }), ms))
+  ]);
+}
+
 class UnifiedMasterOrchestrator {
   constructor() {
     this.state = loadState();
@@ -49,9 +56,6 @@ class UnifiedMasterOrchestrator {
     this.brain = SmartBrain ? new SmartBrain() : null;
   }
 
-  /**
-   * Use Smart Brain to recommend a model for a given task
-   */
   routeTask(task) {
     if (!this.brain) return { modelId: null, modelName: 'default', confidence: 0 };
     try {
@@ -69,9 +73,6 @@ class UnifiedMasterOrchestrator {
     }
   }
 
-  /**
-   * Run Smart Brain classification as part of each cycle
-   */
   async runModelRouting() {
     log('Step: Smart Brain model routing');
     const tasks = [
@@ -82,7 +83,7 @@ class UnifiedMasterOrchestrator {
     ];
     const routing = [];
     for (const task of tasks) {
-      const r = this.routeTask(task);
+      const r = await runWithTimeout(() => this.routeTask(task), 3000, 'smart_brain_route');
       routing.push({ task, ...r });
     }
     log(`Smart Brain routed ${routing.length} sample tasks`);
@@ -92,10 +93,14 @@ class UnifiedMasterOrchestrator {
   async runResearch(query = 'BTC crypto market news today') {
     log(`Step: Market research — ${query}`);
     try {
-      const research = await this.workflows.orch.runCommand('research_agent research', [query, 5]);
-      if (!research.success) {
-        log(`Research failed: ${research.error}`, 'warn');
-        return { success: false, error: research.error };
+      const research = await runWithTimeout(
+        () => this.workflows.orch.runCommand('research_agent research', [query, 5]),
+        30000,
+        'research'
+      );
+      if (!research || !research.success) {
+        log(`Research failed: ${research?.error || 'unknown'}`, 'warn');
+        return { success: false, error: research?.error || 'unknown' };
       }
       return research;
     } catch(e) {
@@ -104,9 +109,6 @@ class UnifiedMasterOrchestrator {
     }
   }
   
-  /**
-   * Generate a concise status report suitable for Telegram.
-   */
   async generateReport() {
     const { CapabilityInvoker } = require(path.join(WORKSPACE, 'project_claw_core', 'core', 'capability_invoker'));
     const invoker = new CapabilityInvoker();
@@ -117,23 +119,23 @@ class UnifiedMasterOrchestrator {
     let market = {};
 
     try {
-      health = await invoker.invoke('system_health_monitor', 'getHealth', []);
+      health = await runWithTimeout(() => invoker.invoke('system_health_monitor', 'getHealth', []), 10000, 'health_report');
     } catch (e) { health = { success: false, error: e.message }; }
 
     try {
-      fund = AlphaFund.COMMANDS.status(['--json']);
+      fund = await runWithTimeout(() => AlphaFund.COMMANDS.status(['--json']), 5000, 'fund_report');
     } catch (e) { fund = { total_value: 0, return_pct: 0, mode: 'error', error: e.message }; }
 
     try {
-      const auditRaw = await invoker.invoke('self_audit', 'run', []);
+      const auditRaw = await runWithTimeout(() => invoker.invoke('self_audit', 'run', []), 10000, 'audit_report');
       if (auditRaw.success && auditRaw.result && auditRaw.result.summary) {
         audit = auditRaw.result.summary;
       }
     } catch (e) { audit.error = e.message; }
 
     try {
-      const btc = await invoker.invoke('market_watcher', 'getTrend', ['BTC']);
-      const eth = await invoker.invoke('market_watcher', 'getTrend', ['ETH']);
+      const btc = await runWithTimeout(() => invoker.invoke('market_watcher', 'getTrend', ['BTC']), 10000, 'btc_report');
+      const eth = await runWithTimeout(() => invoker.invoke('market_watcher', 'getTrend', ['ETH']), 10000, 'eth_report');
       market = { btc: btc.result, eth: eth.result };
     } catch (e) { market.error = e.message; }
 
@@ -155,70 +157,60 @@ class UnifiedMasterOrchestrator {
     let report = null;
 
     try {
-      // 1. System health check
       log('Step 1: System health');
-      const healthCheck = await this.workflows.orch.healthCheck();
+      const healthCheck = await runWithTimeout(() => this.workflows.orch.healthCheck(), 15000, 'health_check');
       actions.push({ step: 'health_check', healthy: healthCheck.healthy, issues: healthCheck.issues });
 
-      // 2. Self-healing if issues
       if (!healthCheck.healthy) {
         log('Health issues detected, running self-healing', 'warn');
-        const cleanup = await this.workflows.orch.runCommand('predictive_maintenance run');
+        const cleanup = await runWithTimeout(() => this.workflows.orch.runCommand('predictive_maintenance run'), 20000, 'self_heal');
         actions.push({ step: 'predictive_maintenance', result: cleanup.success });
-        // Also run RAM cleanup directly
         try {
           const rc = require(path.join(WORKSPACE, 'alpha_fund_v3', 'scripts', 'ram_cleanup'));
-          const before = rc.cleanup();
+          const before = await runWithTimeout(() => rc.cleanup(), 20000, 'ram_cleanup');
           actions.push({ step: 'ram_cleanup', saved_mb: before.saved_mb, after_pct: before.after.pct });
         } catch(e) {
           actions.push({ step: 'ram_cleanup', error: e.message });
         }
       }
 
-      // 3. Alpha Fund status
       log('Step 2: Alpha Fund status');
-      const fundStatus = AlphaFund.COMMANDS.status(['--json']);
+      const fundStatus = await runWithTimeout(() => AlphaFund.COMMANDS.status(['--json']), 5000, 'fund_status');
       actions.push({ step: 'fund_status', total_value: fundStatus.total_value, return_pct: fundStatus.total_return_pct });
 
-      // 4. Run Smart Brain model routing
       log('Step 2b: Smart Brain model routing');
       const routing = await this.runModelRouting();
       actions.push({ step: 'smart_brain_routing', routes: routing.length, sample: routing.slice(0, 2) });
 
-      // 5. Run research
       const research = await this.runResearch();
       actions.push({ step: 'research', success: research.success, result_size: research.result ? JSON.stringify(research.result).length : 0 });
 
-      // 5. Generate market watcher trend
       log('Step 3: Market watcher');
-      const btcTrend = await this.workflows.orch.runCommand('market_watcher getTrend', ['BTC']);
-      const ethTrend = await this.workflows.orch.runCommand('market_watcher getTrend', ['ETH']);
+      const btcTrend = await runWithTimeout(() => this.workflows.orch.runCommand('market_watcher getTrend', ['BTC']), 10000, 'btc_trend');
+      const ethTrend = await runWithTimeout(() => this.workflows.orch.runCommand('market_watcher getTrend', ['ETH']), 10000, 'eth_trend');
       actions.push({ step: 'market_watch', btc: btcTrend.result, eth: ethTrend.result });
 
-      // 6. Self-audit
       log('Step 4: Self audit');
-      const audit = await this.workflows.orch.runCommand('self_audit run');
+      const audit = await runWithTimeout(() => this.workflows.orch.runCommand('self_audit run'), 20000, 'self_audit');
       const auditSummary = audit.success && audit.result && audit.result.summary ? audit.result.summary : { real: 0, stubs: 0, syntax_errors: 0 };
       actions.push({ step: 'self_audit', real: auditSummary.real, stubs: auditSummary.stubs, syntax_errors: auditSummary.syntax_errors });
 
-      // 7. Git backup
       log('Step 5: Git backup');
-      const gitStatus = await this.workflows.orch.runCommand('git_agent status');
+      const gitStatus = await runWithTimeout(() => this.workflows.orch.runCommand('git_agent status'), 10000, 'git_status');
       const hasChanges = gitStatus.result && (gitStatus.result.has_changes || gitStatus.result.ahead || gitStatus.result.modified > 0);
       if (hasChanges) {
-        const commit = await this.workflows.orch.runCommand('git_agent autoCommitPush', ['Auto: Unified master cycle']);
+        const commit = await runWithTimeout(() => this.workflows.orch.runCommand('git_agent autoCommitPush', ['Auto: Unified master cycle']), 30000, 'git_backup');
         actions.push({ step: 'git_backup', success: commit.success });
       } else {
         actions.push({ step: 'git_backup', note: 'no changes' });
       }
 
-      // 8. Generate and optionally send report
       if (reportTarget) {
         log('Step 6: Telegram report');
-        report = await this.generateReport();
+        report = await runWithTimeout(() => this.generateReport(), 15000, 'generate_report');
         try {
           const { message } = require('./telegram_helper');
-          await message({ action: 'send', target: reportTarget, channel: 'telegram', message: formatReport(report) });
+          await runWithTimeout(() => message({ action: 'send', target: reportTarget, channel: 'telegram', message: formatReport(report) }), 10000, 'telegram_send');
           actions.push({ step: 'telegram_report', sent: true });
         } catch (e) {
           log(`Telegram report failed: ${e.message}`, 'warn');
@@ -226,10 +218,9 @@ class UnifiedMasterOrchestrator {
         }
       }
 
-      // Update state
       this.state.cycles++;
       this.state.last_cycle = new Date().toISOString();
-      this.state.actions = actions;
+      this.state.actions = actions.slice(-20);
       this.state.duration_ms = Date.now() - start;
       saveState(this.state);
 
@@ -260,7 +251,6 @@ class UnifiedMasterOrchestrator {
     log(`Starting unified master loop every ${intervalMs / 60000} minutes`);
     this.runCycle(reportTarget);
     const timer = setInterval(() => this.runCycle(reportTarget), intervalMs);
-    // Keep process alive indefinitely
     timer.unref = () => {};
   }
 }
@@ -270,34 +260,28 @@ function formatReport(r) {
   const f = r.fund || {};
   const a = r.audit || {};
   const m = r.market || {};
-  const btc = m.btc || {};
-  const eth = m.eth || {};
-  return `\u003e **CLAW MASTER CYCLE #${r.cycle}**\n` +
-    `\u23f0 ${new Date(r.timestamp).toLocaleString('fr-FR')}\n\n` +
-    `\ud83d\udcbe **System**\nRAM: ${h.ram_pct || '?'}% | Disk: ${h.disk_pct || '?'}% | Uptime: ${h.uptime || '?'}\n\n` +
-    `\ud83d\udcc8 **Alpha Fund**\nValue: $${f.total_value ? f.total_value.toFixed(2) : '?'} (${f.return_pct ? f.return_pct.toFixed(2) : '?'}%) | Mode: ${f.mode || '?'}\n\n` +
-    `\ud83d\udd0d **Audit**\n${a.real || 0} real | ${a.stubs || 0} stubs | ${a.syntax_errors || 0} syntax errors\n\n` +
-    `\ud83d\udcb0 **Market**\nBTC: ${btc.trend || '?'} @ $${btc.price || '?'}\nETH: ${eth.trend || '?'} @ $${eth.price || '?'}\n`;
+  return [
+    `🐾 Claw Cycle #${r.cycle} — ${new Date(r.timestamp).toLocaleString('fr-FR')}`,
+    ``,
+    `💰 Alpha Fund: ${f.total_value || 0} (${f.total_return_pct || 0}%)`,
+    `🧠 Capabilities: ${a.real || 0} real, ${a.stubs || 0} stubs`,
+    `📈 BTC: ${m.btc?.signal || 'N/A'} | ETH: ${m.eth?.signal || 'N/A'}`,
+    `🖥️ RAM: ${h.ramUsedPct || 'N/A'}% | Disk C: ${h.diskUsedPct || 'N/A'}%`,
+    `✅ Cycle complete`
+  ].join('\n');
 }
 
 module.exports = { UnifiedMasterOrchestrator };
 
 if (require.main === module) {
-  const master = new UnifiedMasterOrchestrator();
   const mode = process.argv[2] || 'once';
+  const orchestrator = new UnifiedMasterOrchestrator();
   if (mode === 'loop') {
-    const interval = parseInt(process.argv[3], 10) || 600000;
-    const target = process.argv[4] || null;
-    master.startLoop(interval, target);
+    orchestrator.startLoop(600000, process.argv[3]);
   } else {
-    const target = process.argv[3] || null;
-    master.runOnce(target).then(r => {
-      console.log('\n=== RESULT ===');
+    orchestrator.runOnce().then(r => {
       console.log(JSON.stringify(r, null, 2));
-      process.exit(0);
-    }).catch(e => {
-      console.error(e);
-      process.exit(1);
+      process.exit(r.success ? 0 : 1);
     });
   }
 }

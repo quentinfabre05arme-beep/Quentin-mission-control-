@@ -1,15 +1,15 @@
 {
-  "total": 178,
-  "grok": 112,
+  "total": 246,
+  "grok": 148,
   "byModel": {
-    "qwen3-coder": 41,
-    "grok-4.3": 27,
-    "grok-4.5": 85,
+    "qwen3-coder": 55,
+    "grok-4.3": 49,
+    "grok-4.5": 99,
     "deepseek-v4-pro": 16,
-    "qwen3": 9
+    "qwen3": 27
   },
   "daily": {
-    "2026-08-03": 34
+    "2026-08-03": 102
   },
   "lastReset": "2026-08-03"
 }

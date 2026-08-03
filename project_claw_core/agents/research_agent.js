@@ -199,24 +199,30 @@ async function fetchPageText(url) {
 class ResearchAgent {
   constructor() {}
 
-  async search(query, count = 5) {
+  async search(query = '', count = 5) {
+    if (!query || typeof query !== 'string') {
+      log('Invalid query provided to search');
+      return [];
+    }
     return await searchWeb(query, count);
   }
 
-  async searchDeep(query, count = 5) {
+  async searchDeep(query = '', count = 5) {
+    if (!query || typeof query !== 'string') {
+      log('Invalid query provided to searchDeep');
+      return [];
+    }
     return await searchWebFallback(query, count);
   }
 
-  async summarize(url) {
-    log(`Summarizing: ${url}`);
-    const text = await fetchPageText(url);
-    return { url, summary: text.slice(0, 1000), full_length: text.length };
-  }
-
-  async research(query, count = 5) {
+  async research(query = '', count = 5) {
+    if (!query || typeof query !== 'string') {
+      log('Invalid query provided to research');
+      return [];
+    }
     const results = await this.search(query, count);
     if (!results || results.length === 0) {
-      log('Serper returned empty, falling back to fallback research');
+      log('Search returned empty, falling back to fallback research');
       return await this.searchDeep(query, count);
     }
     const enriched = [];
@@ -229,6 +235,12 @@ class ResearchAgent {
       }
     }
     return enriched;
+  }
+
+  async summarize(url) {
+    log(`Summarizing: ${url}`);
+    const text = await fetchPageText(url);
+    return { url, summary: text.slice(0, 1000), full_length: text.length };
   }
 }
 

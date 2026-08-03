@@ -1,16 +1,14 @@
 {
-  "timestamp": "2026-08-03T08:08:13.872Z",
-  "total": 87,
-  "verified": 56,
+  "timestamp": "2026-08-03T08:27:17.192Z",
+  "total": 86,
+  "verified": 57,
   "skipped": 24,
-  "failed": 7,
+  "failed": 5,
   "failed_capabilities": [
-    "research_agent",
     "research_router",
     "anomaly_detector",
     "verifier",
     "capability_generator",
-    "tavily_search",
     "searxng_client"
   ]
 }

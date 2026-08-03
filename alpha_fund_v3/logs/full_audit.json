@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-03T07:27:10.321Z",
+  "timestamp": "2026-08-03T08:27:10.490Z",
   "system": {
     "platform": "win32",
     "release": "10.0.26200",
@@ -7,24 +7,24 @@
     "cpus": 8,
     "total_ram_gb": 8,
     "free_ram_gb": 1,
-    "uptime_hours": 191,
+    "uptime_hours": 192,
     "user": "quent",
     "home": "C:\\Users\\quent"
   },
   "workspace": {
-    "total_files": 2690,
-    "total_dirs": 211,
-    "total_size": 90795552,
+    "total_files": 2774,
+    "total_dirs": 204,
+    "total_size": 94089965,
     "top_dirs": [
       {
         "name": "project_claw_core",
-        "files": 518,
-        "dirs": 10,
+        "files": 473,
+        "dirs": 9,
         "size_mb": 23,
         "old_files": 0,
         "types": {
-          ".js": 188,
-          ".log": 113,
+          ".js": 167,
+          ".log": 89,
           "(no ext)": 79,
           ".md": 54,
           ".json": 44
@@ -86,6 +86,20 @@
         }
       },
       {
+        "name": "archive_old_tests",
+        "files": 226,
+        "dirs": 3,
+        "size_mb": 4,
+        "old_files": 0,
+        "types": {
+          ".js": 57,
+          ".md": 51,
+          ".html": 38,
+          ".py": 23,
+          ".png": 14
+        }
+      },
+      {
         "name": "mission_control",
         "files": 117,
         "dirs": 6,
@@ -115,29 +129,15 @@
       },
       {
         "name": "missions",
-        "files": 44,
-        "dirs": 2,
+        "files": 41,
+        "dirs": 1,
         "size_mb": 2,
         "old_files": 0,
         "types": {
-          ".js": 26,
+          ".js": 24,
           ".md": 10,
-          ".json": 7,
+          ".json": 6,
           ".txt": 1
-        }
-      },
-      {
-        "name": "archive_old_tests",
-        "files": 72,
-        "dirs": 1,
-        "size_mb": 1,
-        "old_files": 0,
-        "types": {
-          ".js": 22,
-          ".py": 12,
-          ".txt": 11,
-          ".ps1": 10,
-          ".json": 8
         }
       },
       {
@@ -197,12 +197,12 @@
       },
       {
         "name": "autonomous_improvement",
-        "files": 43,
+        "files": 47,
         "dirs": 4,
         "size_mb": 0,
         "old_files": 0,
         "types": {
-          ".bak": 25,
+          ".bak": 29,
           ".js": 9,
           ".json": 7,
           ".log": 2
@@ -224,7 +224,7 @@
       }
     ],
     "file_types": {},
-    "empty_dirs": 90,
+    "empty_dirs": 89,
     "old_files": 35,
     "duplicates": [],
     "dead_code": [
@@ -261,7 +261,7 @@
   "recommendations": [
     {
       "priority": "MEDIUM",
-      "issue": "90 empty directories",
+      "issue": "89 empty directories",
       "action": "Remove empty directories"
     }
   ]

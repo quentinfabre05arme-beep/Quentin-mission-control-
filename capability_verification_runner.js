@@ -1,6 +1,6 @@
 /**
- * CAPABILITY VERIFICATION RUNNER v3.1
- * Test every real capability with timeouts + single-instance lock.
+ * CAPABILITY VERIFICATION RUNNER v3.2
+ * Test every real capability with 2s timeout + single-instance lock.
  */
 
 const fs = require('fs');
@@ -12,17 +12,18 @@ const SUMMARY_FILE = path.join(__dirname, 'project_claw_core', 'data', 'capabili
 const LOCK_FILE = path.join(__dirname, 'project_claw_core', 'data', 'capability_verification.lock');
 
 const SKIP = ['microsoft_browser_agent', 'linkedin_agent', 'x_agent', 'github_agent', 'gmail_agent', 'microsoft_graph_agent', 'microsoft_graph_auth', 'browser_agent_v2'];
+const TIMEOUT_MS = 2000;
 
 function log(entry) {
   fs.mkdirSync(path.dirname(LOG_FILE), { recursive: true });
   fs.appendFileSync(LOG_FILE, JSON.stringify(entry) + '\n');
 }
 
-async function runWithTimeout(fn, ms = 5000) {
-  return new Promise((resolve, reject) => {
-    const timer = setTimeout(() => reject(new Error('timeout')), ms);
-    Promise.resolve(fn()).then(r => { clearTimeout(timer); resolve(r); }).catch(e => { clearTimeout(timer); reject(e); });
-  });
+async function runWithTimeout(fn, ms = TIMEOUT_MS) {
+  return Promise.race([
+    Promise.resolve(fn()).catch(e => ({ success: false, error: e.message })),
+    new Promise(resolve => setTimeout(() => resolve({ success: false, error: `timeout after ${ms}ms` }), ms))
+  ]);
 }
 
 async function verifyCapability(capName, capPath) {
@@ -45,15 +46,15 @@ async function verifyCapability(capName, capPath) {
       let method = methods.find(m => safeMethods.includes(m));
       if (!method && methods.length > 0) method = methods[0];
       if (!method) return { capability: capName, success: false, error: 'no methods', duration_ms: 0 };
-      result = await runWithTimeout(() => instance[method](), 5000);
+      result = await runWithTimeout(() => instance[method](), TIMEOUT_MS);
     } else if (fnName) {
-      result = await runWithTimeout(() => mod[fnName](), 5000);
+      result = await runWithTimeout(() => mod[fnName](), TIMEOUT_MS);
     } else {
       return { capability: capName, success: false, error: 'no callable exports', duration_ms: 0 };
     }
     
     const duration = Date.now() - start;
-    const success = !result || result.success !== false;
+    const success = result && result.success !== false;
     const entry = { capability: capName, success, duration_ms: duration, error: result && result.error ? result.error : null };
     log(entry);
     return entry;
@@ -89,9 +90,7 @@ function releaseLock() {
     if (fs.existsSync(LOCK_FILE) && fs.readFileSync(LOCK_FILE, 'utf8') === String(process.pid)) {
       fs.unlinkSync(LOCK_FILE);
     }
-  } catch (e) {
-    console.log('Release lock error:', e.message);
-  }
+  } catch (e) {}
 }
 
 async function main() {
@@ -103,7 +102,7 @@ async function main() {
     const audit = new SelfAudit().run();
     const realCapabilities = audit.details.filter(d => d.real);
     
-    console.log(`Verifying ${realCapabilities.length} capabilities...`);
+    console.log(`Verifying ${realCapabilities.length} capabilities with ${TIMEOUT_MS}ms timeout...`);
     const results = [];
     
     for (const cap of realCapabilities) {
