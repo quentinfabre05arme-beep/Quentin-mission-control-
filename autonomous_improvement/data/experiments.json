@@ -689,6 +689,92 @@
         "filePath": "project_claw_core/data/plans.json",
         "linesChanged": -84
       }
+    },
+    {
+      "id": "hyp_1785728364674_wpq76",
+      "title": "Prune duplicate test plans in planner.js",
+      "category": "workflow",
+      "timestamp": "2026-08-03T03:39:24.689Z",
+      "change": {
+        "filePath": "project_claw_core/data/plans.json",
+        "oldText": "{\n  \"plans\": [\n    {\n      \"id\": \"plan_1785695060777\",\n      \"goal\": \"Make all capabilities functional\",\n      \"created_at\": \"2026-08-02T18:24:20.777Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"Build remaining core utilities\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_1\",\n          \"description\": \"Test each capability\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_2\",\n          \"description\": \"Run self audit\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_3\",\n          \"description\": \"Commit changes\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785726448910\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-03T03:07:28.910Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785726494116\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-03T03:08:14.116Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785726941686\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-03T03:15:41.686Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785727541309\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-03T03:25:41.309Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785728141476\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-03T03:35:41.476Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    }\n  ]\n}",
+        "newText": "{\n  \"plans\": [\n    {\n      \"id\": \"plan_1785695060777\",\n      \"goal\": \"Make all capabilities functional\",\n      \"created_at\": \"2026-08-02T18:24:20.777Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"Build remaining core utilities\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_1\",\n          \"description\": \"Test each capability\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_2\",\n          \"description\": \"Run self audit\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_3\",\n          \"description\": \"Commit changes\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    }\n  ]\n}",
+        "hypothesisId": "hyp_1785728364674_wpq76"
+      },
+      "outcome": "success",
+      "tests": {
+        "syntax": true,
+        "load": true,
+        "functional": false
+      },
+      "metrics": {
+        "file_size_after": 836
+      },
+      "review": {
+        "ok": true,
+        "depCheck": {
+          "dependents": [],
+          "results": [],
+          "allOk": true
+        },
+        "metrics": {
+          "total": 109,
+          "passed": 63,
+          "failed": 11
+        }
+      },
+      "benchmark": {
+        "runLatencyMs": null,
+        "hasRunMethod": false
+      },
+      "status": "committed",
+      "applied": {
+        "filePath": "project_claw_core/data/plans.json",
+        "linesChanged": -70
+      }
+    },
+    {
+      "id": "hyp_1785730272253_b3jlo",
+      "title": "Prune duplicate test plans in planner.js",
+      "category": "workflow",
+      "timestamp": "2026-08-03T04:11:12.269Z",
+      "change": {
+        "filePath": "project_claw_core/data/plans.json",
+        "oldText": "{\n  \"plans\": [\n    {\n      \"id\": \"plan_1785695060777\",\n      \"goal\": \"Make all capabilities functional\",\n      \"created_at\": \"2026-08-02T18:24:20.777Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"Build remaining core utilities\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_1\",\n          \"description\": \"Test each capability\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_2\",\n          \"description\": \"Run self audit\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_3\",\n          \"description\": \"Commit changes\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785728372500\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-03T03:39:32.500Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785728418071\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-03T03:40:18.071Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785728742099\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-03T03:45:42.099Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785729341044\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-03T03:55:41.044Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    },\n    {\n      \"id\": \"plan_1785729942520\",\n      \"goal\": \"test\",\n      \"created_at\": \"2026-08-03T04:05:42.520Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"step1\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    }\n  ]\n}",
+        "newText": "{\n  \"plans\": [\n    {\n      \"id\": \"plan_1785695060777\",\n      \"goal\": \"Make all capabilities functional\",\n      \"created_at\": \"2026-08-02T18:24:20.777Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"Build remaining core utilities\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_1\",\n          \"description\": \"Test each capability\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_2\",\n          \"description\": \"Run self audit\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_3\",\n          \"description\": \"Commit changes\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    }\n  ]\n}",
+        "hypothesisId": "hyp_1785730272253_b3jlo"
+      },
+      "outcome": "success",
+      "tests": {
+        "syntax": true,
+        "load": true,
+        "functional": false
+      },
+      "metrics": {
+        "file_size_after": 836
+      },
+      "review": {
+        "ok": true,
+        "depCheck": {
+          "dependents": [],
+          "results": [],
+          "allOk": true
+        },
+        "metrics": {
+          "total": 109,
+          "passed": 63,
+          "failed": 11
+        }
+      },
+      "benchmark": {
+        "runLatencyMs": null,
+        "hasRunMethod": false
+      },
+      "status": "committed",
+      "applied": {
+        "filePath": "project_claw_core/data/plans.json",
+        "linesChanged": -70
+      }
     }
   ]
 }
