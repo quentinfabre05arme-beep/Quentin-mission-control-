@@ -79,6 +79,7 @@ project_claw_core/data/capability_functional_results.json
 project_claw_core/data/capability_router_index.json
 project_claw_core/data/capability_usage_summary.json
 project_claw_core/data/claw_benchmark_results.json
+project_claw_core/data/claw_benchmark_history.jsonl
 project_claw_core/data/goal_state.json
 project_claw_core/data/plans.json
 project_claw_core/data/polyglot/

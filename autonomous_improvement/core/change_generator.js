@@ -10,6 +10,7 @@ const { log } = require('./utils');
 const { isAnchorKnownBad } = require('./learning_engine');
 
 const CONFIG = require('../config.json');
+const NL = '\n'; // real newline for embedding into generated code strings
 
 function readTarget(hypothesis) {
   const target = path.join(CONFIG.workspace, hypothesis.target_file);
@@ -206,11 +207,11 @@ function buildBenchmarkHistoryChange(hypothesis, file, learning) {
   const oldText = `  fs.mkdirSync(path.dirname(BENCHMARK_PATH), { recursive: true });
   fs.writeFileSync(BENCHMARK_PATH, JSON.stringify(report, null, 2));
   return report;`;
-  const newText = `  fs.mkdirSync(path.dirname(BENCHMARK_PATH), { recursive: true });
-  fs.writeFileSync(BENCHMARK_PATH, JSON.stringify(report, null, 2));
-  const historyPath = path.join(__dirname, '..', 'project_claw_core', 'data', 'claw_benchmark_history.jsonl');
-  fs.appendFileSync(historyPath, JSON.stringify({ ...report, recorded_at: new Date().toISOString() }) + '\n');
-  return report;`;
+  const newText = "  fs.mkdirSync(path.dirname(BENCHMARK_PATH), { recursive: true });\n" +
+    "  fs.writeFileSync(BENCHMARK_PATH, JSON.stringify(report, null, 2));\n" +
+    "  const historyPath = path.join(__dirname, '..', 'project_claw_core', 'data', 'claw_benchmark_history.jsonl');\n" +
+    "  fs.appendFileSync(historyPath, JSON.stringify({ ...report, recorded_at: new Date().toISOString() }) + '\\\\n');\n" +
+    "  return report;";
   const change = { filePath: hypothesis.target_file, oldText, newText };
   if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
   return null;
@@ -258,26 +259,29 @@ function buildLogRotationChange(hypothesis, file, learning) {
     log('Log rotation already present', 'warn');
     return { alreadyApplied: true };
   }
-  const oldText = `const LOG_FILE = 'alpha_fund_v3/logs/always_on_daemon.log';\n\nfunction log(msg) {
-  const cleanMsg = msg.replace(/[^\\x20-\\x7E]/g, '?');
-  const entry = \`[\${new Date().toISOString()}] \${cleanMsg}\\n\`;
-  fs.mkdirSync('alpha_fund_v3/logs', { recursive: true });
-  fs.appendFileSync(LOG_FILE, entry);
-}`;
-  const newText = `const LOG_FILE = 'alpha_fund_v3/logs/always_on_daemon.log';\n\nconst MAX_LOG_BYTES = 100 * 1024;\n\nfunction rotateLog() {
-  try {
-    if (fs.existsSync(LOG_FILE) && fs.statSync(LOG_FILE).size > MAX_LOG_BYTES) {
-      const archive = \`\${LOG_FILE}.\${Date.now()}.old\`;
-      fs.renameSync(LOG_FILE, archive);
-    }
-  } catch(e) {}
-}\n\nfunction log(msg) {
-  const cleanMsg = msg.replace(/[^\\x20-\\x7E]/g, '?');
-  const entry = \`[\${new Date().toISOString()}] \${cleanMsg}\\n\`;
-  fs.mkdirSync('alpha_fund_v3/logs', { recursive: true });
-  rotateLog();
-  fs.appendFileSync(LOG_FILE, entry);
-}`;
+  const oldText = "const LOG_FILE = 'alpha_fund_v3/logs/always_on_daemon.log';\\n\\nfunction log(msg) {\\n" +
+    "  const cleanMsg = msg.replace(/[^\\\\x20-\\\\x7E]/g, '?');\\n" +
+    "  const entry = `[${new Date().toISOString()}] ${cleanMsg}\\\\n`;\\n" +
+    "  fs.mkdirSync('alpha_fund_v3/logs', { recursive: true });\\n" +
+    "  fs.appendFileSync(LOG_FILE, entry);\\n" +
+    "}";
+  const newText = "const LOG_FILE = 'alpha_fund_v3/logs/always_on_daemon.log';\\n\\n" +
+    "const MAX_LOG_BYTES = 100 * 1024;\\n\\n" +
+    "function rotateLog() {\\n" +
+    "  try {\\n" +
+    "    if (fs.existsSync(LOG_FILE) \u0026\u0026 fs.statSync(LOG_FILE).size \u003e MAX_LOG_BYTES) {\\n" +
+    "      const archive = `${LOG_FILE}.${Date.now()}.old`;\\n" +
+    "      fs.renameSync(LOG_FILE, archive);\\n" +
+    "    }\\n" +
+    "  } catch(e) {}\\n" +
+    "}\\n\\n" +
+    "function log(msg) {\\n" +
+    "  const cleanMsg = msg.replace(/[^\\\\x20-\\\\x7E]/g, '?');\\n" +
+    "  const entry = `[${new Date().toISOString()}] ${cleanMsg}\\\\n`;\\n" +
+    "  fs.mkdirSync('alpha_fund_v3/logs', { recursive: true });\\n" +
+    "  rotateLog();\\n" +
+    "  fs.appendFileSync(LOG_FILE, entry);\\n" +
+    "}";
   const change = { filePath: hypothesis.target_file, oldText, newText };
   if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
   return null;
