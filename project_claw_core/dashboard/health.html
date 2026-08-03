@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Claw Core — Health Dashboard</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0f; color: #e0e0e0; margin: 0; padding: 20px; }
+    h1 { color: #00d4ff; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+    .card { background: #151520; border: 1px solid #2a2a3a; border-radius: 12px; padding: 20px; }
+    .card h2 { margin-top: 0; color: #7c3aed; }
+    .metric { display: flex; justify-content: space-between; margin: 10px 0; padding: 8px; background: #1a1a2a; border-radius: 6px; }
+    .ok { color: #22c55e; }
+    .warn { color: #f59e0b; }
+    .crit { color: #ef4444; }
+    pre { background: #0f0f18; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <h1>🐾 Claw Core Health Dashboard</h1>
+  <p>Last updated: 2026-08-03T08:08:06.528Z</p>
+  
+  <div class="grid">
+    <div class="card">
+      <h2>Memory</h2>
+      <div class="metric"><span>Total</span><span>7.92 GB</span></div>
+      <div class="metric"><span>Used</span><span class="warn">7.05 GB (89.1%)</span></div>
+      <div class="metric"><span>Free</span><span>0.87 GB</span></div>
+    </div>
+    
+    <div class="card">
+      <h2>CPU</h2>
+      <div class="metric"><span>Cores</span><span>8</span></div>
+      <div class="metric"><span>Model</span><span>Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz</span></div>
+      <div class="metric"><span>Uptime</span><span>193h</span></div>
+    </div>
+    
+    <div class="card">
+      <h2>Disk</h2>
+      
+        <div class="metric">
+          <span>C:</span>
+          <span class="ok">28.30 GB free (76.0%)</span>
+        </div>
+      
+        <div class="metric">
+          <span>D:</span>
+          <span class="ok">524.98 GB free (42.7%)</span>
+        </div>
+      
+        <div class="metric">
+          <span>E:</span>
+          <span class="warn">1.82 GB free (88.1%)</span>
+        </div>
+      
+    </div>
+    
+    <div class="card">
+      <h2>Top Processes</h2>
+      <pre>Name                   Id MemoryMB          CPU
+----                   -- --------          ---
+node                 8764   943,73   8771,34375
+WindowsTerminal      1748   740,32   951,203125
+MsMpEng              4772    231,7  45039,53125
+node                 2204    191,8       3,4375
+explorer             4852   159,33 17840,421875
+com.docker.backend   9628   119,96  2830,984375
+Notepad             18012   113,54      1,59375
+dwm                  1596   112,21 81545,734375
+vmmemWSL            13352    93,28          741
+PhoneExperienceHost 13072    83,68  2783,171875</pre>
+    </div>
+    
+    <div class="card">
+      <h2>Network Interfaces</h2>
+      <pre>{
+  "Wi-Fi": [
+    {
+      "address": "2a01:e0a:c99:2f80:5743:3bea:edf7:e302",
+      "family": "IPv6"
+    },
+    {
+      "address": "fe80::6f94:e2ce:bd2e:2cf4",
+      "family": "IPv6"
+    },
+    {
+      "address": "192.168.1.69",
+      "family": "IPv4"
+    }
+  ],
+  "Loopback Pseudo-Interface 1": [
+    {
+      "address": "::1",
+      "family": "IPv6"
+    },
+    {
+      "address": "127.0.0.1",
+      "family": "IPv4"
+    }
+  ],
+  "vEthernet (WSL (Hyper-V firewall))": [
+    {
+      "address": "fe80::492:5645:aa97:37c3",
+      "family": "IPv6"
+    },
+    {
+      "address": "172.18.64.1",
+      "family": "IPv4"
+    }
+  ]
+}</pre>
+    </div>
+  </div>
+</body>
+</html>

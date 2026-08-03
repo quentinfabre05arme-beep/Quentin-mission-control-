@@ -9,7 +9,7 @@ const path = require('path');
 
 const LOG_FILE = path.join(__dirname, '..', 'logs', 'research_agent.log');
 const CACHE_DIR = path.join(__dirname, '..', 'memory', 'research_cache');
-const CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
+const CACHE_TTL_MS = 60 * 60 * 1000;
 
 const { getCredential } = require('../../credential_manager');
 
@@ -39,43 +39,38 @@ function saveCache(query, results) {
 
 function getSerperKey() {
   try {
-    // Try environment first
     if (process.env.SERPER_API_KEY) return process.env.SERPER_API_KEY;
-
-    // Try credential manager
     try {
       const cred = getCredential('serper');
       if (cred && cred.password) return cred.password;
     } catch(e) {}
-
-    // Try .env file
     const envFile = path.join(__dirname, '..', '..', '.env');
     if (fs.existsSync(envFile)) {
       const lines = fs.readFileSync(envFile, 'utf8').split('\n');
       for (const line of lines) {
-        if (line.startsWith('SERPER_API_KEY=')) {
-          return line.split('=').slice(1).join('=').trim();
-        }
+        if (line.startsWith('SERPER_API_KEY=')) return line.split('=').slice(1).join('=').trim();
       }
     }
-
-    // Last resort placeholder
     return '{{secret:serper-api}}';
   } catch(e) {
     log('No Serper API key available');
-    return [];
+    return '';
   }
 }
 
 async function searchWebFallback(query, count = 5) {
-  // DuckDuckGo HTML fallback when Serper is unavailable
   log(`Serper unavailable, trying DuckDuckGo fallback for: ${query}`);
-  return new Promise((resolve, reject) => {
+  const results = await ddgSearch(query, count);
+  if (results.length > 0) return results;
+  log('DDG empty, trying Brave fallback');
+  return await braveSearch(query, count);
+}
+
+function ddgSearch(query, count) {
+  return new Promise((resolve) => {
     const url = `https://duckduckgo.com/html/?q=${encodeURIComponent(query)}`;
     https.get(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-      },
+      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
       timeout: 15000
     }, (res) => {
       let data = '';
@@ -89,27 +84,29 @@ async function searchWebFallback(query, count = 5) {
         }
         resolve(results);
       });
-      // DuckDuckGo often returns cloudflare blocks; try Brave search API-less approach
-      const braveUrl = `https://search.brave.com/search?q=${encodeURIComponent(query)}`;
-      https.get(braveUrl, {
-        headers: {
-          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-        },
-        timeout: 15000
-      }, (res2) => {
-        let data2 = '';
-        res2.on('data', chunk => data2 += chunk);
-        res2.on('end', () => {
-          const results2 = [];
-          const regex2 = /<div[^\u003e]*class="snippet"[^\u003e]*>\s*<a[^\u003e]*href="(https?:\/\/[^"]+)"[^\u003e]*>([^\u003c]*)<\/a>/gi;
-          let match2;
-          while ((match2 = regex2.exec(data2)) !== null && results2.length < count) {
-            results2.push({ title: match2[2].trim(), link: match2[1], snippet: '', source: 'brave_fallback' });
-          }
-          resolve(results.length > 0 ? results : results2);
-        });
-      }).on('error', () => resolve(results)).on('timeout', () => resolve(results));
-    }).on('error', reject).on('timeout', () => reject(new Error('Timeout')));
+    }).on('error', () => resolve([])).on('timeout', () => resolve([]));
+  });
+}
+
+function braveSearch(query, count) {
+  return new Promise((resolve) => {
+    const braveUrl = `https://search.brave.com/search?q=${encodeURIComponent(query)}`;
+    https.get(braveUrl, {
+      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
+      timeout: 15000
+    }, (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => {
+        const results = [];
+        const regex = /<div[^\u003e]*class="snippet"[^\u003e]*\u003e\s*<a[^\u003e]*href="(https?:\/\/[^"]+)"[^\u003e]*>([^\u003c]*)<\/a>/gi;
+        let match;
+        while ((match = regex.exec(data)) !== null && results.length < count) {
+          results.push({ title: match[2].trim(), link: match[1], snippet: '', source: 'brave_fallback' });
+        }
+        resolve(results);
+      });
+    }).on('error', () => resolve([])).on('timeout', () => resolve([]));
   });
 }
 
@@ -119,15 +116,13 @@ async function searchWeb(query, count = 5) {
     log(`Cache hit for: ${query}`);
     return cached;
   }
-  
+
   const apiKey = getSerperKey();
   if (!apiKey || apiKey.includes('secret:') || apiKey.length < 20) {
-    log('No Serper API key available, using browser fallback');
-    const { BrowserResearcher } = require('./browser_researcher');
-    const browser = new BrowserResearcher();
-    return await browser.search(query, count);
+    log('No Serper API key available, using DDG/Brave fallback');
+    return await searchWebFallback(query, count);
   }
-  
+
   log(`Searching: ${query}`);
   return new Promise((resolve, reject) => {
     const data = JSON.stringify({ q: query, num: count });
@@ -135,11 +130,7 @@ async function searchWeb(query, count = 5) {
       hostname: 'google.serper.dev',
       path: '/search',
       method: 'POST',
-      headers: {
-        'X-API-KEY': apiKey,
-        'Content-Type': 'application/json',
-        'Content-Length': Buffer.byteLength(data)
-      },
+      headers: { 'X-API-KEY': apiKey, 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(data) },
       timeout: 15000
     }, (res) => {
       let body = '';
@@ -153,22 +144,20 @@ async function searchWeb(query, count = 5) {
             snippet: r.snippet,
             date: r.date
           }));
-          
+
           if (results.length === 0) {
-            log('Serper returned empty, falling back to browser research');
-            const { BrowserResearcher } = require('./browser_researcher');
-            const browser = new BrowserResearcher();
-            browser.search(query, count).then(fallback => {
+            log('Serper returned empty, falling back to DDG/Brave fallback');
+            searchWebFallback(query, count).then(fallback => {
               saveCache(query, fallback.length > 0 ? fallback : results);
               resolve(fallback);
             }).catch(err => {
-              log(`Browser fallback error: ${err.message}`);
+              log(`Fallback error: ${err.message}`);
               saveCache(query, results);
               resolve(results);
             });
             return;
           }
-          
+
           saveCache(query, results);
           resolve(results);
         } catch(e) {
@@ -193,14 +182,12 @@ async function fetchPageText(url) {
         return fetchPageText(res.headers.location).then(resolve).catch(reject);
       }
       if (res.statusCode !== 200) return reject(new Error(`HTTP ${res.statusCode}`));
-      
       let data = '';
       res.on('data', chunk => data += chunk);
       res.on('end', () => {
-        // Strip HTML tags crudely
-        const text = data.replace(/<script[^\u003e]*>[\s\S]*?\u003c\/script>/gi, ' ')
-                         .replace(/<style[^\u003e]*>[\s\S]*?\u003c\/style>/gi, ' ')
-                         .replace(/\u003c[^\u003e]*>/g, ' ')
+        const text = data.replace(/<script[^\u003e]*>[\s\S]*?<\/script>/gi, ' ')
+                         .replace(/<style[^\u003e]*>[\s\S]*?<\/style>/gi, ' ')
+                         .replace(/<[^\u003e]*>/g, ' ')
                          .replace(/\s+/g, ' ')
                          .trim();
         resolve(text.slice(0, 5000));
@@ -217,30 +204,21 @@ class ResearchAgent {
   }
 
   async searchDeep(query, count = 5) {
-    const { BrowserResearcher } = require('./browser_researcher');
-    const browser = new BrowserResearcher();
-    return await browser.search(query, count);
+    return await searchWebFallback(query, count);
   }
 
   async summarize(url) {
     log(`Summarizing: ${url}`);
     const text = await fetchPageText(url);
-    // Return first ~1000 chars as summary
-    return {
-      url,
-      summary: text.slice(0, 1000),
-      full_length: text.length
-    };
+    return { url, summary: text.slice(0, 1000), full_length: text.length };
   }
-  
+
   async research(query, count = 5) {
     const results = await this.search(query, count);
-    // If Serper/raw search returns nothing, fall back to browser-based deep research
     if (!results || results.length === 0) {
-      log('Serper returned empty, falling back to browser-based research');
+      log('Serper returned empty, falling back to fallback research');
       return await this.searchDeep(query, count);
     }
-
     const enriched = [];
     for (const r of results.slice(0, 3)) {
       try {

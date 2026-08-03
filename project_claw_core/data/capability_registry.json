@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-03T07:52:53.238Z",
-  "count": 109,
+  "generated_at": "2026-08-03T08:08:13.249Z",
+  "count": 87,
   "by_category": {
     "core": [
       "agent_swarm",
@@ -73,45 +73,23 @@
       "window_manager"
     ],
     "agents": [
-      "aws_agent",
-      "brave_search",
-      "browser_researcher",
-      "browser_search_agent",
       "business_intelligence",
-      "calendar_agent",
       "code_agent",
       "content_factory",
       "deploy_agent",
       "design_agent",
-      "discord_agent",
-      "docker_agent",
       "doc_generator",
       "drive_agent",
-      "github_agent",
       "git_agent",
-      "gmail_agent",
-      "linkedin_agent",
       "market_watcher",
-      "microsoft_browser_agent",
-      "microsoft_graph_agent",
-      "microsoft_graph_auth",
-      "openserp_client",
-      "proxy_server_agent",
       "research_agent",
       "research_router",
       "risk_engine",
-      "rss_agent",
       "searxng_client",
-      "slack_agent",
       "social_agent",
-      "stripe_agent",
       "tavily_search",
       "test_runner",
-      "trading_agent",
-      "video_editor_agent",
-      "vpn_agent",
-      "web_search_agent",
-      "x_agent"
+      "trading_agent"
     ],
     "memory": [
       "long_term_memory",
@@ -732,57 +710,12 @@
       "has_tests": true
     },
     {
-      "name": "aws_agent",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\aws_agent.js",
-      "class": "AWSAgent",
-      "lines": 44,
-      "functions": 5,
-      "has_tests": true
-    },
-    {
-      "name": "brave_search",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\brave_search.js",
-      "class": "BraveSearch",
-      "lines": 57,
-      "functions": 3,
-      "has_tests": false
-    },
-    {
-      "name": "browser_researcher",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\browser_researcher.js",
-      "class": "BrowserResearcher",
-      "lines": 153,
-      "functions": 14,
-      "has_tests": true
-    },
-    {
-      "name": "browser_search_agent",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\browser_search_agent.js",
-      "class": "BrowserSearchAgent",
-      "lines": 112,
-      "functions": 11,
-      "has_tests": true
-    },
-    {
       "name": "business_intelligence",
       "category": "agents",
       "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\business_intelligence.js",
       "class": "BusinessIntelligence",
       "lines": 64,
       "functions": 5,
-      "has_tests": true
-    },
-    {
-      "name": "calendar_agent",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\calendar_agent.js",
-      "class": "CalendarAgent",
-      "lines": 118,
-      "functions": 7,
       "has_tests": true
     },
     {
@@ -822,24 +755,6 @@
       "has_tests": true
     },
     {
-      "name": "discord_agent",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\discord_agent.js",
-      "class": "DiscordAgent",
-      "lines": 74,
-      "functions": 3,
-      "has_tests": true
-    },
-    {
-      "name": "docker_agent",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\docker_agent.js",
-      "class": "DockerAgent",
-      "lines": 44,
-      "functions": 5,
-      "has_tests": true
-    },
-    {
       "name": "doc_generator",
       "category": "agents",
       "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\doc_generator.js",
@@ -858,15 +773,6 @@
       "has_tests": true
     },
     {
-      "name": "github_agent",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\github_agent.js",
-      "class": "GitHubAgent",
-      "lines": 100,
-      "functions": 9,
-      "has_tests": true
-    },
-    {
       "name": "git_agent",
       "category": "agents",
       "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\git_agent.js",
@@ -876,75 +782,12 @@
       "has_tests": true
     },
     {
-      "name": "gmail_agent",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\gmail_agent.js",
-      "class": "GmailAgent",
-      "lines": 138,
-      "functions": 12,
-      "has_tests": true
-    },
-    {
-      "name": "linkedin_agent",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\linkedin_agent.js",
-      "class": "LinkedInAgent",
-      "lines": 83,
-      "functions": 8,
-      "has_tests": true
-    },
-    {
       "name": "market_watcher",
       "category": "agents",
       "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\market_watcher.js",
       "class": "MarketWatcher",
       "lines": 78,
       "functions": 8,
-      "has_tests": true
-    },
-    {
-      "name": "microsoft_browser_agent",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\microsoft_browser_agent.js",
-      "class": "MicrosoftBrowserAgent",
-      "lines": 247,
-      "functions": 14,
-      "has_tests": true
-    },
-    {
-      "name": "microsoft_graph_agent",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\microsoft_graph_agent.js",
-      "class": "MicrosoftGraphAgent",
-      "lines": 139,
-      "functions": 13,
-      "has_tests": true
-    },
-    {
-      "name": "microsoft_graph_auth",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\microsoft_graph_auth.js",
-      "class": null,
-      "lines": 132,
-      "functions": 7,
-      "has_tests": true
-    },
-    {
-      "name": "openserp_client",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\openserp_client.js",
-      "class": "OpenSerpClient",
-      "lines": 117,
-      "functions": 12,
-      "has_tests": true
-    },
-    {
-      "name": "proxy_server_agent",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\proxy_server_agent.js",
-      "class": "ProxyServerAgent",
-      "lines": 68,
-      "functions": 4,
       "has_tests": true
     },
     {
@@ -961,8 +804,8 @@
       "category": "agents",
       "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\research_router.js",
       "class": "ResearchRouter",
-      "lines": 179,
-      "functions": 17,
+      "lines": 113,
+      "functions": 11,
       "has_tests": true
     },
     {
@@ -975,15 +818,6 @@
       "has_tests": true
     },
     {
-      "name": "rss_agent",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\rss_agent.js",
-      "class": "RssAgent",
-      "lines": 86,
-      "functions": 7,
-      "has_tests": true
-    },
-    {
       "name": "searxng_client",
       "category": "agents",
       "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\searxng_client.js",
@@ -993,29 +827,11 @@
       "has_tests": false
     },
     {
-      "name": "slack_agent",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\slack_agent.js",
-      "class": "SlackAgent",
-      "lines": 72,
-      "functions": 3,
-      "has_tests": true
-    },
-    {
       "name": "social_agent",
       "category": "agents",
       "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\social_agent.js",
       "class": "SocialAgent",
       "lines": 60,
-      "functions": 4,
-      "has_tests": true
-    },
-    {
-      "name": "stripe_agent",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\stripe_agent.js",
-      "class": "StripeAgent",
-      "lines": 48,
       "functions": 4,
       "has_tests": true
     },
@@ -1045,42 +861,6 @@
       "lines": 80,
       "functions": 12,
       "has_tests": true
-    },
-    {
-      "name": "video_editor_agent",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\video_editor_agent.js",
-      "class": "VideoEditorAgent",
-      "lines": 68,
-      "functions": 8,
-      "has_tests": true
-    },
-    {
-      "name": "vpn_agent",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\vpn_agent.js",
-      "class": "VPNAgent",
-      "lines": 62,
-      "functions": 7,
-      "has_tests": true
-    },
-    {
-      "name": "web_search_agent",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\web_search_agent.js",
-      "class": "WebSearchAgent",
-      "lines": 90,
-      "functions": 10,
-      "has_tests": false
-    },
-    {
-      "name": "x_agent",
-      "category": "agents",
-      "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\x_agent.js",
-      "class": "XAgent",
-      "lines": 97,
-      "functions": 8,
-      "has_tests": false
     },
     {
       "name": "long_term_memory",
