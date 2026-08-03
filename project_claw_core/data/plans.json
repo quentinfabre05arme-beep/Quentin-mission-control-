@@ -33,9 +33,9 @@
       ]
     },
     {
-      "id": "plan_1785742750252",
+      "id": "plan_1785743714818",
       "goal": "test",
-      "created_at": "2026-08-03T07:39:10.252Z",
+      "created_at": "2026-08-03T07:55:14.818Z",
       "status": "active",
       "steps": [
         {
@@ -47,51 +47,9 @@
       ]
     },
     {
-      "id": "plan_1785742797171",
+      "id": "plan_1785743760967",
       "goal": "test",
-      "created_at": "2026-08-03T07:39:57.171Z",
-      "status": "active",
-      "steps": [
-        {
-          "id": "step_0",
-          "description": "step1",
-          "status": "pending",
-          "dependencies": []
-        }
-      ]
-    },
-    {
-      "id": "plan_1785742936215",
-      "goal": "test",
-      "created_at": "2026-08-03T07:42:16.215Z",
-      "status": "active",
-      "steps": [
-        {
-          "id": "step_0",
-          "description": "step1",
-          "status": "pending",
-          "dependencies": []
-        }
-      ]
-    },
-    {
-      "id": "plan_1785743289886",
-      "goal": "test",
-      "created_at": "2026-08-03T07:48:09.886Z",
-      "status": "active",
-      "steps": [
-        {
-          "id": "step_0",
-          "description": "step1",
-          "status": "pending",
-          "dependencies": []
-        }
-      ]
-    },
-    {
-      "id": "plan_1785743536304",
-      "goal": "test",
-      "created_at": "2026-08-03T07:52:16.304Z",
+      "created_at": "2026-08-03T07:56:00.967Z",
       "status": "active",
       "steps": [
         {
