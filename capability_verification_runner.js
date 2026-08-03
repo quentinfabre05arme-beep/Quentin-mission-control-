@@ -1,6 +1,6 @@
 /**
- * CAPABILITY VERIFICATION RUNNER v3
- * Test every real capability with timeouts.
+ * CAPABILITY VERIFICATION RUNNER v3.1
+ * Test every real capability with timeouts + single-instance lock.
  */
 
 const fs = require('fs');
@@ -9,6 +9,7 @@ const path = require('path');
 const { SelfAudit } = require('./project_claw_core/core/self_audit');
 const LOG_FILE = path.join(__dirname, 'project_claw_core', 'logs', 'capability_verification.jsonl');
 const SUMMARY_FILE = path.join(__dirname, 'project_claw_core', 'data', 'capability_verification_summary.json');
+const LOCK_FILE = path.join(__dirname, 'project_claw_core', 'data', 'capability_verification.lock');
 
 const SKIP = ['microsoft_browser_agent', 'linkedin_agent', 'x_agent', 'github_agent', 'gmail_agent', 'microsoft_graph_agent', 'microsoft_graph_auth', 'browser_agent_v2'];
 
@@ -63,37 +64,78 @@ async function verifyCapability(capName, capPath) {
   }
 }
 
-async function main() {
-  const audit = new SelfAudit().run();
-  const realCapabilities = audit.details.filter(d => d.real);
-  
-  console.log(`Verifying ${realCapabilities.length} capabilities...`);
-  const results = [];
-  
-  for (const cap of realCapabilities) {
-    const name = cap.name || path.basename(cap.path, '.js');
-    const result = await verifyCapability(name, cap.path);
-    results.push(result);
-    process.stdout.write(`${result.success ? '✅' : '❌'} ${name}: ${result.success ? result.duration_ms + 'ms' : result.error}\n`);
-  }
-  
-  const passed = results.filter(r => r.success).length;
-  const failed = results.length - passed;
-  const summary = {
-    timestamp: new Date().toISOString(),
-    total: results.length,
-    passed,
-    failed,
-    failed_capabilities: results.filter(r => !r.success).map(r => r.capability)
-  };
-  
-  fs.writeFileSync(SUMMARY_FILE, JSON.stringify(summary, null, 2));
-  console.log(`\n=== VERIFICATION COMPLETE ===`);
-  console.log(`Passed: ${passed}/${results.length}`);
-  if (failed > 0) {
-    console.log(`Failed: ${failed}`);
-    for (const f of summary.failed_capabilities) console.log(`  - ${f}`);
+function acquireLock() {
+  try {
+    if (fs.existsSync(LOCK_FILE)) {
+      const pid = parseInt(fs.readFileSync(LOCK_FILE, 'utf8'));
+      try {
+        process.kill(pid, 0);
+        console.log(`Lock held by PID ${pid}. Exiting.`);
+        return false;
+      } catch (e) {
+        console.log(`Stale lock from PID ${pid}. Reclaiming.`);
+      }
+    }
+    fs.writeFileSync(LOCK_FILE, String(process.pid));
+    return true;
+  } catch (e) {
+    console.log('Lock error:', e.message);
+    return false;
   }
 }
 
-main().catch(console.error);
+function releaseLock() {
+  try {
+    if (fs.existsSync(LOCK_FILE) && fs.readFileSync(LOCK_FILE, 'utf8') === String(process.pid)) {
+      fs.unlinkSync(LOCK_FILE);
+    }
+  } catch (e) {
+    console.log('Release lock error:', e.message);
+  }
+}
+
+async function main() {
+  if (!acquireLock()) {
+    process.exit(0);
+  }
+  
+  try {
+    const audit = new SelfAudit().run();
+    const realCapabilities = audit.details.filter(d => d.real);
+    
+    console.log(`Verifying ${realCapabilities.length} capabilities...`);
+    const results = [];
+    
+    for (const cap of realCapabilities) {
+      const name = cap.name || path.basename(cap.path, '.js');
+      const result = await verifyCapability(name, cap.path);
+      results.push(result);
+      process.stdout.write(`${result.success ? '✅' : '❌'} ${name}: ${result.success ? result.duration_ms + 'ms' : result.error}\n`);
+    }
+    
+    const passed = results.filter(r => r.success).length;
+    const failed = results.length - passed;
+    const summary = {
+      timestamp: new Date().toISOString(),
+      total: results.length,
+      passed,
+      failed,
+      failed_capabilities: results.filter(r => !r.success).map(r => r.capability)
+    };
+    
+    fs.writeFileSync(SUMMARY_FILE, JSON.stringify(summary, null, 2));
+    console.log(`\n=== VERIFICATION COMPLETE ===`);
+    console.log(`Passed: ${passed}/${results.length}`);
+    if (failed > 0) {
+      console.log(`Failed: ${failed}`);
+      for (const f of summary.failed_capabilities) console.log(`  - ${f}`);
+    }
+  } finally {
+    releaseLock();
+  }
+}
+
+main().catch(e => {
+  releaseLock();
+  console.error(e);
+});

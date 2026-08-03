@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * ⚡ GATEWAY ULTRA-IMMORTALITY v2.0
- * 5-second detection, 10-second recovery
+ * ⚡ GATEWAY ULTRA-IMMORTALITY v2.1
+ * Self-looping guardian with 5-second detection, 10-second recovery.
  */
 
 const fs = require('fs');
@@ -11,12 +11,13 @@ const { spawn, execSync } = require('child_process');
 const LOG_DIR = path.join(__dirname, '..', 'logs');
 const LOG_FILE = path.join(LOG_DIR, 'ultra_immortality.log');
 const STATE_FILE = path.join(LOG_DIR, 'ultra_state.json');
+const LOCK_FILE = path.join(LOG_DIR, 'ultra_guardian.lock');
 
 // ─── CONFIG ─────────────────────────────────────────────────
 const CONFIG = {
-  check_interval_ms: 5000, // 5 SECONDS
+  check_interval_ms: 5000,
   max_restarts_per_10min: 3,
-  ram_restart_threshold: 94, // Lower threshold for faster action
+  ram_restart_threshold: 94,
   gateway_min_ram_mb: 300
 };
 
@@ -47,10 +48,39 @@ function loadState() {
   }
 }
 
+function acquireLock() {
+  try {
+    if (fs.existsSync(LOCK_FILE)) {
+      const pid = parseInt(fs.readFileSync(LOCK_FILE, 'utf8'));
+      try {
+        process.kill(pid, 0);
+        log('WARN', 'Another ultra guardian is running', { pid });
+        return false;
+      } catch (e) {
+        log('WARN', 'Reclaiming stale ultra lock', { pid });
+      }
+    }
+    fs.writeFileSync(LOCK_FILE, String(process.pid));
+    return true;
+  } catch (e) {
+    log('ERROR', 'Lock error', { error: e.message });
+    return false;
+  }
+}
+
+function releaseLock() {
+  try {
+    if (fs.existsSync(LOCK_FILE) && fs.readFileSync(LOCK_FILE, 'utf8') === String(process.pid)) {
+      fs.unlinkSync(LOCK_FILE);
+    }
+  } catch (e) {
+    log('ERROR', 'Release lock error', { error: e.message });
+  }
+}
+
 // ─── FAST CHECK ───────────────────────────────────────────
 function fastCheck() {
   try {
-    // Ultra-fast: just check if any large node process exists
     const tasks = execSync('tasklist /FI "MEMUSAGE gt 300000" /FO CSV /NH', { 
       encoding: 'utf8', 
       timeout: 3000 
@@ -73,7 +103,6 @@ function getRAM() {
 function killAndRestart(reason) {
   const now = Date.now();
   
-  // Check rate limit
   if (state.last_restart) {
     const lastTime = new Date(state.last_restart).getTime();
     if ((now - lastTime) < (10 * 60 * 1000 / CONFIG.max_restarts_per_10min)) {
@@ -84,12 +113,10 @@ function killAndRestart(reason) {
   
   log('CRITICAL', `ULTRA-RESTART: ${reason}`, { ram: getRAM() });
   
-  // Kill ALL node processes immediately
   try {
     execSync('taskkill /F /IM node.exe /T', { timeout: 5000 });
   } catch(e) {}
   
-  // Start gateway with highest priority
   setTimeout(() => {
     try {
       const child = spawn('cmd.exe', ['/c', 'start', '/B', '/HIGH', 'openclaw', 'gateway', 'start'], {
@@ -115,7 +142,6 @@ function killAndRestart(reason) {
 
 // ─── MAIN ─────────────────────────────────────────────────
 function run() {
-  loadState();
   state.checks++;
   
   const running = fastCheck();
@@ -128,17 +154,14 @@ function run() {
     log('CRITICAL', `Gateway missing (failure #${state.consecutive_failures})`);
     
     if (state.consecutive_failures >= 2) {
-      // 2 consecutive failures = 10 seconds down = restart NOW
       return killAndRestart('gateway_missing_10s');
     }
     
     return { status: 'warning', failures: state.consecutive_failures };
   }
   
-  // Reset failure counter on success
   state.consecutive_failures = 0;
   
-  // RAM check
   if (ram >= CONFIG.ram_restart_threshold) {
     return killAndRestart(`ram_${ram}`);
   }
@@ -147,12 +170,44 @@ function run() {
   return { status: 'healthy', ram };
 }
 
+// ─── LOOP ─────────────────────────────────────────────────
+function startLoop() {
+  loadState();
+  if (!acquireLock()) {
+    console.log('Another ultra guardian is already running. Exiting.');
+    process.exit(0);
+  }
+  
+  log('INFO', 'Ultra guardian self-loop started', { pid: process.pid });
+  
+  const loop = () => {
+    try {
+      run();
+    } catch (e) {
+      log('ERROR', 'Loop error', { error: e.message });
+    }
+    setTimeout(loop, CONFIG.check_interval_ms);
+  };
+  
+  loop();
+}
+
 // ─── EXPORT ───────────────────────────────────────────────
 module.exports = { run, fastCheck, getRAM, killAndRestart, state };
 
 // ─── CLI ──────────────────────────────────────────────────
 if (require.main === module) {
-  const result = run();
-  console.log(JSON.stringify(result));
-  process.exit(result.status === 'healthy' ? 0 : 1);
+  const command = process.argv[2];
+  
+  if (command === 'loop' || command === undefined) {
+    startLoop();
+  } else {
+    const result = run();
+    console.log(JSON.stringify(result));
+    process.exit(result.status === 'healthy' ? 0 : 1);
+  }
 }
+
+process.on('exit', releaseLock);
+process.on('SIGINT', () => { releaseLock(); process.exit(0); });
+process.on('SIGTERM', () => { releaseLock(); process.exit(0); });

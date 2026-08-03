@@ -1,41 +1,41 @@
 {
-  "timestamp": "2026-08-01 09:22:19",
+  "timestamp": "2026-08-03 09:07:19",
   "assets": {
     "BTC": {
-      "price": 63048,
-      "change_24h": -0.99,
-      "source": "coingecko_direct",
-      "signal": "NEUTRAL"
+      "price": 62624.64,
+      "change_24h": -0.24,
+      "source": "twelvedata",
+      "signal": "MODERATE_BEARISH"
     },
     "ETH": {
-      "price": 1868.29,
-      "change_24h": -0.91,
-      "source": "coingecko_direct",
-      "signal": "NEUTRAL"
+      "price": 1846.69,
+      "change_24h": -2.05,
+      "source": "twelvedata",
+      "signal": "MODERATE_BEARISH"
     },
     "MSTR": {
       "price": 93.28,
       "change_24h": -4.56,
-      "source": "cached",
-      "signal": "BEARISH"
+      "source": "twelvedata",
+      "signal": "MODERATE_BEARISH"
     },
     "HIMS": {
-      "price": 27.775,
-      "change_24h": 2.72,
-      "source": "cached",
-      "signal": "BULLISH"
+      "price": 27.77,
+      "change_24h": 2.70,
+      "source": "yahoo",
+      "signal": "MODERATE_BULLISH"
     }
   },
   "midday_analysis": {
     "cycle": 53,
-    "time": "18:01 CET",
-    "sentiment": "BULLISH CRYPTO",
-    "key_observation": "BTC +1%, ETH +3.1% — BTC pushing 65K resistance, ETH near 1930. MSTR/HIMS stable.",
-    "action": "HOLD positions, momentum continues"
+    "time": "09:07 CET",
+    "sentiment": "FEAR / ACCUMULATION WATCH",
+    "key_observation": "Fear & Greed at 28 (Fear). ETH down 2% showing contrarian bullish divergence. MSTR -4.6% tracks BTC weakness. HIMS +2.7% holding relative strength.",
+    "action": "HOLD positions, watch for ETH reversal setup"
   },
   "_maintenance_notes": {
-    "last_check": "2026-07-15 18:01",
-    "twelve_data_status": "API_KEY_EXPIRED_401",
-    "fallback_used": "CoinGecko free for BTC/ETH, stale for MSTR/HIMS"
+    "last_check": "2026-08-03 09:07",
+    "twelve_data_status": "ACTIVE",
+    "fallback_used": "Yahoo Finance for HIMS"
   }
 }
