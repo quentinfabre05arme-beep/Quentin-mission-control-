@@ -8,7 +8,7 @@
     "Rotate always_on_daemon.log when >100KB": 1
   },
   "successes_by_title": {
-    "Prune duplicate test plans in planner.js": 12
+    "Prune duplicate test plans in planner.js": 14
   },
   "last_outcomes": {
     "alpha_fund_v3/core/always_on_daemon.js": {
@@ -18,7 +18,7 @@
     },
     "project_claw_core/data/plans.json": {
       "outcome": "success",
-      "timestamp": "2026-08-03T04:11:12.269Z",
+      "timestamp": "2026-08-03T05:15:01.038Z",
       "title": "Prune duplicate test plans in planner.js"
     }
   },
