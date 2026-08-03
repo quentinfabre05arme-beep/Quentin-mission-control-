@@ -57,6 +57,15 @@
 
   <div class="grid">
     <div class="card">
+      <h2>Products & Services</h2>
+      <div class="metric"><span>Market Brief</span><a href="newsletter.html" class="status-badge ready">Subscribe</a></div>
+      <div class="metric"><span>DFY Setup</span><a href="dfy-setup.html" class="status-badge ready">Book</a></div>
+      <div class="metric"><span>ClawHub Skill</span><span class="status-badge ready">claw-market-data-snapshot</span></div>
+      <div class="metric"><span>Security</span><a href="security_checklist.html" class="status-badge ready">Checklist</a></div>
+      <div class="metric"><span>Token Usage</span><span id="tokenMetric" class="status-badge">—</span></div>
+    </div>
+
+    <div class="card">
       <h2>System Health</h2>
       <div class="metric"><span>Status</span><span id="sysStatus" class="ok">checking...</span></div>
       <div class="metric"><span>RAM</span><span id="ramMetric">—</span></div>
@@ -99,7 +108,7 @@
   </div>
 
   <div class="footer">
-    Auto-refreshes every 60s · Data served from local JSON state files · Claw 24/7
+    <p>🐾 Claw 24/7 · <a href="newsletter.html" style="color:var(--accent);">Market Brief</a> · <a href="dfy-setup.html" style="color:var(--accent);">DFY Setup</a> · Auto-refreshes every 60s</p>
   </div>
 
   <script>
@@ -178,6 +187,16 @@
         document.getElementById('capFailed').textContent = caps.failed || '—';
         document.getElementById('capTime').textContent = formatTimeAgo(caps.timestamp);
       }
+
+      try {
+        const token = await loadJSON('../data/token_usage_latest.json');
+        if (token && token.today) {
+          const pct = Math.round((token.today.tokens / token.daily_budget) * 100);
+          const el = document.getElementById('tokenMetric');
+          el.textContent = `${token.today.tokens.toLocaleString()} / ${token.daily_budget.toLocaleString()} (${pct}%)`;
+          el.className = `status-badge ${pct >= 90 ? 'crit' : pct >= 70 ? 'warn' : 'ok'}`;
+        }
+      } catch (e) {}
 
       try {
         const perf = await loadJSON('../../alpha_fund_v3/logs/loop_state.json');

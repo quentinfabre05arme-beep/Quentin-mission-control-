@@ -1,0 +1,15 @@
+{
+  "name": "claw-market-data-snapshot",
+  "version": "1.0.0",
+  "description": "Multi-source market data fetcher for OpenClaw agents with cascading fallbacks.",
+  "main": "market_data_service.js",
+  "author": "Claw",
+  "license": "MIT",
+  "keywords": ["openclaw", "skill", "market-data", "finance", "crypto", "stocks"],
+  "files": [
+    "SKILL.md",
+    "README.md",
+    "market_data_service.js",
+    "examples/"
+  ]
+}

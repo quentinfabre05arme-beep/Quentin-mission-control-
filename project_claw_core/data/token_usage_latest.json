@@ -1,0 +1,58 @@
+﻿{
+  "generated_at": "2026-08-03T09:45:12.358Z",
+  "daily_budget": 65000,
+  "today": {
+    "date": "2026-08-03",
+    "tokens": 0,
+    "cost_usd": 0,
+    "records": 0
+  },
+  "daily": [
+    {
+      "date": "2026-08-03",
+      "tokens": 0,
+      "cost_usd": 0,
+      "records": 0
+    },
+    {
+      "date": "2026-08-02",
+      "tokens": 0,
+      "cost_usd": 0,
+      "records": 0
+    },
+    {
+      "date": "2026-08-01",
+      "tokens": 0,
+      "cost_usd": 0,
+      "records": 0
+    },
+    {
+      "date": "2026-07-31",
+      "tokens": 0,
+      "cost_usd": 0,
+      "records": 0
+    },
+    {
+      "date": "2026-07-30",
+      "tokens": 0,
+      "cost_usd": 0,
+      "records": 0
+    },
+    {
+      "date": "2026-07-29",
+      "tokens": 0,
+      "cost_usd": 0,
+      "records": 0
+    },
+    {
+      "date": "2026-07-28",
+      "tokens": 0,
+      "cost_usd": 0,
+      "records": 0
+    }
+  ],
+  "by_model": {},
+  "by_task": {},
+  "alert": null,
+  "total_cost_usd": 0
+}

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claw DFY — Done-For-You Autonomous Agent Setup</title>
+  <meta name="description" content="Get a production-grade OpenClaw agent installed, hardened and running 24/7 on your own machine or VPS. Trusted setup, privacy-first.">
+  <style>
+    :root { --bg:#050507; --panel:#12121a; --panel-2:#1c1c28; --border:#2a2a3e; --text:#f0f0f5; --muted:#8b8ba7; --accent:#00d4ff; --accent-2:#7c3aed; --ok:#22c55e; --warn:#f59e0b; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+    .container { max-width:1100px; margin:0 auto; padding:0 24px; }
+    nav { padding:20px 0; border-bottom:1px solid var(--border); }
+    nav .container { display:flex; justify-content:space-between; align-items:center; }
+    .logo { font-weight:800; font-size:1.3rem; color:var(--accent); }
+    .nav-links a { color:var(--muted); text-decoration:none; margin-left:24px; }
+    .nav-links a:hover { color:var(--text); }
+
+    .hero { padding:100px 0 60px; text-align:center; background:radial-gradient(circle at 50% 0%, rgba(124,58,237,0.15), transparent 60%); }
+    .hero h1 { font-size:2.8rem; font-weight:800; margin-bottom:20px; }
+    .hero p { color:var(--muted); font-size:1.2rem; max-width:700px; margin:0 auto 36px; }
+    .hero .metric-strip { display:flex; justify-content:center; gap:48px; flex-wrap:wrap; margin-top:40px; color:var(--muted); font-size:0.95rem; }
+    .hero .metric-strip strong { display:block; color:var(--text); font-size:1.4rem; }
+
+    .section { padding:70px 0; }
+    .section h2 { font-size:1.9rem; margin-bottom:16px; text-align:center; }
+    .section-sub { color:var(--muted); text-align:center; max-width:650px; margin:0 auto 40px; }
+
+    .packages { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:24px; max-width:980px; margin:0 auto; }
+    .package { background:var(--panel); border:1px solid var(--border); border-radius:20px; padding:32px; position:relative; }
+    .package.featured { border-color:var(--accent); background:var(--panel-2); transform:scale(1.02); }
+    .badge { position:absolute; top:-12px; right:24px; background:var(--accent); color:#000; font-size:0.75rem; font-weight:800; padding:4px 12px; border-radius:20px; }
+    .package h3 { font-size:1.3rem; margin-bottom:8px; }
+    .price { font-size:2.6rem; font-weight:800; margin:16px 0 6px; }
+    .price span { font-size:1rem; color:var(--muted); font-weight:400; }
+    .package ul { list-style:none; margin:24px 0; }
+    .package li { padding:10px 0; color:var(--muted); border-bottom:1px solid var(--border); }
+    .package li::before { content:'✓'; color:var(--ok); margin-right:10px; }
+    .btn { display:block; text-align:center; padding:14px 24px; border-radius:10px; font-weight:700; text-decoration:none; transition:0.2s; }
+    .btn-primary { background:var(--accent); color:#000; }
+    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 10px 30px rgba(0,212,255,0.25); }
+    .btn-secondary { border:1px solid var(--border); color:var(--text); }
+    .btn-secondary:hover { border-color:var(--accent); color:var(--accent); }
+
+    .process { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:20px; }
+    .step { background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:24px; }
+    .step-num { font-size:1.4rem; font-weight:800; color:var(--accent); margin-bottom:10px; }
+    .step h4 { margin-bottom:8px; }
+    .step p { color:var(--muted); font-size:0.9rem; }
+
+    .social-proof { background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:32px; text-align:center; max-width:800px; margin:0 auto; }
+    .social-proof .quote { font-size:1.1rem; color:var(--text); font-style:italic; margin-bottom:16px; }
+    .social-proof .author { color:var(--muted); font-size:0.9rem; }
+    .logos { display:flex; justify-content:center; gap:32px; flex-wrap:wrap; margin-top:24px; font-weight:700; color:#5a5a7a; }
+
+    .faq { max-width:800px; margin:0 auto; }
+    .faq-item { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:20px; margin-bottom:12px; }
+    .faq-item h4 { margin-bottom:8px; color:var(--accent-2); }
+    .faq-item p { color:var(--muted); font-size:0.95rem; }
+
+    .cta-box { background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:40px; text-align:center; max-width:700px; margin:0 auto; }
+
+    footer { padding:40px 0; text-align:center; color:var(--muted); font-size:0.85rem; border-top:1px solid var(--border); margin-top:40px; }
+
+    @media (max-width:640px) { .hero h1 { font-size:2rem; } .nav-links { display:none; } .package.featured { transform:none; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <div class="logo">🐾 Claw DFY</div>
+      <div class="nav-links">
+        <a href="index.html">Mission Control</a>
+        <a href="newsletter.html">Newsletter</a>
+        <a href="#packages">Packages</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Get a 24/7 OpenClaw Agent Built For You</h1>
+      <p>Skip the setup rabbit hole. I install, harden and run a production-grade autonomous agent on your machine or VPS — tailored to your workflows, with your data staying under your control.</p>
+      <a href="#packages" class="btn btn-primary" style="display:inline-block;">See Packages</a>
+      <div class="metric-strip">
+        <div><strong>&lt; 1 week</strong> to go live</div>
+        <div><strong>100%</strong> on your infra</div>
+        <div><strong>30-day</strong> support included</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="what">
+    <div class="container">
+      <h2>How the Build Works</h2>
+      <p class="section-sub">A repeatable, security-first delivery process. You get a working agent, not a prototype.</p>
+      <div class="process">
+        <div class="step"><div class="step-num">01</div><h4>Discovery</h4><p>30-min call or async brief. I map your goals, tools, data sources and risk tolerance.</p></div>
+        <div class="step"><div class="step-num">02</div><h4>Architecture</h4><p>Design orchestrators, schedules, skills, credentials, memory and dashboards for your actual use case.</p></div>
+        <div class="step"><div class="step-num">03</div><h4>Install & Harden</h4><p>OpenClaw + Node + git + Task Scheduler + security audit. Credential vault, sandboxing and kill switches.</p></div>
+        <div class="step"><div class="step-num">04</div><h4>Train & Launch</h4><p>I run the first cycles with you, validate outputs, tune prompts, then hand over the keys.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="packages">
+    <div class="container">
+      <h2>Packages</h2>
+      <p class="section-sub">One-time setup + optional monthly care. All work is done on your infrastructure, never on a shared server.</p>
+      <div class="packages">
+        <div class="package">
+          <h3>Starter Agent</h3>
+          <div class="price">€499<span> one-time</span></div>
+          <p style="color:var(--muted);font-size:0.9rem;">For individuals who want a single workflow automated.</p>
+          <ul>
+            <li>OpenClaw install on Windows/Linux</li>
+            <li>1 custom skill or automation</li>
+            <li>Credential vault setup</li>
+            <li>Security hardening baseline</li>
+            <li>1-hour handoff session</li>
+            <li>7 days support</li>
+          </ul>
+          <a href="#book" class="btn btn-secondary">Book Starter</a>
+        </div>
+
+        <div class="package featured">
+          <span class="badge">MOST POPULAR</span>
+          <h3>Pro Operator</h3>
+          <div class="price">€1,299<span> one-time</span></div>
+          <p style="color:var(--muted);font-size:0.9rem;">For traders, creators and small teams running multiple workflows.</p>
+          <ul>
+            <li>Everything in Starter</li>
+            <li>Up to 5 custom skills/automations</li>
+            <li>Market research + newsletter pipeline</li>
+            <li>X/LinkedIn content queue</li>
+            <li>Live dashboard + token monitor</li>
+            <li>30 days support</li>
+          </ul>
+          <a href="#book" class="btn btn-primary">Book Pro Operator</a>
+        </div>
+
+        <div class="package">
+          <h3>Enterprise Crew</h3>
+          <div class="price">€2,999+<span> custom</span></div>
+          <p style="color:var(--muted);font-size:0.9rem;">For teams that need multi-agent orchestration, compliance and SLA.</p>
+          <ul>
+            <li>Multi-agent architecture</li>
+            <li>Custom skills + CI/CD integration</li>
+            <li>Security audit + hardening report</li>
+            <li>Monitoring, alerting, backups</li>
+            <li>Monthly retainer available</li>
+          </ul>
+          <a href="#book" class="btn btn-secondary">Request Quote</a>
+        </div>
+      </div>
+
+      <p style="text-align:center;color:var(--muted);margin-top:30px;">Monthly care: €149–€499/month depending on complexity. <strong style="color:var(--ok);">30-day satisfaction guarantee</strong> on all setups.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="social-proof">
+        <p class="quote">"I went from 'what is OpenClaw' to a running daily market brief in 5 days. The security hardening alone saved me from several bad defaults."</p>
+        <p class="author">— Private beta client, Paris</p>
+        <div class="logos">
+          <span>🔐 AES-256 credential vault</span>
+          <span>🛡️ Gateway hardening</span>
+          <span>📊 Live dashboard</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container">
+      <h2>FAQ</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <h4>Do I need coding skills?</h4>
+          <p>No. I handle installation, configuration and tuning. You only need to approve external actions like posting or spending.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Where does it run?</h4>
+          <p>On your own Windows PC, a rented VPS, or a home server. You keep full control and data sovereignty.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What security measures are included?</h4>
+          <p>Gateway bound to localhost, encrypted credential storage, least-privilege API tokens, sandbox mode, device audit, and a documented kill switch. I also scan installed skills for known issues.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Can I add more skills later?</h4>
+          <p>Yes. The agent is designed to be extended. Future skills can be installed from ClawHub or built custom.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Is there a guarantee?</h4>
+          <p>Yes — 30-day satisfaction guarantee on all setup packages. If the agent isn't delivering value, I'll fix it or refund.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="book">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Ready to Automate?</h2>
+        <p style="color:var(--muted);margin-bottom:24px;">Reply in this chat with "Book Pro Operator" or "Book Starter" and I'll schedule the build.</p>
+        <a href="mailto:quentin.fabre05arme@gmail.com?subject=OpenClaw DFY Setup Inquiry" class="btn btn-primary" style="display:inline-block;">Email Inquiry</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>🐾 Built autonomously by Claw · <a href="index.html" style="color:var(--accent);">Mission Control</a> · <a href="newsletter.html" style="color:var(--accent);">Newsletter</a></p>
+    </div>
+  </footer>
+</body>
+</html>

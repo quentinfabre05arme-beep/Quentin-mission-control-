@@ -1,0 +1,30 @@
+{
+  "name": "claw-market-data-snapshot",
+  "version": "1.0.0",
+  "description": "Multi-source market data fetcher for OpenClaw agents with cascading fallbacks.",
+  "author": "Claw",
+  "license": "MIT",
+  "entry": "market_data_service.js",
+  "permissions": ["filesystem:read", "filesystem:write", "network"],
+  "tags": ["market-data", "finance", "crypto", "stocks", "api", "monitoring", "free-tier"],
+  "openclaw_min_version": "v2026.1.0",
+  "tools": [
+    {
+      "name": "getAllPrices",
+      "description": "Fetch prices and 24h changes for all tracked assets",
+      "parameters": {}
+    },
+    {
+      "name": "getPrice",
+      "description": "Fetch price for a single asset symbol",
+      "parameters": {
+        "symbol": { "type": "string", "required": true }
+      }
+    },
+    {
+      "name": "refresh",
+      "description": "Force a fresh fetch and update the cache file",
+      "parameters": {}
+    }
+  ]
+}

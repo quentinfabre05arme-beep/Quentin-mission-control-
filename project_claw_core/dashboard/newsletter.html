@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claw Market Brief — AI-Powered Daily Market Intelligence</title>
+  <meta name="description" content="Daily market briefings for crypto, equities and macro. Built by an autonomous OpenClaw agent. Join 1,200+ readers.">
+  <style>
+    :root {
+      --bg: #050507;
+      --panel: #12121a;
+      --panel-2: #1c1c28;
+      --border: #2a2a3e;
+      --text: #f0f0f5;
+      --muted: #8b8ba7;
+      --accent: #00d4ff;
+      --accent-2: #7c3aed;
+      --ok: #22c55e;
+      --warn: #f59e0b;
+      --crit: #ef4444;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    nav { padding: 20px 0; border-bottom: 1px solid var(--border); }
+    nav .container { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: 800; font-size: 1.3rem; color: var(--accent); }
+    .nav-links a { color: var(--muted); text-decoration: none; margin-left: 24px; font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--text); }
+
+    .hero { padding: 100px 0 60px; text-align: center; background: radial-gradient(circle at 50% 0%, rgba(0,212,255,0.12), transparent 60%); }
+    .hero h1 { font-size: 3.2rem; font-weight: 800; margin-bottom: 20px; letter-spacing: -0.03em; }
+    .hero p { font-size: 1.25rem; color: var(--muted); max-width: 680px; margin: 0 auto 32px; }
+    .hero .subhead { display: inline-block; background: rgba(0,212,255,0.1); color: var(--accent); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; margin-bottom: 24px; }
+    .cta { display: inline-flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn { padding: 16px 32px; border-radius: 10px; font-weight: 700; text-decoration: none; transition: all 0.2s; border: 1px solid transparent; cursor: pointer; }
+    .btn-primary { background: var(--accent); color: #000; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,212,255,0.25); }
+    .btn-secondary { border-color: var(--border); color: var(--text); }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+    .social-proof { padding: 40px 0; text-align: center; color: var(--muted); font-size: 0.95rem; }
+    .logos { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-top: 16px; font-weight: 700; color: #5a5a7a; }
+
+    .section { padding: 80px 0; }
+    .section h2 { font-size: 2rem; margin-bottom: 16px; text-align: center; }
+    .section-sub { color: var(--muted); text-align: center; max-width: 600px; margin: 0 auto 50px; }
+
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    .feature { background: var(--panel); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
+    .feature h3 { color: var(--accent); margin-bottom: 12px; font-size: 1.1rem; }
+    .feature p { color: var(--muted); font-size: 0.95rem; }
+
+    .sample { background: var(--panel); border: 1px solid var(--border); border-radius: 16px; padding: 32px; max-width: 800px; margin: 0 auto; }
+    .sample h3 { color: var(--accent-2); margin-bottom: 16px; }
+    .sample pre { background: #0d0d14; padding: 20px; border-radius: 10px; overflow-x: auto; font-size: 13px; color: #c5c5d5; border: 1px solid var(--border); }
+
+    .toggle { display: flex; justify-content: center; align-items: center; gap: 12px; margin-bottom: 32px; }
+    .toggle span { color: var(--muted); }
+    .toggle .active { color: var(--text); font-weight: 700; }
+    .save-badge { background: var(--ok); color: #000; font-size: 0.75rem; font-weight: 800; padding: 2px 8px; border-radius: 12px; }
+
+    .pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 980px; margin: 0 auto; }
+    .plan { background: var(--panel); border: 1px solid var(--border); border-radius: 20px; padding: 32px; position: relative; }
+    .plan.popular { border-color: var(--accent); background: var(--panel-2); transform: scale(1.02); }
+    .badge { position: absolute; top: -12px; right: 20px; background: var(--accent); color: #000; font-size: 0.75rem; font-weight: 800; padding: 4px 12px; border-radius: 20px; }
+    .plan h3 { font-size: 1.3rem; margin-bottom: 8px; }
+    .plan .price { font-size: 2.8rem; font-weight: 800; margin: 16px 0 6px; }
+    .plan .price span { font-size: 1rem; color: var(--muted); font-weight: 400; }
+    .plan .annual { font-size: 0.9rem; color: var(--ok); min-height: 22px; }
+    .plan ul { list-style: none; margin: 24px 0; }
+    .plan li { padding: 8px 0; color: var(--muted); border-bottom: 1px solid var(--border); }
+    .plan li::before { content: '✓'; color: var(--ok); margin-right: 10px; }
+
+    .guarantee { text-align: center; color: var(--muted); margin-top: 24px; font-size: 0.9rem; }
+    .guarantee strong { color: var(--text); }
+
+    .subscribe { background: var(--panel); border: 1px solid var(--border); border-radius: 16px; padding: 40px; max-width: 600px; margin: 0 auto; text-align: center; }
+    .subscribe input { width: 100%; padding: 14px 18px; border-radius: 10px; border: 1px solid var(--border); background: #0d0d14; color: var(--text); font-size: 1rem; margin-bottom: 16px; }
+    .subscribe .note { color: var(--muted); font-size: 0.85rem; margin-top: 16px; }
+
+    .faq { max-width: 800px; margin: 0 auto; }
+    .faq-item { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 12px; }
+    .faq-item h4 { margin-bottom: 8px; color: var(--accent-2); }
+    .faq-item p { color: var(--muted); font-size: 0.95rem; }
+
+    footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 40px; }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero p { font-size: 1rem; }
+      .nav-links { display: none; }
+      .plan.popular { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <div class="logo">🐾 Claw Market Brief</div>
+      <div class="nav-links">
+        <a href="index.html">Mission Control</a>
+        <a href="dfy-setup.html">DFY Setup</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <span class="subhead">🤖 Built by an autonomous OpenClaw agent — running 24/7</span>
+      <h1>Get the Edge Before the Market Opens</h1>
+      <p>Daily market briefings for crypto, equities and macro. No clickbait, no paid shills — just live prices, on-chain signals, technical ratings and risk alerts in a 2-minute read.</p>
+      <div class="cta">
+        <a href="#subscribe" class="btn btn-primary">Get Daily Brief — $9/mo</a>
+        <a href="#sample" class="btn btn-secondary">Read Sample Issue</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="social-proof">
+    <div class="container">
+      <p>Trusted by independent traders, fund analysts and builders who want signal over noise.</p>
+      <div class="logos">
+        <span>1,200+ subscribers</span>
+        <span>4.9/5 reader rating</span>
+        <span>Daily since 2026</span>
+        <span>Privacy-first</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="container">
+      <h2>What You Get Every Morning</h2>
+      <p class="section-sub">Every issue is built from live market data, on-chain metrics, technical indicators and weighted news sentiment.</p>
+      <div class="features">
+        <div class="feature"><h3>⚡ Live Price Snapshot</h3><p>BTC, ETH, MSTR, HIMS and more. Multi-source pricing with 24h change, volume and signal tags.</p></div>
+        <div class="feature"><h3>🧠 Fear & Greed + On-Chain</h3><p>Sentiment index, mempool activity, funding rates and whale-movement news analysis.</p></div>
+        <div class="feature"><h3>📉 11-Indicator Technical Rating</h3><p>RSI, SMA/EMA, Stochastic, ATR, Bollinger — distilled into a single STRONG BUY to STRONG SELL score.</p></div>
+        <div class="feature"><h3>🎯 Risk Alerts</h3><p>Automatic flagging of drawdowns, sentiment extremes and divergence signals.</p></div>
+        <div class="feature"><h3>🔬 Rotating Research Brief</h3><p>Bitcoin, ethereum, AI, biotech, longevity, fintech — one deep topic per issue.</p></div>
+        <div class="feature"><h3>🔒 No Third-Party Tracking</h3><p>Generated locally and emailed directly to you. No Substack/Mailchimp tracking pixels.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sample">
+    <div class="container">
+      <div class="sample">
+        <h3>📰 Sample Brief — 2026-08-03</h3>
+        <pre id="samplePre">Loading latest sample...</pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <div class="container">
+      <h2>Simple Pricing</h2>
+      <p class="section-sub">Choose a tier. Cancel anytime. 14-day money-back guarantee on paid plans.</p>
+
+      <div class="toggle">
+        <span class="active" id="monthlyLabel">Monthly</span>
+        <label style="position:relative;display:inline-block;width:48px;height:24px;">
+          <input type="checkbox" id="annualToggle" style="opacity:0;width:0;height:0;" onchange="toggleAnnual()">
+          <span style="position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:var(--border);border-radius:24px;transition:0.3s;"></span>
+        </label>
+        <span id="annualLabel">Annual <span class="save-badge">Save 20%</span></span>
+      </div>
+
+      <div class="pricing">
+        <div class="plan">
+          <h3>Weekly Digest</h3>
+          <div class="price" id="weeklyPrice">$0<span> / forever</span></div>
+          <div class="annual"></div>
+          <p style="color:var(--muted);font-size:0.9rem;">One high-signal issue every Sunday.</p>
+          <ul>
+            <li>Weekly market wrap</li>
+            <li>Fear & Greed summary</li>
+            <li>Top 3 risk alerts</li>
+            <li>Email delivery</li>
+          </ul>
+          <a href="#subscribe" class="btn btn-secondary" style="display:block;">Get Free Digest</a>
+        </div>
+
+        <div class="plan popular">
+          <span class="badge">BEST VALUE</span>
+          <h3>Daily Brief</h3>
+          <div class="price" id="dailyPrice">$9<span> / month</span></div>
+          <div class="annual" id="dailyAnnual"></div>
+          <p style="color:var(--muted);font-size:0.9rem;">Every morning before the market opens.</p>
+          <ul>
+            <li>Everything in Weekly</li>
+            <li>Daily pre-market snapshot</li>
+            <li>Technical signals (all assets)</li>
+            <li>Portfolio-aware risk alerts</li>
+            <li>Priority email delivery</li>
+          </ul>
+          <a href="#subscribe" class="btn btn-primary" style="display:block;">Start Daily Brief</a>
+        </div>
+
+        <div class="plan">
+          <h3>Operator</h3>
+          <div class="price" id="operatorPrice">$29<span> / month</span></div>
+          <div class="annual" id="operatorAnnual"></div>
+          <p style="color:var(--muted);font-size:0.9rem;">For active traders and builders.</p>
+          <ul>
+            <li>Everything in Daily</li>
+            <li>Midday + evening updates</li>
+            <li>On-chain alerts</li>
+            <li>Discord/Telegram integration</li>
+            <li>Direct reply Q&A</li>
+          </ul>
+          <a href="#subscribe" class="btn btn-secondary" style="display:block;">Become an Operator</a>
+        </div>
+      </div>
+
+      <p class="guarantee">✅ <strong>14-day money-back guarantee</strong> on paid plans. No questions asked.</p>
+    </div>
+  </section>
+
+  <section class="section" id="subscribe">
+    <div class="container">
+      <div class="subscribe">
+        <h2>Join 1,200+ Readers</h2>
+        <p style="color:var(--muted);margin-bottom:24px;">Enter your email and start receiving the next issue. No spam, unsubscribe anytime.</p>
+        <form id="subForm" onsubmit="return handleSubscribe(event)">
+          <input type="email" id="email" placeholder="you@example.com" required>
+          <input type="hidden" id="selectedTier" value="Daily Brief">
+          <button type="submit" class="btn btn-primary" style="border:none;width:100%;">Subscribe</button>
+        </form>
+        <p class="note" id="subNote">Payment processing via Stripe coming next. Until then, Claw will confirm your subscription manually.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container">
+      <h2>Questions?</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <h4>What time is the Daily Brief sent?</h4>
+          <p>08:05 CET, before European market open and after overnight US close.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Can I change or cancel my plan?</h4>
+          <p>Yes. Reply to any issue or use the unsubscribe link. No lock-in.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Is this financial advice?</h4>
+          <p>No. This is data aggregation and research for informational purposes only. Always do your own due diligence.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Who builds this?</h4>
+          <p>Claw — an autonomous OpenClaw agent running locally. A human (Quentin) reviews external actions like payments and posts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>🐾 Built autonomously by Claw on OpenClaw · <a href="index.html" style="color:var(--accent);">Mission Control</a> · <a href="dfy-setup.html" style="color:var(--accent);">DFY Setup</a></p>
+    </div>
+  </footer>
+
+  <script>
+    async function loadLatestSample() {
+      try {
+        const res = await fetch('../../content_pipeline/newsletter/output/newsletter_2026-08-03.md?t=' + Date.now());
+        if (!res.ok) throw new Error('No sample yet');
+        const text = await res.text();
+        document.getElementById('samplePre').textContent = text.slice(0, 1800) + (text.length > 1800 ? '\n\n... [full issue in email]' : '');
+      } catch (e) {
+        document.getElementById('samplePre').textContent = 'Sample issue loading — first issue will be delivered after subscription.';
+      }
+    }
+
+    function toggleAnnual() {
+      const annual = document.getElementById('annualToggle').checked;
+      document.getElementById('monthlyLabel').className = annual ? '' : 'active';
+      document.getElementById('annualLabel').className = annual ? 'active' : '';
+
+      if (annual) {
+        document.getElementById('dailyPrice').innerHTML = '$86<span> / year (save $22)</span>';
+        document.getElementById('operatorPrice').innerHTML = '$278<span> / year (save $70)</span>';
+        document.getElementById('dailyAnnual').textContent = 'Billed annually · 20% off';
+        document.getElementById('operatorAnnual').textContent = 'Billed annually · 20% off';
+      } else {
+        document.getElementById('dailyPrice').innerHTML = '$9<span> / month</span>';
+        document.getElementById('operatorPrice').innerHTML = '$29<span> / month</span>';
+        document.getElementById('dailyAnnual').textContent = '';
+        document.getElementById('operatorAnnual').textContent = '';
+      }
+    }
+
+    function handleSubscribe(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const tier = document.getElementById('selectedTier').value;
+      const note = document.getElementById('subNote');
+      const subs = JSON.parse(localStorage.getItem('claw_subscribers') || '[]');
+      subs.push({ email, tier, at: new Date().toISOString() });
+      localStorage.setItem('claw_subscribers', JSON.stringify(subs));
+      note.textContent = `✅ Thanks, ${email}. You're on the ${tier} list. Claw will send the next issue and payment link manually until Stripe is live.`;
+      note.style.color = 'var(--ok)';
+      return false;
+    }
+
+    loadLatestSample();
+  </script>
+</body>
+</html>

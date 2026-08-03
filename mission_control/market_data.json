@@ -1,53 +1,53 @@
 {
-  "timestamp": "2026-08-03T08:15:43.633Z",
+  "timestamp": "2026-08-03T09:44:14.623Z",
   "assets": {
     "BTC": {
-      "price": 62566.01,
-      "change_24h": -1.57935,
-      "source": "twelvedata",
+      "price": 62596,
+      "change_24h": -0.9964776121197625,
+      "source": "coingecko",
       "signal": "NEUTRAL"
     },
     "ETH": {
-      "price": 1843.46,
-      "change_24h": -2.22239,
-      "source": "twelvedata",
-      "signal": "BEARISH"
+      "price": 1842.64,
+      "change_24h": -1.4223304740052907,
+      "source": "coingecko",
+      "signal": "NEUTRAL"
     },
     "NVDA": {
       "price": 200.75,
-      "change_24h": 2.92761,
-      "source": "twelvedata",
-      "signal": "BULLISH"
+      "change_24h": 0,
+      "source": "yahoo",
+      "signal": "NEUTRAL"
     },
     "TSLA": {
-      "price": 311.20999,
-      "change_24h": 0.76412022,
-      "source": "twelvedata",
+      "price": 311.21,
+      "change_24h": 0,
+      "source": "yahoo",
       "signal": "NEUTRAL"
     },
     "MSTR": {
       "price": 93.28,
-      "change_24h": -4.56313,
-      "source": "twelvedata",
-      "signal": "BEARISH"
+      "change_24h": 0,
+      "source": "yahoo",
+      "signal": "NEUTRAL"
     },
     "AAPL": {
       "price": 308.91,
-      "change_24h": -7.35386,
-      "source": "twelvedata",
-      "signal": "BEARISH"
+      "change_24h": 0,
+      "source": "yahoo",
+      "signal": "NEUTRAL"
     },
     "HIMS": {
       "price": 27.77,
-      "change_24h": 2.6997,
-      "source": "twelvedata",
-      "signal": "BULLISH"
+      "change_24h": 0,
+      "source": "yahoo",
+      "signal": "NEUTRAL"
     },
     "COIN": {
-      "price": 146.25999,
-      "change_24h": -10.5881,
-      "source": "twelvedata",
-      "signal": "BEARISH"
+      "price": 146.26,
+      "change_24h": 0,
+      "source": "yahoo",
+      "signal": "NEUTRAL"
     },
     "SPY": {
       "price": 747.03,
@@ -77,14 +77,14 @@
   "_meta": {
     "fromCache": false,
     "sources": [
-      "twelvedata",
-      "twelvedata",
-      "twelvedata",
-      "twelvedata",
-      "twelvedata",
-      "twelvedata",
-      "twelvedata",
-      "twelvedata",
+      "coingecko",
+      "coingecko",
+      "yahoo",
+      "yahoo",
+      "yahoo",
+      "yahoo",
+      "yahoo",
+      "yahoo",
       "yahoo",
       "yahoo",
       "yahoo",
