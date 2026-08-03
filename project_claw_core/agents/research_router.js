@@ -33,7 +33,14 @@ class ResearchRouter {
     // 1. OpenClaw web_search tool (when invoked from agent context)
     if (this.webSearchFn) this.sources.push('openclaw_web_search');
 
-    // 2. Local research cache (immediate fallback)
+    // 2. Brave Search API (if key available)
+    try {
+      const BraveSearch = require('./brave_search');
+      this.brave = BraveSearch;
+      if (process.env.BRAVE_API_KEY) this.sources.push('brave');
+    } catch(e) { log(`Brave search init error: ${e.message}`); }
+
+    // 3. Local research cache (immediate fallback)
     try {
       this.localCache = require('./local_research_cache');
       this.sources.push('local_research_cache');
@@ -72,6 +79,17 @@ class ResearchRouter {
           return { source: 'openclaw_web_search', results };
         }
       } catch(e) { log(`OpenClaw web_search error: ${e.message}`); }
+    }
+
+    // Try Brave Search API if key available
+    if (this.brave) {
+      try {
+        const result = await runWithTimeout(() => this.brave.search(query, { count }), 15000);
+        if (result.results && result.results.length > 0) {
+          log(`Brave Search returned ${result.results.length} results`);
+          return { source: 'brave', results: result.results };
+        }
+      } catch(e) { log(`Brave Search error: ${e.message}`); }
     }
 
     // Try local research cache (offline, immediate)
