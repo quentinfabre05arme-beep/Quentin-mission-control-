@@ -1,74 +1,74 @@
-{"capability":"file_organizer","method":"organize","success":true,"duration_ms":108,"error":null}
-{"capability":"pdf_reader_agent","method":"extractText","success":true,"duration_ms":57,"error":null}
-{"capability":"capability_generator","method":"run","success":false,"duration_ms":22,"error":"ENOENT: no such file or directory, open 'C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\build_loop_continuous.js'"}
-{"capability":"network_monitor","method":"getInterfaces","success":true,"duration_ms":30,"error":null}
-{"capability":"rate_limiter","method":"allow","success":true,"duration_ms":19,"error":null}
-{"capability":"trading_agent","method":"status","success":true,"duration_ms":570,"error":null}
-{"capability":"project_manager","method":"listProjects","success":true,"duration_ms":20,"error":null}
-{"capability":"feedback_loop","method":"getOpen","success":true,"duration_ms":20,"error":null}
-{"capability":"polyglot_coder","method":"run","success":true,"duration_ms":111,"error":null}
+{"capability":"file_organizer","method":"organize","success":true,"duration_ms":111,"error":null}
+{"capability":"pdf_reader_agent","method":"extractText","success":true,"duration_ms":55,"error":null}
+{"capability":"capability_generator","method":"run","success":false,"duration_ms":21,"error":"ENOENT: no such file or directory, open 'C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\build_loop_continuous.js'"}
+{"capability":"network_monitor","method":"getInterfaces","success":true,"duration_ms":25,"error":null}
+{"capability":"rate_limiter","method":"allow","success":true,"duration_ms":20,"error":null}
+{"capability":"trading_agent","method":"status","success":true,"duration_ms":640,"error":null}
+{"capability":"project_manager","method":"listProjects","success":true,"duration_ms":25,"error":null}
+{"capability":"feedback_loop","method":"getOpen","success":true,"duration_ms":19,"error":null}
+{"capability":"polyglot_coder","method":"run","success":true,"duration_ms":108,"error":null}
 {"capability":"market_watcher","method":"getTrend","success":true,"duration_ms":27,"error":null}
-{"capability":"unified_orchestrator","method":"status","success":true,"duration_ms":463,"error":null}
-{"capability":"drive_indexer","method":"indexDrive","success":true,"duration_ms":229,"error":null}
-{"capability":"task_graph","method":"run","success":true,"duration_ms":26,"error":null}
-{"capability":"vector_brain","method":"search","success":true,"duration_ms":22,"error":null}
+{"capability":"unified_orchestrator","method":"status","success":true,"duration_ms":453,"error":null}
+{"capability":"drive_indexer","method":"indexDrive","success":true,"duration_ms":224,"error":null}
+{"capability":"task_graph","method":"run","success":true,"duration_ms":22,"error":null}
+{"capability":"vector_brain","method":"search","success":true,"duration_ms":21,"error":null}
 {"capability":"capability_invoker","method":"list","success":true,"duration_ms":36,"error":null}
-{"capability":"learning_engine","method":"recommend","success":true,"duration_ms":21,"error":null}
+{"capability":"learning_engine","method":"recommend","success":true,"duration_ms":19,"error":null}
 {"capability":"memory_consolidator","method":"consolidateDaily","success":true,"duration_ms":23,"error":null}
 {"capability":"hash_agent","method":"hashString","success":true,"duration_ms":19,"error":null}
-{"capability":"orchestrator","method":"run","success":true,"duration_ms":22,"error":null}
+{"capability":"orchestrator","method":"run","success":true,"duration_ms":23,"error":null}
 {"capability":"store_manager","method":"list","success":true,"duration_ms":19,"error":null}
 {"capability":"sync_manager","method":"syncDirectory","success":true,"duration_ms":45,"error":null}
 {"capability":"build_loop_optimizer","method":"recommend","success":true,"duration_ms":19,"error":null}
 {"capability":"credential_rotator","method":"rotate","success":true,"duration_ms":20,"error":null}
-{"capability":"business_intelligence","method":"generateDashboardReport","success":true,"duration_ms":449,"error":null}
+{"capability":"business_intelligence","method":"generateDashboardReport","success":true,"duration_ms":466,"error":null}
 {"capability":"tavily_search","method":"run","success":false,"duration_ms":20,"error":"Method run not found"}
 {"capability":"doc_generator","method":"generateForFile","success":true,"duration_ms":21,"error":null}
-{"capability":"vpn_agent","method":"listConnections","success":true,"duration_ms":612,"error":null}
-{"capability":"battery_manager","method":"getStatus","success":true,"duration_ms":385,"error":null}
-{"capability":"risk_engine","method":"assessAction","success":true,"duration_ms":20,"error":null}
-{"capability":"strategy_optimizer","method":"optimize","success":true,"duration_ms":22,"error":null}
+{"capability":"vpn_agent","method":"listConnections","success":true,"duration_ms":603,"error":null}
+{"capability":"battery_manager","method":"getStatus","success":true,"duration_ms":390,"error":null}
+{"capability":"risk_engine","method":"assessAction","success":true,"duration_ms":23,"error":null}
+{"capability":"strategy_optimizer","method":"optimize","success":true,"duration_ms":21,"error":null}
 {"capability":"brave_search","method":"run","success":false,"duration_ms":18,"error":"Method run not found"}
-{"capability":"reasoning_engine","method":"reason","success":true,"duration_ms":20,"error":null}
+{"capability":"reasoning_engine","method":"reason","success":true,"duration_ms":18,"error":null}
 {"capability":"content_factory","method":"generateSocialPost","success":true,"duration_ms":20,"error":null}
-{"capability":"agent_swarm","method":"runTask","success":true,"duration_ms":19,"error":null}
-{"capability":"temperature_monitor","method":"read","success":true,"duration_ms":774,"error":null}
-{"capability":"searxng_client","method":"run","success":false,"duration_ms":18,"error":"Method run not found"}
-{"capability":"stripe_agent","method":"status","success":true,"duration_ms":20,"error":null}
-{"capability":"clipboard_manager","method":"getText","success":true,"duration_ms":264,"error":null}
-{"capability":"design_agent","method":"createPalette","success":true,"duration_ms":23,"error":null}
-{"capability":"audit_logger","method":"log","success":true,"duration_ms":23,"error":null}
-{"capability":"aws_agent","method":"listBuckets","success":true,"duration_ms":59,"error":null}
-{"capability":"docker_agent","method":"listContainers","success":true,"duration_ms":30037,"error":null}
-{"capability":"usb_manager","method":"list","success":true,"duration_ms":762,"error":null}
-{"capability":"research_agent","method":"research","success":true,"duration_ms":1723,"error":null}
-{"capability":"unified_master_orchestrator","method":"status","success":true,"duration_ms":29,"error":null}
+{"capability":"agent_swarm","method":"runTask","success":true,"duration_ms":21,"error":null}
+{"capability":"temperature_monitor","method":"read","success":true,"duration_ms":408,"error":null}
+{"capability":"searxng_client","method":"run","success":false,"duration_ms":23,"error":"Method run not found"}
+{"capability":"stripe_agent","method":"status","success":true,"duration_ms":22,"error":null}
+{"capability":"clipboard_manager","method":"getText","success":true,"duration_ms":259,"error":null}
+{"capability":"design_agent","method":"createPalette","success":true,"duration_ms":20,"error":null}
+{"capability":"audit_logger","method":"log","success":true,"duration_ms":20,"error":null}
+{"capability":"aws_agent","method":"listBuckets","success":true,"duration_ms":56,"error":null}
+{"capability":"docker_agent","method":"listContainers","success":true,"duration_ms":30032,"error":null}
+{"capability":"usb_manager","method":"list","success":true,"duration_ms":759,"error":null}
+{"capability":"research_agent","method":"research","success":true,"duration_ms":1553,"error":null}
+{"capability":"unified_master_orchestrator","method":"status","success":true,"duration_ms":34,"error":null}
 {"capability":"research_router","method":"run","success":false,"duration_ms":26,"error":"Method run not found"}
-{"capability":"self_audit","method":"run","success":true,"duration_ms":46,"error":null}
-{"capability":"browser_researcher","method":"run","success":false,"duration_ms":22,"error":"Method run not found"}
-{"capability":"status_reporter","method":"generate","success":true,"duration_ms":41,"error":null}
-{"capability":"predictive_maintenance","method":"run","success":true,"duration_ms":476,"error":null}
-{"capability":"system_health_monitor","method":"getHealth","success":true,"duration_ms":449,"error":null}
-{"capability":"self_goal_generator","method":"generateGoals","success":true,"duration_ms":23,"error":null}
-{"capability":"calendar_agent","method":"listEvents","success":true,"duration_ms":2117,"error":null}
-{"capability":"openserp_client","method":"run","success":false,"duration_ms":28,"error":"Method run not found"}
-{"capability":"file_hygiene","method":"scanDirectory","success":true,"duration_ms":118,"error":null}
-{"capability":"clipboard_ocr_agent","method":"readClipboard","success":true,"duration_ms":279,"error":null}
-{"capability":"browser_search_agent","method":"run","success":false,"duration_ms":20,"error":"Method run not found"}
-{"capability":"circuit_breaker","method":"call","success":true,"duration_ms":20,"error":null}
-{"capability":"drive_agent","method":"listFiles","success":true,"duration_ms":596,"error":null}
-{"capability":"file_indexer","method":"indexDirectory","success":true,"duration_ms":26,"error":null}
-{"capability":"web_monitor","method":"checkAll","success":true,"duration_ms":948,"error":null}
-{"capability":"anomaly_detector","method":"detectThreshold","success":false,"duration_ms":22,"error":"data.filter is not a function"}
-{"capability":"health_dashboard","method":"generate","success":true,"duration_ms":466,"error":null}
-{"capability":"verifier","method":"run","success":false,"duration_ms":19,"error":"The \"path\" argument must be of type string. Received undefined"}
-{"capability":"code_agent","method":"analyzeProject","success":true,"duration_ms":25,"error":null}
-{"capability":"long_term_memory","method":"get","success":true,"duration_ms":19,"error":null}
-{"capability":"planner","method":"createPlan","success":true,"duration_ms":22,"error":null}
-{"capability":"git_agent","method":"status","success":true,"duration_ms":167,"error":null}
+{"capability":"self_audit","method":"run","success":true,"duration_ms":44,"error":null}
+{"capability":"browser_researcher","method":"run","success":false,"duration_ms":20,"error":"Method run not found"}
+{"capability":"status_reporter","method":"generate","success":true,"duration_ms":39,"error":null}
+{"capability":"predictive_maintenance","method":"run","success":true,"duration_ms":459,"error":null}
+{"capability":"system_health_monitor","method":"getHealth","success":true,"duration_ms":435,"error":null}
+{"capability":"self_goal_generator","method":"generateGoals","success":true,"duration_ms":24,"error":null}
+{"capability":"calendar_agent","method":"listEvents","success":true,"duration_ms":1981,"error":null}
+{"capability":"openserp_client","method":"run","success":false,"duration_ms":24,"error":"Method run not found"}
+{"capability":"file_hygiene","method":"scanDirectory","success":true,"duration_ms":130,"error":null}
+{"capability":"clipboard_ocr_agent","method":"readClipboard","success":true,"duration_ms":288,"error":null}
+{"capability":"browser_search_agent","method":"run","success":false,"duration_ms":21,"error":"Method run not found"}
+{"capability":"circuit_breaker","method":"call","success":true,"duration_ms":19,"error":null}
+{"capability":"drive_agent","method":"listFiles","success":true,"duration_ms":573,"error":null}
+{"capability":"file_indexer","method":"indexDirectory","success":true,"duration_ms":42,"error":null}
+{"capability":"web_monitor","method":"checkAll","success":true,"duration_ms":864,"error":null}
+{"capability":"anomaly_detector","method":"detectThreshold","success":false,"duration_ms":32,"error":"data.filter is not a function"}
+{"capability":"health_dashboard","method":"generate","success":true,"duration_ms":439,"error":null}
+{"capability":"verifier","method":"run","success":false,"duration_ms":22,"error":"The \"path\" argument must be of type string. Received undefined"}
+{"capability":"code_agent","method":"analyzeProject","success":true,"duration_ms":26,"error":null}
+{"capability":"long_term_memory","method":"get","success":true,"duration_ms":21,"error":null}
+{"capability":"planner","method":"createPlan","success":true,"duration_ms":21,"error":null}
+{"capability":"git_agent","method":"status","success":true,"duration_ms":169,"error":null}
 {"capability":"web_search_agent","method":"run","success":false,"duration_ms":23,"error":"Method run not found"}
-{"capability":"sqlite_brain","method":"get","success":true,"duration_ms":38,"error":null}
-{"capability":"service_manager","method":"run","success":true,"duration_ms":518,"error":null}
-{"capability":"rss_agent","method":"readFeed","success":true,"duration_ms":116,"error":null}
-{"capability":"test_runner","method":"runCommand","success":true,"duration_ms":130,"error":null}
-{"capability":"capability_registry","method":"build","success":true,"duration_ms":37,"error":null}
+{"capability":"sqlite_brain","method":"get","success":true,"duration_ms":30,"error":null}
+{"capability":"service_manager","method":"run","success":true,"duration_ms":496,"error":null}
+{"capability":"rss_agent","method":"readFeed","success":true,"duration_ms":125,"error":null}
+{"capability":"test_runner","method":"runCommand","success":true,"duration_ms":122,"error":null}
+{"capability":"capability_registry","method":"build","success":true,"duration_ms":38,"error":null}

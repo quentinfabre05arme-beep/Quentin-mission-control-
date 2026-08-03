@@ -11,7 +11,7 @@
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\agent\\openclaw-agent.sqlite",
       "name": "openclaw-agent.sqlite",
       "size": 131072,
-      "modified": "2026-08-03T02:07:13.809Z"
+      "modified": "2026-08-03T02:37:13.839Z"
     },
     {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\agent\\openclaw-agent.sqlite-shm",
@@ -23,7 +23,7 @@
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\agent\\openclaw-agent.sqlite-wal",
       "name": "openclaw-agent.sqlite-wal",
       "size": 164832,
-      "modified": "2026-08-03T02:16:14.688Z"
+      "modified": "2026-08-03T02:36:49.163Z"
     },
     {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\.openclaw-trajectory-.10076.36a27666-00e8-4c1f-961f-2d0ecf11ff7d.tmp",
@@ -10778,8 +10778,8 @@
       "modified": "2026-08-01T10:42:17.788Z"
     },
     {
-      "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\710c9273-7812-4398-badc-85a439379829.jsonl",
-      "name": "710c9273-7812-4398-badc-85a439379829.jsonl",
+      "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\710c9273-7812-4398-badc-85a439379829.jsonl.deleted.2026-08-03T02-33-21.962Z",
+      "name": "710c9273-7812-4398-badc-85a439379829.jsonl.deleted.2026-08-03T02-33-21.962Z",
       "size": 39866,
       "modified": "2026-08-02T02:30:36.549Z"
     },
@@ -29018,6 +29018,24 @@
       "modified": "2026-07-13T10:19:12.801Z"
     },
     {
+      "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\f60db1c3-6344-4dca-934b-6c380c15fc95.jsonl",
+      "name": "f60db1c3-6344-4dca-934b-6c380c15fc95.jsonl",
+      "size": 2147,
+      "modified": "2026-08-03T02:36:49.052Z"
+    },
+    {
+      "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\f60db1c3-6344-4dca-934b-6c380c15fc95.trajectory-path.json",
+      "name": "f60db1c3-6344-4dca-934b-6c380c15fc95.trajectory-path.json",
+      "size": 255,
+      "modified": "2026-08-03T02:36:47.799Z"
+    },
+    {
+      "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\f60db1c3-6344-4dca-934b-6c380c15fc95.trajectory.jsonl",
+      "name": "f60db1c3-6344-4dca-934b-6c380c15fc95.trajectory.jsonl",
+      "size": 255967,
+      "modified": "2026-08-03T02:36:49.109Z"
+    },
+    {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\f6168bec-8ec6-41d8-8f2f-854a2dd5ed05.jsonl.deleted.2026-08-02T16-03-31.011Z",
       "name": "f6168bec-8ec6-41d8-8f2f-854a2dd5ed05.jsonl.deleted.2026-08-02T16-03-31.011Z",
       "size": 30255,
@@ -29982,24 +30000,6 @@
       "name": "fe7b57e0-249d-419f-8f7c-3736cf845be9.trajectory-path.json",
       "size": 255,
       "modified": "2026-07-13T12:00:15.308Z"
-    },
-    {
-      "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\fe932a73-468c-4393-bc71-09402b7292a8.jsonl.deleted.2026-08-02T09-36-06.637Z",
-      "name": "fe932a73-468c-4393-bc71-09402b7292a8.jsonl.deleted.2026-08-02T09-36-06.637Z",
-      "size": 5051,
-      "modified": "2026-08-01T09:32:20.593Z"
-    },
-    {
-      "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\fe932a73-468c-4393-bc71-09402b7292a8.trajectory-path.json",
-      "name": "fe932a73-468c-4393-bc71-09402b7292a8.trajectory-path.json",
-      "size": 255,
-      "modified": "2026-08-01T09:32:16.352Z"
-    },
-    {
-      "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\fe932a73-468c-4393-bc71-09402b7292a8.trajectory.jsonl",
-      "name": "fe932a73-468c-4393-bc71-09402b7292a8.trajectory.jsonl",
-      "size": 259283,
-      "modified": "2026-08-01T09:32:20.722Z"
     }
   ]
 }
