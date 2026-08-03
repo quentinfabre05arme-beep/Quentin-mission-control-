@@ -1,0 +1,181 @@
+{
+  "timestamp": "2026-08-03T10:29:40.594Z",
+  "total": 29,
+  "passed": 18,
+  "failed": 11,
+  "results": [
+    {
+      "name": "file_indexer",
+      "success": false,
+      "error": "instance[spec.method] is not a function",
+      "duration_ms": 2
+    },
+    {
+      "name": "registry_manager",
+      "success": true,
+      "result": "ok",
+      "duration_ms": 70
+    },
+    {
+      "name": "web_monitor",
+      "success": false,
+      "result": "async result not awaited in sync tester",
+      "duration_ms": 29
+    },
+    {
+      "name": "anomaly_detector",
+      "success": true,
+      "result": "ok",
+      "duration_ms": 3
+    },
+    {
+      "name": "hash_agent",
+      "success": true,
+      "result": "ok",
+      "duration_ms": 2
+    },
+    {
+      "name": "store_manager",
+      "success": true,
+      "result": "ok",
+      "duration_ms": 3
+    },
+    {
+      "name": "sync_manager",
+      "success": false,
+      "error": "ENOENT: no such file or directory, scandir 'C:\\Users\\quent\\.openclaw\\workspace\\README.md'",
+      "duration_ms": 3
+    },
+    {
+      "name": "compressor_agent",
+      "success": false,
+      "result": "Command failed: powershell -c \"Compress-Archive -Path \"C:\\Users\\quent\\.openclaw\\workspace\\README.md\" -DestinationPath \"C:\\Users\\quent\\.openclaw\\workspace\\README.zip\" -Force\"\nCompress-Archive : Le chemin d'acc�s C:\\Users\\quent\\.openclaw\\workspace\\README.md n'existe pas ou n'est pas un chemin \r\nd'acc�s au syst�me de fichiers valide.\r\nAu caract�re Ligne:1 : 1\r\n+ Compress-Archive -Path C:\\Users\\quent\\.openclaw\\workspace\\README.md - ...\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : InvalidArgument : (C:\\Users\\quent\\...space\\README.md:String) [Compress-Archive], Invalid \r\n   OperationException\r\n    + FullyQualifiedErrorId : ArchiveCmdletPathNotFound,Compress-Archive\r\n \r\n",
+      "duration_ms": 873
+    },
+    {
+      "name": "credential_rotator",
+      "success": true,
+      "result": "ok",
+      "duration_ms": 2
+    },
+    {
+      "name": "click_by_text",
+      "success": false,
+      "duration_ms": 206
+    },
+    {
+      "name": "risk_engine",
+      "success": true,
+      "result": "ok",
+      "duration_ms": 2
+    },
+    {
+      "name": "strategy_optimizer",
+      "success": true,
+      "result": "ok",
+      "duration_ms": 2
+    },
+    {
+      "name": "file_archiver",
+      "success": false,
+      "result": "Command failed: powershell -c \"Compress-Archive -Path 'README.md' -DestinationPath 'README.zip' -Force\"\nCompress-Archive : Le chemin d'acc�s README.md n'existe pas ou n'est pas un chemin d'acc�s au syst�me de fichiers \r\nvalide.\r\nAu caract�re Ligne:1 : 1\r\n+ Compress-Archive -Path 'README.md' -DestinationPath 'README.zip' -For ...\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : InvalidArgument : (README.md:String) [Compress-Archive], InvalidOperationException\r\n    + FullyQualifiedErrorId : ArchiveCmdletPathNotFound,Compress-Archive\r\n \r\n",
+      "duration_ms": 551
+    },
+    {
+      "name": "reasoning_engine",
+      "success": true,
+      "result": "ok",
+      "duration_ms": 2
+    },
+    {
+      "name": "content_factory",
+      "success": true,
+      "result": "ok",
+      "duration_ms": 2
+    },
+    {
+      "name": "agent_swarm",
+      "success": false,
+      "result": "async result not awaited in sync tester",
+      "duration_ms": 2
+    },
+    {
+      "name": "process_killer",
+      "success": false,
+      "result": "Command failed: taskkill /PID 99999 /F\nErreur�: le processus \"99999\" est introuvable.\r\n",
+      "duration_ms": 172
+    },
+    {
+      "name": "test_runner",
+      "success": true,
+      "result": "ok",
+      "duration_ms": 355
+    },
+    {
+      "name": "code_agent",
+      "success": false,
+      "error": "instance[spec.method] is not a function",
+      "duration_ms": 2
+    },
+    {
+      "name": "deploy_agent",
+      "success": false,
+      "result": "ENOENT: no such file or directory, stat 'C:\\Users\\quent\\.openclaw\\workspace\\README.md'",
+      "duration_ms": 3
+    },
+    {
+      "name": "long_term_memory",
+      "success": true,
+      "result": "ok",
+      "duration_ms": 4
+    },
+    {
+      "name": "memory_consolidator",
+      "success": true,
+      "result": "ok",
+      "duration_ms": 4
+    },
+    {
+      "name": "network_monitor",
+      "success": true,
+      "result": "ok",
+      "duration_ms": 88
+    },
+    {
+      "name": "polyglot_coder",
+      "success": true,
+      "result": "ok",
+      "duration_ms": 109
+    },
+    {
+      "name": "form_filler",
+      "success": true,
+      "result": "ok",
+      "duration_ms": 181
+    },
+    {
+      "name": "speech_agent",
+      "success": false,
+      "error": "instance[spec.method] is not a function",
+      "duration_ms": 2
+    },
+    {
+      "name": "notify_engine",
+      "success": true,
+      "result": "ok",
+      "duration_ms": 206
+    },
+    {
+      "name": "verifier",
+      "success": true,
+      "result": "ok",
+      "duration_ms": 101
+    },
+    {
+      "name": "vector_brain",
+      "success": true,
+      "result": "ok",
+      "duration_ms": 3
+    }
+  ]
+}

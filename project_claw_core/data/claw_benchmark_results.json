@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-08-03T10:29:39.869Z",
+  "total": 6,
+  "passed": 5,
+  "failed": 1,
+  "score": 0.8333333333333334,
+  "results": [
+    {
+      "id": "research",
+      "name": "Web research and synthesis",
+      "passed": true,
+      "error": null,
+      "duration_ms": 0
+    },
+    {
+      "id": "code",
+      "name": "Write and syntax-check JS module",
+      "passed": true,
+      "error": null,
+      "duration_ms": 98
+    },
+    {
+      "id": "memory",
+      "name": "Memory tier search returns results",
+      "passed": true,
+      "error": null,
+      "duration_ms": 7
+    },
+    {
+      "id": "verify",
+      "name": "Capability verifier passes",
+      "passed": true,
+      "error": null,
+      "duration_ms": 0
+    },
+    {
+      "id": "status",
+      "name": "Status reporter runs",
+      "passed": false,
+      "error": null,
+      "duration_ms": 2
+    },
+    {
+      "id": "git",
+      "name": "Git status readable",
+      "passed": true,
+      "error": null,
+      "duration_ms": 154
+    }
+  ]
+}
