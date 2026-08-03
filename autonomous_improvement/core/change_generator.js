@@ -306,6 +306,101 @@ function buildPrunePlansChange(hypothesis, file) {
   }
 }
 
+function buildRouterFallbackChange(hypothesis, file, learning) {
+  const { content } = file;
+  if (content.includes('if (!best) {')) {
+    log('Router fallback already present', 'warn');
+    return { alreadyApplied: true };
+  }
+  const oldText = `  return {
+    task,
+    capability: best ? best.name : null,
+    path: best ? best.path : null,
+    score: bestScore,
+    note: best ? null : 'no capability matched'
+  };`;
+  const newText = `  if (!best) {
+    const first = (registry.capabilities || [])[0];
+    best = first || null;
+  }
+
+  return {
+    task,
+    capability: best ? best.name : null,
+    path: best ? best.path : null,
+    score: bestScore,
+    note: best ? null : 'no capability matched'
+  };`;
+  const change = { filePath: hypothesis.target_file, oldText, newText };
+  if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
+  return null;
+}
+
+function buildMemoryHotCapChange(hypothesis, file, learning) {
+  const { content } = file;
+  if (content.includes('MAX_HOT_KEYS')) {
+    log('Hot-tier size cap already present', 'warn');
+    return { alreadyApplied: true };
+  }
+  const oldText = `function setHot(key, value) {
+  const hot = loadHot();
+  hot[key] = { value, touched: Date.now() };
+  saveHot(hot);
+}`;
+  const newText = `const MAX_HOT_KEYS = 50;
+
+function setHot(key, value) {
+  const hot = loadHot();
+  hot[key] = { value, touched: Date.now() };
+  const entries = Object.entries(hot);
+  if (entries.length > MAX_HOT_KEYS) {
+    entries.sort((a, b) => a[1].touched - b[1].touched);
+    const toRemove = entries.slice(0, entries.length - MAX_HOT_KEYS);
+    for (const [k] of toRemove) delete hot[k];
+  }
+  saveHot(hot);
+}`;
+  const change = { filePath: hypothesis.target_file, oldText, newText };
+  if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
+  return null;
+}
+
+function buildResearchRetryChange(hypothesis, file, learning) {
+  const { content } = file;
+  if (content.includes('async function retry')) {
+    log('Research retry helper already present', 'warn');
+    return { alreadyApplied: true };
+  }
+  const oldText = `function runWithTimeout(fn, ms) {
+  return Promise.race([
+    fn(),
+    new Promise((_, reject) => setTimeout(() => reject(new Error('Research timeout')), ms))
+  ]);
+}`;
+  const newText = `function runWithTimeout(fn, ms) {
+  return Promise.race([
+    fn(),
+    new Promise((_, reject) => setTimeout(() => reject(new Error('Research timeout')), ms))
+  ]);
+}
+
+async function retry(fn, retries = 2, delayMs = 500) {
+  let last;
+  for (let i = 0; i < retries; i++) {
+    try {
+      return await fn();
+    } catch (e) {
+      last = e;
+      await new Promise(resolve => setTimeout(resolve, delayMs));
+    }
+  }
+  throw last;
+}`;
+  const change = { filePath: hypothesis.target_file, oldText, newText };
+  if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
+  return null;
+}
+
 // ==== Router ===============================================================
 
 function buildChange(hypothesis, learning) {
@@ -336,6 +431,18 @@ function buildChange(hypothesis, learning) {
 
   if ((title.includes('title') || title.includes('planner')) && hypothesis.target_file.includes('hierarchical_planner')) {
     return buildPlannerTitleChange(hypothesis, file, learning);
+  }
+
+  if (title.includes('fallback') && hypothesis.target_file.includes('capability_router')) {
+    return buildRouterFallbackChange(hypothesis, file, learning);
+  }
+
+  if (title.includes('hot') && hypothesis.target_file.includes('memory_tier')) {
+    return buildMemoryHotCapChange(hypothesis, file, learning);
+  }
+
+  if (title.includes('retry') && hypothesis.target_file.includes('research_router')) {
+    return buildResearchRetryChange(hypothesis, file, learning);
   }
 
   if (title.includes('rotate') && hypothesis.target_file.includes('always_on_daemon')) {

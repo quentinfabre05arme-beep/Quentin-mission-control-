@@ -118,6 +118,33 @@ function generateStaticHypotheses() {
       target_file: 'project_claw_core/core/hierarchical_planner.js',
       estimated_effort: 10,
       estimated_impact: 'low'
+    },
+    {
+      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      title: 'Add fallback route when capability router finds no match',
+      category: 'reliability',
+      reason: 'Router returns null capability for unknown tasks instead of a safe fallback',
+      target_file: 'project_claw_core/core/capability_router.js',
+      estimated_effort: 10,
+      estimated_impact: 'medium'
+    },
+    {
+      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      title: 'Add hot-tier size cap to memory tier',
+      category: 'performance',
+      reason: 'Hot memory tier can grow unbounded if setHot is called frequently',
+      target_file: 'project_claw_core/core/memory_tier.js',
+      estimated_effort: 10,
+      estimated_impact: 'medium'
+    },
+    {
+      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      title: 'Add retry helper for research sources',
+      category: 'reliability',
+      reason: 'Transient failures from Tavily/Brave should be retried before fallback',
+      target_file: 'project_claw_core/agents/research_router.js',
+      estimated_effort: 10,
+      estimated_impact: 'medium'
     }
   ];
 }
