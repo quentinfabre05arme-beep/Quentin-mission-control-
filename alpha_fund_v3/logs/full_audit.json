@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-03T08:27:10.490Z",
+  "timestamp": "2026-08-03T09:27:10.370Z",
   "system": {
     "platform": "win32",
     "release": "10.0.26200",
@@ -7,27 +7,27 @@
     "cpus": 8,
     "total_ram_gb": 8,
     "free_ram_gb": 1,
-    "uptime_hours": 192,
+    "uptime_hours": 193,
     "user": "quent",
     "home": "C:\\Users\\quent"
   },
   "workspace": {
-    "total_files": 2774,
-    "total_dirs": 204,
-    "total_size": 94089965,
+    "total_files": 2815,
+    "total_dirs": 205,
+    "total_size": 94349481,
     "top_dirs": [
       {
         "name": "project_claw_core",
-        "files": 473,
+        "files": 503,
         "dirs": 9,
         "size_mb": 23,
         "old_files": 0,
         "types": {
-          ".js": 167,
-          ".log": 89,
+          ".js": 170,
+          ".log": 115,
           "(no ext)": 79,
           ".md": 54,
-          ".json": 44
+          ".json": 45
         }
       },
       {
@@ -87,12 +87,12 @@
       },
       {
         "name": "archive_old_tests",
-        "files": 226,
+        "files": 229,
         "dirs": 3,
         "size_mb": 4,
         "old_files": 0,
         "types": {
-          ".js": 57,
+          ".js": 60,
           ".md": 51,
           ".html": 38,
           ".py": 23,
@@ -129,12 +129,12 @@
       },
       {
         "name": "missions",
-        "files": 41,
+        "files": 42,
         "dirs": 1,
         "size_mb": 2,
         "old_files": 0,
         "types": {
-          ".js": 24,
+          ".js": 25,
           ".md": 10,
           ".json": 6,
           ".txt": 1
@@ -152,6 +152,19 @@
           ".json": 22,
           ".ps1": 3,
           ".cmd": 2
+        }
+      },
+      {
+        "name": "autonomous_improvement",
+        "files": 50,
+        "dirs": 4,
+        "size_mb": 0,
+        "old_files": 0,
+        "types": {
+          ".bak": 32,
+          ".js": 9,
+          ".json": 7,
+          ".log": 2
         }
       },
       {
@@ -193,19 +206,6 @@
           ".js": 35,
           ".json": 4,
           ".ps1": 1
-        }
-      },
-      {
-        "name": "autonomous_improvement",
-        "files": 47,
-        "dirs": 4,
-        "size_mb": 0,
-        "old_files": 0,
-        "types": {
-          ".bak": 29,
-          ".js": 9,
-          ".json": 7,
-          ".log": 2
         }
       },
       {

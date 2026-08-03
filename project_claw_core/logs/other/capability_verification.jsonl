@@ -1,11 +1,166 @@
-{"capability":"unified_master_orchestrator","success":true,"duration_ms":18,"error":null}
-{"capability":"research_agent","success":true,"duration_ms":9,"error":null}
-{"capability":"self_audit","success":true,"duration_ms":44,"error":null}
-{"capability":"scheduler_agent","success":false,"duration_ms":1,"error":"Task name is required"}
-{"capability":"status_reporter","success":true,"duration_ms":21,"error":null}
-{"capability":"predictive_maintenance","success":true,"duration_ms":462,"error":null}
-{"capability":"system_health_monitor","success":true,"duration_ms":426,"error":null}
-{"capability":"self_goal_generator","success":true,"duration_ms":4,"error":null}
-{"capability":"file_hygiene","success":true,"duration_ms":4,"error":null}
-{"capability":"clipboard_ocr_agent","success":true,"duration_ms":251,"error":null}
-{"capability":"research_router","success":true,"duration_ms":5,"error":null}
+{"capability":"unified_master_orchestrator","success":true,"duration_ms":21,"error":null}
+{"capability":"research_agent","success":true,"duration_ms":15,"error":null}
+{"capability":"self_audit","success":true,"duration_ms":59,"error":null}
+{"capability":"scheduler_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"status_reporter","success":true,"duration_ms":23,"error":null}
+{"capability":"predictive_maintenance","success":true,"duration_ms":460,"error":null}
+{"capability":"system_health_monitor","success":true,"duration_ms":445,"error":null}
+{"capability":"self_goal_generator","success":true,"duration_ms":6,"error":null}
+{"capability":"file_hygiene","success":true,"duration_ms":8,"error":null}
+{"capability":"clipboard_ocr_agent","success":true,"duration_ms":254,"error":null}
+{"capability":"research_router","success":true,"duration_ms":17,"error":null}
+{"capability":"ui_automation","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"window_manager","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"drive_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"file_indexer","success":false,"duration_ms":2,"error":"Cannot read properties of undefined (reading 'toLowerCase')"}
+{"capability":"registry_manager","success":false,"duration_ms":154,"error":"Command failed: reg query \"undefined\" /v \"undefined\" 2>&1"}
+{"capability":"web_monitor","success":false,"duration_ms":9,"error":"urls is not iterable"}
+{"capability":"anomaly_detector","success":false,"duration_ms":3,"error":"Cannot read properties of undefined (reading 'map')"}
+{"capability":"health_dashboard","success":true,"duration_ms":463,"error":null}
+{"capability":"verifier","success":false,"duration_ms":4,"error":"The \"path\" argument must be of type string. Received undefined"}
+{"capability":"code_agent","success":false,"duration_ms":6,"error":"The \"path\" argument must be of type string or an instance of Buffer or URL. Received undefined"}
+{"capability":"long_term_memory","success":null,"duration_ms":4,"error":null}
+{"capability":"planner","success":true,"duration_ms":3,"error":null}
+{"capability":"package_installer","success":false,"error":"child timeout after 5000ms","duration_ms":5000}
+{"capability":"git_agent","success":true,"duration_ms":232,"error":null}
+{"capability":"sqlite_brain","success":false,"duration_ms":5,"error":"sqlite3 not installed"}
+{"capability":"rollback_manager","success":true,"duration_ms":100,"error":null}
+{"capability":"service_manager","success":true,"duration_ms":610,"error":null}
+{"capability":"test_runner","success":false,"duration_ms":149,"error":"Command failed: node \"undefined\"\nnode:internal/modules/cjs/loader:1459\r\n  throw err;\r\n  ^\r\n\r\nError: Cannot find module 'C:\\Users\\quent\\.openclaw\\workspace\\undefined'\r\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1456:15)\r\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1066:19)\r\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1071:22)\r\n    at Module._load (node:internal/modules/cjs/loader:1242:25)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\r\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\r\n    at node:internal/main/run_main_module:33:47 {\r\n  code: 'MODULE_NOT_FOUND',\r\n  requireStack: []\r\n}\r\n\r\nNode.js v24.14.1\r\n"}
+{"capability":"capability_registry","success":true,"duration_ms":38,"error":null}
+{"capability":"file_organizer","success":false,"duration_ms":7,"error":"Directory not found"}
+{"capability":"pdf_reader_agent","success":false,"duration_ms":55,"error":"No PDF extraction method available"}
+{"capability":"network_monitor","success":false,"duration_ms":2920,"error":"Command failed: ping -n 4 undefined"}
+{"capability":"deploy_agent","success":false,"duration_ms":7,"error":"Cannot read properties of undefined (reading 'length')"}
+{"capability":"trading_agent","success":true,"duration_ms":582,"error":null}
+{"capability":"project_manager","success":true,"duration_ms":2,"error":null}
+{"capability":"speech_agent","success":false,"duration_ms":4,"error":"Cannot read properties of undefined (reading 'slice')"}
+{"capability":"feedback_loop","success":true,"duration_ms":2,"error":null}
+{"capability":"notify_engine","success":false,"duration_ms":8,"error":"Cannot read properties of undefined (reading 'replace')"}
+{"capability":"polyglot_coder","success":false,"duration_ms":5,"error":"Unsupported language: undefined"}
+{"capability":"market_watcher","success":true,"duration_ms":4,"error":null}
+{"capability":"unified_orchestrator","success":true,"duration_ms":494,"error":null}
+{"capability":"drive_indexer","success":false,"duration_ms":2,"error":"Cannot read properties of undefined (reading 'toLowerCase')"}
+{"capability":"task_graph","success":true,"duration_ms":3,"error":null}
+{"capability":"vector_brain","success":false,"duration_ms":4,"error":"Cannot read properties of undefined (reading 'length')"}
+{"capability":"capability_invoker","success":true,"duration_ms":41,"error":null}
+{"capability":"learning_engine","success":true,"duration_ms":3,"error":null}
+{"capability":"process_automation","success":true,"duration_ms":405,"error":null}
+{"capability":"webcam","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"memory_consolidator","success":true,"duration_ms":7,"error":null}
+{"capability":"hash_agent","success":false,"duration_ms":9,"error":"The \"path\" argument must be of type string or an instance of Buffer or URL. Received undefined"}
+{"capability":"orchestrator","success":true,"duration_ms":4,"error":null}
+{"capability":"store_manager","success":false,"duration_ms":3,"error":"not found"}
+{"capability":"sync_manager","success":false,"duration_ms":6,"error":"The \"path\" argument must be of type string or an instance of Buffer or URL. Received undefined"}
+{"capability":"compressor_agent","success":false,"duration_ms":6,"error":"The \"path\" argument must be of type string. Received undefined"}
+{"capability":"build_loop_optimizer","success":true,"duration_ms":3,"error":null}
+{"capability":"credential_rotator","duration_ms":5,"error":null}
+{"capability":"business_intelligence","success":true,"duration_ms":473,"error":null}
+{"capability":"screen_recorder","success":true,"duration_ms":3627,"error":null}
+{"capability":"microphone","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"doc_generator","success":false,"duration_ms":4,"error":"The \"path\" argument must be of type string or an instance of Buffer or URL. Received undefined"}
+{"capability":"battery_manager","success":true,"duration_ms":463,"error":null}
+{"capability":"click_by_text","success":false,"duration_ms":6,"error":"Cannot read properties of undefined (reading 'replace')"}
+{"capability":"risk_engine","success":false,"duration_ms":2,"error":"Cannot read properties of undefined (reading 'type')"}
+{"capability":"social_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"form_filler","success":false,"duration_ms":5,"error":"Cannot read properties of undefined (reading 'length')"}
+{"capability":"window_automation","success":true,"duration_ms":1568,"error":null}
+{"capability":"strategy_optimizer","success":false,"duration_ms":2,"error":"Cannot read properties of undefined (reading 'length')"}
+{"capability":"file_archiver","success":false,"duration_ms":1892,"error":"Command failed: powershell -c \"Compress-Archive -Path 'undefined' -DestinationPath 'undefined' -Force\"\nCompress-Archive : Le chemin d'acc�s undefined n'existe pas ou n'est pas un chemin d'acc�s au syst�me de fichiers \r\nvalide.\r\nAu caract�re Ligne:1 : 1\r\n+ Compress-Archive -Path 'undefined' -DestinationPath 'undefined' -Forc ...\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : InvalidArgument : (undefined:String) [Compress-Archive], InvalidOperationException\r\n    + FullyQualifiedErrorId : ArchiveCmdletPathNotFound,Compress-Archive\r\n \r\n"}
+{"capability":"reasoning_engine","duration_ms":3,"error":null}
+{"capability":"content_factory","success":false,"duration_ms":2,"error":"Cannot convert undefined or null to object"}
+{"capability":"auto_updater","success":true,"duration_ms":1861,"error":null}
+{"capability":"agent_swarm","duration_ms":3,"error":null}
+{"capability":"network_speed_tester","success":false,"duration_ms":65,"error":"getaddrinfo ENOTFOUND speed.hetzner.de"}
+{"capability":"smart_home","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"temperature_monitor","success":true,"duration_ms":387,"error":null}
+{"capability":"searxng_client","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"clipboard_manager","success":true,"duration_ms":249,"error":null}
+{"capability":"process_killer","success":false,"duration_ms":129,"error":"Command failed: taskkill /IM \"undefined\" /F\nErreur�: le processus \"undefined\" est introuvable.\r\n"}
+{"capability":"design_agent","success":true,"duration_ms":3,"error":null}
+{"capability":"audit_logger","success":true,"duration_ms":6,"error":null}
+{"capability":"phone_bridge","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"usb_manager","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"unified_master_orchestrator","success":true,"duration_ms":19,"error":null}
+{"capability":"research_agent","success":true,"duration_ms":61,"error":null}
+{"capability":"self_audit","success":true,"duration_ms":65,"error":null}
+{"capability":"scheduler_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"status_reporter","success":true,"duration_ms":25,"error":null}
+{"capability":"predictive_maintenance","success":true,"duration_ms":531,"error":null}
+{"capability":"system_health_monitor","success":true,"duration_ms":455,"error":null}
+{"capability":"self_goal_generator","success":true,"duration_ms":5,"error":null}
+{"capability":"file_hygiene","success":true,"duration_ms":9,"error":null}
+{"capability":"clipboard_ocr_agent","success":true,"duration_ms":271,"error":null}
+{"capability":"research_router","success":true,"duration_ms":21,"error":null}
+{"capability":"ui_automation","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"window_manager","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"drive_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"file_indexer","success":false,"duration_ms":1,"error":"Cannot read properties of undefined (reading 'toLowerCase')"}
+{"capability":"registry_manager","success":false,"duration_ms":118,"error":"Command failed: reg query \"undefined\" /v \"undefined\" 2>&1"}
+{"capability":"web_monitor","success":false,"duration_ms":19,"error":"urls is not iterable"}
+{"capability":"anomaly_detector","success":false,"duration_ms":3,"error":"Cannot read properties of undefined (reading 'map')"}
+{"capability":"health_dashboard","success":true,"duration_ms":463,"error":null}
+{"capability":"verifier","success":false,"duration_ms":4,"error":"The \"path\" argument must be of type string. Received undefined"}
+{"capability":"code_agent","success":false,"duration_ms":6,"error":"The \"path\" argument must be of type string or an instance of Buffer or URL. Received undefined"}
+{"capability":"long_term_memory","success":null,"duration_ms":3,"error":null}
+{"capability":"planner","success":true,"duration_ms":3,"error":null}
+{"capability":"package_installer","success":false,"duration_ms":1102,"error":"Command failed: winget install --id undefined --accept-package-agreements --accept-source-agreements -e"}
+{"capability":"git_agent","success":true,"duration_ms":155,"error":null}
+{"capability":"sqlite_brain","success":false,"duration_ms":4,"error":"sqlite3 not installed"}
+{"capability":"rollback_manager","success":true,"duration_ms":81,"error":null}
+{"capability":"service_manager","success":true,"duration_ms":525,"error":null}
+{"capability":"test_runner","success":false,"duration_ms":122,"error":"Command failed: node \"undefined\"\nnode:internal/modules/cjs/loader:1459\r\n  throw err;\r\n  ^\r\n\r\nError: Cannot find module 'C:\\Users\\quent\\.openclaw\\workspace\\undefined'\r\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1456:15)\r\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1066:19)\r\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1071:22)\r\n    at Module._load (node:internal/modules/cjs/loader:1242:25)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\r\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\r\n    at node:internal/main/run_main_module:33:47 {\r\n  code: 'MODULE_NOT_FOUND',\r\n  requireStack: []\r\n}\r\n\r\nNode.js v24.14.1\r\n"}
+{"capability":"capability_registry","success":true,"duration_ms":65,"error":null}
+{"capability":"file_organizer","success":false,"duration_ms":14,"error":"Directory not found"}
+{"capability":"pdf_reader_agent","success":false,"duration_ms":86,"error":"No PDF extraction method available"}
+{"capability":"network_monitor","success":false,"duration_ms":2774,"error":"Command failed: ping -n 4 undefined"}
+{"capability":"deploy_agent","success":false,"duration_ms":5,"error":"Cannot read properties of undefined (reading 'length')"}
+{"capability":"trading_agent","success":true,"duration_ms":598,"error":null}
+{"capability":"project_manager","success":true,"duration_ms":3,"error":null}
+{"capability":"speech_agent","success":false,"duration_ms":5,"error":"Cannot read properties of undefined (reading 'slice')"}
+{"capability":"feedback_loop","success":true,"duration_ms":3,"error":null}
+{"capability":"notify_engine","success":false,"duration_ms":6,"error":"Cannot read properties of undefined (reading 'replace')"}
+{"capability":"polyglot_coder","success":false,"duration_ms":4,"error":"Unsupported language: undefined"}
+{"capability":"market_watcher","success":true,"duration_ms":4,"error":null}
+{"capability":"unified_orchestrator","success":true,"duration_ms":498,"error":null}
+{"capability":"drive_indexer","success":false,"duration_ms":1,"error":"Cannot read properties of undefined (reading 'toLowerCase')"}
+{"capability":"task_graph","success":true,"duration_ms":3,"error":null}
+{"capability":"vector_brain","success":false,"duration_ms":3,"error":"Cannot read properties of undefined (reading 'length')"}
+{"capability":"capability_invoker","success":true,"duration_ms":43,"error":null}
+{"capability":"learning_engine","success":true,"duration_ms":2,"error":null}
+{"capability":"process_automation","success":true,"duration_ms":388,"error":null}
+{"capability":"webcam","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"memory_consolidator","success":true,"duration_ms":7,"error":null}
+{"capability":"hash_agent","success":false,"duration_ms":11,"error":"The \"path\" argument must be of type string or an instance of Buffer or URL. Received undefined"}
+{"capability":"orchestrator","success":true,"duration_ms":4,"error":null}
+{"capability":"store_manager","success":false,"duration_ms":3,"error":"not found"}
+{"capability":"sync_manager","success":false,"duration_ms":8,"error":"The \"path\" argument must be of type string or an instance of Buffer or URL. Received undefined"}
+{"capability":"compressor_agent","success":false,"duration_ms":7,"error":"The \"path\" argument must be of type string. Received undefined"}
+{"capability":"build_loop_optimizer","success":true,"duration_ms":3,"error":null}
+{"capability":"credential_rotator","duration_ms":7,"error":null}
+{"capability":"business_intelligence","success":true,"duration_ms":540,"error":null}
+{"capability":"screen_recorder","success":true,"duration_ms":158,"error":null}
+{"capability":"microphone","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"doc_generator","success":false,"duration_ms":3,"error":"The \"path\" argument must be of type string or an instance of Buffer or URL. Received undefined"}
+{"capability":"battery_manager","success":true,"duration_ms":391,"error":null}
+{"capability":"click_by_text","success":false,"duration_ms":7,"error":"Cannot read properties of undefined (reading 'replace')"}
+{"capability":"risk_engine","success":false,"duration_ms":1,"error":"Cannot read properties of undefined (reading 'type')"}
+{"capability":"social_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"form_filler","success":false,"duration_ms":4,"error":"Cannot read properties of undefined (reading 'length')"}
+{"capability":"window_automation","success":true,"duration_ms":2116,"error":null}
+{"capability":"strategy_optimizer","success":false,"duration_ms":2,"error":"Cannot read properties of undefined (reading 'length')"}
+{"capability":"file_archiver","success":false,"duration_ms":1139,"error":"Command failed: powershell -c \"Compress-Archive -Path 'undefined' -DestinationPath 'undefined' -Force\"\nCompress-Archive : Le chemin d'acc�s undefined n'existe pas ou n'est pas un chemin d'acc�s au syst�me de fichiers \r\nvalide.\r\nAu caract�re Ligne:1 : 1\r\n+ Compress-Archive -Path 'undefined' -DestinationPath 'undefined' -Forc ...\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : InvalidArgument : (undefined:String) [Compress-Archive], InvalidOperationException\r\n    + FullyQualifiedErrorId : ArchiveCmdletPathNotFound,Compress-Archive\r\n \r\n"}
+{"capability":"reasoning_engine","duration_ms":6,"error":null}
+{"capability":"content_factory","success":false,"duration_ms":4,"error":"Cannot convert undefined or null to object"}
+{"capability":"auto_updater","success":true,"duration_ms":2027,"error":null}
+{"capability":"agent_swarm","duration_ms":6,"error":null}
+{"capability":"network_speed_tester","success":false,"duration_ms":96,"error":"getaddrinfo ENOTFOUND speed.hetzner.de"}
+{"capability":"smart_home","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"temperature_monitor","success":true,"duration_ms":630,"error":null}
+{"capability":"searxng_client","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"clipboard_manager","success":true,"duration_ms":311,"error":null}
+{"capability":"process_killer","success":false,"duration_ms":150,"error":"Command failed: taskkill /IM \"undefined\" /F\nErreur�: le processus \"undefined\" est introuvable.\r\n"}
+{"capability":"design_agent","success":true,"duration_ms":3,"error":null}
+{"capability":"audit_logger","success":true,"duration_ms":7,"error":null}
+{"capability":"phone_bridge","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"usb_manager","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}

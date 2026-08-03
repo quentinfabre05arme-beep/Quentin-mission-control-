@@ -1,34 +1,471 @@
 {
-  "cycles": 13,
-  "last_run": "2026-08-03T08:35:10.569Z",
-  "duration_ms": 1515,
+  "cycles": 14,
+  "last_run": "2026-08-03T09:10:01.609Z",
+  "duration_ms": 524,
   "actions": [
     {
       "step": "radar",
+      "success": true,
       "backlog_count": 5,
       "top": [
-        "alpha_fund_newsletter",
-        "trading_bot_saas",
-        "ai_research_reports"
-      ]
+        {
+          "id": "alpha_fund_newsletter",
+          "name": "Alpha Fund Signal Newsletter",
+          "category": "trading_signals",
+          "description": "Daily contrarian market signals for BTC/ETH/MSTR/HIMS with risk framing",
+          "revenue_model": "paid_subscription",
+          "build_time_hours": 4,
+          "feasibility": 9,
+          "profit_potential": 7,
+          "alignment": 10,
+          "score": 8.7,
+          "status": "built",
+          "created_at": "2026-08-02T22:35:07.962Z",
+          "validated": true,
+          "evidence": [
+            {
+              "researched_at": "2026-08-02T22:35:08.192Z",
+              "market_queries": [
+                {
+                  "query": "Alpha Fund Signal Newsletter market size demand 2026",
+                  "source": "duckduckgo_browser",
+                  "results": [
+                    {
+                      "title": "newsletter-july-2026 - Alpha Summit",
+                      "link": "https://www.alphasummitgroup.com/newsletter-july-2026",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://www.alphasummitgroup.com/newsletter-july-2026",
+                      "summary": "newsletter-july-2026 Alpha Summit Insights — July 2026 ALPHA SUMMIT Issue 05 July 2026 Alpha Summit Insights Institutional perspectives on sports investing, options-based strategies, and the markets that matter to your clients. Market Pulse Business of Sports Funds Strategies Connect From the Desk A record quarter on Wall Street, a record sale in baseball. The first half of 2026 closed with a rare kind of symmetry. On the public side, U.S. equities wrapped their strongest quarter since 2020 — the S&amp;P 500 up roughly 15% for the second quarter and 9.6% for the year, the Nasdaq-100 pressing to fresh records above 30,000 on the back of a furious chip rally, and the Dow closing above 52,000 for the first time in its history. On the private side, Major League Baseball delivered its own milestone: the San Diego Padres changing hands for a record $3.9 billion , obliterating the prior high set in 2020. These are not unrelated events. The same abundance of capital chasing durable, scarce ass",
+                      "full_length": 5000
+                    },
+                    {
+                      "title": "Archive • Alpha • Buttondown",
+                      "link": "https://buttondown.com/alpha/archive/",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://buttondown.com/alpha/archive/",
+                      "summary": "Archive • Alpha • Buttondown Alpha Archives Search... Subscribe Alpha Signal Monitor - Daily Market Briefing | July 31, 2026 July 31, 2026 Daily Market Research Report July 31, 2026 Alpha Signal Monitor Welcome to your daily pre-market briefing. This report provides key insights on market... Alpha Signal Monitor - Daily Market Briefing | July 30, 2026 July 30, 2026 Daily Market Research Report July 30, 2026 Alpha Signal Monitor Welcome to your daily pre-market briefing. This report provides key insights on market... Alpha Signal Monitor - Daily Market Briefing | July 29, 2026 July 29, 2026 Daily Market Research Report July 29, 2026 Alpha Signal Monitor Welcome to your daily pre-market briefing. This report provides key insights on market... Alpha Signal Monitor - Daily Market Briefing | July 28, 2026 July 28, 2026 Daily Market Research Report July 28, 2026 Alpha Signal Monitor Welcome to your daily pre-market briefing. This report provides key insights on market... Alpha Signal Monitor",
+                      "full_length": 4736
+                    },
+                    {
+                      "title": "Alpha SIgnals | Alpha Signals",
+                      "link": "https://alphasignals.com/",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://alphasignals.com/",
+                      "summary": "Alpha SIgnals | Alpha Signals SIGN UP LOG IN Market Intelligence // Updated Daily The Signals Professionals Trade On. Institutional-grade analysis. Retail-accessible language. Alpha Signals delivers high-conviction intelligence before markets open — every weekday at 7am ET. SUBSCRIBE arrow-right Free to start • Cancel anytime // LATEST SIGNALS Whirlpool’s Report May Show How Frozen the Housing Market Really Is / / Aug 2, 2026 McKesson&#x27;s Compounding Keeps Adding Up / / Aug 1, 2026 Circle’s IBM Patent Deal Could Redraw the Stablecoin Infrastructure Race / / Jul 31, 2026 Meta’s AI Spending Problem Just Found a BlackRock Solution / / Jul 30, 2026 Nano Nuclear’s Air Force Contract Puts Its Short-Squeeze Setup in Focus / / Jul 29, 2026 // TODAY’S BRIEF Has Wall Street Got Monday.com Completely Wrong? / / Jul 27, 2026 PayPal Rejected a $53 Billion Takeover Bid: Is the Stock Undervalued? / / Jul 26, 2026 CrowdStrike’s Cerebras Deal Puts Its AI Security Strategy to the Test / / Jul 25, 202",
+                      "full_length": 1883
+                    }
+                  ]
+                }
+              ],
+              "competitor_queries": [
+                {
+                  "query": "Alpha Fund Signal Newsletter competitors alternatives",
+                  "source": "duckduckgo_browser",
+                  "results": [
+                    {
+                      "title": "Best AI & Alternative Data Analytics Platforms for Alpha Signal ...",
+                      "link": "https://www.battlefin.com/the-ai-inflection-point/11-best-ai-alternative-data-analytics-platforms-for-alpha-signal",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://www.battlefin.com/the-ai-inflection-point/11-best-ai-alternative-data-analytics-platforms-for-alpha-signal",
+                      "summary": "Best AI &amp; Alternative Data Analytics Platforms for Alpha Signal &mdash; BattleFin Events https://www.battlefin.com?utm_campaign=24178691-Organic%20Website%20Traffic&utm_source=Organic%20Website%20Traffic&utm_medium=Organic%20Website%20Traffic 0 Skip to Content Events Data Buyers Solutions Company Data Providers Contact Us Open Menu Close Menu Events Data Buyers Solutions Company Data Providers Contact Us Open Menu Close Menu Events Data Buyers Solutions Company Data Providers Contact Us 11 Best AI &amp; Alternative Data Analytics Platforms for Alpha Signal Aug 12 Written By Todd Schwendiman It’s no secret that the rise of alternative data —from employment data to credit‑card receipts, web traffic, and geolocation data—has empowered hedge funds to uncover unique signals beyond traditional financial metrics.&nbsp; In fact, a recent research report, “ Alternative Data Buyside Insights &amp; Trends 2025 ” by BattleFin and Exabel, revealed that 98% of investment managers agreed that “tr",
+                      "full_length": 5000
+                    },
+                    {
+                      "title": "7 Best Investment Newsletters & Subscriptions (2026)",
+                      "link": "https://traderhq.com/best-stock-picking-newsletter-services-websites-subscriptions/",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://traderhq.com/best-stock-picking-newsletter-services-websites-subscriptions/",
+                      "summary": "7 Best Investment Newsletters &amp; Subscriptions (2026) Best Stock Advisor More Lists Best Investment Newsletters Best Stock Research Tools Best Stock Analysis Tools Best Stock Market News Motley Fool Top Pick Motley Fool Stock Advisor Review Our #1 rated stock picking service Reviews Motley Fool Review Motley Fool Rule Breakers Motley Fool Epic Everlasting Portfolios Motley Fool Picks Compare Stock Advisor vs Alpha Picks Stock Advisor vs Rule Breakers Stock Advisor vs IBD Motley Fool Alternatives Motley Fool Discounts Seeking Alpha Top Returns Seeking Alpha Alpha Picks Review Quant-driven picks, +229% vs S&amp;P Reviews Seeking Alpha Review Seeking Alpha Premium Compare Stock Advisor vs Alpha Picks Alpha Picks vs Mindful Trader TipRanks vs Seeking Alpha Motley Fool Discounts Stock Advisor Motley Fool Seeking Alpha Deals More Menu Best Of Lists Most Popular Best Stock Advisor Best Investment Newsletters Best Stock Research Tools Best Stock Analysis Tools Best Stock Market News Motley ",
+                      "full_length": 5000
+                    },
+                    {
+                      "title": "The 11 Best Investment Newsletters for 2026 | Free Buyers Guide",
+                      "link": "https://www.topconsumerreviews.com/best-investment-newsletters/detailed-reviews.php",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://www.topconsumerreviews.com/best-investment-newsletters/detailed-reviews.php",
+                      "summary": "The 11 Best Investment Newsletters for 2026 | Free Buyers Guide &#9776; Categories gift giving Gift Clubs Jewelry Popular Gifts household Apparel Automotive Education Family Home Home Decor Party and Holiday Pets Recreation Security money Business and Career Financial Products Insurance Legal Help personal care Fitness Health and Beauty Health Conditions relationships Dating Weddings travel Travel About Us Privacy Terms Accessibility Contact Us Search Results Your browser does not support the video tag. &nbsp;Home | Investment Newsletters | Full Reviews 11 Best Investment Newsletters of 2026 We've analyzed the best Investment Newsletters to help you find the right solution for your needs. Sunday, August 2nd We evaluate products and services based on unbiased research. Top Consumer Reviews may earn money when you click on a link. Learn more about our process. 2026 Investment Newsletter Reviews What is the best investment newsletter available today? &nbsp&nbspWith endless financial conte",
+                      "full_length": 5000
+                    }
+                  ]
+                }
+              ],
+              "pricing_queries": [
+                {
+                  "query": "Alpha Fund Signal Newsletter pricing subscription",
+                  "source": "duckduckgo_browser",
+                  "results": [
+                    {
+                      "title": "AlphaSignal Pricing | Free & Pro Plans for AI Engineers",
+                      "link": "https://alphasignal.ai/pricing",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "summary": "",
+                      "error": "HTTP 404"
+                    },
+                    {
+                      "title": "Daily AI Newsletter for Engineers",
+                      "link": "https://alphasignal.ai/newsletter/",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://alphasignal.ai/newsletter/",
+                      "summary": "Daily AI Newsletter for Engineers ADVERTISE Stay on top of the latest AI N e w s P a p e r s R e p o s M o d e l s Get a daily 5-min email summary of the most important breakthroughs in the industry. All signal. No Noise. ‹ RUN OR CONTINUE WITH Google GitHub Join — world-class AI engineers from THIS WEEK 486 ANNOUNCEMENTS 1,204 PAPERS 312 MODELS 845 REPOS 847 MODEL GPT-5 Turbo released with 1M context window OpenAI 612 NEWS EU passes landmark AI licensing framework European Commission 534 PAPER Scaling Laws for Neural Machine Translation arXiv 491 REPO vllm v0.8.0 — 3x faster inference engine vLLM 445 NEWS Anthropic raises $5B Series D at $80B valuation Anthropic 423 MODEL Claude Opus 4.6 tops reasoning benchmarks Anthropic 389 REPO llama.cpp adds Metal 4 GPU support Meta",
+                      "full_length": 782
+                    },
+                    {
+                      "title": "Alpha SIgnals | Alpha Signals",
+                      "link": "https://alphasignals.com/",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://alphasignals.com/",
+                      "summary": "Alpha SIgnals | Alpha Signals SIGN UP LOG IN Market Intelligence // Updated Daily The Signals Professionals Trade On. Institutional-grade analysis. Retail-accessible language. Alpha Signals delivers high-conviction intelligence before markets open — every weekday at 7am ET. SUBSCRIBE arrow-right Free to start • Cancel anytime // LATEST SIGNALS Whirlpool’s Report May Show How Frozen the Housing Market Really Is / / Aug 2, 2026 McKesson&#x27;s Compounding Keeps Adding Up / / Aug 1, 2026 Circle’s IBM Patent Deal Could Redraw the Stablecoin Infrastructure Race / / Jul 31, 2026 Meta’s AI Spending Problem Just Found a BlackRock Solution / / Jul 30, 2026 Nano Nuclear’s Air Force Contract Puts Its Short-Squeeze Setup in Focus / / Jul 29, 2026 // TODAY’S BRIEF Has Wall Street Got Monday.com Completely Wrong? / / Jul 27, 2026 PayPal Rejected a $53 Billion Takeover Bid: Is the Stock Undervalued? / / Jul 26, 2026 CrowdStrike’s Cerebras Deal Puts Its AI Security Strategy to the Test / / Jul 25, 202",
+                      "full_length": 1883
+                    }
+                  ]
+                }
+              ],
+              "findings": [
+                "Research router completed. Market: duckduckgo_browser 3, Competitor: duckduckgo_browser 3, Pricing: duckduckgo_browser 3"
+              ]
+            }
+          ],
+          "tasks": [
+            {
+              "name": "build_mvp",
+              "status": "done",
+              "result": {
+                "success": true,
+                "artifact": "C:\\Users\\quent\\.openclaw\\workspace\\autonomous_business\\reports\\newsletter_2026-08-02.md",
+                "type": "newsletter"
+              }
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "C:\\Users\\quent\\.openclaw\\workspace\\autonomous_business\\reports\\newsletter_2026-08-02.md",
+              "type": "newsletter",
+              "created_at": "2026-08-02T22:36:03.721Z"
+            }
+          ]
+        },
+        {
+          "id": "trading_bot_saas",
+          "name": "Trading Bot SaaS",
+          "category": "saas",
+          "description": "Configurable paper trading bot engine as a service",
+          "revenue_model": "subscription",
+          "build_time_hours": 16,
+          "feasibility": 8,
+          "profit_potential": 8,
+          "alignment": 9,
+          "score": 8.1,
+          "status": "built",
+          "created_at": "2026-08-02T22:35:07.962Z",
+          "validated": true,
+          "evidence": [
+            {
+              "researched_at": "2026-08-02T22:35:28.089Z",
+              "market_queries": [
+                {
+                  "query": "Trading Bot SaaS market size demand 2026",
+                  "source": "duckduckgo_browser",
+                  "results": [
+                    {
+                      "title": "Crypto Trading Bot Market Size, Share | 2026",
+                      "link": "https://www.businessresearchinsights.com/market-reports/crypto-trading-bot-market-116143",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://www.businessresearchinsights.com/market-reports/crypto-trading-bot-market-116143",
+                      "summary": "Crypto Trading Bot Market Size, Share | 2026 US: +1 (888) 690-5999 (Toll-Free) UK: +44 8083 023308 (Toll-Free) Crypto Trading Bot Market Last Updated: 13 July 2026 | Report ID: 116143 &times; Industries HEALTHCARE CHEMICALS &amp; MATERIALS INFORMATION &amp; TECHNOLOGY MACHINERY &amp; EQUIPMENT ENERGY &amp; POWER AEROSPACE &amp; DEFENSE FOOD &amp; BEVERAGES AGRICULTURE CONSUMER GOODS AUTOMOTIVE &amp; TRANSPORTATION Mega trends Blogs About Contact Industries HEALTHCARE CHEMICALS &amp; MATERIALS INFORMATION &amp; TECHNOLOGY MACHINERY &amp; EQUIPMENT ENERGY &amp; POWER AEROSPACE &amp; DEFENSE FOOD &amp; BEVERAGES AGRICULTURE CONSUMER GOODS AUTOMOTIVE &amp; TRANSPORTATION Mega trends Blogs About Contact Regional/Country Report Global North America Europe Asia Pacific South America Middle East Africa United States Japan Germany United Kingdom France Canada Italy Australia South Korea Saudi Arabia China Spain Download FREE Sample Get a Quote Information &amp; Technology / Crypto Trading Bot M",
+                      "full_length": 5000
+                    },
+                    {
+                      "title": "AI Trading Bot Market Report 2026 | RavTrader",
+                      "link": "https://ravtrader.io/stats/ai-trading-bot-market-report.html",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://ravtrader.io/stats/ai-trading-bot-market-report.html",
+                      "summary": "AI Trading Bot Market Report 2026 | RavTrader RAV Trader Get Started → Research AI Trading Bot Market Report 2026 The AI trading bot market has exploded in 2025-2026 as machine learning models become increasingly capable of identifying profitable trading patterns. This report covers the full landscape. $1.4B Market Size 2026 340% Growth Since 2024 38% Traders Using Bots Market Size & Growth Year Market Size Growth Rate 2022 $320M — 2023 $480M +50% 2024 $750M +56% 2025 $1.1B +47% 2026 (est.) $1.4B +27% Platform Comparison Platform Type Price AI Signals Key Feature RavTrader AI Signals + Autopilot Free 50+ pairs Non-custodial, 20% cashback 3Commas Bot Platform $49/mo Limited SmartTrade, DCA Cryptohopper Bot + Marketplace $29/mo Marketplace Strategy marketplace Pionex Exchange + Bots Free No Grid bots Bitsgap Bot Platform $23/mo Limited Arbitrage Key Findings Free platforms are growing fastest. Users increasingly prefer zero-cost solutions funded by exchange partnerships over traditional ",
+                      "full_length": 1769
+                    },
+                    {
+                      "title": "Global Crypto Trading Bot Market Size, Growth Trends, Industry Share ...",
+                      "link": "https://www.verifiedmarketreports.com/product/crypto-trading-bot-market/",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://www.verifiedmarketreports.com/product/crypto-trading-bot-market/",
+                      "summary": "Global Crypto Trading Bot Market Size, Growth Trends, Industry Share & Forecast 2026-2034 HOME REPORT STORE Aerospace and Defense Healthcare and Pharmaceuticals Automobile and Transportation Banking and Insurance (BFSI) Environmental and Sustainability Chemicals and Materials Construction and Manufacturing Consumer Goods Education and Training Electronics and Semiconductors Energy and Power Food and Agriculture Internet and Technology Industrial Automation and Machinery Logistics and Transportation Packaging Telecommunications and Networking BLOGS ABOUT US CONTACT US Home Banking, Financial Services and Insurance Cryptocurrency Crypto Trading Bot Market Global Crypto Trading Bot Market Size, Growth Trends, Industry Share & Forecast 2026-2034 Global Crypto Trading Bot Market Size By Type of Bot (Arbitrage Bots, Market Making Bots), By Trading Strategy (Technical Analysis Bots, Fundamental Analysis Bots), By User Category (Institutional Investors, Retail Traders), By Deployment Model (Cl",
+                      "full_length": 5000
+                    }
+                  ]
+                }
+              ],
+              "competitor_queries": [
+                {
+                  "query": "Trading Bot SaaS competitors alternatives",
+                  "source": "duckduckgo_browser",
+                  "results": [
+                    {
+                      "title": "10 Automated Trading Tools & Bots Lab-Tested & Rated 2026",
+                      "link": "https://www.liberatedstocktrader.com/automated-trading-platforms/",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://www.liberatedstocktrader.com/automated-trading-platforms/",
+                      "summary": "10 Automated Trading Tools &amp; Bots Lab-Tested &amp; Rated 2026 Facebook Instagram X Youtube Training Tools Charts Patterns Indicators Investing Trading Video Vault Members Search Stock Market News, Research & Education for Traders & Investors Stock Market News, Research & Education for Traders & Investors Stock Market News, Research & Education for Traders & Investors Stock Market News, Research & Education for Traders & Investors Stock Market News, Research & Education for Traders & Investors Stock Market News, Research & Education for Traders & Investors Search Training Tools Charts Patterns Indicators Investing Trading Video Vault Members Stock Market News, Research & Education for Traders & Investors Stock Market News, Research & Education for Traders & Investors Education Free Courses Free Resources Technical Analysis Video Course Liberated Stock Trader Pro MOSES ETF Investing Beat the Market Stock Selection All-Star Pass Bundle Books &#038; Audiobooks Tools Trading Comparisons",
+                      "full_length": 5000
+                    },
+                    {
+                      "title": "14 Best AI Trading Software & Bots Reviewed [Free & Paid] August 2026",
+                      "link": "https://analystanswers.com/best-ai-trading-software-bots-reviewed-free-paid/",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://analystanswers.com/best-ai-trading-software-bots-reviewed-free-paid/",
+                      "summary": "14 Best AI Trading Software &#038; Bots Reviewed [Free &#038; Paid] August 2026 &#8211; Analyst Answers Skip to content Analyst Answers Data &amp; Finance for Work &amp; Life Main Menu Data Finance Personal Finance Technology Free Resources Data Analyst Checklist Intro to Data Analysis How to Get Excel Online for Free The Blog Search for: Search 14 Best AI Trading Software &#038; Bots Reviewed [Free &#038; Paid] August 2026 / Personal Finance , Technology / By Noah AI trading software encompass everything from hands-off robo advisors to news aggregation, and everyone&#8217;s doing it . These tools fall into 4 categories: (1) robo advisors (via broker), (2) research automation, (3) alert assistance, and (4) alert execution. Beginners only need the first; everyone else needs one of each. To choose the right one, you must determine the best functions for your strategy, level of involvement, and trade volume. But don&#8217;t worry, this will come naturally as we cover 14 best options and o",
+                      "full_length": 5000
+                    },
+                    {
+                      "title": "8 Best AI Trading Bots 2026 : Pricing, Returns, Risks",
+                      "link": "https://plisio.net/ai/best-ai-trading-bots",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://plisio.net/ai/best-ai-trading-bots",
+                      "summary": "8 Best AI Trading Bots 2026 : Pricing, Returns, Risks nav#open\"> nav#close\"> Product Crypto Payment Gateway Revolutionizing payments Crypto Wallet Secure digital assets Crypto Invoices Effortless billing solutions Mass Payouts Streamlined bulk transfers White Label Customized brand solutions Donations Empowering giving with cryptocurrency Connect API Integrate & innovate Integration solutions Optimized plugins and libraries for smooth integration Learn Blog Insights and updates FAQ Clarifying your queries Help Support and guidance Company Security Guarding your digital assets Bug Bounty Rewarding security research Affiliate Program Earn extra income Contact us Reach out for assistance Pricing Log in Sign up Best AI Trading Bots 2026 : Honest Review of Top Platforms Posted on May 3, 2026 Written by Jordan Morris Share in share#sharePage\" data-share-network-param=\"facebook\"> share#sharePage\" data-share-network-param=\"twitter\"> share#sharePage\" data-share-network-param=\"linkedin\"> In a pu",
+                      "full_length": 5000
+                    }
+                  ]
+                }
+              ],
+              "pricing_queries": [
+                {
+                  "query": "Trading Bot SaaS pricing subscription",
+                  "source": "duckduckgo_browser",
+                  "results": [
+                    {
+                      "title": "8 Best AI Trading Bots 2026 : Pricing, Returns, Risks",
+                      "link": "https://plisio.net/ai/best-ai-trading-bots",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://plisio.net/ai/best-ai-trading-bots",
+                      "summary": "8 Best AI Trading Bots 2026 : Pricing, Returns, Risks nav#open\"> nav#close\"> Product Crypto Payment Gateway Revolutionizing payments Crypto Wallet Secure digital assets Crypto Invoices Effortless billing solutions Mass Payouts Streamlined bulk transfers White Label Customized brand solutions Donations Empowering giving with cryptocurrency Connect API Integrate & innovate Integration solutions Optimized plugins and libraries for smooth integration Learn Blog Insights and updates FAQ Clarifying your queries Help Support and guidance Company Security Guarding your digital assets Bug Bounty Rewarding security research Affiliate Program Earn extra income Contact us Reach out for assistance Pricing Log in Sign up Best AI Trading Bots 2026 : Honest Review of Top Platforms Posted on May 3, 2026 Written by Jordan Morris Share in share#sharePage\" data-share-network-param=\"facebook\"> share#sharePage\" data-share-network-param=\"twitter\"> share#sharePage\" data-share-network-param=\"linkedin\"> In a pu",
+                      "full_length": 5000
+                    },
+                    {
+                      "title": "The Top 25 SaaS AI Trading Bots in 2026",
+                      "link": "https://topbusinesssoftware.com/categories/ai-trading-bots/saas/",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "summary": "",
+                      "error": "HTTP 403"
+                    },
+                    {
+                      "title": "AI Trading Bot Cost in 2026: What You'll Actually Pay (and Why Cheap ...",
+                      "link": "https://iqntx.com/blog/ai-trading-bot-cost-explained",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://iqntx.com/blog/ai-trading-bot-cost-explained",
+                      "summary": "AI Trading Bot Cost in 2026: What You&#x27;ll Actually Pay (and Why Cheap Ones Cost More) | iQntX Skip to main content iQntX Product Methodology Blog Waitlist Join waitlist → demo EUR/USD 1.0842 ▲ 0.32 % XAU/USD 2,418.50 ▲ 1.18 % BTC/USD 94,210 ▼ 0.92 % USD/JPY 156.74 ▼ 0.18 % S&amp;P 500 5,842.11 ▲ 0.41 % NASDAQ 100 20,914 ▲ 0.65 % GBP/USD 1.2710 ▲ 0.21 % WTI Oil 68.32 ▼ 1.42 % DXY 104.18 ▼ 0.11 % EUR/USD 1.0842 ▲ 0.32 % XAU/USD 2,418.50 ▲ 1.18 % BTC/USD 94,210 ▼ 0.92 % USD/JPY 156.74 ▼ 0.18 % S&amp;P 500 5,842.11 ▲ 0.41 % NASDAQ 100 20,914 ▲ 0.65 % GBP/USD 1.2710 ▲ 0.21 % WTI Oil 68.32 ▼ 1.42 % DXY 104.18 ▼ 0.11 % Home / Blog / methodology / AI Trading Bot Cost in 2026: What You&#x27;ll Actually Pay (and Why Cheap Ones Cost More) methodology May 22, 2026 · 7 min read AI Trading Bot Cost in 2026: What You&#x27;ll Actually Pay (and Why Cheap Ones Cost More) Most AI trading bot listicles quote the subscription price and call it the cost. The subscription is the smallest line item. Here ",
+                      "full_length": 5000
+                    }
+                  ]
+                }
+              ],
+              "findings": [
+                "Research router completed. Market: duckduckgo_browser 3, Competitor: duckduckgo_browser 3, Pricing: duckduckgo_browser 3"
+              ]
+            }
+          ],
+          "tasks": [
+            {
+              "name": "build_mvp",
+              "status": "done",
+              "result": {
+                "success": true,
+                "artifact": "C:\\Users\\quent\\.openclaw\\workspace\\autonomous_business\\reports\\trading_bot_saas_2026-08-02.md",
+                "type": "report"
+              }
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "C:\\Users\\quent\\.openclaw\\workspace\\autonomous_business\\reports\\trading_bot_saas_2026-08-02.md",
+              "type": "report",
+              "created_at": "2026-08-02T22:36:03.729Z"
+            }
+          ]
+        },
+        {
+          "id": "ai_research_reports",
+          "name": "AI Research Reports",
+          "category": "content",
+          "description": "Premium sector/market PDF reports generated automatically",
+          "revenue_model": "pay_per_report",
+          "build_time_hours": 6,
+          "feasibility": 9,
+          "profit_potential": 6,
+          "alignment": 8,
+          "score": 7.7,
+          "status": "built",
+          "created_at": "2026-08-02T22:35:07.962Z",
+          "validated": true,
+          "evidence": [
+            {
+              "researched_at": "2026-08-02T22:35:47.297Z",
+              "market_queries": [
+                {
+                  "query": "AI Research Reports market size demand 2026",
+                  "source": "duckduckgo_browser",
+                  "results": [
+                    {
+                      "title": "Economy | The 2026 AI Index Report | Stanford HAI",
+                      "link": "https://hai.stanford.edu/ai-index/2026-ai-index-report/economy",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/economy",
+                      "summary": "Stanford University Stanford Home Maps &amp; Directions Search Stanford Emergency Info Terms of Use Privacy Copyright Trademarks Non-Discrimination Accessibility © Stanford University. Stanford, California 94305. Pause Media Economy | The 2026 AI Index Report | Stanford HAI Skip to content About About About People Get Involved with HAI Support HAI Subscribe to Email Research Research Research Fellowship Programs Grants Student Affinity Groups Centers &amp; Labs Research Publications Research Partners Education Education Education Executive and Professional Education Government and Policymakers K-12 Stanford Students Policy Policy Policy Policy Publications Policymaker Education Student Opportunities AI Index AI Index AI Index AI Index Report Global Vibrancy Tool People News Events Industry Centers &amp; Labs Navigate About Events AI Glossary Careers Search Participate Get Involved Support HAI Contact Us Stay Up To Date Get the latest news, advances in research, policy work, and educati",
+                      "full_length": 5000
+                    },
+                    {
+                      "title": "AI Market Size, Trend | Forecast Report [2026-2035]",
+                      "link": "https://www.businessresearchinsights.com/market-reports/ai-market-125039",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://www.businessresearchinsights.com/market-reports/ai-market-125039",
+                      "summary": "AI Market Size, Trend | Forecast Report [2026-2035] US: +1 (888) 690-5999 (Toll-Free) UK: +44 8083 023308 (Toll-Free) AI Market Last Updated: 13 July 2026 | Report ID: 125039 &times; Industries HEALTHCARE CHEMICALS &amp; MATERIALS INFORMATION &amp; TECHNOLOGY MACHINERY &amp; EQUIPMENT ENERGY &amp; POWER AEROSPACE &amp; DEFENSE FOOD &amp; BEVERAGES AGRICULTURE CONSUMER GOODS AUTOMOTIVE &amp; TRANSPORTATION Mega trends Blogs About Contact Industries HEALTHCARE CHEMICALS &amp; MATERIALS INFORMATION &amp; TECHNOLOGY MACHINERY &amp; EQUIPMENT ENERGY &amp; POWER AEROSPACE &amp; DEFENSE FOOD &amp; BEVERAGES AGRICULTURE CONSUMER GOODS AUTOMOTIVE &amp; TRANSPORTATION Mega trends Blogs About Contact Regional/Country Report Global North America Europe Asia Pacific South America Middle East Africa United States Japan Germany United Kingdom France Canada Italy Australia South Korea Saudi Arabia China Spain Download FREE Sample Get a Quote Information &amp; Technology / AI Market Regional/Country Re",
+                      "full_length": 5000
+                    },
+                    {
+                      "title": "AI Market Size Analysis Report 2026-2030 - The Business Research Company",
+                      "link": "https://www.thebusinessresearchcompany.com/report/artificial-intelligence-global-market-report",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://www.thebusinessresearchcompany.com/report/artificial-intelligence-global-market-report",
+                      "summary": "AI Market Size Analysis Report 2026-2030 Our Offerings By Industry By Function About Us Our Viewpoint NEW Senior Management Experts Panel Global Consultants Webinar Infographics Case Studies Illustrations In The Press Contact Us Search Reports Store Top 50 Healthcare Market Reports NEW Top 50 Non-Healthcare Market Reports NEW Opportunities And Strategies Reports Aerospace And Defense Agriculture Chemicals Construction Electrical And Electronics Financial Services Food And Beverages Healthcare Services Hospitality Information Technology Machinery Media Medical Equipment Metal And Mineral Mining Oil And Gas Paper, Plastics, Rubber, Wood And Textile Pharmaceuticals Professional Services Recreation Retail And Wholesale Services Social Services Transport Transport Services Utilities Veterinary Healthcare Filter Reports by Trends NEW Market Intelligence Platform About GMM Global Forecast NEW Mega Trends Analysis Use Cases Consultancies Corporate Planning &amp; Strategy Academic Financial Ser",
+                      "full_length": 5000
+                    }
+                  ]
+                }
+              ],
+              "competitor_queries": [
+                {
+                  "query": "AI Research Reports competitors alternatives",
+                  "source": "duckduckgo_browser",
+                  "results": [
+                    {
+                      "title": "Top 10 AI Research Alternatives & Competitors in 2026 | G2",
+                      "link": "https://www.g2.com/products/ai-research/competitors/alternatives",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "summary": "",
+                      "error": "HTTP 403"
+                    },
+                    {
+                      "title": "9 Best AI Market Research Tools in 2026 (Tested & Ranked)",
+                      "link": "https://www.simular.ai/alternatives/ai-market-research-tools",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://www.simular.ai/alternatives/ai-market-research-tools",
+                      "summary": "9 Best AI Market Research Tools in 2026 (Tested &amp; Ranked) tag --> About Product Research Business Use Cases Pricing Blog Solutions Dental Practice Research Agent S Agent S2 Agent S3 Product Use Cases Pricing About Blog Solutions Dental Practice simular.ai Sign in How did you hear about us? We are glad that you have chosen Simular, before installation we would like to know how you heard about Simular? Others Product hunt TikTok Instagram X Google search LinkedIn YouTube Reddit Word of mouth or friend Download Simular Pro Thank you! Your submission has been received! Oops! Something went wrong while submitting the form. 9 Best AI Market Research Tools in 2026 (Tested &amp; Ranked) A traditional market research project takes 4 to 8 weeks and costs between $15,000 and $50,000 when outsourced to a consulting firm ( Qualtrics, 2025 ). Even in-house teams spend an average of 32 hours per competitive analysis cycle -- time that compounds across quarterly reviews, product launches, and inve",
+                      "full_length": 5000
+                    },
+                    {
+                      "title": "12 Best AI Research Tools in 2026 (Tested by Researchers)",
+                      "link": "https://papersflow.ai/blog/best-ai-research-tools-2026",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://papersflow.ai/blog/best-ai-research-tools-2026",
+                      "summary": "12 Best AI Research Tools in 2026 (Tested by Researchers) – PapersFlow PapersFlow Home Blog Research Tools Compare Research Tools PapersFlow for Every Research Field Research Topics LaTeX Editor AI Research Chat Workflows Research Insights Community About Contact Academic Paraphrasing Tool — Rewrite Research Text Without Breaking Citations Academic Rewriter Tool — Humanize AI Drafts for Research Papers Academic Translation Tool — Translate Research Writing Without Losing Meaning AI LaTeX Academic Writing Smart Citation Management AI Deep Research Reports Counter-Evidence Finder AI Literature Review Tool AI Paper Summarization Related Work Generator Find Source Code for Research Papers Free APA Citation Generator — APA 7th Edition Format Free APA Citation Generator — MLA, Chicago, Harvard &amp; More Free APA to MLA Converter — Convert Citations Between Styles Instantly Free Chicago Citation Generator — Chicago 17th Edition Free DOI to Citation Converter — APA, MLA, Chicago, BibTeX Free ",
+                      "full_length": 5000
+                    }
+                  ]
+                }
+              ],
+              "pricing_queries": [
+                {
+                  "query": "AI Research Reports pricing subscription",
+                  "source": "duckduckgo_browser",
+                  "results": [
+                    {
+                      "title": "AI Customer Research Pricing Guide 2026: Models & Costs",
+                      "link": "https://listenlabs.ai/articles/ai-customer-research-pricing-2026/",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://listenlabs.ai/articles/ai-customer-research-pricing-2026/",
+                      "summary": "AI Customer Research Pricing Guide 2026: Models &#038; Costs Skip to content Demo Home Blog AI Customer Research Pricing: 2026 Models &amp; Cost Breakdown Content AI Customer Research Pricing: 2026 Models &amp; Cost Breakdown April 27, 2026 Written by: Anish Rao, Head of Growth, Listen Labs | Last updated: July 4, 2026 Key Takeaways Enterprise AI customer research pricing in 2026 spans subscription-plus-credits, per-interview, and usage-based models, so teams need clear benchmarks before comparing costs. Per-interview costs, annual platform fees, and total cost of ownership vary widely across six leading platforms, with AI solutions delivering 50–60% savings versus traditional qualitative methods. Hidden costs such as recruitment fees, fraud risk, and manual analysis inflate traditional research TCO, while platforms with strong quality controls reduce effective per-interview spend. Enterprise-grade platforms like Listen Labs combine global recruitment, multilingual AI moderation, autom",
+                      "full_length": 5000
+                    },
+                    {
+                      "title": "Pricing | Elicit: The AI Research Assistant",
+                      "link": "https://elicit.com/pricing",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://elicit.com/pricing",
+                      "summary": "Pricing |&nbsp;Elicit: The AI Research Assistant Solutions Industries Resources Customers Pricing Sign in Sign up Sign in Sign up Sign up Sign in Sign up Pricing Pick a plan that's right for you Industry Monthly Yearly Basic For casual exploration Free Limited usage for Research Agent and Research Reports Unlimited search across more than 138 million papers Unlimited summaries across as many papers as you wan t Unlimited chat with papers with full-text access View sources for answers Import from Zotero Try for free Plus For deeper research $11 Save 42% Per user/year, billed as $132 annually Export to RIS, CSV, BIB, PDF and DOCX Add 5 columns to your tables at a tim e Unlimited search across more than 500 thousand clinical trials Standard usage for Research Agent, Research Reports, and Systematic Literature Reviews Sign up Pro For systematic reviews $39 Save 43% Per user/month, billed as $480 annually 5x usage for Research Agent, Research Reports, and Systematic Literature Reviews Dedic",
+                      "full_length": 5000
+                    },
+                    {
+                      "title": "AI Subscriptions Compared: Every Plan Ranked (2026)",
+                      "link": "https://subchoice.com/blog/ai-subscription-guide-2026/",
+                      "snippet": "",
+                      "source": "duckduckgo_browser",
+                      "url": "https://subchoice.com/blog/ai-subscription-guide-2026/",
+                      "summary": "AI Subscriptions Compared: Every Plan Ranked (2026) SubChoice Explore Compare Best Plans Guides Blog &larr; Home / Blog / AI Subscriptions Compared: Every Plan Ranked (2026) At a Glance ChatGPT Plus $20.00/mo 32K tokens context GPT-5.2 Instant, GPT-5.2 Thinking, GPT-5.2 Mini (fallback), Legacy models (plan matrix) Claude Pro $20.00/mo 200K tokens context Opus, Sonnet, Haiku Compare side-by-side &rarr; Not sure? Take the quiz guide comparison pillar AI Subscriptions Compared: Every Plan Ranked (2026) SubChoice Team &middot; February 28, 2026 &middot; &mdash; min read Not sure which AI plan fits you? See how these plans stack up for your workflow. Compare these plans &rarr; Table of Contents Introduction: Why AI Subscriptions Are Confusing AI subscriptions have become a standard line item in both personal and professional budgets. In 2026, most knowledge workers pay for at least one — and many pay for two or three. But the landscape is genuinely hard to navigate. Pricing changes frequent",
+                      "full_length": 5000
+                    }
+                  ]
+                }
+              ],
+              "findings": [
+                "Research router completed. Market: duckduckgo_browser 3, Competitor: duckduckgo_browser 3, Pricing: duckduckgo_browser 3"
+              ]
+            }
+          ],
+          "tasks": [
+            {
+              "name": "build_mvp",
+              "status": "done",
+              "result": {
+                "success": true,
+                "artifact": "C:\\Users\\quent\\.openclaw\\workspace\\autonomous_business\\reports\\newsletter_2026-08-02.md",
+                "type": "newsletter"
+              }
+            }
+          ],
+          "artifacts": [
+            {
+              "path": "C:\\Users\\quent\\.openclaw\\workspace\\autonomous_business\\reports\\newsletter_2026-08-02.md",
+              "type": "newsletter",
+              "created_at": "2026-08-02T23:35:54.685Z"
+            }
+          ]
+        }
+      ],
+      "signals": []
     },
     {
       "step": "research",
+      "success": true,
       "validated": 0
     },
     {
       "step": "build",
+      "success": true,
       "built": 0
     },
     {
       "step": "ship",
+      "success": true,
       "metrics": {
-        "cycles": 13,
+        "cycles": 14,
         "artifacts": 5,
         "ideas": 0,
         "validated": 0,
         "built": 5,
-        "last_update": "2026-08-03T08:35:09.938Z"
+        "last_update": "2026-08-03T09:10:01.117Z"
       },
       "git": true
     },
@@ -36,5 +473,6 @@
       "step": "report",
       "sent": true
     }
-  ]
+  ],
+  "dead_letter_count": 0
 }

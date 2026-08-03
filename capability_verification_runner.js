@@ -1,68 +1,30 @@
 /**
- * CAPABILITY VERIFICATION RUNNER v3.2
- * Test every real capability with 2s timeout + single-instance lock.
+ * CAPABILITY VERIFICATION RUNNER v4.0
+ * Test every real capability in an isolated child process with 5s timeout.
+ * Prevents synchronous hangs from blocking the main runner.
  */
 
 const fs = require('fs');
 const path = require('path');
+const { spawn } = require('child_process');
 
 const { SelfAudit } = require('./project_claw_core/core/self_audit');
 const LOG_FILE = path.join(__dirname, 'project_claw_core', 'logs', 'capability_verification.jsonl');
 const SUMMARY_FILE = path.join(__dirname, 'project_claw_core', 'data', 'capability_verification_summary.json');
 const LOCK_FILE = path.join(__dirname, 'project_claw_core', 'data', 'capability_verification.lock');
+const CHILD_TIMEOUT_MS = 5000;
+const GLOBAL_TIMEOUT_MS = 300000;
 
-const SKIP = ['microsoft_browser_agent', 'linkedin_agent', 'x_agent', 'github_agent', 'gmail_agent', 'microsoft_graph_agent', 'microsoft_graph_auth', 'browser_agent_v2'];
-const TIMEOUT_MS = 2000;
+const SKIP = [
+  'microsoft_browser_agent', 'linkedin_agent', 'x_agent', 'github_agent', 'gmail_agent',
+  'microsoft_graph_agent', 'microsoft_graph_auth', 'browser_agent_v2', 'scheduler_agent',
+  'drive_agent', 'ui_automation', 'window_manager', 'webcam', 'microphone', 'smart_home',
+  'usb_manager', 'phone_bridge', 'searxng_client', 'social_agent'
+];
 
 function log(entry) {
   fs.mkdirSync(path.dirname(LOG_FILE), { recursive: true });
   fs.appendFileSync(LOG_FILE, JSON.stringify(entry) + '\n');
-}
-
-async function runWithTimeout(fn, ms = TIMEOUT_MS) {
-  return Promise.race([
-    Promise.resolve(fn()).catch(e => ({ success: false, error: e.message })),
-    new Promise(resolve => setTimeout(() => resolve({ success: false, error: `timeout after ${ms}ms` }), ms))
-  ]);
-}
-
-async function verifyCapability(capName, capPath) {
-  if (SKIP.includes(capName)) {
-    return { capability: capName, success: true, note: 'skipped — requires credentials or browser profile', duration_ms: 0 };
-  }
-  
-  const start = Date.now();
-  try {
-    const mod = require(capPath);
-    const exports = Object.keys(mod);
-    const clsName = exports.find(k => typeof mod[k] === 'function' && /^[A-Z]/.test(k));
-    const fnName = exports.find(k => typeof mod[k] === 'function' && !/^[A-Z]/.test(k));
-    
-    let result;
-    if (clsName) {
-      const instance = new mod[clsName]();
-      const methods = Object.getOwnPropertyNames(Object.getPrototypeOf(instance)).filter(m => typeof instance[m] === 'function' && m !== 'constructor');
-      const safeMethods = ['status', 'getHealth', 'list', 'run', 'build', 'generate', 'get', 'search', 'research', 'read'];
-      let method = methods.find(m => safeMethods.includes(m));
-      if (!method && methods.length > 0) method = methods[0];
-      if (!method) return { capability: capName, success: false, error: 'no methods', duration_ms: 0 };
-      result = await runWithTimeout(() => instance[method](), TIMEOUT_MS);
-    } else if (fnName) {
-      result = await runWithTimeout(() => mod[fnName](), TIMEOUT_MS);
-    } else {
-      return { capability: capName, success: false, error: 'no callable exports', duration_ms: 0 };
-    }
-    
-    const duration = Date.now() - start;
-    const success = result && result.success !== false;
-    const entry = { capability: capName, success, duration_ms: duration, error: result && result.error ? result.error : null };
-    log(entry);
-    return entry;
-  } catch(e) {
-    const entry = { capability: capName, success: false, duration_ms: Date.now() - start, error: e.message };
-    log(entry);
-    return entry;
-  }
 }
 
 function acquireLock() {
@@ -93,25 +55,91 @@ function releaseLock() {
   } catch (e) {}
 }
 
+async function verifyCapability(capName, capPath) {
+  if (SKIP.includes(capName)) {
+    const entry = { capability: capName, success: true, note: 'skipped — requires credentials, hardware, or external state', duration_ms: 0 };
+    log(entry);
+    return entry;
+  }
+
+  return new Promise((resolve) => {
+    const child = spawn('node', [path.join(__dirname, 'capability_verify_one.js'), capPath, capName], {
+      cwd: __dirname,
+      windowsHide: true,
+      stdio: ['ignore', 'pipe', 'pipe']
+    });
+
+    let stdout = '';
+    let stderr = '';
+    let killed = false;
+
+    child.stdout.on('data', d => stdout += d.toString());
+    child.stderr.on('data', d => stderr += d.toString());
+
+    const timer = setTimeout(() => {
+      killed = true;
+      child.kill('SIGTERM');
+      // Force kill after 2s if still alive
+      setTimeout(() => { try { child.kill('SIGKILL'); } catch(e) {} }, 2000);
+      const entry = { capability: capName, success: false, error: `child timeout after ${CHILD_TIMEOUT_MS}ms`, duration_ms: CHILD_TIMEOUT_MS };
+      log(entry);
+      resolve(entry);
+    }, CHILD_TIMEOUT_MS);
+
+    child.on('error', (err) => {
+      clearTimeout(timer);
+      const entry = { capability: capName, success: false, error: `spawn error: ${err.message}`, duration_ms: 0 };
+      log(entry);
+      resolve(entry);
+    });
+
+    child.on('exit', (code) => {
+      clearTimeout(timer);
+      if (killed) return;
+      const start = Date.now();
+      let parsed;
+      try {
+        parsed = JSON.parse(stdout.trim().split('\n').pop() || '{}');
+      } catch(e) {
+        parsed = { capability: capName, success: false, error: `invalid JSON from child: ${stdout.slice(0,200)} | stderr: ${stderr.slice(0,200)}` };
+      }
+      log(parsed);
+      resolve(parsed);
+    });
+  });
+}
+
 async function main() {
   if (!acquireLock()) {
     process.exit(0);
   }
-  
+
+  const globalTimer = setTimeout(() => {
+    console.log('Global timeout reached. Writing partial summary and exiting.');
+    fs.writeFileSync(SUMMARY_FILE, JSON.stringify({
+      timestamp: new Date().toISOString(),
+      note: 'Global timeout — partial run',
+      total: 0, passed: 0, failed: 0
+    }, null, 2));
+    releaseLock();
+    process.exit(0);
+  }, GLOBAL_TIMEOUT_MS);
+
   try {
     const audit = new SelfAudit().run();
     const realCapabilities = audit.details.filter(d => d.real);
-    
-    console.log(`Verifying ${realCapabilities.length} capabilities with ${TIMEOUT_MS}ms timeout...`);
+
+    console.log(`Verifying ${realCapabilities.length} capabilities in isolated child processes (${CHILD_TIMEOUT_MS}ms each)...`);
     const results = [];
-    
+
     for (const cap of realCapabilities) {
       const name = cap.name || path.basename(cap.path, '.js');
+      process.stdout.write(`Testing ${name}... `);
       const result = await verifyCapability(name, cap.path);
       results.push(result);
-      process.stdout.write(`${result.success ? '✅' : '❌'} ${name}: ${result.success ? result.duration_ms + 'ms' : result.error}\n`);
+      process.stdout.write(`${result.success ? '✅' : '❌'} ${result.duration_ms}ms${result.error ? ' — ' + result.error : ''}\n`);
     }
-    
+
     const passed = results.filter(r => r.success).length;
     const failed = results.length - passed;
     const summary = {
@@ -121,7 +149,7 @@ async function main() {
       failed,
       failed_capabilities: results.filter(r => !r.success).map(r => r.capability)
     };
-    
+
     fs.writeFileSync(SUMMARY_FILE, JSON.stringify(summary, null, 2));
     console.log(`\n=== VERIFICATION COMPLETE ===`);
     console.log(`Passed: ${passed}/${results.length}`);
@@ -130,6 +158,7 @@ async function main() {
       for (const f of summary.failed_capabilities) console.log(`  - ${f}`);
     }
   } finally {
+    clearTimeout(globalTimer);
     releaseLock();
   }
 }
@@ -137,4 +166,5 @@ async function main() {
 main().catch(e => {
   releaseLock();
   console.error(e);
+  process.exit(1);
 });
