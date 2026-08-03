@@ -33,9 +33,9 @@
       ]
     },
     {
-      "id": "plan_1785750230624",
+      "id": "plan_1785751111380",
       "goal": "test",
-      "created_at": "2026-08-03T09:43:50.624Z",
+      "created_at": "2026-08-03T09:58:31.380Z",
       "status": "active",
       "steps": [
         {
@@ -47,79 +47,9 @@
       ]
     },
     {
-      "id": "plan_1785750243698",
+      "id": "plan_1785751124554",
       "goal": "test",
-      "created_at": "2026-08-03T09:44:03.698Z",
-      "status": "active",
-      "steps": [
-        {
-          "id": "step_0",
-          "description": "step1",
-          "status": "pending",
-          "dependencies": []
-        }
-      ]
-    },
-    {
-      "id": "plan_1785750259952",
-      "goal": "test",
-      "created_at": "2026-08-03T09:44:19.952Z",
-      "status": "active",
-      "steps": [
-        {
-          "id": "step_0",
-          "description": "step1",
-          "status": "pending",
-          "dependencies": []
-        }
-      ]
-    },
-    {
-      "id": "plan_1785750486174",
-      "goal": "test",
-      "created_at": "2026-08-03T09:48:06.174Z",
-      "status": "active",
-      "steps": [
-        {
-          "id": "step_0",
-          "description": "step1",
-          "status": "pending",
-          "dependencies": []
-        }
-      ]
-    },
-    {
-      "id": "plan_1785750621957",
-      "goal": "test",
-      "created_at": "2026-08-03T09:50:21.957Z",
-      "status": "active",
-      "steps": [
-        {
-          "id": "step_0",
-          "description": "step1",
-          "status": "pending",
-          "dependencies": []
-        }
-      ]
-    },
-    {
-      "id": "plan_1785750735368",
-      "goal": "test",
-      "created_at": "2026-08-03T09:52:15.368Z",
-      "status": "active",
-      "steps": [
-        {
-          "id": "step_0",
-          "description": "step1",
-          "status": "pending",
-          "dependencies": []
-        }
-      ]
-    },
-    {
-      "id": "plan_1785750846334",
-      "goal": "test",
-      "created_at": "2026-08-03T09:54:06.334Z",
+      "created_at": "2026-08-03T09:58:44.554Z",
       "status": "active",
       "steps": [
         {
