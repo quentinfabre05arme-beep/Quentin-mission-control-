@@ -214,6 +214,69 @@ function generateStaticHypotheses() {
       target_file: 'alpha_fund_v3/core/always_on_daemon.js',
       estimated_effort: 10,
       estimated_impact: 'low'
+    },
+    {
+      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      title: 'Add Tavily result cache TTL',
+      category: 'workflow',
+      reason: 'Reduce redundant API calls and cost',
+      target_file: 'project_claw_core/agents/tavily_search.js',
+      estimated_effort: 13,
+      estimated_impact: 'medium'
+    },
+    {
+      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      title: 'Add experiment impact scoring',
+      category: 'workflow',
+      reason: 'Prioritize high-value improvements',
+      target_file: 'autonomous_improvement/core/experiment_runner.js',
+      estimated_effort: 11,
+      estimated_impact: 'medium'
+    },
+    {
+      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      title: 'Add unified master stale subsystem heartbeat',
+      category: 'reliability',
+      reason: 'Detect hung subsystems',
+      target_file: 'project_claw_core/core/unified_master_orchestrator.js',
+      estimated_effort: 14,
+      estimated_impact: 'medium'
+    },
+    {
+      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      title: 'Add memory tier warm-to-cold promotion',
+      category: 'workflow',
+      reason: 'Keep hot tier fast',
+      target_file: 'project_claw_core/core/memory_tier.js',
+      estimated_effort: 15,
+      estimated_impact: 'medium'
+    },
+    {
+      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      title: 'Add safe JSON.parse wrapper to usage tracker',
+      category: 'reliability',
+      reason: 'JSON.parse can throw and crash the process',
+      target_file: 'project_claw_core/core/capability_usage_tracker.js',
+      estimated_effort: 10,
+      estimated_impact: 'low'
+    },
+    {
+      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      title: 'Add process error handler to unified master',
+      category: 'reliability',
+      reason: 'Unhandled rejections should be logged instead of crashing',
+      target_file: 'project_claw_core/core/unified_master_orchestrator.js',
+      estimated_effort: 10,
+      estimated_impact: 'low'
+    },
+    {
+      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      title: 'Add HTTP timeout to Tavily client',
+      category: 'reliability',
+      reason: 'Default timeout prevents hanging requests',
+      target_file: 'project_claw_core/agents/tavily_search.js',
+      estimated_effort: 10,
+      estimated_impact: 'low'
     }
   ];
 }

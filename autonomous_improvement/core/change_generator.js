@@ -529,17 +529,45 @@ function buildInputValidationChange(hypothesis, file, learning) {
     log('Input validation already applied', 'warn');
     return { alreadyApplied: true };
   }
-  // Find first function with a single parameter named query/input/data/msg
-  const match = content.match(/function\s+(\w+)\s*\(\s*(query|input|data|msg|key|value)\s*\)\s*\{/);
+  const paramNames = ['query', 'input', 'data', 'msg', 'key', 'value', 'options', 'config', 'params', 'args', 'symbol', 'command', 'payload'];
+  const regex = new RegExp(`(async\\s+)?function\\s+(\\w+)\\s*\\(\\s*(${paramNames.join('|')})\\s*[,)]`, 'i');
+  const match = content.match(regex);
   if (!match) return null;
-  const [fullMatch, fnName, param] = match;
-  const oldText = fullMatch;
-  const guard = param === 'value'
-    ? `  if (${param} === undefined || ${param} === null) {\n    console.warn(\`\${fnName} called with invalid ${param}\`);\n    return undefined;\n  }\n  // Input validation added by improvement engine\n`
-    : `  if (!${param} && ${param} !== 0 && ${param} !== '') {\n    console.warn(\`\${fnName} called with empty ${param}\`);\n    return ${param === 'query' ? "''" : (param === 'value' ? 'undefined' : 'null')};\n  }\n  // Input validation added by improvement engine\n`;
-  const newText = fullMatch + '\n' + guard.replace(/\${fnName}/g, fnName);
-  const change = { filePath: hypothesis.target_file, oldText, newText };
-  if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
+  const [, asyncKw, fnName, param] = match;
+
+  // Skip if a guard for this parameter already exists
+  const existingGuardPattern = new RegExp(`if\\s*\\(\\s*!\\s*${param}\\s*[|&]|if\\s*\\(\\s*!\\s*${param}\\s*\\)|if\\s*\\(\\s*${param}\\s*===\\s*(undefined|null)\\s*\\)`);
+  if (existingGuardPattern.test(content)) {
+    log(`Existing guard for ${param} detected`, 'warn');
+    return null;
+  }
+
+  if (fnName.toLowerCase().includes('log') || fnName.toLowerCase().includes('warn') || fnName.toLowerCase().includes('error')) {
+    // Logging helpers are low-value for input validation but still valid; deprioritize
+    hypothesis.estimated_impact = 'low';
+  }
+
+  const fullMatchStart = content.indexOf(match[0]);
+  const sigEnd = content.indexOf('{', fullMatchStart);
+  if (sigEnd === -1) return null;
+  const sig = content.slice(fullMatchStart, sigEnd + 1);
+
+  let returnVal = 'null';
+  if (fnName.toLowerCase().includes('log')) returnVal = 'undefined';
+  else if (fnName.toLowerCase().includes('search') || fnName.toLowerCase().includes('find') || fnName.toLowerCase().includes('query')) returnVal = "''";
+  else if (fnName.toLowerCase().includes('route')) returnVal = 'null';
+  else if (fnName.toLowerCase().includes('list') || fnName.toLowerCase().includes('getall')) returnVal = '[]';
+
+  let guard;
+  if (param === 'options' || param === 'config' || param === 'params' || param === 'args' || param === 'payload') {
+    guard = `  if (!${param} || typeof ${param} !== 'object') {\n    console.warn(\`\${fnName} called with invalid ${param}\`);\n    return ${returnVal === 'null' ? '{}' : returnVal};\n  }\n  // Input validation added by improvement engine\n`;
+  } else {
+    guard = `  if (!${param} && ${param} !== 0 && ${param} !== '') {\n    console.warn(\`\${fnName} called with empty ${param}\`);\n    return ${returnVal};\n  }\n  // Input validation added by improvement engine\n`;
+  }
+  guard = guard.replace(/\${fnName}/g, fnName);
+  const newText = sig + '\n' + guard;
+  const change = { filePath: hypothesis.target_file, oldText: sig, newText };
+  if (validate(change, content) && !isAnchorKnownBad(sig, learning)) return change;
   return null;
 }
 
@@ -549,12 +577,11 @@ function buildErrorLoggingChange(hypothesis, file, learning) {
     log('Error logging already applied', 'warn');
     return { alreadyApplied: true };
   }
-  // Find first exported async function and wrap its body
-  const match = content.match(/async function\s+(\w+)\s*\([^)]*\)\s*\{/);
+  // Match first function declaration (async or not)
+  const match = content.match(/(?:async\s+)?function\s+(\w+)\s*\([^)]*\)\s*\{/);
   if (!match) return null;
   const fnName = match[1];
   const startIdx = content.indexOf(match[0]) + match[0].length;
-  // Find matching closing brace at depth 0
   let depth = 1;
   let i = startIdx;
   while (i < content.length && depth > 0) {
@@ -562,9 +589,16 @@ function buildErrorLoggingChange(hypothesis, file, learning) {
     else if (content[i] === '}') depth--;
     i++;
   }
-  const body = content.slice(startIdx, i - 1);
+  const body = content.slice(startIdx, i - 1).trim();
+
+  // Skip if the body is already wrapped in try/catch at the top level
+  if (body.startsWith('try {') && body.includes('\n  } catch')) {
+    log('Function already has top-level try/catch', 'warn');
+    return null;
+  }
+
   const oldText = match[0] + body + '}';
-  const newText = match[0] + '\n  // Error logging added by improvement engine\n  try {' + body + '\n  } catch (e) {\n    log(`Error in ' + fnName + ': ${e.message}`);\n    throw e;\n  }\n}';
+  const newText = match[0] + '\n  // Error logging added by improvement engine\n  try {' + body + '\n  } catch (e) {\n    console.error(`Error in ' + fnName + ': ${e.message}`);\n    throw e;\n  }\n}';
   const change = { filePath: hypothesis.target_file, oldText, newText };
   if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
   return null;
@@ -576,11 +610,13 @@ function buildMetricsPersistenceChange(hypothesis, file, learning) {
     log('Metrics persistence already applied', 'warn');
     return { alreadyApplied: true };
   }
-  // Find first async function that returns something and append metrics write before return
-  const match = content.match(/async function\s+(\w+)\s*\([^)]*\)\s*\{/);
+  if (!content.includes("require('fs')")) {
+    log('File does not import fs; skipping metrics persistence', 'warn');
+    return null;
+  }
+  const match = content.match(/(?:async\s+)?function\s+(\w+)\s*\([^)]*\)\s*\{/);
   if (!match) return null;
   const fnName = match[1];
-  // Look for a return statement inside the function
   const funcStart = content.indexOf(match[0]);
   let depth = 1;
   let i = funcStart + match[0].length;
@@ -592,9 +628,200 @@ function buildMetricsPersistenceChange(hypothesis, file, learning) {
   const funcBody = content.slice(funcStart, i);
   const returnMatch = funcBody.match(/\n(\s*)return\s+([\w.]+)\s*;/);
   if (!returnMatch) return null;
+
+  // Avoid instrumenting tiny helpers like loadRegistry
+  if (fnName.toLowerCase().includes('load') || fnName.toLowerCase().includes('seed') || fnName.toLowerCase().includes('parse')) {
+    log(`Skipping metrics for helper ${fnName}`, 'warn');
+    return null;
+  }
+
   const oldText = returnMatch[0];
   const indent = returnMatch[1];
   const newText = `${indent}fs.appendFileSync(path.join(__dirname, '..', 'logs', '${fnName}_metrics.jsonl'), JSON.stringify({ ts: new Date().toISOString(), result: ${returnMatch[2]} }) + '\\n');\n${indent}// Metrics persistence added by improvement engine\n${oldText}`;
+  const change = { filePath: hypothesis.target_file, oldText, newText };
+  if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
+  return null;
+}
+
+function buildRetryWrapperChange(hypothesis, file, learning) {
+  const { content } = file;
+  if (content.includes('// Retry wrapper added by improvement engine')) {
+    log('Retry wrapper already applied', 'warn');
+    return { alreadyApplied: true };
+  }
+  // Only apply to files that already use external I/O patterns
+  const hasExternalCall = /await\s+(fetch|http\.get|https\.get|axios\.|request\(|tavily\.|serper|coingecko|yahoo|twelvedata)/i.test(content);
+  if (!hasExternalCall) {
+    log('No external I/O call detected; skipping retry wrapper', 'warn');
+    return null;
+  }
+
+  // Match a standalone external-ish await call
+  const patterns = [
+    /await\s+(fetch\s*\([^)]*\))\s*;?/,
+    /await\s+([a-zA-Z_][\w]*\.request\s*\([^)]*\))\s*;?/,
+    /await\s+([a-zA-Z_][\w]*\.[a-zA-Z_][\w]*\s*\([^)]*\))\s*;?/
+  ];
+  let match = null;
+  for (const p of patterns) {
+    match = content.match(p);
+    if (match) break;
+  }
+  if (!match) return null;
+  const call = match[1].trim();
+
+  // Don't wrap calls that are already inside a loop
+  const preceding = content.slice(Math.max(0, content.indexOf(match[0]) - 200), content.indexOf(match[0]));
+  if (/for\s*\([^)]*\)\s*\{[^}]*$/.test(preceding) || /for\s*\([^)]*\)\s*\{[^}]*$/.test(preceding)) {
+    log('Call is inside a loop; skipping retry wrapper', 'warn');
+    return null;
+  }
+
+  const oldText = match[0];
+  const newText = `// Retry wrapper added by improvement engine\n    let lastErr;\n    let retryResult;\n    for (let attempt = 0; attempt < 3; attempt++) {\n      try {\n        retryResult = await ${call};\n        break;\n      } catch (e) {\n        lastErr = e;\n        if (attempt === 2) throw e;\n        await new Promise(r => setTimeout(r, 500 * (attempt + 1)));\n      }\n    }`;
+  const change = { filePath: hypothesis.target_file, oldText, newText };
+  if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
+  return null;
+}
+
+function buildTavilyCacheChange(hypothesis, file, learning) {
+  const { content } = file;
+  if (content.includes('// Tavily cache added by improvement engine')) {
+    log('Tavily cache already applied', 'warn');
+    return { alreadyApplied: true };
+  }
+  if (!content.includes('async function search(')) {
+    log('No search() function found in Tavily client', 'warn');
+    return null;
+  }
+  // Insert a cache lookup at the top of search() and a cache write before return
+  const match = content.match(/async function search\([^)]*\)\s*\{/);
+  if (!match) return null;
+  const fnStart = content.indexOf(match[0]);
+  const sigEnd = fnStart + match[0].length;
+
+  let depth = 1, i = sigEnd;
+  while (i < content.length && depth > 0) {
+    if (content[i] === '{') depth++;
+    else if (content[i] === '}') depth--;
+    i++;
+  }
+  const body = content.slice(fnStart, i);
+
+  // Find first return in search()
+  const returnMatch = body.match(/\n(\s*)return\s+([\w.]+)\s*;/);
+  if (!returnMatch) return null;
+
+  const cacheKeyLine = `
+  // Tavily cache added by improvement engine
+  const cacheKey = JSON.stringify({ query, options });
+  const cached = getCache(cacheKey);
+  if (cached && Date.now() - cached.ts < 5 * 60 * 1000) return cached.results;
+`;
+  const cacheWriteLine = `${returnMatch[1]}setCache(cacheKey, { ts: Date.now(), results: ${returnMatch[2]} });\n${returnMatch[1]}// Tavily cache write added by improvement engine\n`;
+
+  const oldText = match[0] + body.slice(match[0].length - fnStart);
+  const newText = match[0] + cacheKeyLine + body.slice(match[0].length - fnStart).replace(returnMatch[0], cacheWriteLine + returnMatch[0]);
+
+  const change = { filePath: hypothesis.target_file, oldText, newText };
+  if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
+  return null;
+}
+
+function buildExperimentImpactChange(hypothesis, file, learning) {
+  const { content } = file;
+  if (content.includes('// Experiment impact scoring added by improvement engine')) {
+    log('Experiment impact scoring already applied', 'warn');
+    return { alreadyApplied: true };
+  }
+  if (!content.includes('function recordOutcome')) return null;
+  const returnMatch = content.match(/\n(\s*)return\s+experiment;\s*\n?\s*\}\s*$/);
+  if (!returnMatch) return null;
+  const oldText = returnMatch[0];
+  const indent = returnMatch[1];
+  const newText = `${indent}// Experiment impact scoring added by improvement engine\n${indent}experiment.impactScore = calculateImpactScore(experiment);\n${indent}${oldText.trim()}\n\nfunction calculateImpactScore(experiment) {\n${indent}let score = 0;\n${indent}if (experiment.worktree_tests && experiment.worktree_tests.allPassed) score += 2;\n${indent}if (experiment.benchmark_before && experiment.benchmark_after) {\n${indent}  const before = experiment.benchmark_before.passed || 0;\n${indent}  const after = experiment.benchmark_after.passed || 0;\n${indent}  score += (after - before) * 3;\n${indent}}\n${indent}if (experiment.applied && experiment.applied.linesChanged) score += Math.min(3, experiment.applied.linesChanged / 10);\n${indent}return Math.max(0, score);\n${indent}\n`;
+  const change = { filePath: hypothesis.target_file, oldText, newText };
+  if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
+  return null;
+}
+
+function buildSafeJsonParseChange(hypothesis, file, learning) {
+  const { content } = file;
+  if (content.includes('// Safe JSON.parse added by improvement engine')) {
+    log('Safe JSON.parse already applied', 'warn');
+    return { alreadyApplied: true };
+  }
+  // Find a JSON.parse call not already wrapped in try/catch
+  const matches = [...content.matchAll(/JSON\.parse\s*\(([^)]+)\)/g)];
+  for (const m of matches) {
+    const idx = m.index;
+    const preceding = content.slice(Math.max(0, idx - 200), idx);
+    if (/try\s*\{[^}]*$/.test(preceding)) continue; // already in try block
+    const oldText = m[0];
+    const newText = `safeJsonParse(${m[1]}) /* Safe JSON.parse added by improvement engine */`;
+    const change = { filePath: hypothesis.target_file, oldText, newText };
+    if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) {
+      // Also need to inject safeJsonParse helper if not present
+      if (!content.includes('function safeJsonParse')) {
+        const helper = `
+// Safe JSON.parse helper added by improvement engine
+function safeJsonParse(str, fallback = null) {
+  try {
+    return JSON.parse(str);
+  } catch (e) {
+    console.warn('JSON.parse failed:', e.message);
+    return fallback;
+  }
+}
+`;
+        const moduleExportMatch = content.match(/module\.exports\s*=\s*\{/);
+        if (moduleExportMatch) {
+          const helperChange = { filePath: hypothesis.target_file, oldText: moduleExportMatch[0], newText: helper + moduleExportMatch[0] };
+          if (validate(helperChange, content)) {
+            return { filePath: hypothesis.target_file, oldText: moduleExportMatch[0], newText: helper + moduleExportMatch[0], extra: change };
+          }
+        }
+      }
+      return change;
+    }
+  }
+  return null;
+}
+
+function buildProcessErrorHandlerChange(hypothesis, file, learning) {
+  const { content } = file;
+  if (content.includes('// Process error handler added by improvement engine')) {
+    log('Process error handler already applied', 'warn');
+    return { alreadyApplied: true };
+  }
+  if (content.includes('process.on(\'unhandledRejection\'') || content.includes('process.on("unhandledRejection"')) {
+    log('Unhandled rejection handler already present', 'warn');
+    return null;
+  }
+  const oldText = content.endsWith('\n') ? content.slice(-1) : '';
+  const handler = `\n// Process error handler added by improvement engine\nprocess.on('unhandledRejection', (reason, promise) => {\n  console.error('Unhandled rejection at:', promise, 'reason:', reason);\n});\nprocess.on('uncaughtException', err => {\n  console.error('Uncaught exception:', err);\n});\n`;
+  // Insert at end of file
+  const change = { filePath: hypothesis.target_file, oldText: content.endsWith('\n') ? '\n' : '', newText: handler };
+  if (validate(change, content) && !isAnchorKnownBad('\n', learning)) return change;
+  return null;
+}
+
+function buildHttpTimeoutChange(hypothesis, file, learning) {
+  const { content } = file;
+  if (content.includes('// HTTP timeout added by improvement engine')) {
+    log('HTTP timeout already applied', 'warn');
+    return { alreadyApplied: true };
+  }
+  // Find https.request or http.request options object without timeout
+  const match = content.match(/(https?\.request)\s*\((\{[^}]*\})/);
+  if (!match) return null;
+  const opts = match[2];
+  if (opts.includes('timeout')) {
+    log('HTTP timeout already present', 'warn');
+    return null;
+  }
+  const oldText = match[0];
+  const newText = match[1] + '(' + opts.replace(/\}$/, ', timeout: 20000 // HTTP timeout added by improvement engine\n}') ;
   const change = { filePath: hypothesis.target_file, oldText, newText };
   if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
   return null;
@@ -679,6 +906,30 @@ function buildChange(hypothesis, learning) {
   if (title.includes('timeout') && !hypothesis.target_file.includes('capability_functional_tester') && !hypothesis.target_file.includes('research_router')) {
     // Generic timeout not implemented yet; avoid false positives
     return null;
+  }
+
+  if (title.includes('retry wrapper')) {
+    return buildRetryWrapperChange(hypothesis, file, learning);
+  }
+
+  if (title.includes('tavily cache') || (title.includes('cache ttl') && hypothesis.target_file.includes('tavily'))) {
+    return buildTavilyCacheChange(hypothesis, file, learning);
+  }
+
+  if (title.includes('experiment impact') || title.includes('impact scoring')) {
+    return buildExperimentImpactChange(hypothesis, file, learning);
+  }
+
+  if (title.includes('safe json') || title.includes('json parse')) {
+    return buildSafeJsonParseChange(hypothesis, file, learning);
+  }
+
+  if (title.includes('process error') || title.includes('unhandled rejection')) {
+    return buildProcessErrorHandlerChange(hypothesis, file, learning);
+  }
+
+  if (title.includes('http timeout') || title.includes('request timeout')) {
+    return buildHttpTimeoutChange(hypothesis, file, learning);
   }
 
   if (title.includes('reliability') && hypothesis.target_file.endsWith('.js')) {
