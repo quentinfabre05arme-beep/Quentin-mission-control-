@@ -53,6 +53,14 @@ acquireLock();
 
 function rotateLog() {
   try {
+    const out = execSync('wmic logicaldisk get size,freespace /format:csv', { windowsHide: true, encoding: 'utf8' });
+    const lines = out.trim().split('\n').filter(l => l.includes(','));
+    const last = lines[lines.length - 1];
+    const parts = last.split(',');
+    const free = parseInt(parts[parts.length - 2], 10);
+    const size = parseInt(parts[parts.length - 1], 10);
+    if (free && size && ((size - free) / size) * 100 >= 97) return;
+
     if (fs.existsSync(LOG_FILE) && fs.statSync(LOG_FILE).size > MAX_LOG_BYTES) {
       const archive = `${LOG_FILE}.${Date.now()}.old`;
       fs.renameSync(LOG_FILE, archive);
