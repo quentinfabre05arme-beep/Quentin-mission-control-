@@ -1,5 +1,9 @@
 const fs = require('fs');
 const https = require('https');
+const path = require('path');
+
+// Resolve workspace root relative to this script (mission_control/ -> ..)
+const WORKSPACE_ROOT = path.resolve(__dirname, '..');
 
 // Current timestamp
 const now = new Date();
@@ -10,7 +14,7 @@ const localTime = now.toLocaleString('en-GB', { timeZone: 'Europe/Paris' });
 // Get cached market data
 let marketData = { BTC: { price: 63983.54 }, ETH: { price: 1849.6 } };
 try {
-  const cached = JSON.parse(fs.readFileSync('market_data.json', 'utf8'));
+  const cached = JSON.parse(fs.readFileSync(path.join(WORKSPACE_ROOT, 'mission_control', 'market_data.json'), 'utf8'));
   marketData = cached.assets;
 } catch(e) {}
 
@@ -223,10 +227,10 @@ ${altData.early_signals.neutral_observations.map(o => `- ${o}`).join('\n') || 'N
 *Next update: 1 hour | Cron: alternative-data-fetch*
 `;
 
-  const outputPath = `../investment_fund/data/alternative/${utcDate}.json`;
+  const outputPath = path.join(WORKSPACE_ROOT, 'investment_fund', 'data', 'alternative', `${utcDate}.json`);
+  const summaryPath = path.join(WORKSPACE_ROOT, 'investment_fund', 'data', 'alternative', `${utcDate}_summary.md`);
+  fs.mkdirSync(path.dirname(outputPath), { recursive: true });
   fs.writeFileSync(outputPath, JSON.stringify(altData, null, 2));
-  
-  const summaryPath = `../investment_fund/data/alternative/${utcDate}_summary.md`;
   fs.writeFileSync(summaryPath, summaryReport);
   
   console.log('\n=== ALTERNATIVE DATA FETCH COMPLETE ===');

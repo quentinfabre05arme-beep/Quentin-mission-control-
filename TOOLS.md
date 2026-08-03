@@ -1,18 +1,15 @@
 
 ## Alpha Fund Alternative Data v2.0 (Jul 22, 2026 09:19)
-**Location:** `investment_fund/scripts/fetch_alternative_data.js`
+**Location:** `mission_control/fetch_alternative_data.js`
 **Status:** ✅ **Enhanced multi-source data with on-chain metrics**
 
 ### Quick Commands
 ```powershell
 # Fetch alternative data
-.\run_alternative_data.ps1
-
-# Or directly
-cd investment_fund/scripts && node fetch_alternative_data.js
+cd mission_control && node fetch_alternative_data.js
 
 # JSON output for automation
-node fetch_alternative_data.js --json
+node mission_control/fetch_alternative_data.js --json
 
 # Daily data stored in
 investment_fund/data/alternative/YYYY-MM-DD.json
@@ -58,35 +55,20 @@ investment_fund/data/alternative/YYYY-MM-DD.json
 | -0.5 to -0.2 | **SLIGHTLY_BEARISH** | Some negative divergence |
 | <-0.5 | **BEARISH** | Multiple warning signals |
 
-### Latest Report (Jul 31, 2026 22:08 Paris / 20:08 UTC)
+### Latest Report (Aug 3, 2026 07:01 Paris / 05:01 UTC)
 ```
-📊 FEAR & GREED: 25 EXTREME FEAR ↓ (declining from 28, 3+ days in zone)
-🐋 WHALE SIGNALS: NEUTRAL (0% confidence - API issue)
-⛓️ MEMPOOL: 91,411 txs | MEDIUM congestion
-🚨 ANOMALIES: 4 detected
-   🔴 MARKET: Extreme fear persistence (CONTRARIAN BUY)
-   🔴 BTC: Funding divergence (POTENTIAL SHORT SQUEEZE)
-   🟡 BTC: Volume anomaly +7% with -2.7% price (CAPITULATION WATCH)
-   🟡 MSTR: -4.09% underperforming BTC (BEARISH MOMENTUM)
+📊 FEAR & GREED: 28 FEAR ↓ (elevated, watch for reversal)
+⛓️ BTC Price: $62,806 (-0.24%) | Volume: $1.04B
+⛓️ ETH Price: $1,855.65 (-0.81%)
+🚨 ANOMALIES: 2 detected
+   🟡 MARKET: Fear elevated — sentiment negative, watch reversal (MEDIUM)
+   🟡 ETH: Sentiment/price divergence — strong conviction during weakness (MEDIUM)
 
-COMPOSITE SCORES:
-   BTC: BULLISH (0.65) - Contrarian setup + funding divergence
-   ETH: SLIGHTLY_BULLISH (0.40) - Deep value + elevated funding
-   MSTR: NEUTRAL (-0.10) - Underperforming BTC beta
-   HIMS: SLIGHTLY_BULLISH (0.50) - Relative strength
-
-MARKET SNAPSHOT:
-   BTC: $62,899 (-2.7%) | Volume: $29.99B (+7%)
-   ETH: $1,866 (-2.6%) | 62% below ATH
-   MSTR: $93.74 (-4.09%)
-   HIMS: $27.75 (+2.63%)
-
-EXECUTIVE SUMMARY:
-   Market Regime: FEAR/ACCUMULATION
-   Primary Signal: BTC contrarian bullish setup
-   Risk Level: MEDIUM-HIGH
-   Time Horizon: 1-4 weeks for mean reversion
-   Confidence: 65% (data gaps in news + exchange flows)
+MARKET REGIME: FEAR / ACCUMULATION WATCH
+Primary Signal: ETH contrarian bullish divergence
+Risk Level: MEDIUM
+Time Horizon: 1-2 weeks
+Confidence: 55% (limited on-chain + funding data)
 ```
 
 ### Data Quality Issues (Jul 31)
@@ -98,10 +80,9 @@ EXECUTIVE SUMMARY:
 | **Funding Rates** | Proxy estimation only | MEDIUM | Integrate CoinGlass |
 
 ### Files
-- `fetch_alternative_data.js` — **Enhanced multi-source fetcher**
-- `run_alternative_data.ps1` — **Quick PowerShell runner**
-- `investment_fund/data/alternative/` — **Daily JSON reports**
-- `2026-07-31.json` — **Latest report** (contrarian buy signals detected)
+- `mission_control/fetch_alternative_data.js` — **Enhanced multi-source fetcher**
+- `investment_fund/data/alternative/` — **Daily JSON reports + summaries**
+- `2026-08-03.json` — **Latest report** (fear elevated, ETH sentiment divergence)
 
 ---
 
