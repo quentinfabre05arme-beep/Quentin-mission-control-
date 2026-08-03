@@ -41,6 +41,12 @@ try {
 }
 
 function log(msg, level = 'info') {
+  if (!msg && msg !== 0 && msg !== '') {
+    console.warn(`log called with empty msg`);
+    return undefined;
+  }
+  // Input validation added by improvement engine
+
   const entry = { timestamp: new Date().toISOString(), level, message: msg };
   fs.mkdirSync(path.dirname(LOG_FILE), { recursive: true });
   fs.appendFileSync(LOG_FILE, JSON.stringify(entry) + '\n');
