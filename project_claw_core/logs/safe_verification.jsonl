@@ -39,3 +39,13 @@
 {"capability":"design_agent","method":"createPalette","success":true,"duration_ms":133,"error":null}
 {"capability":"audit_logger","method":"log","success":true,"duration_ms":90,"error":null}
 {"capability":"usb_manager","method":"list","success":true,"duration_ms":969,"error":null}
+{"capability":"unified_master_orchestrator","method":"status","success":true,"duration_ms":56,"error":null}
+{"capability":"research_agent","method":"research","success":true,"duration_ms":1381,"error":null}
+{"capability":"self_audit","method":"run","success":true,"duration_ms":78,"error":null}
+{"capability":"status_reporter","method":"generate","success":true,"duration_ms":58,"error":null}
+{"capability":"predictive_maintenance","method":"run","success":true,"duration_ms":626,"error":null}
+{"capability":"system_health_monitor","method":"getHealth","success":true,"duration_ms":450,"error":null}
+{"capability":"self_goal_generator","method":"generateGoals","success":true,"duration_ms":40,"error":null}
+{"capability":"file_hygiene","method":"scanDirectory","success":true,"duration_ms":249,"error":null}
+{"capability":"clipboard_ocr_agent","method":"readClipboard","success":true,"duration_ms":289,"error":null}
+{"capability":"research_router","method":"run","success":false,"duration_ms":39,"error":"Method run not found"}
