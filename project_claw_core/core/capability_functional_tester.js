@@ -56,8 +56,13 @@ async function runTest(name, spec) {
     }
 
     let result;
+    const TEST_TIMEOUT_MS = 5000;
+
     if (spec.async && raw && typeof raw.then === 'function') {
-      result = await raw;
+      result = await Promise.race([
+        raw,
+        new Promise((_, reject) => setTimeout(() => reject(new Error('async test timeout')), TEST_TIMEOUT_MS))
+      ]);
     } else {
       result = normalizeResult(raw);
     }
