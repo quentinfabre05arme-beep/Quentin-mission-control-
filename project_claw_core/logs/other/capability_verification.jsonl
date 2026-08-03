@@ -1,11 +1,498 @@
-{"capability":"package_installer","success":false,"duration_ms":1996,"error":"Command failed: winget install --id Git.Git --accept-package-agreements --accept-source-agreements -e"}
-{"capability":"git_agent","success":true,"duration_ms":375,"error":null}
-{"capability":"sqlite_brain","success":false,"duration_ms":9,"error":"sqlite3 not installed"}
-{"capability":"rollback_manager","success":true,"duration_ms":172,"error":null}
-{"capability":"service_manager","success":true,"duration_ms":1263,"error":null}
-{"capability":"test_runner","success":false,"duration_ms":279,"error":"Command failed: node \"C:\\Users\\quent\\AppData\\Local\\Temp\\claw_verify_1785751367459.txt\"\nC:\\Users\\quent\\AppData\\Local\\Temp\\claw_verify_1785751367459.txt:1\r\nclaw test\r\n     ^^^^\r\n\r\nSyntaxError: Unexpected identifier 'test'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1743:18)\r\n    at Module._compile (node:internal/modules/cjs/loader:1786:20)\r\n    at Object..js (node:internal/modules/cjs/loader:1943:10)\r\n    at Module.load (node:internal/modules/cjs/loader:1533:32)\r\n    at Module._load (node:internal/modules/cjs/loader:1335:12)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\r\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\r\n    at node:internal/main/run_main_module:33:47\r\n\r\nNode.js v24.14.1\r\n"}
-{"capability":"capability_registry","success":true,"duration_ms":98,"error":null}
-{"capability":"file_organizer","success":false,"duration_ms":8,"error":"Directory not found"}
-{"capability":"pdf_reader_agent","success":false,"duration_ms":58,"error":"No PDF extraction method available"}
-{"capability":"network_monitor","success":false,"duration_ms":75,"error":"Command failed: ping -n 4 [object Object]"}
-{"capability":"deploy_agent","success":false,"duration_ms":7,"error":"The \"path\" argument must be of type string or an instance of Buffer or URL. Received null"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\unified_master_orchestrator.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\research_agent.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\self_audit.js","success":false,"error":"capability path not found in registry"}
+{"capability":"scheduler_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\status_reporter.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\predictive_maintenance.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\system_health_monitor.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\self_goal_generator.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\file_hygiene.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\clipboard_ocr_agent.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\research_router.js","success":false,"error":"capability path not found in registry"}
+{"capability":"ui_automation","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"window_manager","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"drive_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\file_indexer.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\registry_manager.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\web_monitor.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\anomaly_detector.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\health_dashboard.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\verifier.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\code_agent.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\memory\\long_term_memory.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\planner.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\package_installer.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\git_agent.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\sqlite_brain.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\rollback_manager.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\service_manager.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\test_runner.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\capability_registry.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\file_organizer.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\pdf_reader_agent.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\network_monitor.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\deploy_agent.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\trading_agent.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\project_manager.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\speech_agent.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\feedback_loop.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\notify_engine.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\polyglot_coder.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\market_watcher.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\unified_orchestrator.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\drive_indexer.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\task_graph.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\vector_brain.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\capability_invoker.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\learning_engine.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\process_automation.js","success":false,"error":"capability path not found in registry"}
+{"capability":"webcam","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\memory\\memory_consolidator.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\hash_agent.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\orchestrator.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\store_manager.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\sync_manager.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\compressor_agent.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\build_loop_optimizer.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\credential_rotator.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\business_intelligence.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\screen_recorder.js","success":false,"error":"capability path not found in registry"}
+{"capability":"microphone","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\doc_generator.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\battery_manager.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\click_by_text.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\risk_engine.js","success":false,"error":"capability path not found in registry"}
+{"capability":"social_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\form_filler.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\window_automation.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\strategy_optimizer.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\file_archiver.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\reasoning_engine.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\content_factory.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\auto_updater.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\agent_swarm.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\network_speed_tester.js","success":false,"error":"capability path not found in registry"}
+{"capability":"smart_home","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\temperature_monitor.js","success":false,"error":"capability path not found in registry"}
+{"capability":"searxng_client","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\clipboard_manager.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\process_killer.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\agents\\design_agent.js","success":false,"error":"capability path not found in registry"}
+{"capability":"C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\audit_logger.js","success":false,"error":"capability path not found in registry"}
+{"capability":"phone_bridge","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"usb_manager","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"unified_master_orchestrator","success":true,"method":"status","duration_ms":19,"error":null}
+{"capability":"research_agent","success":true,"method":"search","duration_ms":468,"error":null}
+{"capability":"self_audit","success":true,"method":"run","duration_ms":56,"error":null}
+{"capability":"scheduler_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"status_reporter","success":true,"method":"generate","duration_ms":24,"error":null}
+{"capability":"predictive_maintenance","success":true,"method":"run","duration_ms":500,"error":null}
+{"capability":"system_health_monitor","success":true,"method":"getHealth","duration_ms":440,"error":null}
+{"capability":"self_goal_generator","success":true,"method":"generateGoals","duration_ms":5,"error":null}
+{"capability":"file_hygiene","success":true,"method":"cleanTempDirs","duration_ms":7,"error":null}
+{"capability":"clipboard_ocr_agent","success":true,"method":"read","duration_ms":285,"error":null}
+{"capability":"research_router","success":true,"method":"research","duration_ms":780,"error":null}
+{"capability":"ui_automation","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"window_manager","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"drive_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"file_indexer","success":true,"method":"search","duration_ms":2,"error":null}
+{"capability":"registry_manager","success":true,"method":"read","duration_ms":60,"error":null}
+{"capability":"web_monitor","success":true,"method":"check","duration_ms":135,"error":null}
+{"capability":"anomaly_detector","success":false,"duration_ms":2,"error":"instance[method] is not a function"}
+{"capability":"health_dashboard","success":true,"method":"generate","duration_ms":450,"error":null}
+{"capability":"verifier","success":false,"duration_ms":5,"error":"mod[method] is not a function"}
+{"capability":"code_agent","success":false,"duration_ms":4,"error":"instance[method] is not a function"}
+{"capability":"long_term_memory","success":false,"duration_ms":2,"error":"instance[method] is not a function"}
+{"capability":"planner","success":true,"method":"loadPlans","duration_ms":3,"error":null}
+{"capability":"package_installer","success":true,"method":"isInstalled","duration_ms":3879,"error":null}
+{"capability":"git_agent","success":true,"method":"status","duration_ms":221,"error":null}
+{"capability":"sqlite_brain","success":false,"method":"get","duration_ms":5,"error":"sqlite3 not installed"}
+{"capability":"rollback_manager","success":true,"method":"getLastCommit","duration_ms":83,"error":null}
+{"capability":"service_manager","success":true,"method":"list","duration_ms":531,"error":null}
+{"capability":"test_runner","success":false,"duration_ms":6,"error":"instance[method] is not a function"}
+{"capability":"capability_registry","success":true,"method":"build","duration_ms":36,"error":null}
+{"capability":"file_organizer","success":true,"method":"organize","duration_ms":4,"error":null}
+{"capability":"pdf_reader_agent","success":false,"method":"read","duration_ms":58,"error":"No PDF extraction method available"}
+{"capability":"network_monitor","success":true,"method":"ping","duration_ms":95,"error":null}
+{"capability":"deploy_agent","success":false,"duration_ms":9,"error":"instance[method] is not a function"}
+{"capability":"trading_agent","success":true,"method":"status","duration_ms":624,"error":null}
+{"capability":"project_manager","success":true,"method":"load","duration_ms":3,"error":null}
+{"capability":"speech_agent","success":false,"duration_ms":5,"error":"instance[method] is not a function"}
+{"capability":"feedback_loop","success":true,"method":"load","duration_ms":3,"error":null}
+{"capability":"notify_engine","success":false,"duration_ms":5,"error":"title.replace is not a function"}
+{"capability":"polyglot_coder","success":true,"method":"run","duration_ms":97,"error":null}
+{"capability":"market_watcher","success":true,"method":"loadCache","duration_ms":5,"error":null}
+{"capability":"unified_orchestrator","success":true,"method":"status","duration_ms":551,"error":null}
+{"capability":"drive_indexer","success":true,"method":"search","duration_ms":2,"error":null}
+{"capability":"task_graph","success":true,"method":"run","duration_ms":2,"error":null}
+{"capability":"vector_brain","success":false,"duration_ms":2,"error":"instance[method] is not a function"}
+{"capability":"capability_invoker","success":true,"method":"list","duration_ms":41,"error":null}
+{"capability":"learning_engine","success":true,"method":"load","duration_ms":3,"error":null}
+{"capability":"process_automation","success":true,"method":"list","duration_ms":779,"error":null}
+{"capability":"webcam","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"memory_consolidator","success":false,"duration_ms":7,"error":"instance[method] is not a function"}
+{"capability":"hash_agent","success":true,"method":"hashString","duration_ms":12,"error":null}
+{"capability":"orchestrator","success":true,"method":"run","duration_ms":6,"error":null}
+{"capability":"store_manager","success":false,"method":"get","duration_ms":2,"error":"not found"}
+{"capability":"sync_manager","success":true,"method":"syncDirectory","duration_ms":7,"error":null}
+{"capability":"compressor_agent","success":false,"duration_ms":4,"error":"instance[method] is not a function"}
+{"capability":"build_loop_optimizer","success":true,"method":"analyze","duration_ms":6,"error":null}
+{"capability":"credential_rotator","success":true,"method":"generatePassword","duration_ms":6,"error":null}
+{"capability":"business_intelligence","success":true,"method":"generateDashboardReport","duration_ms":548,"error":null}
+{"capability":"screen_recorder","success":true,"method":"checkFfmpeg","duration_ms":1109,"error":null}
+{"capability":"microphone","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"doc_generator","success":true,"method":"generateForFile","duration_ms":4,"error":null}
+{"capability":"battery_manager","success":true,"method":"getStatus","duration_ms":420,"error":null}
+{"capability":"click_by_text","success":false,"method":"click","duration_ms":224,"error":null}
+{"capability":"risk_engine","success":false,"duration_ms":1,"error":"instance[method] is not a function"}
+{"capability":"social_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"form_filler","success":false,"duration_ms":4,"error":"instance[method] is not a function"}
+{"capability":"window_automation","success":true,"method":"arrangeCascading","duration_ms":1430,"error":null}
+{"capability":"strategy_optimizer","success":true,"method":"optimize","duration_ms":3,"error":null}
+{"capability":"file_archiver","success":true,"method":"zip","duration_ms":823,"error":null}
+{"capability":"reasoning_engine","success":true,"method":"reason","duration_ms":3,"error":null}
+{"capability":"content_factory","success":false,"duration_ms":2,"error":"instance[method] is not a function"}
+{"capability":"auto_updater","success":true,"method":"checkForUpdates","duration_ms":2548,"error":null}
+{"capability":"agent_swarm","success":true,"method":"runTask","duration_ms":2,"error":null}
+{"capability":"network_speed_tester","success":true,"method":"test","duration_ms":115,"error":null}
+{"capability":"smart_home","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"temperature_monitor","success":true,"method":"read","duration_ms":395,"error":null}
+{"capability":"searxng_client","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"clipboard_manager","success":true,"method":"getText","duration_ms":291,"error":null}
+{"capability":"process_killer","success":true,"method":"byName","duration_ms":1704,"error":null}
+{"capability":"design_agent","success":true,"method":"createPalette","duration_ms":5,"error":null}
+{"capability":"audit_logger","success":true,"method":"read","duration_ms":9,"error":null}
+{"capability":"phone_bridge","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"usb_manager","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"unified_master_orchestrator","success":true,"method":"status","duration_ms":19,"error":null}
+{"capability":"research_agent","success":true,"method":"search","duration_ms":448,"error":null}
+{"capability":"self_audit","success":true,"method":"run","duration_ms":64,"error":null}
+{"capability":"scheduler_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"status_reporter","success":true,"method":"generate","duration_ms":25,"error":null}
+{"capability":"predictive_maintenance","success":true,"method":"run","duration_ms":469,"error":null}
+{"capability":"system_health_monitor","success":true,"method":"getHealth","duration_ms":448,"error":null}
+{"capability":"self_goal_generator","success":true,"method":"generateGoals","duration_ms":5,"error":null}
+{"capability":"file_hygiene","success":true,"method":"cleanTempDirs","duration_ms":7,"error":null}
+{"capability":"clipboard_ocr_agent","success":true,"method":"read","duration_ms":264,"error":null}
+{"capability":"research_router","success":true,"method":"research","duration_ms":435,"error":null}
+{"capability":"ui_automation","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"window_manager","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"drive_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"file_indexer","success":true,"method":"search","duration_ms":2,"error":null}
+{"capability":"registry_manager","success":true,"method":"read","duration_ms":56,"error":null}
+{"capability":"web_monitor","success":true,"method":"check","duration_ms":120,"error":null}
+{"capability":"anomaly_detector","success":true,"method":"detectZScore","duration_ms":3,"error":null}
+{"capability":"health_dashboard","success":true,"method":"generate","duration_ms":446,"error":null}
+{"capability":"verifier","success":false,"method":"verifyFile","duration_ms":8,"error":null}
+{"capability":"code_agent","success":false,"duration_ms":7,"error":"instance[method] is not a function"}
+{"capability":"long_term_memory","success":null,"method":"get","duration_ms":4,"error":null}
+{"capability":"planner","success":true,"method":"loadPlans","duration_ms":3,"error":null}
+{"capability":"package_installer","success":true,"method":"isInstalled","duration_ms":119,"error":null}
+{"capability":"git_agent","success":true,"method":"status","duration_ms":445,"error":null}
+{"capability":"sqlite_brain","success":false,"method":"get","duration_ms":4,"error":"sqlite3 not installed"}
+{"capability":"rollback_manager","success":true,"method":"getLastCommit","duration_ms":80,"error":null}
+{"capability":"service_manager","success":true,"method":"list","duration_ms":497,"error":null}
+{"capability":"test_runner","success":true,"method":"runNodeTest","duration_ms":103,"error":null}
+{"capability":"capability_registry","success":true,"method":"build","duration_ms":43,"error":null}
+{"capability":"file_organizer","success":true,"method":"organize","duration_ms":4,"error":null}
+{"capability":"pdf_reader_agent","success":false,"method":"read","duration_ms":44,"error":"No PDF extraction method available"}
+{"capability":"network_monitor","success":true,"method":"ping","duration_ms":119,"error":null}
+{"capability":"deploy_agent","success":true,"method":"deployDirectory","duration_ms":8,"error":null}
+{"capability":"trading_agent","success":true,"method":"status","duration_ms":602,"error":null}
+{"capability":"project_manager","success":true,"method":"load","duration_ms":3,"error":null}
+{"capability":"speech_agent","success":false,"duration_ms":5,"error":"instance[method] is not a function"}
+{"capability":"feedback_loop","success":true,"method":"load","duration_ms":6,"error":null}
+{"capability":"notify_engine","success":true,"method":"notify","duration_ms":237,"error":null}
+{"capability":"polyglot_coder","success":true,"method":"run","duration_ms":95,"error":null}
+{"capability":"market_watcher","success":true,"method":"loadCache","duration_ms":5,"error":null}
+{"capability":"unified_orchestrator","success":true,"method":"status","duration_ms":479,"error":null}
+{"capability":"drive_indexer","success":true,"method":"search","duration_ms":2,"error":null}
+{"capability":"task_graph","success":true,"method":"run","duration_ms":4,"error":null}
+{"capability":"vector_brain","success":true,"method":"search","duration_ms":4,"error":null}
+{"capability":"capability_invoker","success":true,"method":"list","duration_ms":45,"error":null}
+{"capability":"learning_engine","success":true,"method":"load","duration_ms":3,"error":null}
+{"capability":"process_automation","success":true,"method":"list","duration_ms":409,"error":null}
+{"capability":"webcam","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"memory_consolidator","success":true,"method":"getRecent","duration_ms":6,"error":null}
+{"capability":"hash_agent","success":true,"method":"hashString","duration_ms":6,"error":null}
+{"capability":"orchestrator","success":true,"method":"run","duration_ms":5,"error":null}
+{"capability":"store_manager","success":true,"method":"set","duration_ms":4,"error":null}
+{"capability":"sync_manager","success":true,"method":"syncDirectory","duration_ms":8,"error":null}
+{"capability":"compressor_agent","success":true,"method":"compress","duration_ms":681,"error":null}
+{"capability":"build_loop_optimizer","success":true,"method":"analyze","duration_ms":4,"error":null}
+{"capability":"credential_rotator","success":true,"method":"generatePassword","duration_ms":7,"error":null}
+{"capability":"business_intelligence","success":true,"method":"generateDashboardReport","duration_ms":511,"error":null}
+{"capability":"screen_recorder","success":true,"method":"checkFfmpeg","duration_ms":159,"error":null}
+{"capability":"microphone","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"doc_generator","success":true,"method":"generateForFile","duration_ms":4,"error":null}
+{"capability":"battery_manager","success":true,"method":"getStatus","duration_ms":436,"error":null}
+{"capability":"click_by_text","success":false,"method":"click","duration_ms":207,"error":null}
+{"capability":"risk_engine","success":true,"method":"assessAction","duration_ms":3,"error":null}
+{"capability":"social_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"form_filler","success":false,"duration_ms":6,"error":"fields is not iterable"}
+{"capability":"window_automation","success":true,"method":"arrangeCascading","duration_ms":1399,"error":null}
+{"capability":"strategy_optimizer","success":true,"method":"optimize","duration_ms":3,"error":null}
+{"capability":"file_archiver","success":true,"method":"zip","duration_ms":1322,"error":null}
+{"capability":"reasoning_engine","success":true,"method":"reason","duration_ms":7,"error":null}
+{"capability":"content_factory","success":true,"method":"generateSocialPost","duration_ms":1,"error":null}
+{"capability":"auto_updater","success":true,"method":"checkForUpdates","duration_ms":1926,"error":null}
+{"capability":"agent_swarm","success":true,"method":"runTask","duration_ms":5,"error":null}
+{"capability":"network_speed_tester","success":true,"method":"test","duration_ms":127,"error":null}
+{"capability":"smart_home","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"temperature_monitor","success":true,"method":"read","duration_ms":383,"error":null}
+{"capability":"searxng_client","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"clipboard_manager","success":true,"method":"getText","duration_ms":265,"error":null}
+{"capability":"process_killer","success":false,"method":"byName","duration_ms":123,"error":"Command failed: taskkill /IM \"notepad.exe\" /F\nErreur�: le processus \"notepad.exe\" est introuvable.\r\n"}
+{"capability":"design_agent","success":true,"method":"createPalette","duration_ms":3,"error":null}
+{"capability":"audit_logger","success":true,"method":"read","duration_ms":7,"error":null}
+{"capability":"phone_bridge","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"usb_manager","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"unified_master_orchestrator","success":true,"method":"status","duration_ms":20,"error":null}
+{"capability":"research_agent","success":true,"method":"search","duration_ms":467,"error":null}
+{"capability":"self_audit","success":true,"method":"run","duration_ms":60,"error":null}
+{"capability":"scheduler_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"status_reporter","success":true,"method":"generate","duration_ms":27,"error":null}
+{"capability":"predictive_maintenance","success":true,"method":"run","duration_ms":631,"error":null}
+{"capability":"system_health_monitor","success":true,"method":"getHealth","duration_ms":452,"error":null}
+{"capability":"self_goal_generator","success":true,"method":"generateGoals","duration_ms":6,"error":null}
+{"capability":"file_hygiene","success":true,"method":"cleanTempDirs","duration_ms":9,"error":null}
+{"capability":"clipboard_ocr_agent","success":true,"method":"read","duration_ms":258,"error":null}
+{"capability":"research_router","success":true,"method":"research","duration_ms":825,"error":null}
+{"capability":"ui_automation","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"window_manager","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"drive_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"file_indexer","success":true,"method":"search","duration_ms":3,"error":null}
+{"capability":"registry_manager","success":true,"method":"read","duration_ms":120,"error":null}
+{"capability":"web_monitor","success":true,"method":"check","duration_ms":134,"error":null}
+{"capability":"anomaly_detector","success":true,"method":"detectZScore","duration_ms":4,"error":null}
+{"capability":"health_dashboard","success":true,"method":"generate","duration_ms":480,"error":null}
+{"capability":"verifier","success":false,"method":"verifyFile","duration_ms":7,"error":null}
+{"capability":"code_agent","success":true,"method":"syntaxCheck","duration_ms":115,"error":null}
+{"capability":"long_term_memory","success":true,"method":"search","duration_ms":5,"error":null}
+{"capability":"planner","success":true,"method":"loadPlans","duration_ms":3,"error":null}
+{"capability":"package_installer","success":true,"method":"isInstalled","duration_ms":138,"error":null}
+{"capability":"git_agent","success":true,"method":"status","duration_ms":154,"error":null}
+{"capability":"sqlite_brain","success":false,"method":"get","duration_ms":8,"error":"sqlite3 not installed"}
+{"capability":"rollback_manager","success":true,"method":"getLastCommit","duration_ms":94,"error":null}
+{"capability":"service_manager","success":true,"method":"list","duration_ms":519,"error":null}
+{"capability":"test_runner","success":true,"method":"runNodeTest","duration_ms":103,"error":null}
+{"capability":"capability_registry","success":true,"method":"build","duration_ms":80,"error":null}
+{"capability":"file_organizer","success":true,"method":"organize","duration_ms":5,"error":null}
+{"capability":"pdf_reader_agent","success":false,"method":"read","duration_ms":44,"error":"No PDF extraction method available"}
+{"capability":"network_monitor","success":true,"method":"ping","duration_ms":82,"error":null}
+{"capability":"deploy_agent","success":true,"method":"deployDirectory","duration_ms":8,"error":null}
+{"capability":"trading_agent","success":true,"method":"status","duration_ms":580,"error":null}
+{"capability":"project_manager","success":true,"method":"load","duration_ms":3,"error":null}
+{"capability":"speech_agent","success":true,"method":"speak","duration_ms":212,"error":null}
+{"capability":"feedback_loop","success":true,"method":"load","duration_ms":5,"error":null}
+{"capability":"notify_engine","success":true,"method":"notify","duration_ms":420,"error":null}
+{"capability":"polyglot_coder","success":true,"method":"run","duration_ms":238,"error":null}
+{"capability":"market_watcher","success":true,"method":"loadCache","duration_ms":9,"error":null}
+{"capability":"unified_orchestrator","success":true,"method":"status","duration_ms":651,"error":null}
+{"capability":"drive_indexer","success":true,"method":"search","duration_ms":1,"error":null}
+{"capability":"task_graph","success":true,"method":"run","duration_ms":3,"error":null}
+{"capability":"vector_brain","success":true,"method":"search","duration_ms":4,"error":null}
+{"capability":"capability_invoker","success":true,"method":"list","duration_ms":63,"error":null}
+{"capability":"learning_engine","success":true,"method":"load","duration_ms":3,"error":null}
+{"capability":"process_automation","success":true,"method":"list","duration_ms":460,"error":null}
+{"capability":"webcam","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"memory_consolidator","success":true,"method":"getRecent","duration_ms":5,"error":null}
+{"capability":"hash_agent","success":true,"method":"hashString","duration_ms":6,"error":null}
+{"capability":"orchestrator","success":true,"method":"run","duration_ms":4,"error":null}
+{"capability":"store_manager","success":true,"method":"set","duration_ms":4,"error":null}
+{"capability":"sync_manager","success":true,"method":"syncDirectory","duration_ms":8,"error":null}
+{"capability":"compressor_agent","success":true,"method":"compress","duration_ms":674,"error":null}
+{"capability":"build_loop_optimizer","success":true,"method":"analyze","duration_ms":4,"error":null}
+{"capability":"credential_rotator","success":true,"method":"generatePassword","duration_ms":6,"error":null}
+{"capability":"business_intelligence","success":true,"method":"generateDashboardReport","duration_ms":557,"error":null}
+{"capability":"screen_recorder","success":true,"method":"checkFfmpeg","duration_ms":137,"error":null}
+{"capability":"microphone","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"doc_generator","success":true,"method":"generateForFile","duration_ms":5,"error":null}
+{"capability":"battery_manager","success":true,"method":"getStatus","duration_ms":395,"error":null}
+{"capability":"click_by_text","success":false,"method":"clickByText","duration_ms":292,"error":null}
+{"capability":"risk_engine","success":true,"method":"assessAction","duration_ms":3,"error":null}
+{"capability":"social_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"form_filler","success":false,"duration_ms":5,"error":"mod[method] is not a function"}
+{"capability":"window_automation","success":true,"method":"arrangeCascading","duration_ms":1603,"error":null}
+{"capability":"strategy_optimizer","success":true,"method":"optimize","duration_ms":3,"error":null}
+{"capability":"file_archiver","success":true,"method":"zip","duration_ms":1222,"error":null}
+{"capability":"reasoning_engine","success":true,"method":"reason","duration_ms":8,"error":null}
+{"capability":"content_factory","success":true,"method":"generateSocialPost","duration_ms":4,"error":null}
+{"capability":"auto_updater","success":true,"method":"checkForUpdates","duration_ms":2100,"error":null}
+{"capability":"agent_swarm","success":true,"method":"runTask","duration_ms":3,"error":null}
+{"capability":"network_speed_tester","success":true,"method":"test","duration_ms":135,"error":null}
+{"capability":"smart_home","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"temperature_monitor","success":true,"method":"read","duration_ms":406,"error":null}
+{"capability":"searxng_client","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"clipboard_manager","success":true,"method":"getText","duration_ms":264,"error":null}
+{"capability":"process_killer","success":false,"method":"byPid","duration_ms":124,"error":"Command failed: taskkill /PID 99999 /F\nErreur�: le processus \"99999\" est introuvable.\r\n"}
+{"capability":"design_agent","success":true,"method":"createPalette","duration_ms":4,"error":null}
+{"capability":"audit_logger","success":true,"method":"read","duration_ms":6,"error":null}
+{"capability":"phone_bridge","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"usb_manager","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"unified_master_orchestrator","success":true,"method":"status","duration_ms":21,"error":null}
+{"capability":"research_agent","success":true,"method":"search","duration_ms":453,"error":null}
+{"capability":"self_audit","success":true,"method":"run","duration_ms":57,"error":null}
+{"capability":"scheduler_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"status_reporter","success":true,"method":"generate","duration_ms":25,"error":null}
+{"capability":"predictive_maintenance","success":true,"method":"run","duration_ms":451,"error":null}
+{"capability":"system_health_monitor","success":true,"method":"getHealth","duration_ms":574,"error":null}
+{"capability":"self_goal_generator","success":true,"method":"generateGoals","duration_ms":13,"error":null}
+{"capability":"file_hygiene","success":true,"method":"cleanTempDirs","duration_ms":14,"error":null}
+{"capability":"clipboard_ocr_agent","success":true,"method":"read","duration_ms":289,"error":null}
+{"capability":"research_router","success":true,"method":"research","duration_ms":602,"error":null}
+{"capability":"ui_automation","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"window_manager","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"drive_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"file_indexer","success":true,"method":"search","duration_ms":5,"error":null}
+{"capability":"registry_manager","success":true,"method":"read","duration_ms":117,"error":null}
+{"capability":"web_monitor","success":true,"method":"check","duration_ms":189,"error":null}
+{"capability":"anomaly_detector","success":true,"method":"detectZScore","duration_ms":8,"error":null}
+{"capability":"health_dashboard","success":true,"method":"generate","duration_ms":554,"error":null}
+{"capability":"verifier","success":true,"method":"verifyFile","duration_ms":104,"error":null}
+{"capability":"code_agent","success":true,"method":"syntaxCheck","duration_ms":99,"error":null}
+{"capability":"long_term_memory","success":true,"method":"search","duration_ms":4,"error":null}
+{"capability":"planner","success":true,"method":"loadPlans","duration_ms":4,"error":null}
+{"capability":"package_installer","success":true,"method":"isInstalled","duration_ms":109,"error":null}
+{"capability":"git_agent","success":true,"method":"status","duration_ms":169,"error":null}
+{"capability":"sqlite_brain","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"rollback_manager","success":true,"method":"getLastCommit","duration_ms":155,"error":null}
+{"capability":"service_manager","success":true,"method":"list","duration_ms":998,"error":null}
+{"capability":"test_runner","success":true,"method":"runNodeTest","duration_ms":174,"error":null}
+{"capability":"capability_registry","success":true,"method":"build","duration_ms":80,"error":null}
+{"capability":"file_organizer","success":true,"method":"organize","duration_ms":4,"error":null}
+{"capability":"pdf_reader_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"network_monitor","success":true,"method":"ping","duration_ms":89,"error":null}
+{"capability":"deploy_agent","success":true,"method":"deployDirectory","duration_ms":8,"error":null}
+{"capability":"trading_agent","success":true,"method":"status","duration_ms":571,"error":null}
+{"capability":"project_manager","success":true,"method":"load","duration_ms":5,"error":null}
+{"capability":"speech_agent","success":true,"method":"speak","duration_ms":424,"error":null}
+{"capability":"feedback_loop","success":true,"method":"load","duration_ms":5,"error":null}
+{"capability":"notify_engine","success":true,"method":"notify","duration_ms":459,"error":null}
+{"capability":"polyglot_coder","success":true,"method":"run","duration_ms":179,"error":null}
+{"capability":"market_watcher","success":true,"method":"loadCache","duration_ms":5,"error":null}
+{"capability":"unified_orchestrator","success":true,"method":"status","duration_ms":549,"error":null}
+{"capability":"drive_indexer","success":true,"method":"search","duration_ms":2,"error":null}
+{"capability":"task_graph","success":true,"method":"run","duration_ms":3,"error":null}
+{"capability":"vector_brain","success":true,"method":"search","duration_ms":5,"error":null}
+{"capability":"capability_invoker","success":true,"method":"list","duration_ms":45,"error":null}
+{"capability":"learning_engine","success":true,"method":"load","duration_ms":3,"error":null}
+{"capability":"process_automation","success":true,"method":"list","duration_ms":712,"error":null}
+{"capability":"webcam","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"memory_consolidator","success":true,"method":"getRecent","duration_ms":10,"error":null}
+{"capability":"hash_agent","success":true,"method":"hashString","duration_ms":12,"error":null}
+{"capability":"orchestrator","success":true,"method":"run","duration_ms":7,"error":null}
+{"capability":"store_manager","success":true,"method":"set","duration_ms":6,"error":null}
+{"capability":"sync_manager","success":true,"method":"syncDirectory","duration_ms":16,"error":null}
+{"capability":"compressor_agent","success":true,"method":"compress","duration_ms":770,"error":null}
+{"capability":"build_loop_optimizer","success":true,"method":"analyze","duration_ms":4,"error":null}
+{"capability":"credential_rotator","success":true,"method":"generatePassword","duration_ms":6,"error":null}
+{"capability":"business_intelligence","success":true,"method":"generateDashboardReport","duration_ms":566,"error":null}
+{"capability":"screen_recorder","success":true,"method":"checkFfmpeg","duration_ms":136,"error":null}
+{"capability":"microphone","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"doc_generator","success":true,"method":"generateForFile","duration_ms":5,"error":null}
+{"capability":"battery_manager","success":true,"method":"getStatus","duration_ms":444,"error":null}
+{"capability":"click_by_text","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"risk_engine","success":true,"method":"assessAction","duration_ms":3,"error":null}
+{"capability":"social_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"form_filler","success":false,"duration_ms":6,"error":"fields is not iterable"}
+{"capability":"window_automation","success":true,"method":"arrangeCascading","duration_ms":1454,"error":null}
+{"capability":"strategy_optimizer","success":true,"method":"optimize","duration_ms":4,"error":null}
+{"capability":"file_archiver","success":true,"method":"zip","duration_ms":1363,"error":null}
+{"capability":"reasoning_engine","success":true,"method":"reason","duration_ms":6,"error":null}
+{"capability":"content_factory","success":true,"method":"generateSocialPost","duration_ms":2,"error":null}
+{"capability":"auto_updater","success":true,"method":"checkForUpdates","duration_ms":2081,"error":null}
+{"capability":"agent_swarm","success":true,"method":"runTask","duration_ms":3,"error":null}
+{"capability":"network_speed_tester","success":true,"method":"test","duration_ms":118,"error":null}
+{"capability":"smart_home","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"temperature_monitor","success":true,"method":"read","duration_ms":383,"error":null}
+{"capability":"searxng_client","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"clipboard_manager","success":true,"method":"getText","duration_ms":252,"error":null}
+{"capability":"process_killer","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"design_agent","success":true,"method":"createPalette","duration_ms":5,"error":null}
+{"capability":"audit_logger","success":true,"method":"read","duration_ms":7,"error":null}
+{"capability":"phone_bridge","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"usb_manager","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"unified_master_orchestrator","success":true,"method":"status","duration_ms":21,"error":null}
+{"capability":"research_agent","success":true,"method":"search","duration_ms":437,"error":null}
+{"capability":"self_audit","success":true,"method":"run","duration_ms":61,"error":null}
+{"capability":"scheduler_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"status_reporter","success":true,"method":"generate","duration_ms":26,"error":null}
+{"capability":"predictive_maintenance","success":true,"method":"run","duration_ms":462,"error":null}
+{"capability":"system_health_monitor","success":true,"method":"getHealth","duration_ms":747,"error":null}
+{"capability":"self_goal_generator","success":true,"method":"generateGoals","duration_ms":5,"error":null}
+{"capability":"file_hygiene","success":true,"method":"cleanTempDirs","duration_ms":7,"error":null}
+{"capability":"clipboard_ocr_agent","success":true,"method":"read","duration_ms":298,"error":null}
+{"capability":"research_router","success":true,"method":"research","duration_ms":823,"error":null}
+{"capability":"ui_automation","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"window_manager","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"drive_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"file_indexer","success":true,"method":"search","duration_ms":2,"error":null}
+{"capability":"registry_manager","success":true,"method":"read","duration_ms":53,"error":null}
+{"capability":"web_monitor","success":true,"method":"check","duration_ms":119,"error":null}
+{"capability":"anomaly_detector","success":true,"method":"detectZScore","duration_ms":3,"error":null}
+{"capability":"health_dashboard","success":true,"method":"generate","duration_ms":461,"error":null}
+{"capability":"verifier","success":true,"method":"verifyFile","duration_ms":102,"error":null}
+{"capability":"code_agent","success":true,"method":"syntaxCheck","duration_ms":98,"error":null}
+{"capability":"long_term_memory","success":true,"method":"search","duration_ms":5,"error":null}
+{"capability":"planner","success":true,"method":"loadPlans","duration_ms":3,"error":null}
+{"capability":"package_installer","success":true,"method":"isInstalled","duration_ms":108,"error":null}
+{"capability":"git_agent","success":true,"method":"status","duration_ms":253,"error":null}
+{"capability":"sqlite_brain","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"rollback_manager","success":true,"method":"getLastCommit","duration_ms":146,"error":null}
+{"capability":"service_manager","success":true,"method":"list","duration_ms":988,"error":null}
+{"capability":"test_runner","success":true,"method":"runNodeTest","duration_ms":115,"error":null}
+{"capability":"capability_registry","success":true,"method":"build","duration_ms":45,"error":null}
+{"capability":"file_organizer","success":true,"method":"organize","duration_ms":5,"error":null}
+{"capability":"pdf_reader_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"network_monitor","success":true,"method":"ping","duration_ms":100,"error":null}
+{"capability":"deploy_agent","success":true,"method":"deployDirectory","duration_ms":8,"error":null}
+{"capability":"trading_agent","success":true,"method":"status","duration_ms":628,"error":null}
+{"capability":"project_manager","success":true,"method":"load","duration_ms":6,"error":null}
+{"capability":"speech_agent","success":true,"method":"speak","duration_ms":397,"error":null}
+{"capability":"feedback_loop","success":true,"method":"load","duration_ms":5,"error":null}
+{"capability":"notify_engine","success":true,"method":"notify","duration_ms":423,"error":null}
+{"capability":"polyglot_coder","success":true,"method":"run","duration_ms":97,"error":null}
+{"capability":"market_watcher","success":true,"method":"loadCache","duration_ms":4,"error":null}
+{"capability":"unified_orchestrator","success":true,"method":"status","duration_ms":495,"error":null}
+{"capability":"drive_indexer","success":true,"method":"search","duration_ms":2,"error":null}
+{"capability":"task_graph","success":true,"method":"run","duration_ms":3,"error":null}
+{"capability":"vector_brain","success":true,"method":"search","duration_ms":4,"error":null}
+{"capability":"capability_invoker","success":true,"method":"list","duration_ms":43,"error":null}
+{"capability":"learning_engine","success":true,"method":"load","duration_ms":3,"error":null}
+{"capability":"process_automation","success":true,"method":"list","duration_ms":755,"error":null}
+{"capability":"webcam","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"memory_consolidator","success":true,"method":"getRecent","duration_ms":10,"error":null}
+{"capability":"hash_agent","success":true,"method":"hashString","duration_ms":12,"error":null}
+{"capability":"orchestrator","success":true,"method":"run","duration_ms":8,"error":null}
+{"capability":"store_manager","success":true,"method":"set","duration_ms":7,"error":null}
+{"capability":"sync_manager","success":true,"method":"syncDirectory","duration_ms":7,"error":null}
+{"capability":"compressor_agent","success":true,"method":"compress","duration_ms":683,"error":null}
+{"capability":"build_loop_optimizer","success":true,"method":"analyze","duration_ms":3,"error":null}
+{"capability":"credential_rotator","success":true,"method":"generatePassword","duration_ms":5,"error":null}
+{"capability":"business_intelligence","success":true,"method":"generateDashboardReport","duration_ms":472,"error":null}
+{"capability":"screen_recorder","success":true,"method":"checkFfmpeg","duration_ms":139,"error":null}
+{"capability":"microphone","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"doc_generator","success":true,"method":"generateForFile","duration_ms":5,"error":null}
+{"capability":"battery_manager","success":true,"method":"getStatus","duration_ms":386,"error":null}
+{"capability":"click_by_text","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"risk_engine","success":true,"method":"assessAction","duration_ms":2,"error":null}
+{"capability":"social_agent","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"form_filler","success":true,"method":"fillFields","duration_ms":474,"error":null}
+{"capability":"window_automation","success":true,"method":"arrangeCascading","duration_ms":1419,"error":null}
+{"capability":"strategy_optimizer","success":true,"method":"optimize","duration_ms":6,"error":null}
+{"capability":"file_archiver","success":true,"method":"zip","duration_ms":1307,"error":null}
+{"capability":"reasoning_engine","success":true,"method":"reason","duration_ms":3,"error":null}
+{"capability":"content_factory","success":true,"method":"generateSocialPost","duration_ms":1,"error":null}
+{"capability":"auto_updater","success":true,"method":"checkForUpdates","duration_ms":1909,"error":null}
+{"capability":"agent_swarm","success":true,"method":"runTask","duration_ms":3,"error":null}
+{"capability":"network_speed_tester","success":true,"method":"test","duration_ms":161,"error":null}
+{"capability":"smart_home","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"temperature_monitor","success":true,"method":"read","duration_ms":387,"error":null}
+{"capability":"searxng_client","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"clipboard_manager","success":true,"method":"getText","duration_ms":256,"error":null}
+{"capability":"process_killer","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"design_agent","success":true,"method":"createPalette","duration_ms":4,"error":null}
+{"capability":"audit_logger","success":true,"method":"read","duration_ms":7,"error":null}
+{"capability":"phone_bridge","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}
+{"capability":"usb_manager","success":true,"note":"skipped — requires credentials, hardware, or external state","duration_ms":0}

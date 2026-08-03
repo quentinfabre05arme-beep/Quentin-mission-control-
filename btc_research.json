@@ -1,0 +1,258 @@
+﻿{
+  "symbol": "BTC",
+  "timestamp": "2026-08-03T10:16:10.473Z",
+  "total_time_ms": 2787,
+  "data": {
+    "price": {
+      "price": 62725,
+      "change_24h": -0.5,
+      "market_cap": 1258523982038,
+      "source": "coingecko (coingecko)",
+      "signal": "NEUTRAL",
+      "fetch_time_ms": 2085,
+      "stale": false
+    },
+    "technical": {
+      "asset": "BTC",
+      "name": "Bitcoin",
+      "type": "crypto",
+      "timestamp": "2026-08-03T10:16:09.214Z",
+      "analysis_time_ms": 1497,
+      "indicators": {
+        "rsi14": {
+          "value": null
+        },
+        "rsi7": {
+          "value": 65.89286
+        },
+        "sma20": {
+          "value": null
+        },
+        "sma50": {
+          "value": 66823.3324
+        },
+        "sma200": {
+          "value": null
+        },
+        "ema12": {
+          "value": 61875.93649
+        },
+        "ema26": {
+          "value": 63093.39169
+        },
+        "atr": {
+          "value": 2155.51451
+        }
+      },
+      "signals": {
+        "rsi": {
+          "rating": "UNKNOWN",
+          "action": "HOLD",
+          "strength": 0
+        },
+        "macd": {
+          "rating": "UNKNOWN",
+          "action": "HOLD",
+          "strength": 0
+        },
+        "trend": {
+          "trend": "UNKNOWN",
+          "strength": 0
+        },
+        "volatility": {
+          "rating": "UNKNOWN",
+          "width": 0,
+          "position": "unknown"
+        },
+        "momentum": {
+          "rating": "UNKNOWN",
+          "k": null,
+          "d": null
+        },
+        "supportResistance": [
+          {
+            "level": 66823.3324,
+            "type": "resistance",
+            "strength": "strong"
+          }
+        ]
+      },
+      "composite": {
+        "score": 0,
+        "rating": "HOLD",
+        "confidence": "LOW",
+        "factors": []
+      }
+    },
+    "sentiment": {
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "timestamp": "2026-08-03T10:16:09.046Z",
+      "analysis_time_ms": 1320,
+      "summary": {
+        "score": "0.15",
+        "rawScore": 0.14516129032258063,
+        "rating": "NEUTRAL ÔÜ¬",
+        "recentTrend": "NEUTRAL ÔÜ¬",
+        "recentScore": "0.00",
+        "positive": 5,
+        "negative": 1,
+        "neutral": 14,
+        "total": 20,
+        "confidence": "0.17"
+      },
+      "headlines": [
+        {
+          "title": "Crypto Weekly Digest | Bitcoin Enters Bottoming Phase as 200-Week MA Support Faces Key Test",
+          "source": "Moomoo",
+          "date": "3 hours ago",
+          "link": "https://www.moomoo.com/community/feed/crypto-weekly-digest-bitcoin-drops-to-63-4k-coldcard-hack-117030461374470",
+          "sentiment": 1.5,
+          "confidence": 0.6666666666666666,
+          "matched": [
+            {
+              "word": "up",
+              "category": "positive",
+              "weight": 1
+            },
+            {
+              "word": "support",
+              "category": "moderate_positive",
+              "weight": 0.5
+            }
+          ],
+          "snippet": "Market Summary $Bitcoin (BTC.CC)$ fell 1.14% over the past 7 days, currently trading at $62662 with "
+        },
+        {
+          "title": "Bitcoin Price Crash: Ex-SoftBank CFO Sees ÔÇÿNo ConcernsÔÇÖ For Crypto Despite Mega IPO Capital-Drain Fears, Pins Hope On CLARITY Act",
+          "source": "Stocktwits",
+          "date": "13 hours ago",
+          "link": "https://stocktwits.com/news-articles/markets/equity/bitcoin-price-crash-ex-soft-bank-cfo-sees-no-concerns-for-crypto-despite-mega-ipo-capital-drain-fears-pins-hope-on-clarity-act/cZ0SzzjRexT",
+          "sentiment": -3,
+          "confidence": 0.6666666666666666,
+          "matched": [
+            {
+              "word": "crash",
+              "category": "strong_negative",
+              "weight": -2
+            },
+            {
+              "word": "decline",
+              "category": "negative",
+              "weight": -1
+            }
+          ],
+          "snippet": "Bitcoin's (BTC) sharp decline to below $70000 in early June has ignited a heated debate among financ"
+        },
+        {
+          "title": "Bitcoin Is Now Calmer Than South KoreaÔÇÖs AI-Driven Stock Market",
+          "source": "BeInCrypto",
+          "date": "6 hours ago",
+          "link": "https://beincrypto.com/bitcoin-calmer-than-kospi-volatility/",
+          "sentiment": 0,
+          "confidence": 0,
+          "matched": [],
+          "snippet": "Bitcoin (BTC) posted lower return volatility than South Korea's benchmark stock index this year, Blo"
+        },
+        {
+          "title": "Bitcoin Stalls After CLARITY Act Success: Will Pro-Crypto Fed, White House Save The Day?",
+          "source": "CoinMarketCap",
+          "date": "14 hours ago",
+          "link": "https://coinmarketcap.com/academy/article/bitcoin-stalls-clarity-act-pro-crypto-fed-white-house",
+          "sentiment": 1.5,
+          "confidence": 1,
+          "matched": [
+            {
+              "word": "up",
+              "category": "positive",
+              "weight": 1
+            },
+            {
+              "word": "buy",
+              "category": "positive",
+              "weight": 1
+            },
+            {
+              "word": "dip",
+              "category": "moderate_negative",
+              "weight": -0.5
+            }
+          ],
+          "snippet": "Crypto traders sold the news following Kevin Warsh's Fed chair confirmation and a successful markup "
+        },
+        {
+          "title": "Top Financial Institutions and Crypto Companies Just Formed a New Bitcoin Security Consortium. What Does That Mean for Bitcoin?",
+          "source": "The Motley Fool",
+          "date": "21 hours ago",
+          "link": "https://www.fool.com/investing/2026/08/02/what-new-bitcoin-security-consortium-means/",
+          "sentiment": 0,
+          "confidence": 0,
+          "matched": [],
+          "snippet": "For Bitcoin investors, there's now much less reason to worry about the \"quantum threat.\""
+        }
+      ],
+      "bySource": [
+        {
+          "source": "bitcoin.org",
+          "count": 2,
+          "avgSentiment": 0
+        },
+        {
+          "source": "moomoo",
+          "count": 1,
+          "avgSentiment": 1.5
+        },
+        {
+          "source": "stocktwits",
+          "count": 1,
+          "avgSentiment": -3
+        },
+        {
+          "source": "beincrypto",
+          "count": 1,
+          "avgSentiment": 0
+        },
+        {
+          "source": "coinmarketcap",
+          "count": 1,
+          "avgSentiment": 1.5
+        }
+      ]
+    }
+  },
+  "errors": [],
+  "composite": {
+    "score": 0,
+    "rawScore": "0.25",
+    "rating": "HOLD",
+    "action": "MONITOR",
+    "urgency": "NONE",
+    "confidence": "HIGH",
+    "factors": [
+      "Momentum: -0.50% (0)",
+      "Technical: HOLD (conf: LOW)",
+      "Sentiment: NEUTRAL ÔÜ¬",
+      "Alignment: Neutral"
+    ],
+    "details": {
+      "momentum": {
+        "change": -0.5,
+        "score": 0
+      },
+      "technical": {
+        "rating": "HOLD",
+        "score": 0,
+        "confidence": "LOW"
+      },
+      "sentiment": {
+        "raw": 0.14516129032258063,
+        "score": 1
+      },
+      "alignment": {
+        "trend": "UNKNOWN",
+        "sentiment": 0.14516129032258063,
+        "score": 0
+      }
+    }
+  }
+}

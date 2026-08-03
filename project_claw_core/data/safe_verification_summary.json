@@ -1,12 +1,11 @@
 {
-  "timestamp": "2026-08-03T10:04:03.410Z",
+  "timestamp": "2026-08-03T10:15:07.232Z",
   "total": 83,
-  "verified": 54,
+  "verified": 55,
   "skipped": 24,
-  "failed": 5,
+  "failed": 4,
   "failed_capabilities": [
     "research_router",
-    "drive_agent",
     "anomaly_detector",
     "verifier",
     "searxng_client"
