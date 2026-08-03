@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-08-03T10:45:40.413Z",
+  "timestamp": "2026-08-03T10:55:25.559Z",
   "total": 88,
-  "verified": 55,
+  "verified": 54,
   "skipped": 24,
-  "failed": 9,
+  "failed": 10,
   "failed_capabilities": [
     "memory_tier",
     "capability_functional_tester",
@@ -12,6 +12,7 @@
     "capability_router",
     "anomaly_detector",
     "verifier",
+    "planner",
     "capability_usage_tracker",
     "searxng_client"
   ]

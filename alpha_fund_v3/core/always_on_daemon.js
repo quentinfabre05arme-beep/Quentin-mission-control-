@@ -9,11 +9,47 @@ const { execSync } = require('child_process');
 const os = require('os');
 
 const LOG_FILE = 'alpha_fund_v3/logs/always_on_daemon.log';
+const LOCK_FILE = 'alpha_fund_v3/logs/always_on_daemon.lock';
 const MAX_LOG_BYTES = 100 * 1024;
 const RAM_BREAK_PCT = 95;
 const RAM_WARN_PCT = 90;
 
 let consecutiveRamHits = 0;
+
+function acquireLock() {
+  try {
+    if (fs.existsSync(LOCK_FILE)) {
+      const oldPid = parseInt(fs.readFileSync(LOCK_FILE, 'utf8'), 10);
+      if (oldPid && oldPid !== process.pid) {
+        try {
+          process.kill(oldPid, 0);
+          log(`Another daemon already running (PID ${oldPid}). Exiting.`);
+          process.exit(0);
+        } catch (e) {
+          // old process is dead, continue
+        }
+      }
+    }
+    fs.writeFileSync(LOCK_FILE, String(process.pid));
+  } catch (e) {
+    log(`Lock error: ${e.message}`);
+  }
+}
+
+function releaseLock() {
+  try {
+    if (fs.existsSync(LOCK_FILE)) {
+      const current = fs.readFileSync(LOCK_FILE, 'utf8');
+      if (current === String(process.pid)) fs.unlinkSync(LOCK_FILE);
+    }
+  } catch (e) {}
+}
+
+process.on('exit', releaseLock);
+process.on('SIGINT', () => { releaseLock(); process.exit(0); });
+process.on('SIGTERM', () => { releaseLock(); process.exit(0); });
+
+acquireLock();
 
 function rotateLog() {
   try {

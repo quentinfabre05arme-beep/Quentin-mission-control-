@@ -1,6 +1,6 @@
 {
-  "cycles": 27,
-  "last_cycle": "2026-08-03T10:52:14.162Z",
+  "cycles": 24,
+  "last_cycle": "2026-08-03T10:53:38.396Z",
   "issues": [],
   "actions": [
     {
@@ -37,47 +37,26 @@
     },
     {
       "step": "research",
-      "success": true,
-      "result_size": 2
+      "success": false,
+      "result_size": 0
     },
     {
-      "step": "capability_router",
-      "routes": 4,
-      "unhealthy": 0
-    },
-    {
-      "step": "memory_tier",
-      "success": true,
-      "hits": 0
-    },
-    {
-      "step": "hierarchical_planner",
-      "action": "execute",
-      "task": null,
-      "candidates": []
-    },
-    {
-      "step": "market_watch",
-      "btc": {
-        "symbol": "BTC",
-        "change_percent": 0.4095238095238095,
-        "trend": "flat"
-      },
-      "eth": {
-        "symbol": "ETH",
-        "trend": "flat"
-      }
+      "step": "market_watch"
     },
     {
       "step": "self_audit",
-      "real": 88,
+      "real": 0,
       "stubs": 0,
       "syntax_errors": 0
     },
     {
       "step": "git_backup",
       "note": "no changes"
+    },
+    {
+      "step": "telegram_report",
+      "sent": true
     }
   ],
-  "duration_ms": 2329
+  "duration_ms": 1727
 }
