@@ -69,12 +69,6 @@ function rotateLog() {
 }
 
 function log(msg) {
-  if (!msg && msg !== 0 && msg !== '') {
-    console.warn(`log called with empty msg`);
-    return null;
-  }
-  // Input validation added by improvement engine
-
   const cleanMsg = String(msg).replace(/[^\x20-\x7E]/g, '?');
   const entry = `[${new Date().toISOString()}] ${cleanMsg}\n`;
   fs.mkdirSync('alpha_fund_v3/logs', { recursive: true });
