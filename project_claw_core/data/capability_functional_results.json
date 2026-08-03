@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-03T10:42:30.714Z",
+  "timestamp": "2026-08-03T10:52:42.475Z",
   "total": 29,
   "passed": 29,
   "failed": 0,
@@ -18,7 +18,7 @@
       "returned": true,
       "expected": "success",
       "error": null,
-      "duration_ms": 73
+      "duration_ms": 52
     },
     {
       "name": "web_monitor",
@@ -26,7 +26,7 @@
       "returned": true,
       "expected": "success",
       "error": null,
-      "duration_ms": 993
+      "duration_ms": 1537
     },
     {
       "name": "anomaly_detector",
@@ -42,7 +42,7 @@
       "returned": true,
       "expected": "success",
       "error": null,
-      "duration_ms": 1
+      "duration_ms": 3
     },
     {
       "name": "store_manager",
@@ -58,7 +58,7 @@
       "returned": true,
       "expected": "success",
       "error": null,
-      "duration_ms": 3
+      "duration_ms": 6
     },
     {
       "name": "compressor_agent",
@@ -66,7 +66,7 @@
       "returned": true,
       "expected": "success",
       "error": null,
-      "duration_ms": 1045
+      "duration_ms": 631
     },
     {
       "name": "credential_rotator",
@@ -74,7 +74,7 @@
       "returned": true,
       "expected": "success",
       "error": null,
-      "duration_ms": 3
+      "duration_ms": 2
     },
     {
       "name": "click_by_text",
@@ -82,7 +82,7 @@
       "returned": false,
       "expected": "failure",
       "error": null,
-      "duration_ms": 205
+      "duration_ms": 199
     },
     {
       "name": "risk_engine",
@@ -106,7 +106,7 @@
       "returned": true,
       "expected": "success",
       "error": null,
-      "duration_ms": 635
+      "duration_ms": 636
     },
     {
       "name": "reasoning_engine",
@@ -114,7 +114,7 @@
       "returned": true,
       "expected": "success",
       "error": null,
-      "duration_ms": 3
+      "duration_ms": 2
     },
     {
       "name": "content_factory",
@@ -122,7 +122,7 @@
       "returned": true,
       "expected": "success",
       "error": null,
-      "duration_ms": 2
+      "duration_ms": 1
     },
     {
       "name": "agent_swarm",
@@ -138,7 +138,7 @@
       "returned": false,
       "expected": "failure",
       "error": null,
-      "duration_ms": 114
+      "duration_ms": 125
     },
     {
       "name": "test_runner",
@@ -146,7 +146,7 @@
       "returned": true,
       "expected": "success",
       "error": null,
-      "duration_ms": 383
+      "duration_ms": 364
     },
     {
       "name": "code_agent",
@@ -154,7 +154,7 @@
       "returned": true,
       "expected": "success",
       "error": null,
-      "duration_ms": 102
+      "duration_ms": 98
     },
     {
       "name": "deploy_agent",
@@ -186,7 +186,7 @@
       "returned": true,
       "expected": "success",
       "error": null,
-      "duration_ms": 69
+      "duration_ms": 71
     },
     {
       "name": "polyglot_coder",
@@ -194,7 +194,7 @@
       "returned": true,
       "expected": "success",
       "error": null,
-      "duration_ms": 100
+      "duration_ms": 103
     },
     {
       "name": "form_filler",
@@ -202,7 +202,7 @@
       "returned": true,
       "expected": "success",
       "error": null,
-      "duration_ms": 134
+      "duration_ms": 143
     },
     {
       "name": "speech_agent",
@@ -210,7 +210,7 @@
       "returned": true,
       "expected": "success",
       "error": null,
-      "duration_ms": 211
+      "duration_ms": 200
     },
     {
       "name": "notify_engine",
@@ -218,7 +218,7 @@
       "returned": true,
       "expected": "success",
       "error": null,
-      "duration_ms": 210
+      "duration_ms": 204
     },
     {
       "name": "verifier",
@@ -226,7 +226,7 @@
       "returned": true,
       "expected": "success",
       "error": null,
-      "duration_ms": 4
+      "duration_ms": 92
     },
     {
       "name": "vector_brain",
@@ -234,7 +234,7 @@
       "returned": true,
       "expected": "success",
       "error": null,
-      "duration_ms": 4
+      "duration_ms": 3
     }
   ]
 }

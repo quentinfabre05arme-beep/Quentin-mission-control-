@@ -11,7 +11,7 @@
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\agent\\openclaw-agent.sqlite",
       "name": "openclaw-agent.sqlite",
       "size": 131072,
-      "modified": "2026-08-03T10:33:10.343Z"
+      "modified": "2026-08-03T10:37:14.242Z"
     },
     {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\agent\\openclaw-agent.sqlite-shm",
@@ -23,7 +23,7 @@
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\agent\\openclaw-agent.sqlite-wal",
       "name": "openclaw-agent.sqlite-wal",
       "size": 164832,
-      "modified": "2026-08-03T10:28:32.282Z"
+      "modified": "2026-08-03T10:43:04.483Z"
     },
     {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\.openclaw-trajectory-.10076.36a27666-00e8-4c1f-961f-2d0ecf11ff7d.tmp",
@@ -10522,20 +10522,20 @@
     {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\71ca780b-841e-486d-9774-703cd030f98e.jsonl",
       "name": "71ca780b-841e-486d-9774-703cd030f98e.jsonl",
-      "size": 11078195,
-      "modified": "2026-08-03T10:31:37.727Z"
+      "size": 11124934,
+      "modified": "2026-08-03T10:43:07.254Z"
     },
     {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\71ca780b-841e-486d-9774-703cd030f98e.trajectory-path.json",
       "name": "71ca780b-841e-486d-9774-703cd030f98e.trajectory-path.json",
       "size": 255,
-      "modified": "2026-08-03T10:29:18.396Z"
+      "modified": "2026-08-03T10:41:31.029Z"
     },
     {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\71ca780b-841e-486d-9774-703cd030f98e.trajectory.jsonl",
       "name": "71ca780b-841e-486d-9774-703cd030f98e.trajectory.jsonl",
-      "size": 10449347,
-      "modified": "2026-08-03T10:31:38.220Z"
+      "size": 10467216,
+      "modified": "2026-08-03T10:43:04.436Z"
     },
     {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\71ed2491-0a8b-4897-acaa-b1f5389aadb0.trajectory-path.json",
@@ -28958,6 +28958,24 @@
       "modified": "2026-07-22T07:36:31.366Z"
     },
     {
+      "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\fb374155-fbd9-405a-bc2a-66ac1057af87.jsonl",
+      "name": "fb374155-fbd9-405a-bc2a-66ac1057af87.jsonl",
+      "size": 2147,
+      "modified": "2026-08-03T10:36:48.116Z"
+    },
+    {
+      "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\fb374155-fbd9-405a-bc2a-66ac1057af87.trajectory-path.json",
+      "name": "fb374155-fbd9-405a-bc2a-66ac1057af87.trajectory-path.json",
+      "size": 255,
+      "modified": "2026-08-03T10:36:46.901Z"
+    },
+    {
+      "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\fb374155-fbd9-405a-bc2a-66ac1057af87.trajectory.jsonl",
+      "name": "fb374155-fbd9-405a-bc2a-66ac1057af87.trajectory.jsonl",
+      "size": 256257,
+      "modified": "2026-08-03T10:36:48.153Z"
+    },
+    {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\fb668030-45a1-49c0-a66d-690a08bd954b.trajectory-path.json",
       "name": "fb668030-45a1-49c0-a66d-690a08bd954b.trajectory-path.json",
       "size": 255,
@@ -29410,8 +29428,8 @@
     {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\sessions.json",
       "name": "sessions.json",
-      "size": 3193905,
-      "modified": "2026-08-03T10:32:25.753Z"
+      "size": 3217882,
+      "modified": "2026-08-03T10:43:07.331Z"
     },
     {
       "path": "C:\\Users\\quent\\.openclaw\\browser\\openclaw\\user-data\\.openclaw-profile-decorated",
@@ -29982,24 +30000,6 @@
       "name": "f_00002d",
       "size": 21528,
       "modified": "2026-07-17T17:54:27.418Z"
-    },
-    {
-      "path": "C:\\Users\\quent\\.openclaw\\browser\\openclaw\\user-data\\GrShaderCache\\f_00002e",
-      "name": "f_00002e",
-      "size": 19976,
-      "modified": "2026-07-17T17:54:27.450Z"
-    },
-    {
-      "path": "C:\\Users\\quent\\.openclaw\\browser\\openclaw\\user-data\\GrShaderCache\\f_00002f",
-      "name": "f_00002f",
-      "size": 20236,
-      "modified": "2026-07-17T17:54:27.466Z"
-    },
-    {
-      "path": "C:\\Users\\quent\\.openclaw\\browser\\openclaw\\user-data\\GrShaderCache\\f_000030",
-      "name": "f_000030",
-      "size": 20176,
-      "modified": "2026-07-17T17:54:29.393Z"
     }
   ]
 }

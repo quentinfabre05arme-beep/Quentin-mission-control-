@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:34:47.213Z",
+  "generated_at": "2026-08-03T10:52:14.017Z",
   "count": 88,
   "by_category": {
     "core": [
@@ -436,7 +436,7 @@
       "category": "core",
       "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\polyglot_coder.js",
       "class": "PolyglotCoder",
-      "lines": 78,
+      "lines": 87,
       "functions": 9,
       "has_tests": true
     },
@@ -652,8 +652,8 @@
       "category": "core",
       "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\unified_master_orchestrator.js",
       "class": "UnifiedMasterOrchestrator",
-      "lines": 288,
-      "functions": 18,
+      "lines": 363,
+      "functions": 21,
       "has_tests": true
     },
     {

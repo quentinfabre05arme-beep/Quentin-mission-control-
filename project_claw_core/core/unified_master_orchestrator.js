@@ -23,6 +23,20 @@ try {
   log(`Smart Brain not loaded: ${e.message}`, 'warn');
 }
 
+// Load new 2026 modules
+let CapabilityRouter = null;
+let CapabilityTracker = null;
+let MemoryTier = null;
+let Planner = null;
+try {
+  CapabilityRouter = require(path.join(WORKSPACE, 'project_claw_core', 'core', 'capability_router'));
+  CapabilityTracker = require(path.join(WORKSPACE, 'project_claw_core', 'core', 'capability_usage_tracker'));
+  MemoryTier = require(path.join(WORKSPACE, 'project_claw_core', 'core', 'memory_tier'));
+  Planner = require(path.join(WORKSPACE, 'project_claw_core', 'core', 'hierarchical_planner'));
+} catch (e) {
+  log(`New 2026 modules not loaded: ${e.message}`, 'warn');
+}
+
 function log(msg, level = 'info') {
   const entry = { timestamp: new Date().toISOString(), level, message: msg };
   fs.mkdirSync(path.dirname(LOG_FILE), { recursive: true });
@@ -88,6 +102,55 @@ class UnifiedMasterOrchestrator {
     }
     log(`Smart Brain routed ${routing.length} sample tasks`);
     return routing;
+  }
+
+  async runCapabilityRouterCheck() {
+    log('Step: Capability router + usage tracker');
+    const sampleTasks = [
+      'send status report',
+      'check system health',
+      'research BTC news',
+      'backup git repository'
+    ];
+    const routes = [];
+    for (const task of sampleTasks) {
+      try {
+        const start = Date.now();
+        const r = CapabilityRouter.route(task);
+        CapabilityTracker.track(r.capability, { success: !!r.capability, latencyMs: Date.now() - start });
+        routes.push(r);
+      } catch (e) {
+        routes.push({ task, error: e.message });
+      }
+    }
+    const health = CapabilityTracker.getHealth();
+    log(`Capability router: ${routes.length} routes, ${health.unhealthy.length} unhealthy`);
+    return { routes, health };
+  }
+
+  async runMemoryTierCheck() {
+    log('Step: Memory tier query');
+    try {
+      const results = MemoryTier.search('health status', { topK: 3 });
+      log(`Memory tier returned ${results.length} hits`);
+      return { success: true, hits: results.length };
+    } catch (e) {
+      log(`Memory tier error: ${e.message}`, 'warn');
+      return { success: false, error: e.message };
+    }
+  }
+
+  async runPlannerCheck() {
+    log('Step: Hierarchical planner');
+    try {
+      const healthCheck = await runWithTimeout(() => this.workflows.orch.healthCheck(), 15000, 'health_for_planner');
+      const next = Planner.pickNextTask({ ram: healthCheck?.metrics?.ramUsedPct || 80, cpu: 40 });
+      log(`Planner next action: ${next.action}`);
+      return next;
+    } catch (e) {
+      log(`Planner error: ${e.message}`, 'warn');
+      return { action: 'error', error: e.message };
+    }
   }
   
   async runResearch(query = 'BTC crypto market news today') {
@@ -184,6 +247,18 @@ class UnifiedMasterOrchestrator {
 
       const research = await this.runResearch();
       actions.push({ step: 'research', success: research.success, result_size: research.result ? JSON.stringify(research.result).length : 0 });
+
+      log('Step 2c: Capability router + usage tracker');
+      const capCheck = await this.runCapabilityRouterCheck();
+      actions.push({ step: 'capability_router', routes: capCheck.routes.length, unhealthy: capCheck.health.unhealthy.length });
+
+      log('Step 2d: Memory tier');
+      const memCheck = await this.runMemoryTierCheck();
+      actions.push({ step: 'memory_tier', ...memCheck });
+
+      log('Step 2e: Hierarchical planner');
+      const plannerCheck = await this.runPlannerCheck();
+      actions.push({ step: 'hierarchical_planner', ...plannerCheck });
 
       log('Step 3: Market watcher');
       const btcTrend = await runWithTimeout(() => this.workflows.orch.runCommand('market_watcher getTrend', ['BTC']), 10000, 'btc_trend');

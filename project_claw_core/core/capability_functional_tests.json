@@ -26,6 +26,6 @@
   "form_filler": { "method": "fillFields", "args": [[{"name":"username","value":"test"}]], "expect": "success" },
   "speech_agent": { "method": "say", "args": ["test"], "expect": "success" },
   "notify_engine": { "method": "notify", "args": ["test", "hello"], "expect": "success" },
-  "verifier": { "method": "verifyFile", "args": ["project_claw_core/core/self_audit.js"], "expect": "success" },
+  "verifier": { "method": "verifyFile", "args": ["core/self_audit.js"], "expect": "success" },
   "vector_brain": { "method": "search", "args": ["test"], "expect": "success" }
 }

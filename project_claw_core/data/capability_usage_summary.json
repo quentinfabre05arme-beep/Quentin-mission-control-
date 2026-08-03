@@ -1,11 +1,47 @@
 {
   "undefined": {
-    "calls": 8,
-    "successes": 8,
+    "calls": 13,
+    "successes": 13,
     "failures": 0,
     "totalLatencyMs": 0,
     "lastError": null,
     "avgLatencyMs": 0,
+    "winRate": 1
+  },
+  "status_reporter": {
+    "calls": 4,
+    "successes": 4,
+    "failures": 0,
+    "totalLatencyMs": 27,
+    "lastError": null,
+    "avgLatencyMs": 6.75,
+    "winRate": 1
+  },
+  "system_health_monitor": {
+    "calls": 4,
+    "successes": 4,
+    "failures": 0,
+    "totalLatencyMs": 17,
+    "lastError": null,
+    "avgLatencyMs": 4.25,
+    "winRate": 1
+  },
+  "research_agent": {
+    "calls": 4,
+    "successes": 4,
+    "failures": 0,
+    "totalLatencyMs": 15,
+    "lastError": null,
+    "avgLatencyMs": 3.75,
+    "winRate": 1
+  },
+  "git_agent": {
+    "calls": 4,
+    "successes": 4,
+    "failures": 0,
+    "totalLatencyMs": 14,
+    "lastError": null,
+    "avgLatencyMs": 3.5,
     "winRate": 1
   }
 }

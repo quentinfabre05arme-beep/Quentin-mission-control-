@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-03T10:42:38.489Z",
+  "timestamp": "2026-08-03T10:52:41.533Z",
   "total": 6,
   "passed": 6,
   "failed": 0,
@@ -31,7 +31,7 @@
       "name": "Capability verifier passes",
       "passed": true,
       "error": null,
-      "duration_ms": 1
+      "duration_ms": 0
     },
     {
       "id": "status",
@@ -45,7 +45,7 @@
       "name": "Git status readable",
       "passed": true,
       "error": null,
-      "duration_ms": 134
+      "duration_ms": 143
     }
   ]
 }

@@ -10,6 +10,7 @@ const { execSync } = require('child_process');
 const { log, saveJson, loadJson, runWithTimeout } = require('./utils');
 const { recordOutcome } = require('./learning_engine');
 const { review } = require('./self_review');
+const Guardian = require('./experiment_guardian');
 
 const CONFIG = require('../config.json');
 
@@ -152,6 +153,25 @@ function measureBeforeAfter(change) {
 async function runExperiment(hypothesis, change) {
   cleanupStaleExperiments();
   log(`Running experiment: ${hypothesis.id}`);
+
+  // Guardian gate check + failure memory
+  const guardResult = Guardian.runSafely(() => true, {
+    hypothesis: hypothesis.title,
+    files: [change.filePath],
+    tokenBudget: CONFIG.token_budget_per_experiment || 20000
+  });
+  if (!guardResult.success) {
+    log(`Guardian blocked experiment: ${guardResult.reason}`, 'warn');
+    return {
+      id: hypothesis.id,
+      title: hypothesis.title,
+      outcome: 'blocked',
+      status: 'blocked',
+      error: guardResult.reason,
+      timestamp: new Date().toISOString()
+    };
+  }
+
   const experiment = {
     id: hypothesis.id,
     title: hypothesis.title,

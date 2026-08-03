@@ -468,5 +468,205 @@
     "confidence": 0.3,
     "complexity": 1,
     "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T10:43:37.561Z",
+    "task": "Generate daily market report",
+    "category": "build_tasks",
+    "model": "grok-4.3",
+    "modelId": "xai/grok-4.3",
+    "confidence": 0.5,
+    "complexity": 3,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T10:43:37.564Z",
+    "task": "Analyze BTC price trend",
+    "category": "complex_analysis",
+    "model": "grok-4.5",
+    "modelId": "xai/grok-4.5",
+    "confidence": 0.3,
+    "complexity": 1,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T10:43:37.568Z",
+    "task": "Debug Node.js memory issue",
+    "category": "code_tasks",
+    "model": "qwen3-coder",
+    "modelId": "ollama-cloud/qwen3-coder:cloud",
+    "confidence": 1,
+    "complexity": 5,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T10:43:37.571Z",
+    "task": "Plan autonomous system improvements",
+    "category": "complex_analysis",
+    "model": "qwen3",
+    "modelId": "ollama-cloud/qwen3:cloud",
+    "confidence": 0.3,
+    "complexity": 1,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T10:51:07.709Z",
+    "task": "Generate daily market report",
+    "category": "build_tasks",
+    "model": "grok-4.3",
+    "modelId": "xai/grok-4.3",
+    "confidence": 0.5,
+    "complexity": 3,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T10:51:07.711Z",
+    "task": "Analyze BTC price trend",
+    "category": "complex_analysis",
+    "model": "grok-4.5",
+    "modelId": "xai/grok-4.5",
+    "confidence": 0.3,
+    "complexity": 1,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T10:51:07.712Z",
+    "task": "Debug Node.js memory issue",
+    "category": "code_tasks",
+    "model": "qwen3-coder",
+    "modelId": "ollama-cloud/qwen3-coder:cloud",
+    "confidence": 1,
+    "complexity": 5,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T10:51:07.714Z",
+    "task": "Plan autonomous system improvements",
+    "category": "complex_analysis",
+    "model": "qwen3",
+    "modelId": "ollama-cloud/qwen3:cloud",
+    "confidence": 0.3,
+    "complexity": 1,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T10:51:31.478Z",
+    "task": "Generate daily market report",
+    "category": "build_tasks",
+    "model": "grok-4.3",
+    "modelId": "xai/grok-4.3",
+    "confidence": 0.5,
+    "complexity": 3,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T10:51:31.479Z",
+    "task": "Analyze BTC price trend",
+    "category": "complex_analysis",
+    "model": "grok-4.5",
+    "modelId": "xai/grok-4.5",
+    "confidence": 0.3,
+    "complexity": 1,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T10:51:31.481Z",
+    "task": "Debug Node.js memory issue",
+    "category": "code_tasks",
+    "model": "qwen3-coder",
+    "modelId": "ollama-cloud/qwen3-coder:cloud",
+    "confidence": 1,
+    "complexity": 5,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T10:51:31.482Z",
+    "task": "Plan autonomous system improvements",
+    "category": "complex_analysis",
+    "model": "qwen3",
+    "modelId": "ollama-cloud/qwen3:cloud",
+    "confidence": 0.3,
+    "complexity": 1,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T10:51:37.611Z",
+    "task": "Generate daily market report",
+    "category": "build_tasks",
+    "model": "grok-4.3",
+    "modelId": "xai/grok-4.3",
+    "confidence": 0.5,
+    "complexity": 3,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T10:51:37.613Z",
+    "task": "Analyze BTC price trend",
+    "category": "complex_analysis",
+    "model": "grok-4.5",
+    "modelId": "xai/grok-4.5",
+    "confidence": 0.3,
+    "complexity": 1,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T10:51:37.614Z",
+    "task": "Debug Node.js memory issue",
+    "category": "code_tasks",
+    "model": "qwen3-coder",
+    "modelId": "ollama-cloud/qwen3-coder:cloud",
+    "confidence": 1,
+    "complexity": 5,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T10:51:37.615Z",
+    "task": "Plan autonomous system improvements",
+    "category": "complex_analysis",
+    "model": "qwen3",
+    "modelId": "ollama-cloud/qwen3:cloud",
+    "confidence": 0.3,
+    "complexity": 1,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T10:52:12.716Z",
+    "task": "Generate daily market report",
+    "category": "build_tasks",
+    "model": "grok-4.3",
+    "modelId": "xai/grok-4.3",
+    "confidence": 0.5,
+    "complexity": 3,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T10:52:12.718Z",
+    "task": "Analyze BTC price trend",
+    "category": "complex_analysis",
+    "model": "grok-4.5",
+    "modelId": "xai/grok-4.5",
+    "confidence": 0.3,
+    "complexity": 1,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T10:52:12.719Z",
+    "task": "Debug Node.js memory issue",
+    "category": "code_tasks",
+    "model": "qwen3-coder",
+    "modelId": "ollama-cloud/qwen3-coder:cloud",
+    "confidence": 1,
+    "complexity": 5,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T10:52:12.721Z",
+    "task": "Plan autonomous system improvements",
+    "category": "complex_analysis",
+    "model": "qwen3",
+    "modelId": "ollama-cloud/qwen3:cloud",
+    "confidence": 0.3,
+    "complexity": 1,
+    "executionMode": "single"
   }
 ]
