@@ -302,6 +302,10 @@ class UnifiedMasterOrchestrator {
       this.state.duration_ms = Date.now() - start;
       saveState(this.state);
 
+      const metricsPath = path.join(WORKSPACE, 'project_claw_core', 'logs', 'unified_master_metrics.jsonl');
+      fs.mkdirSync(path.dirname(metricsPath), { recursive: true });
+      fs.appendFileSync(metricsPath, JSON.stringify({ cycle: this.state.cycles, duration_ms: this.state.duration_ms, timestamp: this.state.last_cycle }) + '\n');
+
       log(`Cycle complete in ${this.state.duration_ms}ms`);
       return { success: true, state: this.state, report };
     } catch(e) {
