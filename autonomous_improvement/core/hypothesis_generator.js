@@ -72,6 +72,48 @@ function generateFromKnowledge(knowledge) {
   return hypotheses;
 }
 
+function generateTemplateHypotheses() {
+  // Rotating pool of safe, concrete hypotheses targeting active modules.
+  const targets = [
+    { file: 'project_claw_core/core/capability_router.js', name: 'capability router' },
+    { file: 'project_claw_core/core/memory_tier.js', name: 'memory tier' },
+    { file: 'project_claw_core/agents/research_router.js', name: 'research router' },
+    { file: 'project_claw_core/core/capability_usage_tracker.js', name: 'capability usage tracker' },
+    { file: 'project_claw_core/core/unified_master_orchestrator.js', name: 'unified master' },
+    { file: 'alpha_fund_v3/core/always_on_daemon.js', name: 'always-on daemon' },
+    { file: 'project_claw_core/core/hierarchical_planner.js', name: 'hierarchical planner' },
+    { file: 'project_claw_core/core/agent_swarm.js', name: 'agent swarm' },
+    { file: 'project_claw_core/core/status_reporter.js', name: 'status reporter' },
+    { file: 'missions/smart_brain/orchestrator.js', name: 'smart brain orchestrator' }
+  ];
+
+  const templates = [
+    { title: (n) => `Add input validation to ${n}`, category: 'reliability', reason: 'Prevent crashes from malformed inputs' },
+    { title: (n) => `Add error logging to ${n}`, category: 'reliability', reason: 'Surface runtime errors for debugging' },
+    { title: (n) => `Persist ${n} metrics`, category: 'workflow', reason: 'Track operational health over time' },
+    { title: (n) => `Add retry wrapper to ${n}`, category: 'reliability', reason: 'Handle transient failures gracefully' },
+    { title: (n) => `Add timeout guard to ${n}`, category: 'reliability', reason: 'Prevent hanging operations' }
+  ];
+
+  const hypotheses = [];
+  const hour = new Date().getHours();
+  for (let i = 0; i < targets.length; i++) {
+    const t = targets[i];
+    const tmpl = templates[(hour + i) % templates.length];
+    hypotheses.push({
+      id: `hyp_dyn_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      title: tmpl.title(t.name),
+      category: tmpl.category,
+      reason: tmpl.reason,
+      target_file: t.file,
+      estimated_effort: 10,
+      estimated_impact: 'low',
+      dynamic: true
+    });
+  }
+  return hypotheses;
+}
+
 function generateStaticHypotheses() {
   return [
     {
@@ -185,7 +227,8 @@ function generate() {
   const all = deduplicate([
     ...generateFromProfile(profile, learning),
     ...generateFromKnowledge(knowledge),
-    ...generateStaticHypotheses()
+    ...generateStaticHypotheses(),
+    ...generateTemplateHypotheses()
   ]);
 
   const ranked = rankWithLearning(all, learning);
@@ -196,7 +239,7 @@ function generate() {
   return ranked;
 }
 
-module.exports = { generate, generateFromProfile, generateFromKnowledge, generateStaticHypotheses, deduplicate };
+module.exports = { generate, generateFromProfile, generateFromKnowledge, generateStaticHypotheses, generateTemplateHypotheses, deduplicate };
 
 if (require.main === module) {
   generate();

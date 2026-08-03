@@ -28,6 +28,7 @@ function createWorktree(branchName) {
 function removeWorktree(worktreePath) {
   try { runGit(['worktree', 'remove', '-f', worktreePath]); } catch(e) {}
   try { fs.rmSync(worktreePath, { recursive: true, force: true }); } catch(e) {}
+  try { runGit(['branch', '-D', path.basename(worktreePath)]); } catch(e) {}
 }
 
 function applyChangeInWorktree(change, worktreePath) {

@@ -269,7 +269,7 @@ function buildLogRotationChange(hypothesis, file, learning) {
     "const MAX_LOG_BYTES = 100 * 1024;\\n\\n" +
     "function rotateLog() {\\n" +
     "  try {\\n" +
-    "    if (fs.existsSync(LOG_FILE) \u0026\u0026 fs.statSync(LOG_FILE).size \u003e MAX_LOG_BYTES) {\\n" +
+    "    if (fs.existsSync(LOG_FILE) && fs.statSync(LOG_FILE).size \u003e MAX_LOG_BYTES) {\\n" +
     "      const archive = `${LOG_FILE}.${Date.now()}.old`;\\n" +
     "      fs.renameSync(LOG_FILE, archive);\\n" +
     "    }\\n" +
@@ -521,6 +521,85 @@ function buildDiskGuardChange(hypothesis, file, learning) {
   return null;
 }
 
+// ==== Generic dynamic builders ============================================
+
+function buildInputValidationChange(hypothesis, file, learning) {
+  const { content } = file;
+  if (content.includes('// Input validation added by improvement engine')) {
+    log('Input validation already applied', 'warn');
+    return { alreadyApplied: true };
+  }
+  // Find first function with a single parameter named query/input/data/msg
+  const match = content.match(/function\s+(\w+)\s*\(\s*(query|input|data|msg|key|value)\s*\)\s*\{/);
+  if (!match) return null;
+  const [fullMatch, fnName, param] = match;
+  const oldText = fullMatch;
+  const guard = param === 'value'
+    ? `  if (${param} === undefined || ${param} === null) {\n    console.warn(\`\${fnName} called with invalid ${param}\`);\n    return undefined;\n  }\n  // Input validation added by improvement engine\n`
+    : `  if (!${param} && ${param} !== 0 && ${param} !== '') {\n    console.warn(\`\${fnName} called with empty ${param}\`);\n    return ${param === 'query' ? "''" : (param === 'value' ? 'undefined' : 'null')};\n  }\n  // Input validation added by improvement engine\n`;
+  const newText = fullMatch + '\n' + guard.replace(/\${fnName}/g, fnName);
+  const change = { filePath: hypothesis.target_file, oldText, newText };
+  if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
+  return null;
+}
+
+function buildErrorLoggingChange(hypothesis, file, learning) {
+  const { content } = file;
+  if (content.includes('// Error logging added by improvement engine')) {
+    log('Error logging already applied', 'warn');
+    return { alreadyApplied: true };
+  }
+  // Find first exported async function and wrap its body
+  const match = content.match(/async function\s+(\w+)\s*\([^)]*\)\s*\{/);
+  if (!match) return null;
+  const fnName = match[1];
+  const startIdx = content.indexOf(match[0]) + match[0].length;
+  // Find matching closing brace at depth 0
+  let depth = 1;
+  let i = startIdx;
+  while (i < content.length && depth > 0) {
+    if (content[i] === '{') depth++;
+    else if (content[i] === '}') depth--;
+    i++;
+  }
+  const body = content.slice(startIdx, i - 1);
+  const oldText = match[0] + body + '}';
+  const newText = match[0] + '\n  // Error logging added by improvement engine\n  try {' + body + '\n  } catch (e) {\n    log(`Error in ' + fnName + ': ${e.message}`);\n    throw e;\n  }\n}';
+  const change = { filePath: hypothesis.target_file, oldText, newText };
+  if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
+  return null;
+}
+
+function buildMetricsPersistenceChange(hypothesis, file, learning) {
+  const { content } = file;
+  if (content.includes('metrics.jsonl')) {
+    log('Metrics persistence already applied', 'warn');
+    return { alreadyApplied: true };
+  }
+  // Find first async function that returns something and append metrics write before return
+  const match = content.match(/async function\s+(\w+)\s*\([^)]*\)\s*\{/);
+  if (!match) return null;
+  const fnName = match[1];
+  // Look for a return statement inside the function
+  const funcStart = content.indexOf(match[0]);
+  let depth = 1;
+  let i = funcStart + match[0].length;
+  while (i < content.length && depth > 0) {
+    if (content[i] === '{') depth++;
+    else if (content[i] === '}') depth--;
+    i++;
+  }
+  const funcBody = content.slice(funcStart, i);
+  const returnMatch = funcBody.match(/\n(\s*)return\s+([\w.]+)\s*;/);
+  if (!returnMatch) return null;
+  const oldText = returnMatch[0];
+  const indent = returnMatch[1];
+  const newText = `${indent}fs.appendFileSync(path.join(__dirname, '..', 'logs', '${fnName}_metrics.jsonl'), JSON.stringify({ ts: new Date().toISOString(), result: ${returnMatch[2]} }) + '\\n');\n${indent}// Metrics persistence added by improvement engine\n${oldText}`;
+  const change = { filePath: hypothesis.target_file, oldText, newText };
+  if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
+  return null;
+}
+
 // ==== Router ===============================================================
 
 function buildChange(hypothesis, learning) {
@@ -583,6 +662,23 @@ function buildChange(hypothesis, learning) {
 
   if (title.includes('prune') && hypothesis.target_file.includes('plans')) {
     return buildPrunePlansChange(hypothesis, file);
+  }
+
+  if (title.includes('input validation')) {
+    return buildInputValidationChange(hypothesis, file, learning);
+  }
+
+  if (title.includes('error logging')) {
+    return buildErrorLoggingChange(hypothesis, file, learning);
+  }
+
+  if (title.includes('metrics') && !hypothesis.target_file.includes('unified_master_orchestrator')) {
+    return buildMetricsPersistenceChange(hypothesis, file, learning);
+  }
+
+  if (title.includes('timeout') && !hypothesis.target_file.includes('capability_functional_tester') && !hypothesis.target_file.includes('research_router')) {
+    // Generic timeout not implemented yet; avoid false positives
+    return null;
   }
 
   if (title.includes('reliability') && hypothesis.target_file.endsWith('.js')) {
