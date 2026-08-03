@@ -1,6 +1,6 @@
 /**
  * Hypothesis Generator
- * Turns profile + knowledge into concrete, ranked, de-duplicated improvement hypotheses.
+ * Turns profile + external knowledge + templates into concrete, ranked, de-duplicated improvement hypotheses.
  */
 
 const fs = require('fs');
@@ -31,41 +31,126 @@ function generateFromProfile(profile, learning) {
 
 function generateFromKnowledge(knowledge) {
   const hypotheses = [];
-  const text = JSON.stringify(knowledge.findings).toLowerCase();
+  const findings = knowledge && knowledge.findings ? knowledge.findings : [];
+  const text = JSON.stringify(findings).toLowerCase();
 
-  if (text.includes('timeout') || text.includes('hang')) {
-    hypotheses.push({
-      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-      title: 'Add timeout guards to long-running capabilities',
+  // Builder-backed mapping: each keyword maps to a safe, existing builder pattern.
+  const ideaBank = [
+    {
+      keywords: ['timeout', 'hang', 'stuck', 'slow call'],
+      title: 'Add timeout guard to research router',
       category: 'reliability',
-      reason: 'Research suggests timeouts prevent stuck browser/API calls',
       target_file: 'project_claw_core/agents/research_router.js',
-      estimated_effort: 10,
-      estimated_impact: 'high'
-    });
-  }
-
-  if (text.includes('memory') || text.includes('leak')) {
-    hypotheses.push({
-      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-      title: 'Rotate oversized logs to prevent disk bloat',
-      category: 'performance',
-      reason: 'Large logs indicate potential memory/disk pressure',
+      reason: 'Research suggests timeouts prevent stuck browser/API calls'
+    },
+    {
+      keywords: ['timeout', 'hang', 'test stall'],
+      title: 'Add async timeout guard to capability functional tester',
+      category: 'reliability',
+      target_file: 'project_claw_core/core/capability_functional_tester.js',
+      reason: 'Research suggests async tests need guardrails'
+    },
+    {
+      keywords: ['memory', 'leak', 'disk', 'bloat', 'log'],
+      title: 'Add disk space guard to always-on daemon log rotation',
+      category: 'reliability',
       target_file: 'alpha_fund_v3/core/always_on_daemon.js',
-      estimated_effort: 10,
-      estimated_impact: 'medium'
-    });
-  }
-
-  if (text.includes('test') || text.includes('verify')) {
-    hypotheses.push({
-      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      reason: 'Research links log bloat to disk/memory pressure'
+    },
+    {
+      keywords: ['memory', 'leak', 'cache', 'unbounded'],
+      title: 'Add hot-tier size cap to memory tier',
+      category: 'performance',
+      target_file: 'project_claw_core/core/memory_tier.js',
+      reason: 'Research warns against unbounded hot caches'
+    },
+    {
+      keywords: ['memory', 'archive', 'cleanup', 'prune'],
+      title: 'Prune cold-tier memory archive older than 90 days',
+      category: 'performance',
+      target_file: 'project_claw_core/core/memory_tier.js',
+      reason: 'Research recommends periodic cold-data cleanup'
+    },
+    {
+      keywords: ['retry', 'transient', 'flaky', 'network error'],
+      title: 'Add retry helper for research sources',
+      category: 'reliability',
+      target_file: 'project_claw_core/agents/research_router.js',
+      reason: 'Research recommends retrying transient failures before fallback'
+    },
+    {
+      keywords: ['fallback', 'degradation', 'graceful'],
+      title: 'Add fallback route when capability router finds no match',
+      category: 'reliability',
+      target_file: 'project_claw_core/core/capability_router.js',
+      reason: 'Research suggests graceful fallbacks for unknown tasks'
+    },
+    {
+      keywords: ['metrics', 'observability', 'monitoring', 'latency'],
+      title: 'Add max latency tracking to capability usage tracker',
+      category: 'performance',
+      target_file: 'project_claw_core/core/capability_usage_tracker.js',
+      reason: 'Research says tail latency matters more than averages'
+    },
+    {
+      keywords: ['metrics', 'history', 'trend', 'benchmark'],
+      title: 'Persist benchmark score history across runs',
+      category: 'workflow',
+      target_file: 'scripts/run_claw_benchmark.js',
+      reason: 'Research emphasizes tracking improvement trends'
+    },
+    {
+      keywords: ['input', 'validation', 'sanitize', 'malformed'],
+      title: 'Add input validation to unified master orchestrator',
+      category: 'reliability',
+      target_file: 'project_claw_core/core/unified_master_orchestrator.js',
+      reason: 'Research recommends validating inputs at orchestrator boundaries'
+    },
+    {
+      keywords: ['error', 'logging', 'debug', 'visibility'],
+      title: 'Add error logging to unified master orchestrator',
+      category: 'reliability',
+      target_file: 'project_claw_core/core/unified_master_orchestrator.js',
+      reason: 'Research recommends better error visibility in orchestrators'
+    },
+    {
+      keywords: ['test', 'verify', 'smoke test', 'functional test'],
       title: 'Add functional smoke tests to capability modules',
       category: 'capability',
-      reason: 'Research emphasizes automated testing for agent reliability',
       target_file: 'safe_capability_verifier.js',
-      estimated_effort: 20,
-      estimated_impact: 'high'
+      reason: 'Research emphasizes automated testing for agent reliability'
+    },
+    {
+      keywords: ['plan', 'goal', 'hierarchy', 'scheduler'],
+      title: 'Normalize undefined goal titles in hierarchical planner',
+      category: 'reliability',
+      target_file: 'project_claw_core/core/hierarchical_planner.js',
+      reason: 'Research recommends defensive task title handling'
+    },
+    {
+      keywords: ['seed', 'index', 'router', 'rank'],
+      title: 'Seed capability router index from usage tracker',
+      category: 'performance',
+      target_file: 'project_claw_core/core/capability_router.js',
+      reason: 'Research suggests using live performance data for routing'
+    }
+  ];
+
+  const seenTitles = new Set();
+  for (const idea of ideaBank) {
+    const matched = idea.keywords.some(k => text.includes(k));
+    if (!matched) continue;
+    if (seenTitles.has(idea.title)) continue;
+    seenTitles.add(idea.title);
+    hypotheses.push({
+      id: `hyp_know_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      title: idea.title,
+      category: idea.category,
+      reason: idea.reason,
+      target_file: idea.target_file,
+      estimated_effort: 10,
+      estimated_impact: 'medium',
+      source: 'knowledge'
     });
   }
 
@@ -74,6 +159,7 @@ function generateFromKnowledge(knowledge) {
 
 function generateTemplateHypotheses() {
   // Rotating pool of safe, concrete hypotheses targeting active modules.
+  // Only templates that have safe, generic builders enabled.
   const targets = [
     { file: 'project_claw_core/core/capability_router.js', name: 'capability router' },
     { file: 'project_claw_core/core/memory_tier.js', name: 'memory tier' },
@@ -90,9 +176,7 @@ function generateTemplateHypotheses() {
   const templates = [
     { title: (n) => `Add input validation to ${n}`, category: 'reliability', reason: 'Prevent crashes from malformed inputs' },
     { title: (n) => `Add error logging to ${n}`, category: 'reliability', reason: 'Surface runtime errors for debugging' },
-    { title: (n) => `Persist ${n} metrics`, category: 'workflow', reason: 'Track operational health over time' },
-    { title: (n) => `Add retry wrapper to ${n}`, category: 'reliability', reason: 'Handle transient failures gracefully' },
-    { title: (n) => `Add timeout guard to ${n}`, category: 'reliability', reason: 'Prevent hanging operations' }
+    { title: (n) => `Persist ${n} metrics`, category: 'workflow', reason: 'Track operational health over time' }
   ];
 
   const hypotheses = [];
@@ -212,69 +296,6 @@ function generateStaticHypotheses() {
       category: 'reliability',
       reason: 'Log rotation can fail if disk is full; guard prevents writes when critical',
       target_file: 'alpha_fund_v3/core/always_on_daemon.js',
-      estimated_effort: 10,
-      estimated_impact: 'low'
-    },
-    {
-      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-      title: 'Add Tavily result cache TTL',
-      category: 'workflow',
-      reason: 'Reduce redundant API calls and cost',
-      target_file: 'project_claw_core/agents/tavily_search.js',
-      estimated_effort: 13,
-      estimated_impact: 'medium'
-    },
-    {
-      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-      title: 'Add experiment impact scoring',
-      category: 'workflow',
-      reason: 'Prioritize high-value improvements',
-      target_file: 'autonomous_improvement/core/experiment_runner.js',
-      estimated_effort: 11,
-      estimated_impact: 'medium'
-    },
-    {
-      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-      title: 'Add unified master stale subsystem heartbeat',
-      category: 'reliability',
-      reason: 'Detect hung subsystems',
-      target_file: 'project_claw_core/core/unified_master_orchestrator.js',
-      estimated_effort: 14,
-      estimated_impact: 'medium'
-    },
-    {
-      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-      title: 'Add memory tier warm-to-cold promotion',
-      category: 'workflow',
-      reason: 'Keep hot tier fast',
-      target_file: 'project_claw_core/core/memory_tier.js',
-      estimated_effort: 15,
-      estimated_impact: 'medium'
-    },
-    {
-      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-      title: 'Add safe JSON.parse wrapper to usage tracker',
-      category: 'reliability',
-      reason: 'JSON.parse can throw and crash the process',
-      target_file: 'project_claw_core/core/capability_usage_tracker.js',
-      estimated_effort: 10,
-      estimated_impact: 'low'
-    },
-    {
-      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-      title: 'Add process error handler to unified master',
-      category: 'reliability',
-      reason: 'Unhandled rejections should be logged instead of crashing',
-      target_file: 'project_claw_core/core/unified_master_orchestrator.js',
-      estimated_effort: 10,
-      estimated_impact: 'low'
-    },
-    {
-      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-      title: 'Add HTTP timeout to Tavily client',
-      category: 'reliability',
-      reason: 'Default timeout prevents hanging requests',
-      target_file: 'project_claw_core/agents/tavily_search.js',
       estimated_effort: 10,
       estimated_impact: 'low'
     }

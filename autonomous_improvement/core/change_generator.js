@@ -925,11 +925,33 @@ function buildChange(hypothesis, learning) {
   }
 
   if (title.includes('process error') || title.includes('unhandled rejection')) {
-    return buildProcessErrorHandlerChange(hypothesis, file, learning);
+    log('Process error handler builder disabled — global handlers belong in entrypoint, not modules', 'warn');
+    return null;
   }
 
   if (title.includes('http timeout') || title.includes('request timeout')) {
-    return buildHttpTimeoutChange(hypothesis, file, learning);
+    log('HTTP timeout builder disabled — options shape varies too much', 'warn');
+    return null;
+  }
+
+  if (title.includes('safe json') || title.includes('json parse')) {
+    log('Safe JSON.parse builder disabled — requires helper injection', 'warn');
+    return null;
+  }
+
+  if (title.includes('retry wrapper')) {
+    log('Retry wrapper builder disabled — needs case-by-case design', 'warn');
+    return null;
+  }
+
+  if (title.includes('tavily cache') || (title.includes('cache ttl') && hypothesis.target_file.includes('tavily'))) {
+    log('Tavily cache builder disabled — function shape not async/await', 'warn');
+    return null;
+  }
+
+  if (title.includes('experiment impact') || title.includes('impact scoring')) {
+    log('Experiment impact builder disabled — needs careful placement', 'warn');
+    return null;
   }
 
   if (title.includes('reliability') && hypothesis.target_file.endsWith('.js')) {
