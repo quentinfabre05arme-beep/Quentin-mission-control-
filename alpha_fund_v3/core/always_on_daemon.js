@@ -99,6 +99,11 @@ function runVerifier() {
   }
 }
 
+if (process.argv.includes('--check-only')) {
+  aliveCheck();
+  process.exit(0);
+}
+
 log('Always-on daemon started');
 
 setInterval(() => {
