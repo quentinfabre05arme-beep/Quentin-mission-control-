@@ -2,10 +2,27 @@ const fs = require('fs');
 const path = require('path');
 const SmartRouterV3 = require('./router.v3');
 
+const PERFORMANCE_FILE = path.join(__dirname, '..', '..', 'project_claw_core', 'data', 'smart_brain_performance.json');
+
 // Load config fresh each time
 function loadConfig() {
     delete require.cache[require.resolve('./config.json')];
     return require('./config.json');
+}
+
+function loadPerformanceLog() {
+    if (fs.existsSync(PERFORMANCE_FILE)) {
+        try {
+            const data = JSON.parse(fs.readFileSync(PERFORMANCE_FILE, 'utf8'));
+            return Array.isArray(data) ? data : [];
+        } catch(e) { return []; }
+    }
+    return [];
+}
+
+function savePerformanceLog(log) {
+    fs.mkdirSync(path.dirname(PERFORMANCE_FILE), { recursive: true });
+    fs.writeFileSync(PERFORMANCE_FILE, JSON.stringify(log.slice(-500), null, 2));
 }
 
 class SmartBrainOrchestrator {
@@ -13,7 +30,7 @@ class SmartBrainOrchestrator {
         this.config = loadConfig();
         this.models = this.config.available_models;
         this.activeTasks = new Map();
-        this.performanceLog = [];
+        this.performanceLog = loadPerformanceLog();
         this.costOptimization = options.costOptimization !== false;
         this.router = new SmartRouterV3('./config.v3.json');
     }
@@ -107,7 +124,7 @@ class SmartBrainOrchestrator {
         console.log(`   → Routing to: ${model.name} (${model.role})`);
         console.log(`   → Model ID: ${model.id}`);
 
-        // Log performance
+        // Log performance and persist
         this.performanceLog.push({
             timestamp: new Date().toISOString(),
             task: task.substring(0, 100),
@@ -118,6 +135,7 @@ class SmartBrainOrchestrator {
             complexity: analysis.complexity,
             executionMode: executionMode
         });
+        savePerformanceLog(this.performanceLog);
 
         return {
             success: true,
@@ -148,6 +166,7 @@ class SmartBrainOrchestrator {
             confidence: 1.0,
             executionMode: 'direct'
         });
+        savePerformanceLog(this.performanceLog);
 
         return {
             success: true,

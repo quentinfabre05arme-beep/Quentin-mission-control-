@@ -16,6 +16,20 @@ const BuildExecutor = require('./build_executor');
 const ShipAndMeasure = require('./ship_and_measure');
 const DailyCEOReport = require('./daily_ceo_report');
 
+const DEAD_LETTER_FILE = path.join(CONFIG.workspace, 'autonomous_business', 'data', 'abos_dead_letter.json');
+
+function loadDeadLetter() {
+  if (fs.existsSync(DEAD_LETTER_FILE)) {
+    try { return JSON.parse(fs.readFileSync(DEAD_LETTER_FILE, 'utf8')); } catch(e) { return []; }
+  }
+  return [];
+}
+
+function saveDeadLetter(queue) {
+  fs.mkdirSync(path.dirname(DEAD_LETTER_FILE), { recursive: true });
+  fs.writeFileSync(DEAD_LETTER_FILE, JSON.stringify(queue.slice(-100), null, 2));
+}
+
 function log(msg) {
   const entry = `[${new Date().toISOString()}] ${msg}\n`;
   fs.mkdirSync(path.dirname(LOG_FILE), { recursive: true });
@@ -44,29 +58,46 @@ class ABOSOrchestrator {
     log(`=== ABOS CYCLE #${this.state.cycles + 1} ===`);
     const start = Date.now();
     const actions = [];
+    const deadLetter = loadDeadLetter();
+
+    const runStep = async (name, fn) => {
+      try {
+        const result = await fn();
+        actions.push({ step: name, success: true, ...result });
+        return result;
+      } catch(e) {
+        log(`${name} failed: ${e.message}`, 'error');
+        const record = { step: name, error: e.message, timestamp: new Date().toISOString(), retries: 0 };
+        const existing = deadLetter.find(d => d.step === name && d.error === e.message);
+        if (existing) existing.retries++;
+        else deadLetter.push(record);
+        saveDeadLetter(deadLetter);
+        actions.push({ step: name, success: false, error: e.message });
+        return null;
+      }
+    };
 
     try {
-      // 1. Scan opportunities
       log('Step 1: Opportunity radar');
-      const radar = await OpportunityRadar.run();
-      actions.push({ step: 'radar', backlog_count: radar.backlog_count, top: radar.top.map(t => t.id) });
+      const radar = await runStep('radar', () => OpportunityRadar.run());
+      if (radar) actions.find(a =>a.step === 'radar').backlog_count = radar.backlog_count;
 
-      // 2. Research top unvalidated
       log('Step 2: Autonomous research');
-      const research = await AutonomousResearcher.researchTop();
-      actions.push({ step: 'research', validated: research.filter(r => r.success && r.opportunity.validated).length });
+      const research = await runStep('research', () => AutonomousResearcher.researchTop());
+      if (research) actions.find(a =>a.step === 'research').validated = research.filter(r => r.success && r.opportunity.validated).length;
 
-      // 3. Build validated
       log('Step 3: Build executor');
-      const builds = await BuildExecutor.buildTop();
-      actions.push({ step: 'build', built: builds.filter(r => r.success).length });
+      const builds = await runStep('build', () => BuildExecutor.buildTop());
+      if (builds) actions.find(a =>a.step === 'build').built = builds.filter(r => r.success).length;
 
-      // 4. Ship + measure
       log('Step 4: Ship and measure');
-      const shipped = await ShipAndMeasure.run();
-      actions.push({ step: 'ship', metrics: shipped.metrics, git: shipped.git.success });
+      const shipped = await runStep('ship', () => ShipAndMeasure.run());
+      if (shipped) {
+        const shipAction = actions.find(a =>a.step === 'ship');
+        shipAction.metrics = shipped.metrics;
+        shipAction.git = shipped.git.success;
+      }
 
-      // 5. Report if target provided
       if (reportTarget) {
         log('Step 5: CEO report');
         const report = DailyCEOReport.formatReport('morning');
@@ -82,7 +113,8 @@ class ABOSOrchestrator {
       this.state.cycles++;
       this.state.last_run = new Date().toISOString();
       this.state.duration_ms = Date.now() - start;
-      this.state.actions = actions;
+      this.state.actions = actions.slice(-20);
+      this.state.dead_letter_count = deadLetter.length;
       saveState(this.state);
 
       log(`Cycle complete in ${this.state.duration_ms}ms`);

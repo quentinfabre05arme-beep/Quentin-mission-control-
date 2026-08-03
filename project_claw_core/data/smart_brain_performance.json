@@ -1,0 +1,72 @@
+[
+  {
+    "timestamp": "2026-08-03T08:47:43.140Z",
+    "task": "Write a Python script to fetch Bitcoin prices",
+    "category": "code_tasks",
+    "model": "qwen3-coder",
+    "modelId": "ollama-cloud/qwen3-coder:cloud",
+    "confidence": 1,
+    "complexity": 7,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T08:47:43.141Z",
+    "task": "What's the weather like today?",
+    "category": "complex_analysis",
+    "model": "grok-4.5",
+    "modelId": "xai/grok-4.5",
+    "confidence": 0.3,
+    "complexity": 1,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T08:47:43.143Z",
+    "task": "Analyze the impact of GLP-1 drugs on healthcare stocks",
+    "category": "complex_analysis",
+    "model": "grok-4.5",
+    "modelId": "xai/grok-4.5",
+    "confidence": 0.5,
+    "complexity": 3,
+    "executionMode": "sequential"
+  },
+  {
+    "timestamp": "2026-08-03T08:47:43.144Z",
+    "task": "Check system health and report status",
+    "category": "complex_analysis",
+    "model": "grok-4.5",
+    "modelId": "xai/grok-4.5",
+    "confidence": 0.3,
+    "complexity": 1,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T08:47:43.145Z",
+    "task": "Debug this JavaScript error: TypeError in line 42",
+    "category": "code_tasks",
+    "model": "qwen3-coder",
+    "modelId": "ollama-cloud/qwen3-coder:cloud",
+    "confidence": 1,
+    "complexity": 10,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T08:47:43.147Z",
+    "task": "Design a microservices architecture for real-time trading",
+    "category": "system_design",
+    "model": "grok-4.5",
+    "modelId": "xai/grok-4.5",
+    "confidence": 1,
+    "complexity": 5,
+    "executionMode": "single"
+  },
+  {
+    "timestamp": "2026-08-03T08:47:43.148Z",
+    "task": "Calculate the Sharpe ratio for a portfolio with 15% returns and 20% volatility",
+    "category": "scientific",
+    "model": "deepseek-v4-pro",
+    "modelId": "ollama-cloud/deepseek-v4-pro",
+    "confidence": 1,
+    "complexity": 5,
+    "executionMode": "single"
+  }
+]

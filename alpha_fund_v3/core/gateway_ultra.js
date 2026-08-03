@@ -15,9 +15,9 @@ const LOCK_FILE = path.join(LOG_DIR, 'ultra_guardian.lock');
 
 // ─── CONFIG ─────────────────────────────────────────────────
 const CONFIG = {
-  check_interval_ms: 5000,
-  max_restarts_per_10min: 3,
-  ram_restart_threshold: 94,
+  check_interval_ms: 60000,
+  max_restarts_per_10min: 2,
+  ram_restart_threshold: 96,
   gateway_min_ram_mb: 300
 };
 
@@ -83,11 +83,12 @@ function fastCheck() {
   try {
     const tasks = execSync('tasklist /FI "MEMUSAGE gt 300000" /FO CSV /NH', { 
       encoding: 'utf8', 
-      timeout: 3000 
+      timeout: 5000 
     });
-    return tasks.includes('node.exe');
+    const openclawRunning = tasks.includes('openclaw') || tasks.includes('node.exe');
+    return openclawRunning;
   } catch(e) {
-    return false;
+    return true;
   }
 }
 

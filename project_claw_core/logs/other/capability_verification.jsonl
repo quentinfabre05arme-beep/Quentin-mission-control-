@@ -1,11 +1,11 @@
-{"capability":"unified_master_orchestrator","success":true,"duration_ms":21,"error":null}
-{"capability":"research_agent","success":true,"duration_ms":11,"error":null}
-{"capability":"self_audit","success":true,"duration_ms":51,"error":null}
-{"capability":"scheduler_agent","success":false,"duration_ms":94,"error":"Command failed: schtasks /run /tn \"undefined\"\nErreur�: Le fichier sp�cifi� est introuvable.\r\r\n"}
-{"capability":"status_reporter","success":true,"duration_ms":25,"error":null}
-{"capability":"predictive_maintenance","success":true,"duration_ms":593,"error":null}
-{"capability":"system_health_monitor","success":true,"duration_ms":584,"error":null}
-{"capability":"self_goal_generator","success":true,"duration_ms":5,"error":null}
-{"capability":"file_hygiene","success":true,"duration_ms":3,"error":null}
-{"capability":"clipboard_ocr_agent","success":true,"duration_ms":304,"error":null}
-{"capability":"research_router","success":true,"duration_ms":6,"error":null}
+{"capability":"unified_master_orchestrator","success":true,"duration_ms":18,"error":null}
+{"capability":"research_agent","success":true,"duration_ms":9,"error":null}
+{"capability":"self_audit","success":true,"duration_ms":44,"error":null}
+{"capability":"scheduler_agent","success":false,"duration_ms":1,"error":"Task name is required"}
+{"capability":"status_reporter","success":true,"duration_ms":21,"error":null}
+{"capability":"predictive_maintenance","success":true,"duration_ms":462,"error":null}
+{"capability":"system_health_monitor","success":true,"duration_ms":426,"error":null}
+{"capability":"self_goal_generator","success":true,"duration_ms":4,"error":null}
+{"capability":"file_hygiene","success":true,"duration_ms":4,"error":null}
+{"capability":"clipboard_ocr_agent","success":true,"duration_ms":251,"error":null}
+{"capability":"research_router","success":true,"duration_ms":5,"error":null}

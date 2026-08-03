@@ -1,15 +1,19 @@
 #!/usr/bin/env node
 /**
- * 🤖 ALWAYS-ON DAEMON
- * Runs continuously, no sleep mode, executes build loop every minute
+ * ALWAYS-ON DAEMON v1.5
+ * Runs continuously, executes build loop every minute, with RAM circuit breaker.
  */
 
 const fs = require('fs');
 const { execSync } = require('child_process');
+const os = require('os');
 
 const LOG_FILE = 'alpha_fund_v3/logs/always_on_daemon.log';
-
 const MAX_LOG_BYTES = 100 * 1024;
+const RAM_BREAK_PCT = 95;
+const RAM_WARN_PCT = 90;
+
+let consecutiveRamHits = 0;
 
 function rotateLog() {
   try {
@@ -21,15 +25,53 @@ function rotateLog() {
 }
 
 function log(msg) {
-  const cleanMsg = msg.replace(/[^\x20-\x7E]/g, '?');
+  const cleanMsg = String(msg).replace(/[^\x20-\x7E]/g, '?');
   const entry = `[${new Date().toISOString()}] ${cleanMsg}\n`;
   fs.mkdirSync('alpha_fund_v3/logs', { recursive: true });
   rotateLog();
   fs.appendFileSync(LOG_FILE, entry);
 }
 
+function getRAM() {
+  try {
+    return Math.round(((os.totalmem() - os.freemem()) / os.totalmem()) * 100);
+  } catch(e) { return 0; }
+}
+
+function cleanupRAM() {
+  try {
+    log(`RAM ${getRAM()}% — running cleanup`);
+    execSync('powershell.exe -Command "Get-Process node | Sort-Object WorkingSet -Descending | Select-Object -Skip 3 | Stop-Process -Force"', {
+      windowsHide: true,
+      timeout: 10000
+    });
+    log(`RAM after cleanup: ${getRAM()}%`);
+  } catch(e) {
+    log(`Cleanup error: ${e.message}`);
+  }
+}
+
+function circuitBreaker() {
+  const ram = getRAM();
+  if (ram >= RAM_BREAK_PCT) {
+    consecutiveRamHits++;
+    log(`RAM CIRCUIT BREAKER HIT: ${ram}% (#${consecutiveRamHits})`);
+    if (consecutiveRamHits >= 2) {
+      log('Critical RAM — performing emergency cleanup');
+      cleanupRAM();
+    }
+    return false;
+  }
+  if (ram >= RAM_WARN_PCT) {
+    log(`RAM WARNING: ${ram}%`);
+  }
+  consecutiveRamHits = 0;
+  return true;
+}
+
 function aliveCheck() {
   try {
+    if (!circuitBreaker()) return false;
     log('ALIVE');
     return true;
   } catch(e) {
@@ -39,6 +81,10 @@ function aliveCheck() {
 }
 
 function runVerifier() {
+  if (!circuitBreaker()) {
+    log('Skipping verifier due to RAM circuit breaker');
+    return;
+  }
   try {
     log('Running safe capability verifier...');
     execSync('node safe_capability_verifier.js', {
@@ -53,17 +99,14 @@ function runVerifier() {
   }
 }
 
-// Run every 60 seconds
 log('Always-on daemon started');
 
 setInterval(() => {
   aliveCheck();
 }, 60000);
 
-// Initial verifier
 runVerifier();
 
-// Run verifier every 10 minutes (not every minute to reduce load)
 setInterval(() => {
   runVerifier();
 }, 600000);

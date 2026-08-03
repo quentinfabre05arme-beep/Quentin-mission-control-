@@ -129,6 +129,9 @@ class SchedulerAgent {
   }
   
   run(name) {
+    if (!name || typeof name !== 'string') {
+      return { success: false, error: 'Task name is required' };
+    }
     try {
       const output = execSync(`schtasks /run /tn "${name}"`, {
         encoding: 'utf8',
