@@ -11,10 +11,17 @@ const REGISTRY_PATH = path.join(__dirname, '..', 'data', 'capability_registry.js
 const INDEX_PATH = path.join(__dirname, '..', 'data', 'capability_router_index.json');
 
 function loadRegistry() {
+  // Error logging added by improvement engine
+  try {
   try {
     return JSON.parse(fs.readFileSync(REGISTRY_PATH, 'utf8'));
   } catch (e) {
     return { capabilities: [] };
+  }
+
+  } catch (e) {
+    console.error(`Error in loadRegistry: ${e.message}`);
+    throw e;
   }
 }
 
