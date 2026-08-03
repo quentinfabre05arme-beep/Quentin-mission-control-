@@ -1,63 +1,50 @@
-{"capability":"file_organizer","method":"organize","success":true,"duration_ms":130,"error":null}
-{"capability":"pdf_reader_agent","method":"extractText","success":true,"duration_ms":80,"error":null}
-{"capability":"network_monitor","method":"getInterfaces","success":true,"duration_ms":48,"error":null}
-{"capability":"trading_agent","method":"status","success":true,"duration_ms":594,"error":null}
-{"capability":"project_manager","method":"listProjects","success":true,"duration_ms":39,"error":null}
-{"capability":"feedback_loop","method":"getOpen","success":true,"duration_ms":48,"error":null}
-{"capability":"polyglot_coder","method":"run","success":true,"duration_ms":135,"error":null}
-{"capability":"market_watcher","method":"getTrend","success":true,"duration_ms":40,"error":null}
-{"capability":"unified_orchestrator","method":"status","success":true,"duration_ms":514,"error":null}
-{"capability":"drive_indexer","method":"indexDrive","success":true,"duration_ms":293,"error":null}
-{"capability":"task_graph","method":"run","success":true,"duration_ms":56,"error":null}
+{"capability":"file_organizer","method":"organize","success":true,"duration_ms":137,"error":null}
+{"capability":"pdf_reader_agent","method":"extractText","success":true,"duration_ms":101,"error":null}
+{"capability":"network_monitor","method":"getInterfaces","success":true,"duration_ms":53,"error":null}
+{"capability":"business_intelligence","method":"generateDashboardReport","success":true,"duration_ms":643,"error":null}
+{"capability":"doc_generator","method":"generateForFile","success":true,"duration_ms":47,"error":null}
+{"capability":"battery_manager","method":"getStatus","success":true,"duration_ms":490,"error":null}
+{"capability":"risk_engine","method":"assessAction","success":true,"duration_ms":47,"error":null}
+{"capability":"trading_agent","method":"status","success":true,"duration_ms":693,"error":null}
+{"capability":"strategy_optimizer","method":"optimize","success":true,"duration_ms":45,"error":null}
+{"capability":"project_manager","method":"listProjects","success":true,"duration_ms":46,"error":null}
+{"capability":"reasoning_engine","method":"reason","success":true,"duration_ms":52,"error":null}
+{"capability":"feedback_loop","method":"getOpen","success":true,"duration_ms":46,"error":null}
+{"capability":"content_factory","method":"generateSocialPost","success":true,"duration_ms":45,"error":null}
+{"capability":"agent_swarm","method":"runTask","success":true,"duration_ms":60,"error":null}
+{"capability":"polyglot_coder","method":"run","success":true,"duration_ms":224,"error":null}
+{"capability":"market_watcher","method":"getTrend","success":true,"duration_ms":105,"error":null}
+{"capability":"temperature_monitor","method":"read","success":true,"duration_ms":969,"error":null}
+{"capability":"searxng_client","method":"run","success":false,"duration_ms":90,"error":"Method run not found"}
+{"capability":"unified_orchestrator","method":"status","success":true,"duration_ms":1144,"error":null}
+{"capability":"clipboard_manager","method":"getText","success":true,"duration_ms":565,"error":null}
+{"capability":"design_agent","method":"createPalette","success":true,"duration_ms":48,"error":null}
+{"capability":"audit_logger","method":"log","success":true,"duration_ms":40,"error":null}
+{"capability":"drive_indexer","method":"indexDrive","success":true,"duration_ms":414,"error":null}
+{"capability":"task_graph","method":"run","success":true,"duration_ms":51,"error":null}
 {"capability":"vector_brain","method":"search","success":true,"duration_ms":59,"error":null}
-{"capability":"capability_invoker","method":"list","success":true,"duration_ms":84,"error":null}
-{"capability":"learning_engine","method":"recommend","success":true,"duration_ms":62,"error":null}
-{"capability":"capability_usage_tracker","method":"run","success":false,"duration_ms":75,"error":"Method run not found"}
-{"capability":"memory_consolidator","method":"consolidateDaily","success":true,"duration_ms":54,"error":null}
-{"capability":"hash_agent","method":"hashString","success":true,"duration_ms":46,"error":null}
-{"capability":"orchestrator","method":"run","success":true,"duration_ms":43,"error":null}
-{"capability":"store_manager","method":"list","success":true,"duration_ms":45,"error":null}
-{"capability":"unified_master_orchestrator","method":"status","success":true,"duration_ms":60,"error":null}
-{"capability":"sync_manager","method":"syncDirectory","success":true,"duration_ms":155,"error":null}
-{"capability":"build_loop_optimizer","method":"recommend","success":true,"duration_ms":36,"error":null}
-{"capability":"credential_rotator","method":"rotate","success":true,"duration_ms":38,"error":null}
-{"capability":"business_intelligence","method":"generateDashboardReport","success":true,"duration_ms":486,"error":null}
-{"capability":"research_agent","method":"research","success":true,"duration_ms":683,"error":null}
-{"capability":"doc_generator","method":"generateForFile","success":true,"duration_ms":44,"error":null}
-{"capability":"self_audit","method":"run","success":true,"duration_ms":93,"error":null}
-{"capability":"status_reporter","method":"generate","success":true,"duration_ms":72,"error":null}
-{"capability":"battery_manager","method":"getStatus","success":true,"duration_ms":493,"error":null}
-{"capability":"risk_engine","method":"assessAction","success":true,"duration_ms":49,"error":null}
-{"capability":"strategy_optimizer","method":"optimize","success":true,"duration_ms":46,"error":null}
-{"capability":"reasoning_engine","method":"reason","success":true,"duration_ms":39,"error":null}
-{"capability":"content_factory","method":"generateSocialPost","success":true,"duration_ms":40,"error":null}
-{"capability":"agent_swarm","method":"runTask","success":true,"duration_ms":41,"error":null}
-{"capability":"predictive_maintenance","method":"run","success":true,"duration_ms":572,"error":null}
-{"capability":"memory_tier","method":"run","success":false,"duration_ms":45,"error":"Method run not found"}
-{"capability":"temperature_monitor","method":"read","success":true,"duration_ms":520,"error":null}
-{"capability":"searxng_client","method":"run","success":false,"duration_ms":42,"error":"Method run not found"}
-{"capability":"system_health_monitor","method":"getHealth","success":true,"duration_ms":549,"error":null}
-{"capability":"self_goal_generator","method":"generateGoals","success":true,"duration_ms":57,"error":null}
-{"capability":"file_hygiene","method":"scanDirectory","success":true,"duration_ms":185,"error":null}
-{"capability":"clipboard_manager","method":"getText","success":true,"duration_ms":361,"error":null}
-{"capability":"design_agent","method":"createPalette","success":true,"duration_ms":42,"error":null}
-{"capability":"audit_logger","method":"log","success":true,"duration_ms":50,"error":null}
-{"capability":"clipboard_ocr_agent","method":"readClipboard","success":true,"duration_ms":359,"error":null}
-{"capability":"research_router","method":"run","success":false,"duration_ms":44,"error":"Method run not found"}
-{"capability":"hierarchical_planner","method":"run","success":false,"duration_ms":52,"error":"Method run not found"}
-{"capability":"unified_master_orchestrator","method":"status","success":true,"duration_ms":73,"error":null}
-{"capability":"usb_manager","method":"list","success":true,"duration_ms":983,"error":null}
-{"capability":"research_agent","method":"research","success":true,"duration_ms":1120,"error":null}
-{"capability":"self_audit","method":"run","success":true,"duration_ms":182,"error":null}
-{"capability":"status_reporter","method":"generate","success":true,"duration_ms":125,"error":null}
-{"capability":"predictive_maintenance","method":"run","success":true,"duration_ms":782,"error":null}
-{"capability":"memory_tier","method":"run","success":false,"duration_ms":50,"error":"Method run not found"}
-{"capability":"system_health_monitor","method":"getHealth","success":true,"duration_ms":507,"error":null}
-{"capability":"self_goal_generator","method":"generateGoals","success":true,"duration_ms":41,"error":null}
-{"capability":"file_hygiene","method":"scanDirectory","success":true,"duration_ms":135,"error":null}
-{"capability":"drive_agent","method":"listFiles","success":true,"duration_ms":3692,"error":null}
-{"capability":"file_indexer","method":"indexDirectory","success":true,"duration_ms":64,"error":null}
-{"capability":"capability_router","method":"run","success":false,"duration_ms":53,"error":"Method run not found"}
-{"capability":"clipboard_ocr_agent","method":"readClipboard","success":true,"duration_ms":507,"error":null}
-{"capability":"research_router","method":"run","success":false,"duration_ms":44,"error":"Method run not found"}
-{"capability":"hierarchical_planner","method":"run","success":false,"duration_ms":39,"error":"Method run not found"}
+{"capability":"capability_invoker","method":"list","success":true,"duration_ms":86,"error":null}
+{"capability":"learning_engine","method":"recommend","success":true,"duration_ms":42,"error":null}
+{"capability":"capability_usage_tracker","method":"run","success":false,"duration_ms":45,"error":"Method run not found"}
+{"capability":"memory_consolidator","method":"consolidateDaily","success":true,"duration_ms":48,"error":null}
+{"capability":"hash_agent","method":"hashString","success":true,"duration_ms":42,"error":null}
+{"capability":"orchestrator","method":"run","success":true,"duration_ms":50,"error":null}
+{"capability":"store_manager","method":"list","success":true,"duration_ms":50,"error":null}
+{"capability":"sync_manager","method":"syncDirectory","success":true,"duration_ms":134,"error":null}
+{"capability":"build_loop_optimizer","method":"recommend","success":true,"duration_ms":50,"error":null}
+{"capability":"credential_rotator","method":"rotate","success":true,"duration_ms":51,"error":null}
+{"capability":"usb_manager","method":"list","success":true,"duration_ms":894,"error":null}
+{"capability":"business_intelligence","method":"generateDashboardReport","success":true,"duration_ms":567,"error":null}
+{"capability":"doc_generator","method":"generateForFile","success":true,"duration_ms":41,"error":null}
+{"capability":"battery_manager","method":"getStatus","success":true,"duration_ms":413,"error":null}
+{"capability":"risk_engine","method":"assessAction","success":true,"duration_ms":38,"error":null}
+{"capability":"strategy_optimizer","method":"optimize","success":true,"duration_ms":38,"error":null}
+{"capability":"reasoning_engine","method":"reason","success":true,"duration_ms":51,"error":null}
+{"capability":"content_factory","method":"generateSocialPost","success":true,"duration_ms":37,"error":null}
+{"capability":"agent_swarm","method":"runTask","success":true,"duration_ms":40,"error":null}
+{"capability":"temperature_monitor","method":"read","success":true,"duration_ms":419,"error":null}
+{"capability":"searxng_client","method":"run","success":false,"duration_ms":38,"error":"Method run not found"}
+{"capability":"clipboard_manager","method":"getText","success":true,"duration_ms":273,"error":null}
+{"capability":"design_agent","method":"createPalette","success":true,"duration_ms":39,"error":null}
+{"capability":"audit_logger","method":"log","success":true,"duration_ms":37,"error":null}
+{"capability":"usb_manager","method":"list","success":true,"duration_ms":1193,"error":null}

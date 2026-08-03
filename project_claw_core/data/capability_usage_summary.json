@@ -1,7 +1,7 @@
 {
   "undefined": {
-    "calls": 1,
-    "successes": 1,
+    "calls": 3,
+    "successes": 3,
     "failures": 0,
     "totalLatencyMs": 0,
     "lastError": null,

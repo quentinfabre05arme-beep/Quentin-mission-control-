@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-08-03T09:27:10.370Z",
+  "timestamp": "2026-08-03T10:27:10.366Z",
   "system": {
     "platform": "win32",
     "release": "10.0.26200",
     "arch": "x64",
     "cpus": 8,
     "total_ram_gb": 8,
-    "free_ram_gb": 1,
-    "uptime_hours": 193,
+    "free_ram_gb": 2,
+    "uptime_hours": 194,
     "user": "quent",
     "home": "C:\\Users\\quent"
   },
   "workspace": {
-    "total_files": 2815,
-    "total_dirs": 205,
-    "total_size": 94349481,
+    "total_files": 2853,
+    "total_dirs": 206,
+    "total_size": 94573091,
     "top_dirs": [
       {
         "name": "project_claw_core",
-        "files": 503,
+        "files": 518,
         "dirs": 9,
         "size_mb": 23,
         "old_files": 0,
         "types": {
           ".js": 170,
-          ".log": 115,
+          ".log": 118,
           "(no ext)": 79,
           ".md": 54,
-          ".json": 45
+          ".json": 51
         }
       },
       {
@@ -129,7 +129,7 @@
       },
       {
         "name": "missions",
-        "files": 42,
+        "files": 44,
         "dirs": 1,
         "size_mb": 2,
         "old_files": 0,
@@ -137,6 +137,7 @@
           ".js": 25,
           ".md": 10,
           ".json": 6,
+          ".ps1": 1,
           ".txt": 1
         }
       },
@@ -156,13 +157,13 @@
       },
       {
         "name": "autonomous_improvement",
-        "files": 50,
+        "files": 56,
         "dirs": 4,
         "size_mb": 0,
         "old_files": 0,
         "types": {
-          ".bak": 32,
-          ".js": 9,
+          ".bak": 37,
+          ".js": 10,
           ".json": 7,
           ".log": 2
         }
@@ -197,26 +198,26 @@
       },
       {
         "name": "skills",
-        "files": 84,
-        "dirs": 48,
+        "files": 91,
+        "dirs": 49,
         "size_mb": 0,
         "old_files": 0,
         "types": {
-          ".md": 44,
-          ".js": 35,
-          ".json": 4,
+          ".md": 46,
+          ".js": 38,
+          ".json": 6,
           ".ps1": 1
         }
       },
       {
         "name": "memory",
-        "files": 50,
+        "files": 51,
         "dirs": 3,
         "size_mb": 0,
         "old_files": 0,
         "types": {
           ".json": 27,
-          ".md": 12,
+          ".md": 13,
           ".jsonl": 6,
           ".log": 4,
           ".1784988057731": 1
