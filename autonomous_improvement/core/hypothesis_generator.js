@@ -145,6 +145,33 @@ function generateStaticHypotheses() {
       target_file: 'project_claw_core/agents/research_router.js',
       estimated_effort: 10,
       estimated_impact: 'medium'
+    },
+    {
+      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      title: 'Persist unified master cycle duration metrics',
+      category: 'workflow',
+      reason: 'Cycle duration is tracked but not persisted for trend analysis',
+      target_file: 'project_claw_core/core/unified_master_orchestrator.js',
+      estimated_effort: 10,
+      estimated_impact: 'medium'
+    },
+    {
+      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      title: 'Add max latency tracking to capability usage tracker',
+      category: 'performance',
+      reason: 'Average latency hides tail latency; max latency identifies slow capabilities',
+      target_file: 'project_claw_core/core/capability_usage_tracker.js',
+      estimated_effort: 10,
+      estimated_impact: 'low'
+    },
+    {
+      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      title: 'Add disk space guard to always-on daemon log rotation',
+      category: 'reliability',
+      reason: 'Log rotation can fail if disk is full; guard prevents writes when critical',
+      target_file: 'alpha_fund_v3/core/always_on_daemon.js',
+      estimated_effort: 10,
+      estimated_impact: 'low'
     }
   ];
 }

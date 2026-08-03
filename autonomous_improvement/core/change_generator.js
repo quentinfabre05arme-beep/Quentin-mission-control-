@@ -401,6 +401,126 @@ async function retry(fn, retries = 2, delayMs = 500) {
   return null;
 }
 
+function buildResearchRetryChange(hypothesis, file, learning) {
+  const { content } = file;
+  if (content.includes('async function retry')) {
+    log('Research retry helper already present', 'warn');
+    return { alreadyApplied: true };
+  }
+  const oldText = `function runWithTimeout(fn, ms) {
+  return Promise.race([
+    fn(),
+    new Promise((_, reject) => setTimeout(() => reject(new Error('Research timeout')), ms))
+  ]);
+}`;
+  const newText = `function runWithTimeout(fn, ms) {
+  return Promise.race([
+    fn(),
+    new Promise((_, reject) => setTimeout(() => reject(new Error('Research timeout')), ms))
+  ]);
+}
+
+async function retry(fn, retries = 2, delayMs = 500) {
+  let last;
+  for (let i = 0; i < retries; i++) {
+    try {
+      return await fn();
+    } catch (e) {
+      last = e;
+      await new Promise(resolve => setTimeout(resolve, delayMs));
+    }
+  }
+  throw last;
+}`;
+  const change = { filePath: hypothesis.target_file, oldText, newText };
+  if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
+  return null;
+}
+
+function buildUnifiedMasterMetricsChange(hypothesis, file, learning) {
+  const { content } = file;
+  if (content.includes('unified_master_metrics.jsonl')) {
+    log('Unified master metrics logging already present', 'warn');
+    return { alreadyApplied: true };
+  }
+  const oldText = `      this.state.cycles++;
+      this.state.last_cycle = new Date().toISOString();
+      this.state.actions = actions.slice(-20);
+      this.state.duration_ms = Date.now() - start;
+      saveState(this.state);
+
+      log(\`Cycle complete in \${this.state.duration_ms}ms\`);`;
+  const newText = `      this.state.cycles++;
+      this.state.last_cycle = new Date().toISOString();
+      this.state.actions = actions.slice(-20);
+      this.state.duration_ms = Date.now() - start;
+      saveState(this.state);
+
+      const metricsPath = path.join(WORKSPACE, 'project_claw_core', 'logs', 'unified_master_metrics.jsonl');
+      fs.mkdirSync(path.dirname(metricsPath), { recursive: true });
+      fs.appendFileSync(metricsPath, JSON.stringify({ cycle: this.state.cycles, duration_ms: this.state.duration_ms, timestamp: this.state.last_cycle }) + '\\n');
+
+      log(\`Cycle complete in \${this.state.duration_ms}ms\`);`;
+  const change = { filePath: hypothesis.target_file, oldText, newText };
+  if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
+  return null;
+}
+
+function buildUsageHistogramChange(hypothesis, file, learning) {
+  const { content } = file;
+  if (content.includes('maxLatencyMs')) {
+    log('Max latency tracking already present', 'warn');
+    return { alreadyApplied: true };
+  }
+  const oldText = `  s.avgLatencyMs = s.totalLatencyMs / s.calls;
+  s.winRate = s.successes / s.calls;
+  summary[capName] = s;
+  saveSummary(summary);`;
+  const newText = `  s.avgLatencyMs = s.totalLatencyMs / s.calls;
+  s.winRate = s.successes / s.calls;
+  s.maxLatencyMs = Math.max(s.maxLatencyMs || 0, entry.latencyMs);
+  summary[capName] = s;
+  saveSummary(summary);`;
+  const change = { filePath: hypothesis.target_file, oldText, newText };
+  if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
+  return null;
+}
+
+function buildDiskGuardChange(hypothesis, file, learning) {
+  const { content } = file;
+  if (content.includes('DISK_BREAK_PCT')) {
+    log('Disk space guard already present', 'warn');
+    return { alreadyApplied: true };
+  }
+  const oldText = `function rotateLog() {
+  try {
+    if (fs.existsSync(LOG_FILE) && fs.statSync(LOG_FILE).size > MAX_LOG_BYTES) {
+      const archive = \`\${LOG_FILE}.\${Date.now()}.old\`;
+      fs.renameSync(LOG_FILE, archive);
+    }
+  } catch(e) {}
+}`;
+  const newText = `function rotateLog() {
+  try {
+    const out = execSync('wmic logicaldisk get size,freespace /format:csv', { windowsHide: true, encoding: 'utf8' });
+    const lines = out.trim().split('\\n').filter(l => l.includes(','));
+    const last = lines[lines.length - 1];
+    const parts = last.split(',');
+    const free = parseInt(parts[parts.length - 2], 10);
+    const size = parseInt(parts[parts.length - 1], 10);
+    if (free && size && ((size - free) / size) * 100 >= 97) return;
+
+    if (fs.existsSync(LOG_FILE) && fs.statSync(LOG_FILE).size > MAX_LOG_BYTES) {
+      const archive = \`\${LOG_FILE}.\${Date.now()}.old\`;
+      fs.renameSync(LOG_FILE, archive);
+    }
+  } catch(e) {}
+}`;
+  const change = { filePath: hypothesis.target_file, oldText, newText };
+  if (validate(change, content) && !isAnchorKnownBad(oldText, learning)) return change;
+  return null;
+}
+
 // ==== Router ===============================================================
 
 function buildChange(hypothesis, learning) {
@@ -443,6 +563,18 @@ function buildChange(hypothesis, learning) {
 
   if (title.includes('retry') && hypothesis.target_file.includes('research_router')) {
     return buildResearchRetryChange(hypothesis, file, learning);
+  }
+
+  if (title.includes('metrics') && hypothesis.target_file.includes('unified_master_orchestrator')) {
+    return buildUnifiedMasterMetricsChange(hypothesis, file, learning);
+  }
+
+  if ((title.includes('histogram') || title.includes('max latency')) && hypothesis.target_file.includes('capability_usage_tracker')) {
+    return buildUsageHistogramChange(hypothesis, file, learning);
+  }
+
+  if (title.includes('disk') && hypothesis.target_file.includes('always_on_daemon')) {
+    return buildDiskGuardChange(hypothesis, file, learning);
   }
 
   if (title.includes('rotate') && hypothesis.target_file.includes('always_on_daemon')) {
