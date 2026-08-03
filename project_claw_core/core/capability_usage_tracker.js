@@ -49,6 +49,7 @@ function track(capName, { success, latencyMs, error, argsSize } = {}) {
   s.totalLatencyMs += entry.latencyMs;
   s.avgLatencyMs = s.totalLatencyMs / s.calls;
   s.winRate = s.successes / s.calls;
+  s.maxLatencyMs = Math.max(s.maxLatencyMs || 0, entry.latencyMs);
   summary[capName] = s;
   saveSummary(summary);
   return entry;
