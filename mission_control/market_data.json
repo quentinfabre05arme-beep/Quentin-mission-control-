@@ -1,81 +1,138 @@
 {
-  "timestamp": "2026-08-03T03:04:53.954Z",
+  "timestamp": "2026-08-03T03:07:03.254Z",
   "assets": {
     "BTC": {
-      "price": 63158.01,
-      "change_24h": -0.64808872,
+      "price": 63166.89,
+      "change_24h": -0.63411987,
+      "change_amount": -403.11,
+      "open": 63570.01,
+      "high": 63596,
+      "low": 63100,
+      "volume": null,
       "source": "twelvedata",
-      "signal": "NEUTRAL"
+      "signal": "NEUTRAL",
+      "fetch_time_ms": 326,
+      "stale": false
     },
     "ETH": {
-      "price": 1865.03,
-      "change_24h": -1.078309,
+      "price": 1865.58,
+      "change_24h": -1.049137,
+      "change_amount": -19.78,
+      "open": 1885.36,
+      "high": 1885.95,
+      "low": 1862.9,
+      "volume": null,
       "source": "twelvedata",
-      "signal": "NEUTRAL"
-    },
-    "NVDA": {
-      "price": 200.75,
-      "change_24h": 2.92761,
-      "source": "twelvedata",
-      "signal": "BULLISH"
-    },
-    "TSLA": {
-      "price": 311.20999,
-      "change_24h": 0.76412022,
-      "source": "twelvedata",
-      "signal": "NEUTRAL"
+      "signal": "NEUTRAL",
+      "fetch_time_ms": 300,
+      "stale": false
     },
     "MSTR": {
       "price": 93.28,
       "change_24h": -4.56313,
+      "change_amount": -4.46,
+      "open": 94.86,
+      "high": 95.2,
+      "low": 89.21,
+      "volume": 20627800,
       "source": "twelvedata",
-      "signal": "BEARISH"
-    },
-    "AAPL": {
-      "price": 308.91,
-      "change_24h": -7.35386,
-      "source": "twelvedata",
-      "signal": "BEARISH"
+      "signal": "MODERATE_BEARISH",
+      "fetch_time_ms": 306,
+      "stale": false
     },
     "HIMS": {
       "price": 27.77,
       "change_24h": 2.6997,
+      "change_amount": 0.72999954,
+      "open": 27.48,
+      "high": 28.94,
+      "low": 26.86,
+      "volume": 12560200,
       "source": "twelvedata",
-      "signal": "BULLISH"
+      "signal": "MODERATE_BULLISH",
+      "fetch_time_ms": 300,
+      "stale": false
+    },
+    "NVDA": {
+      "price": 200.75,
+      "change_24h": 2.92761,
+      "change_amount": 5.71001,
+      "open": 198.44,
+      "high": 202,
+      "low": 194.95,
+      "volume": 139659700,
+      "source": "twelvedata",
+      "signal": "MODERATE_BULLISH",
+      "fetch_time_ms": 298,
+      "stale": false
+    },
+    "TSLA": {
+      "price": 311.20999,
+      "change_24h": 0.76412022,
+      "change_amount": 2.35999,
+      "open": 309.69,
+      "high": 315.5,
+      "low": 301.97,
+      "volume": 36527800,
+      "source": "twelvedata",
+      "signal": "NEUTRAL",
+      "fetch_time_ms": 330,
+      "stale": false
+    },
+    "AAPL": {
+      "price": 308.91,
+      "change_24h": -7.35386,
+      "change_amount": -24.51999,
+      "open": 304.81,
+      "high": 310.69,
+      "low": 300,
+      "volume": 132275300,
+      "source": "twelvedata",
+      "signal": "BEARISH",
+      "fetch_time_ms": 320,
+      "stale": false
     },
     "COIN": {
       "price": 146.25999,
       "change_24h": -10.5881,
+      "change_amount": -17.32001,
+      "open": 153.10001,
+      "high": 153.67999,
+      "low": 139.11,
+      "volume": 20828000,
       "source": "twelvedata",
-      "signal": "BEARISH"
+      "signal": "STRONG_BEARISH",
+      "fetch_time_ms": 308,
+      "stale": false
     },
     "SPY": {
       "price": 747.03,
-      "change_24h": 0,
-      "source": "yahoo",
-      "signal": "NEUTRAL"
+      "change_24h": 0.7199770174892689,
+      "open": 741.6900024414062,
+      "high": 748.895,
+      "low": 737.68,
+      "volume": 59137694,
+      "source": "yahoo (yahoo)",
+      "signal": "NEUTRAL",
+      "fetch_time_ms": 2618,
+      "stale": false
     },
     "QQQ": {
       "price": 687.99,
-      "change_24h": 0,
-      "source": "yahoo",
-      "signal": "NEUTRAL"
-    },
-    "GLD": {
-      "price": 371.54,
-      "change_24h": 0,
-      "source": "yahoo",
-      "signal": "NEUTRAL"
-    },
-    "TLT": {
-      "price": 82.25,
-      "change_24h": 0,
-      "source": "yahoo",
-      "signal": "NEUTRAL"
+      "change_24h": 0.6495519400661646,
+      "open": 683.5499877929688,
+      "high": 695.77,
+      "low": 680.051,
+      "volume": 50540483,
+      "source": "yahoo (yahoo)",
+      "signal": "NEUTRAL",
+      "fetch_time_ms": 2701,
+      "stale": false
     }
   },
   "_meta": {
     "fromCache": false,
+    "fetch_time_ms": 2728,
     "sources": [
       "twelvedata",
       "twelvedata",
@@ -85,10 +142,12 @@
       "twelvedata",
       "twelvedata",
       "twelvedata",
-      "yahoo",
-      "yahoo",
-      "yahoo",
-      "yahoo"
-    ]
+      "yahoo (yahoo)",
+      "yahoo (yahoo)"
+    ],
+    "assets_count": 10,
+    "stale_count": 0,
+    "saved_at": "2026-08-03T03:07:03.255Z",
+    "version": "2.0"
   }
 }
