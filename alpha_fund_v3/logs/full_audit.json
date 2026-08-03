@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-03T00:27:10.139Z",
+  "timestamp": "2026-08-03T01:27:10.372Z",
   "system": {
     "platform": "win32",
     "release": "10.0.26200",
@@ -7,23 +7,23 @@
     "cpus": 8,
     "total_ram_gb": 8,
     "free_ram_gb": 2,
-    "uptime_hours": 184,
+    "uptime_hours": 185,
     "user": "quent",
     "home": "C:\\Users\\quent"
   },
   "workspace": {
-    "total_files": 2652,
+    "total_files": 2665,
     "total_dirs": 209,
-    "total_size": 89451984,
+    "total_size": 89554958,
     "top_dirs": [
       {
         "name": "project_claw_core",
-        "files": 572,
+        "files": 582,
         "dirs": 10,
         "size_mb": 23,
         "old_files": 0,
         "types": {
-          ".js": 241,
+          ".js": 251,
           ".log": 113,
           "(no ext)": 79,
           ".md": 54,
@@ -183,6 +183,19 @@
         }
       },
       {
+        "name": "autonomous_improvement",
+        "files": 30,
+        "dirs": 4,
+        "size_mb": 0,
+        "old_files": 0,
+        "types": {
+          ".bak": 12,
+          ".js": 9,
+          ".json": 7,
+          ".log": 2
+        }
+      },
+      {
         "name": "scripts",
         "files": 31,
         "dirs": 0,
@@ -193,19 +206,6 @@
           ".ps1": 11,
           ".xml": 2,
           ".bat": 1
-        }
-      },
-      {
-        "name": "autonomous_improvement",
-        "files": 28,
-        "dirs": 4,
-        "size_mb": 0,
-        "old_files": 0,
-        "types": {
-          ".bak": 10,
-          ".js": 9,
-          ".json": 7,
-          ".log": 2
         }
       },
       {
