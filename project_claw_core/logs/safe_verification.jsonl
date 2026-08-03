@@ -39,3 +39,5 @@
 {"capability":"design_agent","method":"createPalette","success":true,"duration_ms":54,"error":null}
 {"capability":"audit_logger","method":"log","success":true,"duration_ms":44,"error":null}
 {"capability":"aws_agent","method":"listBuckets","success":true,"duration_ms":81,"error":null}
+{"capability":"docker_agent","method":"listContainers","success":true,"duration_ms":30057,"error":null}
+{"capability":"usb_manager","method":"list","success":true,"duration_ms":781,"error":null}

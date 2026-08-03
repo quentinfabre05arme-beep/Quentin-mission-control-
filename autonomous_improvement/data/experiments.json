@@ -1045,12 +1045,38 @@
         "newText": "{\n  \"plans\": [\n    {\n      \"id\": \"plan_1785695060777\",\n      \"goal\": \"Make all capabilities functional\",\n      \"created_at\": \"2026-08-02T18:24:20.777Z\",\n      \"status\": \"active\",\n      \"steps\": [\n        {\n          \"id\": \"step_0\",\n          \"description\": \"Build remaining core utilities\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_1\",\n          \"description\": \"Test each capability\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_2\",\n          \"description\": \"Run self audit\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        },\n        {\n          \"id\": \"step_3\",\n          \"description\": \"Commit changes\",\n          \"status\": \"pending\",\n          \"dependencies\": []\n        }\n      ]\n    }\n  ]\n}",
         "hypothesisId": "hyp_1785741770421_5xhqm"
       },
-      "outcome": null,
-      "tests": {},
-      "metrics": {},
-      "review": null,
-      "benchmark": null,
-      "status": "running"
+      "outcome": "success",
+      "tests": {
+        "syntax": true,
+        "load": true,
+        "functional": false
+      },
+      "metrics": {
+        "file_size_after": 836
+      },
+      "review": {
+        "ok": true,
+        "depCheck": {
+          "dependents": [],
+          "results": [],
+          "allOk": true
+        },
+        "metrics": {
+          "total": 109,
+          "passed": 63,
+          "failed": 11
+        }
+      },
+      "benchmark": {
+        "runLatencyMs": null,
+        "hasRunMethod": false
+      },
+      "status": "tested-not-committed",
+      "applied": {
+        "filePath": "project_claw_core/data/plans.json",
+        "linesChanged": -98
+      },
+      "commitError": "Command failed: git commit -m \"Auto-improvement: Prune duplicate test plans in planner.js\""
     }
   ]
 }
