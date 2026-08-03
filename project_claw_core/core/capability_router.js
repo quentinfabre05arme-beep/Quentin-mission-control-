@@ -85,6 +85,11 @@ function route(task) {
     }
   }
 
+  if (!best) {
+    const first = (registry.capabilities || [])[0];
+    best = first || null;
+  }
+
   return {
     task,
     capability: best ? best.name : null,
