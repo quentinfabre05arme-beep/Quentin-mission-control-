@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:29:28.803Z",
+  "generated_at": "2026-08-03T10:34:47.213Z",
   "count": 88,
   "by_category": {
     "core": [
@@ -157,8 +157,8 @@
       "category": "core",
       "path": "C:\\Users\\quent\\.openclaw\\workspace\\project_claw_core\\core\\capability_functional_tester.js",
       "class": null,
-      "lines": 91,
-      "functions": 6,
+      "lines": 113,
+      "functions": 7,
       "has_tests": true
     },
     {

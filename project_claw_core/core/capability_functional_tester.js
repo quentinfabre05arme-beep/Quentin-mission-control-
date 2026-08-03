@@ -1,7 +1,7 @@
 /**
- * CAPABILITY FUNCTIONAL TESTER v1.0
+ * CAPABILITY FUNCTIONAL TESTER v1.1
  * Runs a JSON suite of functional tests against registered capabilities.
- * Each test calls a method with arguments and checks result.success.
+ * Supports async methods and expected failure/success outcomes.
  */
 
 const fs = require('fs');
@@ -28,7 +28,14 @@ function findCap(registry, name) {
   return (registry.capabilities || []).find(c => c.name === name);
 }
 
-function runTest(name, spec) {
+function normalizeResult(raw) {
+  if (raw && typeof raw.then === 'function') {
+    return { success: false, error: 'async result not awaited (use async:true)' };
+  }
+  return raw || {};
+}
+
+async function runTest(name, spec) {
   const registry = loadRegistry();
   const cap = findCap(registry, name);
   if (!cap) return { success: false, error: 'not in registry' };
@@ -38,33 +45,44 @@ function runTest(name, spec) {
     const clsName = Object.keys(mod).find(k => typeof mod[k] === 'function' && /^[A-Z]/.test(k));
     const staticName = Object.keys(mod).find(k => typeof mod[k] === 'function' && !/^[A-Z]/.test(k));
 
-    let result;
+    let raw;
     if (clsName) {
       const instance = new mod[clsName]();
-      result = instance[spec.method](...spec.args);
+      raw = instance[spec.method](...spec.args);
     } else if (staticName) {
-      result = mod[staticName](...spec.args);
+      raw = mod[staticName](...spec.args);
     } else {
       return { success: false, error: 'no callable export' };
     }
 
-    if (result && typeof result.then === 'function') {
-      result = { success: false, error: 'async result not awaited in sync tester' };
+    let result;
+    if (spec.async && raw && typeof raw.then === 'function') {
+      result = await raw;
+    } else {
+      result = normalizeResult(raw);
     }
 
-    const success = result && result.success !== false;
-    return { success, result: result ? (result.success !== false ? 'ok' : result.error) : null };
+    const returnedSuccess = result.success !== false;
+    const expect = spec.expect || 'success';
+    const passed = expect === 'success' ? returnedSuccess : !returnedSuccess;
+
+    return {
+      success: passed,
+      returned: returnedSuccess,
+      expected: expect,
+      error: passed ? null : (result.error || `expected ${expect}, got ${returnedSuccess}`)
+    };
   } catch (e) {
-    return { success: false, error: e.message };
+    return { success: spec.expect === 'error', error: e.message, expected: spec.expect || 'success' };
   }
 }
 
-function runAll() {
+async function runAll() {
   const suite = loadSuite();
   const results = [];
   for (const [name, spec] of Object.entries(suite)) {
     const start = Date.now();
-    const r = runTest(name, spec);
+    const r = await runTest(name, spec);
     results.push({ name, ...r, duration_ms: Date.now() - start });
   }
   const passed = results.filter(r => r.success).length;
@@ -82,9 +100,13 @@ function runAll() {
 module.exports = { runTest, runAll };
 
 if (require.main === module) {
-  const report = runAll();
-  console.log(`Functional tests: ${report.passed}/${report.total} passed`);
-  for (const r of report.results) {
-    console.log(`  ${r.success ? '✅' : '❌'} ${r.name}${r.error ? ' — ' + r.error : ''}`);
-  }
+  runAll().then(report => {
+    console.log(`Functional tests: ${report.passed}/${report.total} passed`);
+    for (const r of report.results) {
+      console.log(`  ${r.success ? '✅' : '❌'} ${r.name}${r.error ? ' — ' + r.error : ''}`);
+    }
+  }).catch(e => {
+    console.error('Functional tester error:', e.message);
+    process.exit(1);
+  });
 }

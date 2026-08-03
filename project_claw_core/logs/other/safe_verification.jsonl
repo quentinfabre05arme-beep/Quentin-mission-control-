@@ -1,64 +1,25 @@
-{"capability":"file_organizer","method":"organize","success":true,"duration_ms":209,"error":null}
-{"capability":"pdf_reader_agent","method":"extractText","success":true,"duration_ms":87,"error":null}
-{"capability":"network_monitor","method":"getInterfaces","success":true,"duration_ms":59,"error":null}
-{"capability":"trading_agent","method":"status","success":true,"duration_ms":794,"error":null}
-{"capability":"project_manager","method":"listProjects","success":true,"duration_ms":40,"error":null}
-{"capability":"feedback_loop","method":"getOpen","success":true,"duration_ms":45,"error":null}
-{"capability":"polyglot_coder","method":"run","success":true,"duration_ms":146,"error":null}
-{"capability":"market_watcher","method":"getTrend","success":true,"duration_ms":44,"error":null}
-{"capability":"unified_orchestrator","method":"status","success":true,"duration_ms":507,"error":null}
-{"capability":"drive_indexer","method":"indexDrive","success":true,"duration_ms":1377,"error":null}
-{"capability":"task_graph","method":"run","success":true,"duration_ms":41,"error":null}
-{"capability":"vector_brain","method":"search","success":true,"duration_ms":42,"error":null}
-{"capability":"capability_invoker","method":"list","success":true,"duration_ms":75,"error":null}
-{"capability":"learning_engine","method":"recommend","success":true,"duration_ms":39,"error":null}
-{"capability":"capability_usage_tracker","method":"run","success":false,"duration_ms":41,"error":"Method run not found"}
-{"capability":"memory_consolidator","method":"consolidateDaily","success":true,"duration_ms":44,"error":null}
-{"capability":"hash_agent","method":"hashString","success":true,"duration_ms":39,"error":null}
-{"capability":"orchestrator","method":"run","success":true,"duration_ms":44,"error":null}
-{"capability":"store_manager","method":"list","success":true,"duration_ms":49,"error":null}
-{"capability":"sync_manager","method":"syncDirectory","success":true,"duration_ms":130,"error":null}
-{"capability":"build_loop_optimizer","method":"recommend","success":true,"duration_ms":48,"error":null}
-{"capability":"credential_rotator","method":"rotate","success":true,"duration_ms":53,"error":null}
-{"capability":"business_intelligence","method":"generateDashboardReport","success":true,"duration_ms":609,"error":null}
-{"capability":"doc_generator","method":"generateForFile","success":true,"duration_ms":45,"error":null}
-{"capability":"battery_manager","method":"getStatus","success":true,"duration_ms":447,"error":null}
-{"capability":"risk_engine","method":"assessAction","success":true,"duration_ms":47,"error":null}
-{"capability":"strategy_optimizer","method":"optimize","success":true,"duration_ms":40,"error":null}
-{"capability":"reasoning_engine","method":"reason","success":true,"duration_ms":39,"error":null}
-{"capability":"content_factory","method":"generateSocialPost","success":true,"duration_ms":39,"error":null}
-{"capability":"agent_swarm","method":"runTask","success":true,"duration_ms":42,"error":null}
-{"capability":"temperature_monitor","method":"read","success":true,"duration_ms":449,"error":null}
-{"capability":"searxng_client","method":"run","success":false,"duration_ms":44,"error":"Method run not found"}
-{"capability":"clipboard_manager","method":"getText","success":true,"duration_ms":314,"error":null}
-{"capability":"design_agent","method":"createPalette","success":true,"duration_ms":45,"error":null}
-{"capability":"audit_logger","method":"log","success":true,"duration_ms":46,"error":null}
-{"capability":"usb_manager","method":"list","success":true,"duration_ms":1577,"error":null}
-{"capability":"unified_master_orchestrator","method":"status","success":true,"duration_ms":59,"error":null}
-{"capability":"research_agent","method":"research","success":true,"duration_ms":728,"error":null}
-{"capability":"self_audit","method":"run","success":true,"duration_ms":95,"error":null}
-{"capability":"status_reporter","method":"generate","success":true,"duration_ms":68,"error":null}
-{"capability":"predictive_maintenance","method":"run","success":true,"duration_ms":594,"error":null}
-{"capability":"memory_tier","method":"run","success":false,"duration_ms":92,"error":"Method run not found"}
-{"capability":"system_health_monitor","method":"getHealth","success":true,"duration_ms":961,"error":null}
-{"capability":"self_goal_generator","method":"generateGoals","success":true,"duration_ms":93,"error":null}
-{"capability":"file_hygiene","method":"scanDirectory","success":true,"duration_ms":356,"error":null}
-{"capability":"clipboard_ocr_agent","method":"readClipboard","success":true,"duration_ms":477,"error":null}
-{"capability":"research_router","method":"run","success":false,"duration_ms":55,"error":"Method run not found"}
-{"capability":"hierarchical_planner","method":"run","success":false,"duration_ms":64,"error":"Method run not found"}
-{"capability":"drive_agent","method":"listFiles","success":true,"duration_ms":4043,"error":null}
-{"capability":"file_indexer","method":"indexDirectory","success":true,"duration_ms":94,"error":null}
-{"capability":"capability_router","method":"run","success":false,"duration_ms":90,"error":"Method run not found"}
-{"capability":"web_monitor","method":"checkAll","success":true,"duration_ms":1068,"error":null}
-{"capability":"anomaly_detector","method":"detectThreshold","success":false,"duration_ms":107,"error":"data.filter is not a function"}
-{"capability":"health_dashboard","method":"generate","success":true,"duration_ms":583,"error":null}
-{"capability":"verifier","method":"run","success":false,"duration_ms":55,"error":"The \"path\" argument must be of type string. Received undefined"}
-{"capability":"code_agent","method":"analyzeProject","success":true,"duration_ms":78,"error":null}
-{"capability":"long_term_memory","method":"get","success":true,"duration_ms":55,"error":null}
-{"capability":"planner","method":"createPlan","success":true,"duration_ms":56,"error":null}
-{"capability":"capability_functional_tester","method":"run","success":false,"duration_ms":52,"error":"Method run not found"}
-{"capability":"git_agent","method":"status","success":true,"duration_ms":229,"error":null}
-{"capability":"sqlite_brain","method":"get","success":true,"duration_ms":51,"error":null}
-{"capability":"service_manager","method":"run","success":true,"duration_ms":987,"error":null}
-{"capability":"test_runner","method":"runCommand","success":true,"duration_ms":293,"error":null}
-{"capability":"capability_registry","method":"build","success":true,"duration_ms":190,"error":null}
+{"capability":"file_organizer","method":"organize","success":true,"duration_ms":130,"error":null}
+{"capability":"pdf_reader_agent","method":"extractText","success":true,"duration_ms":74,"error":null}
+{"capability":"network_monitor","method":"getInterfaces","success":true,"duration_ms":42,"error":null}
+{"capability":"web_monitor","method":"checkAll","success":true,"duration_ms":949,"error":null}
+{"capability":"anomaly_detector","method":"detectThreshold","success":false,"duration_ms":47,"error":"data.filter is not a function"}
+{"capability":"trading_agent","method":"status","success":true,"duration_ms":667,"error":null}
+{"capability":"project_manager","method":"listProjects","success":true,"duration_ms":45,"error":null}
+{"capability":"health_dashboard","method":"generate","success":true,"duration_ms":537,"error":null}
+{"capability":"feedback_loop","method":"getOpen","success":true,"duration_ms":43,"error":null}
+{"capability":"verifier","method":"run","success":false,"duration_ms":44,"error":"The \"path\" argument must be of type string. Received undefined"}
+{"capability":"code_agent","method":"analyzeProject","success":true,"duration_ms":72,"error":null}
+{"capability":"long_term_memory","method":"get","success":true,"duration_ms":45,"error":null}
+{"capability":"polyglot_coder","method":"run","success":true,"duration_ms":152,"error":null}
+{"capability":"planner","method":"createPlan","success":true,"duration_ms":47,"error":null}
+{"capability":"market_watcher","method":"getTrend","success":true,"duration_ms":46,"error":null}
+{"capability":"git_agent","method":"status","success":true,"duration_ms":214,"error":null}
+{"capability":"sqlite_brain","method":"get","success":true,"duration_ms":49,"error":null}
+{"capability":"unified_orchestrator","method":"status","success":true,"duration_ms":601,"error":null}
+{"capability":"service_manager","method":"run","success":true,"duration_ms":572,"error":null}
+{"capability":"drive_indexer","method":"indexDrive","success":true,"duration_ms":318,"error":null}
+{"capability":"task_graph","method":"run","success":true,"duration_ms":56,"error":null}
+{"capability":"test_runner","method":"runCommand","success":true,"duration_ms":162,"error":null}
+{"capability":"vector_brain","method":"search","success":true,"duration_ms":58,"error":null}
+{"capability":"capability_registry","method":"build","success":true,"duration_ms":98,"error":null}
+{"capability":"capability_invoker","method":"list","success":true,"duration_ms":111,"error":null}

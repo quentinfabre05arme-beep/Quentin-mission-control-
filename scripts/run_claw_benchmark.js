@@ -1,5 +1,5 @@
 /**
- * CLAW BENCHMARK v1.0
+ * CLAW BENCHMARK v1.1
  * Representative tasks to evaluate agent capability before/after changes.
  */
 
@@ -7,6 +7,16 @@ const fs = require('fs');
 const path = require('path');
 
 const BENCHMARK_PATH = path.join(__dirname, '..', 'project_claw_core', 'data', 'claw_benchmark_results.json');
+
+function statusReporterCheck() {
+  const srPath = path.join(__dirname, '..', 'project_claw_core', 'core', 'status_reporter.js');
+  if (!fs.existsSync(srPath)) return false;
+  const sr = require(srPath);
+  const reporter = sr.StatusReporter ? new sr.StatusReporter() : null;
+  if (!reporter) return false;
+  const r = reporter.generate ? reporter.generate() : (reporter.run ? reporter.run() : null);
+  return r && (r.success !== false);
+}
 
 const TASKS = [
   { id: 'research', name: 'Web research and synthesis', check: () => fs.existsSync('research/Self_Improving_AI_Agent_Deep_Research_2026.md') },
@@ -25,11 +35,7 @@ const TASKS = [
     const s = JSON.parse(fs.readFileSync(summaryPath, 'utf8'));
     return s.passed === s.total;
   }},
-  { id: 'status', name: 'Status reporter runs', check: () => {
-    const sr = require('../project_claw_core/core/status_reporter.js');
-    const r = sr.status ? sr.status() : (sr.getStatus ? sr.getStatus() : null);
-    return r && (r.success !== false);
-  }},
+  { id: 'status', name: 'Status reporter runs', check: statusReporterCheck },
   { id: 'git', name: 'Git status readable', check: () => {
     try {
       require('child_process').execSync('git status --short', { cwd: path.join(__dirname, '..'), windowsHide: true });

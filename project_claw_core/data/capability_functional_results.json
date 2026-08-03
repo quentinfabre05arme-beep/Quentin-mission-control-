@@ -1,181 +1,240 @@
 {
-  "timestamp": "2026-08-03T10:29:40.594Z",
+  "timestamp": "2026-08-03T10:42:30.714Z",
   "total": 29,
-  "passed": 18,
-  "failed": 11,
+  "passed": 29,
+  "failed": 0,
   "results": [
     {
       "name": "file_indexer",
-      "success": false,
-      "error": "instance[spec.method] is not a function",
-      "duration_ms": 2
+      "success": true,
+      "returned": true,
+      "expected": "success",
+      "error": null,
+      "duration_ms": 5
     },
     {
       "name": "registry_manager",
       "success": true,
-      "result": "ok",
-      "duration_ms": 70
+      "returned": true,
+      "expected": "success",
+      "error": null,
+      "duration_ms": 73
     },
     {
       "name": "web_monitor",
-      "success": false,
-      "result": "async result not awaited in sync tester",
-      "duration_ms": 29
+      "success": true,
+      "returned": true,
+      "expected": "success",
+      "error": null,
+      "duration_ms": 993
     },
     {
       "name": "anomaly_detector",
       "success": true,
-      "result": "ok",
-      "duration_ms": 3
+      "returned": true,
+      "expected": "success",
+      "error": null,
+      "duration_ms": 4
     },
     {
       "name": "hash_agent",
       "success": true,
-      "result": "ok",
-      "duration_ms": 2
+      "returned": true,
+      "expected": "success",
+      "error": null,
+      "duration_ms": 1
     },
     {
       "name": "store_manager",
       "success": true,
-      "result": "ok",
-      "duration_ms": 3
+      "returned": true,
+      "expected": "success",
+      "error": null,
+      "duration_ms": 4
     },
     {
       "name": "sync_manager",
-      "success": false,
-      "error": "ENOENT: no such file or directory, scandir 'C:\\Users\\quent\\.openclaw\\workspace\\README.md'",
+      "success": true,
+      "returned": true,
+      "expected": "success",
+      "error": null,
       "duration_ms": 3
     },
     {
       "name": "compressor_agent",
-      "success": false,
-      "result": "Command failed: powershell -c \"Compress-Archive -Path \"C:\\Users\\quent\\.openclaw\\workspace\\README.md\" -DestinationPath \"C:\\Users\\quent\\.openclaw\\workspace\\README.zip\" -Force\"\nCompress-Archive : Le chemin d'acc�s C:\\Users\\quent\\.openclaw\\workspace\\README.md n'existe pas ou n'est pas un chemin \r\nd'acc�s au syst�me de fichiers valide.\r\nAu caract�re Ligne:1 : 1\r\n+ Compress-Archive -Path C:\\Users\\quent\\.openclaw\\workspace\\README.md - ...\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : InvalidArgument : (C:\\Users\\quent\\...space\\README.md:String) [Compress-Archive], Invalid \r\n   OperationException\r\n    + FullyQualifiedErrorId : ArchiveCmdletPathNotFound,Compress-Archive\r\n \r\n",
-      "duration_ms": 873
+      "success": true,
+      "returned": true,
+      "expected": "success",
+      "error": null,
+      "duration_ms": 1045
     },
     {
       "name": "credential_rotator",
       "success": true,
-      "result": "ok",
-      "duration_ms": 2
+      "returned": true,
+      "expected": "success",
+      "error": null,
+      "duration_ms": 3
     },
     {
       "name": "click_by_text",
-      "success": false,
-      "duration_ms": 206
+      "success": true,
+      "returned": false,
+      "expected": "failure",
+      "error": null,
+      "duration_ms": 205
     },
     {
       "name": "risk_engine",
       "success": true,
-      "result": "ok",
+      "returned": true,
+      "expected": "success",
+      "error": null,
       "duration_ms": 2
     },
     {
       "name": "strategy_optimizer",
       "success": true,
-      "result": "ok",
-      "duration_ms": 2
+      "returned": true,
+      "expected": "success",
+      "error": null,
+      "duration_ms": 3
     },
     {
       "name": "file_archiver",
-      "success": false,
-      "result": "Command failed: powershell -c \"Compress-Archive -Path 'README.md' -DestinationPath 'README.zip' -Force\"\nCompress-Archive : Le chemin d'acc�s README.md n'existe pas ou n'est pas un chemin d'acc�s au syst�me de fichiers \r\nvalide.\r\nAu caract�re Ligne:1 : 1\r\n+ Compress-Archive -Path 'README.md' -DestinationPath 'README.zip' -For ...\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : InvalidArgument : (README.md:String) [Compress-Archive], InvalidOperationException\r\n    + FullyQualifiedErrorId : ArchiveCmdletPathNotFound,Compress-Archive\r\n \r\n",
-      "duration_ms": 551
+      "success": true,
+      "returned": true,
+      "expected": "success",
+      "error": null,
+      "duration_ms": 635
     },
     {
       "name": "reasoning_engine",
       "success": true,
-      "result": "ok",
-      "duration_ms": 2
+      "returned": true,
+      "expected": "success",
+      "error": null,
+      "duration_ms": 3
     },
     {
       "name": "content_factory",
       "success": true,
-      "result": "ok",
+      "returned": true,
+      "expected": "success",
+      "error": null,
       "duration_ms": 2
     },
     {
       "name": "agent_swarm",
-      "success": false,
-      "result": "async result not awaited in sync tester",
+      "success": true,
+      "returned": true,
+      "expected": "success",
+      "error": null,
       "duration_ms": 2
     },
     {
       "name": "process_killer",
-      "success": false,
-      "result": "Command failed: taskkill /PID 99999 /F\nErreur�: le processus \"99999\" est introuvable.\r\n",
-      "duration_ms": 172
+      "success": true,
+      "returned": false,
+      "expected": "failure",
+      "error": null,
+      "duration_ms": 114
     },
     {
       "name": "test_runner",
       "success": true,
-      "result": "ok",
-      "duration_ms": 355
+      "returned": true,
+      "expected": "success",
+      "error": null,
+      "duration_ms": 383
     },
     {
       "name": "code_agent",
-      "success": false,
-      "error": "instance[spec.method] is not a function",
-      "duration_ms": 2
+      "success": true,
+      "returned": true,
+      "expected": "success",
+      "error": null,
+      "duration_ms": 102
     },
     {
       "name": "deploy_agent",
-      "success": false,
-      "result": "ENOENT: no such file or directory, stat 'C:\\Users\\quent\\.openclaw\\workspace\\README.md'",
-      "duration_ms": 3
+      "success": true,
+      "returned": true,
+      "expected": "success",
+      "error": null,
+      "duration_ms": 5
     },
     {
       "name": "long_term_memory",
       "success": true,
-      "result": "ok",
-      "duration_ms": 4
+      "returned": true,
+      "expected": "success",
+      "error": null,
+      "duration_ms": 3
     },
     {
       "name": "memory_consolidator",
       "success": true,
-      "result": "ok",
-      "duration_ms": 4
+      "returned": true,
+      "expected": "success",
+      "error": null,
+      "duration_ms": 3
     },
     {
       "name": "network_monitor",
       "success": true,
-      "result": "ok",
-      "duration_ms": 88
+      "returned": true,
+      "expected": "success",
+      "error": null,
+      "duration_ms": 69
     },
     {
       "name": "polyglot_coder",
       "success": true,
-      "result": "ok",
-      "duration_ms": 109
+      "returned": true,
+      "expected": "success",
+      "error": null,
+      "duration_ms": 100
     },
     {
       "name": "form_filler",
       "success": true,
-      "result": "ok",
-      "duration_ms": 181
+      "returned": true,
+      "expected": "success",
+      "error": null,
+      "duration_ms": 134
     },
     {
       "name": "speech_agent",
-      "success": false,
-      "error": "instance[spec.method] is not a function",
-      "duration_ms": 2
+      "success": true,
+      "returned": true,
+      "expected": "success",
+      "error": null,
+      "duration_ms": 211
     },
     {
       "name": "notify_engine",
       "success": true,
-      "result": "ok",
-      "duration_ms": 206
+      "returned": true,
+      "expected": "success",
+      "error": null,
+      "duration_ms": 210
     },
     {
       "name": "verifier",
       "success": true,
-      "result": "ok",
-      "duration_ms": 101
+      "returned": true,
+      "expected": "success",
+      "error": null,
+      "duration_ms": 4
     },
     {
       "name": "vector_brain",
       "success": true,
-      "result": "ok",
-      "duration_ms": 3
+      "returned": true,
+      "expected": "success",
+      "error": null,
+      "duration_ms": 4
     }
   ]
 }
