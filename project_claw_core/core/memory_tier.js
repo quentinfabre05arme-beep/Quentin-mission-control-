@@ -124,6 +124,24 @@ function forgetOld() {
       removed.push(f.name);
     }
   }
+  return removed.concat(pruneOldArchive());
+}
+
+function pruneOldArchive() {
+  const archiveDir = path.join(MEMORY_DIR, 'archive');
+  if (!fs.existsSync(archiveDir)) return [];
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - 90);
+  const removed = [];
+  for (const f of fs.readdirSync(archiveDir)) {
+    const p = path.join(archiveDir, f);
+    try {
+      if (fs.statSync(p).mtime < cutoff) {
+        fs.unlinkSync(p);
+        removed.push(f);
+      }
+    } catch (e) {}
+  }
   return removed;
 }
 
