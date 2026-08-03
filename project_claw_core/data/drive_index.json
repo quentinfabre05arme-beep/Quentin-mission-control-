@@ -23,7 +23,7 @@
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\agent\\openclaw-agent.sqlite-wal",
       "name": "openclaw-agent.sqlite-wal",
       "size": 164832,
-      "modified": "2026-08-03T07:23:02.482Z"
+      "modified": "2026-08-03T07:32:08.370Z"
     },
     {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\.openclaw-trajectory-.10076.36a27666-00e8-4c1f-961f-2d0ecf11ff7d.tmp",
@@ -10654,26 +10654,20 @@
     {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\71ca780b-841e-486d-9774-703cd030f98e.jsonl",
       "name": "71ca780b-841e-486d-9774-703cd030f98e.jsonl",
-      "size": 6369935,
-      "modified": "2026-08-03T07:23:46.804Z"
-    },
-    {
-      "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\71ca780b-841e-486d-9774-703cd030f98e.jsonl.lock",
-      "name": "71ca780b-841e-486d-9774-703cd030f98e.jsonl.lock",
-      "size": 84,
-      "modified": "2026-08-03T07:23:46.858Z"
+      "size": 6548004,
+      "modified": "2026-08-03T07:32:09.324Z"
     },
     {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\71ca780b-841e-486d-9774-703cd030f98e.trajectory-path.json",
       "name": "71ca780b-841e-486d-9774-703cd030f98e.trajectory-path.json",
       "size": 255,
-      "modified": "2026-08-03T07:23:10.736Z"
+      "modified": "2026-08-03T07:29:49.373Z"
     },
     {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\71ca780b-841e-486d-9774-703cd030f98e.trajectory.jsonl",
       "name": "71ca780b-841e-486d-9774-703cd030f98e.trajectory.jsonl",
-      "size": 4386505,
-      "modified": "2026-08-03T07:23:02.427Z"
+      "size": 5139247,
+      "modified": "2026-08-03T07:32:06.344Z"
     },
     {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\71ed2491-0a8b-4897-acaa-b1f5389aadb0.trajectory-path.json",
@@ -15414,6 +15408,30 @@
       "name": "a4ce5f03-93f6-4e5d-a8d8-2220930c3742.trajectory-path.json",
       "size": 255,
       "modified": "2026-07-17T20:53:55.095Z"
+    },
+    {
+      "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\a4d09a7f-6ae9-4310-b63c-7d9048820a59.jsonl",
+      "name": "a4d09a7f-6ae9-4310-b63c-7d9048820a59.jsonl",
+      "size": 1705,
+      "modified": "2026-08-03T07:32:16.578Z"
+    },
+    {
+      "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\a4d09a7f-6ae9-4310-b63c-7d9048820a59.jsonl.lock",
+      "name": "a4d09a7f-6ae9-4310-b63c-7d9048820a59.jsonl.lock",
+      "size": 84,
+      "modified": "2026-08-03T07:32:16.657Z"
+    },
+    {
+      "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\a4d09a7f-6ae9-4310-b63c-7d9048820a59.trajectory-path.json",
+      "name": "a4d09a7f-6ae9-4310-b63c-7d9048820a59.trajectory-path.json",
+      "size": 255,
+      "modified": "2026-08-03T07:32:16.546Z"
+    },
+    {
+      "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\a4d09a7f-6ae9-4310-b63c-7d9048820a59.trajectory.jsonl",
+      "name": "a4d09a7f-6ae9-4310-b63c-7d9048820a59.trajectory.jsonl",
+      "size": 127917,
+      "modified": "2026-08-03T07:32:08.320Z"
     },
     {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\a4d4af24-daee-4a3e-bb63-9b4d8d8b95d2.trajectory-path.json",
@@ -29758,8 +29776,8 @@
     {
       "path": "C:\\Users\\quent\\.openclaw\\agents\\main\\sessions\\sessions.json",
       "name": "sessions.json",
-      "size": 2892984,
-      "modified": "2026-08-03T07:23:10.876Z"
+      "size": 2896635,
+      "modified": "2026-08-03T07:32:16.657Z"
     },
     {
       "path": "C:\\Users\\quent\\.openclaw\\browser\\openclaw\\user-data\\.openclaw-profile-decorated",
@@ -29982,24 +30000,6 @@
       "name": "Network Action Predictor-journal",
       "size": 0,
       "modified": "2026-08-01T09:32:47.979Z"
-    },
-    {
-      "path": "C:\\Users\\quent\\.openclaw\\browser\\openclaw\\user-data\\Default\\passkey_enclave_state",
-      "name": "passkey_enclave_state",
-      "size": 93,
-      "modified": "2026-07-10T12:58:34.807Z"
-    },
-    {
-      "path": "C:\\Users\\quent\\.openclaw\\browser\\openclaw\\user-data\\Default\\Preferences",
-      "name": "Preferences",
-      "size": 30874,
-      "modified": "2026-08-02T21:45:53.798Z"
-    },
-    {
-      "path": "C:\\Users\\quent\\.openclaw\\browser\\openclaw\\user-data\\Default\\PreferredApps",
-      "name": "PreferredApps",
-      "size": 33,
-      "modified": "2026-07-09T12:54:55.239Z"
     }
   ]
 }

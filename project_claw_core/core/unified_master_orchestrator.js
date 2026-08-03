@@ -15,6 +15,14 @@ const STATE_FILE = path.join(WORKSPACE, 'project_claw_core', 'data', 'unified_ma
 const AlphaFund = require(path.join(WORKSPACE, 'alpha_fund_v3', 'orchestrator'));
 const { ClawWorkflows } = require(path.join(WORKSPACE, 'alpha_fund_v3', 'utils', 'claw_workflows'));
 
+// Load Smart Brain for model routing
+let SmartBrain = null;
+try {
+  SmartBrain = require(path.join(WORKSPACE, 'missions', 'smart_brain', 'orchestrator'));
+} catch (e) {
+  log(`Smart Brain not loaded: ${e.message}`, 'warn');
+}
+
 function log(msg, level = 'info') {
   const entry = { timestamp: new Date().toISOString(), level, message: msg };
   fs.mkdirSync(path.dirname(LOG_FILE), { recursive: true });
@@ -38,6 +46,47 @@ class UnifiedMasterOrchestrator {
   constructor() {
     this.state = loadState();
     this.workflows = new ClawWorkflows();
+    this.brain = SmartBrain ? new SmartBrain() : null;
+  }
+
+  /**
+   * Use Smart Brain to recommend a model for a given task
+   */
+  routeTask(task) {
+    if (!this.brain) return { modelId: null, modelName: 'default', confidence: 0 };
+    try {
+      const routing = this.brain.executeTask(task);
+      return {
+        modelId: routing.assignedModel?.id || null,
+        modelName: routing.assignedModel?.name || 'unknown',
+        role: routing.assignedModel?.role || 'general',
+        confidence: routing.analysis?.confidence || 0,
+        category: routing.analysis?.category || 'general'
+      };
+    } catch (e) {
+      log(`Smart Brain routing failed: ${e.message}`, 'warn');
+      return { modelId: null, modelName: 'default', confidence: 0, error: e.message };
+    }
+  }
+
+  /**
+   * Run Smart Brain classification as part of each cycle
+   */
+  async runModelRouting() {
+    log('Step: Smart Brain model routing');
+    const tasks = [
+      'Generate daily market report',
+      'Analyze BTC price trend',
+      'Debug Node.js memory issue',
+      'Plan autonomous system improvements'
+    ];
+    const routing = [];
+    for (const task of tasks) {
+      const r = this.routeTask(task);
+      routing.push({ task, ...r });
+    }
+    log(`Smart Brain routed ${routing.length} sample tasks`);
+    return routing;
   }
   
   async runResearch(query = 'BTC crypto market news today') {
@@ -131,7 +180,12 @@ class UnifiedMasterOrchestrator {
       const fundStatus = AlphaFund.COMMANDS.status(['--json']);
       actions.push({ step: 'fund_status', total_value: fundStatus.total_value, return_pct: fundStatus.total_return_pct });
 
-      // 4. Run research
+      // 4. Run Smart Brain model routing
+      log('Step 2b: Smart Brain model routing');
+      const routing = await this.runModelRouting();
+      actions.push({ step: 'smart_brain_routing', routes: routing.length, sample: routing.slice(0, 2) });
+
+      // 5. Run research
       const research = await this.runResearch();
       actions.push({ step: 'research', success: research.success, result_size: research.result ? JSON.stringify(research.result).length : 0 });
 
