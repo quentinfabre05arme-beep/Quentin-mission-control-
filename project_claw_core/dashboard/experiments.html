@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claw Experiment Registry</title>
+  <style>
+    :root { --bg: #0b0c15; --panel: #151825; --text: #e6e8f0; --muted: #8b92a8; --ok: #22c55e; --fail: #ef4444; --warn: #f59e0b; --accent: #6366f1; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); }
+    header { padding: 1.5rem 2rem; border-bottom: 1px solid #23263a; }
+    header h1 { margin: 0; font-size: 1.5rem; }
+    header p { margin: .25rem 0 0; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; padding: 1.5rem 2rem; }
+    .card { background: var(--panel); border-radius: .75rem; padding: 1rem; border: 1px solid #23263a; }
+    .card h3 { margin: 0 0 .5rem; font-size: .85rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+    .card .value { font-size: 1.75rem; font-weight: 700; }
+    .ok { color: var(--ok); }
+    .fail { color: var(--fail); }
+    .warn { color: var(--warn); }
+    table { width: 100%; border-collapse: collapse; margin: 0 2rem 2rem; max-width: calc(100% - 4rem); }
+    th, td { text-align: left; padding: .75rem; border-bottom: 1px solid #23263a; }
+    th { color: var(--muted); font-size: .8rem; text-transform: uppercase; }
+    tr:hover { background: rgba(255,255,255,.03); }
+    .badge { display: inline-block; padding: .2rem .5rem; border-radius: .25rem; font-size: .75rem; font-weight: 600; }
+    .badge-committed { background: rgba(34,197,94,.15); color: var(--ok); }
+    .badge-reverted { background: rgba(239,68,68,.15); color: var(--fail); }
+    .badge-blocked { background: rgba(245,158,11,.15); color: var(--warn); }
+    .filters { padding: 0 2rem 1rem; display: flex; gap: .5rem; flex-wrap: wrap; }
+    button { background: var(--panel); color: var(--text); border: 1px solid #23263a; padding: .4rem .8rem; border-radius: .4rem; cursor: pointer; }
+    button.active { background: var(--accent); border-color: var(--accent); }
+    .empty { padding: 2rem; color: var(--muted); text-align: center; }
+    pre { white-space: pre-wrap; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace; font-size: .75rem; color: var(--muted); max-width: 300px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🧪 Claw Experiment Registry</h1>
+    <p>Autonomous self-improvement history, outcomes, and learning.</p>
+  </header>
+
+  <div class="grid" id="summary">
+    <div class="card"><h3>Total Cycles</h3><div class="value" id="cycles">-</div></div>
+    <div class="card"><h3>Experiments</h3><div class="value" id="experiments">-</div></div>
+    <div class="card"><h3>Successes</h3><div class="value ok" id="successes">-</div></div>
+    <div class="card"><h3>Failures</h3><div class="value fail" id="failures">-</div></div>
+    <div class="card"><h3>Success Rate</h3><div class="value" id="rate">-</div></div>
+    <div class="card"><h3>Sandboxed</h3><div class="value" id="sandboxed">-</div></div>
+  </div>
+
+  <div class="filters">
+    <button class="active" data-filter="all">All</button>
+    <button data-filter="success">Success</button>
+    <button data-filter="failed">Failed</button>
+    <button data-filter="blocked">Blocked</button>
+  </div>
+
+  <table id="experiments-table">
+    <thead>
+      <tr><th>Time</th><th>Title</th><th>Category</th><th>File</th><th>Outcome</th><th>Benchmark Before</th><th>Benchmark After</th><th>Error</th></tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+
+  <script>
+    const EXPERIMENTS_URL = '../../autonomous_improvement/data/experiments.json';
+    const LEARNING_URL = '../../autonomous_improvement/data/learning.json';
+
+    function statusClass(status) {
+      if (status === 'committed' || status === 'success') return 'badge-committed';
+      if (status === 'blocked') return 'badge-blocked';
+      return 'badge-reverted';
+    }
+
+    function fmtPct(b) { return b ? `${Math.round((b.score || 0) * 100)}%` : '-'; }
+
+    async function load() {
+      try {
+        const [expRes, learnRes] = await Promise.all([
+          fetch(EXPERIMENTS_URL),
+          fetch(LEARNING_URL)
+        ]);
+        const expData = await expRes.json();
+        const learnData = await learnRes.json();
+
+        const experiments = (expData.experiments || []).slice().reverse();
+        const successes = experiments.filter(e => e.outcome === 'success' && e.status === 'committed').length;
+        const failures = experiments.filter(e => !['success','blocked'].includes(e.outcome)).length;
+        const blocked = experiments.filter(e => e.outcome === 'blocked').length;
+        const sandboxed = experiments.filter(e => e.sandboxed).length;
+
+        document.getElementById('cycles').textContent = expData.cycles || (experiments.length + blocked);
+        document.getElementById('experiments').textContent = experiments.length;
+        document.getElementById('successes').textContent = successes;
+        document.getElementById('failures').textContent = failures;
+        document.getElementById('rate').textContent = experiments.length ? Math.round((successes / experiments.length) * 100) + '%' : '-';
+        document.getElementById('sandboxed').textContent = sandboxed;
+
+        const tbody = document.getElementById('tbody');
+        tbody.innerHTML = '';
+        experiments.forEach(e => {
+          const tr = document.createElement('tr');
+          tr.dataset.outcome = e.outcome === 'success' ? 'success' : (e.outcome === 'blocked' ? 'blocked' : 'failed');
+          const time = e.timestamp ? new Date(e.timestamp).toLocaleString() : '-';
+          const file = e.change?.filePath || '-';
+          const error = e.error || (e.commitError || '');
+          tr.innerHTML = `
+            <td>${time}</td>
+            <td title="${e.title || ''}">${(e.title || '').slice(0, 60)}${(e.title || '').length > 60 ? '...' : ''}</td>
+            <td>${e.category || '-'}</td>
+            <td><pre>${file}</pre></td>
+            <td><span class="badge ${statusClass(e.outcome)}">${e.outcome || e.status || 'unknown'}</span></td>
+            <td>${fmtPct(e.benchmark_before)}</td>
+            <td>${fmtPct(e.benchmark_after)}</td>
+            <td><pre>${error}</pre></td>
+          `;
+          tbody.appendChild(tr);
+        });
+
+        document.querySelectorAll('.filters button').forEach(btn => {
+          btn.addEventListener('click', () => {
+            document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.dataset.filter;
+            document.querySelectorAll('#tbody tr').forEach(tr => {
+              tr.style.display = (filter === 'all' || tr.dataset.outcome === filter) ? '' : 'none';
+            });
+          });
+        });
+      } catch (err) {
+        document.body.innerHTML += `<div class="empty">Failed to load experiment data: ${err.message}</div>`;
+      }
+    }
+
+    load();
+  </script>
+</body>
+</html>

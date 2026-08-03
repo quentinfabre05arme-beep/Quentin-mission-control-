@@ -7,6 +7,7 @@
   "max_lines_per_change": 100,
   "test_timeout_ms": 30000,
   "cycle_interval_ms": 1800000,
+  "use_worktree_sandbox": true,
   "research_queries": [
     "best autonomous AI agent architecture 2026",
     "Node.js long-running process memory leak prevention",

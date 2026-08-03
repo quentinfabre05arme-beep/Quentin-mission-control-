@@ -14,6 +14,7 @@ const Guardian = require('./experiment_guardian');
 
 const CONFIG = require('../config.json');
 const Benchmark = require(path.join(CONFIG.workspace, 'scripts', 'run_claw_benchmark'));
+const WorktreeRunner = require('./worktree_experiment_runner');
 
 const EXPERIMENTS_FILE = path.join(CONFIG.workspace, CONFIG.experiments_file);
 const BACKUP_DIR = path.join(CONFIG.workspace, 'autonomous_improvement', 'backups');
@@ -267,4 +268,128 @@ async function runExperiment(hypothesis, change) {
   return experiment;
 }
 
-module.exports = { runExperiment, applyChange, runTests };
+async function runExperimentSandboxed(hypothesis, change) {
+  cleanupStaleExperiments();
+  log(`Running sandboxed experiment: ${hypothesis.id}`);
+
+  const guardResult = Guardian.runSafely(() => true, {
+    hypothesis: hypothesis.title,
+    files: [change.filePath],
+    tokenBudget: CONFIG.token_budget_per_experiment || 20000
+  });
+  if (!guardResult.success) {
+    log(`Guardian blocked sandboxed experiment: ${guardResult.reason}`, 'warn');
+    return {
+      id: hypothesis.id,
+      title: hypothesis.title,
+      outcome: 'blocked',
+      status: 'blocked',
+      error: guardResult.reason,
+      timestamp: new Date().toISOString()
+    };
+  }
+
+  const experiment = {
+    id: hypothesis.id,
+    title: hypothesis.title,
+    category: hypothesis.category,
+    timestamp: new Date().toISOString(),
+    change,
+    sandboxed: true,
+    outcome: null,
+    tests: {},
+    metrics: {},
+    review: null,
+    benchmark: null,
+    status: 'running'
+  };
+
+  const experiments = loadJson(EXPERIMENTS_FILE) || { experiments: [] };
+  experiments.experiments.push(experiment);
+  saveJson(EXPERIMENTS_FILE, experiments);
+
+  let backupPath = null;
+  let benchmarkBefore = null;
+  try {
+    benchmarkBefore = await runClawBenchmark();
+    log(`Claw benchmark before: ${benchmarkBefore.passed}/${benchmarkBefore.total} (${(benchmarkBefore.score * 100).toFixed(0)}%)`);
+
+    // Run isolated worktree trial
+    const worktreeResult = WorktreeRunner.runExperimentInWorktree(hypothesis, change);
+    experiment.worktree_tests = worktreeResult.tests;
+    WorktreeRunner.cleanup(worktreeResult.worktreePath);
+
+    if (!worktreeResult.success) {
+      experiment.outcome = 'failed_worktree';
+      experiment.status = 'blocked';
+      experiment.error = worktreeResult.error || 'Worktree tests failed';
+      recordOutcome(experiment);
+      saveJson(EXPERIMENTS_FILE, experiments);
+      log(`Sandboxed experiment failed worktree tests: ${experiment.error}`, 'warn');
+      return experiment;
+    }
+
+    // Apply to main workspace and commit
+    backupPath = backupFile(change.filePath);
+    const applied = applyChange(change);
+    const tests = runTests(change);
+    const metrics = measureBeforeAfter(change);
+
+    experiment.applied = applied;
+    experiment.tests = tests;
+    experiment.metrics = metrics;
+    experiment.benchmark_before = benchmarkBefore;
+
+    const passed = tests.syntax && tests.load;
+    if (passed) {
+      const benchmarkAfter = await runClawBenchmark();
+      experiment.benchmark_after = benchmarkAfter;
+      log(`Claw benchmark after: ${benchmarkAfter.passed}/${benchmarkAfter.total} (${(benchmarkAfter.score * 100).toFixed(0)}%)`);
+
+      if (benchmarkAfter.score < benchmarkBefore.score) {
+        experiment.outcome = 'failed_benchmark_regression';
+        experiment.status = 'reverted';
+        restoreFile(change.filePath, backupPath);
+      } else {
+        experiment.outcome = 'success';
+        experiment.status = 'reviewing';
+        experiment.review = review(change);
+        experiment.benchmark = await runFunctionalBenchmark(change.filePath);
+
+        if (experiment.review.ok) {
+          experiment.status = 'committed';
+          try {
+            safeGit(`add ${change.filePath}`);
+            safeGit(`commit -m "Auto-improvement: ${hypothesis.title}"`);
+          } catch (commitErr) {
+            experiment.status = 'tested-not-committed';
+            experiment.commitError = commitErr.message;
+          }
+        } else {
+          experiment.outcome = 'failed_review';
+          experiment.status = 'reverted';
+          restoreFile(change.filePath, backupPath);
+        }
+      }
+    } else {
+      experiment.outcome = 'failed';
+      experiment.status = 'reverted';
+      experiment.benchmark_after = null;
+      restoreFile(change.filePath, backupPath);
+    }
+  } catch (e) {
+    experiment.outcome = 'error';
+    experiment.status = 'reverted';
+    experiment.error = e.message;
+    if (backupPath) {
+      try { restoreFile(change.filePath, backupPath); } catch (_) {}
+    }
+  }
+
+  recordOutcome(experiment);
+  saveJson(EXPERIMENTS_FILE, experiments);
+  log(`Sandboxed experiment ${experiment.id}: ${experiment.outcome}`);
+  return experiment;
+}
+
+module.exports = { runExperiment, runExperimentSandboxed, applyChange, runTests };

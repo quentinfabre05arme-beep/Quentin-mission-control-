@@ -17,6 +17,8 @@ const ChangeGenerator = require('./change_generator');
 const ExperimentRunner = require('./experiment_runner');
 const { acquire } = require(path.join(CONFIG.workspace, 'project_claw_core', 'core', 'process_lock'));
 
+const USE_WORKTREE = CONFIG.use_worktree_sandbox !== false;
+
 const STATE_FILE = path.join(CONFIG.workspace, CONFIG.data_dir, 'improvement_state.json');
 const LOCK_FILE = path.join(CONFIG.workspace, 'autonomous_improvement', 'logs', 'improvement.lock');
 
@@ -77,9 +79,11 @@ async function runCycle() {
   }
 
   log(`Selected hypothesis: ${selected.title}`);
+  log(`Sandbox mode: ${USE_WORKTREE ? 'worktree' : 'in-place'}`);
 
   // 6. Run experiment
-  const experiment = await ExperimentRunner.runExperiment(selected, change);
+  const runner = USE_WORKTREE ? ExperimentRunner.runExperimentSandboxed : ExperimentRunner.runExperiment;
+  const experiment = await runner(selected, change);
   if (experiment.outcome === 'success' && experiment.status === 'committed') {
     state.successes++;
   } else {
