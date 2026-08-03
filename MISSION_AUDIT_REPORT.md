@@ -35,3 +35,35 @@ If you want `missions/` to run 24/7, choose one of:
 4. **Remove** `✅ Removed
 
 Current active orchestrators already cover market data, alternative data, technical analysis, research, portfolio tracking, risk alerts, daily reports, and autonomous improvement. The `missions/` folder is mostly leftover documentation and standalone scripts.
+
+
+---
+
+## Follow-up: Content/X Systems Not Running 24/7
+
+After the mission integration pass, several standalone content/X files were also identified as not having scheduled runners and being superseded by the unified content_pipeline/ system and OpenClaw-X-Autonomous-Poster task.
+
+### Cleaned root clutter (archived to rchive_old_tests/)
+- 9 loose Python/JS content generators (gentic_content_pipeline_v4.py, generate_daily_content_grok.py, etc.)
+- 11 X automation guides/readmes/scripts (X_AUTOMATION_README.md, x_automation_service.ps1, etc.)
+- 11 X login debug screenshots
+- 38 old mission_control_*.html/md/json dashboard variants
+- Mission Control directory, daily_content/, content_output/
+- x-api-config/ directory
+
+### What remains active for content/X 24/7
+| Component | Runner | Schedule |
+|---|---|---|
+| Newsletter | content_pipeline/newsletter/run_newsletter.ps1 | AlphaFund-Newsletter-Weekly (ready, next 09/08) |
+| X Posts | x_post_scheduler.ps1 → x_post_simple.ps1 | OpenClaw-X-Autonomous-Poster daily 08:00 |
+| X Content queue | x_queue.json | Populated by Unified Master research |
+
+### Final content/X file surface
+- content_pipeline/newsletter/ — weekly newsletter system
+- content_pipeline/x_posts/ — historical post archive
+- x_poster.js, x_poster_daemon.js, x_post_browser.js — active browser automation
+- x_post_simple.ps1, x_post_scheduler.ps1 — daily posting
+- x_queue.json — pending posts
+- X_POSTING_WORKFLOW.md — documentation
+
+All other content/X/dashboard clutter has been archived.

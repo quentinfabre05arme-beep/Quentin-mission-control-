@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-03T07:22:50.421Z",
+  "generated_at": "2026-08-03T07:39:01.209Z",
   "hypotheses": [
     {
-      "id": "hyp_1785741770421_8h2hi",
+      "id": "hyp_1785742741209_3uc59",
       "title": "Add timeout guards to long-running capabilities",
       "category": "reliability",
       "reason": "Research suggests timeouts prevent stuck browser/API calls",
@@ -13,7 +13,7 @@
       "failure_count": 0
     },
     {
-      "id": "hyp_1785741770421_mnej7",
+      "id": "hyp_1785742741209_t9hbd",
       "title": "Add timeout to research_router browser searches",
       "category": "performance",
       "reason": "ABOS research hangs when Puppeteer stalls",
@@ -24,7 +24,7 @@
       "failure_count": 0
     },
     {
-      "id": "hyp_1785741770421_1m0or",
+      "id": "hyp_1785742741209_96n61",
       "title": "Add functional smoke tests to capability modules",
       "category": "capability",
       "reason": "Research emphasizes automated testing for agent reliability",
@@ -35,7 +35,7 @@
       "failure_count": 0
     },
     {
-      "id": "hyp_1785741770421_5xhqm",
+      "id": "hyp_1785742741209_rrj3c",
       "title": "Prune duplicate test plans in planner.js",
       "category": "workflow",
       "reason": "10 active plans, 9 are \"test\" noise — clutters memory",
@@ -46,7 +46,7 @@
       "failure_count": 0
     },
     {
-      "id": "hyp_1785741770421_5xo3u",
+      "id": "hyp_1785742741209_8poex",
       "title": "Rotate always_on_daemon.log when >100KB",
       "category": "performance",
       "reason": "Log grew to 350KB+ in one day",
@@ -57,7 +57,7 @@
       "failure_count": 1
     },
     {
-      "id": "hyp_1785741770421_yc5da",
+      "id": "hyp_1785742741209_yyt8x",
       "title": "Rotate oversized logs to prevent disk bloat",
       "category": "performance",
       "reason": "Large logs indicate potential memory/disk pressure",
