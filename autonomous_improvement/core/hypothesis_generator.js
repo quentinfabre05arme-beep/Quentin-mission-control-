@@ -76,30 +76,48 @@ function generateStaticHypotheses() {
   return [
     {
       id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-      title: 'Prune duplicate test plans in planner.js',
-      category: 'workflow',
-      reason: '10 active plans, 9 are "test" noise — clutters memory',
-      target_file: 'project_claw_core/data/plans.json',
-      estimated_effort: 5,
-      estimated_impact: 'low'
-    },
-    {
-      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-      title: 'Add timeout to research_router browser searches',
-      category: 'performance',
-      reason: 'ABOS research hangs when Puppeteer stalls',
-      target_file: 'project_claw_core/agents/research_router.js',
-      estimated_effort: 10,
+      title: 'Add async timeout guards to capability functional tester',
+      category: 'reliability',
+      reason: 'Async capability tests can hang if child processes misbehave',
+      target_file: 'project_claw_core/core/capability_functional_tester.js',
+      estimated_effort: 15,
       estimated_impact: 'high'
     },
     {
       id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-      title: 'Rotate always_on_daemon.log when >100KB',
+      title: 'Persist capability router performance index across restarts',
       category: 'performance',
-      reason: 'Log grew to 350KB+ in one day',
-      target_file: 'alpha_fund_v3/core/always_on_daemon.js',
+      reason: 'Router index resets on every process restart, losing routing quality data',
+      target_file: 'project_claw_core/core/capability_router.js',
       estimated_effort: 10,
       estimated_impact: 'medium'
+    },
+    {
+      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      title: 'Add memory tier pruning for old cold-tier entries',
+      category: 'performance',
+      reason: 'Cold memory archive grows indefinitely without pruning',
+      target_file: 'project_claw_core/core/memory_tier.js',
+      estimated_effort: 10,
+      estimated_impact: 'medium'
+    },
+    {
+      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      title: 'Track benchmark score trend over time',
+      category: 'workflow',
+      reason: 'Benchmark results are ephemeral; trend tracking shows if system is improving',
+      target_file: 'scripts/run_claw_benchmark.js',
+      estimated_effort: 15,
+      estimated_impact: 'high'
+    },
+    {
+      id: `hyp_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      title: 'Improve hierarchical planner goal title handling',
+      category: 'reliability',
+      reason: 'Planner can create tasks with undefined titles when goals lack title field',
+      target_file: 'project_claw_core/core/hierarchical_planner.js',
+      estimated_effort: 10,
+      estimated_impact: 'low'
     }
   ];
 }

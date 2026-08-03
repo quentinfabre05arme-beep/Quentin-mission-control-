@@ -33,14 +33,20 @@ class ResearchRouter {
     // 1. OpenClaw web_search tool (when invoked from agent context)
     if (this.webSearchFn) this.sources.push('openclaw_web_search');
 
-    // 2. SearXNG self-hosted (free forever)
+    // 2. Local research cache (immediate fallback)
+    try {
+      this.localCache = require('./local_research_cache');
+      this.sources.push('local_research_cache');
+    } catch(e) { log(`Local cache init error: ${e.message}`); }
+
+    // 3. SearXNG self-hosted (free forever)
     try {
       const { SearxngClient } = require('./searxng_client');
       this.searxng = new SearxngClient();
       if (this.searxng.isAvailable()) this.sources.push('searxng');
     } catch(e) { log(`SearXNG init error: ${e.message}`); }
 
-    // 3. Legacy research agent (Serper + HTTP fallbacks)
+    // 4. Legacy research agent (Serper + HTTP fallbacks)
     try {
       const { ResearchAgent } = require('./research_agent');
       this.legacyAgent = new ResearchAgent();
@@ -66,6 +72,26 @@ class ResearchRouter {
           return { source: 'openclaw_web_search', results };
         }
       } catch(e) { log(`OpenClaw web_search error: ${e.message}`); }
+    }
+
+    // Try local research cache (offline, immediate)
+    if (this.localCache) {
+      try {
+        const hits = this.localCache.search(query, { topK: count });
+        if (hits.length > 0) {
+          log(`Local research cache returned ${hits.length} results`);
+          return {
+            source: 'local_research_cache',
+            results: hits.map(h => ({
+              title: h.file,
+              link: h.file,
+              snippet: h.line,
+              score: h.score,
+              source: h.source
+            }))
+          };
+        }
+      } catch(e) { log(`Local cache error: ${e.message}`); }
     }
 
     // Try SearXNG if available

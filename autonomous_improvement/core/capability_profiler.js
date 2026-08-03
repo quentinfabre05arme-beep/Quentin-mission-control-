@@ -28,7 +28,7 @@ function analyze() {
   const invocations = loadInvocations();
   const learning = loadJson(LEARNING_FILE) || {};
   const registry = loadJson(REGISTRY_FILE) || {};
-  const entries = registry.entries || [];
+  const entries = registry.capabilities || registry.entries || [];
 
   const counts = {};
   invocations.forEach(i => { counts[i.capability] = (counts[i.capability] || 0) + 1; });
